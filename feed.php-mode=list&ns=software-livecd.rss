@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos software:livecd</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-21T13:32:11+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/software/livecd/contenido?rev=1232461488&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/software/livecd/faq?rev=1220993160&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/software/livecd/contenido?rev=1232461488&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:48+04:00</dc:date>
+        <title>Contenido del DVD</title>
+        <link>http://www.losersjuegos.com.ar/software/livecd/contenido?rev=1232461488&amp;do=diff</link>
+        <description>A continuación se muestra una lista reducida de los programas
+que incluye el sistema, consulte el archivo [dpkg_list.txt extras/dpkg_list.txt] 
+para mas detalles.
+
+Software básico (se mantiene de la base Ubuntu 8.04)
+ Nombre  Versión  Descripción de funcionalidad  gnome  2.22  Escritorio GNOME  gimp  2.4.5  Editor de imágenes  firefox  3.0  Navegador Web  compiz  0.7.4  Efectos visuales de escritorio  openoffice  1:2  Suite de oficina 
+Software adicional
+
+Lenguajes de programación
+ Nombre …</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/software/livecd/faq?rev=1220993160&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-09-10T00:46:00+04:00</dc:date>
+        <title>Guía de preguntas frecuentes</title>
+        <link>http://www.losersjuegos.com.ar/software/livecd/faq?rev=1220993160&amp;do=diff</link>
+        <description>¿Existe la posibilidad de instalar el sistema?
+
+Sí, tiene varias formas de iniciar el sistema de instalación:
+
+
+	*  Seleccionando la opción Instalar Ubuntu desde el menú inicial.
+	*  Seleccionando el icono de instalación en el escritorio una vez iniciado el</description>
+    </item>
+</rdf:RDF>

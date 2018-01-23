@@ -1,0 +1,17 @@
+====== Jorge Araya Navarro ======
+{{:comunidad:integrantes:avatar_parabola.png|}}
+
+===== Perfil? =====
+
+  * nick dentro del querido foro: [[http://www.losersjuegos.com.ar/foro/profile.php?mode=viewprofile&u=2114|shackra]]
+  * fecha de nacimiento: 28 de diciembre de 1990
+  * localizacion: Siquirres, Limón, Costa Rica <del>behind you!</del>
+  * intereses: programar en lenguaje python, <del>C</del>. Crear juegos sea en 2D ó 3D.
+  * deportes: jugar mucho Metal Gear Solid 3 en mi PS2, hacer BMX, practicar Jujitsu y Judo.
+  * influencias: [[http://es.wikipedia.org/wiki/Hideo_Kojima|Hideo Kojima]], Steven Spielberg, [[http://es.wikipedia.org/wiki/Jigor%C5%8D_Kan%C5%8D|Jigorō Kanō]], [[http://bmx.dcshoes.com/team/edwin-delarosa/|Edwin Delarosa]].
+  * Motores para video juegos: [[http://openhelbreath.net/python-sfml2|PySFML]].
+  * Repositorio de código fuente: [[https://bitbucket.org/shackra|Bitbucket (Mercurial es la leche!!)]], [[https://github.com/shackra|GitHub (no me gusta para nada Git, siquiera sé porque tengo cuenta ahí)]]
+
+--- //[[Jorge Araya Navarro]] 29/04/2010 a las 22:28//
+
+

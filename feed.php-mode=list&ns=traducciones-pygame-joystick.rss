@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:joystick</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-16T15:57:34+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick?rev=1255381644&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick_class?rev=1232216980&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick?rev=1255381644&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-10-13T01:07:24+04:00</dc:date>
+        <title>Joystick</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick?rev=1255381644&amp;do=diff</link>
+        <description>Genera un nuevo objeto Joystick.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Joystick
+
+
+
+
+Genera un nuevo objeto Joystick.
+
+
+pygame.joystick.Joystick(id): return Joystick
+
+
+
+
+Genera un nuevo objeto Joystick para acceder al dispositivo físico. El
+argumento id debe ser un valor de 0 a pygame.joystick.get_count() -1.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick_class?rev=1232216980&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T21:29:40+04:00</dc:date>
+        <title>Joystick</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/joystick/joystick_class?rev=1232216980&amp;do=diff</link>
+        <description>Genera un nuevo objeto Joystick.
+
+	*  Joystick
+	*  init
+	*  quit
+	*  get_init
+	*  get_id
+	*  get_name
+	*  get_numaxes
+	*  get_axis
+	*  get_numballs
+	*  get_ball
+	*  get_numbuttons
+	*  get_button
+	*  get_numhats
+	*  get_hat
+
+Joystick
+
+
+
+
+Genera un nuevo objeto Joystick.</description>
+    </item>
+</rdf:RDF>

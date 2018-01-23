@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+<link rel="self" type="application/atom+xml" href="http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=552" />
+
+<title>LosersJuegos</title>
+<subtitle>Desarrollando videojuegos libres</subtitle>
+<link href="http://losersjuegos.com.ar/foro/index.php" />
+<updated>2009-04-27T11:23:43+00:00</updated>
+
+<author><name><![CDATA[LosersJuegos]]></name></author>
+<id>http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=552</id>
+<entry>
+<author><name><![CDATA[johndoe90]]></name></author>
+<updated>2009-04-27T11:23:43+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=552&amp;p=2486#p2486</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=552&amp;p=2486#p2486"/>
+<title type="html"><![CDATA[error LINK 2001]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=552&amp;p=2486#p2486"><![CDATA[
+Hola, haciendo un codigo en C++ en objetos para hacer una pila sencilla, al compilar me salieron estos errores, si alguien sabe a que se deben o como solucionarlos que me lo diga por favor.<br />Gracias.<br /><br />Linking...<br />pila.obj : error LNK2001: unresolved external symbol &quot;public: __thiscall CProcess::CProcess(void)&quot; (??0CProcess@@QAE@XZ)<br />principal.obj : error LNK2001: unresolved external symbol &quot;public: __thiscall CProcess::CProcess(void)&quot; (??0CProcess@@QAE@XZ)<br />Debug/CProcess.exe : fatal error LNK1120: 1 unresolved externals<br />Error executing link.exe.<br /><br />CProcess.exe - 3 error(s), 0 warning(s)<br /><br />CProcess.h<br /><br />typedef char Tpalabra [20];<br /><br />class CProcess<br />{<br />private:<br />Tpalabra imageName;<br />float cpuUsage;<br />int memUsage;<br /><br />public:<br />CProcess();<br />void pon_imageName(char name[20]);<br />char* dame_imageName();<br />void pon_cpuUsage(float cpu);<br />float dame_cpuUsage();<br />void pon_memUsage(int mem);<br />int dame_memUsage();<br />float valor_inicial_cpu();<br />int valor_inical_mem();<br />};<br /><br />pila.h<br /><br />#include &quot;CProcess.h&quot;<br />#define MAXPILA 5<br /><br />class CPila<br />{<br />private:<br />CProcess Vector[MAXPILA];<br />int CimPila;<br /><br />public:<br />    CPila(void);<br />int PilaVacia(void);<br />int PilaLlena(void);<br />void PushPila(CProcess &amp;t);<br />CProcess* PopPila(void);<br />};<br /><br />CProcess.cpp<br /><br />#include &quot;CProcess.h&quot;<br />#include &lt;string.h&gt;<br /><br />void CProcess::pon_imageName(char name[20])<br />{<br />strcpy(imageName,name);<br />}<br /><br />char* CProcess::dame_imageName()<br />{<br />return (imageName);<br />}<br /><br />void CProcess::pon_cpuUsage(float cpu)<br />{<br />cpuUsage=cpu;<br />}<br /><br />float CProcess::dame_cpuUsage()<br />{<br />return (cpuUsage);<br />}<br /><br />void CProcess::pon_memUsage(int mem)<br />{<br />memUsage=mem;<br />}<br /><br />int CProcess::dame_memUsage()<br />{<br />return (memUsage);<br />}<br /><br />pila.cpp<br /><br />#include &quot;pila.h&quot;<br /><br />CPila::CPila(void)<br />{<br />CimPila=-1;<br />}<br />int CPila::PilaVacia(void)<br />{<br />return(CimPila==-1);<br />}<br />int CPila::PilaLlena(void)<br />{<br />return(CimPila==MAXPILA-1);<br />}<br />void CPila::PushPila(CProcess &amp;p)<br />{<br />   Vector[++CimPila]=p;<br />}<br />CProcess* CPila::PopPila(void)<br />{<br />return(&amp;Vector[CimPila--]);<br />}<br /><br /><br />#include &quot;CProcess.h&quot;<br />#include &lt;string.h&gt;<br />#include &lt;stdio.h&gt;<br /><br />void main()<br />{<br />CProcess my_Process;<br />Tpalabra name;<br />float cpu;<br />int mem;<br /><br />printf(&quot;Escribe los datos del proceso.\n&quot;);<br />printf(&quot;Nombre de la imagen.\n&quot;);<br />scanf(&quot;%s&quot;,name);<br />my_Process.pon_imageName(name);<br />printf(&quot;Uso de la cpu, ha de ser un valor comprendido entre 0 y 100, es un tanto por ciento.\n&quot;);<br />scanf(&quot;%f&quot;,&amp;cpu);<br />my_Process.pon_cpuUsage(cpu);<br />printf(&quot;Uso de la memoria.\n&quot;);<br />scanf(&quot;%d&quot;,&amp;mem);<br />my_Process.pon_memUsage(mem);<br /><br />printf(&quot;El proceso %s tiene un uso de: \n&quot;, my_Process.dame_imageName());<br />printf(&quot;%f de cpu.\n&quot;, my_Process.dame_cpuUsage());<br />printf(&quot; y %d de memoria.\n&quot;,my_Process.dame_memUsage());<br /><br />}<br /><br /><br />PD: Como se puede poner un codigo tan largo un poco mas comprimido que no ocupe todo el post?<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=2079">johndoe90</a> — Lun Abr 27, 2009 11:23 am</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,12 @@
+====== SDL ======
+
+SDL es una biblioteca para C y C++ que se utiliza para desarrollar aplicaciones multimedia
+como juegos, reproductores de video o presentaciones.
+
+Esta biblioteca funciona en varios sistemas operativos, lo que le permite
+a los programadores escribir su aplicación una sola vez, y que esta funcione en
+varios sistemas operativos sin hacer cambios.
+
+El nombre SDL proviene del acrónimo //Simple DirectMedia Layer//.
+
+Para mas información puede [[http://www.libsdl.org|visitar el sitio oficial de SDL]].

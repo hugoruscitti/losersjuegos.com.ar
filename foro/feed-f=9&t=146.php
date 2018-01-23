@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+<link rel="self" type="application/atom+xml" href="http://losersjuegos.com.ar/foro/feed.php?f=9&amp;t=146" />
+
+<title>LosersJuegos</title>
+<subtitle>Desarrollando videojuegos libres</subtitle>
+<link href="http://losersjuegos.com.ar/foro/index.php" />
+<updated>2007-08-26T08:11:26+00:00</updated>
+
+<author><name><![CDATA[LosersJuegos]]></name></author>
+<id>http://losersjuegos.com.ar/foro/feed.php?f=9&amp;t=146</id>
+<entry>
+<author><name><![CDATA[blito83]]></name></author>
+<updated>2007-08-26T08:11:26+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=503#p503</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=503#p503"/>
+<title type="html"><![CDATA[Puntos de control]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=503#p503"><![CDATA[
+Clarisimo, me ha quedado clarisimo, gracias.<br />Lo que mas me conviene es crearme una herramienta.<br /> Hugo, los resultados van para largo, pero cuando llegue el momento lo comentare. <br />Saludos!<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1090">blito83</a> — Dom Ago 26, 2007 8:11 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rcaf]]></name></author>
+<updated>2007-08-26T04:07:04+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=502#p502</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=502#p502"/>
+<title type="html"><![CDATA[Puntos de control]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=502#p502"><![CDATA[
+Bueno mientras escribía una respuesta, Hugo al parecer también xD... hubo un desfase de algunos minutos <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_lol.gif" alt=":lol:" title="Laughing" /> <br /><br />Bueno, viendo la solucion de Hugo me parece bien, pero normalmente yo prefiero asignar como punto de control alguna de las esquinas o simplemente el centro, es decir:<br /><br />- TOP_LEFT<br />- TOP_RIGHT<br />- BOTTOM_LEFT <br />- BOTTOM_RIGHT<br />- CENTER<br /><br />Y por ejemplo en un posible archivo de configuración, nombrar uno de estos posibles estados para el punto de control.<br /><br />Luego desde el código para hacer los cálculos, solo necesitamos conocer las dimensiones de la imagen (w y h) y realizar las restas correspondientes.<br /><br />Ahora bien, asignar un punto de control que no sea alguno de los nombrados, no encuentro que sea adecuado, ya que solo es un punto de referencia para dibujar la imagen, nada más.<br /><br />Pero ojo!, no confundir con los puntos llamados <span style="font-weight: bold">hot spot</span>, que harán referencia a ciertos puntos de la imagen que son sensibles a colisiones. Es decir, si queremos manejar colisiones, el asunto de los puntos de control no cae aquí. <br /><br />Normalmente en un archivo de configuración para el sprite definiremos ciertas áreas (boxes) que son sensibles a colisiones con otros objetos, y dependiendo de la complejidad del juego, pueden ser varias.<br /><br />Una claro ejemplo, es un juego de pelea, no todo el objeto o imagen (del personaje) puede recibir una colisión, sino que solo ciertas partes, los brazos o los puños del personaje, las piernas o los pies, la cabeza, etc. Frecuentemente para estos casos es mejor construir un sencillo editor de zonas de colisión para una imagen y guardarlas en un archivo de texto, ya sea plano o con un formato propio. Después desde el código del juego, almacenaríamos en una lista o vector todas las <span style="font-weight: bold">collision boxes</span>, para luego en caso de colisión con algún objeto, ver cual de ella realmente colisionó y realizar la acción que corresponda.<br /><br />En fin, creo que el asunto de las colisiones no era el tema, pero quise tocarlo ya que a veces la gente confunde estos conceptos.<br /><br />Saludos!<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=8">rcaf</a> — Dom Ago 26, 2007 4:07 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rcaf]]></name></author>
+<updated>2007-08-26T03:39:50+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=501#p501</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=501#p501"/>
+<title type="html"><![CDATA[Re: Puntos de control]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=501#p501"><![CDATA[
+<blockquote><div><cite>blito83 escribió:</cite><br />Hola a todos! tengo una duda general sobre los puntos de control. <br />Cuando usaba DIV para mis juegos recuerdo que habia un editor que te dejaba poner los puntos de control donde querias... Pero ahora que pretendo deshacerme de DIV/Fenix me entra la duda de como organizar los puntos de control... <br />Estos puntos no se almacenarian en un archivo grafico normal no ? (jpeg, png etc), entoces tengo que asociar un nuevo fichero a cada grafico jpg?<br /></div></blockquote><br /><br />Esa información no se almacena en los archivos de imágenes tradicionales como jpg, png, etc.<br /><br />Una posibilidad es crear un archivo por separado, que contendrá la información necesaria para dibujar el sprite. Por ejemplo la imagen asociada (la ruta para encontrar el archivo de imagen), posición inicial, velocidad inicial, punto de control, etc., etc.<br /><br />Por defecto digamos que el punto de control es la esquina superior izquierda, ya que normalmente las APIs Gráficas toman este punto como referencia para calcular donde se debe dibujar la imagen, y si no es así, como en el caso de OpenGL, se puede cambiar. Por lo tanto sea cual sea el punto de referencia que definas, al momento de renderizar o dibujar la imagen en pantalla deberás trasladar dicho punto de control a la esquina superior izquierda. <br /><br />La posición del punto de control la puedes almacenar en un campo adicional de tu estructura o clase que maneje sprites, y al momento de dibujarla, tendrás que calcular la posición de la esquina superior izquierda de tu sprite, que simplemente consiste en un par de restas para cada componente (x e y).<br /><br />Por ejemplo supongamos que <span style="font-weight: bold">(x,y)</span> hace referencia al esquina superior izquierda del sprite, y <span style="font-weight: bold">(cx, cy)</span> es un punto definido que hace referencia al centro del sprite (nuestro punto de control).<br /><br />Ahora supongamos que cuando cambies la posición del sprite, solo harás referencia al punto de control <span style="font-weight: bold">(cx, cy)</span>, por lo tanto es a este punto que tendrás que sumarle o restarle unos cuantos pixeles para lograr mover el sprite.<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>// Mueve el sprite en diagonal hacia abajo de la pantalla, 2 pixeles<br />cx = cx + 2;<br />cy = cy + 2;<br /></code></dd></dl><br /><br />Cuando tengas que dibujar el sprite en pantalla deberás calcular la posición de la esquina superior, con una sencilla operación:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>// w, h son las dimensiones del sprite. w:ancho, h:alto<br />x = cx - w/2;<br />y = cy - h /2;<br /><br />// función ficticia que dibujaría el sprite en pantalla<br />dibujar_sprite&#40;x, y&#41;; <br /></code></dd></dl><br /><br /><blockquote><div><cite>blito83 escribió:</cite><br />Hay algun programa de dibujo de sprites que te ayude en esto?? <br /><br />estoy del todo equivocado? <br />Un saludo y gracias<br /></div></blockquote><br /><br />Normalmente estas son herramientas que crea el programador para generar los archivos de configuración del sprite. Ahora no podría decirte cual puedes usar, porque no conozco ninguna. Pero no es complicado construirla. De hecho, es más sencillo generar manualmente un archivo de texto plano con estos datos y luego desde el videojuego cargarlo, leerlo y asignarle los valores correspondientes leídos, a los campos de tu estructura o clase que maneje sprites.<br /><br />Los puntos de controles típicos hacen referencia a le esquina superior izquierda o el centro de la imagen. Aunque dependiendo de lo que deseas realizar podrían estar en las otras esquinas.<br /><br />Espero que te haya quedado mas claro este asunto.<br /><br />Saludos!<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=8">rcaf</a> — Dom Ago 26, 2007 3:39 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[hugoruscitti]]></name></author>
+<updated>2007-08-26T03:32:29+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=500#p500</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=500#p500"/>
+<title type="html"><![CDATA[Puntos de control]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=500#p500"><![CDATA[
+Saludos, hace unos años atrás yo también utilizaba DIV Games Studio y<br />el tema de los puntos de control resultaba de mucha utilidad.<br /><br />Lamentablemente no tenemos algo similar ni en SDL ni en Pygame. Los <br />formatos de imagenes como PNG o JPEG tampoco almacenan información como<br />puntos de control.<br /><br />Pero espera, puedes lograr exactamente el mismo efecto alterando un <br />poco tus funciones para imprimir gráficos, solo necesitarás almacenar<br />la información de los puntos de control en algún sitio.<br /><br />Por ejemplo, imagina que cuento con una imagen de tamaño 150x150:<br /><br /><img src="http://www.losersjuegos.com.ar/incoming/descargas/20070826/punto_de_conrtol.png" alt="Imagen" /><br /><br />y quisiera imprimirla en la posición (160, 200) utilizando un punto<br />de control (también llamado &quot;eje&quot; o &quot;centro&quot;) situado enn la posición <br />(50, 140).<br /><br />Si escribiera esto en Python utilizando pygame sería algo así:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>punto_de_control_x = 50<br />punto_de_control_y = 140<br />x_destino = 160<br />y_destino = 200<br /><br />x = x_destino - punto_de_control_x<br />y = y_destino - punto_de_control_y<br />screen.blit&#40;imagen, &#40;x, y&#41;&#41;<br /></code></dd></dl><br /><br />es decir, deberías desplazar el punto de impresión final en base a la<br />coordenada de control que quieras asignar.<br /><br />Nota que tienes toda la libertad de representar ese punto de control<br />como quieras. Podrías guardar esto en el mismo código del juego, en otro<br />archivo, en el mismo nombre del archivo [1], calcular el valor en base a<br />alguna cuenta o directamente utilizar el mismo punto de control para <br />todos los personajes del juego.<br /><br />En lenguaje C podemos hacer algo similar, solo que el &quot;desplazamiento&quot; <br />de la coordenada final lo haríamos sobre una variable de tipo SDL_Rect:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>SDL_Rect dst = &#123;160, 200, 0, 0&#125;; <br />SDL_Surface * image = SDL_LoadBMP&#40;&quot;shaolin.bmp&quot;&#41;;<br />int punto_de_control_x = 50;<br />int punto_de_control_y = 140;<br /><br />/* desplazamiento del punto de control */<br />dst.x = dst.x - punto_de_control_x;<br />dst.y = dst.y - punto_de_control_y;<br /><br />SDL_BlitSurface&#40;imagen, NULL, screen, &amp;dst&#41;;<br /></code></dd></dl><br /><br />No probé si este último programa funciona, pero la idea es similar a la <br />del programa anterior. Para utilizar puntos de control solo tienes que <br />&quot;desplazar&quot; la coordenada destino de impresión. <br /><br />Bueno amigo, luego comentanos si te ha resultado.<br /><br />Mucha suerte.<br /><br />[1] - por ejemplo &quot;shaolin_50_140.png&quot; indica que la imagen tiene asignado<br />el punto de control (50, 140).<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=3">hugoruscitti</a> — Dom Ago 26, 2007 3:32 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[blito83]]></name></author>
+<updated>2007-08-25T15:45:08+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=499#p499</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=499#p499"/>
+<title type="html"><![CDATA[Puntos de control]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=146&amp;p=499#p499"><![CDATA[
+Hola a todos! tengo una duda general sobre los puntos de control. <br />Cuando usaba DIV para mis juegos recuerdo que habia un editor que te dejaba poner los puntos de control donde querias... Pero ahora que pretendo deshacerme de DIV/Fenix me entra la duda de como organizar los puntos de control... <br />Estos puntos no se almacenarian en un archivo grafico normal no ? (jpeg, png etc), entoces tengo que asociar un nuevo fichero a cada grafico jpg? <br /><br />Hay algun programa de dibujo de sprites que te ayude en esto?? <br /><br />estoy del todo equivocado? <br />Un saludo y gracias<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1090">blito83</a> — Sab Ago 25, 2007 3:45 pm</p><hr />
+]]></content>
+</entry>
+</feed>

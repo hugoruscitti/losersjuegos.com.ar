@@ -1,0 +1,476 @@
+====== Tweener, movimientos mas realistas para tus juegos ======
+
+===== Créditos =====
+
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 4 de Abril del 2010
+
+===== Resumen =====
+
+
+Veremos una manera sencilla de crear movimientos realistas en nuestros juegos,
+logrando efectos como aceleración, simulando elasticidad y rebotes.
+
+Vamos a utilizar las bibliotecas [[http://code.google.com/p/tweener/|Tweener]] y pygame.
+
+Por último analizaremos en pocas palabras otras estrategias para lograr
+los mismos efectos usando bibliotecas como rabbyt y cocos.
+
+
+===== Ejemplos =====
+
+
+Este artículo incluye varios ejemplos, te recomiendo que
+los descargues y los tengas a mano para seguir la lectura:
+
+  * {{:referencia:articulos:interpolaciones:download:ejemplos.tar.gz|}}
+
+===== Idea general =====
+
+
+En los videojuegos cuando queremos representar movimientos, tendemos que
+simularlos, porque desde el primer momento las posiciones de los objetos
+dependen de una simple asignación de valor a una variable.
+
+Por ejemplo, un automóvil puede estar situado en una posición determinada
+del escenario:
+
+<code python>
+auto.x = 100
+</code>
+
+Si quisiéramos moverlo hacia la derecha, digamos, a la posición 500, el
+resultado en pantalla sería bastante brusco:
+
+
+<code python>
+auto.x = 500
+</code>
+
+{{:referencia:articulos:interpolaciones:image:auto_100_500.png|}}
+
+
+Por ese motivo, para simular algo mas parecido a la realidad, el automóvil
+tendría que moverse paso a paso para llegar de la posición 100 a la 500,
+por ejemplo dando saltos de unos 10 pixeles:
+
+<code python>
+personaje.x = 110
+personaje.x = 120
+personaje.x = 130
+personaje.x = 140
+
+[...]
+
+personaje.x = 480
+personaje.x = 490
+personaje.x = 500
+</code>
+
+
+
+Ahora bien, esta solución es la que generalmente se suele aplicar en
+muchos juegos. Porque resulta muy simple tomar una variable e incrementar su
+valor con sentencias como ''posicion_x += 10'' o similares.
+
+Pero puede que tu videojuego requiera algo mas complicado que lo
+anterior, imagina que tu automóvil puede frenar poco a poco, o acelerar
+de manera brusca para ganar una carrera donde hay muchos otros objetos
+moviéndose...
+
+Entonces, en un escenario diferente la solución inicial y mas sencilla
+puede que te resulte difícil de controlar, reutilizar y mejorar.
+
+
+
+===== Valores intermedios, usando interpolaciones =====
+
+
+
+Las interpolaciones son funciones matemáticas que tienen como objetivo
+obtener todos los valores intermedios entre dos números.
+
+En los videojuegos las posiciones de los personajes, así como su rotación,
+color o tamaño se representan mediante números, aquí es donde le daremos
+utilidad a las interpolaciones.
+
+La propuesta de este artículo es que te puedas despreocupar por manipular
+una a una las interpolaciones. Y en su lugar, buscaremos una forma distinta
+de logar movimientos desde el código.
+
+Este es un ejemplo de código que esperaríamos ver mas adelante:
+    
+<code python>
+auto.mover(interpolacion(desde=0, hasta=500, tiempo=2))
+</code>
+
+
+
+{{:referencia:articulos:interpolaciones:image:interpolacion.png|}}
+
+
+Si, con una sola linea de código podremos iniciar un movimiento y
+despreocuparnos por detalles...
+
+
+===== Propuesta: Usemos una biblioteca =====
+
+
+
+La solución que aquí veremos consiste en la siguiente idea: en lugar
+asignarle un valor fijo a nuestras coordenadas, usaremos una biblioteca
+para solicitarle que asigne un valor de manera progresiva, por ejemplo
+desde ''x=100'' hasta ''x=500'' pasando por todos los valores intermedios.
+
+En general, no es buena idea escribir una y otra vez las mismas rutinas de
+código para tu juegos. Hoy existen porciones de código muy bien diseñado que
+te conviene re-utilizar, como la biblioteca que utilizaremos aquí:
+[[http://code.google.com/p/tweener/|Tweener]].
+
+
+===== ¿Que es tweener? =====
+
+
+Tweener es una biblioteca que nos permite realizar interpolaciones
+de manera sencilla para aplicar a casi cualquier parte de un juego.
+
+Es muy popular entre los desarrolladores de ActionScript y Flash.
+Principalmente porque les permite lograr transformaciones
+de objetos de manera sencilla, despreocupándose por detalles y
+gestión de tiempo.
+
+Por suerte Tweener no es exclusiva del mundo Flash, dado que
+//Benjamin Harling// ha realizado una versión alternativa de esta
+biblioteca para python, llamada **PyTweener**.
+
+
+===== Instalación de la biblioteca =====
+
+
+PyTweener es un módulo de python que se puede obtener de la siguiente
+web:
+
+  * [[http://code.google.com/p/tweener]]
+
+Lo único que necesitas es descargar el archivo .py que contiene PyTweener
+y copiarlo al mismo directorio de tu programa.
+
+Una vez copiado el archivo a tu directorio de aplicación
+podrás escribir una sentencia como la siguiente:
+
+<code python>
+import pytweener
+</code>
+
+
+y podrás acceder a la funcionalidad de [[http://code.google.com/p/tweener/|Tweener]].
+
+
+===== Cómo utilizar la biblioteca =====
+
+
+
+En tu juego seguramente tienes una porción de código que se ejecuta
+el principio del programa y otra sección destinada al bucle de juego.
+
+Para utilizar pytweener tienes que modificar ligeramente esas
+dos partes del juego.
+
+Estos son los pasos a seguir para integrar [[http://code.google.com/p/tweener/|Tweener]]:
+
+  * crear un objeto que administrará todas las interpolaciones.
+  * actualizarlo frecuentemente desde el bucle del juego.
+
+Veamos el primer paso, cuando tu juego comience tienes
+que iniciar el objeto [[http://code.google.com/p/tweener/|Tweener]]:
+
+<code python>
+import pytweener
+
+tweener = pytweener.Tweener()
+</code>
+
+
+Ahora, la instancia del objeto llamada ''tweener'' contendrá todas
+las interpolaciones. Este objeto tiene que ser accesible desde
+cualquier parte del programa que quiera calcular interpolaciones, por
+lo tanto es común que se utilice una variable global para él.
+
+
+===== Crear una interpolación =====
+
+
+Para crear una interpolación le tienes que indicar al objeto [[http://code.google.com/p/tweener/|Tweener]]
+el tipo de interpolación quieres y sobre que otro objeto debe aplicarla.
+
+El método que te permite crear la interpolación es ''addTween'', observa
+el siguiente ejemplo:
+
+<code python>
+auto.x = 0
+tweener.addTween(auto, x=100, tweenTime=5)
+</code>
+
+Mediante la última sentencia [[http://code.google.com/p/tweener/|Tweener]] va a cambiar el valor de ''x'' (la
+posición del automóvil) progresivamente desde 0 a 100 en el transcurso
+de 5 segundos.
+
+El primer argumento del método indica el objeto que buscamos
+manipular, el segundo es el atributo que modificaremos y el último es
+la cantidad de tiempo que durará el movimiento.
+
+Este primer ejemplo es muy simple, pero mas adelante veremos que este
+mismo método se puede utilizar para interpolaciones mucho mas complejas.
+
+===== Dando vida a las interpolaciones =====
+
+
+Lo último que necesitamos para que [[http://code.google.com/p/tweener/|Tweener]] pueda mover nuestros
+objetos es integrarlo al bucle de juego.
+
+En una parte interna al bucle de juego tienes que llamar al método
+''update'' e indicarle el tiempo transcurrido desde la última
+actualización, por ejemplo:
+
+<code python>
+while True:
+
+    dt = clock.tick(100)
+    tweener.update(dt / 1000.0)
+
+    [...]
+</code>
+
+
+En el código anterior tienes algo parecido a un bucle de
+juego en pygame, la sentencia ''clock.tick(100)'' le indica a pygame
+que ejecute el juego como máximo a 100 cuadros por segundo. Y la linea
+que sigue le permite a [[http://code.google.com/p/tweener/|Tweener]] actualizar la posición de todos
+los objetos.
+
+El argumento que se utiliza en ''update'' se divide por 1000.0 para
+que siempre que especifiques una interpolación, la unidad de tiempo
+se exprese en segundos. Por ejemplo, si solicitas una interpolación con
+''tweenTime=20'', el movimiento durará 20 segundos.
+
+
+===== Un ejemplo, 3 automóviles =====
+
+
+
+Veamos un ejemplo sencillo utilizando la biblioteca pygame; te recomiendo
+que descargues el ejemplo y ejecutes el programa ''test_pygame.py'':
+
+    python test_con_sprite.py
+
+El resultado en pantalla es un escenario con tres automóviles, que se
+desplazan de la parte izquierda a la derecha, cada uno de estos
+automóviles tardará 5 segundos en llegar de un lado a otro:
+
+
+{{:referencia:articulos:interpolaciones:image:autos.png|}}
+
+
+
+===== Ejemplo interactivo, mover con clicks =====
+
+
+Otro programa sencillo que se incluye en los ejemplos te permite desplazar
+una bomba por la pantalla realizando clicks con el mouse.
+
+
+{{:referencia:articulos:interpolaciones:image:bomba.png|}}
+
+===== No solo movimientos =====
+
+
+Ten en cuenta que en realidad [[http://code.google.com/p/tweener/|Tweener]] solamente conoce de interpolaciones
+sobre atributos o funciones. Pero en realidad, para nuestros juegos esto
+no solo representa movimientos. Las variables pueden indicar cualquier
+cosa dentro de un juego.
+
+Por ejemplo, mediante una variable podríamos indicar el tamaño de nuestro
+personaje o logotipo. Si le decimos a [[http://code.google.com/p/tweener/|Tweener]] que modifique esa variable
+obtendríamos un efecto de aumento de tamaño.
+
+Cito un ejemplo, si descargas los programas adjuntos observarás uno llamado
+''bomba_animada.py''. Este programa muestra una bomba de caricatura que
+aumenta de tamaño en pocos segundos:
+
+    python bomba_animada.py
+
+
+===== Uso avanzado de Tweener =====
+
+
+
+Inicialmente vimos el método ''addTween''. Este método es un poco especial,
+porque podemos llamarlo utilizando una cantidad variable de argumentos.
+
+Para nuestro primer ejemplo alcanzaba con utilizar 3 argumentos: el objeto
+a modificar, el atributo y el tiempo para realizar el movimiento.
+
+Para sacarle el mayor provecho a [[http://code.google.com/p/tweener/|Tweener]] existen muchos argumentos
+opcionales para utilizar.
+
+Veamos la declaración del método:
+
+<code python>
+tweener.addTween(object, atributo_a_modificar=valor_final, [tweenTime, tweenType, onCompleteFunction, onUpdateFunction, tweenDelay]
+</code>
+
+El primer argumento y el segundo son obligatorios, el resto son opcionales y
+si no los especificamos tomarán valores por defecto:
+
+  * tweenTime - indica el tiempo que debe durar la interpolación.
+  * onUpdateFunction - función que se llamará cuando termine la interpolación.
+  * onUpdateFunction - función que se llamará cada vez que Tweener actualiza.
+  * tweenDelay - lo que espera antes de iniciar la interpolación.
+  * tweenType - tipo de interpolación a realizar (lineal, con aceleración, etc...)
+
+
+El argumento ''tweenDelay'' resulta útil para encadenar movimientos. Por
+ejemplo, si queremos que un objeto se mueva a la derecha y luego hacia arriba
+escribiríamos:
+
+<code python>
+tweener.addTween(object, derecha=400, tweenTime=10)
+tweener.addTween(object, arriba=100, tweenDelay=10, tweenTime=5)
+</code>
+
+Es decir, el movimiento hacia arriba se iniciará luego de que transcurran 10
+segundos (lo que se necesita esperar a que llegue a la derecha).
+
+
+Pero a mi entender, uno de los mas interesantes es el argumento ''tweenType'',
+porque te permite alterar la forma en que [[http://code.google.com/p/tweener/|Tweener]] alcanza el valor
+solicitado.
+
+Existen diferentes funciones de interpolación, la mas común es la
+interpolación lineal, que avanza paso a paso a la misma velocidad, pero no es
+la única, hay muchas funciones interesantes para probar.
+
+Esta es una lista de las interpolaciones mas destacadas:
+
+  * Lineal
+  * Back
+  * Bounce
+  * Circ
+  * Cubic
+  * Elastic
+  * Quad
+  * Quart
+  * Quint
+  * Sine
+  * Expo
+  * Strong
+
+
+
+y para indicarle a [[http://code.google.com/p/tweener/|Tweener]] un tipo de interpolación diferente tienes
+que utilizar el argumento ''tweenType'' como se ve a continuación:
+
+<code python>
+tweener.addTween(sprite, x=200, tweenType=pytweener.Easing.Elastic.easeOut)
+tweener.addTween(sprite, y=200, tweenType=pytweener.Easing.Bounce.easeInOut)
+tweener.addTween(sprite, alpha=255, tweenType=pytweener.Easing.Lineal.easeNone)
+</code>
+
+
+Si quieres experimentar y comparar los diferentes tipos de interpolaciones
+puedes visitar la siguiente web:
+
+  * [[http://www.robertpenner.com/easing/easing_demo.html]]
+
+
+===== Anexo: Otras ideas similares =====
+
+
+Las interpolaciones se pueden lograr de muchas maneras, aquí hemos
+visto una breve reseña de **tweener**, pero hay alternativas...
+
+Actualmente hay bibliotecas y motores de juego que comienzan
+a incorporar las interpolaciones para los programadores de juegos
+logremos mejores resultados en menor tiempo.
+
+Veamos alguna de estas alternativas.
+
+==== Rabbyt ====
+
+
+
+Existe una biblioteca llamada **rabbyt**, que se puede utilizar junto
+al lenguaje de programación python y alguna biblioteca multimedia
+como pygame o pyglet.
+
+En Rabbyt, si queremos hacer que un objeto llamado ''ruleta'' realice
+un movimiento tendríamos que escribir:
+
+<code python>
+ruleta.rot = rabbyt.lerp(0.0, 360.0, dt=10.0)
+</code>
+
+la función ''lerp'' viene de ''lineal interpolation'', por lo tanto
+logrará que el objeto de un giro completo de 360 grados en unos 10
+segundos pero siempre a la misma velocidad.
+
+Lo interesante de rabbyt, es que permite hacer animaciones rápidamente,
+no solo por la simplicidad de la sintaxis, sino también porque todos
+sus cálculos internos están codificados en el lenguaje de programación
+C, lo que la hace muy rápida.
+
+
+==== Cocos2D ====
+
+
+
+Otro ejemplo es la biblioteca Cocos2D, una excelente biblioteca que se
+ha construido sobre pyglet para añadirle mucha mas funcionalidad.
+
+Cocos2D te permite realizar interpolaciones, pero no directamente, sino
+a través de acciones. Las acciones son cambios de estado que hacen
+los sprites (o actores) en el juego.
+
+
+Veamos un ejemplo: imagina que quieres hacer que un personaje dé una
+vuelta completa de 360 grados, luego se desplace a la derecha unos
+200 pixeles y luego de una vuelta completa pero hacia el otro lado.
+
+En cocos2D tendrías que escribir algo como lo siguiente:
+
+<code python>
+girar = actions.RotateBy(360, 3)                   # en 3 segundos
+moverse = actions.MoveBy(200, 5)                   # en 5 segundos
+girar_al_reves = - girar
+
+sprite.do(girar + moverse + girar_al_reves)
+</code>
+
+
+Si, como puedes ver, cocos2D tiene una estrategia muy prolija y novedosa.
+Cada acción es un objeto, y es independiente del personaje que puede
+realizarlas.
+
+Si queremos que un personaje haga algo, simplemente tenemos que llamar
+a su método "do" indicándole las acciones a realizar. Si le enviamos
+muchas acciones unidas con "+" entonces las acciones se encadenan
+en el tiempo (primero + luego + por_ultimo).
+
+En cambio, si queremos hacer dos cosas al mismo tiempo, como girar un
+objeto mientras se mueve, podríamos usar el caracter "pipe":
+
+<code python>
+sprite.do(girar | moverse)               # dos acciones simultaneas
+</code>
+
+
+===== Conclusión =====
+
+
+
+Las interpolaciones aplicadas a los juegos son una buena idea, produce
+resultados muy realistas y es divertido codificarlas conociendo
+algunas de las herramientas comentadas.
+
+Espero que este artículo te resulte de utilidad para el desarrollo
+de tus juegos y que te anime a sugerir ideas a la comunidad.

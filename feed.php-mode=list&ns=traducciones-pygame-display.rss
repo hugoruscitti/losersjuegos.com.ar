@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:display</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-21T12:17:13+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/display/info?rev=1230641761&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/display/info?rev=1230641761&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-30T15:56:01+04:00</dc:date>
+        <title>Info</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/display/info?rev=1230641761&amp;do=diff</link>
+        <description>Genera un objeto de información sobre el dispositivo de video.
+
+
+pygame.display.Info(): return VideoInfo
+
+
+
+
+Genera un objeto simple que contiene varios atributos para describir
+el entorno gráfico actual. Si es generado antes de llamar a
+pygame.displat.set_mode() algunas plataformas pueden otorgar información
+acerca del modo de video por defecto. También se puede llamar después
+de definir el modo de video para verificar que opciones de video
+específicas se han cumplido. El objeto VideoInfo…</description>
+    </item>
+</rdf:RDF>

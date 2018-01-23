@@ -1,0 +1,49 @@
+====== I Robot ? ======
+
+I robot? es un juego de baile donde el jugador debe seguir una secuencia
+de movimientos con el //mouse//.
+
+Nuestra protagonista es una chica que vive en un mundo dominado por los
+robots, y la única forma de que no la descubran es infiltrarse en un grupo
+de baile. Tu misión es ayudarla a seguir la coreografía, si fallas te descubrirán...
+
+El juego se ha desarrollado en una sola semana, para la competencia 
+[[http://www.pyweek.org|pyweek]]. Puede
+ver una página con el [[http://www.pyweek.org/e/losersjuegos/|detalle de nuestra participación]]
+en el sitio de la competencia.
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:irobotgame:capturas:*}} 
+
+
+
+===== Descargas =====
+
+El sitio oficial de descargas para este juego está almacenado en googlecode:
+
+  * [[http://code.google.com/p/irobotgame/downloads/list|visitar la zona de descargas]]
+
+Si utiliza subversion también podrá acceder a nuestro repositorio mediante el comando:
+
+<code>
+svn checkout http://irobotgame.googlecode.com/svn/trunk/ irobotgame
+</code>
+
+===== Licencia =====
+
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl3]]).
+
+
+
+===== Algunas referencias =====
+
+  * [[http://www.pyweek.org/e/losersjuegos/|Entrada en la competencia.]]
+  * [[http://www.loosersjuegos.com.ar/foro/viewtopic.php?p=1053|Inicio de la competencia e ideas iniciales anunciadas en el foro.]]
+  * [[http://www.losersjuegos.com.ar/foro/viewtopic.php?t=301|Conclusion del resultado en el foro.]]
+
+
+{{tag>juegos python pyglet cocos2d}}

@@ -1,0 +1,250 @@
+====== sndarray ======
+
+/*
+pygame module for accessing sound sample data
+*/
+
+Módulo de pygame para acceder a muestras de sonido.
+
+<box 90%>
+  * [[:traducciones:pygame:sndarray#array]]
+  * [[:traducciones:pygame:sndarray#make_sound]]
+  * [[:traducciones:pygame:sndarray#use_arraytype]]
+  * [[:traducciones:pygame:sndarray#get_arraytype]]
+  * [[:traducciones:pygame:sndarray#get_arraytypes]]
+</box>
+
+/*
+Functions to convert between Numeric or numpy arrays and Sound
+objects. This module will only be available when pygame can use the
+external numpy or Numeric package.
+*/
+
+Contiene funciones para convertir desde objetos de sonido a vectores
+de Numeric o numpy. Este módulo estará disponible solo cuando
+pygame pueda utilizar los paquetes Numeric o numpy.
+
+/*
+Sound data is made of thousands of samples per second, and each sample
+is the amplitude of the wave at a particular moment in time. For
+example, in 22-kHz format, element number 5 of the array is the
+amplitude of the wave after 5/22000 seconds.
+*/
+
+Los datos de sonido se componen de miles de muestras por segundo, y
+cada muestra es la amplitud de la onda en un momento particular
+del tiempo. Por ejemplo, en el formato 22-kHz, el elemento número
+5 del vector es la amplitud de onda luego de 5/22000 segundos.
+
+
+/*
+Each sample is an 8-bit or 16-bit integer, depending on the data format.
+A stereo sound file has two values per sample, while a mono sound file
+only has one.
+*/
+
+Cada muestra es un número de 8 o 16 bits, dependiendo del formato. Un
+archivo de sonido estéreo tiene dos valores por muestra, mientras
+que un archivo de sonido mono tiene solo uno.
+
+/*
+Supported array systems are
+*/
+
+Los sistemas de vector soportados son:
+
+/*
+  * numeric
+  * numpy
+*/
+
+  * numeric
+  * numpy
+
+/*
+The default will be Numeric, if installed. Otherwise, numpy will be set
+as default if installed. If neither Numeric nor numpy are installed, the
+module will raise an ImportError.
+*/
+
+Por defecto se elije Numeric, si está instalado. En otro caso, se
+usará numpy (si está instalado). Si ninguno de los dos está instalado, el
+módulo notificará una excepción //ImportError//.
+
+/*
+The array type to use can be changed at runtime using the use_arraytype()
+method, which requires one of the above types as string.
+*/
+
+El sistema de vector se puede cambiar en tiempo de ejecución usando
+el método ''use_arraytype()'', que requiere uno los sistemas especificados
+mas arriba como cadena.
+
+/*
+Note: numpy and Numeric are not completely compatible. Certain array
+manipulations, which work for one type, might behave differently or even
+completely break for the other.
+*/
+
+Nota: numpy y Numeric no son completamente compatibles. Algunas
+manipulaciones de vectores pueden funcionar en un sistema, pero tener
+un comportamiento diferente o incluso no funcionar en otro.
+
+/*
+Additionally, in contrast to Numeric numpy can use unsigned 16-bit
+integers. Sounds with 16-bit data will be treated as unsigned integers,
+if the sound sample type requests this. Numeric instead always uses
+signed integers for the representation, which is important to keep in
+mind, if you use the module's functions and wonder about the values.
+*/
+
+Además, a diferencia de Numeric, numpy puede usar enteros sin signo
+de 16 bits. Si la muestra representa dados de 16 bits los sonidos con
+datos de 16 bits se tratarán como números sin signo. En cambio, Numeric
+siempre utilizará enteros con signo para la representación, es importante
+tener esto en mente, ya que usted puede estar utilizando funciones
+del módulo y sorprenderse por los valores.
+
+===== array =====
+
+/*
+copy Sound samples into an array
+*/
+
+Copia muestras de sonido en un vector.
+
+<code python>
+pygame.sndarray.array(Sound): return array
+</code>
+
+/*
+Creates a new array for the sound data and copies the samples. The array
+will always be in the format returned from pygame.mixer.get_init().
+*/
+
+Genera un nuevo vector para los datos de sonido y copia las muestras. El
+vector siempre tendrá el mismo formato retornado por 
+''pygame.mixer.get_init()''
+
+===== make_sound =====
+
+/*
+convert an array into a Sound object
+*/
+
+Convierte un vector en un objeto Sound.
+
+<code python>
+pygame.sndarray.make_sound(array): return Sound
+</code>
+
+/*
+Create a new playable Sound object from an array. The mixer module must
+be initialized and the array format must be similar to the mixer audio
+format.
+*/
+
+Genera un nuevo objeto Sound reproducible desde un vector. Se debe
+inicializar el módulo mixer y el formato del vector debe ser similar
+al formato de audio de mixer.
+
+===== use_arraytype =====
+
+/*
+Sets the array system to be used for sound arrays
+*/
+
+Define el sistema de vector que se debe utilizar para los vectores
+de sonido.
+
+<code python>
+pygame.sndarray.use_arraytype (arraytype): return None
+</code>
+
+/*
+Uses the requested array type for the module functions.
+Currently supported array types are:
+*/
+
+Utiliza el sistema de vector solicitado para las funciones
+del módulo. Actualmente los sistemas soportados son:
+
+
+/*
+  * numeric 
+  * numpy
+*/
+
+  * numeric 
+  * numpy
+
+/*
+If the requested type is not available, a ValueError will be raised.
+*/
+
+Se notificará la excepción //ValueError// si no está disponible el
+sistema solicitado.
+
+/*
+New in pygame 1.8.
+*/
+
+Esta funcionalidad es nueva en pygame 1.8
+
+===== get_arraytype =====
+
+/*
+Gets the currently active array type.
+*/
+
+Obtiene el sistema de vector disponible.
+
+<code python>
+pygame.sndarray.get_arraytype (): return str
+</code>
+
+/*
+Returns the currently active array type. This will be a value of the
+get_arraytypes() tuple and indicates which type of array module is used
+for the array creation.
+*/
+
+Retorna el sistema de vector actualmente activo. Este será un valor
+de la tupla de ''get_arraytypes()'' e indica que sistema de vector
+se está utilizando para la creación de vectores.
+
+/*
+New in pygame 1.8
+*/
+
+Esta funcionalidad es nueva en pygame 1.8
+
+===== get_arraytypes =====
+
+/*
+Gets the array system types currently supported.
+*/
+
+Obtiene los sistemas de vector actualmente soportados.
+
+<code python>
+pygame.sndarray.get_arraytypes (): return tuple
+</code>
+
+/*
+Checks, which array systems are available and returns them as a tuple of
+strings. The values of the tuple can be used directly in the
+pygame.sndarray.use_arraytype () method. If no supported array system
+could be found, None will be returned.
+*/
+
+Verifica que sistemas de vector están disponibles y los retorna
+como una tupla de cadenas. Los valores de la tupla se pueden usar
+directamente en la función ''pygame.sndarray.use_arraytype()''. Se
+retornará ''None'' si no se encuentra un sistema de vector soportado.
+
+/*
+New in pygame 1.8.
+*/
+
+Esta funcionalidad es nueva en pygame 1.8

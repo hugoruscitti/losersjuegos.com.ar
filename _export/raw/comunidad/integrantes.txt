@@ -1,0 +1,48 @@
+====== Integrantes ======
+
+Losersjuegos es un proyecto de comunidad, conformado por varias personas interesadas
+en el desarollo de videojuegos. Está página muestra a los principales colaboradores
+del sitio y como contactarlos:
+
+
+===== Acceso a las páginas personales =====
+
+
+/* Favor de respetar el orden de llegada, los usuarios mas nuevos pueden agregar
+   su nombre al final de la lista */
+
+
+/* No hay ningún orden preestablecido, por ahora quedará así pero luego
+veremos implementar un criterio alfabético supongo ... */
+
+  * [[comunidad:integrantes:hugoruscitti]]
+  * [[comunidad:integrantes:waltervelazquez]]
+  * [[comunidad:integrantes:carlos_gabriel_valentin]]
+  * [[comunidad:integrantes:rcaf]]
+  * [[comunidad:integrantes:yeshua|Edwin Yeshua Rodas]]
+  * [[comunidad:integrantes:pramirez138|Pablo Ramirez]]
+  * [[comunidad:integrantes:joseluri]]
+  * [[comunidad:integrantes:jenriquez]]
+  * [[comunidad:integrantes:necrozard]]
+  * [[comunidad:integrantes:endaramiz|David Ramírez]]
+  * [[comunidad:integrantes:joksnet|Juan Manuel Martinez]]
+  * [[comunidad:integrantes:javier|Felipe Javier]]
+  * [[comunidad:integrantes:velasquez|Carlos Velasquez]]
+  * [[comunidad:integrantes:carlitosm555|Carlos Moreno]]
+  * [[comunidad:integrantes:shellman|William Del Valle]]
+  * [[comunidad:integrantes:lacabra25|Jesús Hernández Gormaz]]
+  * [[comunidad:integrantes:rafahack95|Rafael Álvarez]]
+  * [[comunidad:integrantes:ArteDark|Luis Jordán]]
+  * [[comunidad:integrantes:jorge_araya_navarro|Jorge Araya Navarro]]
+
+
+/*
+
+
+===== Mapa de ubicación =====
+
+<html>
+<iframe style='border: 1px solid black;' width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;s=AARTsJrW0G61FhPmfcDOS-5oywYLf42PFg&amp;msa=0&amp;msid=100782103439917143396.000448ebf1bfed25857df&amp;ll=3.162456,-48.515625&amp;spn=104.451773,149.414063&amp;z=2&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=100782103439917143396.000448ebf1bfed25857df&amp;ll=3.162456,-48.515625&amp;spn=104.451773,149.414063&amp;z=2&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</html>
+
+*/

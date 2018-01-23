@@ -1,0 +1,17 @@
+====== Contáctenos ======
+
+Desde este formulario podrá hacernos llegar directamente su
+consulta o sugerencia.
+
+Tenga en cuenta que el mensaje se enviará directamente 
+por email a uno
+de los integrantes del equipo (generalmente
+a [[comunidad:integrantes:hugoruscitti]]), por favor
+asegúrese de colocar correctamente su dirección de
+correo así podremos responderle.
+
+{{contact>}} 
+
+:!: Si su consulta es técnica, tal vez le resulte mas conveniente visitar
+nuestro [[:foro]], ahí encontrará a muchas personas con conocimientos técnicos
+dispuestas a ayudarle.

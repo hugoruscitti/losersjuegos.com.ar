@@ -1,0 +1,573 @@
+====== surfarray ======
+
+/*
+pygame module for accessing surface pixel data using array interfaces
+*/
+
+Módulo de pygame para acceder a los pixels de una superficie
+usando una matriz como interfaz.
+
+<box 90%>
+  * [[:traducciones:pygame:surfarray:#array2d]]
+  * [[:traducciones:pygame:surfarray:#pixels2d]]
+  * [[:traducciones:pygame:surfarray:#array3d]]
+  * [[:traducciones:pygame:surfarray:#pixels3d]]
+  * [[:traducciones:pygame:surfarray:#array_alpha]]
+  * [[:traducciones:pygame:surfarray:#pixels_alpha]]
+  * [[:traducciones:pygame:surfarray:#array_colorkey]]
+  * [[:traducciones:pygame:surfarray:#make_surface]]
+  * [[:traducciones:pygame:surfarray:#blit_array]]
+  * [[:traducciones:pygame:surfarray:#map_array]]
+  * [[:traducciones:pygame:surfarray:#use_arraytype]]
+  * [[:traducciones:pygame:surfarray:#get_arraytype]]
+  * [[:traducciones:pygame:surfarray:#get_arraytypes]]
+</box>
+
+/*
+Functions to convert pixel data between pygame Surfaces and arrays. This
+module will only be functional when pygame can use the external Numpy or
+Numeric packages.
+*/
+
+Funciones para convertir datos de pixel entre matrices y superficies
+de pygame. Este módulo solo funcionará cuando pygame puede tener
+acceso a los paquetes externos Numpy o Numeric.
+
+/*
+Every pixel is stored as a single integer value to represent the red,
+green, and blue colors. The 8bit images use a value that looks into a
+colormap. Pixels with higher depth use a bit packing process to place
+three or four values into a single number.
+*/
+
+Cada pixel se almacena como un único valor entero para representar
+los colores rojo, verde y azul. Las imágenes de 8 bits usan un
+valor de referencia a una paleta de colores. Los pixels que pueden
+representar mas colores usan un proceso de empaquetamiento de bits
+para agrupar tres o cuatro valores en un único número.
+
+/*
+The arrays are indexed by the X axis first, followed by the Y
+axis. Arrays that treat the pixels as a single integer are referred to
+as 2D arrays. This module can also separate the red, green, and blue
+color values into separate indices. These types of arrays are referred
+to as 3D arrays, and the last index is 0 for red, 1 for green, and 2 for
+blue.
+*/
+
+
+La matriz se organiza primero por su eje ''X'' y luego su eje
+''Y''. Las Matrices que tratan a los pixels como números empaquetados
+se definen como Matrices de dos dimensiones. Este módulo también
+puede separar las componentes de color en mas dimensiones; estos
+tipos de matrices se definen como matrices de tres dimensiones, donde
+el último indice indica con 0 el componente rojo, con 1 el componente
+verde y con 2 el azul.
+
+
+/*
+Supported array systems are
+*/
+
+Los sistemas de matriz que se utilizan son:
+
+/*
+  * numeric
+  * numpy
+*/
+
+  * numeric
+  * numpy
+
+/*
+The default will be Numeric, if installed. Otherwise, numpy will be set
+as default if installed. If neither Numeric nor numpy are installed, the
+module will raise an ImportError.
+*/
+
+Por defecto se utilizará ''Numeric'', siempre y cuando esté instalado. En
+otro caso se usará ''numpy'' si está instalado. Se lanzará la
+excepción ''ImportError'' si ninguno de los dos paquetes
+está instalado.
+
+/*
+The array type to use can be changed at runtime using the use_arraytype ()
+method, which requires one of the above types as string.
+*/
+
+El sistema que se utilizará se puede cambiar en tiempo de
+ejecución usando el método ''use_arraytype()'', que necesita
+como argumento el sistema de matriz a utilizar.
+
+
+
+
+/*
+Note: numpy and Numeric are not completely compatible. Certain array
+manipulations, which work for one type, might behave differently or even
+completely break for the other.
+*/
+
+Nota: numpy y Numeric no son completamente compatibles. Algunas manipulaciones de vectores pueden funcionar en un sistema, pero tener un comportamiento diferente o incluso no funcionar en otro.
+
+/*
+Additionally, in contrast to Numeric numpy does use unsigned 16-bit
+integers. Images with 16-bit data will be treated as unsigned
+integers. Numeric instead uses signed integers for the representation,
+which is important to keep in mind, if you use the module's functions
+and wonder about the values.
+*/
+
+Además, a diferencia de Numeric, numpy puede usar enteros sin signo de 16 bits. Las imágenes con datos de 16 bits se tratarán como números sin signo. En cambio, Numeric siempre utilizará enteros con signo para la representación, es importante tener esto en mente, ya que usted puede estar utilizando funciones del módulo y sorprenderse por los valores.
+
+
+/*
+The support of numpy is new in pygame 1.8.
+*/
+
+El soporte para ''numpy'' es nuevo en pygame 1.8
+
+===== array2d =====
+
+/*
+Copy pixels into a 2d array
+*/
+
+Copia los pixels en una matriz de dos dimensiones.
+
+
+<code python>
+pygame.surfarray.array2d(Surface): return array
+</code>
+
+/*
+Copy the pixels from a Surface into a 2D array. The bit depth of the
+surface will control the size of the integer values, and will work for
+any type of pixel format.
+*/
+
+Copia los pixels desde una superficie a una matriz de dos
+dimensiones. La profundidad de colores de la superficie controlará
+el tamaño de los valores enteros, y funcionará para
+cualquier tipo de formato de pixel.
+
+/*
+This function will temporarily lock the Surface as pixels are copied
+(see the Surface.lock - lock the Surface memory for pixel access
+method).
+*/
+
+Esta función bloqueará temporalmente la superficie (vea la función
+''Surface.lock'' para mas detalles).
+
+
+===== pixels2d =====
+
+/*
+Reference pixels into a 2d array
+*/
+
+Genera una referencia a los pixels en una matriz de dos dimensiones.
+
+
+<code python>
+pygame.surfarray.pixels2d(Surface): return array
+</code>
+
+/*
+Create a new 2D array that directly references the pixel values in a
+Surface. Any changes to the array will affect the pixels in the
+Surface. This is a fast operation since no data is copied.
+*/
+
+Genera una nueva matriz de dos dimensiones que referencia directamente
+a los valores de pixels en una superficie. Cualquier cambio
+en la matriz afectará a los pixels de la superficie. Esta es una
+operación rápida ya que no se duplican los datos.
+
+/*
+Pixels from a 24-bit Surface cannot be referenced, but all other Surface
+bit depths can.
+*/
+
+No se pueden crear matrices de referencia para superficies
+de 24 bits, pero si de cualquier otro tipo de superficies.
+
+/*
+The Surface this references will remain locked for the lifetime of the
+array (see the Surface.lock - lock the Surface memory for pixel access
+method).
+*/
+
+La superficie a la que se hace referencia permanecerá bloqueada mientras
+dure la vida del objeto matriz (vea el método ''Surface.lock'' para
+mas detalles).
+
+===== array3d =====
+
+/*
+Copy pixels into a 3d array
+*/
+
+Copia los pixels en una matriz de tres dimensiones.
+
+<code python>
+pygame.surfarray.array3d(Surface): return array
+</code>
+
+/*
+Copy the pixels from a Surface into a 3D array. The bit depth of the
+surface will control the size of the integer values, and will work for
+any type of pixel format.
+*/
+
+Copia los pixels desde una superficie a una matriz de tres
+dimensiones. La profundidad de colores de la superficie controlará
+el tamaño de los valores enteros, y funcionará para
+cualquier tipo de formato de pixel.
+
+/*
+This function will temporarily lock the Surface as pixels are copied
+(see the Surface.lock - lock the Surface memory for pixel access
+method).
+*/
+
+Esta función bloqueará temporalmente la superficie (vea la función
+''Surface.lock'' para mas detalles).
+
+===== pixels3d =====
+
+/*
+Reference pixels into a 3d array
+*/
+
+Genera una referencia a los pixels en una matriz de tres dimensiones.
+
+<code python>
+pygame.surfarray.pixels3d(Surface): return array
+</code>
+
+/*
+Create a new 3D array that directly references the pixel values in a
+Surface. Any changes to the array will affect the pixels in the
+Surface. This is a fast operation since no data is copied.
+*/
+
+Genera una nueva matriz de tres dimensiones que referencia directamente
+a los valores de pixels en una superficie. Cualquier cambio
+en la matriz afectará a los pixels de la superficie. Esta es una
+operación rápida ya que no se duplican los datos.
+
+/*
+This will only work on Surfaces that have 24-bit or 32-bit
+formats. Lower pixel formats cannot be referenced.
+*/
+
+Esta operación solo funciona en superficies que tienen formatos
+de 24 o 32 bits. No se puede crear referencias a formatos
+de pixel mas bajos.
+
+/*
+The Surface this references will remain locked for the lifetime of the
+array (see the Surface.lock - lock the Surface memory for pixel access
+method).
+*/
+
+La superficie a la que se hace referencia permanecerá bloqueada mientras
+dure la vida del objeto matriz (vea el método ''Surface.lock'' para
+mas detalles).
+
+===== array_alpha =====
+
+/*
+Copy pixel alphas into a 2d array
+*/
+
+Copia los valores alphas a una matriz de dos dimensiones.
+
+
+
+<code python>
+pygame.surfarray.array_alpha(Surface): return array
+</code>
+
+/*
+Copy the pixel alpha values (degree of transparency) from a Surface into
+a 2D array. This will work for any type of Surface format. Surfaces
+without a pixel alpha will return an array with all opaque values.
+*/
+
+Copia los valores alpha de los pixel (el grado de transparencia) desde
+una superficie a una matriz de dos dimensiones. Esta operación funcionará
+para cualquier formato de superficie. Las superficies
+que no tienen valores alpha retornarán una matriz con todos
+los valores opacos.
+
+/*
+This function will temporarily lock the Surface as pixels are copied
+(see the Surface.lock - lock the Surface memory for pixel access
+method).
+*/
+
+Esta función bloqueará temporalmente la superficie (vea la función
+''Surface.lock'' para mas detalles).
+
+
+===== pixels_alpha =====
+
+/*
+Reference pixel alphas into a 2d array
+*/
+
+Genera una referencia a los pixels alpha en una matriz de dos dimensiones.
+
+<code python>
+pygame.surfarray.pixels_alpha(Surface): return array
+</code>
+
+/*
+Create a new 2D array that directly references the alpha values (degree
+of transparency) in a Surface. Any changes to the array will affect the
+pixels in the Surface. This is a fast operation since no data is copied.
+*/
+
+Genera una nueva matriz de dos dimensiones que referencia directamente
+a los valores alpha de una superficie. Cualquier cambio
+en la matriz afectará a los pixels de la superficie. Esta es una
+operación rápida ya que no se duplican los datos.
+
+/*
+This can only work on 32-bit Surfaces with a per-pixel alpha value.
+*/
+
+Solo puede funcionar en superficies de 32 bits con valores alpha
+por cada pixel.
+
+/*
+The Surface this array references will remain locked for the lifetime of
+the array.
+*/
+
+La superficie a la que se hace referencia permanecerá bloqueada mientras
+dure la vida del objeto matriz (vea el método ''Surface.lock'' para
+mas detalles).
+
+
+===== array_colorkey =====
+
+/*
+Copy the colorkey values into a 2d array
+*/
+
+Copia los valores clave de una superficie en una matriz de dos dimensiones.
+
+<code python>
+pygame.surfarray.array_colorkey(Surface): return array
+</code>
+
+
+/*
+Create a new array with the colorkey transparency value from each
+pixel. If the pixel matches the colorkey it will be fully tranparent;
+otherwise it will be fully opaque.
+*/
+
+Genera una nueva matriz con los valores de transparencia por color
+clave de cada pixel. El pixel será completamente transparente
+si coincide con el valor del color clave; en caso contrario el
+pixel será completamente opaco.
+
+
+
+/*
+This will work on any type of Surface format. If the image has no
+colorkey a solid opaque array will be returned.
+*/
+
+Esta operación funcionará sobre cualquier tupo de formato de superficie. Si
+la imagen no tiene color calve se retornará una matriz completamente
+sólida.
+
+/*
+This function will temporarily lock the Surface as pixels are copied.
+*/
+
+Esta función bloqueará temporalmente la superficie.
+
+===== make_surface =====
+
+/*
+Copy an array to a new surface
+*/
+
+Convierte una matriz en una nueva superficie.
+
+<code python>
+pygame.surfarray.make_surface(array): return Surface
+</code>
+
+/*
+Create a new Surface that best resembles the data and format on the
+array. The array can be 2D or 3D with any sized integer values.
+*/
+
+Genera una nueva superficie que coincide con los datos y el
+formato en la matriz. La matriz puede ser de dos o tres dimensiones
+con cualquier cantidad de valores enteros.
+
+===== blit_array =====
+
+/*
+Blit directly from a array values
+*/
+
+Dibuja directamente sobre los valores de una matriz.
+
+
+<code python>
+pygame.surfarray.blit_array(Surface, array): return None
+</code>
+
+/*
+Directly copy values from an array into a Surface. This is faster than
+converting the array into a Surface and blitting. The array must be the
+same dimensions as the Surface and will completely replace all pixel
+values.
+*/
+
+Copia valores directamente desde una matriz sobre una superficie. Esta
+operación es mas rápida que convertir la matriz en una superficie
+y luego imprimirla. La matriz debe tener las mismas dimensiones
+que la superficie y la operación reemplazará complemente todos los
+valores de los pixels.
+
+/*
+This function will temporarily lock the Surface as the new values are
+copied.
+*/
+
+Esta función bloqueará temporalmente la superficie como los nuevos
+valores que se copian.
+
+===== map_array =====
+
+/*
+Map a 3d array into a 2d array
+*/
+
+Convierte una matriz de tres dimensiones a una matriz de dos dimensiones.
+
+<code python>
+pygame.surfarray.map_array(Surface, array3d): return array2d
+</code>
+
+/*
+Convert a 3D array into a 2D array. This will use the given Surface
+format to control the conversion. Palette surface formats are not
+supported.
+*/
+
+Convierte una matriz de tres dimensiones en una matriz de dos dimensiones. Esta
+función usará el formato de la superficie dada para controlar
+la conversión. Los formatos de superficie basados en una paleta no
+están soportados.
+
+===== use_arraytype =====
+
+/*
+Sets the array system to be used for surface arrays
+*/
+
+Define el sistema de matriz que se usará para matrices de superficie.
+
+<code python>
+pygame.surfarray.use_arraytype (arraytype): return None
+</code>
+
+/*
+Uses the requested array type for the module functions.
+Currently supported array types are:
+*/
+
+Usa el tipo de matriz indicado para el resto de las funciones
+del módulo. Los tipos de matriz disponibles son:
+
+/*
+  * numeric 
+  * numpy
+*/
+
+  * numeric 
+  * numpy
+
+/*
+If the requested type is not available, a ValueError will be raised.
+*/
+
+Se lanzará una excepción ''ValueError'' si el tipo de matriz solicitado
+no está disponible.
+
+/*
+New in pygame 1.8.
+*/
+
+Esta función es nueva a partir de pygame 1.8
+
+===== get_arraytype =====
+
+/*
+Gets the currently active array type.
+*/
+
+Obtiene el tipo de matriz utilizado actualmente.
+
+<code python>
+pygame.surfarray.get_arraytype (): return str
+</code>
+
+/*
+Returns the currently active array type. This will be a value of the
+get_arraytypes() tuple and indicates which type of array module is used
+for the array creation.
+*/
+
+Retorna el tipo de matriz que que se utiliza actualmente. Este
+valor será uno de los que forman parte de la tupla que
+devuelve ''get_arraytypes()'' e indica que sistema de matriz
+que se usará para la creación de matrices.
+
+/*
+New in pygame 1.8
+*/
+
+Esta función es nueva en pygame 1.8
+
+===== get_arraytypes =====
+
+/*
+Gets the array system types currently supported.
+*/
+
+Obtiene los sistema de matriz actualmente soportadas.
+
+<code python>
+pygame.surfarray.get_arraytypes (): return tuple
+</code>
+
+/*
+Checks, which array systems are available and returns them as a tuple of
+strings. The values of the tuple can be used directly in the
+pygame.surfarray.use_arraytype () method. If no supported array system could
+be found, None will be returned.
+*/
+
+Consulta que tipo de sistemas de vector están disponibles y los
+retorna como una tupla de cadenas de caracteres. Los valores de la
+tupla se pueden usar directamente en el método
+''pygame.surfarray.use_arraytype()''. Si no hay sistema de matriz
+disponible se podría obtener ''None'' como retorno.
+
+/*
+New in pygame 1.8*/
+
+Esta función es nueva en pygame 1.8.

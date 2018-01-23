@@ -1,0 +1,72 @@
+====== RenderUpdates ======
+
+/*
+Group class that tracks dirty updates
+*/
+
+Clase de grupo que utiliza el procedimiento 'dirty rectangles'.
+
+<box 90%>
+  * [[:traducciones:pygame:sprite#RenderUpdates]]
+  * [[:traducciones:pygame:sprite#draw]]
+</box>
+
+===== RenderUpdates =====
+
+
+<code python>
+pygame.sprite.RenderUpdates(*sprites): return RenderUpdates
+</code>
+
+
+/*
+This class is derived from pygame.sprite.Group(). It has an extended draw()
+method that tracks the changed areas of the screen.
+*/
+
+Esta clase deriva desde ''pygame.sprite.Group()''. Tiene un
+método ''draw()'' extendido para guardar las áreas modificadas
+de la pantalla.
+
+
+
+===== draw =====
+
+/*
+blit the Sprite images and track changed areas
+*/
+
+Dibuja las imágenes de objetos Sprite y guarda información de
+las áreas modificadas.
+
+<code python>
+RenderUpdates.draw(surface): return Rect_list
+</code>
+
+
+/*
+Draws all the Sprites to the surface, the same as Group.draw(). This method
+also returns a list of Rectangular areas on the screen that have been
+changed. The returned changes include areas of the screen that have been
+affected by previous Group.clear() calls.
+*/
+
+Dibuja todos los objetos Sprite en la superficie, al igual que 
+''Group.draw()''. Aunque este método retorna una lista de áreas rectangulares
+de la pantalla que han sido modificadas. Los cambios devueltos incluyen
+áreas de la pantalla que han sido afectadas por llamadas previas a
+''Group.clear''
+
+
+
+/*
+The returned Rect list should be passed to pygame.display.update(). This
+will help performance on software driven display modes. This type of updating
+is usually only helpful on destinations with non-animating backgrounds*/
+
+La lista de objetos Rect devuelta se podría utilizar para llamar
+a ''pygame.display.update''. Esto ayudará a mejorar el rendimiento del
+programa en modos de video gestionados por software. Este tipo
+de actualización solamente es útil en pantallas sin fondos animados.
+
+

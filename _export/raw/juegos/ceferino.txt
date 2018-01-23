@@ -1,0 +1,43 @@
+====== Don Ceferino Hazaña ======
+
+
+Don Ceferino Hazaña es un gaucho de Argentina que debe rescatar a su vaca de los extraterrestres. Al mejor estilo super pang, en este juego lo mas importante es la destreza del jugador.
+
+
+{{gallery>juegos:ceferino:capturas:*}}
+
+
+A continuación encontrará varias versiones de este juego para descargar. Tenga en cuenta que muchos usuarios nos ayudaron a adaptarlo (léase "port") otros sistemas como Gentoo y Amiga. Por ese motivo le recomendamos realizar una [[http://www.google.com|búsqueda]] de Ceferino en la web.
+
+
+
+
+
+
+
+
+
+===== Descargas versión estable =====
+
+{{filelist>juegos:ceferino:descargas:*}}
+
+
+===== Repositorio para desarrolladores =====
+
+Nuestro repositorio está alojado en google.code, visite la
+[[http://code.google.com/p/donceferino/|sección del programa]] para obtener mas detalles o
+directamente obtenga la última versión mediante SVN:
+
+<code>
+svn checkout http://donceferino.googlecode.com/svn/trunk/ ceferino
+</code>
+
+===== Licencia =====
+
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+
+{{tag>juegos SDL}}

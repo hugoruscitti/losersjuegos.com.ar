@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos comunidad</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:11:32+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/consejos?rev=1227901217&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/contactenos?rev=1201744978&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/difundir?rev=1239647763&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/ejemplos?rev=1232393092&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes?rev=1236456275&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-12-28T13:47:28+04:00</dc:date>
+        <title>Como participar</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff</link>
+        <description>Esta sección esta dedicada a todas las personas interesadas
+en participar junto a nosotros en el proyecto
+Losersjuegos.
+
+Note que existen muchas formas de participar, aquí solo hemos
+reunido las mas frecuentes para que pueda darse una idea. Si
+encuentra necesario realizar
+sugerencias sobre este documento recuerde que siempre podrá utilizar
+la sección Contáctenos y ayudar a mejorarlo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/consejos?rev=1227901217&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-11-28T22:40:17+04:00</dc:date>
+        <title>Consejos para redactores</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/consejos?rev=1227901217&amp;do=diff</link>
+        <description>Sentirse a gusto editando el sitio es primordial, le dará energía y experimentará
+mayor satisfacción de logro.
+
+Esta sección reúne consejos y recomendaciones para maximizar esa experiencia.
+
+Edita, aprende utilizando
+
+
+Si tienes dudas sobre como editar el sitio te invitamos a modificar
+la página de pruebas, ahí podrás observar
+los elementos de sintaxis mas comunes y las pruebas de otros usuarios.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/contactenos?rev=1201744978&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-01-31T05:02:58+04:00</dc:date>
+        <title>Contáctenos</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/contactenos?rev=1201744978&amp;do=diff</link>
+        <description>Desde este formulario podrá hacernos llegar directamente su
+consulta o sugerencia.
+
+Tenga en cuenta que el mensaje se enviará directamente 
+por email a uno
+de los integrantes del equipo (generalmente
+a Hugo Ruscitti), por favor
+asegúrese de colocar correctamente su dirección de
+correo así podremos responderle.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/difundir?rev=1239647763&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-04-13T22:36:03+04:00</dc:date>
+        <title>Difundir</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/difundir?rev=1239647763&amp;do=diff</link>
+        <description>El proyecto LosersJuegos crece de manera colaborativa, gracias a la participación y comentarios
+de muchas personas. Una forma de ayudar en el proyecto consiste en difundir y plublicitar la
+existencia del sitio web y los juegos.
+
+En esta sección encontrará algunas facilidades para dar a conocer el proyecto a otras personas.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/ejemplos?rev=1232393092&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-19T22:24:52+04:00</dc:date>
+        <title>Sintaxis del wiki mediante ejemplos</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/ejemplos?rev=1232393092&amp;do=diff</link>
+        <description>Esta página muestra el resultado visual de varios elementos
+del wiki. Le recomendamos pulsar el botón ver código
+o editar página para conocer la sintaxis que utilizamos
+aquí.
+
+Secciones de un documento
+
+
+Para clasificar el contenido de las páginas use alguno de los 5 niveles de
+titulares:</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes?rev=1236456275&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-07T23:04:35+04:00</dc:date>
+        <title>Integrantes</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes?rev=1236456275&amp;do=diff</link>
+        <description>Losersjuegos es un proyecto de comunidad, conformado por varias personas interesadas
+en el desarollo de videojuegos. Está página muestra a los principales colaboradores
+del sitio y como contactarlos:
+
+Acceso a las páginas personales
+
+
+
+
+
+
+
+	*  Hugo Ruscitti
+	*  waltervelazquez
+	*  carlos_gabriel_valentin
+	*  rcaf
+	*  Edwin Yeshua Rodas
+	*  Pablo Ramirez
+	*  joseluri
+	*  jenriquez
+	*  necrozard
+	*  David Ramírez
+	*  Juan Manuel Martinez
+	*  Felipe Javier
+	*  Carlos Velasquez
+	*  Carlos Moreno…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-04-28T03:21:16+04:00</dc:date>
+        <title>To Do, cosas para hacer</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff</link>
+        <description>Aquí encontrará una lista de todas las tareas que tenemos planificado realizar. El objetivo
+de la lista es poner por escrito todas las actividades que no debemos olvidar, y
+que pronto se realizarán.
+
+Desarrollo
+
+Foro de mensajes
+&lt;http://www.testlosersjuegos.com.ar/foro&gt;
+Paginas por completar
+
+
+Hay una serie de secciones que aún debemos completar, cada elemento
+representa una pequeña tarea; y las más complejas tienen el nombre
+de quien las está realizado a la derecha.</description>
+    </item>
+</rdf:RDF>

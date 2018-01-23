@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:movie:movie</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:57+0300" />
+<meta name="keywords" content="traducciones,pygame,movie,movie" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/movie/movie-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-movie.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="movie.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/movie/movie.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#movie" class="toc">Movie</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#movie1" class="toc">Movie</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#play" class="toc">play</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#stop" class="toc">stop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#pause" class="toc">pause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#skip" class="toc">skip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#rewind" class="toc">rewind</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#render_frame" class="toc">render_frame</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_frame" class="toc">get_frame</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_time" class="toc">get_time</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_busy" class="toc">get_busy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_length" class="toc">get_length</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_size" class="toc">get_size</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#has_video" class="toc">has_video</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#has_audio" class="toc">has_audio</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_volume" class="toc">set_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_display" class="toc">set_display</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="movie" id="movie">Movie</a></h1>
+<div class="level1">
+
+<p>
+
+load an mpeg movie file
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#movie" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">Movie</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#play" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">play</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#stop" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">stop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#pause" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">pause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#skip" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">skip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#rewind" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">rewind</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#render_frame" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">render_frame</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_frame" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">get_frame</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_time" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">get_time</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_busy" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">get_busy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_length" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">get_length</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_size" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">get_size</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#has_video" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">has_video</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#has_audio" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">has_audio</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_volume" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">set_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_display" title="traducciones:pygame:movie:movie &crarr;" class="wikilink1">set_display</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Movie" [1-347] -->
+<h2><a name="movie1" id="movie1">Movie</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">movie</span>.<span class="me1">Movie</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>: <span class="kw1">return</span> Movie
+pygame.<span class="me1">movie</span>.<span class="me1">Movie</span><span class="br0">&#40;</span><span class="kw2">object</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Movie</pre>
+<p>
+Load a new <acronym title="Motion Picture Experts Group">MPEG</acronym> movie stream from a file or a python file object. The Movie
+object operates similar to the Sound objects from pygame.mixer.
+</p>
+
+<p>
+Movie objects have a target display Surface. The movie is rendered into this
+Surface in a background thread. If the target Surface is the display Surface,
+the movie will try to use the hardware accelerated video overlay. The default
+target is the display Surface.
+</p>
+
+</div>
+<!-- SECTION "Movie" [348-880] -->
+<h2><a name="play" id="play">play</a></h2>
+<div class="level2">
+
+<p>
+
+start playback of a movie
+</p>
+<pre class="code">
+Movie.play(loops=0): return None
+</pre>
+
+<p>
+
+Starts playback of the movie. Sound and video will begin playing if they
+are not disabled. The optional loops argument controls how many times
+the movie will be repeated. A loop value of -1 means the movie will repeat
+forever.
+</p>
+
+</div>
+<!-- SECTION "play" [881-1205] -->
+<h2><a name="stop" id="stop">stop</a></h2>
+<div class="level2">
+
+<p>
+
+stop movie playback
+</p>
+<pre class="code">
+Movie.stop(): return None
+</pre>
+
+<p>
+
+Stops the playback of a movie. The video and audio playback will be stopped
+at their current position.
+</p>
+
+</div>
+<!-- SECTION "stop" [1206-1392] -->
+<h2><a name="pause" id="pause">pause</a></h2>
+<div class="level2">
+
+<p>
+
+temporarily stop and resume playback
+</p>
+<pre class="code">
+Movie.pause(): return None
+</pre>
+
+<p>
+
+This will temporarily stop or restart movie playback.
+</p>
+
+</div>
+<!-- SECTION "pause" [1393-1550] -->
+<h2><a name="skip" id="skip">skip</a></h2>
+<div class="level2">
+
+<p>
+
+advance the movie playback position
+</p>
+<pre class="code">
+Movie.skip(seconds): return None
+</pre>
+
+<p>
+
+Advance the movie playback time in seconds. This can be called before the
+movie is played to set the starting playback time. This can only skip the
+movie forward, not backwards. The argument is a floating point number.
+</p>
+
+</div>
+<!-- SECTION "skip" [1551-1877] -->
+<h2><a name="rewind" id="rewind">rewind</a></h2>
+<div class="level2">
+
+<p>
+
+restart the movie playback
+</p>
+<pre class="code">
+Movie.rewind(): return None
+</pre>
+
+<p>
+
+Sets the movie playback position to the start of the movie. The movie will
+automatically begin playing even if it stopped.
+</p>
+
+<p>
+The can raise a ValueError if the movie cannot be rewound. If the rewind fails
+the movie object is considered invalid.
+</p>
+
+</div>
+<!-- SECTION "rewind" [1878-2216] -->
+<h2><a name="render_frame" id="render_frame">render_frame</a></h2>
+<div class="level2">
+
+<p>
+
+set the current video frame
+</p>
+<pre class="code">
+Movie.render_frame(frame_number): return frame_number
+</pre>
+
+<p>
+
+This takes an integer frame number to render. It attempts to render the
+given frame from the movie to the target Surface. It returns the real
+frame number that got rendered.
+</p>
+
+</div>
+<!-- SECTION "render_frame" [2217-2519] -->
+<h2><a name="get_frame" id="get_frame">get_frame</a></h2>
+<div class="level2">
+
+<p>
+
+get the current video frame
+</p>
+<pre class="code">
+Movie.get_frame(): return frame_number
+</pre>
+
+<p>
+
+Returns the integer frame number of the current video frame.
+</p>
+
+</div>
+<!-- SECTION "get_frame" [2520-2691] -->
+<h2><a name="get_time" id="get_time">get_time</a></h2>
+<div class="level2">
+
+<p>
+
+get the current vide playback time
+</p>
+<pre class="code">
+Movie.get_time(): return seconds
+</pre>
+
+<p>
+
+Return the current playback time as a floating point value in seconds.
+This method currently seems broken and always returns 0.0.
+</p>
+
+</div>
+<!-- SECTION "get_time" [2692-2932] -->
+<h2><a name="get_busy" id="get_busy">get_busy</a></h2>
+<div class="level2">
+
+<p>
+
+check if the movie is currently playing
+</p>
+<pre class="code">
+Movie.get_busy(): return bool
+</pre>
+
+<p>
+
+Returns true if the movie is currently being played.
+</p>
+
+</div>
+<!-- SECTION "get_busy" [2933-3098] -->
+<h2><a name="get_length" id="get_length">get_length</a></h2>
+<div class="level2">
+
+<p>
+
+the total length of the movie in seconds
+</p>
+<pre class="code">
+Movie.get_length(): return seconds
+</pre>
+
+<p>
+
+Returns the length of the movie in seconds as a floating point value.
+</p>
+
+</div>
+<!-- SECTION "get_length" [3099-3289] -->
+<h2><a name="get_size" id="get_size">get_size</a></h2>
+<div class="level2">
+
+<p>
+
+get the resolution of the video
+</p>
+<pre class="code">
+Movie.get_size(): return (width, height)
+</pre>
+
+<p>
+
+Gets the resolution of the movie video. The movie will be stretched to
+the size of any Surface, but this will report the natural video size.
+</p>
+
+</div>
+<!-- SECTION "get_size" [3290-3546] -->
+<h2><a name="has_video" id="has_video">has_video</a></h2>
+<div class="level2">
+
+<p>
+
+check if the movie file contains video
+</p>
+<pre class="code">
+Movie.get_video(): return bool
+</pre>
+
+<p>
+
+True when the opened movie file contains a video stream.
+</p>
+
+</div>
+<!-- SECTION "has_video" [3547-3717] -->
+<h2><a name="has_audio" id="has_audio">has_audio</a></h2>
+<div class="level2">
+
+<p>
+
+check if the movie file contains audio
+</p>
+<pre class="code">
+Movie.get_audio(): return bool
+</pre>
+
+<p>
+
+True when the opened movie file contains an audio stream.
+</p>
+
+</div>
+<!-- SECTION "has_audio" [3718-3889] -->
+<h2><a name="set_volume" id="set_volume">set_volume</a></h2>
+<div class="level2">
+
+<p>
+
+set the audio playback volume
+</p>
+<pre class="code">
+Movie.set_volume(value): return None
+</pre>
+
+<p>
+
+Set the playback volume for this movie. The argument is a value between
+0.0 and 1.0. If the volume is set to 0 the movie audio will not be decoded.
+</p>
+
+</div>
+<!-- SECTION "set_volume" [3890-4149] -->
+<h2><a name="set_display" id="set_display">set_display</a></h2>
+<div class="level2">
+
+<p>
+
+set the video target Surface
+</p>
+<pre class="code">
+Movie.set_display(Surface, rect=None): return None
+</pre>
+
+<p>
+
+Set the output target Surface for the movie video. You may also pass a rectangle
+argument for the position, which will move and stretch the video into the
+given area.
+</p>
+
+<p>
+If None is passed as the target Surface, the video decoding will be disabled.
+
+</p>
+
+</div>
+<!-- SECTION "set_display" [4150-] --></div>
+</body>
+</html>

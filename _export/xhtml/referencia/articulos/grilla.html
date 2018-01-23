@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:grilla</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T21:20:10+0300" />
+<meta name="keywords" content="referencia,articulos,grilla" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/grilla-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="grilla.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/grilla.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#grilla_de_graficos_y_animaciones_i" class="toc">Grilla de gráficos y animaciones (I)</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#imprimir_un_cuadro_en_particular" class="toc">Imprimir un cuadro en particular</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplo" class="toc">Ejemplo</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#creditos1" class="toc">Créditos</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/grilla/grilla.pdf" class="media mediafile mf_pdf" title="referencia:articulos:grilla:grilla.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="grilla_de_graficos_y_animaciones_i" id="grilla_de_graficos_y_animaciones_i">Grilla de gráficos y animaciones (I)</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Grilla de gráficos y animaciones (I)" [52-101] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 27 de Marzo del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [102-192] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+Veremos como almacenar varios cuadros de animación en un solo archivo para realizar una animación muy simple.
+</p>
+
+<p>
+Esto nos resultará de utilidad para manejar animaciones y comprender los próximos artículos.
+Creando los gráficos del personaje
+</p>
+
+<p>
+Para mostrar una animación tendremos que imprimir uno a uno varios cuadros de animación. Nos resultará de mucha utilidad almacenar cada uno de estos cuadros en un único fichero gráfico.
+</p>
+
+<p>
+En este caso utilizamos una imagen con 18 cuadros de animación.
+</p>
+
+<p>
+Nos referiremos a esta imagen como &#039;grilla&#039;, porque contiene varios rectángulos de igual tamaño con los cuadros de animación de nuestro personaje.
+
+</p>
+
+</div>
+<!-- SECTION "Introducción" [193-871] -->
+<h2><a name="imprimir_un_cuadro_en_particular" id="imprimir_un_cuadro_en_particular">Imprimir un cuadro en particular</a></h2>
+<div class="level2">
+
+<p>
+
+Para imprimir 1 de los 18 cuadros que contiene la imagen, podremos utilizar la función SDL_BlitSurface de la biblioteca SDL, procurando imprimir sólo una zona de la grilla en pantalla.
+<a href="../../../../_detail/referencia/articulos/grilla/anima_figura1.png-id=referencia-articulos-grilla.html" class="media" title="referencia:articulos:grilla:anima_figura1.png"><img src="../../../../_media/referencia/articulos/grilla/anima_figura1.png" class="mediacenter" alt="" /></a>
+La <em>figura 1</em> muestra este planteo. En memoria tenemos almacenada una grilla con todos los cuadros de animación (apuntada por ima) y en la pantalla del monitor vemos la superficie apuntada por screen.
+</p>
+
+<p>
+La función <strong>SDL_BlitSurface</strong> tiene 4 parámetros:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>SDL_Surface *scr</strong>: la superficie fuente de la impresión, para este caso será la grilla con los cuadros de animación.</div>
+</li>
+<li class="level2"><div class="li"> <strong>SDL_Rect *srcrect</strong>: el rectángulo que deseamos capturar de la superficie fuente.</div>
+</li>
+<li class="level2"><div class="li"> <strong>SDL_Surface *dst</strong>: la superficie destino de impresión, screen para este caso.</div>
+</li>
+<li class="level2"><div class="li"> <strong>SDL_Surface *dstrect</strong>: la posición destino, dentro de la superficie dst, para el gráfico capturado con srcrect.</div>
+</li>
+</ul>
+
+<p>
+
+Cada cuadro de la grilla tiene un numero de cuadro asignado:
+0, 1, 2 … hasta 17
+</p>
+
+<p>
+Para imprimir un gráfico de la grilla necesitamos conocer:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> la cantidad total de filas en la grilla: <em>2</em></div>
+</li>
+<li class="level2"><div class="li"> la cantidad total de columnas en la grilla: <em>9</em></div>
+</li>
+<li class="level2"><div class="li"> el número de cuadro a imprimir: <em>(varía con la animación)</em></div>
+</li>
+<li class="level2"><div class="li"> ancho y alto de la grilla completa: <em>tomados desde ima</em></div>
+</li>
+</ul>
+
+<p>
+
+Con estos datos podremos calcular exactamente el bloque o rectángulo que corresponde a la imagen que deseamos imprimir.
+<a href="../../../../_detail/referencia/articulos/grilla/anima_figura2.png-id=referencia-articulos-grilla.html" class="media" title="referencia:articulos:grilla:anima_figura2.png"><img src="../../../../_media/referencia/articulos/grilla/anima_figura2.png" class="mediacenter" alt="" /></a>
+La <em>figura 2</em> muestra con mayor detalle el proceso. Tendremos que calcular el rectángulo a recortar definiendo su posición &#039;x&#039; e &#039;y&#039;, además de su área &#039;w&#039; y &#039;h&#039; (ancho y alto).
+</p>
+
+<p>
+Con los datos mostrados anteriormente, podemos aplicar una fórmula para obtener los datos del rectángulo:
+</p>
+
+<p>
+componentes del rectángulo:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> w = ancho_de_la_grilla / nro_columnas</div>
+</li>
+<li class="level2"><div class="li"> h = alto_de_la_grilla / nro_filas</div>
+</li>
+<li class="level2"><div class="li"> y = (indice_grafico / nro_columnas) * h</div>
+</li>
+<li class="level2"><div class="li"> x = (indice_grafico % nro_filas) * w</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Imprimir un cuadro en particular" [872-2904] -->
+<h2><a name="ejemplo" id="ejemplo">Ejemplo</a></h2>
+<div class="level2">
+
+<p>
+
+El programa de ejemplo consiste en una animación de 14 cuadros.
+<a href="../../../../_detail/referencia/articulos/grilla/anima_ejemplo.png-id=referencia-articulos-grilla.html" class="media" title="referencia:articulos:grilla:anima_ejemplo.png"><img src="../../../../_media/referencia/articulos/grilla/anima_ejemplo.png" class="mediacenter" alt="" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/grilla/anima_grilla.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:grilla:anima_grilla.tar.gz">Descargar ejemplo</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/grilla/anima_grilla.c" class="media mediafile mf_" title="referencia:articulos:grilla:anima_grilla.c">Ver el código fuente</a></div>
+</li>
+</ul>
+
+<p>
+
+La función más importante de este ejemplo es &#039;imprimir&#039;:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> imprimir<span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>dst<span class="sy0">,</span> SDL_Surface <span class="sy0">*</span>ima<span class="sy0">,</span> <span class="kw4">int</span> cuadro<span class="sy0">,</span> <span class="kw4">int</span> fil<span class="sy0">,</span> <span class="kw4">int</span> col<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Rect srcrect;
+        SDL_Rect dstrect <span class="sy0">=</span> <span class="br0">&#123;</span><span class="nu0">100</span><span class="sy0">,</span> <span class="nu0">50</span><span class="sy0">,</span> <span class="nu19">0</span><span class="sy0">,</span> <span class="nu19">0</span><span class="br0">&#125;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cuadro <span class="sy0">&gt;</span> fil <span class="sy0">*</span> col || cuadro <span class="sy0">&lt;</span> <span class="nu19">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;error, no se puede acceder al cuadro %d<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> cuadro<span class="br0">&#41;</span>;
+                <span class="kw1">return</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        srcrect.<span class="me1">w</span> <span class="sy0">=</span> ima<span class="sy0">-&gt;</span>w <span class="sy0">/</span> col;
+        srcrect.<span class="me1">h</span> <span class="sy0">=</span> ima<span class="sy0">-&gt;</span>h <span class="sy0">/</span> fil;
+        srcrect.<span class="me1">x</span> <span class="sy0">=</span> <span class="br0">&#40;</span>cuadro <span class="sy0">%</span> col<span class="br0">&#41;</span> <span class="sy0">*</span> srcrect.<span class="me1">w</span>;
+        srcrect.<span class="me1">y</span> <span class="sy0">=</span> <span class="br0">&#40;</span>cuadro <span class="sy0">/</span> col<span class="br0">&#41;</span> <span class="sy0">*</span> srcrect.<span class="me1">h</span>;
+&nbsp;
+        <span class="coMULTI">/* se evita imprimir la linea que divide cada cuadro */</span>
+        srcrect.<span class="me1">x</span> ++;
+        srcrect.<span class="me1">y</span> ++;
+        srcrect.<span class="me1">w</span> --;
+        srcrect.<span class="me1">h</span> --;
+&nbsp;
+        SDL_BlitSurface<span class="br0">&#40;</span>ima<span class="sy0">,</span> <span class="sy0">&amp;</span>srcrect<span class="sy0">,</span> dst<span class="sy0">,</span> <span class="sy0">&amp;</span>dstrect<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre>
+</div>
+<!-- SECTION "Ejemplo" [2905-3961] -->
+<h2><a name="conclusion" id="conclusion">Conclusión:</a></h2>
+<div class="level2">
+
+<p>
+
+En un video-juego tendremos que mostrar gráficos en todo momento. Es muy importante simplificar el manejo de animaciones y estados (que veremos en el próximo artículo).
+
+</p>
+
+</div>
+<!-- SECTION "Conclusión:" [3962-4157] -->
+<h2><a name="creditos1" id="creditos1">Créditos</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la <strong>GNU Free Documentation License</strong>
+
+</p>
+
+</div>
+<!-- SECTION "Créditos" [4158-] --></div>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:draw</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:37+0300" />
+<meta name="keywords" content="traducciones,pygame,draw" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/draw-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="draw.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/draw.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#draw" class="toc">draw</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#rect" class="toc">rect</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#polygon" class="toc">polygon</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#circle" class="toc">circle</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ellipse" class="toc">ellipse</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#arc" class="toc">arc</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#line" class="toc">line</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#lines" class="toc">lines</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#aaline" class="toc">aaline</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#aalines" class="toc">aalines</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="draw" id="draw">draw</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para dibujar figuras.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p>
+<ul>
+<li class="level1"><div class="li"> <a href="#draw" title="traducciones:pygame:draw &crarr;" class="wikilink1">draw</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#rect" title="traducciones:pygame:draw &crarr;" class="wikilink1">rect</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#polygon" title="traducciones:pygame:draw &crarr;" class="wikilink1">polygon</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#circle" title="traducciones:pygame:draw &crarr;" class="wikilink1">circle</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#ellipse" title="traducciones:pygame:draw &crarr;" class="wikilink1">ellipse</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#arc" title="traducciones:pygame:draw &crarr;" class="wikilink1">arc</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#line" title="traducciones:pygame:draw &crarr;" class="wikilink1">line</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#lines" title="traducciones:pygame:draw &crarr;" class="wikilink1">lines</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#aaline" title="traducciones:pygame:draw &crarr;" class="wikilink1">aaline</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#aalines" title="traducciones:pygame:draw &crarr;" class="wikilink1">aalines</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Dibuja varias figuras simples a una superficie. Estas funciones servirán
+para pintar en cualquier formato de superficie. Aunque dibujar en superficies
+almacenadas en Hardware será mas lento que en superficies de Software.
+</p>
+
+
+
+<p>
+La mayoría de las funciones admiten un argumento <code>width</code> para representar
+el tamaño de la linea alrededor del borde de la figura. Si se pasa el parámetro
+<code>width</code> con valor 0, la función pintará la figura entera como sólida.
+</p>
+
+
+
+<p>
+Todas las funciones de dibujo respetan el área de recorte para la superficies, y se limitará a esa área. Las funciones retornan un rectángulo representando el área límite de los <em>pixels</em> modificados.
+</p>
+
+
+
+<p>
+La mayoría de las funciones aceptan un argumento <code>color</code>, que es una terna o
+tupla <a href="../../../../tags/rgb.html" class="wikilink1" title="tags:rgb">RGB</a>. Incluso aceptan una tupla de 4 elementos para
+<a href="../../../../tags/rgba.html" class="wikilink1" title="tags:rgba">RGBA</a>. El valor <code>alpha</code> (o componente de transparencia) se dibujará
+directamente en la superficie si ésta contiene la propiedad de transparencia de
+<em>pixels</em>, aunque la función de dibujo no dibujará de forma transparente. El argumento <code>color</code> también puede ser un valor de <em>pixel</em> entero que ya esté convertido al formato de <em>pixel</em> de la imagen.
+</p>
+
+
+
+<p>
+Estas funciones bloquearan temporalmente la superficie donde están operante. Así que muchas llamadas de dibujo se pueden acelerar bloqueando y desbloqueando la superficie donde se trabaja antes y después de llamar a las funciones de dibujo.
+</p>
+
+</div>
+<!-- SECTION "draw" [1-2845] -->
+<h2><a name="rect" id="rect">rect</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja una figura rectangular.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">rect</span><span class="br0">&#40;</span>Surface, color, Rect, width=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una figura rectangular sobre una superficie. El parámetro <code>Rect</code> dado es el área del rectángulo. El argumento <code>width</code> es el espesor para dibujar el borde
+exterior de la figura. Si <code>width</code> se define con valor 0 entonces el rectángulo se pintará completo.
+</p>
+
+
+
+<p>
+
+Recuerde que el método <a href="../../../../traducciones/pygame/surface.html#fill" class="wikilink1" title="traducciones:pygame:surface">Surface.fill</a> funciona igual de bien para dibujar 
+rectángulos completos. De hecho, <a href="../../../../traducciones/pygame/surface.html#fill" class="wikilink1" title="traducciones:pygame:surface">Surface.fill</a> se puede acelerar por
+medio de Hardware en algunas plataformas tanto con modos de video por Software 
+como Hardware.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.rect" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.rect">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "rect" [2846-4065] -->
+<h2><a name="polygon" id="polygon">polygon</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja una figura con cualquier número de lados.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">polygon</span><span class="br0">&#40;</span>Surface, color, pointlist, width=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una figura poligonal en una superficie. El argumento <code>pointlist</code> es
+una lista de los vértices del polígono. El argumento <code>width</code> es el espesor
+para dibujar el borde de la figura. Si <code>width</code> es 0 entonces el polígono
+se pinta por completo.
+</p>
+
+
+
+<p>
+Para lograr un polígono con bordes suaves utilice <a href="#aalines" title="traducciones:pygame:draw &crarr;" class="wikilink1">aalines</a> con el
+parámetro <code>closed</code>.
+</p>
+
+<p>
+<a href="../../../../_detail/traducciones/pygame/draw/polygon.png-id=traducciones-pygame-draw.html" class="media" title="traducciones:pygame:draw:polygon.png"><img src="../../../../_media/traducciones/pygame/draw/polygon.png" class="mediacenter" alt="" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.polygon" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.polygon">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "polygon" [4066-5032] -->
+<h2><a name="circle" id="circle">circle</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibujar un círculo alrededor de un punto.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">circle</span><span class="br0">&#40;</span>Surface, color, pos, radius, width=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una figura circular sobre una superficie. El argumento <code>pos</code> es el
+centro del círculo, y <code>radius</code> es el tamaño. El argumento <code>with</code> es el
+espesor del borde de la figura. Si <code>with</code> es 0 entonces el círculo se
+pintará por completo.
+</p>
+
+<p>
+<a href="../../../../_detail/traducciones/pygame/draw/circle.png-id=traducciones-pygame-draw.html" class="media" title="traducciones:pygame:draw:circle.png"><img src="../../../../_media/traducciones/pygame/draw/circle.png" class="mediacenter" alt="" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.circle" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.circle">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "circle" [5033-5831] -->
+<h2><a name="ellipse" id="ellipse">ellipse</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja una elipse dentro del área indicada por un rectángulo.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">ellipse</span><span class="br0">&#40;</span>Surface, color, Rect, width=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una figura elíptica en una superficie. La figura se dibujará en
+el área delimitada por el rectángulo dado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.ellipse" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.ellipse">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "ellipse" [5832-6476] -->
+<h2><a name="arc" id="arc">arc</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja una sección parcial de una elípse.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">arc</span><span class="br0">&#40;</span>Surface, color, Rect, start_angle, stop_angle, width=<span class="nu0">1</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja un arco elíptico en una superficie. La figura se dibujará en el
+área delimitada por el rectángulo. Los dos argumentos <code>angle</code> son los
+ángulos inicial y final en radianes, donde 0 representa la izquierda. El
+argumento <code>width</code> es el espesor de la linea de dibujo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.arc" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.arc">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "arc" [6477-7314] -->
+<h2><a name="line" id="line">line</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja un segmento de linea recto.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">line</span><span class="br0">&#40;</span>Surface, color, start_pos, end_pos, width=<span class="nu0">1</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja un segmento de linea recto en una superficie. No se dibujan puntas
+en los extremos de la linea, las terminaciones serán cuadradas para
+lineas muy gruesas.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.line" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.line">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "line" [7315-7866] -->
+<h2><a name="lines" id="lines">lines</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja múltiples segmentos de linea continuos.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">lines</span><span class="br0">&#40;</span>Surface, color, closed, pointlist, width=<span class="nu0">1</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una secuencia de lineas en una superficies. El argumento <code>pointlist</code>
+es una serie de puntos que se conectarán por una linea. Si el argumento
+<code>closed</code> es true se dibujará un segmento de linea adicional entre
+el primer y último punto.
+</p>
+
+
+
+<p>
+Esta función no dibuja ninguna punta o nodo. Las lineas con esquinas 
+afiladas y grosor de linea muy grande podrían mostrar las intersecciones
+de segmentos de manera inapropiada.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.lines" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.lines">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "lines" [7867-8954] -->
+<h2><a name="aaline" id="aaline">aaline</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja lineas suavizadas.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">aaline</span><span class="br0">&#40;</span>Surface, color, startpos, endpos, blend=<span class="nu0">1</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una linea suavizada en una superficie. Esta función estima el
+rectángulo afectado. Se retorna el rectángulo que representa el área 
+afectada. Si el parámetro <code>blend</code> está en valor <code>True</code>, las
+figuras se mezclarán con la tonalidad de los <em>pixels</em> existentes
+en lugar de sobre-escribirlos. Esta función acepta valores en números
+realizar para los extremos de los segmentos.
+</p>
+
+<p>
+<a href="../../../../_detail/traducciones/pygame/draw/aaline.png-id=traducciones-pygame-draw.html" class="media" title="traducciones:pygame:draw:aaline.png"><img src="../../../../_media/traducciones/pygame/draw/aaline.png" class="mediacenter" alt="" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.aaline" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.aaline">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "aaline" [8955-9992] -->
+<h2><a name="aalines" id="aalines">aalines</a></h2>
+<div class="level2">
+
+<p>
+
+Dibuja múltiples segmentos de linea continuos.
+</p>
+<pre class="code python">pygame.<span class="me1">draw</span>.<span class="me1">aalines</span><span class="br0">&#40;</span>Surface, color, closed, pointlist, blend=<span class="nu0">1</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+
+
+<p>
+Dibuja una secuencia de lineas en una superficie. Debe indicar al menos
+dos puntos en la secuencia de puntos (parámetro <code>pointlist</code>). El argumento
+<code>closed</code> es un valor booleano, si es <code>True</code> se dibujará un segmento
+de linea adicional entre el primer y último punto. Si el argumento <code>blend</code>
+se define a <code>True</code> la figura se dibujará con las tonalidades existentes
+en lugar de reemplazarlas. Esta función acepta valores en números reales
+para especificar los puntos.
+</p>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/draw/aalines.png-id=traducciones-pygame-draw.html" class="media" title="traducciones:pygame:draw:aalines.png"><img src="../../../../_media/traducciones/pygame/draw/aalines.png" class="mediacenter" alt="" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.aalines" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.draw.aalines">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "aalines" [9993-] --></div>
+</body>
+</html>

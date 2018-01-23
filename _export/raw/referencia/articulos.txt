@@ -1,0 +1,189 @@
+====== Artículos ======
+
+Aquí encontrará una serie de tutoriales breves acerca de las técnicas, 
+herramientas y bibliotecas que puede utilizar a la hora de crear
+videojuegos.
+
+<subpage instalar_sfml_en_windows|Como instalar PySFML en windows>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Agosto 2010
+</subpage>
+
+<subpage pong|Tutorial de iniciación a Pygame haciendo un Pong>
+  * **Autor:** Adrián Guerra Marrero
+  * **Fecha:** 26/07/2010
+</subpage>
+
+<subpage configurar_cb_para_compilacion_cruzada|Code::Blocks para compilar ejecutables de Windows en Linux>
+  * **Autor:** Jorge Araya Navarro 
+  * **Fecha:** 03/05/2010
+</subpage>
+
+
+<subpage bases_tecnicas_grafistas|Bases técnicas para grafistas>
+  * **Autor:** David Ramírez Reina
+  * **Fecha:** 13 de Abril del 2010
+</subpage>
+
+<subpage interpolaciones|Tweener, movimientos mas realistas para tus juegos>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 4 de Abril del 2010
+</subpage>
+
+<subpage extremeprogramming|Embracing Fun: Why Extreme Programming ...>
+  * **Autor:** Bill Schofield
+  * **Traducción por:** Dora Zárate
+</subpage>
+
+<subpage compilacion_cruzada|Compilación cruzada: Creando programas para  Windows desde GNU/Linux>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 31 de Agosto del 2006
+</subpage>
+
+<subpage moveit|Pygame: ¡Ayuda!, ¿Como muevo una imagen?>
+  * **Autor:** Pete Shinners
+  * **Traducción por:** Dora Zárate
+  * **Fecha:** Junio del 2007
+</subpage>
+
+<subpage instalar_juego|Compilar e instalar un juego desde su código fuente>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 13 de Marzo del 2005
+</subpage>
+
+<subpage instalar_sdl|Instalar las bibliotecas SDL en GNU/Linux>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 6 de Febrero de 2005
+</subpage>
+
+<subpage pygame_intro|Pygame: Introducción a Pygame de Python>
+  * **Autor:** Pete Shinners
+  * **Traducción por:** Daniela López Seco
+  * **Fecha:** 20 de Enero del 2007
+</subpage>
+
+<subpage import_and_initialize|Pygame: Importar e inicializar>
+  * **Autor:** Pete Shinners
+  * **Traducción por:** Hugo Ruscitti
+  * **Fecha:** 23 de Noviembre del 2006
+</subpage>
+
+
+<subpage fuentes_graficas|Fuentes gráficas>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 24 de Enero del 2006
+
+</subpage>
+
+
+<subpage why_sdl|¿Por que SDL?>
+  * **Autor:** Bob Pendleton
+  * **Traducción por:** Daniela López Seco
+  * **Fecha:** 4 de Octubre del 2005
+</subpage>
+
+
+<subpage conceptos_basicos|Conceptos Básicos para el Desarrollo de Videojuegos 2D>
+  * **Autor:** Roberto Albornoz Figueroa (RCAF)
+  * **Fecha:** 10 de Enero del 2007
+</subpage>
+
+<subpage como_empezar|¿Como empezar en el Desarrollo de Videojuegos?>
+  * **Autor:** Roberto Albornoz Figueroa (RCAF)
+  * **Fecha:** 2 de Octubre del 2006
+</subpage>
+
+
+<subpage make_games|¿Cómo hacer juegos?. Un camino al  desarrollo de videojuegos>
+  * **Autor:** Geoff Howland
+  * **Traducción por:** José Jorge Enríquez Rodríguez
+  * **Fecha:** 19 de Septiembre del 2006
+</subpage>
+
+<subpage particulas|Propuesta sobre partículas>
+  * **Autor:** RCAF, gskbyte y Hugo Ruscitti
+  * **Fecha:** Junio del 2007
+</subpage>
+
+
+<subpage hackers_slackers|Hackers, Slackers, and   Shackles: El Futuro del Software Libre>
+  * **Autor:** Matt Barton
+  * **Traducción por:** Daniela López Seco
+  * **Fecha:** 3 de Junio del 2006
+
+</subpage>
+
+
+<subpage plataformas|Colisión de plataformas>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 17 de Abril del 2005
+</subpage>
+
+
+<subpage bucle|Bucle principal y velocidad constante>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 9 de Marzo del 2005
+</subpage>
+
+
+<subpage grilla|Grilla de gráficos y animaciones (I)>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 27 de Marzo del 2005
+
+</subpage>
+
+
+<subpage crear_personaje|Como crear un personaje para Pocket Volleyball>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 2 de Marzo del 2006
+</subpage>
+
+
+<subpage seno_coseno|Usando seno y coseno>
+  * **Autor:** Amarillion
+  * **Traducción por:** Carlos Gabriel Valentin
+  * **Fecha:** 15 de Febrero del 2006
+</subpage>
+
+
+
+
+
+
+<subpage roundrect|Rectángulo con esquinas redondeadas>
+  * **Autor:** Fhenix, Geo y Hugo Ruscitti
+  * **Fecha:** 18 de Septiembre del 2005
+</subpage>
+
+
+
+<subpage automatas|Autómatas y animaciones (II)>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 30 de Julio del 2005
+</subpage>
+
+
+
+<subpage un_juego_paso_a_paso|Desarrollando un videojuego paso a paso con SDL>
+  * **Autor:** Hugo Ruscitti / Gabriel Valentin
+  * **Fecha:** 23 de Octubre del 2005
+</subpage>
+
+
+<subpage menu|Como crear un menú para tu juego>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 29 de Diciembre del 2007
+</subpage>
+
+
+<subpage instalar_devcpp|Como instalar Dev-C++ y SDL en Windows>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 9 de Julio del 2005
+</subpage>
+
+
+<subpage desarrollo_de_juegos_sobre_gnu|Desarrollo de juegos sobre GNU/Linux>
+  * **Autor:** Hugo Ruscitti / Gabriel Valentin
+  * **Fecha:** 14 de Mayo del 2005
+</subpage>
+

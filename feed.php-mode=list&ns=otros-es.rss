@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos otros:es</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-25T12:32:40+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/otros/es/gpl2?rev=1199133617&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/otros/es/gpl2?rev=1199133617&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2007-12-31T23:40:17+04:00</dc:date>
+        <title>Licencia Pública de GNU v2 (en español)</title>
+        <link>http://www.losersjuegos.com.ar/otros/es/gpl2?rev=1199133617&amp;do=diff</link>
+        <description>Copyright (C) 1989, 1991 Free Software Foundation, Inc. 675 Mass Ave, Cambridge, MA 02139, EEUU
+
+Se permite la copia y distribución de copias literales de este documento, pero no se permite su modificación.
+
+	&quot; Esta es la conocida GNU Public License (GPL), versión 2 (de junio de 1.991), que cubre la mayor parte del software de la Free Software Foundation, y muchos más programas. La traducción al español ha sido revisada por Richard Stallman, pero no tiene ningún valor legal, ni ha sido co…</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,477 @@
+====== Font ======
+
+/*
+create a new Font object from a file
+*/
+
+Genera un nuevo objeto Font a partir de un archivo.
+
+<box 90%>
+  * [[traducciones:pygame:font#Font]]
+  * [[traducciones:pygame:font#render]]
+  * [[traducciones:pygame:font#size]]
+  * [[traducciones:pygame:font#set_underline]]
+  * [[traducciones:pygame:font#get_underline]]
+  * [[traducciones:pygame:font#set_bold]]
+  * [[traducciones:pygame:font#get_bold]]
+  * [[traducciones:pygame:font#set_italic]]
+  * [[traducciones:pygame:font#metrics]]
+  * [[traducciones:pygame:font#get_italic]]
+  * [[traducciones:pygame:font#get_linesize]]
+  * [[traducciones:pygame:font#get_height]]
+  * [[traducciones:pygame:font#get_ascent]]
+  * [[traducciones:pygame:font#get_descent]]
+</box>
+
+
+===== Font  =====
+
+<code python>
+pygame.font.Font(filename, size): return Font
+pygame.font.Font(object, size): return Font
+</code>
+
+/*
+Load a new font from a given filename or a python file object. The size 
+is the height of the font in pixels. If the filename is None the Pygame
+default font will be loaded. If a font cannot be loaded from the arguments
+given an exception will be raised. Once the font is created the size cannot
+be changed. 
+*/
+
+Carga una fuente nueva a partir de un nombre de archivo u objeto archivo
+de python dado. El argumento ''size'' es la altura de la fuente en
+pixeles. Si el argumento ''filename'' vale ''None'', pygame cargará
+la tipografía por defecto. Se lanzará una excepción si la fuente
+indicada por los argumentos no se puede cargar. No se puede cambiar
+el tamaño de una fuente una vez creado el objeto.
+
+/*
+Font objects are mainly used to render text into new Surface objects. The
+render can emulate bold or italic features, but it is better to load from
+a font with actual italic or bold glyphs. The rendered text can be regular
+strings or unicode.
+*/
+
+Los objetos Font se usan principalmente para imprimir texto en superficies
+nuevas. La impresión puede simular características como **negrita** y //cursiva//, 
+aunque es mejor cargar fuentes que ya tengan estos atributos. El texto
+a imprimir puede ser unicode o texto normal.
+
+  * [[pythonexample>pygame.font.Font|buscar código donde se use esta función.]]
+
+
+===== render =====
+
+/*
+draw text on a new Surface
+*/
+
+Imprime texto en una nueva superficie.
+
+<code python>
+Font.render(text, antialias, color, background=None): return Surface
+</code>
+
+/*
+This creates a new Surface with the specified text rendered on it.
+Pygame provides no way to directly draw text on an existing Surface:
+instead you must use Font.render() to create an image (Surface) of
+the text, then blit this image onto another Surface.
+*/
+
+Genera una nueva superficie con el texto especificado dentro de
+ella. Pygame no provee una manera directa de imprimir texto en
+una superficie existente: en lugar de eso debe usar esta función
+para crear una imagen del texto y luego volcar esta imagen en
+la otra superficie.
+
+
+
+/*
+The text can only be a single line: newline characters are not rendered.
+The antialias argument is a boolean: if true the characters will have
+smooth edges. The color argument is the color of the text
+[e.g.: (0,0,255) for blue]. The optional
+background argument is a color to use for the text background. If no
+background is passed the area outside the text will be transparent.
+*/
+
+El texto solamente puede ser de una linea: Los caracteres que indican
+salto de linea no se imprimen. El argumento ''antialias'' es un valor
+booleano: si vale ''True'' los caracteres tendrán bordes suaves. El argumento
+''color'' es el color del texto, por ejemplo puede usar (0, 0, 255)
+para definir el color azul. El argumento opcional ''background'' es el
+color para utilizar de fondo. Si no se especifica un fondo, el área
+fuera del texto será transparente.
+
+/*
+The Surface returned will be of the dimensions required to hold the text.
+(the same as those returned by Font.size()).
+If an empty string is passed for the text, a blank surface will be returned
+that is one pixel wide and the height of the font.
+*/
+
+La superficie retornada será del tamaño necesario para alojar el texto (el
+tamaño lo retorna la función ''Font.size()''). Si se envía una cadena
+vacía en lugar de texto, se retornará una superficie negra que tendrá
+un //pixel// de ancho y la altura de la fuente.
+
+/*
+Depending on the type of background and antialiasing used, this returns
+different types of Surfaces. For performance reasons, it is good to know what
+type of image will be used. If antialiasing is not used, the return image will
+always be an 8bit image with a two color palette. If the background is
+transparent a colorkey will be set. Antialiased images are rendered to 24-bit
+RGB images. If the background is transparent a pixel alpha will be included.
+*/
+
+Retornará distintos tipos de superficie dependiendo del tipo de fondo y 
+suavidad (''antialias'') solicitado. Por razones de rendimiento es bueno
+conocer el tipo de imagen que se usará. Si no usa ''antialias'' se retornará
+una superficie de 8 bits con una paleta de dos colores. Si el fondo es
+transparente se usará una transparencia por color (colorkey). Las imágenes
+con ''antialias'' se generan en superficies RGB de 24 bit, y se
+incluirá un pixel //alpha// si el fondo es transparente.
+
+/*
+Optimization: if you know that the final destination for the text (on the screen)
+will always have a solid background, and the text is antialiased, you can
+improve performance by specifying the background color. This will cause
+the resulting image to maintain transparency information by colorkey
+rather than (much less efficient) alpha values.
+*/
+
+Sugerencia de optimización: Si sabe que el destino de impresión para el
+texto siempre tendrá un color uniforme, y utiliza ''antialias'', podrá
+mejorar el rendimiento especificando el color de fondo al crear
+la superficie. Esto produce una imagen que tiene información de transparencia
+por color en lugar de transparencia alpha (mucho menos eficiente).
+
+/*
+If you render '\n' a unknown char will be rendered.  Usually a rectangle.
+Instead you need to handle new lines yourself.
+*/
+
+Si usa '\n' en el texto, se pintará una letra desconocida, generalmente
+un rectángulo. En lugar de ello tendrá que manejar los saltos de linea
+usted mismo.
+
+/*
+Font rendering is not thread safe: only a single thread can render text
+any time.
+*/
+
+La operación de imprimir texto no se puede realizar simultáneamente desde
+diferentes hilos (concepto [[http://es.wikipedia.org/wiki/Thread-Safety:Thread safe]]), 
+por lo tanto solo un hilo puede imprimir texto a la vez.
+
+  * [[pythonexample>pygame.font.Font.render|buscar código donde se use esta función.]]
+
+
+===== size =====
+
+/*
+determine the amount of space needed to render text
+*/
+
+Determina la cantidad de tamaño necesario para dibujar texto.
+
+<code python>
+Font.size(text): return (width, height)
+</code>
+
+/*
+Returns the dimensions needed to render the text. This can be used to
+help determine the positioning needed for text before it is rendered.
+It can also be used for wordwrapping and other layout effects.
+*/
+
+Retorna la dimensión necesaria para dibujar el texto. Se puede usar para
+determinar la posición necesaria para el texto antes de imprimirlo. Y también
+se puede usar para separar palabras u otros efectos de posicionado.
+
+/*
+Be aware that most fonts use kerning which adjusts the widths for specific
+letter pairs. For example, the width for "ae" will not always match the width for "a" + "e".
+*/
+
+Tengan en cuenta que la mayoría de las fuentes utiliza el procedimiento
+[[http://en.wikipedia.org/wiki/Kerning|Kerning]] que ajusta el ancho de ciertos
+pares de letras. Por ejemplo, el ancho de "ae" no siempre coincidirá con el ancho
+de "a" + "b". 
+
+  * [[pythonexample>pygame.font.Font.size|buscar código donde se use esta función.]]
+
+
+===== set_underline =====
+
+/*
+control if text is rendered with an underline
+*/
+
+Controla si el texto se dibujará con un subrayado.
+
+<code python>
+Font.set_underline(bool): return None
+</code>
+
+/*
+When enabled, all rendered fonts will include an underline. The underline is
+always one pixel thick, regardless of font size. This can be mixed with
+the bold and italic modes.
+*/
+
+Cuando se habilita, todas las fuentes que se dibujen incluirán un subrayado. El
+subrayado siempre tendrá un pixel de grosor, independiente del tamaño de la
+fuente. Esto se puede combinar con los modos **negrita** y //cursiva//.
+
+
+  * [[pythonexample>pygame.font.Font.set_underline|buscar código donde se use esta función.]]
+
+===== get_underline =====
+
+/*
+check if text will be rendered with an underline
+*/
+
+Consulta si el texto se dibujará con un subrayado.
+
+<code python>
+Font.get_underline(): return bool
+</code>
+
+/*
+Return True when the font underline is enabled.
+*/
+
+Retorna ''True'' cuando está habilitado el subrayado de texto.
+
+  * [[pythonexample>pygame.font.Font.get_underline|buscar código donde se use esta función.]]
+
+
+===== set_bold =====
+
+/*
+enable fake rendering of bold text
+*/
+
+Habilita el dibujado de texto en negrita falso.
+
+<code python>
+Font.set_bold(bool): return None
+</code>
+
+/*
+Enables the bold rendering of text. This is a fake stretching of the font
+that doesn't look good on many font types. If possible load the font from
+a real bold font file. While bold, the font will have a different width
+than when normal. This can be mixed with the italic and underline modes.
+*/
+
+Habilita el dibujado de texto en negrita. Este es un estiramiento falso
+de la fuente que no se verá muy bien en varios tipos de fuente. Si puede
+cargar la fuente de un archivo de fuente negrita real, la fuente sí
+tendrá diferentes grosores que la fuente normal. Este modo se puede
+mezclar con los modos subrayado y //cursiva//.
+
+
+  * [[pythonexample>pygame.font.Font.set_bold|buscar código donde se use esta función.]]
+
+===== get_bold =====
+
+/*
+check if text will be rendered bold
+*/
+
+Consulta si el texto se dibujará en negrita.
+
+<code python>
+Font.get_bold(): return bool
+</code>
+
+/*
+Return True when the font bold rendering mode is enabled.
+*/
+
+Retorna ''True'' cuando el modo de dibujado en negrita está habilitado.
+
+  * [[pythonexample>pygame.font.Font.get_bold|buscar código donde se use esta función.]]
+
+===== set_italic =====
+
+/*
+enable fake rendering of italic text
+*/
+
+Habilita el dibujado de texto en cursiva falso.
+
+<code python>
+Font.set_bold(bool): return None
+</code>
+
+/*
+Enables fake rendering of italic text. This is a fake skewing of the
+font that doesn't look good on many font types. If possible load the font from
+a real italic font file. While italic the font will have a different width
+than when normal. This can be mixed with the bold and underline modes.
+*/
+
+Habilita el dibujado de texto en cursiva. Esto es una deformación falsa
+de la fuente que no se verá muy bien en varios tipos de fuente. Si puede
+cargar la fuente de un archivo de fuente cursiva real, la fuente sí
+tendrá diferente aspecto que la fuente normal. Este modo se puede
+mezclar con los modos negrita y subrayado.
+
+  * [[pythonexample>pygame.font.Font.set_italic|buscar código donde se use esta función.]]
+
+===== metrics =====
+
+/*
+Gets the metrics for each character in the pased string.
+*/
+
+Retorna las medidas de cada letra de la cadena indicada.
+
+
+<code python>
+Font.metrics(text): return list
+</code>
+
+/*
+The list contains tuples for each character, which contain the minimum
+X offset, the maximum X offset, the minimum Y offset, the maximum
+Y offset and the advance offset (bearing plus width) of the character.
+[(minx, maxx, miny, maxy, advance), (minx, maxx, miny, maxy, advance), ...]
+*/
+
+La lista retornada contiene tuplas para cada caracter, que contienen el
+desplazamiento mínimo en X, el desplazamiento máximo en X, el desplazamiento
+mínimo en Y, el desplazamiento mínimo en Y el desplazamiento anticipado de
+el otro caracter. 
+''[(minx, maxx, miny, maxy, advance), (minx, maxx, miny, maxy, advance), ...]''.
+
+  * [[pythonexample>pygame.font.Font.metrics|buscar código donde se use esta función.]]
+
+===== get_italic =====
+
+/*
+check if the text will be rendered italic
+*/
+
+Consulta si el texto se dibujará en cursiva.
+
+<code python>
+Font.get_italic(): return bool
+</code>
+
+/*
+Return True when the font italic rendering mode is enabled.
+*/
+
+Retorna ''True'' cuando el dibujado de fuente en cursiva está habilitado.
+
+  * [[pythonexample>pygame.font.Font.get_italic|buscar código donde se use esta función.]]
+
+
+===== get_linesize =====
+
+/*
+get the line space of the font text
+*/
+
+Obtiene el espacio de linea de un texto.
+
+
+
+<code python>
+Font.get_linesize(): return int
+</code>
+
+/*
+Return the height in pixels for a line of text with the font. When rendering
+multiple lines of text this is the recommended amount of space between lines.
+*/
+
+Retorna la altura en //pixeles// de una linea de texto. Se recomienda esta cantidad
+de espacio entre lineas cuando dibuje varias lineas de texto.
+
+  * [[pythonexample>pygame.font.Font.get_linesize|buscar código donde se use esta función.]]
+
+
+===== get_height =====
+
+/*
+get the height of the font
+*/
+
+Obtiene la altura de una fuente.
+
+<code python>
+Font.get_height(): return int
+</code>
+
+/*
+Return the height in pixels of the actual rendered text. This is the average
+size for each glyph in the font.
+*/
+
+Retorna la altura en //pixels// del texto que se dibuja. Este es el tamaño
+aproximado de cada figura en la fuente.
+
+  * [[pythonexample>pygame.font.Font.get_height|buscar código donde se use esta función.]]
+
+------------------------------
+
+===== get_ascent =====
+
+get the ascent of the font
+
+<code python>
+Font.get_ascent(): return int
+</code>
+
+/*
+Return the height in pixels for the font ascent. The ascent is the number
+of pixels from the font baseline to the top of the font.
+*/
+
+Retorna la altura en //pixeles// del ascendente de la fuente. El ascendente
+es el numero de //pixeles// desde el anillo (o linea superior) de la
+parte superior de la fuente.
+
+  * [[pythonexample>pygame.font.Font.get_ascent|buscar código donde se use esta función.]]
+
+Las siguiente imagen ilustra las medidas:
+
+{{:traducciones:pygame:font:partesletra.png|}}
+
+
+===== get_descent =====
+
+/*
+get the descent of the font
+*/
+
+Retorna el descendente de la fuente.
+
+<code python>
+Font.get_descent(): return int
+</code>
+
+/*
+Return the height in pixels for the font descent. The descent is the number
+of pixels from the font baseline to the bottom of the font.
+*/
+
+Retorna la altura en //pixeles// del descendente de la fuente. El descendente
+es el numero de //pixeles// desde la basa (o linea base) de la parte inferior
+de la fuente.
+
+  * [[pythonexample>pygame.font.Font.get_descent|buscar código donde se use esta función.]]
+
+
+Las siguiente imagen ilustra las medidas:
+
+{{:traducciones:pygame:font:partesletra.png|}}
+

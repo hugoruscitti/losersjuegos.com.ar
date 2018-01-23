@@ -1,0 +1,333 @@
+====== Como instalar PySFML en windows ======
+
+===== Créditos =====
+
+
+  * **fecha:** Agosto 2010
+  * **autor:** Hugo Ruscitti
+
+
+SFML es una biblioteca que permite crear aplicaciones multimedia
+de manera sencilla, tiene soporte para que puedas
+escribir tus aplicaciones en varios lenguajes y utiliza
+internamente la funcionalidad que provee //opengl//.
+
+En este artículo resumiré cómo instalar esta biblioteca
+en el sistema operativo //Windows// para que puedas
+crear tus juegos usando python y SFML.
+
+
+===== Instalar python =====
+
+Primero debemos ir a la web oficial de python
+y descargar la version que necesitemos.
+
+En nuestro caso vamos a utilizar la version 2.6:
+
+http://www.python.org/download/releases/
+
+Luego seleccionamos el instalador que mejor
+se ajuste a nuestro sistema. En mi caso
+he seleccionado la version::
+
+    Windows x86 MSI Installer (2.6.5)
+
+Ahora debes descargar el instalador en un directorio
+de tu sistema y ejecutarlo haciendo doble click.
+
+===== Iniciando python a modo de prueba =====
+
+
+
+Una vez instalado python, puedes ir al menú
+inicio y buscar el grupo o directorio que tiene
+la etiqueta: *python 2.6*
+
+
+{{:referencia:articulos:instalar_sfml_en_windows:menu.png}}
+
+Veamos un ejemplo: si inicias el programa llamado
+"IDLE" aparecerá un intérprete interactivo de python.
+
+Aquí vamos a escribir algunas pruebas para ver
+que todo funciona correctamente:
+
+{{:referencia:articulos:instalar_sfml_en_windows:idle.png}}
+
+
+Intenta algunas pruebas como:
+
+    'a' in 'hola'
+    print 123 + 3123
+
+===== Descargar SFML =====
+
+
+Tienes que ir al sitio oficial de descargas
+de *SFML* y obtener la version que se ajuste
+a tu equipo:
+
+- http://www.sfml-dev.org/download.php
+
+Este es uno de los cuadros de descarga que verás en
+el sitio de //SFML//.
+
+{{:referencia:articulos:instalar_sfml_en_windows:download_sfml.png}}
+
+
+En nuestro caso usaremos la version 2.6 de la biblioteca
+//PySFML//. Ten en cuenta que //SFML// se puede usar
+desde muchos lenguajes distintos: .net, ruby, c, c++ etc...
+
+
+===== Instalando PySFML, SFML con sabor a python =====
+
+
+Una vez que seleccionas descargar el archivo //.zip// de
+la bilioteca tienes que seleccionar donde guardarlo.
+
+Ahora solo tienes que descomprimirlo en un directorio y
+ver la estructura que tiene:
+
+{{:referencia:articulos:instalar_sfml_en_windows:content.png}}
+
+Ahora, solo tienes que copiar todo este contenido a
+tu directorio de instalacion de python.
+
+Por ejemplo, en mi caso, //python// se había instalado
+en el directorio //c:\python26//. Por lo tanto, tuve
+que copiar el directorio //lib// (del archivo .zip)
+dentro del directorio //c:\python26//.
+
+Finalmente, para asegurarnos de que todo se ha
+copiado correctamente podemos ver el directorio
+de //python// y encontrar una estructura de
+directorios como la siguiente:
+
+
+{{:referencia:articulos:instalar_sfml_en_windows:dirs.png}}
+
+Es decir, tienes que tener el directorio //PySFML//
+dentro de //sites-pakages//.
+
+Nota: Ten en cuenta que los otros dos directorios no son
+necesarios, en mi caso solo están ahí porque los he instalado
+previamente, pero puede que en tu equipo no los necesites ...
+
+
+
+===== Probando la biblioteca =====
+
+
+
+Ahora podemos asegurarnos de que la biblioteca efectivamente
+funciona. Vamos a escribir algo de python:
+
+Abra el menu de inicio, luego busque la carpeta que dice
+//python 2.6// y ejecute el programa "IDLE".
+
+Luego escriba la siguiente sentencia dentro de la
+consola interactiva::
+
+    from PySFML import sf
+
+es decir:
+
+{{:referencia:articulos:instalar_sfml_en_windows:test1.png}}
+
+
+Perfecto, si no nos aparece un error esto
+significa que //PySFML// funcionará perfectamente.
+
+Hagamos una ventana para comenzar:
+
+{{:referencia:articulos:instalar_sfml_en_windows:window.png}}
+
+Bien, el resultado de esta sentencia es una nueva
+ventana en nuestro escritorio:
+
+{{:referencia:articulos:instalar_sfml_en_windows:mi_new_window.png}}
+
+
+===== Pidiendo ayuda =====
+
+
+Recuerda que python tiene un sistema de documentación muy
+práctico: para consultar la documentacion del módulo
+//sf// puedes usar la función:
+
+    help(sf)
+
+o directamente usar la tecla //TAB// para autocompletar los
+nombres de objetos, funciones o atributos:
+
+{{:referencia:articulos:instalar_sfml_en_windows:autocomplete.png}}
+
+===== Un ejemplo mas complejo =====
+
+
+Ahora veamos como hacer una aplicacion sencilla, pero
+completa, usando python y SFML.
+
+Primero tenemos que crear un nuevo archivo .py
+para comenzar a trabajar. Por ejemplo, abriendo
+el bloc de notas y seleccionando guardar poniendo
+un nombre como "juego.py" (nota que tienes
+que escribir tambien las comillas, como se ve
+en la captura):
+
+{{:referencia:articulos:instalar_sfml_en_windows:save_as.png}}
+
+Ahora, busca el archivo creado en el explorador de archivos
+y pulsa el boton derecho sobre este archivo, del menú
+que aparece tienes que seleccionar la opción "Editar con IDLE":
+
+{{:referencia:articulos:instalar_sfml_en_windows:popup.png}}
+
+
+
+Listo, se abriran dos ventanas, una
+con el intérprete de python y otra en donde vamos
+a colocar el codigo del videojuego.
+
+Comencemos con un código sencillo de pySFML. Una
+ventana que muestra un texto de saludo.
+
+Escribe el siguiente texto en la ventana de código:
+
+<code python>
+    import sys
+    from PySFML import sf
+
+    window = sf.RenderWindow(sf.VideoMode(640, 480), "Hola")
+    event = sf.Event()
+
+    # colores
+    blanco = sf.Color(250, 250, 250)
+    negro = sf.Color(0, 0, 0)
+
+    window.SetFramerateLimit(60)
+
+    # Creando el mensaje en pantalla
+    mensaje = sf.String("Hola Losersjuegos !!!")
+    mensaje.SetColor(negro)
+
+    quit = False
+
+    while not quit:
+        window.Clear(blanco)
+        window.Draw(mensaje)
+        window.Display()
+     
+        while window.GetEvent(event):
+            if event.Type == sf.Event.Closed:
+                quit = True
+
+    window.Close()
+</code>
+
+Debería verse de la siguiente manera:
+
+{{:referencia:articulos:instalar_sfml_en_windows:codigo.png}}
+
+
+Bien, para guardar y poner el funcionamiento el programa
+tenemos que pulsar la tecla **F5**.
+
+Este será el resultado en pantalla:
+
+{{:referencia:articulos:instalar_sfml_en_windows:resultado1.png}}
+
+
+===== Mejorando el ejemplo: ahora con un personaje =====
+
+
+Vamos a añadir una imagen a nuestro programa. Descarga
+la siguiente imagen y colocala en el directorio en
+donde está el archivo .py:
+
+{{:referencia:articulos:instalar_sfml_en_windows:ceferino.png}}
+
+(pulsa el botón derecho del mouse sobre la imagen anterior
+y selecciona **guardar ...**).
+
+luego, cambia el codigo a lo siguiente:
+
+<code python>
+
+    import sys
+    from PySFML import sf
+
+    window = sf.RenderWindow(sf.VideoMode(640, 480), "Hola")
+    event = sf.Event()
+
+    # colores
+    blanco = sf.Color(250, 250, 250)
+    negro = sf.Color(0, 0, 0)
+
+    window.SetFramerateLimit(60)
+
+    # Creando el mensaje en pantalla
+    mensaje = sf.String("Hola Losersjuegos !!!")
+    mensaje.SetColor(negro)
+
+    # Agregando la cara de ceferino
+    image = sf.Image()
+    image.LoadFromFile("ceferino.png")
+    ceferino = sf.Sprite(image)
+    ceferino.SetCenter(65, 30)
+
+    # Gestiona los eventos
+    input = window.GetInput()
+
+    quit = False
+
+    while not quit:
+        window.Clear(blanco)
+        window.Draw(ceferino)
+        window.Draw(mensaje)
+        window.Display()
+     
+        while window.GetEvent(event):
+            if event.Type == sf.Event.Closed:
+                quit = True
+
+            # Cambia la posicion de ceferino
+            x = input.GetMouseX()
+            y = input.GetMouseY()
+
+            ceferino.SetPosition(x, y)
+
+
+    window.Close()
+</code>
+
+listo, ahora tienes que pulsar nuevamente la tecla
+**F5** y verás a ceferino en la pantalla. Y cuando
+muevas el puntero del mouse también se moverá ceferino:
+
+
+{{:referencia:articulos:instalar_sfml_en_windows:resultado2.png}}
+===== Siguiente paso =====
+
+
+Ahora tienes un herramienta muy interesante en tu equipo, si quieres continuar
+aprendiendo sobre la biblioteca te recomiendo
+ver su sitio web:
+
+- http://www.sfml-dev.org
+
+El equipo de SFML escribe muy buena documentación, junto a tutoriales
+y consejos prácticos.
+
+También te recomiendo que te inscribas en el foro de losersjuegos
+y visites mas artículos nuestros en nuestra
+web:
+
+- http://www.losersjuegos.com.ar
+
+Cualquier consulta o inquietud que tengas será bienvenida.
+
+
+~~DISQUS~~ 
+

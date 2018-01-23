@@ -1,0 +1,121 @@
+====== Libros y manuales ======
+
+
+En esta sección encontrará diversos manuales, artículos y otros documentos de referencia.
+
+Si quiere puede sugerir mas documentos para esta sección, solo comuniquese con nosotros o envienos el documento. Recuerde que solo añadiremos recursos de libre difusión. 
+
+<srcpage python_para_todos|Python para todos>
+  * **Autor:** Raúl González Duque
+  * **Idioma:** Español
+  * **Sitio original:** http://mundogeek.net/tutorial-python/
+  * **Descarga:** {{:referencia:libros:python_para_todos:python_para_todos.pdf|}}
+</srcpage>
+
+
+<srcpage tutorial_sdl|Tutorial SDL>
+  * **Autor:** Antonio García Alba
+  * **Idioma:** Español
+  * **Sitio original:** http://softwarelibre.uca.es/tutorialSDL.html
+  * **Descarga:** {{:referencia:libros:tutorial_sdl:tutorial_sdl.pdf|}}
+  * **Material:** {{:referencia:libros:tutorial_sdl:material_tutorial.tar.gz|}}
+</srcpage>
+
+
+<srcpage python|Introducción a la programación con Python>
+  * **Autores:** Andrés Marzal / Isabel Gracia
+  * **Institución:** Departamento de Lenguajes y Sistemas Informáticos, Universitat Jaume I
+  * **Idioma:** Español
+  * **Descarga:** {{:referencia:libros:python:python.pdf}}
+</srcpage>
+
+
+<srcpage c|Introducción a la programación con C>
+  * **Autores:** Andrés Marzal / Isabel Gracia
+  * **Institución:** Departamento de Lenguajes y Sistemas Informáticos, Universitat Jaume I
+  * **Idioma:** Español
+  * **Descarga:** {{:referencia:libros:c:c.pdf}}
+</srcpage>
+
+
+<srcpage libroSDL|Programación de videojuegos con SDL>
+  * **Autor:** Alberto García Serrano
+  * **Idioma:** Español
+  * **Sitio original:** http://www.agserrano.com
+  * **Descarga:** {{:referencia:libros:libroSDL:[ebook]Programacion de videojuegos con SDL.pdf}}
+  * **Ejemplos:** {{:referencia:libros:libroSDL:libroSDL.zip}}
+</srcpage>
+
+
+
+<srcpage free_software|Software Libre para una sociedad Libre>
+  * **Autor:** Richard M. Stallman
+  * **Idioma:** Español
+  * **Descarga:** {{:referencia:libros:free_software:free_software.pdf}}
+</srcpage>
+
+
+
+<srcpage linuxgames|Programming Linux Games>
+  * **Autor:** Loki Games, with John R. Hall
+  * **Idioma:** Inglés
+  * **Descarga:** {{:referencia:libros:linuxgames:plg-final-pdf-no-really-i-mean-it-this-time.pdf}}
+
+**Descripción:** Describe las herramientas y técnicas necesarias para comenzar a programar video juegos para GNU/Linux.
+</srcpage>
+
+
+
+
+<srcpage curso_programacion|Curso de programación de Videojuegos con C++ y Allegro>
+  * **Autor:** Daniel Acuña Norambuena
+  * **Idioma:** Español
+  * **Sitio original:** artebinario.cjb.net
+  * **Descarga:** {{:referencia:libros:curso_programacion:curso_programacion.pdf}}
+
+**Descripción:** Explica en detalles la creación de un marco de trabajo para un juego de video, analiza con mucha claridad el diseño e implementación de un proyecto orientado a objetos.
+</srcpage>
+
+
+
+<srcpage sdl1|SDL: Primeros pasos (parte 1)>
+  * **Autor:** Javier Pérez Pacheco
+  * **Sitio original:** www.javielinux.tk
+  * **Descarga:** {{:referencia:libros:sdl1:sdl-n1.pdf}}
+
+**Descripción:** Curso básico sobre la utilización de las bibliotecas SDL basado en ejemplos.
+</srcpage>
+
+
+
+<srcpage sdl2|SDL: Primeros pasos (parte 2)>
+  * **Autor:** Javier Pérez Pacheco
+  * **Sitio original:** http://www.javielinux.tk
+  * **Descarga:** {{:referencia:libros:sdl2:sdl-n2.pdf}}
+
+**Descripción:** Curso básico sobre la utilización de las bibliotecas SDL basado en ejemplos.
+</srcpage>
+
+<srcpage vcj_sdl|Videojuegos, C++ y SDL>
+  * **Autor:** Rubén Darío Orozco Zapata
+  * **Sitio original:** http://afrodita.unicauca.edu.co/~rorozco/
+  * **Descarga:** {{:referencia:libros:vcj_sdl:vjc_sdl.pdf}}
+
+**Descripción:** Guia para desarrollar videojuegos con C++ y SDL. Explica como instalar las bibliotecas en un entorno Visual C++ y Dev-C++, manejo de eventos, gestión de video y varios ejemplos.
+</srcpage>
+
+
+<srcpage capitulo_01|Programando con la librería SDL (parte 1)>
+  * **Autor:** Roberto Albornoz Figueroa (RCAF)
+  * **Idioma:** Español
+  * **Descarga:** {{:referencia:libros:capitulo_01:capitulo_01.pdf}}
+  * **Ejemplos:** {{:referencia:libros:capitulo_01:ejemplos_01.zip}}
+</srcpage>
+
+
+<srcpage capitulo_02|Programando con la librería SDL (parte 2)>
+  * **Autor:** Roberto Albornoz Figueroa (RCAF)
+  * **Idioma:** Español
+  * **Descarga:** {{:referencia:libros:capitulo_02:capitulo_02.pdf}}
+  * **Ejemplos:** {{:referencia:libros:capitulo_02:GameTux_s.zip}}
+</srcpage>

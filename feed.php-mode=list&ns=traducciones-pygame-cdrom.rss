@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:cdrom</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-21T12:17:11+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/cdrom/cd?rev=1231350542&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/cdrom/cd?rev=1231350542&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-07T20:49:02+04:00</dc:date>
+        <title>CD</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/cdrom/cd?rev=1231350542&amp;do=diff</link>
+        <description>Clase para gestionar un dispositivo de cdrom.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+CD
+
+
+pygame.cdrom.CD(id): return CD
+
+
+
+
+Puede crear un objeto CD por cada dispositivo de cdrom en el sistema. Use
+pygame.cdrom.get_count() para determinar cuantos dispositivos existen
+actualmente. El argumento id es un número entero que representa
+al dispositivo, comenzando en 0.</description>
+    </item>
+</rdf:RDF>

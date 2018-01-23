@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:scrap</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-29T20:47:10+0300" />
+<meta name="keywords" content="traducciones,pygame,scrap" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/scrap-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="scrap.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/scrap.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#scrap" class="toc">scrap</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get" class="toc">get</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_types" class="toc">get_types</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#put" class="toc">put</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#contains" class="toc">contains</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#lost" class="toc">lost</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_mode" class="toc">set_mode</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="scrap" id="scrap">scrap</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame que ofrece soporte para el portapapeles (<em>clipboard</em>).
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#init" title="traducciones:pygame:scrap &crarr;" class="wikilink1">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get" title="traducciones:pygame:scrap &crarr;" class="wikilink1">get</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_types" title="traducciones:pygame:scrap &crarr;" class="wikilink1">get_types</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#put" title="traducciones:pygame:scrap &crarr;" class="wikilink1">put</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#contains" title="traducciones:pygame:scrap &crarr;" class="wikilink1">contains</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#lost" title="traducciones:pygame:scrap &crarr;" class="wikilink1">lost</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_mode" title="traducciones:pygame:scrap &crarr;" class="wikilink1">set_mode</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+El módulo <code>scrap</code> se utiliza para obtener o colocar cosas en el
+portapapeles. De forma que pueda copiar y pegar datos entre pygame
+y otro tipo de aplicaciones. Este módulo define algunos tipos
+de datos básicos:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> SCRAP_PPM</div>
+</li>
+<li class="level1"><div class="li"> SCRAP_PBM</div>
+</li>
+<li class="level1"><div class="li"> SCRAP_BMP</div>
+</li>
+<li class="level1"><div class="li"> SCRAP_TEXT</div>
+</li>
+</ul>
+
+
+
+<p>
+Estos tipos de datos básicos se pueden colorar en el portapapeles
+y permiten usar tipos de datos propios. SCRAP_PPM, SCRAP_PBM y SCRAP_BMP
+son adecuados para compartir datos de superficies gráficas
+con otras aplicaciones, mientra que SCRAP_TEXT es indicado para
+intercambiar texto plano.
+</p>
+
+
+
+<p>
+Los tipos de datos SCRAP_* hacen referencia a los siguientes tipos
+<acronym title="Multipurpose Internet Mail Extension">MIME</acronym>, y pygame los registra correctamente como los tipos de datos
+por defecto del sistema operativo:
+</p>
+
+
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Tipo pygame </th><th class="col1"> Tipo <acronym title="Multipurpose Internet Mail Extension">MIME</acronym> </th><th class="col2"> Datos </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> SCRAP_TEXT </td><td class="col1"> text/plain </td><td class="col2"> para texto plano </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> SCRAP_PBM </td><td class="col1"> image/pbm </td><td class="col2"> para datos de imagen PBM </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> SCRAP_PPM </td><td class="col1"> image/ppm </td><td class="col2"> para datos de imagen PPM </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> SCRAP_BMP </td><td class="col1"> image/bmp </td><td class="col2"> para datos de imagen BMP </td>
+	</tr>
+</table>
+
+
+
+<p>
+Dependiendo de la plataforma, cuando los datos se colocan dentro del
+portapapeles se registran algunos tipos de datos adicionales de 
+forma automática para garantizar un comportamiento de intercambio 
+consistente
+con otras aplicaciones. Los siguientes tipos indicados en la lista
+se puede usar como cadenas para enviarse a las respectivas funciones
+del módulo <code>pygame.scrap</code>.
+</p>
+
+
+
+<p>
+En las plataformas Windows se soportan tipos de datos adicionales de
+forma automática y se resuelven sus definiciones internas:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> text/plain;charset=utf-8   Para texto en formato UTF-8</div>
+</li>
+<li class="level1"><div class="li"> audio/wav                  Para audio en formato WAV</div>
+</li>
+<li class="level1"><div class="li"> image/tiff                 Para imágenes en formato <acronym title="Tagged Image File Format">TIFF</acronym></div>
+</li>
+</ul>
+
+
+
+<p>
+En las plataformas X11 se soportan los siguientes tipos de datos
+adicionales:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> UTF8_STRING               Para texto en formato UTF-8</div>
+</li>
+<li class="level1"><div class="li"> text/plain;charset=utf-8  Para texto en formato UTF-8</div>
+</li>
+<li class="level1"><div class="li"> COMPOUND_TEXT             Para texto COMPOUND</div>
+</li>
+</ul>
+
+
+
+<p>
+Como se ha comentado anteriormente, usted puede definir sus propios
+tipos de datos para el portapapeles, de todas formas estos podrían
+ser inutilizables por otras aplicaciones. Así, la información
+que se envía al portapapeles usando:
+</p>
+<pre class="code">
+pygame.scrap.put (&quot;own_data&quot;, data)
+</pre>
+
+
+
+<p>
+sólo podría usarse por aplicaciones que consulten el portapapeles
+buscando el tipo de datos “own_data”.
+</p>
+
+
+
+<div class="notewarning">
+Este módulo es <strong>experimental</strong>:
+</p>
+
+<p>
+Es una funcionalidad nueva en pygame 1.8, solo funciona en Window, X11
+y Mac <acronym title="Operating System">OS</acronym> X. En Mac <acronym title="Operating System">OS</acronym> X solo funciona el intercambio de texto, los
+otros tipos de datos estarán disponibles en la siguiente versión.
+
+</div>
+
+</div>
+<!-- SECTION "scrap" [1-5085] -->
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa el módulo scrap.
+</p>
+<pre class="code python">scrap.<span class="me1">init</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Intenta inicializar el módulo <code>scrap</code> y lanza un excepción si
+falla. Tenga en cuenta que este módulo necesita tener una superficie
+de visualización, por lo tanto debe asegurarse de haber adquirido
+una anteriormente usando la función <code>pygame.display.set_mode()</code>&#039;.
+</p>
+
+</div>
+<!-- SECTION "init" [5086-5709] -->
+<h2><a name="get" id="get">get</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene los datos para el tipo indicado del portapapeles.
+</p>
+<pre class="code python">scrap.<span class="me1">get</span> <span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw3">string</span></pre>
+
+
+<p>
+Retorna los datos para el tipo de dato especificado desde el
+portapapeles. Los datos se retornan como cadenas y podrían
+necesitar futuros arreglos. Se retornará <code>None</code> si no hay
+datos del tipo de dato indicado.
+</p>
+<pre class="code python">text = pygame.<span class="me1">scrap</span>.<span class="me1">get</span> <span class="br0">&#40;</span>SCRAP_TEXT<span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">if</span> text:
+    <span class="co1"># Hacer cosas con el texto</span>
+<span class="kw1">else</span>:
+    <span class="kw1">print</span> <span class="st0">&quot;Parace que no hay texto en el portapapeles.&quot;</span></pre>
+</div>
+<!-- SECTION "get" [5710-6475] -->
+<h2><a name="get_types" id="get_types">get_types</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene una lista de los tipos de portapapeles disponibles.
+</p>
+<pre class="code python">scrap.<span class="me1">get_types</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">list</span></pre>
+
+
+<p>
+Obtiene una lista de cadenas con los identificadores de los
+tipos de portapapeles disponibles. Cada identificador se puede
+usar en el método <code>scrap.get()</code> para obtener el contenido
+del portapapeles en el tipo específico. Se retornará una
+lista vacía si no hay datos en el portapapeles.
+</p>
+
+
+<pre class="code python"><span class="kw3">types</span> = pygame.<span class="me1">scrap</span>.<span class="me1">get_types</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="kw1">for</span> t <span class="kw1">in</span> <span class="kw3">types</span>:
+    <span class="kw1">if</span> <span class="st0">&quot;text&quot;</span> <span class="kw1">in</span> t:
+        <span class="co1"># Hay cierto contenido con la palabra &quot;text&quot;, posiblemente</span>
+        <span class="co1"># sea texto, por lo tanto se impimirá:</span>
+        <span class="kw1">print</span> pygame.<span class="me1">scrap</span>.<span class="me1">get</span> <span class="br0">&#40;</span>t<span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "get_types" [6476-7692] -->
+<h2><a name="put" id="put">put</a></h2>
+<div class="level2">
+
+
+
+<p>
+Coloca datos dentro del portapapeles.
+</p>
+<pre class="code python">scrap.<span class="me1">put</span><span class="br0">&#40;</span><span class="kw2">type</span>, data<span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Coloca información para un tipo de dato específico en el portapapeles.
+Los datos deben estar en formato de cadena. El argumento
+<code>type</code> debe ser una cadena que identifica el tipo de dato que
+se colocará en el portapapeles. Este argumento puede ser uno
+de los valores nativos como <code>SCRAP_PBM</code>, <code>SCRAP_PPM</code>, <code>SCRAP_BMP</code>, <code>SCRAP_TEXT</code> o un identificador de cadena de su tipo de dato
+personalizado.
+</p>
+
+
+
+<p>
+Este método lanza una excepción si el contenido indicado no
+se puede colocar en el portapapeles.
+</p>
+
+<p>
+Un ejemplo:
+</p>
+
+
+<pre class="code python">fp = <span class="kw2">open</span> <span class="br0">&#40;</span><span class="st0">&quot;example.bmp&quot;</span>, <span class="st0">&quot;rb&quot;</span><span class="br0">&#41;</span>
+pygame.<span class="me1">scrap</span>.<span class="me1">put</span> <span class="br0">&#40;</span>SCRAP_BMP, fp.<span class="me1">read</span> <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+fp.<span class="me1">close</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="co1"># Ahora puede obtener la información desde otras aplicaciones</span>
+<span class="co1"># usando el portapapeles.</span>
+&nbsp;
+pygame.<span class="me1">scrap</span>.<span class="me1">put</span> <span class="br0">&#40;</span>SCRAP_TEXT, <span class="st0">&quot;A text to copy&quot;</span><span class="br0">&#41;</span>
+pygame.<span class="me1">scrap</span>.<span class="me1">put</span> <span class="br0">&#40;</span><span class="st0">&quot;Plain text&quot;</span>, <span class="st0">&quot;A text to copy&quot;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "put" [7693-9339] -->
+<h2><a name="contains" id="contains">contains</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un cierto tipo de dato se encuentra en el portapapeles.
+</p>
+<pre class="code python">scrap.<span class="me1">contains</span> <span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el tipo de dato que se ha enviado está
+disponible en el portapapeles. En otro caso retornará <code>False</code>.
+</p>
+
+
+<pre class="code python"><span class="kw1">if</span> pygame.<span class="me1">scrap</span>.<span class="me1">contains</span> <span class="br0">&#40;</span>SCRAP_TEXT<span class="br0">&#41;</span>:
+    <span class="kw1">print</span> <span class="st0">&quot;Hay texto en el portapapeles.&quot;</span>
+<span class="kw1">if</span> pygame.<span class="me1">scrap</span>.<span class="me1">contains</span> <span class="br0">&#40;</span><span class="st0">&quot;own_data_type&quot;</span><span class="br0">&#41;</span>:
+    <span class="kw1">print</span> <span class="st0">&quot;Existe información personalizada en el portapapeles.&quot;</span></pre>
+</div>
+<!-- SECTION "contains" [9340-10192] -->
+<h2><a name="lost" id="lost">lost</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el portapapeles está en dominio de la aplicación.
+</p>
+<pre class="code python">scrap.<span class="me1">lost</span><span class="br0">&#40;</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el portapapeles está siendo utilizado por
+otra aplicación.
+</p>
+
+
+<pre class="code python"><span class="kw1">if</span> pygame.<span class="me1">scrap</span>.<span class="me1">lost</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>:
+   <span class="kw1">print</span> <span class="st0">&quot;No hay contenido para mi, el portapapeles está siendo utilizado por alguien mas...&quot;</span></pre>
+</div>
+<!-- SECTION "lost" [10193-10853] -->
+<h2><a name="set_mode" id="set_mode">set_mode</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el modo de acceso al portapapeles.
+</p>
+<pre class="code python">scrap.<span class="me1">set_mode</span><span class="br0">&#40;</span>mode<span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Define el modo de acceso al portapapeles. Este modo solo es de interés
+para los entornos X11, donde están disponibles los modos de selección
+por mouse (SRAP_SELECTION) y el portapapeles (SCRAP_CLIPBOARD). Solicitar
+el modo <code>SCRAP_SELECTION</code> en otros entornos no causará ninguna diferencia.
+</p>
+
+
+
+<p>
+
+Se lanzará un excepción <code>ValueError</code> si se envía un valor
+diferente a <code>SCRAP_CLIPBOARD</code> o <code>SCRAP_SELECTION</code>.
+</p>
+
+</div>
+<!-- SECTION "set_mode" [10854-] --></div>
+</body>
+</html>

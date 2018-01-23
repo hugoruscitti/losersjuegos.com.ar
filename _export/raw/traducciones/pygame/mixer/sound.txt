@@ -1,0 +1,281 @@
+====== Sound ======
+
+/*
+Create a new Sound object from a file
+*/
+
+Genera un nuevo objeto Sound a partir de un archivo.
+
+<box 90%>
+  * [[#Sound]]
+  * [[#play]]
+  * [[#stop]]
+  * [[#fadeout]]
+  * [[#set_volume]]
+  * [[#get_volume]]
+  * [[#get_num_channels]]
+  * [[#get_length]]
+  * [[#get_buffer]]
+</box>
+
+
+===== Sound =====
+
+<code python>
+pygame.mixer.Sound(filename): return Sound
+pygame.mixer.Sound(buffer): return Sound
+pygame.mixer.Sound(object): return Sound
+</code>
+
+/*
+Load a new sound buffer from a filename, a python file object or a
+readable buffer object. Limited resampling will be performed to help the
+sample match the initialize arguments for the mixer.
+*/
+
+Carga un nuevo sonido a partir de un nombre de archivo, un archivo
+de python o un objeto de almacenamiento que se pueda leer. Se realizará
+un ajuste limitado de frecuencia para que coincida con los argumentos
+de inicialización del módulo ''mixer''.
+
+/*
+The Sound object represents actual sound sample data. Methods that change
+the state of the Sound object will the all instances of the Sound playback.
+*/
+
+El objeto Sound representa los datos de sonido actual. Los métodos que
+cambian el estado del objeto de sonido lo harán en todas las instancias
+de ese objeto.
+
+/*
+The Sound can be loaded from an OGG audio file or from an uncompressed
+WAV.
+*/
+
+El sonido puede cargarse desde un archivo de audio OGG o desde un
+archivo WAV sin compresión.
+
+/*
+Note: The buffer will be copied internally, no data will be shared
+between it and the Sound object.
+*/
+
+Nota: La memoria asignada para los datos se copiará internamente, dada
+de información será compartida entre el archivo y el objeto de sonido.
+
+/* */
+El constructor ''pygame.mixer.Sound(buffer)'' es nuevo en
+pygame 1.8.
+
+===== play =====
+
+/*
+begin sound playback
+*/
+
+Comienza a reproducir el sonido.
+
+<code python>
+Sound.play(loops=0, maxtime=0, fade_ms=0): return Channel
+</code>
+
+/*
+Begin playback of the Sound (i.e., on the computer's speakers) on an
+available Channel. This will forcibly select
+a Channel, so playback may cut off a currently playing sound if necessary.
+*/
+
+Comienza a reproducir el sonido en un canal disponible (por ejemplo, en los 
+parlantes de la computadora). Se elegirá de forma forzada el canal, por
+lo tanto la reproducción se podría detener el sonido en curso si es
+necesario.
+
+/*
+The loops argument controls how many times the sample will be repeated after
+being played the first time. A value
+of 5 means that the sound will be played once, then repeated five times, and so
+is played a total of six times. The default value (zero) means the Sound
+is not repeated, and so is only played once. If loops is set to -1 the Sound 
+will loop indefinitely (though you can still call stop() to stop it).
+*/
+
+El argumento ''loops'' controla cuantas veces de deberá repetir el sonido
+luego de haber sonado por primera vez. Un valor como 5 significa que el
+sonido será reproducido una vez, y luego se repetirá cinco veces
+mas, por lo tanto sonará seis veces en total. El valor por defecto (cero)
+significa que el sonido no se repetirá, y solo sonará una vez. Si ''loops''
+se define a -1 el sonido se repetirá constantemente (aunque podrá llamar
+a ''stop()'' para detenerlo).
+
+/*
+The maxtime argument can be used to stop playback after a given number of
+milliseconds.
+*/
+
+El argumento ''maxtime'' se puede usar para detener la reproducción luego
+del numero de milisegundos indicado.
+
+/*
+The fade_ms argument will make the sound start playing at 0 volume and 
+fade up to full volume over the time given. The sample may end before the
+fade-in is complete.
+*/
+
+El argumento ''fade_ms'' hará que el sonido comience a reproducirse desde
+el valor de volumen 0 y aumente de volumen hasta el máximo valor en el
+tiempo indicado. Note que el sonido podría termina antes de que el
+aumento de volumen se complete.
+ 
+/*
+This returns the Channel object for the channel that was selected.
+*/
+
+Este método retornará un objeto Channel con el canal que ha sido
+seleccionado.
+
+===== stop =====
+
+/*
+stop sound playback
+*/
+
+Detiene la reproducción de sonido.
+
+<code python>
+Sound.stop(): return None
+</code>
+
+/*
+This will stop the playback of this Sound on any active Channels.
+*/
+
+Detendrá la reproducción de este sonido en cualquiera de los canales
+activos.
+
+===== fadeout =====
+
+/*
+stop sound playback after fading out
+*/
+
+Detiene el sonido luego de reducir el volumen.
+
+<code python>
+Sound.fadeout(time): return None
+</code>
+
+/*
+This will stop playback of the sound after fading it out over the 
+time argument in milliseconds. The Sound will fade and stop on all
+actively playing channels.
+*/
+
+Detendrá la reproducción del sonido luego de reducir el volumen en
+los milisegundos indicados en el argumento ''time''. El sonido se
+desvanecerá y detendrá en todos los canales de reproducción activos.
+
+===== set_volume =====
+
+/*
+set the playback volume for this Sound
+*/
+
+Define el volumen de reproducción para el sonido.
+
+<code python>
+Sound.set_volume(value): return None
+</code>
+
+/*
+This will set the playback volume (loudness) for this Sound. This will immediately
+affect the Sound if it is playing. It will also affect any future playback
+of this Sound. The argument is a value from 0.0 to 1.0.
+*/
+
+Este método definirá el volumen de reproducción para este sonido. Esto 
+afectará inmediatamente al sonido si este se está reproduciendo. También
+afectará al sonido en sus futuras reproducciones. El argumento ''value'' es
+un valor comprendido ente 0.0 y 1.0.
+
+===== get_volume =====
+
+/*
+get the playback volume
+*/
+
+Obtiene el volumen de reproducción.
+
+<code python>
+Sound.get_volume(): return value
+</code>
+
+/*
+Return a value from 0.0 to 1.0 representing the volume for this Sound.
+*/
+
+Retorna un valor de 0.0 a 1.0 representando el volumen para este
+sonido.
+
+===== get_num_channels =====
+
+/*
+count how many times this Sound is playing
+*/
+
+Retorna cuantas veces se está reproduciendo este sonido.
+
+<code python>
+Sound.get_num_channels(): return count
+</code>
+
+/*
+Return the number of active channels this sound is playing on.
+*/
+
+Retorna el numero de canales activos donde se está reproduciendo
+este sonido.
+
+===== get_length =====
+
+/*
+get the length of the Sound
+*/
+
+Obtiene la longitud del sonido.
+
+<code python>
+Sound.get_length(): return seconds
+</code>
+
+/*
+Return the length of this Sound in seconds.
+*/
+
+Retorna la longitud del sonido en segundos.
+
+===== get_buffer =====
+
+/*
+acquires a buffer object for the sameples of the Sound.
+*/
+
+Obtiene un objeto de almacenamiento para modificar el sonido.
+
+
+<code python>
+Sound.get_buffer(): return BufferProxy
+</code>
+
+/*
+Return a buffer object for the Sound samples. The buffer can be
+used for direct access and manipulation.
+*/
+
+Retorna un objeto de almacenamiento para modificar el sonido. Este
+objeto se puede usar para acceso directo y manipulación.
+
+/*
+New in pygame 1.8.
+*/
+
+Esta funcionalidad es nueva en pygame 1.8

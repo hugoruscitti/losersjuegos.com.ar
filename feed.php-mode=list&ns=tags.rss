@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos tags</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:02:03+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/c?rev=1236382744&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/discusion?rev=1232459950&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/dokuwiki?rev=1232459942&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/principal?rev=1236548190&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/pygame?rev=1228618991&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/python?rev=1232459947&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/rgb?rev=1232459950&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/rgba?rev=1232459950&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/tags/sdl?rev=1239993979&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/c?rev=1236382744&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-07T02:39:04+04:00</dc:date>
+        <title>C</title>
+        <link>http://www.loosersjuegos.com.ar/tags/c?rev=1236382744&amp;do=diff</link>
+        <description>C es un lenguaje de programación desarrollado cerca de los años 70. Es
+uno de los lenguajes mas populares y reconocidos, su principal ventaja
+frente a otros lenguajes es su velocidad.
+
+En losersjuegos utilizamos este lenguaje porque es muy popular dentro del
+desarrollo de videojuegos (por su velocidad) y además porque suele ser el
+lenguaje favorito para enseñar programación en las universidades.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/discusion?rev=1232459950&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:10+04:00</dc:date>
+        <title>tags:discusion</title>
+        <link>http://www.loosersjuegos.com.ar/tags/discusion?rev=1232459950&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/dokuwiki?rev=1232459942&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:02+04:00</dc:date>
+        <title>DokuWiki</title>
+        <link>http://www.loosersjuegos.com.ar/tags/dokuwiki?rev=1232459942&amp;do=diff</link>
+        <description>DokuWiki es un sistema de wiki simple y fácil de utilizar que permite la edición
+colaborativa de un sitio web. 
+
+Este sitio web está construido sobre DokuWiki porque consideramos que ofrece
+una de las formas mas interesantes de contruir una web en equipo, y de forma
+cooperativa.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/principal?rev=1236548190&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-09T00:36:30+04:00</dc:date>
+        <title>Etiquetas</title>
+        <link>http://www.loosersjuegos.com.ar/tags/principal?rev=1236548190&amp;do=diff</link>
+        <description>Discusión
+
+
+
+Esta sección reune todos los términos y categorías de uso
+frecuente dentro del sitio.
+
+Lenguajes de programación
+
+	*  Python
+	*  C
+	*  C++
+
+Bibliotecas
+
+	*  SDL
+	*  SDL_image
+	*  SDL_ttf
+	*  pygame
+	*  panda3d
+	*  pyglet
+	*  cocos
+	*  allegro</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/pygame?rev=1228618991&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-07T06:03:11+04:00</dc:date>
+        <title>pygame</title>
+        <link>http://www.loosersjuegos.com.ar/tags/pygame?rev=1228618991&amp;do=diff</link>
+        <description>Pygame es una biblioteca que facilitan la creación de videojuegos y
+aplicaciones multimedia en dos dimensiones.
+
+Pygame está disponible para el lenguaje de programación Python, y funciona sobre
+la biblioteca SDL.
+
+Referencias dentro de este sitio
+
+	*  Observa la traducción al español de la documentación oficial.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/python?rev=1232459947&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:07+04:00</dc:date>
+        <title>Python</title>
+        <link>http://www.loosersjuegos.com.ar/tags/python?rev=1232459947&amp;do=diff</link>
+        <description>Python es un lenguaje de programación dinámico, orientado a objetos y multiplataforma.
+
+Referencias externas
+
+	*  Web oficial de python
+	*  Descripción de python en castellado desde wikipedia
+	*  Cómo Pensar como un Informático - Tutorial en castellano.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/rgb?rev=1232459950&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:10+04:00</dc:date>
+        <title>RGB</title>
+        <link>http://www.loosersjuegos.com.ar/tags/rgb?rev=1232459950&amp;do=diff</link>
+        <description>Es el acrónimo de Red Green Blue, una notación que define un
+color en base a sus componentes Rojo, Verde y Azúl.
+
+Vea mas detalles de esta notación en el artículo Conceptos Básicos para el Desarrollo de Videojuegos 2D.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/rgba?rev=1232459950&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:10+04:00</dc:date>
+        <title>RGBA</title>
+        <link>http://www.loosersjuegos.com.ar/tags/rgba?rev=1232459950&amp;do=diff</link>
+        <description>Es el acrónimo de Red Green Blue Alpha, una notación que define un
+color en base a sus componentes Rojo, Verde, Azúl y Transparencia.
+
+
+Vea mas detalles de esta notación en el artículo Conceptos Básicos para el Desarrollo de Videojuegos 2D.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/tags/sdl?rev=1239993979&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-04-17T22:46:19+04:00</dc:date>
+        <title>SDL</title>
+        <link>http://www.loosersjuegos.com.ar/tags/sdl?rev=1239993979&amp;do=diff</link>
+        <description>SDL es una biblioteca para C y C++ que se utiliza para desarrollar aplicaciones multimedia
+como juegos, reproductores de video o presentaciones.
+
+Esta biblioteca funciona en varios sistemas operativos, lo que le permite
+a los programadores escribir su aplicación una sola vez, y que esta funcione en
+varios sistemas operativos sin hacer cambios.</description>
+    </item>
+</rdf:RDF>

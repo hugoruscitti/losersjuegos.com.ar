@@ -1,0 +1,756 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:un_juego_paso_a_paso</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T23:15:15+0300" />
+<meta name="keywords" content="referencia,articulos,un_juego_paso_a_paso" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/un_juego_paso_a_paso-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="un_juego_paso_a_paso.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/un_juego_paso_a_paso.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#como_desarollar_un_videojuego_paso_a_paso_con_sdl" class="toc">Como desarollar un videojuego paso a paso con SDL</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#juego_base_tomado_como_ejemplo" class="toc">Juego base tomado como ejemplo:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#fases_de_implementacion" class="toc">Fases de implementación:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#herramientas" class="toc">Herramientas:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_1iniciar_sdl_y_crear_una_ventana" class="toc">Paso 1: Iniciar SDL y crear una ventana</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_1compilando_el_primer_ejemplo" class="toc">Paso 1: Compilando el primer ejemplo</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_2imprimir_el_fondo_de_pantalla" class="toc">Paso 2: Imprimir el fondo de pantalla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_3bucle_principal" class="toc">Paso 3: bucle principal</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_3bucle_principal1" class="toc">Paso 3: Bucle principal</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_3bucle_principal2" class="toc">Paso 3: Bucle principal</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_4_-_velocidad_constante_1" class="toc">Paso 4 - Velocidad constante (1)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_4_-_velocidad_constante_2" class="toc">Paso 4 - Velocidad constante (2)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_4_-_tecnicas_de_impresion" class="toc">Paso 4 - Técnicas de impresión</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_5procesos_manejados_por_el_teclado" class="toc">Paso 5: procesos manejados por el teclado</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_5procesos_manejados_por_el_teclado1" class="toc">Paso 5: procesos manejados por el teclado</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_6_-_colisiones_con_los_personajes" class="toc">Paso 6 - Colisiones con los personajes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_7_-_salto_y_animaciones" class="toc">Paso 7 - Salto y animaciones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_7_-_salto_y_animaciones1" class="toc">Paso 7 - Salto y animaciones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_8_-_algunas_mejoras" class="toc">Paso 8 - Algunas mejoras</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#paso_8_-_algunas_mejoras1" class="toc">Paso 8 - Algunas mejoras</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#preguntas" class="toc">Preguntas ...</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/un_juego_paso_a_paso.pdf" class="media mediafile mf_pdf" title="referencia:articulos:un_juego_paso_a_paso:un_juego_paso_a_paso.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="como_desarollar_un_videojuego_paso_a_paso_con_sdl" id="como_desarollar_un_videojuego_paso_a_paso_con_sdl">Como desarollar un videojuego paso a paso con SDL</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Como desarollar un videojuego paso a paso con SDL" [81-145] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti / Gabriel Valentin</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fecha:</strong> 23 de Octubre del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [146-256] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+Las siguientes diapositivas fueron presentadas en el evento anual de Software
+Libre <a href="http://www.cafeconf.org/" class="urlextern" title="http://www.cafeconf.org/"  rel="nofollow">CaFeCONF 2005</a> en la ciudad de Buenos Aires (Argentina).
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img0.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img0.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img0.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Mediante estas notas intentamos resumir y compartir con usted aquellos temas que pudimos tratar durante la exposición, si tiene alguna sugerencia por favor envienos un mensaje utilizando el formulario al pie de la página.
+</p>
+
+</div>
+<!-- SECTION "Introducción" [257-753] -->
+<h2><a name="juego_base_tomado_como_ejemplo" id="juego_base_tomado_como_ejemplo">Juego base tomado como ejemplo:</a></h2>
+<div class="level2">
+
+<p>
+Mediante esta charla buscamos seguir el desarrollo de un videojuego para a paso a paso con SDL y C.
+</p>
+
+<p>
+Nuestro objetivo primordial es presentarles a los asistentes el programa en detalle para que todos tengan la posibilidad de analizar, comprender y luego, si quieren, lo modifiquen a gusto y/o realicen sus propios videojuegos.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img1.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img1.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img1.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Elegimos desarrollar un videojuego de Volley muy sencillo, similar al clásico Arcade Volleyball. Si bien el juego es muy simple, nos resultará de mucha utilidad como ejemplo ilustrativo, ya que todos los videojuegos (independientemente de su temática), requieren de una serie de caracteristicas:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> simular comportamientos.</div>
+</li>
+<li class="level1"><div class="li"> verificar colisiones.</div>
+</li>
+<li class="level1"><div class="li"> realizar animaciones.</div>
+</li>
+<li class="level1"><div class="li"> imprimir gráficos en pantalla.</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Juego base tomado como ejemplo:" [754-1619] -->
+<h2><a name="fases_de_implementacion" id="fases_de_implementacion">Fases de implementación:</a></h2>
+<div class="level2">
+
+<p>
+Para poder analizar de forma ordenada cada implementación, el juego se desarrolló siguiendo una serie de etapas.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img2.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img2.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img2.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En cada etapa añadimos nuevos requerimientos, por ejemplo, en la etapa 7 buscamos que los personajes puedan saltar y lo implementamos mediante un autómata
+</p>
+
+<p>
+Cada una de las etapas tiene su propio programa de ejemplo, puede descargar todos los ejemplos juntos, o bien, descargarlos de manera individual (ver al final de cada sección)
+</p>
+
+</div>
+<!-- SECTION "Fases de implementación:" [1620-2185] -->
+<h2><a name="herramientas" id="herramientas">Herramientas:</a></h2>
+<div class="level2">
+
+<p>
+Para desarrollar el videojuego utilizamos el lenguaje de programación C. Creemos que C es uno de los lenguajes de programación que todos aprendemos en algún momento y por lo tanto será el mas adecuado para este tipo de propuestas.
+</p>
+
+<p>
+Mediante el lenguaje de programación C podremos utilizar diferentes metodologías o técnicas de programación: &#039;lineal&#039;, &#039;estructural&#039; o como en este caso &#039;modular&#039;.
+</p>
+
+<p>
+El objetivo de la técnica de programación modular consiste en representar a las entidades del programa (en este caso: una pelota, dos personajes etc.) mediante estructuras de datos y un conjunto limitado de funciones que nos permiten manipular dichas estructuras.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img3.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img3.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img3.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En los programas de ejemplo encontrará la codificación de cada entidad dividida en dos archivos, uno de extensión .c donde se codifica cada funcionalidad y otro archivo .h donde se especifican (declaran) las estructuras, constantes y funciones propias de la entidad.
+</p>
+
+<p>
+Para nombrar y organizar el código intentamos relacionar cada función con una estructura en particular utilizando prefijos, por ejemplo, la función “pelota_actualizar” tiene el prefijo “pelota” por lo tanto está definida en “pelota.h” e implementada en “pelota.c”.
+</p>
+
+<p>
+Abordando el desarrollo del programa mediante técnicas y estilos de programación podemos dividir y facilitar cualquier tarea.
+
+</p>
+<pre class="code">  &quot;Un gran problema puede dividirse en varios mas pequeños&quot;</pre>
+
+<p>
+
+Para realizar las tareas mas básicas de impresión y manipulación gráfica utilizamos la biblioteca multimedia SDL, puede obtener más información en <a href="http://www.libsdl.org" class="urlextern" title="http://www.libsdl.org"  rel="nofollow">www.libsdl.org</a> y en otros artículos (como ¿Por qué SDL?) del sitio <a href="http://www.losersjuegos.com.ar" class="urlextern" title="http://www.losersjuegos.com.ar"  rel="nofollow">www.losersjuegos.com.ar</a>
+</p>
+
+</div>
+<!-- SECTION "Herramientas:" [2186-3943] -->
+<h2><a name="paso_1iniciar_sdl_y_crear_una_ventana" id="paso_1iniciar_sdl_y_crear_una_ventana">Paso 1: Iniciar SDL y crear una ventana</a></h2>
+<div class="level2">
+
+<p>
+Crear una ventana para nuestro juego es muy sencillo, el trabajo duro lo realiza SDL. Nosotros simplemente le ordenamos iniciar y crear una ventana a la biblioteca, especificando el tamaño de la pantalla y la profundidad de colores. No debemos preocuparnos por los detalles del sistema operativo, SDL se encargará de ello.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img4.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img4.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img4.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Cuando desarrollamos un programa seguimos una serie de fases antes de ponerlo en funcionamiento. Aunque muchas veces sea inmediato, siempre debemos planificar el orden de cada tarea, pensamos (o dibujamos sobre papel) un algoritmo; en la diapositiva se representa el orden de tareas mediante un diagrama de flujos (a la derecha). Luego transcribimos ese diagrama a un lenguaje de programación (ese es el proceso de implementación) y por último debemos compilar el programa.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_1.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_1.tar.gz">Descargar ejemplo 1 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 1: Iniciar SDL y crear una ventana" [3944-4989] -->
+<h2><a name="paso_1compilando_el_primer_ejemplo" id="paso_1compilando_el_primer_ejemplo">Paso 1: Compilando el primer ejemplo</a></h2>
+<div class="level2">
+
+<p>
+Un programa escrito en un lenguaje de programación, comprensible por un ser humano, no es inmediatamente ejecutable por una computadora, las computadoras solo ejecutan código máquina (compuesto de 0 (ceros) y 1 (unos)). Por esa razón es habitual utilizar un programa compilador para convertir ese código comprensible por nosotros al código que ejecuta una computadora.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img5.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img5.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img5.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+
+Para compilar programas en GNU/Linux contamos con la colección de compiladores de GNU (gcc). Mediante el paso 1 (indicado en la diapositiva) transformamos nuestro programa “volleyball.c” en código objeto, dejándolo listo para el paso 2 que lo convierte en un programa ejecutable.
+</p>
+
+<p>
+Se debe tener en cuenta que nuestro programa utiliza una biblioteca, SDL, por ese motivo debemos vincularla al programa en el último paso de compilación, de otra manera no tendremos el código necesario para realizar las tareas que SDL nos provee. Para vincular la biblioteca a nuestro programa añadimos la salida del comando sdl-config (note las comillas simples invertidas (``))
+</p>
+
+<p>
+Para simplificar el proceso de compilación utilizamos el programa make, por lo tanto para compilar y enlazar los programas de ejemplo sólo tiene que ejecutar “make” en el directorio donde residen los archivos fuente (.c y .h) junto con el archivo “Makefile”.
+</p>
+
+<p>
+Si al momento de crear el programa ejecutable deseamos conocer sus dependencias podemos ejecutar:
+</p>
+<pre class="code">
+ldd ./volleyball
+</pre>
+
+<p>
+
+y obtendremos el listado completo de bibliotecas dinámicas asociadas al programa “volleyball”.
+</p>
+
+</div>
+<!-- SECTION "Paso 1: Compilando el primer ejemplo" [4990-6654] -->
+<h2><a name="paso_2imprimir_el_fondo_de_pantalla" id="paso_2imprimir_el_fondo_de_pantalla">Paso 2: Imprimir el fondo de pantalla</a></h2>
+<div class="level2">
+
+<p>
+En este ejemplo comenzamos a utilizar superficies. Para SDL toda imagen se representa mediante una superficie. Por ese motivo es tan simple combinarlas.
+</p>
+
+<p>
+Comenzamos cargando la imagen desde “ima/fondo.bmp” sobre una superficie en memoria para luego volcarla sobre la pantalla principal.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img6.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img6.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img6.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Mediante SDL_LoadBMP cargamos ese archivo en memoria; ahora tendremos una nueva superficie en memoria apuntada por la variable “fondo” (puntero a SDL_Surface). Si SDL_LoadBMP no puede cargar la imagen nos retorna un valor nulo (NULL), llamando a SDL_GetError podremos conocer el motivo del fallo:
+</p>
+<pre class="code c">fondo <span class="sy0">=</span> SDL_LoadBMP <span class="br0">&#40;</span><span class="st0">&quot;ima/fondo.bmp&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw1">if</span> <span class="br0">&#40;</span>fondo <span class="sy0">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a> <span class="br0">&#40;</span><span class="st0">&quot;Error al cargar fondo %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="nu0">1</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+Una vez almacenada la superficie, nos proponemos &#039;volcarla&#039; sobre la pantalla principal (screen) utilizando SDL_BlitSurface, los parámetros de la función especifican las superficies fuente y destino; los valores NULL indican que buscamos imprimir las superficies completas. En los siguientes ejemplos veremos como imprimir sólo algunas regiones de cada superficie.
+</p>
+
+<p>
+Por último, SDL protege que las impresiones en ventana no aparezcan inmediatamente en la pantalla, para que todas nuestras impresiones se puedan observar en la ventana tendremos que utilizar SDL_Flip.
+</p>
+<pre class="code c">SDL_BlitSurface <span class="br0">&#40;</span>fondo <span class="sy0">,</span> <span class="kw2">NULL</span><span class="sy0">,</span> screen<span class="sy0">,</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>;
+SDL_Flip <span class="br0">&#40;</span>screen<span class="br0">&#41;</span>;</pre><ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_2.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_2.tar.gz">Descargar ejemplo 2 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 2: Imprimir el fondo de pantalla" [6655-8298] -->
+<h2><a name="paso_3bucle_principal" id="paso_3bucle_principal">Paso 3: bucle principal</a></h2>
+<div class="level2">
+
+<p>
+Existe una diferencia importante entre un videojuego y otro tipo de programas, por ejemplo un editor de textos.
+</p>
+
+<p>
+Un editor de textos espera ordenes del usuario. Si el usuario pulsa una tecla, el editor imprime el carácter en pantalla y regresa a la espera; si otro evento ocurre, el editor ejecuta alguna tarea y continúa esperando.
+</p>
+
+<p>
+En cambio un videojuego no podría esperar al usuario, al contrario, un videojuego generalmente no espera nunca, constantemente realiza verificaciones y ejecuta pequeñas acciones.
+</p>
+
+<p>
+El diagrama nos presenta un esquema de funcionamiento para un juego como Pong.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img7.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img7.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img7.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+El flujo de ejecución no se detiene y en cada repetición verifica el estado de los controles (rápido y sin detenerse), cambia la posición de los jugadores, mueve apenas la pelota, y luego imprime la escena completa.
+</p>
+
+<p>
+Si bien el ejemplo de esta diapositiva no tiene una relación directa con el juego de volley, en esencia es idéntico al bucle de muchos videojuegos.
+</p>
+
+</div>
+<!-- SECTION "Paso 3: bucle principal" [8299-9380] -->
+<h2><a name="paso_3bucle_principal1" id="paso_3bucle_principal1">Paso 3: Bucle principal</a></h2>
+<div class="level2">
+
+<p>
+Retomando el ejemplo “volleyball”, nuestro bucle es más sencillo, sólo tenemos un objeto en movimiento.
+</p>
+
+<p>
+Para simular el movimiento de la pelota en pantalla, le indicamos a la biblioteca SDL que imprima el gráfico de la pelota en diferentes posiciones.
+</p>
+
+<p>
+En definitiva, no estamos “moviendo objetos”, simplemente realizamos sucesivas impresiones en pantalla. SDL desconoce la diferencia entre fondos de pantalla y objetos animados, para SDL todas son superficies.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img8.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img8.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img8.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En cada repetición del bucle principal debemos realizar un pequeño cambio de posición de la pelota. Ese cambio constante de posición se almacena en las variables &#039;x&#039; e &#039;y&#039; de la estructura “pelota” (pelota.c). A continuación el bucle principal imprime la pelota sobre la pantalla utilizando los valores &#039;x&#039; e &#039;y&#039; calculados con anterioridad.
+</p>
+
+</div>
+<!-- SECTION "Paso 3: Bucle principal" [9381-10307] -->
+<h2><a name="paso_3bucle_principal2" id="paso_3bucle_principal2">Paso 3: Bucle principal</a></h2>
+<div class="level2">
+
+<p>
+El comportamiento de la pelota se ha implementado en el archivo “pelota.c”:
+</p>
+<pre class="code c"><span class="kw4">void</span> pelota_actualizar <span class="br0">&#40;</span><span class="kw4">struct</span> Pelota <span class="sy0">*</span> pelota<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <span class="coMULTI">/* movimiento vertical (variable) */</span>
+        pelota<span class="sy0">-&gt;</span>velocidad ++;
+        pelota<span class="sy0">-&gt;</span>y <span class="sy0">+=</span> <span class="br0">&#40;</span>pelota<span class="sy0">-&gt;</span>velocidad <span class="sy0">&gt;&gt;</span> <span class="nu0">2</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="coMULTI">/* movimiento horizontal (constante) */</span>
+        pelota<span class="sy0">-&gt;</span>x <span class="sy0">+=</span> pelota<span class="sy0">-&gt;</span>direccion <span class="sy0">*</span> <span class="nu0">3</span>;
+&nbsp;
+        <span class="coMULTI">/* limite derecho */</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>pelota<span class="sy0">-&gt;</span>x <span class="sy0">&gt;</span> <span class="nu0">590</span><span class="br0">&#41;</span>
+                pelota<span class="sy0">-&gt;</span>direccion <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span>;
+&nbsp;
+        <span class="coMULTI">/* limite izquierdo */</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>pelota<span class="sy0">-&gt;</span>x <span class="sy0">&lt;</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+                pelota<span class="sy0">-&gt;</span>direccion <span class="sy0">=</span> <span class="nu0">1</span>;
+&nbsp;
+        <span class="coMULTI">/* toca el suelo */</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>pelota<span class="sy0">-&gt;</span>y <span class="sy0">&gt;</span> <span class="nu0">375</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                pelota<span class="sy0">-&gt;</span>y <span class="sy0">=</span> <span class="nu0">375</span>;
+&nbsp;
+                <span class="coMULTI">/* velocidad inicial */</span>
+                pelota<span class="sy0">-&gt;</span>velocidad <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">50</span>;
+        <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre>
+<p>
+como en otros casos, la diapositiva nos permite esquematizar el funcionamiento del programa.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img9.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img9.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img9.png' alt='' width='160' height='120'/></a>
+</div> <ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_3.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_3.tar.gz">Descargar ejemplo 3 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 3: Bucle principal" [10308-11432] -->
+<h2><a name="paso_4_-_velocidad_constante_1" id="paso_4_-_velocidad_constante_1">Paso 4 - Velocidad constante (1)</a></h2>
+<div class="level2">
+<pre class="code">  Nota: las diapositivas originales muestran una animación a modo de ejemplo ilustrativo, puede descargar las diapositivas originales al pie de página. </pre>
+
+<p>
+
+Cuando desarrollamos el videojuego en un equipo particular muchas veces no tomamos en cuenta la velocidad que podría tener nuestro programa en otros equipos.
+</p>
+
+<p>
+Nuestro primer bucle principal no contempla esa necesidad, en un equipo lento, el juego funcionará a baja velocidad (sería muy aburrido), en cambio si se ejecuta en un equipo muy rápido sería imposible de jugar dada su velocidad.
+</p>
+
+<p>
+A diferencia de otro tipo de programas, quisiéramos que nuestro juego funcione a la misma velocidad en diferentes equipos, independientemente de sus recursos.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img10.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img10.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img10.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Para ello podemos aplicar un algoritmo que gestione la velocidad del juego de manera independiente a la arquitectura del equipo o dispositivo. Una forma de lograr esa independencia consiste en controlar nuestro bucle mediante rutinas de “tiempo”.
+</p>
+
+<p>
+SDL cuenta con varias funciones para acceder al temporizador de sistema, y así permitirnos desarrollar rutinas independientes de la velocidad del equipo que las ejecuta.
+</p>
+
+<p>
+Una de esas funciones es SDL_GetTicks, mediante esta función podremos averiguar cuanto tiempo a transcurrido desde la inicialización de la biblioteca. Utilizando esa función podremos calcular el tiempo transcurrido entre 2 instantes de nuestro programa:
+</p>
+<pre class="code c">antes <span class="sy0">=</span> SDL_GetTicks <span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="br0">&#91;</span>...<span class="br0">&#93;</span> <span class="co1">// mucho código //</span>
+ahora <span class="sy0">=</span> SDL_GetTicks <span class="br0">&#40;</span><span class="br0">&#41;</span>;
+&nbsp;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a> <span class="br0">&#40;</span><span class="st0">&quot;Transcurrieron %d milisegundos<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> ahora <span class="sy0">-</span> antes<span class="br0">&#41;</span>;</pre>
+<p>
+El efecto deseado es el de “saltar cuadros” cuando el equipo es muy lento, ya que buscamos compensar su baja velocidad.
+</p>
+
+<p>
+Mientras que en un equipo rápido quisiéramos pausar el programa evitando consumir recursos.
+</p>
+
+</div>
+<!-- SECTION "Paso 4 - Velocidad constante (1)" [11433-13326] -->
+<h2><a name="paso_4_-_velocidad_constante_2" id="paso_4_-_velocidad_constante_2">Paso 4 - Velocidad constante (2)</a></h2>
+<div class="level2">
+
+<p>
+Pensando en un diagrama de flujos, en vistas a implementarlo en un lenguaje de programación, debemos distinguir entre las partes lógica y gráfica de un videojuego.
+</p>
+
+<p>
+La lógica del juego consiste en todos los procedimientos que contabilizan el puntaje, actualizan la posición de los personajes, verifican colisiones y todos los cálculos relacionados. Esa es la parte invisible de un videojuego, y aquella que casi todos los equipos pueden procesar en muy poco tiempo.
+</p>
+
+<p>
+La gráfica de un videojuego simplemente se encargara de volcar todas las imágenes en pantalla. Aunque parezca simple, ese paso sí es costoso para cualquier computadora (costoso en términos de velocidad).
+</p>
+
+<p>
+Si nuestro equipo es muy lento, solo podremos ganar velocidad “evitando imprimir” algunos cuadros de animación.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img11.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img11.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img11.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En el diagrama de la derecha se indica como solucionar el problema de la velocidad constante. Si nuestro equipo es muy rápido (indicado con un 1 en la imagen) debemos detenernos por unos instantes con SDL_Delay, en cambio, si nuestro equipo es lento podremos “ganar” velocidad evitando imprimir la escena y repitiendo las rutinas lógicas del videojuego.
+</p>
+
+</div>
+<!-- SECTION "Paso 4 - Velocidad constante (2)" [13327-14601] -->
+<h2><a name="paso_4_-_tecnicas_de_impresion" id="paso_4_-_tecnicas_de_impresion">Paso 4 - Técnicas de impresión</a></h2>
+<div class="level2">
+
+<p>
+Nos queda por resolver otro problema, la impresión de gráficos.
+</p>
+
+<p>
+En el ejemplo 3 se observa que el gráfico de la pelota es inconsistente, se produce un molesto “parpadeo”. Esta clase de problemas no suelen ser habituales cuando se utiliza la biblioteca SDL con superficies en memoria de sistema (SDL_SWSURFACE o SDL_HWSURFACE en ventana). Pero creemos conveniente tratar el asunto de todas maneras, ya que este problema suele surgir cuando se trabaja con otras bibliotecas o dispositivos.
+</p>
+
+<p>
+Nuestro problema se produce debido a las sucesivas impresiones sobre la pantalla principal; no estamos moviendo ningún objeto, simplemente imprimimos el gráfico de la pelota en diferentes posiciones.
+</p>
+
+<p>
+Cada impresión del gráfico de la pelota sobreescribe otra superficie, así se pierden muchos pixeles del fondo de pantalla, por lo tanto, si no restauramos el fondo de pantalla, la imagen de la pelota parecerá duplicarse en cada instante.
+</p>
+
+<p>
+En el ejemplo anterior, para evitar la duplicación de gráficos, utilizamos un criterio muy simple: antes de imprimir el gráfico de la pelota en su nueva posición restauramos la imagen de fondo. Ahí está el problema, el usuario percibe en pantalla cada uno de nuestros pasos, por ese motivo el gráfico parece inconsistente.
+</p>
+
+<p>
+Una solución a este problema consiste en ocultarle al usuario nuestro trabajo de restauración:
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img12.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img12.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img12.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+El primer esquema nos muestra una técnica llamada Double Buffer, donde realizamos todo el trabajo de impresiones parciales sobre una superficie invisible al usuario y cuando terminamos de completar la imagen volcamos todo sobre la superficie principal.
+</p>
+
+<p>
+Pero en algunos juegos como este, podemos ahorrarnos el trabajo de imprimir constantemente toda la pantalla, ya que nuestro juego no realiza muchos cambios en pantalla entre cuadro y cuadro.
+</p>
+
+<p>
+Podremos, utilizando otra técnica llamada Dirty Rectangles, restaurar solamente aquellas regiones de pantalla que han sido modificadas.
+</p>
+
+<p>
+En este ejemplo hemos añadido un archivo llamado “dirty.c” donde se encapsulan el manejo de rectángulos y la restauración de pantalla; el proceso es simple. Utilizamos un vector de estructuras llamadas SDL_Rect para almacenar las zonas de pantalla modificadas.
+</p>
+
+<p>
+Por ejemplo, luego de imprimir la pelota, almacenamos el rectángulo modificado y mostramos los cambios en pantalla utilizando la función SDL_UpdateRects (en lugar de SDL_Flip), por último restauramos sólo aquellas zonas de pantalla que alteramos leyendo el vector.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_4.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_4.tar.gz">Descargar ejemplo 4 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 4 - Técnicas de impresión" [14602-17324] -->
+<h2><a name="paso_5procesos_manejados_por_el_teclado" id="paso_5procesos_manejados_por_el_teclado">Paso 5: procesos manejados por el teclado</a></h2>
+<div class="level2">
+
+<p>
+En este quinto paso buscamos añadir a los protagonistas del juego, queremos que los personajes se puedan manejar utilizando el teclado.
+</p>
+
+<p>
+Para ello, recordando que el videojuego no se detiene en ningún momento, necesitamos realizar algunos cambios:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> El ciclo gráfico imprime ahora a los 3 actores, la pelota y los dos protagonistas.</div>
+</li>
+<li class="level1"><div class="li"> En cada actualización lógica debemos capturar el estado de las teclas y cambiar la posición de los personajes.</div>
+</li>
+</ul>
+
+<p>
+
+Añadimos algunos archivos al proyecto, por ejemplo personaje.c, personaje.h e “ima/personaje1.bmp”.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img13.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img13.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img13.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+La estructura principal de cada personaje contiene su posición en pantalla, el gráfico a imprimir, la configuración de teclas y los límites del movimiento.
+</p>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span> Personaje
+<span class="br0">&#123;</span>
+        <span class="kw4">int</span> x;
+        <span class="kw4">int</span> y;
+        SDL_Surface <span class="sy0">*</span> imagen;
+        <span class="kw4">int</span> limite_izquierdo;
+        <span class="kw4">int</span> limite_derecho;
+        SDLKey tecla_izquierda;
+        SDLKey tecla_derecha;
+<span class="br0">&#125;</span> Personaje;</pre>
+</div>
+<!-- SECTION "Paso 5: procesos manejados por el teclado" [17325-18414] -->
+<h2><a name="paso_5procesos_manejados_por_el_teclado1" id="paso_5procesos_manejados_por_el_teclado1">Paso 5: procesos manejados por el teclado</a></h2>
+<div class="level2">
+
+<p>
+Para modificar la posición de los personajes utilizando el teclado necesitamos conocer el estado de cada tecla. Para ello SDL nos provee una función llamada SDL_GetKeyState.
+</p>
+
+<p>
+La función nos informa acerca del estado de cada tecla, SDL_GetKeyState retornará la dirección de memoria de un vector en donde se almacena el mapa de teclado completo.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img14.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img14.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img14.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En la figura se observa una pequeña sección del vector, cada celda nos informa acerca del estado de una tecla en particular. Para acceder al estado de cada tecla podemos utilizar un índice como SDLK_LEFT, por lo tanto la celda de índice SDLK_LEFT almacenará un 0 (cero) si la tecla no ha sido pulsada y un 1 (uno) si está siendo pulsada.
+</p>
+
+<p>
+En nuestro ejemplo de código ocurre esto, en un instante particular el usuario mantiene pulsada la tecla de direccionales izquierda (SDLK_LEFT) y nuestro programa ejecuta la línea:
+</p>
+<pre class="code c">personaje_2.<span class="me1">x</span> --;</pre><ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_5.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_5.tar.gz">Descargar ejemplo 5 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 5: procesos manejados por el teclado" [18415-19573] -->
+<h2><a name="paso_6_-_colisiones_con_los_personajes" id="paso_6_-_colisiones_con_los_personajes">Paso 6 - Colisiones con los personajes</a></h2>
+<div class="level2">
+
+<p>
+Para continuar, quisiéramos que los personajes del videojuego puedan interactuar con la pelota.
+</p>
+
+<p>
+Para que eso ocurra, debemos verificar en todo momento cuando se produce una colisión.
+</p>
+
+<p>
+Existen varias formas de determinarlo, la colisión se produce cuando los dos gráficos entran en contacto.
+</p>
+
+<p>
+Podríamos determinar que existe una colisión calculando cuando 2 pixeles se solapan; también podríamos utilizar “mascaras de imagen”, o bien, aproximarnos con un sencillo cálculo geométrico.
+</p>
+
+<p>
+Esta última aproximación nos resultará mas sencilla, la forma de la pelota se asemeja a una circunferencia, y la forma del área de colisión del pingüino también.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img15.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img15.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img15.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Por lo tanto sabremos si se produce una colisión comparando la distancia entre circunferencias y la suma de los radios.
+</p>
+
+<p>
+En la imagen no tenemos un indicio de colisión, dado que la suma de los radios es inferior a la distancia entre circunferencias.
+Paso 6 - Colisiones con los personajes
+</p>
+
+<p>
+En cambio en la siguiente imagen sí tenemos una colisión, la suma de los radios es mayor a la distancia de las circunferencias.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img16.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img16.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img16.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Para verificar la distancia de circunferencias hemos utilizado el teorema de Pitágoras en los archivos “pelota.c” y “util.c”
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_6.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_6.tar.gz">Descargar ejemplo 6 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 6 - Colisiones con los personajes" [19574-21104] -->
+<h2><a name="paso_7_-_salto_y_animaciones" id="paso_7_-_salto_y_animaciones">Paso 7 - Salto y animaciones</a></h2>
+<div class="level2">
+
+<p>
+Hasta aquí, cuando necesitábamos imprimir una imagen almacenada en memoria realizábamos una impresión completa. Nuestra impresión se resumía a llamar a SDL_BlitSurface con un valor nulo:
+</p>
+<pre class="code c">SDL_BlitSurface <span class="br0">&#40;</span>pelota<span class="sy0">,</span> <span class="kw2">NULL</span><span class="sy0">,</span> pantalla<span class="sy0">,</span> <span class="sy0">&amp;</span> destino<span class="br0">&#41;</span>;</pre>
+<p>
+Es decir, con NULL le indicamos a SDL_BlitSurface que buscamos imprimir la imagen completa.
+</p>
+
+<p>
+Ahora bien, nos gustaría que la pelota presente varios cuadros de animación, que los personajes parezcan caminar y moverse. Hasta ahora todos los gráficos se veían estáticos.
+</p>
+
+<p>
+Existen muchas formas de gestionar animaciones, elegimos implementar una muy simple:
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img17.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img17.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img17.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Todos los cuadros de animación se almacenan en una superficie, cada cuadro de animación tiene el mismo tamaño. Por lo tanto resulta muy sencillo capturar cada cuadro por separado e imprimirlo sobre la pantalla.
+</p>
+
+<p>
+La función “imprimir_grafico”, implementada en “util.c” se encarga de imprimir un gráfico individual de nuestra grilla sobre otra superficie. En la imagen se muestra como llamar a la función “imprimir_grafico” para realizar una animación de 18 cuadros.
+
+</p>
+
+</div>
+<!-- SECTION "Paso 7 - Salto y animaciones" [21105-22319] -->
+<h2><a name="paso_7_-_salto_y_animaciones1" id="paso_7_-_salto_y_animaciones1">Paso 7 - Salto y animaciones</a></h2>
+<div class="level2">
+
+<p>
+Para “animar” a los protagonistas del juego hemos utilizado la misma técnica, todos los cuadros de la animación se almacenan en una grilla que contiene celdas del mismo tamaño.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img18.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img18.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img18.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+La diferencia mas importante, entre la animación de la pelota y los protagonistas, está en el comportamiento de los personajes.
+</p>
+
+<p>
+En este caso, los protagonistas tienen varias animaciones por realizar, por el momento quisiéramos que puedan caminar, saltar y permanecer en su lugar.
+</p>
+
+<p>
+Para gestionar comportamientos como este, existe un modelo lógico que se suele aplicar con mucha frecuencia en los videojuegos, el autómata.
+</p>
+
+<p>
+En el sitio LosersJuegos existe un <a href="../../../../referencia/articulos/articulo_completo.html" class="wikilink2" title="referencia:articulos:articulo_completo" rel="nofollow">artículo completo</a> dedicado a los autómatas. Por ese motivo, aquí solo daremos un breve comentario acerca de su utilidad.
+</p>
+
+<p>
+Mediante un autómata podremos estudiar e implementar el comportamiento de cada personaje dividiendo su actividad en diferentes estados. “saltando” será un estado, “camina” será otro. De forma que cada estado tenga asociado un comportamiento y una animación particular.
+</p>
+
+<p>
+La imagen muestra como podemos relacionar los eventos del teclado con el comportamiento del protagonista, cuando el usuario pulsa hacia arriba el personaje cambia su estado a “saltando”, cuando el usuario pulsa hacia la izquierda el personaje cambia su estado a “camina”.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_7.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_7.tar.gz">Descargar ejemplo 7 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 7 - Salto y animaciones" [22320-23871] -->
+<h2><a name="paso_8_-_algunas_mejoras" id="paso_8_-_algunas_mejoras">Paso 8 - Algunas mejoras</a></h2>
+<div class="level2">
+
+<p>
+En este paso hemos agregado algunas mejoras adicionales, agregamos un contador de tantos, la posibilidad de marcar puntos, una red y algunos efectos visuales.
+</p>
+
+<p>
+Para comenzar, cuando la pelota colisionaba con el protagonista teníamos que cambiar la dirección y sentido de rebote, así lográbamos &#039;aparentar&#039; una colisión verdadera. Ahora bien, podremos mejorar ese efecto si además mostramos la reacción del pingüino ante la interacción.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img19.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img19.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img19.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Para que la animación resulte alusiva a la situación de choque, cuando se produce una colisión obtenemos el ángulo que forman el radio de la pelota y aquel radio que “imaginamos” como propio del protagonista.
+</p>
+
+<p>
+Si el ángulo está entre 135 y 180 grados, mostramos al personaje recibiendo un golpe desde la espalda. En cambio para un ángulo entre 45 y 135 grados el golpe es superior, y por último, un ángulo entre 0 y 45 grados muestra un gráfico alusivo a un golpe frontal.
+</p>
+
+</div>
+<!-- SECTION "Paso 8 - Algunas mejoras" [23872-24915] -->
+<h2><a name="paso_8_-_algunas_mejoras1" id="paso_8_-_algunas_mejoras1">Paso 8 - Algunas mejoras</a></h2>
+<div class="level2">
+
+<p>
+Si marcamos un tanto, hablando del Volley, la pelota debe regresar a su posición inicial, para que podamos reanudar el juego. En lugar de cambiar inmediatamente la posición de la pelota hemos utilizado un efecto de transparencias.
+</p>
+
+<p>
+Para mostrar a los usuarios que el juego a terminado, es decir, cuando la pelota ha tocado el suelo, aplicamos una transparencia uniforme a la superficie original.
+</p>
+
+<p>
+SDL nos permite aplicar transparencias uniformes a cualquier superficie utilizando la función SDL_SetAlpha.
+</p>
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img20.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img20.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img20.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+En nuestro caso, cuando la pelota colisiona con el suelo, llamamos varias veces a la función SDL_SetAlpha incrementando en cada llamada el valor del último parámetro. De forma que el gráfico aparente desvanecerse de manera gradual.
+</p>
+
+<p>
+Si bien el siguiente ejemplo no corresponde al juego de volley, será de mucha utilidad para ilustrar la utilización de SDL_SetAlpha:
+</p>
+<pre class="code c"><span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu19">0</span>; i <span class="sy0">&lt;</span> <span class="nu0">255</span>; i <span class="sy0">++</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_SetAlpha <span class="br0">&#40;</span>pelota<span class="sy0">,</span> SDL_RLEACCEL | SDL_SRCALPHA<span class="sy0">,</span> i<span class="br0">&#41;</span>;
+&nbsp;
+        <span class="br0">&#91;</span>..<span class="br0">&#93;</span> <span class="co1">// imprimir en pantalla</span>
+<span class="br0">&#125;</span></pre><ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/paso_8.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:paso_8.tar.gz">Descargar ejemplo 8 (código fuente)</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Paso 8 - Algunas mejoras" [24916-26181] -->
+<h2><a name="preguntas" id="preguntas">Preguntas ...</a></h2>
+<div class="level2">
+<div class="gallery"><a href="../../../../_detail/referencia/articulos/un_juego_paso_a_paso/imagenes/img21.png-id=referencia-articulos-un_juego_paso_a_paso.html" title="img21.png" ><span title="caption" style="display: none;"></span><img src='../../../../_media/thumbs/referencia/articulos/un_juego_paso_a_paso/imagenes/img21.png' alt='' width='160' height='120'/></a>
+</div> 
+<p>
+Si tiene alguna sugerencia acerca de la exposición o las notas de este sitio por favor comuníquese con nosotros.
+</p>
+
+<p>
+Muchas gracias.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/apunte.pdf" class="media mediafile mf_pdf" title="referencia:articulos:un_juego_paso_a_paso:descargas:apunte.pdf">Descargar el apunte entregado en la charla</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/un_juego_paso_a_paso/descargas/volleyball-1al8.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:un_juego_paso_a_paso:descargas:volleyball-1al8.tar.gz">Descargar todos los ejemplos</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Preguntas ..." [26182-] --></div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:desarrollo_de_juegos_sobre_gnu</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-28T13:56:20+0300" />
+<meta name="keywords" content="referencia,articulos,desarrollo_de_juegos_sobre_gnu" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/desarrollo_de_juegos_sobre_gnu-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="desarrollo_de_juegos_sobre_gnu.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/desarrollo_de_juegos_sobre_gnu.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#charladesarrollo_de_juegos_sobre_gnulinux" class="toc">Charla: Desarrollo de juegos sobre GNU/Linux</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#inicio" class="toc">Inicio</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conceptos_sobre_videojuegos" class="toc">Conceptos sobre videojuegos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sobre_el_proyecto_losersjuegos" class="toc">Sobre el proyecto LosersJuegos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#modelo_de_desarrollod.o.s" class="toc">Modelo de desarrollo: D.O.S.</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#modelo_de_desarrollodirect_x" class="toc">Modelo de desarrollo: Direct X</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#modelo_de_desarrollosdl_i" class="toc">Modelo de desarrollo: SDL (I)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#modelo_de_desarrollosdl_ii" class="toc">Modelo de desarrollo: SDL (II)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplos_con_sdl" class="toc">Ejemplos con SDL</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#crear_una_ventana" class="toc">Crear una ventana</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#manejo_de_imagenes" class="toc">Manejo de imágenes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#velocidad_constante_i" class="toc">Velocidad constante (I)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#velocidad_constante_ii" class="toc">Velocidad constante (II)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#procesos_y_optimizacion_grafica" class="toc">Procesos y optimización gráfica</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#colisiones" class="toc">Colisiones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sdl_net_i" class="toc">SDL_Net (I)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sdl_net_ii" class="toc">SDL_Net (II)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#preguntas" class="toc">Preguntas</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/desarrollo_de_juegos_sobre_gnu.pdf" class="media mediafile mf_pdf" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_gnu.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="charladesarrollo_de_juegos_sobre_gnulinux" id="charladesarrollo_de_juegos_sobre_gnulinux">Charla: Desarrollo de juegos sobre GNU/Linux</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Charla: Desarrollo de juegos sobre GNU/Linux" [101-157] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti / Gabriel Valentin</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 14 de Mayo del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [158-266] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+El presente documento reúne una serie de diapositivas que fueron presentadas en el evento CTT (Charlas Técnicas Trimestrales) del 14 de Mayo, organizado por el grupo de usuarios CaFeLUG en la Universidad de Belgrano (Bs. As. Argentina)
+</p>
+
+<p>
+Si quiere puede descargar los archivos fuente, tanto de las diapositivas, como de los ejemplos mostrados:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/desarrollo_de_juegos_sobre_gnu_linux_noimg.sxi" class="media mediafile mf_sxi" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_gnu_linux_noimg.sxi">desarrollo_de_juegos_sobre_gnu_linux_noimg.sxi</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/desarrollo_de_juegos_sobre_gnu_linux.sxi" class="media mediafile mf_sxi" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_gnu_linux.sxi">desarrollo_de_juegos_sobre_gnu_linux.sxi</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/ejemplos-0.3.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:ejemplos-0.3.tar.gz">ejemplos-0.3.tar.gz</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Introducción" [267-935] -->
+<h2><a name="inicio" id="inicio">Inicio</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img0.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img0.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img0.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Inicio" [936-1022] -->
+<h2><a name="conceptos_sobre_videojuegos" id="conceptos_sobre_videojuegos">Conceptos sobre videojuegos</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img1.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img1.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img1.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Cada grupo de desarrollo tiene su visión de los videojuegos.
+</p>
+
+<p>
+Analizando las propuestas de cada grupo nos encontramos con 3 conceptos generales.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Los juegos cerrados para PC y consolas recreativas: simplemente nos proponen jugar, es idéntico comprar juegos para la PC y la consola recreativa. Sólo podemos jugar con la tecnología que otros desarrollan.</div>
+</li>
+</ul>
+
+<p>
+
+Esto no siempre fue así, en <em>Los años 80</em> era muy común oír que un pequeño grupo de estudiantes desarrollaban videojuegos dentro de una habitación, lamentablemente pocos compartían sus conocimientos con el resto de las personas.
+</p>
+
+<p>
+Así, quienes conocemos las ventajas de utilizar GNU/Linux, proponemos un nuevo concepto: no buscamos desarrollar juegos encerrados en una habitación aislados de todo. Podemos crear, aprender y compartir conocimiento sobre tecnología desarrollando videojuegos completamente libres.
+</p>
+
+<p>
+En esta charla adoptamos únicamente el último concepto, videojuegos libres.
+
+</p>
+
+</div>
+<!-- SECTION "Conceptos sobre videojuegos" [1023-2096] -->
+<h2><a name="sobre_el_proyecto_losersjuegos" id="sobre_el_proyecto_losersjuegos">Sobre el proyecto LosersJuegos</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img2.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img2.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+En base a este concepto comenzamos un proyecto llamado LosersJuegos.
+</p>
+
+<p>
+Buscamos promover el conocimiento y los proyectos que impulsan el desarrollo de videojuegos completamente libres.
+</p>
+
+<p>
+La licencia <acronym title="GNU General Public License">GPL</acronym> garantiza los términos de uso legal que un programa debe tener para ser considerado libre, básicamente otorga 4 libertades fundamentales:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> La libertad de ejecutar el programa sea cual sea el propósito.</div>
+</li>
+<li class="level2"><div class="li"> La libertad de estudiar y/o modificar el programa para ajustarlo a tus necesidades.</div>
+</li>
+<li class="level2"><div class="li"> La libertad de distribuir copias, ya sea en forma gratuita o a cambio del pago de un precio.</div>
+</li>
+<li class="level2"><div class="li"> La libertad de distribuir versiones modificadas del programa, de modo que toda la comunidad se beneficie con tus modificaciones.</div>
+</li>
+</ul>
+
+<p>
+
+Existen otras licencias con términos similares, todas son bienvenidas siempre y cuando sean compatibles con la licencia <acronym title="GNU General Public License">GPL</acronym>.
+</p>
+
+<p>
+Nuestro principal interés se basa en aprender y desarrollar sobre tecnología. Nadie nace sabiendo, es importante recordarlo.
+
+</p>
+
+</div>
+<!-- SECTION "Sobre el proyecto LosersJuegos" [2097-3198] -->
+<h2><a name="modelo_de_desarrollod.o.s" id="modelo_de_desarrollod.o.s">Modelo de desarrollo: D.O.S.</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img3.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img3.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img3.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Antes de proponer nuestro modelo de desarrollo veremos a grandes rasgos que modelos existían años atrás:
+</p>
+
+<p>
+En el sistema operativo DOS tenías todo el equipo a tu disposición, se acostumbraba (dados los límites tecnológicos) a economizar cada recurso y a utilizar Assembler como mínimo en todas las rutinas críticas, como el acceso a video y sonido.
+
+</p>
+
+</div>
+<!-- SECTION "Modelo de desarrollo: D.O.S." [3199-3664] -->
+<h2><a name="modelo_de_desarrollodirect_x" id="modelo_de_desarrollodirect_x">Modelo de desarrollo: Direct X</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img4.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img4.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img4.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Unos años mas tarde Microsoft compró a una empresa de Londres, llamada Render Morphics, lo que hoy en dia conocemos como Direct-X.
+</p>
+
+<p>
+La propuesta era diferente, en este caso contábamos con una biblioteca (<em>library</em> en inglés, frecuentemene traducida como <em>librería</em>).
+</p>
+
+<p>
+Una biblioteca es un conjunto de rutinas que nos facilitan ciertas tareas. En este caso facilitan el acceso a los dispositivos multimedia (Audio, Video etc.) sin preocuparnos por el modelo de cada dispositivo de Hardware.
+</p>
+
+<p>
+Con esta explicación queremos dejar en evidencia que los modelos de desarrollo cambian. Así como cambiamos el modelo de DOS por Direct-X y Windows, hoy nos preguntamos: ¿ Direct-X es adecuado en la actualidad ?
+</p>
+
+<p>
+Un modelo de desarrollo debe adaptarse a su época, hoy utilizamos GNU/Linux como muchos usuarios (cada vez más). El Software Libre representa una propuesta muy interesante. Existen dispositivos, lenguajes de programación y sistemas operativos mucho mas variados que a mediados de los 90.
+</p>
+
+<p>
+Direct-X no resuelve nada de esto, es una tecnología cerrada. Sólo la empresa que cuenta con los derechos legales correspondientes puede darnos la posibilidad de adaptar este modelo a la realidad. Este es el motivo principal por el cual no existen muchos juegos para GNU/Linux, están atados al modelo DirectX.
+
+</p>
+
+</div>
+<!-- SECTION "Modelo de desarrollo: Direct X" [3665-5095] -->
+<h2><a name="modelo_de_desarrollosdl_i" id="modelo_de_desarrollosdl_i">Modelo de desarrollo: SDL (I)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img5.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img5.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img5.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Pero existe otro modelo mejor adaptado a la actualidad, SDL.
+</p>
+
+<p>
+Es muy simple de utilizar, funciona en varios sistemas operativos y soporta muchos lenguajes de programación.
+</p>
+
+<p>
+Además se distribuye bajo la licencia <acronym title="GNU Lesser General Public License">LGPL</acronym>, lo cual nos asegura que no estaremos sujetos a las decisiones o conveniencias de una empresa. Podremos ver, estudiar, modificar y distribuir todo el código de la biblioteca y así extender su soporte.
+
+</p>
+
+</div>
+<!-- SECTION "Modelo de desarrollo: SDL (I)" [5096-5626] -->
+<h2><a name="modelo_de_desarrollosdl_ii" id="modelo_de_desarrollosdl_ii">Modelo de desarrollo: SDL (II)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img6.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img6.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img6.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Otra característica de SDL es su diseño, SDL resuelve el acceso básico al sistema multimedia, por ejemplo: podemos indicarle a la biblioteca que genere una ventana, reproduzca un sonido e imprima algún gráfico.
+</p>
+
+<p>
+Si buscamos extender estas funcionalidades tenemos la posibilidad añadir otras bibliotecas como OpenGL (generalmente para manejar gráficos en 3D), SDL_image (para cargar formatos de imágenes como <acronym title="Portable Network Graphics">PNG</acronym>, <acronym title="Joint Photographics Experts Group">JPEG</acronym> etc.) y SDL_Net (para el manejo de redes)
+</p>
+
+<p>
+Existen muchas otras bibliotecas en <a href="http://www.libsdl.org" class="urlextern" title="http://www.libsdl.org"  rel="nofollow">www.libsdl.org</a>
+
+</p>
+
+</div>
+<!-- SECTION "Modelo de desarrollo: SDL (II)" [5627-6257] -->
+<h2><a name="ejemplos_con_sdl" id="ejemplos_con_sdl">Ejemplos con SDL</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img7.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img7.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img7.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Estas diapositivas no incluyen una descripciónn detallada de cada ejemplo, en el evento se mostraron los programas en funcionamiento a modo de taller, intercambiando consultas y comentarios.
+</p>
+
+<p>
+Para acentar por escrito una explicación preferimos hacerlo mediante artículos individuales, puede encontrar estos artículos en <a href="http://www.losersjuegos.com.ar" class="urlextern" title="http://www.losersjuegos.com.ar"  rel="nofollow">www.losersjuegos.com.ar</a> (sección documentos).
+</p>
+
+<p>
+Recuerde desacargar los ejemplos <a href="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/ejemplos-0.3.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:ejemplos-0.3.tar.gz">pulsando aquí.</a>
+
+</p>
+
+</div>
+<!-- SECTION "Ejemplos con SDL" [6258-6852] -->
+<h2><a name="crear_una_ventana" id="crear_una_ventana">Crear una ventana</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img8.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img8.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img8.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Crear una ventana" [6853-6950] -->
+<h2><a name="manejo_de_imagenes" id="manejo_de_imagenes">Manejo de imágenes</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img9.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img9.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img9.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Manejo de imágenes" [6951-7050] -->
+<h2><a name="velocidad_constante_i" id="velocidad_constante_i">Velocidad constante (I)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img10.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img10.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img10.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Velocidad constante (I)" [7051-7155] -->
+<h2><a name="velocidad_constante_ii" id="velocidad_constante_ii">Velocidad constante (II)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img11.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img11.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img11.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Velocidad constante (II)" [7156-7261] -->
+<h2><a name="procesos_y_optimizacion_grafica" id="procesos_y_optimizacion_grafica">Procesos y optimización gráfica</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img12.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img12.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img12.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Procesos y optimización gráfica" [7262-7376] -->
+<h2><a name="colisiones" id="colisiones">Colisiones</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img13.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img13.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img13.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Colisiones" [7377-7468] -->
+<h2><a name="sdl_net_i" id="sdl_net_i">SDL_Net (I)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img14.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img14.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img14.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "SDL_Net (I)" [7469-7561] -->
+<h2><a name="sdl_net_ii" id="sdl_net_ii">SDL_Net (II)</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img15.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img15.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img15.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "SDL_Net (II)" [7562-7655] -->
+<h2><a name="preguntas" id="preguntas">Preguntas</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img16.png-id=referencia-articulos-desarrollo_de_juegos_sobre_gnu.html" class="media" title="referencia:articulos:desarrollo_de_juegos_sobre_gnu:img16.png"><img src="../../../../_media/referencia/articulos/desarrollo_de_juegos_sobre_gnu/img16.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Preguntas" [7656-] --></div>
+</body>
+</html>

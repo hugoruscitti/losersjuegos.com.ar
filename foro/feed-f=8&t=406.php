@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+<link rel="self" type="application/atom+xml" href="http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=406" />
+
+<title>LosersJuegos</title>
+<subtitle>Desarrollando videojuegos libres</subtitle>
+<link href="http://losersjuegos.com.ar/foro/index.php" />
+<updated>2008-11-20T18:51:54+00:00</updated>
+
+<author><name><![CDATA[LosersJuegos]]></name></author>
+<id>http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=406</id>
+<entry>
+<author><name><![CDATA[Metator de Arkalot]]></name></author>
+<updated>2008-11-20T18:51:54+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1753#p1753</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1753#p1753"/>
+<title type="html"><![CDATA[Joer, lo he conseguido y casi me doy un tope XD]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1753#p1753"><![CDATA[
+Aun no se como es que di con la respuesta:<br /><a href="https://arco.inf-cr.uclm.es/pipermail/python/2005-March/000138.html" class="postlink">https://arco.inf-cr.uclm.es/pipermail/python/2005-March/000138.html</a><br /><br />Era tan sencillo, eso lo había visto desde que comencé a estudiar Python.<br />El modulo struct es demasiado por ahora, al menos para mi.<br /><br />Para escribir un byte directamente usé algo distinto:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>import pygame<br />pygame.init&#40;&#41;<br /><br />imagen = pygame.image.load&#40;&quot;imagen.png&quot;&#41;<br />cadena = pygame.image.tostring&#40;imagen, 'RGB'&#41;<br /># esto devuelve una cadena, pero solo imprime los caracteres<br /># si tienen un correspondiente en la tabla ACSII<br /><br />binfile = open&#40;&quot;data.bin&quot;, &quot;w&quot;&#41;<br /><br />for car in cadena:<br />    binfile.write&#40;car&#41;<br />binfile.close&#40;&#41;</code></dd></dl><br /><br />El archivo resultante tiene exactamente 12 bytes, (la imagen era<br />un pequeño png de 2x2 para poder examinar cada pixel en un<br />editor hexadecimal)<br /><br />Así por ejemplo, el primer color de la imagen era rojo (255, 0, 0), luego<br />el verde y después el azul. Al escribirlo (write) daba directamente:<br /><br />111111110000000000000000|000000001111111100000000|000000000000000011111111<br /><br />Sip, eso era exactamente o que buscaba, pues write solo acepta una cadena.<br /><br />Así pues, para poner un numero que no este en la tabla a ASCII, como<br />el 255, ahora se que puedo poner:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>&gt;&gt;&gt; write&#40;&#8216;\xff&#8217;&#41; # XD<br /># Para leerlo, solo basta con poner:<br />&gt;&gt;&gt; ord&#40;binfile.readline&#40;1&#41;&#41; # Leé un solo byte y lo convierte en entero<br />255<br /></code></dd></dl><br /><br /><img src="http://losersjuegos.com.ar/foro/images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><br /><br />Ahora que se como escribir y leer un byte sin entrar en orden de<br />bytes y demás jaladas, me dedicare a programar mi algoritmo,<br />aquí mismo les cuento como me salió.<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1921">Metator de Arkalot</a> — Jue Nov 20, 2008 6:51 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[hugoruscitti]]></name></author>
+<updated>2008-11-20T13:51:05+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1752#p1752</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1752#p1752"/>
+<title type="html"><![CDATA[Re: Editar ficheros binarios con Python]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1752#p1752"><![CDATA[
+<blockquote><div><cite>Metator de Arkalot escribió:</cite><br />El problema es que no se que es ese argumento 'hhl', ademas de<br />que en realidad me escribe tres bytes vacios (00000000) antes<br />de escribir el numero 1 en binario (00000001).<br /></div></blockquote><br /><br />Por lo que se ve, el módulo struct sirve para trasladar tipos de datos<br />nativos de python a estructuras de C, se vé muy bueno, no lo conocía.<br /><br />Ahora bien, tal vez te esté faltando como dato tener la documentación<br />de esté módulo: En python existe una función que te da información<br />sobre cualquier objeto de python, la función help.<br /><br />Por ejemplo, ejecutando lo siguiente desde el intérprete interactivo<br />se obtiene toda la ayuda el módulo:<br /><br />import struct<br />help(struct)<br /><br />ahí veo para qué se usa el módulo, y leyendo un poco mas veo que los<br />parámetros &quot;hhl&quot; de tu función no responden a lo que quieres hacer, cada<br />caracter de esa cadena significa el tipo de dato destino que quieres<br />asignar a tus números.<br /><br />Tu sentencia sería algo como:<br /><br />    data = struct.pack('hhl', 1, 2, 3<br /><br />        crear una estructura donde<br /><br />            1 se convierte a: short<br />            2 se convierte a: short<br />            3 se convierte a: long<br /><br />tal vez te sirva probar con valores como &quot;x&quot; (int), o &quot;X&quot; (unsigned int).<br /><br />En fin, leer la ayuda del módulo es primordial.<br /><br /><blockquote><div><cite>Metator de Arkalot escribió:</cite><br />Lo que estoy haciendo es un formato de fichero para comprimir<br />imagenes. Ya tengo el algoritmo, pero no se como editar un binario:<br />por ejemplo, voy a usar pygame para obtener los valores RGB de<br />una imagen, pixel por pixel, y quiero ir poniendo esos tres valores en<br />binario:<br /><br />ROJO = 11111111, 00000000, 00000000<br />AZUL = 00000000, 00000000, 11111111<br /><br />Ademas de otras cosas, pero eso es el primer paso.<br />Espero puedan ayudarme a entender este módulo, u otro si es necesario <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><br /></div></blockquote><br /><br /><br />Una sugerencia, tal vez te sirva usar el método &quot;pygame.image.tostring&quot; para<br />obtener todos los bytes de una imagen en formato de cadena; esto te evita<br />leer uno a uno cada pixel. Pero claro, todo depende de lo que te motive a<br />construir tu programa.<br /><br />Ah, también te dejo otro dato, existe un módulo llamado cPickle que te permite<br />tomar cualquier estructura de memoria de python y volcarla a disco o<br />recuperarla desde ahí, es bastante útil.<br /><br />En fin, ojalá te resulte útil mi comentario. Y disculpa si me fui un poco<br />del tema en cuestión...<br /><br />Saludos.<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=3">hugoruscitti</a> — Jue Nov 20, 2008 1:51 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Metator de Arkalot]]></name></author>
+<updated>2008-11-19T20:19:01+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1750#p1750</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1750#p1750"/>
+<title type="html"><![CDATA[Editar ficheros binarios con Python]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=406&amp;p=1750#p1750"><![CDATA[
+Pues eso, necesito saber como editar un fichero byte por byte,<br />por ejemplo, escribir en el los sigientes numeros:<br />00000001, 00000010, 00000011 (1, 2, 3, etc)<br />Y también necesito leer byte por byte y convertirlos en enteros Python<br /><br />Habia encontrado una función que hace algo similar:<br /><dl class="codebox"><dt>Code: </dt><dd><code>import struct<br /><br />binfile = open&#40;&quot;data.bin&quot;, &quot;wb&quot;&#41;<br />data = struct.pack&#40;'hhl', 1, 2, 3&#41;<br />binfile.write&#40;data&#41;<br /></code></dd></dl><br /><br />El problema es que no se que es ese argumento 'hhl', ademas de<br />que en realidad me escribe tres bytes vacios (00000000) antes<br />de escribir el numero 1 en binario (00000001).<br /><br />Lo que estoy haciendo es un formato de fichero para comprimir<br />imagenes. Ya tengo el algoritmo, pero no se como editar un binario:<br />por ejemplo, voy a usar pygame para obtener los valores RGB de<br />una imagen, pixel por pixel, y quiero ir poniendo esos tres valores en<br />binario:<br /><br />ROJO = 11111111, 00000000, 00000000<br />AZUL = 00000000, 00000000, 11111111<br /><br />Ademas de otras cosas, pero eso es el primer paso.<br />Espero puedan ayudarme a entender este módulo, u otro si es necesario <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /><p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1921">Metator de Arkalot</a> — Mié Nov 19, 2008 8:19 pm</p><hr />
+]]></content>
+</entry>
+</feed>

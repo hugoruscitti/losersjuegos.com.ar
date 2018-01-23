@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    Autómatas y animaciones (II)    [Losersjuegos]
+  </title>
+<link rel="stylesheet" type="text/css" media="screen" href="../../lib/tpl/sidebar/cabecera.css"/>
+  <meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-21T18:24:13+0300" />
+<meta name="keywords" content="referencia,articulos,automatas" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="automatas-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/referencia/articulos/automatas.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/referencia/articulos/automatas.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+
+  <link rel="shortcut icon" href="../../lib/tpl/sidebar/images/ico.png" />
+  <script type="text/javascript" src="../../lib/tpl/sidebar/dtree.js"></script>
+  <link rel="StyleSheet" href="../../lib/tpl/sidebar/dtree.css" type="text/css" />
+
+
+  
+</head>
+
+<body>
+  <div class="dokuwiki">
+  
+  
+<div id="cabecera">
+    <a href='../../index.html'><img id='logo1' alt='' src="../../lib/tpl/sidebar/ima_cabecera/logo_1.png" width="286" height="50" name="logo1" /></a>
+
+
+    <div id="navi">
+        <ul>
+            <li id='actual'><a href="../../index.html">Web</a></li>
+            <li><a href="../../foro/index.html">Foro</a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class='barrasuperior'>
+      <span class="bchead">Tu estás aquí: </span><a href="../../principal.html"  title="principal">¡Bienvenido!</a> &raquo; <a href="../../referencia.html"  title="referencia">Referencia</a> &raquo; <a href="../articulos.html"  title="referencia:articulos">Artículos</a> &raquo; <a href="automatas.html"  title="referencia:articulos:automatas">Autómatas y animaciones (II)</a>    </div>
+
+
+      <div class='barra_botones'>
+
+
+        <div class='caja'>
+            <h5>Usuario</h5>
+                                    <form class="button btn_login" method="get" action="automatas.html"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="37c9187da1adb1dadd25d5de37249fc6" /><input type="submit" value="Entrar" class="button" title="Entrar" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>Buscar páginas</h5>
+<form action="../../index.html" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" size="12" accesskey="f" name="id" class="edit" title="[ALT+F]" /><input type="submit" value="Buscar" class="button" title="Buscar" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+        </div>
+
+        <div class='caja'>
+            <h5>Esta Pagina</h5>
+
+            <form class="button btn_source" method="post" action="automatas.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="submit" value="Ver fuente" class="button" accesskey="v" title="Ver fuente [V]" /></div></form>            <form class="button btn_revs" method="get" action="automatas.html"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Revisiones anteriores" class="button" accesskey="o" title="Revisiones anteriores [O]" /></div></form>            <form class="button btn_backlink" method="get" action="automatas.html"><div class="no"><input type="hidden" name="do" value="backlink" /><input type="submit" value="Enlaces anteriores" class="button" title="Enlaces anteriores" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>General</h5>
+
+            <form class="button btn_index" method="get" action="automatas.html"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Indice" class="button" accesskey="x" title="Indice [X]" /></div></form>            <form class="button btn_recent" method="get" action="automatas.html"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Cambios recientes" class="button" accesskey="r" title="Cambios recientes [R]" /></div></form>        </div>
+
+    </div>
+
+  
+  
+  
+  <div id='sidebar'>
+<div class="dtree">
+
+<script type="text/javascript">
+
+    d = new dTree('d');
+
+
+
+    d.add(0, -1, '');
+
+    d.add(1, 0, 'Principal', '/principal', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png');
+
+        d.add(2, 1, 'Noticias',     '/principal/noticias');
+        d.add(3, 1, 'Anteriores',   '/principal/anteriores');
+        d.add(4, 1, 'Indice',       '/principal/indice');
+
+
+
+
+
+    d.add(5, 0, 'Comunidad', '/comunidad', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png');
+
+        d.add(6, 5, 'Integrantes',      '/comunidad/integrantes');
+        d.add(7, 5, 'Como participar',  '/comunidad/comoparticipar');
+        d.add(8, 5, 'Contacto',         '/comunidad/contactenos');
+        d.add(9, 5, 'Difundir',         '/comunidad/difundir');
+        d.add(10, 5, 'Consejos',        '/comunidad/consejos');
+        d.add(11, 5, 'To Do',           '/comunidad/todo');
+
+
+
+
+
+    d.add(12, 0, 'Juegos', '/juegos', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png');
+
+
+        d.add(13, 12, 'irobot',     '/juegos/irobotgame');
+        d.add(14, 12, 'ceferino',   '/juegos/ceferino');
+        d.add(15, 12, 'asadetris', '/juegos/asadetris');
+        d.add(16, 12, 'asadetrismobile', '/juegos/asadetrismobile');
+        d.add(17, 12, 'volleyball', '/juegos/volleyball');
+        d.add(18, 12, 'pongix',     '/juegos/pongix');
+        d.add(19, 12, 'aqbubble',   '/juegos/aqbubble');
+        d.add(20, 12, 'chanta',     '/juegos/chanta');
+        d.add(21, 12, 'soccerd',    '/juegos/soccerd');
+        d.add(99, 12, 'ceferinomobile', '/juegos/ceferinomobile');
+
+
+    d.add(50, 0, 'Software', '/software', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/software.png',
+            '/lib/tpl/sidebar/iconos/secciones/software.png');
+
+        d.add(53, 50, 'Pilas', '/software/pilas');
+        d.add(52, 50, 'Gimp Pugins', '/software/gimp');
+        d.add(51, 50, 'Live DVD', '/software/livecd');
+
+
+
+
+
+
+    d.add(22, 0, 'Referencia', '/referencia', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png');
+
+
+        d.add(23, 22, 'Ejemplos',   '/referencia/ejemplos');
+        d.add(24, 22, 'Videos',     '/referencia/videos');
+        d.add(25, 22, 'Articulos',  '/referencia/articulos');
+        d.add(26, 22, 'Libros',     '/referencia/libros');
+        d.add(27, 22, 'Apuntes',    '/referencia/apuntes');
+
+
+    d.add(28, 0, 'Traducciones', '/traducciones', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png');
+
+        d.add(29, 28, 'pygame',   '/traducciones/pygame');
+
+ 
+
+    d.add(30, 0, 'Galeria', '/galeria', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png');
+
+
+
+        d.add(31, 30, 'artisticas', '/galeria/artisticas');
+        d.add(32, 30, 'fondos',     '/galeria/fondos');
+        d.add(33, 30, 'sprites',    '/galeria/sprites');
+        d.add(34, 30, 'capturas',   '/galeria/capturas');
+        d.add(35, 30, 'bocetos',    '/galeria/bocetos');
+
+
+
+    d.add(36, 0, 'Links', '/links', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/links.png',
+            '/lib/tpl/sidebar/iconos/secciones/links.png');
+
+
+
+    d.config.folderLinks = true;
+    d.config.useLines = false;
+    d.config.useSelection = true;
+    document.write(d);
+
+</script>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<span style='color: gray; font-size: 8pt'>
+Menu realizado con <a href='http://destroydrop.com/javascripts/tree/default.html'>dTree</a>.
+</span>
+
+
+<!-- no cachefile used, but created -->
+</div>    <div class="page_with_sidebar">
+      <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#automatas_y_animaciones_ii" class="toc">Autómatas y animaciones (II)</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#estados" class="toc">Estados</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#automata" class="toc">Autómata</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#interpretacion_informal_del_automata" class="toc">Interpretación informal del autómata:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#implementando_un_gestor_de_estados" class="toc">Implementando un gestor de estados:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplo" class="toc">Ejemplo:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#diagrama_de_transiciones" class="toc">Diagrama de transiciones:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#referencia" class="toc">Referencia</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../_media/referencia/articulos/automatas/automatas.pdf" class="media mediafile mf_pdf" title="referencia:articulos:automatas:automatas.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="automatas_y_animaciones_ii" id="automatas_y_animaciones_ii">Autómatas y animaciones (II)</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 30 de Julio del 2005</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+Un personaje de video juego suele realizar varios movimientos simples como: saltar, correr, disparar etc.
+</p>
+
+<p>
+En algunos juegos la cantidad de movimientos por personaje es numerosa y suele combinarse. Por ejemplo, en el videojuego <a href="http://en.wikipedia.org/wiki/Street_Fighter" class="urlextern" title="http://en.wikipedia.org/wiki/Street_Fighter"  rel="nofollow">Street Fighter</a> el jugador puede “golpear mientras salta”, o “patear agachado en el suelo”.
+</p>
+
+<p>
+En este último caso, programar el comportamiento de un personaje se hace más difícil a medida que crece el número de acciones involucradas.
+</p>
+
+<p>
+En este artículo veremos como gestionar un conjunto de movimientos mediante autómatas finitos. Al final del artículo se presenta una pequeña demostración de un video juego de peleas.
+
+</p>
+
+</div>
+
+<h2><a name="estados" id="estados">Estados</a></h2>
+<div class="level2">
+
+<p>
+
+Un estado representa el comportamiento del personaje en un momento dado. Cada estado reacciona de manera diferente a los eventos (como la pulsación de una tecla) y está asociado a una animación diferente:
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/automatas/estados.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:estados.png"><img src="../../_media/referencia/articulos/automatas/estados.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+En este caso, el personaje de la figura cuenta con el estado PARADO, ya que tiene una animación asociada y reacciona de manera diferente ante un evento como “golpear”, en comparación a otro estado como SALTA.
+
+</p>
+
+</div>
+
+<h2><a name="automata" id="automata">Autómata</a></h2>
+<div class="level2">
+
+<p>
+
+Un autómata finito es un modelo lógico asociado a una serie de propiedades, entre ellas, un conjunto de estados, un alfabeto y una relación de transición.
+</p>
+
+<p>
+Pero para nuestra aplicación no será necesario profundizar en la definición formal de autómatas, en su lugar optamos por presentar el concepto de manera informal.
+
+</p>
+
+</div>
+
+<h2><a name="interpretacion_informal_del_automata" id="interpretacion_informal_del_automata">Interpretación informal del autómata:</a></h2>
+<div class="level2">
+
+<p>
+
+Podemos imaginar a un autómata como una máquina que se encuentra en un estado particular, y que ante determinados eventos cambia de un estado a otro.
+</p>
+
+<p>
+Nuestro personaje funcionará como un autómata:
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/automatas/estados_2.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:estados_2.png"><img src="../../_media/referencia/articulos/automatas/estados_2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Cuando comienza el juego estamos en posición de combate (un estado), si pulsamos hacia arriba (un evento) comenzamos a saltar. Saltar será nuestro nuevo estado, y en él tendremos una serie de posibilidades nuevas como realizar una “patada voladora”.
+</p>
+
+<p>
+Este criterio se puede apreciar fácilmente mediante un diagrama de transiciones:
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/automatas/automata_reducido.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:automata_reducido.png"><img src="../../_media/referencia/articulos/automatas/automata_reducido.png" class="mediacenter" title="diagrama de transiciones simple" alt="diagrama de transiciones simple" /></a>
+</p>
+
+<p>
+De la figura podemos deducir algunas características:
+
+</p>
+<pre class="code"> 1. El autómata no puede estar en mas de un estado al mismo tiempo.
+ 2. Los eventos relacionan a los estados entre sí.
+ 3. No todos los eventos implican un cambio de estado, para este ejemplo un evento como &quot;agachar&quot; no tiene sentido mientras el personaje se encuentra en estado &quot;salta&quot;.</pre>
+
+</div>
+
+<h2><a name="implementando_un_gestor_de_estados" id="implementando_un_gestor_de_estados">Implementando un gestor de estados:</a></h2>
+<div class="level2">
+
+<p>
+
+Existen varias formas de implementar un gestor de estados partiendo de un autómata. Si bien el modelo original será idéntico, cada implementación difiere en eficiencia y complejidad.
+</p>
+
+<p>
+Aquí, como en el resto de los artículos, optamos por un criterio simple y fácil de implementar, el objetivo de los ejemplos es brindar una base de prueba para interpretar. Seguramente encontrará formas más eficientes de implementar este programa utilizando punteros a funciones o polimorfismo.
+
+</p>
+
+</div>
+
+<h2><a name="ejemplo" id="ejemplo">Ejemplo:</a></h2>
+<div class="level2">
+
+<p>
+
+A continuación podrá descargar el ejemplo del artículo.
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/automatas/ejemplo.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:ejemplo.png"><img src="../../_media/referencia/articulos/automatas/ejemplo.png" class="mediacenter" title="El programa de ejemplo en GNU/Linux" alt="El programa de ejemplo en GNU/Linux" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../_media/referencia/articulos/automatas/automatas.zip" class="media mediafile mf_zip" title="referencia:articulos:automatas:automatas.zip">Versión ejecutable para Windows</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../_media/referencia/articulos/automatas/automatas.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:automatas:automatas.tar.gz">Código fuente en lenguaje C para GNU/Linux</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.losersjuegos.com.ar/referencia/articulos/automatas/doc/index.html" class="urlextern" title="http://www.losersjuegos.com.ar/referencia/articulos/automatas/doc/index.html"  rel="nofollow">Ver el código fuente on-line</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../_media/referencia/articulos/automatas/automata.dia" class="media mediafile mf_" title="referencia:articulos:automatas:automata.dia">Bajar el diagrama de transiciones en formato .dia</a></div>
+</li>
+</ul>
+
+<p>
+
+En el programa podemos manejar al personaje con los direccionales del teclado y mediante las teclas &#039;x&#039; y &#039;z&#039; podemos “patear” y “golpear con el puño” respectivamente.
+</p>
+
+<p>
+El título de la ventana nos indica el estado actual del autómata.
+</p>
+
+<p>
+El personaje almacena su estado actual junto con el resto de sus propiedades dentro de la estructura actor:
+
+</p>
+<pre class="code c"><span class="kw2">enum</span> estado <span class="br0">&#123;</span> PARADO<span class="sy0">,</span> SALTA<span class="sy0">,</span> GOLPEA <span class="br0">&#91;</span>...<span class="br0">&#93;</span> <span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">struct</span> actor
+<span class="br0">&#123;</span>
+        <span class="kw2">enum</span> estado;
+        <span class="kw4">int</span> x;
+        <span class="kw4">int</span> y;
+        <span class="br0">&#91;</span>...<span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre>
+<p>
+El manejo general del personaje consiste en llamar de manera periódica a la función:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> actor_actualizar <span class="br0">&#40;</span><span class="kw4">struct</span> actor <span class="sy0">*</span> obj<span class="br0">&#41;</span></pre>
+<p>
+que selecciona, en base al estado del actor, que función se debe procesar para representar el comportamiento en ese instante.
+</p>
+
+<p>
+Así, cada estado se encuentra asociado a una función independiente que recibe los datos del personaje y las teclas pulsadas:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> actor_estado_parado <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Unit8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="kw4">void</span> actor_estado_camina <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Uint8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="kw4">void</span> actor_estado_agachado <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Uint8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="br0">&#91;</span>...<span class="br0">&#93;</span></pre>
+</div>
+
+<h2><a name="diagrama_de_transiciones" id="diagrama_de_transiciones">Diagrama de transiciones:</a></h2>
+<div class="level2">
+
+<p>
+
+El siguiente gráfico es una versión reducida del diagrama de transiciones utilizado en el ejemplo:
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/automatas/diagrama.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:diagrama.png"><img src="../../_media/referencia/articulos/automatas/diagrama.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+
+<h2><a name="referencia" id="referencia">Referencia</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../_detail/referencia/articulos/automatas/referencia.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:referencia.png"><img src="../../_media/referencia/articulos/automatas/referencia.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+
+<h2><a name="conclusion" id="conclusion">Conclusión:</a></h2>
+<div class="level2">
+
+<p>
+
+La mayor parte del trabajo dedicado a esta técnica consiste en diseñar un autómata que cubra nuestros requerimientos; a partir de ahí, la implementación posterior es muy sencilla y fácil de modificar.
+
+</p>
+
+</div>
+
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia <a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es" class="urlextern" title="http://creativecommons.org/licenses/by-sa/2.5/deed.es"  rel="nofollow">Creative Commons.</a>
+
+</p>
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+        <div style='float: right; margin: 3px;'>
+            <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Subir" onclick="window.scrollTo(0, 0)" title="Subir" /></a>        </div>
+
+    <div class="meta">
+      <div class="doc">
+        referencia/articulos/automatas.txt &middot; Última modificación: 21/01/2009 a las 18:24 por endaramiz      </div>
+    </div>
+
+   
+
+<div id="pie">
+
+<ul>
+	<li class='contactenos'><a 
+	href='../../comunidad/contactenos.html'>Contáctenos</a></li>
+	
+	<li class='cc'><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Licencia de uso para el sitio</a></li>
+
+	<li class='foro'><a 
+	href='../../foro/index.html'>Foro de mensajes</a></li>
+
+	<li class='comunidad'><a 
+	href='../../comunidad.html'>Sobre el grupo ...</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+Este sitio funciona sobre el motor wiki de <a
+    href='http://wiki.splitbrain.org/wiki:dokuwiki'>DokuWiki</a>.
+<br/>
+&copy; 2003-2008 Hugo Ruscitti
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="../../lib/exe/indexer.php-id=referencia-articulos-automatas&amp;1511021366.gif" width="1" height="1" alt=""  /></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos referencia:videos</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-16T14:18:36+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/referencia/videos/python_y_pygame_cafeconf_2007?rev=1220999704&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-11-29T06:37:31+04:00</dc:date>
+        <title>Pilas, un motor para hacer videojuegos diferente</title>
+        <link>http://www.losersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-11T05:39:15+04:00</dc:date>
+        <title>Haciendo videojuegos con pilas</title>
+        <link>http://www.losersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff</link>
+        <description>Recursos
+
+	*  Visita el sitio oficial de pilas-engine
+	*  Descargar diapositivas</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/referencia/videos/python_y_pygame_cafeconf_2007?rev=1220999704&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-09-10T02:35:04+04:00</dc:date>
+        <title>Como desarrollar juegos con Python y Pygame</title>
+        <link>http://www.losersjuegos.com.ar/referencia/videos/python_y_pygame_cafeconf_2007?rev=1220999704&amp;do=diff</link>
+        <description>El motivo de la charla es brindar una aproximación al desarrollo de videojuegos utilizando el lenguaje de programación Python y la biblioteca Pygame. 
+
+
+
+
+
+El video abarca temas como “¿Por qué hacer videojuegos?”, “¿Que es Python y pygame?” ... hasta el desarrollo de un videojuego paso a paso.</description>
+    </item>
+</rdf:RDF>

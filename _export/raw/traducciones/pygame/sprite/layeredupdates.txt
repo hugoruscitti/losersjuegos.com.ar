@@ -1,0 +1,392 @@
+====== LayeredUpdates ======
+
+/*
+LayeredUpdates Group handles layers, that draws like OrderedUpdates.
+*/
+
+El grupo LayeredUpdates maneja capas (layers) que dibujan como grupos
+''OrderedUpdates''.
+
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:#LayeredUpdates]]
+  * [[:traducciones:pygame:sprite:#add]]
+  * [[:traducciones:pygame:sprite:#sprites]]
+  * [[:traducciones:pygame:sprite:#draw]]
+  * [[:traducciones:pygame:sprite:#get_sprites_at]]
+  * [[:traducciones:pygame:sprite:#get_sprite]]
+  * [[:traducciones:pygame:sprite:#remove_sprites_of_layer]]
+  * [[:traducciones:pygame:sprite:#layers]]
+  * [[:traducciones:pygame:sprite:#change_layer]]
+  * [[:traducciones:pygame:sprite:#get_layer_of_sprite]]
+  * [[:traducciones:pygame:sprite:#get_top_layer]]
+  * [[:traducciones:pygame:sprite:#get_bottom_layer]]
+  * [[:traducciones:pygame:sprite:#move_to_front]]
+  * [[:traducciones:pygame:sprite:#move_to_back]]
+  * [[:traducciones:pygame:sprite:#get_top_sprite]]
+  * [[:traducciones:pygame:sprite:#get_sprites_from_layer]]
+  * [[:traducciones:pygame:sprite:#switch_layer]]
+</box>
+
+
+===== LayeredUpdates =====
+
+
+<code python>
+pygame.sprite.LayeredUpdates(*spites, * *kwargs): return LayeredUpdates
+</code>
+
+
+/*
+This group is fully compatible with pygame.sprite.Sprite.
+*/
+
+Este grupo es completamente compatible con la clase ''pygame.sprite.Sprite''.
+
+/*
+You can set the default layer through kwargs using 'default_layer'
+and an integer for the layer. The default layer is 0.
+*/
+
+Usted puede definir la capa por defecto a través del argumento ''kwargs''
+usando el parámetro de nombre ''default_layer'' y un número entero
+para indicar la capa. La capa por defecto es 0.
+
+/*
+If the sprite you add has an attribute layer then that layer will
+be used.
+If the * *kwarg contains 'layer' then the sprites passed will be 
+added to that layer (overriding the sprite.layer attribute).
+If neither sprite has attribute layer nor * *kwarg then the default
+layer is used to add the sprites.
+*/
+
+Si el sprite que se agrega al grupo tiene un atributo de nombre ''layer'',
+entonces se utilizará ese atributo para determinar en que capa se
+va a agregar el sprite. Si el argumento ''kwarg'' contiene el parámetro
+''layer'' entonces los sprites se agregarán a esa capa (ignorando el
+atributo ''sprite.layer''). Se utilizará la capa por defecto para insertar
+los sprites si no se utiliza ninguna de las formas descritas mas arriba.
+
+/*
+New in pygame 1.8.0
+*/
+
+Esta funcionalidad es nueva en pygame 1.8.0
+
+
+
+===== add =====
+
+/*
+add a sprite or sequence of sprites to a group
+*/
+
+Agrega un sprite o una secuencia de sprites a un grupo.
+
+<code python>
+LayeredUpdates.add(*sprites, * *kwargs): return None
+</code>
+
+
+/*
+If the sprite(s) have an attribute layer then that is used 
+for the layer. If * *kwargs contains 'layer' then the sprite(s) 
+will be added to that argument (overriding the sprite layer 
+attribute). If neither is passed then the sprite(s) will be
+added to the default layer.
+*/
+
+Si el sprite que se agrega al grupo tiene un atributo de nombre ''layer'',
+entonces se utilizará ese atributo para determinar en que capa se
+va a agregar el sprite. Si el argumento ''kwarg'' contiene el parámetro
+''layer'' entonces los sprites se agregarán a esa capa (ignorando el
+atributo ''sprite.layer''). Se utilizará la capa por defecto para insertar
+los sprites si no se utiliza ninguna de las formas descritas mas arriba.
+
+
+
+===== sprites =====
+
+/*
+returns a ordered list of sprites (first back, last top).
+*/
+
+Retorna una lista de sprites ordenados (primero los de atrás, luego los del frente).
+
+<code python>
+LayeredUpdates.sprites(): return sprites
+</code>
+
+
+
+
+===== draw =====
+
+/*
+draw all sprites in the right order onto the passed surface.
+*/
+
+Dibuja todos los sprites ordenados sobre la superficie indicada.
+
+<code python>
+LayeredUpdates.draw(surface): return Rect_list
+</code>
+
+
+
+
+===== get_sprites_at =====
+
+/*
+returns a list with all sprites at that position.
+*/
+
+Retorna una lista de los todos los sprites en esa posición.
+
+<code python>
+LayeredUpdates.get_sprites_at(pos): return colliding_sprites
+</code>
+
+
+/*
+Bottom sprites first, top last.
+*/
+
+Los sprites mas abajo se retornan primero, y por último los que
+están mas arriba.
+
+
+
+===== get_sprite =====
+
+/*
+returns the sprite at the index idx from the groups sprites
+*/
+
+Retorna el sprite que está en el índice indicado por ''idx''.
+
+<code python>
+LayeredUpdates.get_sprite(idx): return sprite
+</code>
+
+
+/*
+Raises IndexOutOfBounds if the idx is not within range.
+*/
+
+Emite  la excepción ''IndexOutOfBounds'' si el argumento
+''idx'' no está comprendido en el rango.
+
+
+
+===== remove_sprites_of_layer =====
+
+/*
+removes all sprites from a layer and returns them as a list.
+*/
+
+Elimina todos los sprites de la capa o layer y los
+retorna como una lista.
+
+<code python>
+LayeredUpdates.remove_sprites_of_layer(layer_nr): return sprites
+</code>
+
+
+
+
+===== layers =====
+
+/*
+returns a list of layers defined (unique), sorted from botton up.
+*/
+
+Retorna una lista de las capas definidas, ordenadas desde mas
+lejanas a mas cercanas.
+
+<code python>
+LayeredUpdates.layers(): return layers
+</code>
+
+
+
+
+===== change_layer =====
+
+/*
+changes the layer of the sprite
+*/
+
+Cambia la capa de un sprite.
+
+<code python>
+LayeredUpdates.change_layer(sprite, new_layer): return None
+</code>
+
+
+/*
+sprite must have been added to the renderer. It is not checked.
+*/
+
+El sprite se debería haber agregado para dibujar. Esta tarea
+no se verifica.
+
+
+
+===== get_layer_of_sprite =====
+
+/*
+returns the layer that sprite is currently in. 
+*/
+
+Retorna la capa o layer en la que se encuentra
+el sprite actualmente.
+
+<code python>
+LayeredUpdates.get_layer_of_sprite(sprite): return layer
+</code>
+
+
+/*
+If the sprite is not found then it will return the default layer.
+*/
+
+Se retornará la capa por defecto si el sprite no se encuenta
+en el grupo.
+
+
+===== get_top_layer =====
+
+/*
+returns the top layer
+*/
+
+Retorna la capa superior.
+
+<code python>
+LayeredUpdates.get_top_layer(): return layer
+</code>
+
+
+
+
+===== get_bottom_layer =====
+
+/*
+returns the bottom layer
+*/
+
+Retorna la capa inferior.
+
+<code python>
+LayeredUpdates.get_bottom_layer(): return layer
+</code>
+
+
+
+
+===== move_to_front =====
+
+/*
+brings the sprite to front layer
+*/
+
+Trae un sprite a la capa superior.
+
+<code python>
+LayeredUpdates.move_to_front(sprite): return None
+</code>
+
+
+/*
+Brings the sprite to front, changing sprite layer to topmost layer
+(added at the end of that layer).
+*/
+
+Trae el sprite al frente cambiando la capa del sprite a la capa
+mas alta (agrega el sprite al final de esa capa).
+
+
+
+===== move_to_back =====
+
+/*
+moves the sprite to the bottom layer
+*/
+
+Mueve el sprite a la capa inferior.
+
+<code python>
+LayeredUpdates.move_to_back(sprite): return None
+</code>
+
+
+/*
+Moves the sprite to the bottom layer, moving it behind
+all other layers and adding one additional layer.
+*/
+
+Mueve el sprite a la capa inferior, produciendo que el
+sprite aparezca detrás de los demás y se genere una
+capa adicional.
+
+
+
+===== get_top_sprite =====
+
+/*
+returns the topmost sprite
+*/
+
+Retorna el sprite que se encuentra mas arriba.
+
+<code python>
+LayeredUpdates.get_top_sprite(): return Sprite
+</code>
+
+
+
+
+===== get_sprites_from_layer =====
+
+/*
+returns all sprites from a layer, ordered by how they where added
+*/
+
+Retorna todos los sprites de una capa, ordenados según se
+han insertado.
+
+<code python>
+LayeredUpdates.get_sprites_from_layer(layer): return sprites
+</code>
+
+
+/*
+Returns all sprites from a layer, ordered by how they where added.
+It uses linear search and the sprites are not removed from layer.
+*/
+
+Retorna todos los sprites de una capa, ordenados según se han
+insertado. Este método usa una búsqueda lineal y los sprites
+no se eliminarán de la capa.
+
+ 
+===== switch_layer =====
+
+/*
+switches the sprites from layer1 to layer2
+*/
+
+Intercambia los sprites de la capa ''layer1'' a la capa ''layer2''.
+
+<code python>
+LayeredUpdates.switch_layer(layer1_nr, layer2_nr): return None
+</code>
+
+
+/*
+The layers number must exist, it is not checked*/
+
+Los números de capa deben existir, aunque esto no se verifica
+en el método.

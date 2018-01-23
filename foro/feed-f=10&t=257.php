@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+<link rel="self" type="application/atom+xml" href="http://losersjuegos.com.ar/foro/feed.php?f=10&amp;t=257" />
+
+<title>LosersJuegos</title>
+<subtitle>Desarrollando videojuegos libres</subtitle>
+<link href="http://losersjuegos.com.ar/foro/index.php" />
+<updated>2008-03-12T04:26:00+00:00</updated>
+
+<author><name><![CDATA[LosersJuegos]]></name></author>
+<id>http://losersjuegos.com.ar/foro/feed.php?f=10&amp;t=257</id>
+<entry>
+<author><name><![CDATA[chiguire]]></name></author>
+<updated>2008-03-12T04:26:00+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=257&amp;p=961#p961</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=257&amp;p=961#p961"/>
+<title type="html"><![CDATA[Presentación]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=257&amp;p=961#p961"><![CDATA[
+Hola a todos. Mi nombre es Ciro Durán, y yo digo que hago juegos, aunque en realidad la mayor parte del tiempo ando sufriendo con las dificultades de mantener el impulso para terminar de hacerlos <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_biggrin.gif" alt=":D" title="Very Happy" /> . Me robaré la idea de TIGSource de presentar algunos títulos favoritos míos acá, y así hacer medianamente interesante este post.<br /><br /><img src="http://upload.wikimedia.org/wikipedia/en/b/bc/SimCity2000_Windows_In-Game_Screenshot.png" alt="Imagen" /><br /><br />Aunque tengo contacto con juegos desde que era pequeño, <span style="font-weight: bold">Simcity 2000</span> es uno de los juegos que comenzó a hacerme pensar en hacer juegos. Eso y las revistas esas que traían código en BASIC para que lo copiaras y luego te dieras cuenta de que la versión de BASIC del libro es distinta a la que tenías en la computadora y comenzaras a echar chispas de la frustración y... bueno, ustedes conocen el cuento <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_smile.gif" alt=":-)" title="Smile" /> .<br /><br /><img src="http://upload.wikimedia.org/wikipedia/en/0/04/Dott-screenshot.png" alt="Imagen" /><br /><br /><span style="font-weight: bold">Day of the Tentacle</span> también es fundamental para mí, y una gran influencia en lo que hago. Creo que es el juego que cambio la forma de contar una historia con humor.<br /><br />---<br /><br />Sobre los juegos que he hecho, podría destacar dos: <span style="font-weight: bold">Tómate un descanso</span> y <span style="font-weight: bold">Mi amigo el Puma</span>.<br /><br /><img src="http://www.ldc.usb.ve/~ciro/img/tomate-screen1.png" alt="Imagen" /><br /><br /><span style="font-weight: bold">Tómate un descanso</span> es un juego de aventura bastante corto, con alguna historia desarrollada para hacer algo más adelante, pero francamente lo he tenido complicado para continuarlo.<br /><br /><a href="http://www.flickr.com/photos/ciroduran/962646672/" class="postlink"><img src="http://farm2.static.flickr.com/1171/962646672_aef93b0a5f.jpg" alt="Imagen" /></a><br /><br /><span style="font-weight: bold">Mi amigo el Puma</span> lo hice por el más puro ocio a partir de una campaña de chicles donde aparece el famoso cantante. Fue más que nada un chiste interno que alcanzó algunas menciones por allí, inclusive en la página oficial de la campaña <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_smile.gif" alt=":-)" title="Smile" /> .<br /><br />--<br /><br />De un tiempo para acá comencé a escribir en un blog, <a href="http://www.ciroduran.com/blog" class="postlink">El Chigüire Literario</a>, con la esperanza de poder conectar con otros desarrolladores locales (soy venezolano) y de Iberoamérica. Si tienen blog, pues tanto mejor.<br /><br />En ese proceso he conocido ya algunas personas, hecho contactos con unas empresas de la ciudad, y por lo menos sé que lo que hace falta ahora es hacer mucho más ruido. Es lo bonito del Internet, que se puede hacer sin más costo que el de dedicarle tiempo.<br /><br />De hecho, llegué a LosersGames a través del blog de <a href="http://mindro.blogspot.com/2008/03/links-de-la-semana-11032008.html" class="postlink">Mindro</a>, y dada la actividad del foro, y la calidad gráfica de los juegos, pues decidí unirme a ver qué se puede hacer por aquí. Felicidades por lo que han logrado. Espero poder dar un poco de difusión de esto a través del blog, y poder colaborar con la causa <img src="http://losersjuegos.com.ar/foro/images/smilies/icon_smile.gif" alt=":-)" title="Smile" /> .<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1902">chiguire</a> — Mié Mar 12, 2008 4:26 am</p><hr />
+]]></content>
+</entry>
+</feed>

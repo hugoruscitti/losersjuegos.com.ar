@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:rect</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:26+0300" />
+<meta name="keywords" content="traducciones,pygame,rect" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/rect-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="rect.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/rect.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#rect" class="toc">Rect</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#rect1" class="toc">Rect</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#move" class="toc">move</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#move_ip" class="toc">move_ip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#inflate" class="toc">inflate</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#inflate_ip" class="toc">inflate_ip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clamp" class="toc">clamp</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clamp_ip" class="toc">clamp_ip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clip" class="toc">clip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#union" class="toc">union</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#union_ip" class="toc">union_ip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#unionall" class="toc">unionall</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#unionall_ip" class="toc">unionall_ip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#fit" class="toc">fit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#normalize" class="toc">normalize</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#contains" class="toc">contains</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collidepoint" class="toc">collidepoint</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#colliderect" class="toc">colliderect</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collidelist" class="toc">collidelist</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collidelistall" class="toc">collidelistall</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collidedict" class="toc">collidedict</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collidedictall" class="toc">collidedictall</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="rect" id="rect">Rect</a></h1>
+<div class="level1">
+
+
+
+<p>
+Objeto de pygame que se utiliza para almacenar coordenadas rectangulares.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#rect" title="traducciones:pygame:rect &crarr;" class="wikilink1">Rect</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#move" title="traducciones:pygame:rect &crarr;" class="wikilink1">move</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#move_ip" title="traducciones:pygame:rect &crarr;" class="wikilink1">move_ip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#inflate" title="traducciones:pygame:rect &crarr;" class="wikilink1">inflate</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#inflate_ip" title="traducciones:pygame:rect &crarr;" class="wikilink1">inflate_ip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#clamp" title="traducciones:pygame:rect &crarr;" class="wikilink1">clamp</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#clamp_ip" title="traducciones:pygame:rect &crarr;" class="wikilink1">clamp_ip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#clip" title="traducciones:pygame:rect &crarr;" class="wikilink1">clip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#union" title="traducciones:pygame:rect &crarr;" class="wikilink1">union</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#union_ip" title="traducciones:pygame:rect &crarr;" class="wikilink1">union_ip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#unionall" title="traducciones:pygame:rect &crarr;" class="wikilink1">unionall</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#unionall_ip" title="traducciones:pygame:rect &crarr;" class="wikilink1">unionall_ip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#fit" title="traducciones:pygame:rect &crarr;" class="wikilink1">fit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#normalize" title="traducciones:pygame:rect &crarr;" class="wikilink1">normalize</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#contains" title="traducciones:pygame:rect &crarr;" class="wikilink1">contains</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#collidepoint" title="traducciones:pygame:rect &crarr;" class="wikilink1">collidepoint</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#colliderect" title="traducciones:pygame:rect &crarr;" class="wikilink1">colliderect</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#collidelist" title="traducciones:pygame:rect &crarr;" class="wikilink1">collidelist</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#collidelistall" title="traducciones:pygame:rect &crarr;" class="wikilink1">collidelistall</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#collidedict" title="traducciones:pygame:rect &crarr;" class="wikilink1">collidedict</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#collidedictall" title="traducciones:pygame:rect &crarr;" class="wikilink1">collidedictall</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Rect" [2-556] -->
+<h2><a name="rect1" id="rect1">Rect</a></h2>
+<div class="level2">
+<pre class="code">
+pygame.Rect(left, top, width, height): return Rect
+pygame.Rect((left, top), (width, height)): return Rect
+pygame.Rect(object): return Rect
+</pre>
+
+
+
+<p>
+Pygame utiliza objetos Rect para almacenar y manipular areas rectangulares. Un
+objeto Rect se puede crear a partir de una combinación de valores <code>izquierda</code>, 
+<code>arriba</code>, <code>ancho</code> y <code>alto</code>. También se pueden crear desde objetos
+python que ya sean un objeto Rect o tengan un atributo de nombre <code>rect</code>.
+</p>
+
+
+
+<p>
+Cualquier función de pygame que requiera un argumento Rect también acepta
+cualquiera de eso valores para construir un rectángulo. Esto hace mas sencillo
+crear objetos Rect en el aire como argumentos a funciones.
+</p>
+
+
+
+<p>
+Los métodos de Rect que cambian la posición o el tamaño del rectángulo
+retornan una nueva copia del objeto con los cambios realizados. El
+rectángulo original no se modifica. Algunos métodos tiene una versión
+alternativa de estas funcionalidades pero que actúan sobre el objeto
+mismo y retornan None. Estos métodos alternativos se denotan con el
+sufijo “ip”.
+</p>
+
+
+
+<p>
+El objeto Rect tiene varios atributos virtuales que se pueden usar para
+mover o alinear un rectángulo.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> top, left, bottom, right</div>
+</li>
+<li class="level1"><div class="li"> topleft, bottomleft, topright, bottomright</div>
+</li>
+<li class="level1"><div class="li"> midtop, midleft, midbottom, midright</div>
+</li>
+<li class="level1"><div class="li"> center, centerx, centery</div>
+</li>
+<li class="level1"><div class="li"> size, width, height</div>
+</li>
+<li class="level1"><div class="li"> w,h</div>
+</li>
+</ul>
+
+
+
+<p>
+Todos estos atributos se pueden asignar así:
+</p>
+
+
+<pre class="code python">rect1.<span class="me1">right</span> = <span class="nu0">10</span>
+rect2.<span class="me1">center</span> = <span class="br0">&#40;</span><span class="nu0">20</span>,<span class="nu0">30</span><span class="br0">&#41;</span></pre>
+
+
+<p>
+Asignar un valor a <code>size</code>, <code>width</code> o <code>height</code> cambia las dimensiones
+del rectángulo, todas las otras asignaciones mueven el rectángulo pero
+sin alterar el tamaño. Note que algunos atributos son números enteros
+y otros son pares de números enteros.
+</p>
+
+
+
+<p>
+Si un rectángulo tiene atributos <code>width</code> o <code>height</code> distintos
+de cero, entonces retornarán True por una consulta distinta de cero. Algunos
+métodos retornan un rectángulo con tamaño 0 para representar un
+rectángulo inválido.
+</p>
+
+
+
+<p>
+Las coordenadas para objetos Rect siempre son números enteros. Los
+valores de tamaño se pueden programar para tener valores negativos, pero
+estos se consideran no válidos para la mayoría de las operaciones.
+</p>
+
+
+
+<p>
+Existen varios métodos para consultar colisiones con otros rectángulos. La
+mayoría de los contenedores de python se pueden utilizar para buscar
+colisiones entre varios rectángulos contra uno.
+</p>
+
+
+
+<p>
+El área cubierta por un rectángulo no incluye los <em>pixeles</em> que se
+encuentran en el límite inferior y derecho. Si el borde inferior de un
+rectángulo es igual al borde superior de otro rectángulo (por ejemplo 
+<code>rect1.bottom = rect2.top</code>), los dos ocupan la misma linea en pantalla pero no se superponen, y la consulta a <code>rect1.colliderect(rect2)</code> retornará
+<code>False</code>.
+</p>
+
+</div>
+<!-- SECTION "Rect" [557-5452] -->
+<h2><a name="move" id="move">move</a></h2>
+<div class="level2">
+
+
+
+<p>
+Mueve el rectángulo.
+</p>
+<pre class="code">
+Rect.move(x, y): return Rect
+</pre>
+
+
+
+<p>
+Retorna un nuevo rectángulo que está desplazado en la cantidad indicada. Los
+argumento <code>x</code> e <code>y</code> pueden ser cualquier valor entero, positivo o negativo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.move" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.move">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "move" [5453-5945] -->
+<h2><a name="move_ip" id="move_ip">move_ip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Mueve el rectángulo afectando al objeto receptor.
+</p>
+<pre class="code">
+Rect.move_ip(x, y): return None
+</pre>
+
+
+
+<p>
+Similar al método <a href="#move" title="traducciones:pygame:rect &crarr;" class="wikilink1">move</a>, pero opera afectando al objeto receptor.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.move_ip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.move_ip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "move_ip" [5946-6324] -->
+<h2><a name="inflate" id="inflate">inflate</a></h2>
+<div class="level2">
+
+
+
+<p>
+Aumenta o disminuye el tamaño del rectángulo.
+</p>
+<pre class="code">
+Rect.inflate(x, y): return Rect
+</pre>
+
+
+
+<p>
+Retorna un nuevo rectángulo con el tamaño alterado en la cantidad indicada. El
+rectángulo se mantiene centrado en el mismo punto. Los valores negativos
+reducen el tamaño del rectángulo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.inflate" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.inflate">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "inflate" [6325-6936] -->
+<h2><a name="inflate_ip" id="inflate_ip">inflate_ip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Aumenta o disminuye el tamaño del rectángulo afectando al objeto receptor.
+</p>
+<pre class="code">
+Rect.inflate_ip(x, y): return None
+</pre>
+
+
+
+<p>
+Similar al método <a href="#inflate" title="traducciones:pygame:rect &crarr;" class="wikilink1">inflate</a>, pero modifica al objeto receptor.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.inflate_ip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.inflate_ip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "inflate_ip" [6937-7363] -->
+<h2><a name="clamp" id="clamp">clamp</a></h2>
+<div class="level2">
+
+
+
+<p>
+Mueve el rectángulo dentro e otro.
+</p>
+<pre class="code">
+Rect.clamp(Rect): return Rect
+</pre>
+
+
+
+<p>
+Retorna una nuevo rectángulo desplazado para estar completamente dentro de
+otro rectángulo dado como parámetro. Si el rectángulo es demasiado grande
+para caber dentro del otro rectángulo, se posicionará en el mismo centro
+que el rectángulo del argumento, pero su tamaño no se cambiará.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clamp" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clamp">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "clamp" [7364-8092] -->
+<h2><a name="clamp_ip" id="clamp_ip">clamp_ip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Mueve el rectángulo dentro e otro.
+</p>
+<pre class="code">
+Rect.clamp_ip(Rect): return None
+</pre>
+
+
+
+<p>
+Similar al método <a href="#clamp" title="traducciones:pygame:rect &crarr;" class="wikilink1">clamp</a>, pero afecta al objeto receptor.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clamp_ip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clamp_ip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "clamp_ip" [8093-8467] -->
+<h2><a name="clip" id="clip">clip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Recorta un rectángulo dentro de otro.
+</p>
+<pre class="code">
+Rect.clip(Rect): return Rect
+</pre>
+
+
+
+<p>
+Retorna un nuevo rectángulo que se recorta para estar completamente
+dentro de otro indicado por parámetro. Si los dos rectángulos no están
+en colisión, se retornará un rectángulo de tamaño 0.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.clip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "clip" [8468-9068] -->
+<h2><a name="union" id="union">union</a></h2>
+<div class="level2">
+
+
+
+<p>
+Une dos rectángulo para convertirse en uno.
+</p>
+<pre class="code">
+Rect.union(Rect): return Rect
+</pre>
+
+
+
+<p>
+Retorna un nuevo rectángulo que cubre completamente el área de otros
+dos rectángulos dados como parámetro. Pueden haber áreas dentro del
+nuevo rectángulo que no estén en el área de los originales.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.union" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.union">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "union" [9069-9677] -->
+<h2><a name="union_ip" id="union_ip">union_ip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Une dos rectángulo para convertirse en uno, afectando al objeto receptor.
+</p>
+<pre class="code">
+Rect.union_ip(Rect): return None
+</pre>
+
+
+
+<p>
+Similar al método <a href="#union" title="traducciones:pygame:rect &crarr;" class="wikilink1">union</a>, pero que afecta al rectángulo receptor.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.union_ip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.union_ip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "union_ip" [9678-10094] -->
+<h2><a name="unionall" id="unionall">unionall</a></h2>
+<div class="level2">
+
+
+
+<p>
+La unión de varios rectángulos.
+</p>
+<pre class="code">
+Rect.unionall(Rect_sequence): return Rect
+</pre>
+
+
+
+<p>
+Retorna la unión de un rectángulo con una secuencia de varios rectángulos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.unionall" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.unionall">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "unionall" [10095-10490] -->
+<h2><a name="unionall_ip" id="unionall_ip">unionall_ip</a></h2>
+<div class="level2">
+
+
+
+<p>
+La unión de varios rectángulos, afectando al objeto receptor.
+</p>
+<pre class="code">
+Rect.unionall_ip(Rect_sequence): return None
+</pre>
+
+
+
+<p>
+Similar al método <a href="#unionall" title="traducciones:pygame:rect &crarr;" class="wikilink1">unionall</a>, pero afectando al objeto receptor.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.unionall_ip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.unionall_ip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "unionall_ip" [10491-10919] -->
+<h2><a name="fit" id="fit">fit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia el tamaño o mueve el rectángulo pero respetando su aspecto.
+</p>
+<pre class="code">
+Rect.fit(Rect): return Rect
+</pre>
+
+
+
+<p>
+Retorna un nuevo rectángulo desplazado y redimensionado para caber dentro
+de otro. Se preserva la proporción de aspecto del rectángulo original, por
+lo tanto el nuevo rectángulo puede ser mas pequeño que el ancho o alto
+del rectángulo final.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.fit" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.fit">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "fit" [10920-11640] -->
+<h2><a name="normalize" id="normalize">normalize</a></h2>
+<div class="level2">
+
+
+
+<p>
+Corrige los tamaños negativos.
+</p>
+<pre class="code">
+Rect.normalize(): return None
+</pre>
+
+
+
+<p>
+Invertirá el ancho o alto de un rectángulo si tiene algún tamaño negativo. El
+rectángulo conservará la misma posición, pero con los lados alternados.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.normalize" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.normalize">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "normalize" [11641-12178] -->
+<h2><a name="contains" id="contains">contains</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un rectángulo está dentro de otro.
+</p>
+<pre class="code">
+Rect.contains(Rect): return bool
+</pre>
+
+
+
+<p>
+Retorna <code>True</code> cuando el argumento está completamente dentro del objeto
+receptor.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.contains" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.contains">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "contains" [12179-12590] -->
+<h2><a name="collidepoint" id="collidepoint">collidepoint</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un punto está dentro de un rectángulo.
+</p>
+<pre class="code">
+Rect.collidepoint(x, y): return bool
+Rect.collidepoint( (x,y) ): return bool
+</pre>
+
+
+
+<p>
+Retorna <code>True</code> si el punto dado está dentro del rectángulo. Un punto
+sobre el costado derecho o inferior del rectángulo no se considera
+que está dentro del rectángulo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidepoint" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidepoint">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "collidepoint" [12591-13225] -->
+<h2><a name="colliderect" id="colliderect">colliderect</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si dos rectángulos están en contacto
+</p>
+<pre class="code">
+Rect.colliderect(Rect): return bool
+</pre>
+
+
+
+<p>
+Retorna <code>True</code> si cualquier parte de alguno de los rectángulos están en
+contacto (excepto los bordes superior+inferior o derecha+izquierda)
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.colliderect" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.colliderect">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "colliderect" [13226-13733] -->
+<h2><a name="collidelist" id="collidelist">collidelist</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un rectángulo entra en contacto con una lista.
+</p>
+<pre class="code">
+Rect.collidelist(list): return index
+</pre>
+
+
+
+<p>
+Consulta si el rectángulo colisiona con otro de una secuencia de rectángulos. Se
+retorna el índice de la primer colisión que se encuentra. Se retorna
+el índice -1 si no se encuentran colisiones.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidelist" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidelist">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "collidelist" [13734-14402] -->
+<h2><a name="collidelistall" id="collidelistall">collidelistall</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si todos los rectángulos en una lista entran en contacto.
+</p>
+<pre class="code">
+Rect.collidelistall(list): return indices
+</pre>
+
+
+
+<p>
+Retorna una lista de todos los índices que contienen rectángulos que
+colisionan con el rectángulo. Se retorna una lista vacía si no se
+encuentran rectángulos en colisión.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidelistall" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidelistall">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "collidelistall" [14403-15042] -->
+<h2><a name="collidedict" id="collidedict">collidedict</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un rectángulo en un diccionario entra en contacto con el rectángulo.
+</p>
+<pre class="code">
+Rect.collidedict(dict): return (key, value)
+</pre>
+
+
+
+<p>
+Retorna la clave y el valor del primer elemento de diccionario que colisiona
+con el rectángulo. Se retorna <code>None</code> si no se encuentran colisiones.
+</p>
+
+
+
+<p>
+Los objetos Rect no se pueden usar como clave en los diccionarios, solamente
+se pueden utilizar como valores.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidedict" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidedict">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "collidedict" [15043-15855] -->
+<h2><a name="collidedictall" id="collidedictall">collidedictall</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si todos los rectángulos en un diccionario entran en contacto.
+</p>
+<pre class="code">
+Rect.collidedictall(dict): return [(key, value), ...]
+</pre>
+
+
+
+<p>
+Retorna una lista de todos los parece de clave y valor que colisionan
+con un rectángulo. Se retorna un diccionario vacío si no se encuentran
+colisiones.
+</p>
+
+
+
+<p>
+Los objetos Rect no se pueden usar como clave en los diccionarios, solamente
+se pueden utilizar como valores.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidedictall" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.Rect.collidedictall">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "collidedictall" [15856-] --></div>
+</body>
+</html>

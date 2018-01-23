@@ -1,0 +1,39 @@
+====== GroupSingle ======
+
+/*
+Group container that holds a single Sprite
+*/
+
+Grupo contenedor que almacena un solo [[..:Sprite:Sprite]].
+
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:groupsingle#groupsingle]]
+</box>
+
+===== GroupSingle =====
+
+
+<code>
+pygame.sprite.GroupSingle(sprite=None): return GroupSingle
+</code>
+
+
+/*
+The GroupSingle container only holds a single Sprite. When a new Sprite is
+added, the old one is removed.
+*/
+
+El contenedor ''GroupSingle'' solo almacena un Sprite. Cuando se agrega
+un nuevo sprite, el anterior se elimina.
+
+/*
+There is a special property, GroupSingle.sprite, that accesses the Sprite that
+this Group contains. It can be None when the Group is empty. The property can
+also be assigned to add a Sprite into the GroupSingle container.
+*/
+
+Existe una propiedad especial, ''GroupSingle.sprite'', que accede al sprite que
+un grupo contiene. Puede ser None cuando el grupo está vacío. Incluso la 
+propiedad se puede utilizar para asignarle un sprite y que éste se almacene
+dentro del contenedor GroupSingle.

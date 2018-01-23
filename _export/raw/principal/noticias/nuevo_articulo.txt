@@ -1,0 +1,11 @@
+====== Nuevo artículo ======
+
+Publicamos un nuevo artículo llamado [[:referencia:articulos:interpolaciones]].
+
+Visita la sección de artículos para ver mas detalles.
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

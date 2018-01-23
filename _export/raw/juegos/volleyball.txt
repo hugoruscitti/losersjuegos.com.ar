@@ -1,0 +1,32 @@
+====== Pocket Volleyball ======
+
+
+Volleyball es un videojuego deportivo muy simple protagonizado por dos pingüinos. Es un juego para dos personas, cada uno debe golpear a la pelota y enviarla al terreno oponente, si logra que la pelota toque el campo de su oponente obtendrá un tanto.
+
+
+
+
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:volleyball:capturas:*}}
+
+
+
+
+
+===== Descargas =====
+
+{{filelist>juegos:volleyball:descargas:*}}
+
+
+===== Licencia =====
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+
+
+{{tag>juegos SDL C}}

@@ -1,0 +1,7 @@
+====== RGBA ======
+
+Es el acrónimo de **R**ed **G**reen **B**lue **A**lpha, una notación que define un
+color en base a sus componentes //Rojo//, //Verde//, //Azúl// y //Transparencia//.
+
+
+Vea mas detalles de esta notación en el artículo [[:referencia:articulos:conceptos_basicos]].

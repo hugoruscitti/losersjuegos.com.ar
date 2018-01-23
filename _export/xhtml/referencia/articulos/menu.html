@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:menu</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-25T17:12:15+0300" />
+<meta name="keywords" content="referencia,articulos,menu" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/menu-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="menu.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/menu.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#como_crear_un_menu_para_tu_juego" class="toc">Como crear un menú para tu juego</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#resumen" class="toc">Resumen</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#por_que_brindarle_importancia" class="toc">¿Por que brindarle importancia?</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#requisitos" class="toc">Requisitos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#primer_aproximacion" class="toc">Primer aproximación</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#otra_aproximacionutilizando_objetos" class="toc">Otra aproximación: utilizando Objetos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#metodos_de_la_clase_menu" class="toc">Métodos de la clase Menu</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#metodo_actualizar" class="toc">Método Actualizar</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#metodo_imprimir" class="toc">Método imprimir</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#descarga" class="toc">Descarga</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/menu/menu.pdf" class="media mediafile mf_pdf" title="referencia:articulos:menu:menu.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="como_crear_un_menu_para_tu_juego" id="como_crear_un_menu_para_tu_juego">Como crear un menú para tu juego</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Como crear un menú para tu juego" [49-94] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> Diciembre del 2007</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [95-183] -->
+<h2><a name="resumen" id="resumen">Resumen</a></h2>
+<div class="level2">
+
+<p>
+
+Construiremos un menú de opciones para un videojuego, debatiendo diferentes estrategias de diseño e implementación. Este menú le permitirá a los usuarios del videojuego seleccionar diferentes opciones como &#039;iniciar el juego&#039;, &#039;ver los creditos&#039;, &#039;terminar el programa&#039; etc.
+</p>
+
+<p>
+Utilizaremos el lenguaje de programación Python junto a la biblioteca multimedia “pygame” para proponer algunos ejemplos, que serán de utilidad para ilustrar diferentes ideas y metodologías.
+</p>
+
+<p>
+Al final de este artículo encontrará un programa de ejemplo ilustrativo para descargar.
+
+</p>
+
+</div>
+<!-- SECTION "Resumen" [184-767] -->
+<h2><a name="por_que_brindarle_importancia" id="por_que_brindarle_importancia">¿Por que brindarle importancia?</a></h2>
+<div class="level2">
+
+<p>
+
+Muchas veces, cuando se desarrolla un videojuego, quienes programamos comenzamos a descuidar algunos aspectos básicos de nuestro proyecto; solemos asumir que la interacción entre nuestro programa y los usuarios no-desarrolladores es un asunto secundario, y puede esperar hasta que nuestro juego esté completamente terminado. Dejando de lado la implementación de gráficos, sonidos y los menúes de principales.
+</p>
+
+<p>
+Conforme el desarrollo de un juego avanza comenzamos a notar la necesidad de permitirle al usuario seleccionar el modo de juego, alterar los parámetros de configuración, e incluso mostrar información acerca de quienes desarrollaron el juego, como sus nombres o direcciones de correo:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/menu/preliminar.png-id=referencia-articulos-menu.html" class="media" title="referencia:articulos:menu:preliminar.png"><img src="../../../../_media/referencia/articulos/menu/preliminar.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Aunque parezca extraño al principio, sabemos tanto de un juego como alguien que desconoce por completo como programar. Mostrar tu juego a amigos y familiares forma parte de nuestro aprendizaje, y puedes adoptarlo como una actividad necesaria para evaluar el proceso de desarrollo y sus resultados.
+</p>
+
+<p>
+Seguramente, cuando muestres tu juego a otras personas, lo deseable sería permitirles &#039;jugar&#039; por cuenta propia, sin tener que explicar cada uno de los pasos a seguir. Implementar un menú principal ayudará a esta tarea: podrás darles el &#039;control&#039; de juego a tus nuevos usuarios.
+
+</p>
+
+</div>
+<!-- SECTION "¿Por que brindarle importancia?" [768-2147] -->
+<h2><a name="requisitos" id="requisitos">Requisitos</a></h2>
+<div class="level2">
+
+<p>
+
+Antes de comenzar a escribir nuestro menú, es importante destacar aquellas características que quisiéramos observar en él. Buscamos desarrollar un menú sencillo, que permita:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Mostrar opciones de texto, que sean fácilmente intercambiables.</div>
+</li>
+<li class="level2"><div class="li"> Facilitar la inclusión del menú en otras escenas de un juego.</div>
+</li>
+<li class="level2"><div class="li"> Navegar entre opciones utilizando los direccionales de teclado.</div>
+</li>
+<li class="level2"><div class="li"> Asociar funcionalidad a cada una de las opciones.</div>
+</li>
+</ul>
+
+<p>
+
+Este paso de planificación es muy importante, porque nos permite organizar las tareas que debemos llevar a cabo en nuestro desarrollo y administrar mejor nuestro tiempo. De otra forma, podríamos dedicar mucho esfuerzo a crear características que luego no nos resultan demasiado útiles…
+</p>
+
+<p>
+Como verá, no buscamos nada especial. Una vez construido el menú, podríamos añadirlo a nuestros primeros prototipos de juego sin problemas, y mejorar la experiencia de uso para cualquier otra persona ajena al desarrollo.
+
+</p>
+
+</div>
+<!-- SECTION "Requisitos" [2148-3136] -->
+<h2><a name="primer_aproximacion" id="primer_aproximacion">Primer aproximación</a></h2>
+<div class="level2">
+
+<p>
+
+Generalmente, un menú de videojuego muestra varias opciones en pantalla, y mediante el teclado podemos deslazar algún indicador, como una flecha o similar:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/menu/preliminar_cerca.png-id=referencia-articulos-menu.html" class="media" title="referencia:articulos:menu:preliminar_cerca.png"><img src="../../../../_media/referencia/articulos/menu/preliminar_cerca.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Posiblemente, en este instante, podríamos suponer que la solución mas simple consistiría en tener una variable que indique la opción actual, como el indicador que se observa en la imagen anterior. Luego, al pulsar una tecla como SELECT evaluaríamos el valor de esta variable y así reconoceríamos la opción pulsada:
+
+</p>
+<pre class="code python"><span class="kw1">if</span> key == UP:
+    opcion = opcion - <span class="nu0">1</span>
+<span class="kw1">elif</span> key == DOWN:
+    opcion = opcion + <span class="nu0">1</span>
+&nbsp;
+<span class="kw1">if</span> key == SELECT:
+    <span class="kw1">if</span> opcion == <span class="nu0">1</span>:
+        <span class="kw1">print</span> <span class="st0">&quot;Elige: Jugar&quot;</span>
+    <span class="kw1">elif</span> opcion == <span class="nu0">2</span>:
+        <span class="kw1">print</span> <span class="st0">&quot;Elige: Opciones&quot;</span>
+    <span class="kw1">elif</span> opcion == <span class="nu0">3</span>:
+        <span class="kw1">print</span> <span class="st0">&quot;Elige: Creditos&quot;</span>
+    <span class="kw1">elif</span> opcion == <span class="nu0">4</span>:
+        <span class="kw1">print</span> <span class="st0">&quot;Elige: Salir&quot;</span></pre>
+<p>
+El problema de esta primer estrategia es su flexibilidad: a medida que busquemos añadir opciones, o modificar las existentes, tendremos que lidiar con bloques de código muy grandes y vinculados, nuestro código estará concentrado en un solo lugar donde un cambio podría ocasionar errores de inconsistencia.
+</p>
+
+<p>
+Tomemos como ejemplo el código anterior, imagine que deseamos añadir una opción nueva, como &#039;Reiniciar partida&#039;, justo debajo de la opción &#039;Jugar&#039;:
+</p>
+
+<p>
+Tendríamos que cambiar todos los índices: &#039;Jugar&#039; sería la opción 1, &#039;Reiniciar partida&#039; la opción 2, &#039;Opciones&#039; ahora cambiará para convertirse en la opción 3… Estos detalles pueden ocasionar algunos contratiempos, es fácil cometer errores en casos como ese.
+</p>
+
+<p>
+Y cada vez que busquemos implementar un menú similar encontraremos las mismas dificultades.
+</p>
+
+<p>
+Por suerte existen muchas otras formas de implementar funcionalidades como esta, y aquí veremos solo una:
+
+</p>
+
+</div>
+<!-- SECTION "Primer aproximación" [3137-4972] -->
+<h2><a name="otra_aproximacionutilizando_objetos" id="otra_aproximacionutilizando_objetos">Otra aproximación: utilizando Objetos</a></h2>
+<div class="level2">
+
+<p>
+
+Una forma interesante de construir nuestro menú de manera organizada consiste en distribuir los componentes del programa en diferentes entidades.
+</p>
+
+<p>
+En este caso podemos representar el comportamiento completo del menú en una clase de nombre &#039;Menu&#039;. Veamos su estructura general en python:
+
+</p>
+<pre class="code python"><span class="kw1">class</span> Menu:
+&nbsp;
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, opciones<span class="br0">&#41;</span>:
+        <span class="kw1">pass</span>
+&nbsp;
+    <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+        <span class="kw1">pass</span>
+&nbsp;
+    <span class="kw1">def</span> imprimir<span class="br0">&#40;</span><span class="kw2">self</span>, screen<span class="br0">&#41;</span>:
+        <span class="kw1">pass</span></pre>
+<p>
+Mediante esta clase podemos representar el comportamiento básico de un menú. El método &#039;<em class="u">init</em>&#039; será invocado al momento de crear un objeto de la clase Menu. Por ejemplo ante una sentencia como:
+
+</p>
+<pre class="code python">mi_menu = Menu<span class="br0">&#40;</span>lista_opciones<span class="br0">&#41;</span></pre>
+<p>
+python generará una nueva instancia de objeto &#039;Menu&#039;.
+</p>
+
+<p>
+Como buscamos un menú que pueda ser utilizado una y otra vez, en diferentes escenas, podríamos separar a las opciones del mismo menú. El parámetro &#039;opciones&#039; de la clase &#039;Menu&#039; hace precisamente eso, consiste en una lista de opciones para representar.
+</p>
+
+<p>
+Cada opción tiene asociado un texto y una acción. Por lo tanto representaremos las opciones del menú como tuplas: una de las formas mas sencillas relacionar valores:
+
+</p>
+<pre class="code python">opcion_nuevo_juego = <span class="br0">&#40;</span><span class="st0">'Nuevo juego'</span>, funcion_para_iniciar_el_juego<span class="br0">&#41;</span>
+opcion_salir = <span class="br0">&#40;</span><span class="st0">'Salir del programa'</span>, funcion_para_terminar<span class="br0">&#41;</span>
+&nbsp;
+lista_opciones = <span class="br0">&#91;</span>opcion_nuevo_juego, opcion_salir<span class="br0">&#93;</span>
+&nbsp;
+menu = Menu<span class="br0">&#40;</span>lista_opciones<span class="br0">&#41;</span></pre>
+<p>
+las tuplas son un tipo de dato que se incluyen en python y muchos otros lenguajes de programación. Tal vez no se encuentre muy familiarizado con ellas: es simple, una tupla permite agrupar dos o mas elementos, sin importar su tipo.
+</p>
+
+<p>
+En este caso, &#039;opcion_salir&#039; es una referencia a una tupla que tiene como primer elemento a una cadena (&#039;Salir del programa&#039;) y como segundo elemento tiene el nombre de una función.
+</p>
+
+<p>
+De esta forma, crear un menú será tan simple como generar un objeto Menú junto a una lista de opciones; veamos un ejemplo mas completo:
+
+</p>
+<pre class="code python">opciones = <span class="br0">&#91;</span>
+    <span class="br0">&#40;</span><span class="st0">'Jugar'</span>, funcion_para_iniciar_el_juego<span class="br0">&#41;</span>,
+    <span class="br0">&#40;</span><span class="st0">'Opciones'</span>, funcion_para_crear_menu_opciones<span class="br0">&#41;</span>,
+    <span class="br0">&#40;</span><span class="st0">'Creditos'</span>, funcion_para_mostrar_creadores_del_juego<span class="br0">&#41;</span>,
+    <span class="br0">&#40;</span><span class="st0">'Salir'</span>, funcion_para_terminar_el_programa<span class="br0">&#41;</span>
+    <span class="br0">&#93;</span>
+&nbsp;
+    menu = Menu<span class="br0">&#40;</span>opciones<span class="br0">&#41;</span></pre>
+<p>
+Uno de los aspectos mas prácticos de esta aproximación consiste en algo denominado “encapsulación”: La referencia &#039;menu&#039; apunta a un objeto que almacena atributos y comportamiento, por lo tanto desde el exterior podemos &#039;comunicarnos&#039; con este objeto utilizando sus métodos, por ejemplo “menu.imprimir(screen)”. Y despreocuparnos por su composición interna.
+</p>
+
+<p>
+A partir de ahí, mediante la referencia &#039;menu&#039;, debemos actualizar e imprimir el menú periódicamente para que este gestione el comportamiento del teclado:
+
+</p>
+<pre class="code python"><span class="kw1">import</span> pygame
+&nbsp;
+<span class="co1"># define el modo de video en un tamaño de</span>
+<span class="co1"># 320 pixeles de ancho por 240 pixeles de alto.</span>
+screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">320</span>, <span class="nu0">240</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">while</span> <span class="kw1">not</span> salir:
+&nbsp;
+    <span class="co1"># atiende el evento que se produce al cerrar la ventana principal.</span>
+    <span class="kw1">for</span> e <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+        <span class="kw1">if</span> e.<span class="kw2">type</span> == QUIT:
+            salir = <span class="kw2">True</span>
+&nbsp;
+    <span class="co1"># limpia la pantalla.</span>
+    screen.<span class="me1">fill</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">200</span>, <span class="nu0">200</span>, <span class="nu0">200</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+&nbsp;
+    <span class="co1"># actualización del menú</span>
+    menu.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+    menu.<span class="me1">imprimir</span><span class="br0">&#40;</span>screen<span class="br0">&#41;</span>
+&nbsp;
+    pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+El código anterior es un extracto del bucle principal de un juego, en él se atiende la llegada de eventos, la actualización del menú y la impresión en pantalla.
+</p>
+
+<p>
+Note que la &#039;verdadera&#039; funcionalidad del programa está en el interior del objeto Menú, desde el bucle de juego solo llamamos a sus dos métodos &#039;actualizar&#039; e &#039;imprimir&#039;.
+</p>
+
+<p>
+Veamos ahora como es el objeto Menú por dentro.
+
+</p>
+
+</div>
+<!-- SECTION "Otra aproximación: utilizando Objetos" [4973-8717] -->
+<h2><a name="metodos_de_la_clase_menu" id="metodos_de_la_clase_menu">Métodos de la clase Menu</a></h2>
+<div class="level2">
+
+</div>
+<!-- SECTION "Métodos de la clase Menu" [8718-8753] -->
+<h3><a name="metodo_actualizar" id="metodo_actualizar">Método Actualizar</a></h3>
+<div class="level3">
+
+<p>
+
+La tarea que debe realizar el método &#039;actualizar&#039; es gestionar la pulsación de teclas y destacar la opción seleccionada. Para realizar esta tarea debemos conocer el estado del teclado y ejecutar funciones si se pulsa una tecla designada como &#039;Enter&#039;.
+</p>
+
+<p>
+Veamos un extracto de ese código:
+
+</p>
+<pre class="code python">Class Menu:
+&nbsp;
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, opciones<span class="br0">&#41;</span>:
+        <span class="kw2">self</span>.<span class="me1">opciones</span> = opciones
+        <span class="kw2">self</span>.<span class="me1">seleccionado</span> = <span class="kw2">False</span>
+        <span class="kw2">self</span>.<span class="me1">mantiene_pulsado</span> = <span class="kw2">False</span>
+&nbsp;
+    <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+        <span class="st0">&quot;&quot;&quot;Altera el valor de 'self.seleccionado' con los direccionales.&quot;&quot;&quot;</span>
+&nbsp;
+        tecla = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="kw1">if</span> <span class="kw1">not</span> <span class="kw2">self</span>.<span class="me1">mantiene_pulsado</span>:
+            <span class="kw1">if</span> tecla<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+                <span class="kw2">self</span>.<span class="me1">seleccionado</span> -= <span class="nu0">1</span>
+            <span class="kw1">elif</span> tecla<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+                <span class="kw2">self</span>.<span class="me1">seleccionado</span> += <span class="nu0">1</span>
+            <span class="kw1">elif</span> tecla<span class="br0">&#91;</span>K_RETURN<span class="br0">&#93;</span>:
+&nbsp;
+                <span class="co1"># Invoca a la función asociada a la opción.</span>
+                titulo, funcion = <span class="kw2">self</span>.<span class="me1">opciones</span><span class="br0">&#91;</span><span class="kw2">self</span>.<span class="me1">seleccionado</span><span class="br0">&#93;</span>
+                <span class="kw1">print</span> <span class="st0">&quot;Selecciona la opción: &quot;</span>, titulo
+                funcion<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="co1"># procura que el cursor esté entre las opciones permitidas</span>
+        <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">seleccionado</span> <span class="sy0">&lt;</span> 0:
+            <span class="kw2">self</span>.<span class="me1">seleccionado</span> = 0
+        <span class="kw1">elif</span> <span class="kw2">self</span>.<span class="me1">seleccionado</span> <span class="sy0">&gt;</span> <span class="kw2">self</span>.<span class="me1">total</span> - <span class="nu0">1</span>:
+            <span class="kw2">self</span>.<span class="me1">seleccionado</span> = <span class="kw2">self</span>.<span class="me1">total</span> - <span class="nu0">1</span>
+&nbsp;
+        <span class="co1"># indica si el usuario mantiene pulsada alguna tecla.</span>
+        <span class="kw2">self</span>.<span class="me1">mantiene_pulsado</span> = tecla<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span> <span class="kw1">or</span> tecla<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span> <span class="kw1">or</span> tecla<span class="br0">&#91;</span>K_RETURN<span class="br0">&#93;</span>
+&nbsp;
+    <span class="co1"># [...] continúa con otros métodos</span></pre>
+<p>
+La variable de nombre &#039;tecla&#039; representa el estado actual del teclado. Mediante esta variable consultamos el estado de las teclas &#039;subir&#039; (K_UP), &#039;bajar&#039; (K_DOWN) y &#039;seleccionar&#039; (K_RETURN).
+</p>
+
+<p>
+Cuando se detecta la pulsación de la tecla &#039;arriba&#039; o &#039;abajo&#039; alteramos el valor de la variable &#039;self.seleccionado&#039;, que indica la opción seleccionada en ese momento.
+</p>
+
+<p>
+En cambio, si se pulsa la tecla &#039;seleccionar&#039;, extraemos de la lista &#039;opciones&#039; aquel elemento que ha sido seleccionado:
+
+</p>
+<pre class="code python">titulo, funcion = <span class="kw2">self</span>.<span class="me1">opciones</span><span class="br0">&#91;</span><span class="kw2">self</span>.<span class="me1">seleccionado</span><span class="br0">&#93;</span></pre>
+<p>
+como cada elemento de la lista &#039;self.opciones&#039; es una tupla, extraemos el valor de la posición &#039;self.seleccionado&#039; en dos variables. Para que la primera unifique con la cadena &#039;titulo&#039; y la segunda variable quede asociada a la función a invocar.
+</p>
+
+<p>
+Para comprender mejor esta rutina, recordemos como se almacenan las opciones del menú. Una opción estaba compuesta por una tupla:
+
+</p>
+<pre class="code python">tupla = <span class="br0">&#40;</span><span class="st0">'Nuevo juego'</span>, funcion_para_iniciar_el_juego<span class="br0">&#41;</span>,</pre>
+<p>
+como tal, una &#039;tupla&#039; representa un dato compuesto, que se puede descomponer con facilidad de la siguiente manera:
+
+</p>
+<pre class="code python">tupla = <span class="br0">&#40;</span><span class="st0">'Nuevo juego'</span>, funcion_para_iniciar_el_juego<span class="br0">&#41;</span>,
+titulo, funcion = tupla</pre>
+<p>
+luego, &#039;titulo&#039; queda asociado a la primer componente de la tupla (&#039;Nuevo juego&#039;) y &#039;funcion&#039; queda asociado al nombre de la función que debemos invocar. Lo que sigue el la rutina es:
+
+</p>
+<pre class="code python"><span class="kw1">print</span> <span class="st0">&quot;Selecciona la opción: &quot;</span>, titulo
+funcion<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+que imprime el titulo de la opción, y luego llama a la rutina apuntada por la variable &#039;funcion&#039;.
+
+</p>
+
+</div>
+<!-- SECTION "Método Actualizar" [8754-11820] -->
+<h3><a name="metodo_imprimir" id="metodo_imprimir">Método imprimir</a></h3>
+<div class="level3">
+
+<p>
+
+Imprimir es una tarea mas sencilla, en el interior de la clase contamos con una lista de opciones y conocemos que opción se encuentra actualmente seleccionada. El objetivo de nuestro método será recorrer la lista de opciones e imprimir cada una de estas sobre el parámetro &#039;screen&#039;:
+
+</p>
+<pre class="code python">Class Menu:
+    <span class="co1"># [...]</span>
+&nbsp;
+    <span class="kw1">def</span> imprimir<span class="br0">&#40;</span><span class="kw2">self</span>, screen<span class="br0">&#41;</span>:
+        <span class="st0">&quot;&quot;&quot;Imprime sobre 'screen' el texto de cada opción del menú.&quot;&quot;&quot;</span>
+&nbsp;
+        total = <span class="kw2">self</span>.<span class="me1">total</span>
+        indice = 0
+        altura_de_opcion = <span class="nu0">30</span>
+        x = <span class="nu0">200</span>
+        y = <span class="nu0">300</span>
+&nbsp;
+        <span class="kw1">for</span> <span class="br0">&#40;</span>titulo, funcion<span class="br0">&#41;</span> <span class="kw1">in</span> <span class="kw2">self</span>.<span class="me1">opciones</span>:
+&nbsp;
+            <span class="co1"># evalúa si debe destacar al opción</span>
+            <span class="kw1">if</span> indice == <span class="kw2">self</span>.<span class="me1">seleccionado</span>:
+                color = <span class="br0">&#40;</span><span class="nu0">255</span>, <span class="nu0">255</span>, <span class="nu0">255</span><span class="br0">&#41;</span>
+            <span class="kw1">else</span>:
+                color = <span class="br0">&#40;</span><span class="nu0">230</span>, <span class="nu0">230</span>, <span class="nu0">230</span><span class="br0">&#41;</span>
+&nbsp;
+            imagen = <span class="kw2">self</span>.<span class="me1">font</span>.<span class="me1">render</span><span class="br0">&#40;</span>titulo, <span class="nu0">1</span>, color<span class="br0">&#41;</span>
+            posicion = <span class="br0">&#40;</span>x, y + altura_de_opcion <span class="sy0">*</span> indice<span class="br0">&#41;</span>
+            indice += <span class="nu0">1</span>
+            screen.<span class="me1">blit</span><span class="br0">&#40;</span>imagen, posicion<span class="br0">&#41;</span></pre>
+<p>
+el método recibe una referencia a cualquier superficie, donde imprimirá cada opción. La mayor parte de código está dedicado a posicionar cada texto en el lugar mas apropiado, buscando que la opciones aparezcan centradas en pantalla.
+
+</p>
+
+</div>
+<!-- SECTION "Método imprimir" [11821-13063] -->
+<h2><a name="descarga" id="descarga">Descarga</a></h2>
+<div class="level2">
+
+<p>
+
+Puedes ver el código fuente de este artículo descargando el archivo <a href="../../../../_media/referencia/articulos/menu/menu.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:menu:menu.tar.gz">menu.tar.gz</a>. Ahí encontrarás dos tipos de menú para implementar en tus juegos.
+
+</p>
+
+</div>
+<!-- SECTION "Descarga" [13064-13280] -->
+<h2><a name="conclusion" id="conclusion">Conclusión</a></h2>
+<div class="level2">
+
+<p>
+
+Existen muchas formas de resolver la creación de un menú para sus juegos, en este artículo he mostrado una forma que considero fácil de implementar y modificar. Anímese a incorporar todas las mejoras que guste, los usuarios de sus juegos lo agradecerán. 
+
+</p>
+
+</div>
+<!-- SECTION "Conclusión" [13281-] --></div>
+</body>
+</html>

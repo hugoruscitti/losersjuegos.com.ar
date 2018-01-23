@@ -1,0 +1,6 @@
+====== RGB ======
+
+Es el acrónimo de **R**ed **G**reen **B**lue, una notación que define un
+color en base a sus componentes //Rojo//, //Verde// y //Azúl//.
+
+Vea mas detalles de esta notación en el artículo [[:referencia:articulos:conceptos_basicos]].

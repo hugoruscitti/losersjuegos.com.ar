@@ -1,0 +1,25 @@
+====== Como desarrollar juegos con Python y Pygame ======
+
+El motivo de la charla es brindar una aproximación al desarrollo de videojuegos utilizando el lenguaje de programación Python y la biblioteca Pygame. 
+
+<html>
+<embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=-4248728848273927994&hl=es&fs=true" style="width:400px;height:326px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed>
+</html>
+
+/*{{ googlevideo>-4248728848273927994 }}*/
+
+
+
+El video abarca temas como "¿Por qué hacer videojuegos?", "¿Que es Python y pygame?" ... hasta el desarrollo de un videojuego paso a paso.
+
+La charla tuvo lugar en el evento de software libre CaFeCONF 2007 organizado por el grupo de usuarios CaFeLUG en la ciudad de Buenos Aires (Argentina).
+
+
+===== Recursos =====
+
+==== Diapositivas y ejemplos ====
+
+  * {{:referencia:videos:python_y_pygame_cafeconf_2007:pygame_cafeconf_2007_ejemplos.tar.gz|Ejemplo paso a paso}}
+  * {{:referencia:videos:python_y_pygame_cafeconf_2007:pygame_cafeconf_2007_slides.pdf|Dispositivas de la charla}}
+
+

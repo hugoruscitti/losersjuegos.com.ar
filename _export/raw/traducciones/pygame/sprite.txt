@@ -1,0 +1,535 @@
+====== sprite ======
+
+/*
+pygame module with basic game object classes
+*/
+
+Módulo de pygame con clases básicas de objetos para juegos.
+
+<box 90%>
+  * [[:traducciones:pygame:sprite#spritecollide]]
+  * [[:traducciones:pygame:sprite#collide_rect]]
+  * [[:traducciones:pygame:sprite#collide_rect_ratio]]
+  * [[:traducciones:pygame:sprite#collide_circle]]
+  * [[:traducciones:pygame:sprite#collide_circle_ratio]]
+  * [[:traducciones:pygame:sprite#collide_mask]]
+  * [[:traducciones:pygame:sprite#groupcollide]]
+  * [[:traducciones:pygame:sprite#spritecollideany]]
+
+**Otras paginas:**
+  * [[:traducciones:pygame:sprite:sprite_class]]
+  * [[:traducciones:pygame:sprite:Group]]
+  * [[:traducciones:pygame:sprite:GroupSingle]]
+  * [[:traducciones:pygame:sprite:LayeredDirty]]
+  * [[:traducciones:pygame:sprite:DirtySprite]]
+  * [[:traducciones:pygame:sprite:LayeredUpdates]]
+  * [[:traducciones:pygame:sprite:OrderedUpdates]]
+  * [[:traducciones:pygame:sprite:RenderedUpdates]]
+</box>
+
+/*
+This module contains several simple classes to be used within games. There
+is the main Sprite class and several Group classes that contain Sprites.
+The use of these classes is entirely optional when using Pygame. The classes
+are fairly lightweight and only provide a starting place for the code
+that is common to most games.
+*/
+
+Este módulo contiene varias clases simples para ser utilizadas
+dentro de los juegos. Hay una clase principal ''Sprite'' y varias
+clases ''Group'' que contienen sprites. El uso de estas clases es
+completamente opcional cuando se usa pygame. Las clases son
+bastante livianas y solo proveen un punto de partida para el código
+que es común en la mayoría de los juegos.
+
+/*
+The Sprite class is intended to be used as a base class for the different
+types of objects in the game. There is also a base Group class that simply
+stores sprites. A game could create new types of Group classes that operate
+on specially customized Sprite instances they contain.
+*/
+
+Se espera que la clase ''Sprite'' se utilice como clase base para
+los diferentes tipos de objetos en el juego. También hay una clase ''Group''
+básica que simplemente almacena sprites. Un juego podría crear nuevos
+tipos de clases ''Group'' que operen sobre instancias de objetos ''Sprite''
+personalizadas.
+
+/*
+The basic Sprite class can draw the Sprites it contains to a Surface. The
+Group.draw() method requires that each Sprite have a Surface.image attribute
+and a Surface.rect. The Group.clear() method requires these same attributes,
+and can be used to erase all the Sprites with background. There are also
+more advanced Groups: pygame.sprite.RenderUpdates() and
+pygame.sprite.OrderedUpdates().
+*/
+
+La clase ''Sprite'' básica puede dibujar los sprites que contiene
+sobre una superficie. El método ''Group.draw()'' requiere que cada
+que cada ''Sprite'' tenga los atributos ''image'' y ''rect''. El
+método ''Group.clear()'' requiere estos mismos atributos para
+poder borrar todos los sprites con fondo de pantalla. También hay
+grupos mas avanzados, por ejemplo ''pygame.sprite.RenderUpdates()''
+y ''pygame.sprite.OrderedUpdates()''.
+
+/*
+Lastly, this module contains several collision functions. These help find
+sprites inside multiple groups that have intersecting bounding rectangles.
+To find the collisions, the Sprites are required to have a Surface.rect
+attribute assigned.
+*/
+
+Por último, este módulo contiene varias funciones de colisión. Estas
+ayudan a encontrar sprites que tienen rectángulos de colisión en
+contacto.
+
+/*
+The groups are designed for high efficiency in removing and adding Sprites
+to them. They also allow cheap testing to see if a Sprite already exists in
+a Group. A given Sprite can exist in any number of groups. A game could use 
+some groups to control object rendering, and a completely separate set of 
+groups to control interaction or player movement. Instead of adding type 
+attributes or bools to a derived Sprite class, consider keeping the 
+Sprites inside organized Groups. This will allow for easier lookup later 
+in the game.
+*/
+
+Los grupos están diseñados para ser muy eficientes al insertar y eliminar
+sprites de ellos. También permiten pruebas sencillas para ver
+si un sprite está dentro del grupo. Un determinado ''Sprite'' puede
+estar en cualquier número de grupos. Un juego podría usar algunos
+grupos para controlar la impresión de objetos, y un conjunto separado
+de grupos para controlar la interacción o el movimiento del
+personaje. Considere mantener los sprites dentro de grupos
+organizados en lugar de agregar atributos de tipo a los objetos sprite. Esto
+le ayudará a encontrarlos mas fácilmente en el juego.
+
+/*
+Sprites and Groups manage their relationships with the add() and remove()
+methods. These methods can accept a single or multiple targets for 
+membership.  The default initializers for these classes also takes a 
+single or list of targets for initial membership. It is safe to repeatedly 
+add and remove the same Sprite from a Group.
+*/
+
+Los sprites y los grupos manejan sus relaciones con los métodos ''add()''
+y ''remove()'''. Estos métodos pueden aceptar una o varias instancias
+de objetos. Los inicializadores para estas clases también aceptan
+uno o varios objetos para insertar. Es seguro agregar y eliminar
+el mismo ''Sprite'' de un grupo.
+
+/*
+While it is possible to design sprite and group classes that don't derive 
+from the Sprite and AbstractGroup classes below, it is strongly recommended 
+that you extend those when you add a Sprite or Group class.
+*/
+
+Mientras es posible diseñar clases de sprite y grupos que no
+deriven desde las clases ''Sprite'' y ''AbstractGroup'' de mas
+arriba, es extremadamente que herede de ellas cuando agregue
+una clase de grupo o sprite.
+
+/*
+Sprites are not thread safe.  So lock them yourself if using threads.
+*/
+
+Los sprites no son seguros para operar desde diferentes hilos, por
+lo tanto debe bloquearlos usted mismo si está usando hilos.
+
+
+
+
+
+===== spritecollide =====
+
+/*
+find Sprites in a Group that intersect another Sprite
+*/
+
+Encuentra sprites en el grupo que están en contacto con otro sprite.
+
+<code python>
+pygame.sprite.spritecollide(sprite, group, dokill, collided = None): return Sprite_list
+</code>
+
+
+/*
+Return a list containing all Sprites in a Group that intersect with another
+Sprite. Intersection is determined by comparing the Sprite.rect attribute
+of each Sprite.
+*/
+
+Retorna una lista que contiene todos los sprites en un grupo que están
+colisionando con otro sprite. La intersección se determina comparando
+el atributo ''Sprite.rect'' de cada sprite.
+
+/*
+The dokill argument is a bool. If set to True, all Sprites that collide
+will be removed from the Group.
+*/
+
+El argumento ''dokill'' es un valor booleando. Si vale ''True'' todos
+los sprites que colisionan se eliminarán del grupo.
+
+/*
+The collided argument is a callback function used to calculate if two sprites 
+are colliding. it should take two sprites as values, and return a bool 
+value indicating if they are colliding. If collided is not passed, all sprites 
+must have a "rect" value, which is a rectangle of the sprite area, which will 
+be used to calculate the collision. 
+*/
+
+El argumento ''collided'' es una función que se utiliza para calcular
+si dos sprites están en contacto, esta función debería tomar dos
+sprites como agumentos y retornar un valor ''True'' o ''False'' indicado
+si están colisionando. Si no se especifica el valor para el
+argumento, todos los sprites deberán tener un valor ''rect'', que es
+el rectángulo del área de sprite, que se usará para calcular l
+colisión.
+
+/*
+collided callables: 
+
+  * collide_rect
+  * collide_rect_ratio
+  * collide_circle 
+  * collide_circle_ratio
+  * collide_mask 
+*/
+
+Funciones de colisión:
+
+  * collide_rect
+  * collide_rect_ratio
+  * collide_circle 
+  * collide_circle_ratio
+  * collide_mask 
+
+
+  * [[pythonexample>pygame.sprite.spritecollide|buscar código donde se use esta función.]]
+
+===== collide_rect =====
+
+/*
+collision detection between two sprites, using rects.
+*/
+
+Detección de colisión entre dos sprites, usando rectángulos.
+
+<code python>
+pygame.sprite.collide_rect(left, right): return bool
+</code>
+
+
+/*
+Tests for collision between two sprites. Uses the
+pygame rect colliderect function to calculate the
+collision. Intended to be passed as a collided
+callback function to the *collide functions.
+Sprites must have a "rect" attributes.
+*/
+
+Consulta la colisión entre dos sprites. Usa la función
+''colliderect'' del módulo ''rect'' para calcular la
+colisión. Está diseñada para ser enviada como una
+función de colisión a las funciones generales de colisión.
+Los sprites deben tener atributos ''rect''.
+
+/*
+New in pygame 1.8.0
+*/
+
+Esta función es nueva en pygame 1.8.0
+
+  * [[pythonexample>pygame.sprite.collide_rect|buscar código donde se use esta función.]]
+
+
+===== collide_rect_ratio =====
+
+/*
+collision detection between two sprites, using rects scaled to a ratio.
+*/
+
+Detección de colisión entre dos sprites, usando rectángulos reducidos.
+
+<code python>
+pygame.sprite.collide_rect_ratio(ratio): return collided_callable
+</code>
+
+
+/*
+A callable class that checks for collisions between two sprites, 
+using a scaled version of the sprites rects.
+*/
+
+Verifica colisiones entre dos sprites usando usa versión reducida
+de los rectángulos de sprite.
+
+/*
+Is created with a ratio, the instance is then intended to be passed 
+as a collided callback function to the *collide functions.
+*/
+
+Se generan con un radio, y la instancia retornada está diseñada
+para ser enviada como una función de colisión a las funciones
+generales de colisión.
+
+/*
+A ratio is a floating point number - 1.0 is the same size, 2.0 is twice as
+big, and 0.5 is half the size.
+*/
+
+El argumento ''ratio'' es un número real, 1.0 indica que será
+del mismo tamaño, 2.0 es el doble de grande y 0.5 es de la mitad
+de tamaño.
+
+
+/*
+New in pygame 1.8.1
+*/
+
+Esta función es nueva en pygame 1.8.1
+
+
+  * [[pythonexample>pygame.sprite.collide_rect_ratio|buscar código donde se use esta función.]]
+
+===== collide_circle =====
+
+/*
+collision detection between two sprites, using circles.
+*/
+
+Detección de colisión entre dos sprites, usando círculos.
+
+<code python>
+pygame.sprite.collide_circle(left, right): return bool
+</code>
+
+
+/*
+Tests for collision between two sprites, by testing to
+see if two circles centered on the sprites overlap. If
+the sprites have a "radius" attribute, that is used to
+create the circle, otherwise a circle is created that
+is big enough to completely enclose the sprites rect as
+given by the "rect" attribute. Intended to be passed as
+a collided callback function to the *collide functions.
+Sprites must have a "rect" and an optional "radius"
+attribute.
+*/
+
+Verifica la colisión entre dos sprites, verificando
+si dos círculos centrados en los sprites están en
+contacto. Si el sprite tiene un atributo ''radius'' este
+se usará para crear en círculo, en caso de que no exista
+se creará un círculo lo suficientemente grande para
+contener todo el rectángulo del sprite indicado
+por el atributo ''rect''. Esta función está diseñada
+para ser enviada como función de colisión a las
+funciones generales de colisión. Los sprites deben
+tener los atributos ''rect'' y ''radius'' (este último
+es opcional).
+
+/*
+New in pygame 1.8.1
+*/
+
+Esta función es nueva en pygame 1.8.1
+
+
+  * [[pythonexample>pygame.sprite.collide_circle|buscar código donde se use esta función.]]
+
+
+
+===== collide_circle_ratio =====
+
+/*
+collision detection between two sprites, using circles scaled to a ratio.
+*/
+
+Detección de colisión entre dos sprites, usando una versión
+reducida del círculo.
+
+<code python>
+pygame.sprite.collide_circle_ratio(ratio): return collided_callable
+</code>
+
+/*
+A callable class that checks for collisions between two sprites, 
+using a scaled version of the sprites radius.
+*/
+
+Verifica colisiones entre dos sprites usando usa versión reducida
+de los círculos de sprite.
+
+
+/*
+Is created with a floating point ratio, the instance is then intended 
+to be passed as a collided callback function to the *collide functions.
+*/
+
+
+Se generan con un radio, y la instancia retornada está diseñada
+para ser enviada como una función de colisión a las funciones
+generales de colisión.
+
+/*
+A ratio is a floating point number - 1.0 is the same size, 2.0 is twice as
+big, and 0.5 is half the size.
+*/
+
+El argumento ''ratio'' es un número real, 1.0 indica que será
+del mismo tamaño, 2.0 es el doble de grande y 0.5 es de la mitad
+de tamaño.
+
+/*
+The created callable tests for collision between two sprites, by testing to
+see if two circles centered on the sprites overlap, after
+scaling the circles radius by the stored ratio. If
+the sprites have a "radius" attribute, that is used to
+create the circle, otherwise a circle is created that
+is big enough to completely enclose the sprites rect as
+given by the "rect" attribute. Intended to be passed as
+a collided callback function to the *collide functions.
+Sprites must have a "rect" and an optional "radius"
+attribute.
+*/
+
+El objeto creado verifica la existencia de colisión entre dos sprites, 
+comprobando si los dos círculos con centro en los sprites están
+en contacto luego de haberlos alterado de tamaño. Lo los sprites
+tienen un atributo ''radius'' este se usará para crear el círculo, en
+otro caso se creará un círculo lo suficientemente grande grande para
+contener por completo el rectángulo de sprite según su atributo
+''rect''. Está diseñada
+para ser enviada como función de colisión a las
+funciones generales de colisión. Los sprites deben
+tener los atributos ''rect'' y ''radius'' (este último
+es opcional).
+
+
+/*
+New in pygame 1.8.1
+*/
+
+Esta función es nueva en pygame 1.8.1
+
+  * [[pythonexample>pygame.sprite.collide_circle_ratio|buscar código donde se use esta función.]]
+
+
+===== collide_mask =====
+
+/*
+collision detection between two sprites, using masks.
+*/
+
+Detección de colisión entre dos sprites usando máscaras.
+
+<code python>
+pygame.sprite.collide_mask(SpriteLeft, SpriteRight): return bool
+</code>
+
+
+/*
+Tests for collision between two sprites, by testing if
+thier bitmasks overlap. If the sprites have a "mask"
+attribute, that is used as the mask, otherwise a mask is
+created from the sprite image. Intended to be passed as
+a collided callback function to the *collide functions.
+Sprites must have a "rect" and an optional "mask"
+attribute.
+*/
+
+Verifica la colisión entre dos sprites, probando si sus
+máscaras de bits se superponen. Si el sprite tiene un
+atributo ''mask'', este atributo se usará como máscara, en
+otro caso se creará la máscara a partir de la imagen
+del sprite. Esta función está diseñada para ser
+enviada como función de colisión a las funciones generales
+de colisión. Los sprites deben tener un atributo ''rect'' y
+un atributo opcional de nombre ''mask''.
+
+/*
+New in pygame 1.8.0
+*/
+
+Esta función es nueva en pygame 1.8.0
+
+
+  * [[pythonexample>pygame.sprite.collide_mask|buscar código donde se use esta función.]]
+
+===== groupcollide =====
+
+/*
+find all Sprites that collide between two Groups
+*/
+
+Encuentra todos los sprites que colisionan entre dos grupos.
+
+<code python>
+pygame.sprite.groupcollide(group1, group2, dokill1, dokill2): return Sprite_dict
+</code>
+
+
+/*
+This will find intersections between all the Sprites in two groups.
+Intersection is determined by comparing the Sprite.rect attribute of
+each Sprite.
+*/
+
+Esta función encontrará intersecciones entre todos los sprites de
+dos grupos. Las intersecciones se determinan comparando los atributos
+''Sprite.rect'' de cada ''Sprite''.
+
+/*
+Every Sprite inside group1 is added to the return dictionary. The value
+for each item is the list of Sprites in group2 that intersect.
+*/
+
+Cada sprite dentro del grupo ''group1'' se agrega al diccionario de
+retorno como clave. El valor de cada elemento será una lista de los
+sprites del grupo ''group2'' que colisionan con el primero.
+
+/*
+If either dokill argument is True, the intersecting Sprites will be removed
+from their respective Group.
+*/
+
+Si algunos de los argumentos ''dokill'' vale ''True'', se eliminaran
+los sprites en colisión de sus respectivos grupos.
+
+
+  * [[pythonexample>pygame.sprite.groupcollide|buscar código donde se use esta función.]]
+
+===== spritecollideany =====
+
+/*
+simple test if a Sprite intersects anything in a Group
+*/
+
+Consulta simple para ver si un sprite colisiona con algún otro en el grupo.
+
+<code python>
+pygame.sprite.spritecollideany(sprite, group): return bool
+</code>
+
+
+/*
+Test if the given Sprite intersects with any Sprites in a Group. Intersection
+is determined by comparing of the Sprite.rect attribute of each Sprite.
+*/
+
+Consulta si el sprite dado colisiona con algún sprite en el grupo. La
+intersección se determina comparando el atributo ''Sprite.rect'' de cada
+sprite.
+
+
+/*
+This collision test can be faster than pygame.sprite.spritecollide() since
+it has less work to do.
+*/
+
+Esta prueba de colisión puede ser mas rápida que ''pygame.sprite.spritecollideany()'' dado que tiene menos trabajo para hacer. Retornará
+al encontrar la primer colisión.
+
+  * [[pythonexample>pygame.sprite.spritecollideany|buscar código donde se use esta función.]]

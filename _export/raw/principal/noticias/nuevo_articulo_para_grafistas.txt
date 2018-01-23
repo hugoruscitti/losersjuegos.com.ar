@@ -1,0 +1,10 @@
+====== Nuevo artículo para grafistas ======
+
+Publicamos un nuevo artículo llamado [[:referencia:articulos:bases_tecnicas_grafistas]].
+
+Visita la sección de artículos para ver mas detalles.
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

@@ -1,0 +1,311 @@
+====== Ejemplos ======
+
+En esta sección encontrará ejemplos muy sencillos para analizar y modificar.
+
+<example cooperativista3d|Cooperativista en 3D>
+    * **Autor:** Hugo Ruscitti
+    * **Fecha:** Agosto 2010
+    * **Lenguaje de programación:** [[tags:python]]
+    * **Biblioteca:** [[tags:panda3d]]
+
+**Descripción:** Muestra un personaje en 3D usando la biblioteca panda3d, el personaje gira sobre un eje de rotación.
+</example>
+
+
+<example invaders|Invaders>
+    * **Autor:** Juan Guerrero
+    * **Fecha:** Marzo 2009
+    * **Lenguaje de programación:** [[tags:python]]
+    * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** se trata de una versión del videojuego clásico //Space
+Invaders//, simplificado y desarrollado integramente con python y la
+biblioteca gráfica pygame.
+</example>
+
+<example nieve|Colisión de copos de nieve>
+    * **Autor:** Hugo Ruscitti
+    * **Fecha:** Marzo 2009
+    * **Video:** [[http://video.google.es/videoplay?docid=-5949255828150985898|Ver]]
+    * **Lenguaje de programación:** [[tags:python]]
+    * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Es una simulación de nieve, donde los copos de nieve
+pueden colisionar con un árbol que se encuentra en la pantalla.
+
+El objetivo del ejemplo es mostrar el uso objetos Mask de pygame
+para realizar colisiones a nivel de pixel. Dado que los copos
+de nueve colisionan directamente con los pixels del árbol.
+</example>
+
+<example linterna|Efecto linterna>
+    * **Autor:** David Ramírez ([[:comunidad:integrantes:endaramiz|endaramiz]])
+    * **Fecha:** Febrero 2009
+    * **Lenguaje de programación:** [[tags:Cpp|C++]]
+    * **Biblioteca:** [[tags:SDL]]
+
+**Descripción:** Muestra un efecto que simula una linterna que se mueve con el mouse.
+Para lograrlo, se utiliza una matriz booleana que actúa como máscara
+de bits. A la hora de hacer el blit, se tiene en cuenta esta máscara.
+</example>
+
+<example imagen_en_codigo_fuente|Imagen en codigo fuente>
+  * **Autor:** Jesús Hernández Gormaz (lacabra25)
+  * **Fecha:** Febrero 2009
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]] y [[tags:SDL_ttf]]
+
+**Descripción:** Muestra dos imagenes sin necesidad de cargarlas de un archivo ya que estan en el codigo fuente del programa. 
+</example>
+
+<example cofre|Cofre>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Mayo 2008
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra una caja, cuando pulsas la tecla espacio la caja se abre (si estaba cerrada) o se cierra (si estaba abierta). 
+
+Para conseguirlo, se utilizan dos técnicas: por un lado se muestran animaciones a poca velocidad y por el otro se administran varios estados. 
+</example>
+
+<example artillery|Artillery>
+  * **Autor:** David Ramírez ([[:comunidad:integrantes:endaramiz|endaramiz]])
+  * **Fecha:** Mayo 2008
+  * **Video:** [[http://video.google.es/videoplay?docid=-3772675544374405560|Ver]]
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra un conjunto de artillería apuntando al puntero del mouse. 
+</example>
+
+<example ojos|Ojos>
+  * **Autor:** David Ramírez ([[:comunidad:integrantes:endaramiz|endaramiz]])
+  * **Fecha:** Mayo 2008
+  * **Video:** [[http://video.google.com/videoplay?docid=314405930592628084|Ver]]
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra un par de ojos que 'observan' en todo momento al puntero del mouse. 
+</example>
+
+<example bolas|Colisiones de bolas>
+  * **Autor:** David Ramírez ([[:comunidad:integrantes:endaramiz|endaramiz]])
+  * **Fecha:** Enero 2008
+  * **Video:** [[http://video.google.com/videoplay?docid=2009040955221575969|Ver]]
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra un conjunto de 3 esferas de colores colisionando entre sí.
+
+Este ejemplo muestra como implementar la física de choques elásticos de bolas de la misma masa. Se incluye una versión alternativa de este ejemplo pero que reproduce sonidos al detectar una colisión.
+
+Puedes obtener mas de información sobre el ejemplo observando [[http://www.losersjuegos.com.ar/foro/viewtopic.php?p=862|el mensaje de David]] en el foro.
+</example>
+
+<example mini_rpg|Mini RPG>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Octubre 2007
+  * **Video:** [[http://video.google.com/videoplay?docid=1738353352022968180|Ver]]
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra un pequeño personaje en un escenario similar al de los juegos RPG
+
+Este ejemplo se encuentra dividido en varias etapas, con la intensión de facilitar su análisis paso a paso. Recomiendo utilizar un programa como "vimdiff" para observar los cambios entre una etapa de desarrollo y la otra.
+
+El código del programa se ha realizado utilizando el lenguaje de programación Python, la biblioteca Pygame y los gráficos que ofrese de forma gratuita 'Danc' del sitio http://lostgarden.com. 
+</example>
+
+<example isys|Biblioteca Isys>
+  * **Autor:** Martin Di Paola
+  * **Fecha:** Septiembre 2007
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_ttf]]
+
+**Descripción:** La biblioteca Isys es un conjunto de funciones para facilitar el uso de SDL_TTF.
+
+Para mas detalles sobre el uso de cada función, abra el archivo de cabecera Isys.h. 
+</example>
+
+<example fundido|Fundido de superficies>
+  * **Autor:** Pablo Abratte
+  * **Fecha:** Mayo 2007
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+
+**Descripción:** Permite cambiar progresivamente la imagen de la pantalla a otra, es decir, realiza un degradado progresivo en el que la nueva imagen va apareciendo sobre la existente.
+
+Para realizar el fundido la técnica utilizada consiste en hacer que cada píxel de la pantalla, partiendo del valor de color de la imagen original, vaya cambiando su color a otro que se aproxime cada vez mas al de la imagen final. 
+</example>
+
+<example cars|Cars, maneja un automóvil>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Mayo 2007
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Maneja un pequeño automóvil por la pantalla.
+
+Muestra como puede utilizar las funciones trigonométricas 'seno' y 'coseno' para desplazar un gráfico de automóvil en un escenario.
+</example>
+
+<example platforms_python|Ejemplo de plataformas>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Noviembre 2006
+  * **Lenguaje de programación:** [[tags:python]]
+  * **Biblioteca:** [[tags:pygame]]
+
+**Descripción:** Muestra una implementación sencilla sobre un juego de plataformas.
+
+El programa le permite controlar a un personaje dentro de un escenario con algunas plataformas.
+
+Para ejecutar el programa ingrese a 'src' y ejecute 'run', o bien, utilice el comando 'python platforms.py' 
+</example>
+
+<example mezclar_colores|Mezclar colores>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Septiembre 2006
+  * **Video:** [[http://video.google.com/videoplay?docid=-5378373360166185302|Ver]]
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] Y [[tags:SDL_image]]
+
+**Descripción:** Permite alterar los componentes rojo, verde, azul y alpha de una superficie.
+
+El programa de ejemplo muestra una imagen y 4 desplazadores para alterar las componentes de color. 
+</example>
+
+<example archivos_dat|Crear y usar archivos .dat de Allegro>
+  * **Autor:** José Jorge Enríquez Rodríguez
+  * **Fecha:** Agosto 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:Allegro]]
+
+**Descripción:** Muestra como utilizar los archivos de recursos .dat que provee la biblioteca Allegro.
+
+El ejemplo incluye un manual que explica como gestionar archivos .dat mediante la herramienta `grabber`. 
+</example>
+
+<example arrastrar_soltar|Arrastrar y soltar>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Julio 2006
+  * **Lenguaje de programación:** [[tags:Cpp|C++]]
+  * **Biblioteca:** [[tags:SDL]]
+
+**Descripción:** Muestra una forma de gestionar los eventos de mouse utilizados por SDL para `mover` figuras en pantalla.
+
+El ejemplo muestra varios iconos y el puntero del mouse, el usuario puede pulsar algún botón del mouse sobre una figura y, manteniendo pulsado el botón, desplazar la figura a otra posición. 
+</example>
+
+<example reemplaza_color|Reemplazar un color>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+
+**Descripción:** Reemplaza todas las ocurrencias de un color por otro.
+
+El ejemplo muestra 2 imágenes, la imagen original (sin cambios de color) y una versión alterada donde se reemplaza un color por otro. 
+</example>
+
+<example textout|Textout, funciones "wrapper" para SDL_ttf>
+  * **Autor:**José Jorge Enríquez Rodríguez
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_ttf]]
+
+**Descripción:** Ejemplo de funciones para "envolver" la librería SDL_ttf.
+
+El ejemplo muestra el uso de la biblioteca SDL_ttf para el manejo de fuentes True Type en SDL. 
+</example>
+
+<example circulo|Gráfico de un círculo>
+  * **Autor:** Carlos Gabriel Valentin
+  * **Autor mejoras:** David Ramírez ([[:comunidad:integrantes:endaramiz|endaramiz]])
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** Realiza un circulo dividido en 256 partes. 
+</example>
+
+<example colisiones|Colisión de esferas>
+  * **Autor:** Carlos Gabriel Valentin
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:Cpp|C++]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** Inicialmente el ejemplo nos muestra una esfera colisionando con los limites de la ventana. Con la barra espaciadora tenemos la posibilidad de generar más esferas. 
+</example>
+
+<example cuadrado|Dibujando un cuadrado>
+  * **Autor:** Carlos Gabriel Valentin
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** El ejemplo muestra un cuadrado dibujado píxel por píxel. 
+</example>
+
+<example letra_con_dirty|Letra saltarina con dirty>
+  * **Autor:** Carlos Gabriel Valentin
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+**Descripción:** En el ejemplo observamos una letra que rebota contra los limites laterales de la ventana. 
+</example>
+
+<example seno|Gráfica del seno>
+  * **Autor:** Carlos Gabriel Valentin
+  * **Fecha:** Marzo 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** El ejemplo nos permite graficar la función seno. 
+</example>
+
+<example scroll|Desplazamiento suave>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Febrero 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+**Descripción:** Muestra como manejar un pequeño tanque a través de un escenario con desplazamiento (scroll). 
+</example>
+
+<example mouse_event|Mouse con eventos>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Febrero 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+**Descripción:** Muestra como manipular los eventos de movimiento y pulsación de botones del `mouse` mediante SDL. 
+</example>
+
+<example texto_flotante|Texto flotante>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Febrero 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+**Descripción:** Muestra la cadena `¡ hola mundo !` aplicándole un movimiento ondular. 
+</example>
+
+
+<example escalado_rotacion|Escalado y rotación>
+  * **Autor:** Lucas Liendo
+  * **Fecha:** Febrero 2006
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Bibliotecas:** [[tags:SDL]] y [[tags:SDL_image]]
+**Descripción:** Muestra como rotar y escalar 2 imágenes utilizando el módulo `SDL_rotozoom` de la biblioteca SDL_gfx. 
+</example>
+
+
+<example gravedad|Gravedad>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Junio 2005
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** Aplica un efecto de aceleración gravitatoria muy simple. 
+</example>
+
+<example teclas|Lectura de teclado>
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** Mayo 2005
+  * **Lenguaje de programación:** [[tags:C]]
+  * **Biblioteca:** [[tags:SDL]]
+**Descripción:** Interpreta la pulsación de teclas y las imprime en pantalla. 
+</example>

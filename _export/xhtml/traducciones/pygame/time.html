@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:time</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:33+0300" />
+<meta name="keywords" content="traducciones,pygame,time" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/time-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="time.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/time.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#time" class="toc">time</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#get_ticks" class="toc">get_ticks</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#wait" class="toc">wait</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#delay" class="toc">delay</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_timer" class="toc">set_timer</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="time" id="time">time</a></h1>
+<div class="level1">
+
+<p>
+
+Módulo de pygame para gestionar tiempo.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#get_ticks" title="traducciones:pygame:time &crarr;" class="wikilink1">get_ticks</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#wait" title="traducciones:pygame:time &crarr;" class="wikilink1">wait</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#delay" title="traducciones:pygame:time &crarr;" class="wikilink1">delay</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_timer" title="traducciones:pygame:time &crarr;" class="wikilink1">set_timer</a></div>
+</li>
+</ul>
+
+<p>
+
+<strong> En otra pagina: </strong>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/time/clock.html" class="wikilink1" title="traducciones:pygame:time:clock">Clock</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+El tiempo se representa en milisegundos, lo cual es equivalente a
+Segundos*1000. (Por lo que 2500 milisegundos son 2.5 segundos).
+</p>
+
+<p>
+La mayoría de las plataformas tienen una resolución de tiempo limitada a 10
+milisegundos (aproximadamente.)
+</p>
+
+
+
+</div>
+<!-- SECTION "time" [1-689] -->
+<h2><a name="get_ticks" id="get_ticks">get_ticks</a></h2>
+<div class="level2">
+<pre class="code python"> pygame.<span class="kw3">time</span>.<span class="me1">get_ticks</span><span class="br0">&#40;</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Indica el tiempo en milisegundos desde que se llamó a <em>pygame.init()</em>. Siempre devuelve 0 antes de que pygame.init() se llame.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.get_ticks" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.get_ticks">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+
+
+</div>
+<!-- SECTION "get_ticks" [690-1205] -->
+<h2><a name="wait" id="wait">wait</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="kw3">time</span>.<span class="me1">wait</span><span class="br0">&#40;</span>milisegundos<span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Hace una pausa. Está función duerme el programa para compartir la CPU
+con otros procesos. Ésta función es menos exacta que la función <a href="#delay" title="traducciones:pygame:time &crarr;" class="wikilink1">delay</a>.
+</p>
+
+<p>
+Devuelve el número actual de milisegundos usados.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.wait" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.wait">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+
+
+</div>
+<!-- SECTION "wait" [1206-2010] -->
+<h2><a name="delay" id="delay">delay</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="kw3">time</span>.<span class="me1">delay</span><span class="br0">&#40;</span>milliseconds<span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Hace una pausa durante el número de milisegundos especificados. Esta función usa 
+la CPU para realizar el retardo más exacto que <a href="#wait" title="traducciones:pygame:time &crarr;" class="wikilink1">wait</a>.
+</p>
+
+<p>
+La función devuelve el número actual de milisegundos usados.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.delay" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.delay">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+
+
+</div>
+<!-- SECTION "delay" [2011-2737] -->
+<h2><a name="set_timer" id="set_timer">set_timer</a></h2>
+<div class="level2">
+<pre class="code pygame">pygame.time.set_timer(event_id, milliseconds) -&gt; None</pre>
+
+
+<p>
+Define un tipo de evento para que aparezca en la cola de eventos a intervalos
+de tiempo regulares. El primer evento no aparecerá a menos que la cantidad de
+tiempo especificado halla concluido.
+</p>
+
+<p>
+Cada tipo de evento puede tener un temporizador separado asociado a él. Para
+definir el valor de <em>event_id</em> es mejor usar un valor entre
+<em>pygame.USEREVENT</em> y <em>pygame.NUMEVENTS</em>.
+</p>
+
+<p>
+Para deshabilitar el temporizador para un <em>event</em> defina el argumento
+<em>milliseconds</em> a 0.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.set_timer" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.time.set_timer">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+
+
+</div>
+<!-- SECTION "set_timer" [2738-] --></div>
+</body>
+</html>

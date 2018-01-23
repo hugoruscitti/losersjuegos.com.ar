@@ -1,0 +1,977 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    Como instalar Dev-C++ y SDL en Windows    [Losersjuegos]
+  </title>
+<link rel="stylesheet" type="text/css" media="screen" href="../../lib/tpl/sidebar/cabecera.css"/>
+  <meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-03T02:59:46+0300" />
+<meta name="keywords" content="referencia,articulos,instalar_devcpp" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="instalar_devcpp-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/referencia/articulos/instalar_devcpp.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/referencia/articulos/instalar_devcpp.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+
+  <link rel="shortcut icon" href="../../lib/tpl/sidebar/images/ico.png" />
+  <script type="text/javascript" src="../../lib/tpl/sidebar/dtree.js"></script>
+  <link rel="StyleSheet" href="../../lib/tpl/sidebar/dtree.css" type="text/css" />
+
+
+  
+</head>
+
+<body>
+  <div class="dokuwiki">
+  
+  
+<div id="cabecera">
+    <a href='../../index.html'><img id='logo1' alt='' src="../../lib/tpl/sidebar/ima_cabecera/logo_1.png" width="286" height="50" name="logo1" /></a>
+
+
+    <div id="navi">
+        <ul>
+            <li id='actual'><a href="../../index.html">Web</a></li>
+            <li><a href="../../foro/index.html">Foro</a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class='barrasuperior'>
+      <span class="bchead">Tu estás aquí: </span><a href="../../principal.html"  title="principal">¡Bienvenido!</a> &raquo; <a href="../../referencia.html"  title="referencia">Referencia</a> &raquo; <a href="../articulos.html"  title="referencia:articulos">Artículos</a> &raquo; <a href="instalar_devcpp.html"  title="referencia:articulos:instalar_devcpp">Como instalar Dev-C++ y SDL en Windows</a>    </div>
+
+
+      <div class='barra_botones'>
+
+
+        <div class='caja'>
+            <h5>Usuario</h5>
+                                    <form class="button btn_login" method="get" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="37c9187da1adb1dadd25d5de37249fc6" /><input type="submit" value="Entrar" class="button" title="Entrar" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>Buscar páginas</h5>
+<form action="../../index.html" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" size="12" accesskey="f" name="id" class="edit" title="[ALT+F]" /><input type="submit" value="Buscar" class="button" title="Buscar" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+        </div>
+
+        <div class='caja'>
+            <h5>Esta Pagina</h5>
+
+            <form class="button btn_source" method="post" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="submit" value="Ver fuente" class="button" accesskey="v" title="Ver fuente [V]" /></div></form>            <form class="button btn_revs" method="get" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Revisiones anteriores" class="button" accesskey="o" title="Revisiones anteriores [O]" /></div></form>            <form class="button btn_backlink" method="get" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="backlink" /><input type="submit" value="Enlaces anteriores" class="button" title="Enlaces anteriores" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>General</h5>
+
+            <form class="button btn_index" method="get" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Indice" class="button" accesskey="x" title="Indice [X]" /></div></form>            <form class="button btn_recent" method="get" action="instalar_devcpp.html"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Cambios recientes" class="button" accesskey="r" title="Cambios recientes [R]" /></div></form>        </div>
+
+    </div>
+
+  
+  
+  
+  <div id='sidebar'>
+<div class="dtree">
+
+<script type="text/javascript">
+
+    d = new dTree('d');
+
+
+
+    d.add(0, -1, '');
+
+    d.add(1, 0, 'Principal', '/principal', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png');
+
+        d.add(2, 1, 'Noticias',     '/principal/noticias');
+        d.add(3, 1, 'Anteriores',   '/principal/anteriores');
+        d.add(4, 1, 'Indice',       '/principal/indice');
+
+
+
+
+
+    d.add(5, 0, 'Comunidad', '/comunidad', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png');
+
+        d.add(6, 5, 'Integrantes',      '/comunidad/integrantes');
+        d.add(7, 5, 'Como participar',  '/comunidad/comoparticipar');
+        d.add(8, 5, 'Contacto',         '/comunidad/contactenos');
+        d.add(9, 5, 'Difundir',         '/comunidad/difundir');
+        d.add(10, 5, 'Consejos',        '/comunidad/consejos');
+        d.add(11, 5, 'To Do',           '/comunidad/todo');
+
+
+
+
+
+    d.add(12, 0, 'Juegos', '/juegos', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png');
+
+
+        d.add(13, 12, 'irobot',     '/juegos/irobotgame');
+        d.add(14, 12, 'ceferino',   '/juegos/ceferino');
+        d.add(15, 12, 'asadetris', '/juegos/asadetris');
+        d.add(16, 12, 'asadetrismobile', '/juegos/asadetrismobile');
+        d.add(17, 12, 'volleyball', '/juegos/volleyball');
+        d.add(18, 12, 'pongix',     '/juegos/pongix');
+        d.add(19, 12, 'aqbubble',   '/juegos/aqbubble');
+        d.add(20, 12, 'chanta',     '/juegos/chanta');
+        d.add(21, 12, 'soccerd',    '/juegos/soccerd');
+        d.add(99, 12, 'ceferinomobile', '/juegos/ceferinomobile');
+
+
+    d.add(50, 0, 'Software', '/software', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/software.png',
+            '/lib/tpl/sidebar/iconos/secciones/software.png');
+
+        d.add(53, 50, 'Pilas', '/software/pilas');
+        d.add(52, 50, 'Gimp Pugins', '/software/gimp');
+        d.add(51, 50, 'Live DVD', '/software/livecd');
+
+
+
+
+
+
+    d.add(22, 0, 'Referencia', '/referencia', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png');
+
+
+        d.add(23, 22, 'Ejemplos',   '/referencia/ejemplos');
+        d.add(24, 22, 'Videos',     '/referencia/videos');
+        d.add(25, 22, 'Articulos',  '/referencia/articulos');
+        d.add(26, 22, 'Libros',     '/referencia/libros');
+        d.add(27, 22, 'Apuntes',    '/referencia/apuntes');
+
+
+    d.add(28, 0, 'Traducciones', '/traducciones', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png');
+
+        d.add(29, 28, 'pygame',   '/traducciones/pygame');
+
+ 
+
+    d.add(30, 0, 'Galeria', '/galeria', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png');
+
+
+
+        d.add(31, 30, 'artisticas', '/galeria/artisticas');
+        d.add(32, 30, 'fondos',     '/galeria/fondos');
+        d.add(33, 30, 'sprites',    '/galeria/sprites');
+        d.add(34, 30, 'capturas',   '/galeria/capturas');
+        d.add(35, 30, 'bocetos',    '/galeria/bocetos');
+
+
+
+    d.add(36, 0, 'Links', '/links', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/links.png',
+            '/lib/tpl/sidebar/iconos/secciones/links.png');
+
+
+
+    d.config.folderLinks = true;
+    d.config.useLines = false;
+    d.config.useSelection = true;
+    document.write(d);
+
+</script>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<span style='color: gray; font-size: 8pt'>
+Menu realizado con <a href='http://destroydrop.com/javascripts/tree/default.html'>dTree</a>.
+</span>
+
+
+<!-- no cachefile used, but created -->
+</div>    <div class="page_with_sidebar">
+      <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#como_instalar_dev-c_y_sdl_en_windows" class="toc">Como instalar Dev-C++ y SDL en Windows</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sobre_dev-c" class="toc">Sobre Dev-C++</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#obtener_e_instalar_dev-cpp" class="toc">Obtener e instalar Dev-cpp:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#el_primer_programa_con_dev-c" class="toc">El primer programa con Dev-c++:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#recomendaciones_adicionales" class="toc">Recomendaciones adicionales:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#anadiendo_las_bibliotecas_sdl" class="toc">Añadiendo las bibliotecas SDL:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#descargar_la_biblioteca_principal_de_sdl" class="toc">Descargar la biblioteca principal de SDL:</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#sdl_base" class="toc">SDL (base)</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#instalar_sdl_base" class="toc">Instalar SDL (base)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#primer_programa_con_sdl_en_dev-cpp" class="toc">Primer programa con SDL en Dev-cpp</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#codigo_de_prueba" class="toc">Código de prueba</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#instalar_las_bibliotecas_auxiliares" class="toc">Instalar las bibliotecas Auxiliares</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#obtener_e_instalar_sdl_image_y_sdl_mixer" class="toc">Obtener e Instalar SDL_image y SDL_mixer:</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#sdl_image" class="toc">SDL_image:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#sdl_mixer" class="toc">SDL mixer:</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#segundo_programa_con_sdl_sdl_image_y_sdl_mixer" class="toc">Segundo programa con SDL, SDL_image y SDL_mixer:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#notas" class="toc">Notas:</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#compatibilidad" class="toc">Compatibilidad:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#versiones_binarias_.exe" class="toc">Versiones Binarias (.exe):</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#mensajes_de_consola" class="toc">Mensajes de consola:</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../_media/referencia/articulos/instalar_devcpp/instalar_devcpp.pdf" class="media mediafile mf_pdf" title="referencia:articulos:instalar_devcpp:instalar_devcpp.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="como_instalar_dev-c_y_sdl_en_windows" id="como_instalar_dev-c_y_sdl_en_windows">Como instalar Dev-C++ y SDL en Windows</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> Sábado 9 de Julio del 2005</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="sobre_dev-c" id="sobre_dev-c">Sobre Dev-C++</a></h2>
+<div class="level2">
+
+<p>
+
+Dev-C++ (o devcpp) es un entorno de desarrollo integrado (IDE) para los lenguajes de programación C y C++.
+</p>
+
+<p>
+Incluye el compilador Mingw, una adaptación del compilador GCC (GNU Compiler Collection) para Windows, y un conjunto de herramientas que facilitan el desarrollo en sistemas Windows.
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/instalar_devcpp/devcpp.png-id=referencia-articulos-instalar_devcpp.html" class="media" title="referencia:articulos:instalar_devcpp:devcpp.png"><img src="../../_media/referencia/articulos/instalar_devcpp/devcpp.png" class="mediacenter" title="Logotipo del programa " alt="Logotipo del programa " /></a>
+
+</p>
+
+</div>
+
+<h2><a name="obtener_e_instalar_dev-cpp" id="obtener_e_instalar_dev-cpp">Obtener e instalar Dev-cpp:</a></h2>
+<div class="level2">
+
+<p>
+
+Primero debemos obtener el compilador Mingw y el entorno de desarrollo Dev-C++.
+</p>
+
+<p>
+En la página de descargas del proyecto dev-cpp:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.bloodshed.net/dev/devcpp.html" class="urlextern" title="http://www.bloodshed.net/dev/devcpp.html"  rel="nofollow">http://www.bloodshed.net/dev/devcpp.html</a></div>
+</li>
+</ul>
+
+<p>
+
+podremos obtener una versión del programa que incluye el compilador Mingw con GCC y GDB (depurador). Al momento de escribir esta guia la última versión del programa es la 4.9.9.2 (beta 5) y ocupa unos 9 <acronym title="Megabyte">MB</acronym>. Puede obtener esa versión directamente desde:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://prdownloads.sourceforge.net/dev-cpp/devcpp-4.9.9.2_setup.exe" class="urlextern" title="http://prdownloads.sourceforge.net/dev-cpp/devcpp-4.9.9.2_setup.exe"  rel="nofollow">http://prdownloads.sourceforge.net/dev-cpp/devcpp-4.9.9.2_setup.exe</a></div>
+</li>
+</ul>
+
+<p>
+
+Una vez descargado, instale el programa en “c:\dev-cpp”, al menos si busca seguir esta guia paso a paso.
+
+</p>
+
+</div>
+
+<h2><a name="el_primer_programa_con_dev-c" id="el_primer_programa_con_dev-c">El primer programa con Dev-c++:</a></h2>
+<div class="level2">
+
+<p>
+
+Cuando inicie el programa por primera vez verá un dialogo de configuración rápido donde podrá configurar el idioma y la apariencia del programa. Luego puede cambiar esas opciones desde:
+
+</p>
+<pre class="code">
+Herramientas -&gt; Opciones del entrono -&gt; Interfaz
+(Tools -&gt; Environment Options -&gt; Interface)
+</pre>
+
+<p>
+Para crear un nuevo programa debemos generar un proyecto desde:
+
+</p>
+<pre class="code">
+Archivo -&gt; Nuevo Proyecto
+(File -&gt; New Proyect)
+</pre>
+
+<p>
+y seleccionar el tipo de programa como “Console Application”.
+</p>
+
+<p>
+Crear un nuevo proyecto nos resultará de utilidad a la hora de modificar, distribuir y compilar el programa.
+</p>
+
+<p>
+Cuando seleccione “Aceptar”, tendrá un código de programa inicial, cambie ese código por:
+</p>
+
+<p>
+Código fuente: <a href="../../_media/referencia/articulos/instalar_devcpp/base.c" class="media mediafile mf_" title="referencia:articulos:instalar_devcpp:base.c">base.c</a>
+
+</p>
+<pre class="code c"><span class="co2">#include &lt;stdlib.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;hola mundo<span class="es0">\n</span>&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+        system<span class="br0">&#40;</span><span class="st0">&quot;pause&quot;</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+y pulse la tecla F9 para generar y ejecutar el programa.
+</p>
+
+<p>
+Todas las operaciones relacionadas con la compilación del proyecto se encuentran en el menú Ejecutar (Execute).
+
+</p>
+
+</div>
+
+<h2><a name="recomendaciones_adicionales" id="recomendaciones_adicionales">Recomendaciones adicionales:</a></h2>
+<div class="level2">
+
+<p>
+
+Es recomendable, antes de continuar, definir algunos parámetros de configuración del programa:
+</p>
+
+<p>
+En “Herramientas → Opciones del Editor” (“Tools → Editors Options”) seleccione “Permitir el uso del caracter Tabulador” (“Use Tab Character”) y quite la marca de “Tabuladores Inteligentes” (“Smat Tabs”). De esta manera el ancho de las tabulaciones del código fuente se pueden alterar con la opción Tab Size (desde las opciones de ese editor) a gusto de cada programador.
+
+</p>
+
+</div>
+
+<h2><a name="anadiendo_las_bibliotecas_sdl" id="anadiendo_las_bibliotecas_sdl">Añadiendo las bibliotecas SDL:</a></h2>
+<div class="level2">
+
+<p>
+
+Existen bibliotecas complementarias a SDL, como por ejemplo SDL_mixer, SDL_net y SDL_gui. Cada una de estas bibliotecas añade capacidades adicionales que resultan de mucha utilidad.
+</p>
+
+<p>
+En esta guia instalaremos solo 3 bibliotecas: SDL (base), SDL_image y SDL_mixer. Puede obtener mas información acerca de todas las bibliotecas complementarias en <a href="http://www.libsdl.org" class="urlextern" title="http://www.libsdl.org"  rel="nofollow">www.libsdl.org</a>; el procedimiento de instalación es similar para todas ellas.
+</p>
+
+<p>
+Dado que buscamos desarrollar y ejecutar programas desarrollados con SDL, nuestro sistema requerirá de 2 versiones de cada biblioteca:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> La versión de desarrollo, que incluye todo lo necesario para “generar” programas (archivos de cabecera…).</div>
+</li>
+<li class="level2"><div class="li"> La versión de ejecución (runtime) que será necesaria para ejecutar los programas creados con SDL (.DLLs en Windows).</div>
+</li>
+</ul>
+
+<p>
+
+Las bibliotecas de ejecución (runtime) deben estar presentes en cada equipo que quiera ejecutar nuestros programas, habitualmente se incluyen en el mismo paquete del programa.
+
+</p>
+
+</div>
+
+<h2><a name="descargar_la_biblioteca_principal_de_sdl" id="descargar_la_biblioteca_principal_de_sdl">Descargar la biblioteca principal de SDL:</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="sdl_base" id="sdl_base">SDL (base)</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pagina principal: <a href="http://www.libsdl.org/download-1.2.php" class="urlextern" title="http://www.libsdl.org/download-1.2.php"  rel="nofollow">http://www.libsdl.org/download-1.2.php</a></div>
+</li>
+<li class="level2"><div class="li"> Ejecución: <a href="http://www.libsdl.org/release/SDL-1.2.8-win32.zip" class="urlextern" title="http://www.libsdl.org/release/SDL-1.2.8-win32.zip"  rel="nofollow">http://www.libsdl.org/release/SDL-1.2.8-win32.zip</a></div>
+</li>
+<li class="level2"><div class="li"> Desarrollo: <a href="http://www.libsdl.org/release/SDL-devel-1.2.8-mingw32.tar.gz" class="urlextern" title="http://www.libsdl.org/release/SDL-devel-1.2.8-mingw32.tar.gz"  rel="nofollow">http://www.libsdl.org/release/SDL-devel-1.2.8-mingw32.tar.gz</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="instalar_sdl_base" id="instalar_sdl_base">Instalar SDL (base)</a></h2>
+<div class="level2">
+
+<p>
+
+Debemos descomprimir SDL-1.2.8-win32.zip y SDL-devel-1.2.8-mingw32.tar.gz en diferentes carpetas, por ejemplo SDL_run y SDL_dev respectivamente.
+</p>
+
+<p>
+El archivo contenido en SDL-1.2.8-win32.zip, SDL.dll, se debe copiar a la carpeta System dentro de la carpeta principal de Windows, generalmente la ruta completa es “c:\windows\system\”.
+</p>
+
+<p>
+El archivo SDL-devel-1.2.8-mingw32 incluye varios archivos y carpetas:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> grabe el contenido de la carpeta “lib” (4 archivos) en “c:\dev-cpp\lib\”</div>
+</li>
+<li class="level2"><div class="li"> entre en la carpeta include y copie la carpeta SDL completa en “c:\dev-cpp\include\”, de forma que los archivos .h queden dentro de “c:\dev-cpp\include\SDL”</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="primer_programa_con_sdl_en_dev-cpp" id="primer_programa_con_sdl_en_dev-cpp">Primer programa con SDL en Dev-cpp</a></h2>
+<div class="level2">
+
+<p>
+
+Solo hace falta crear un proyecto y configurar la compilación para que funcione con la biblioteca que instalamos:
+</p>
+
+<p>
+Iniciamos Dev-C++, y generamos un nuevo proyecto de tipo “Console Application”.
+</p>
+
+<p>
+Tendremos que definir los parámetros de compilación para vincular las bibliotecas al programa.
+</p>
+
+<p>
+Abrimos el menú “Herramientas → Opciones del Compilador” (“Tools” → “Compiler Options”) y seleccionamos la opción:
+
+</p>
+<pre class="code">
+&quot;Añadir estos comandos a la línea de comandos del Linker&quot;
+(Add these commands to the linker...)
+</pre>
+
+<p>
+Luego se debe completar el campo siguiente con:
+
+</p>
+<pre class="code">-lmingw32 -lSDLmain -lSDL</pre>
+
+<p>
+<a href="../../_detail/referencia/articulos/instalar_devcpp/linea1.png-id=referencia-articulos-instalar_devcpp.html" class="media" title="referencia:articulos:instalar_devcpp:linea1.png"><img src="../../_media/referencia/articulos/instalar_devcpp/linea1.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+
+<h2><a name="codigo_de_prueba" id="codigo_de_prueba">Código de prueba</a></h2>
+<div class="level2">
+
+<p>
+
+Para verificar que la instalación funciona correctamente, reemplace el contenido del archivo principal del proyecto por otro ejemplo sencillo de SDL:
+</p>
+
+<p>
+Código fuente: <a href="../../_media/referencia/articulos/instalar_devcpp/sdl.c" class="media mediafile mf_" title="referencia:articulos:instalar_devcpp:sdl.c">sdl.c</a>
+
+</p>
+<pre class="code c"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;SDL/SDL.h&gt;</span>
+&nbsp;
+<span class="kw4">void</span> imprimir_rectangulo <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Surface <span class="sy0">*</span>screen;
+        SDL_Event event;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>SDL_Init<span class="br0">&#40;</span>SDL_INIT_VIDEO<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        screen <span class="sy0">=</span> SDL_SetVideoMode<span class="br0">&#40;</span><span class="nu0">320</span><span class="sy0">,</span> <span class="nu0">240</span><span class="sy0">,</span> <span class="nu0">16</span><span class="sy0">,</span> SDL_SWSURFACE<span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>screen <span class="sy0">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        SDL_WM_SetCaption<span class="br0">&#40;</span><span class="st0">&quot;Ejemplo básico&quot;</span><span class="sy0">,</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>;
+&nbsp;
+        imprimir_rectangulo<span class="br0">&#40;</span>screen<span class="sy0">,</span> <span class="nu0">20</span><span class="sy0">,</span> <span class="nu0">30</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">while</span> <span class="br0">&#40;</span>SDL_WaitEvent<span class="br0">&#40;</span><span class="sy0">&amp;</span>event<span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>event.<span class="me1">type</span> <span class="sy0">==</span> SDL_QUIT<span class="br0">&#41;</span>
+                        <span class="kw2">break</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        SDL_Quit<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw4">void</span> imprimir_rectangulo <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Rect rect <span class="sy0">=</span> <span class="br0">&#123;</span>x<span class="sy0">,</span> y<span class="sy0">,</span> <span class="nu0">50</span><span class="sy0">,</span> <span class="nu0">50</span><span class="br0">&#125;</span>;
+        Uint32 a <span class="sy0">=</span> SDL_MapRGB<span class="br0">&#40;</span>screen<span class="sy0">-&gt;</span>format<span class="sy0">,</span> <span class="nu0">255</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">100</span><span class="br0">&#41;</span>;
+&nbsp;
+        SDL_FillRect<span class="br0">&#40;</span>screen<span class="sy0">,</span> <span class="sy0">&amp;</span>rect<span class="sy0">,</span> a<span class="br0">&#41;</span>;
+        SDL_UpdateRect<span class="br0">&#40;</span>screen<span class="sy0">,</span> rect.<span class="me1">x</span><span class="sy0">,</span> rect.<span class="me1">y</span><span class="sy0">,</span> rect.<span class="me1">w</span><span class="sy0">,</span> rect.<span class="me1">h</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+<a href="../../_detail/referencia/articulos/instalar_devcpp/ejemplo1.png-id=referencia-articulos-instalar_devcpp.html" class="media" title="referencia:articulos:instalar_devcpp:ejemplo1.png"><img src="../../_media/referencia/articulos/instalar_devcpp/ejemplo1.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+El programa imprime un rectángulo y espera hasta que el usuario cierra la ventana.
+
+</p>
+
+</div>
+
+<h2><a name="instalar_las_bibliotecas_auxiliares" id="instalar_las_bibliotecas_auxiliares">Instalar las bibliotecas Auxiliares</a></h2>
+<div class="level2">
+
+<p>
+
+Inicialmente, el soporte de formatos de SDL está limitado a los archivos BMP (para las imágenes) y WAV (como formato de audio).
+</p>
+
+<p>
+Si queremos ampliar el soporte de formatos para imágenes a <acronym title="Portable Network Graphics">PNG</acronym>, PCX, <acronym title="Joint Photographics Experts Group">JPEG</acronym> etc. podremos utilizar una biblioteca adicional como SDL_Image, y si buscamos ampliar el soporte a otros formatos de audio como <acronym title="Motion Picture Experts Group Layer 3">MP3</acronym>, OGG, S3M, Mod etc. podremos utilizar SDL_mixer.
+
+</p>
+
+</div>
+
+<h2><a name="obtener_e_instalar_sdl_image_y_sdl_mixer" id="obtener_e_instalar_sdl_image_y_sdl_mixer">Obtener e Instalar SDL_image y SDL_mixer:</a></h2>
+<div class="level2">
+
+<p>
+
+El procedimiento de instalación es similar al de SDL (base), primero obtenemos las versiones de desarrollo y ejecución de cada biblioteca:
+
+</p>
+
+</div>
+
+<h3><a name="sdl_image" id="sdl_image">SDL_image:</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pagina principal: <a href="http://www.libsdl.org/projects/SDL_image/" class="urlextern" title="http://www.libsdl.org/projects/SDL_image/"  rel="nofollow">http://www.libsdl.org/projects/SDL_image/</a></div>
+</li>
+<li class="level2"><div class="li"> Ejecución: <a href="http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4-win32.zip" class="urlextern" title="http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4-win32.zip"  rel="nofollow">http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4-win32.zip</a></div>
+</li>
+<li class="level2"><div class="li"> Desarrollo: <a href="http://www.libsdl.org/projects/SDL_image/release/SDL_image-devel-1.2.4-VC6.zip" class="urlextern" title="http://www.libsdl.org/projects/SDL_image/release/SDL_image-devel-1.2.4-VC6.zip"  rel="nofollow">http://www.libsdl.org/projects/SDL_image/release/SDL_image-devel-1.2.4-VC6.zip</a></div>
+</li>
+</ul>
+
+</div>
+
+<h3><a name="sdl_mixer" id="sdl_mixer">SDL mixer:</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Pagina principal: <a href="http://www.libsdl.org/projects/SDL_mixer/" class="urlextern" title="http://www.libsdl.org/projects/SDL_mixer/"  rel="nofollow">http://www.libsdl.org/projects/SDL_mixer/</a></div>
+</li>
+<li class="level2"><div class="li"> Ejecución: <a href="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6-win32.zip" class="urlextern" title="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6-win32.zip"  rel="nofollow">http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6-win32.zip</a></div>
+</li>
+<li class="level2"><div class="li"> Desarrollo: <a href="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-devel-1.2.6-VC6.zip" class="urlextern" title="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-devel-1.2.6-VC6.zip"  rel="nofollow">http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-devel-1.2.6-VC6.zip</a></div>
+</li>
+</ul>
+
+<p>
+
+Nota: Si bien algunas versiones de desarrollo están disponibles en Windows solo para VC, en lugar de Mingw, funcionarán correctamente en este último.
+</p>
+
+<p>
+Descomprimimos los archivos .zip con las versiones runtime (SDL_mixer-1.2.6-win32.zip y SDL_image-1.2.4-win32.zip) y copiamos todos los archivos .dll contenidos en ambos a la carpeta System dentro de Windows, generalmente “c:\windows\system”.
+</p>
+
+<p>
+También debemos descomprimir e instalar los archivos .zip de las versiones de desarrollo:
+</p>
+
+<p>
+Del contenido de SDL_image-devel-1.2.4-VC6.zip tendremos que copiar el archivo “include/SDL_image.h” a “c:\dev-cpp\include\SDL\” (es importante copiar el archivo dentro de la carpeta SDL). Y el archivo “sdl_image.lib” de la carpeta “lib” se debe copiar a “c:\dev-cpp\lib”
+</p>
+
+<p>
+Realizamos lo mismo para SDL_mixer-devel-1.2.6-VC6.zip: copiamos el archivo “SDL_mixer.h” de la carpeta “include” a “c:\dev-cpp\include\SDL\”. Y el archivo “SDL_mixer.lib” de la carpeta “lib” a “c:\dev-cpp\lib”
+
+</p>
+
+</div>
+
+<h2><a name="segundo_programa_con_sdl_sdl_image_y_sdl_mixer" id="segundo_programa_con_sdl_sdl_image_y_sdl_mixer">Segundo programa con SDL, SDL_image y SDL_mixer:</a></h2>
+<div class="level2">
+
+<p>
+
+Creamos un nuevo proyecto, como en el ejemplo 1, pero ahora añadimos vínculos a las nuevas bibliotecas: seleccionamos “Herramientas → Opciones de Compilador” (“Tools → Compiler Options”) y agregamos las opciones dentro del campo indicado luego de “Añadir estos comandos a la línea de comandos del linker” (“Add these commands to the linker…”):
+
+</p>
+<pre class="code">-lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_mixer</pre>
+
+<p>
+como indica la imagen:
+</p>
+
+<p>
+<a href="../../_detail/referencia/articulos/instalar_devcpp/linea2.png-id=referencia-articulos-instalar_devcpp.html" class="media" title="referencia:articulos:instalar_devcpp:linea2.png"><img src="../../_media/referencia/articulos/instalar_devcpp/linea2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+nota: El siguiente ejemplo requiere de 2 archivos: <a href="../../_media/referencia/articulos/instalar_devcpp/ima.zip" class="media mediafile mf_zip" title="referencia:articulos:instalar_devcpp:ima.zip">ima.png</a> y “c:\cancion.xm”. Busque 2 archivos como esos (el segundo no es necesario para que funcione el programa), copie el siguiente código y genere el programa con F9.
+</p>
+
+<p>
+Código fuente: <a href="../../_media/referencia/articulos/instalar_devcpp/sdl_ex.c" class="media mediafile mf_" title="referencia:articulos:instalar_devcpp:sdl_ex.c">sdl_ex.c</a>
+
+</p>
+<pre class="code c"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;;</span>
+<span class="co2">#include &lt;SDL/SDL.h&gt;</span>
+<span class="co2">#include &lt;SDL/SDL_image.h&gt;</span>
+<span class="co2">#include &lt;SDL/SDL_mixer.h&gt;</span>
+&nbsp;
+<span class="kw4">void</span> limpiar <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="br0">&#41;</span>;
+<span class="kw4">void</span> imprimir<span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="sy0">,</span> SDL_Surface <span class="sy0">*</span>ima<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="br0">&#41;</span>;
+<span class="kw4">void</span> mover_objeto<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy0">*</span>x<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>y<span class="sy0">,</span> <span class="kw4">int</span> ancho<span class="sy0">,</span> <span class="kw4">int</span> alto<span class="br0">&#41;</span>;
+&nbsp;
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Surface <span class="sy0">*</span>screen;
+        SDL_Surface <span class="sy0">*</span>ima;
+        Mix_Music <span class="sy0">*</span>cancion;
+        SDL_Event event;
+        <span class="kw4">int</span> salir <span class="sy0">=</span> <span class="nu19">0</span>;
+        <span class="kw4">int</span> x <span class="sy0">=</span> <span class="nu0">100</span>;
+        <span class="kw4">int</span> y <span class="sy0">=</span> <span class="nu0">100</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>SDL_Init<span class="br0">&#40;</span>SDL_INIT_VIDEO | SDL_INIT_AUDIO<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        screen <span class="sy0">=</span> SDL_SetVideoMode<span class="br0">&#40;</span><span class="nu0">320</span><span class="sy0">,</span> <span class="nu0">240</span><span class="sy0">,</span> <span class="nu0">16</span><span class="sy0">,</span> SDL_HWSURFACE<span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>screen <span class="sy0">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>Mix_OpenAudio<span class="br0">&#40;</span><span class="nu0">44100</span><span class="sy0">,</span> MIX_DEFAULT_FORMAT<span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">1024</span><span class="br0">&#41;</span> <span class="sy0">==</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en Mix_OpenAudio: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> Mix_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        SDL_WM_SetCaption<span class="br0">&#40;</span><span class="st0">&quot;Ejemplo 2&quot;</span><span class="sy0">,</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>;
+&nbsp;
+        ima <span class="sy0">=</span> IMG_Load<span class="br0">&#40;</span><span class="st0">&quot;c:/ima.png&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>ima <span class="sy0">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en IMG_Load= %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        cancion <span class="sy0">=</span> Mix_LoadMUS<span class="br0">&#40;</span><span class="st0">&quot;c:/cancion.xm&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>cancion<span class="br0">&#41;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en Mix_LoadMUS: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> Mix_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cancion<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>Mix_PlayMusic<span class="br0">&#40;</span>cancion<span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">==</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+                        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en Mix_PlayMusic: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> Mix_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span> salir<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                SDL_PollEvent<span class="br0">&#40;</span><span class="sy0">&amp;</span>event<span class="br0">&#41;</span>;
+&nbsp;
+                <span class="kw1">if</span> <span class="br0">&#40;</span>event.<span class="me1">type</span> <span class="sy0">==</span> SDL_QUIT<span class="br0">&#41;</span>
+                        salir <span class="sy0">=</span> <span class="nu0">1</span>;
+&nbsp;
+                mover_objeto<span class="br0">&#40;</span><span class="sy0">&amp;</span>x<span class="sy0">,</span> <span class="sy0">&amp;</span>y<span class="sy0">,</span> ima<span class="sy0">-&gt;</span>w<span class="sy0">,</span> ima<span class="sy0">-&gt;</span>h<span class="br0">&#41;</span>;
+&nbsp;
+                limpiar<span class="br0">&#40;</span>screen<span class="br0">&#41;</span>;
+                imprimir<span class="br0">&#40;</span>screen<span class="sy0">,</span> ima<span class="sy0">,</span> x<span class="sy0">,</span> y<span class="br0">&#41;</span>;
+                SDL_Flip<span class="br0">&#40;</span>screen<span class="br0">&#41;</span>;
+                SDL_Delay<span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cancion<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                Mix_HaltMusic<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+                Mix_FreeMusic<span class="br0">&#40;</span>cancion<span class="br0">&#41;</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        Mix_CloseAudio<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        SDL_Quit<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw4">void</span> limpiar <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        Uint32 a <span class="sy0">=</span> SDL_MapRGB<span class="br0">&#40;</span>screen<span class="sy0">-&gt;</span>format<span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">200</span><span class="br0">&#41;</span>;
+        SDL_FillRect<span class="br0">&#40;</span>screen<span class="sy0">,</span> <span class="kw2">NULL</span><span class="sy0">,</span> a<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+&nbsp;
+<span class="kw4">void</span> imprimir<span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span>screen<span class="sy0">,</span> SDL_Surface <span class="sy0">*</span>ima<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Rect rect <span class="sy0">=</span> <span class="br0">&#123;</span>x<span class="sy0">,</span> y<span class="sy0">,</span> <span class="nu19">0</span><span class="sy0">,</span> <span class="nu19">0</span><span class="br0">&#125;</span>;
+&nbsp;
+        SDL_BlitSurface<span class="br0">&#40;</span>ima<span class="sy0">,</span> <span class="kw2">NULL</span><span class="sy0">,</span> screen<span class="sy0">,</span> <span class="sy0">&amp;</span>rect<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+&nbsp;
+<span class="kw4">void</span> mover_objeto<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy0">*</span>x<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>y<span class="sy0">,</span> <span class="kw4">int</span> ancho<span class="sy0">,</span> <span class="kw4">int</span> alto<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        Uint8 <span class="sy0">*</span>key <span class="sy0">=</span> SDL_GetKeyState<span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="br0">&#91;</span>SDLK_LEFT<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">*</span> x <span class="sy0">&gt;</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+                <span class="br0">&#40;</span><span class="sy0">*</span>x<span class="br0">&#41;</span> <span class="sy0">-=</span> <span class="nu0">5</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="br0">&#91;</span>SDLK_RIGHT<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy0">*</span>x <span class="sy0">+</span> ancho<span class="br0">&#41;</span> <span class="sy0">&lt;</span> <span class="nu0">320</span><span class="br0">&#41;</span>
+                <span class="br0">&#40;</span><span class="sy0">*</span>x<span class="br0">&#41;</span> <span class="sy0">+=</span> <span class="nu0">5</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="br0">&#91;</span>SDLK_UP<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">*</span>y <span class="sy0">&gt;</span> <span class="nu19">0</span><span class="br0">&#41;</span>
+&nbsp;
+                <span class="br0">&#40;</span><span class="sy0">*</span>y<span class="br0">&#41;</span> <span class="sy0">-=</span> <span class="nu0">5</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>key<span class="br0">&#91;</span>SDLK_DOWN<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> <span class="br0">&#40;</span><span class="sy0">*</span>y <span class="sy0">+</span> alto<span class="br0">&#41;</span> <span class="sy0">&lt;</span> <span class="nu0">240</span><span class="br0">&#41;</span>
+                <span class="br0">&#40;</span><span class="sy0">*</span>y<span class="br0">&#41;</span> <span class="sy0">+=</span> <span class="nu0">5</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+<a href="../../_detail/referencia/articulos/instalar_devcpp/ejemplo2.png-id=referencia-articulos-instalar_devcpp.html" class="media" title="referencia:articulos:instalar_devcpp:ejemplo2.png"><img src="../../_media/referencia/articulos/instalar_devcpp/ejemplo2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Nota: Los mensajes que se imprimen con printf se almacenan en el archivo stdout.txt dentro de la carpeta del programa (ver más adelante).
+
+</p>
+
+</div>
+
+<h2><a name="notas" id="notas">Notas:</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="compatibilidad" id="compatibilidad">Compatibilidad:</a></h3>
+<div class="level3">
+
+<p>
+
+Una de las características mas interesantes de SDL es su compatibilidad con varios Sistemas Operativos, no lo desaproveche:
+</p>
+
+<p>
+Dev-cpp genera automáticamente un archivo llamado Makefile.win cuando realiza la compilación, este archivo se almacenará en misma carpeta del proyecto.
+</p>
+
+<p>
+Los archivos Makefile incluyen reglas que especifican cómo debe generarse el programa. Es recomendable incluir este archivo junto con el código fuente de su programa, eso facilita la tarea de adaptarlo a otros sistemas como GNU/Linux.
+</p>
+
+<p>
+Dentro del código en C o C++ no es aconsejable indicar las rutas utilizando barras invertidas “\”. Reemplace una ruta como “c:\imagen.jpg” por “c:/imagen.jpg” (como en Unix). Algunos programadores acostumbran a utilizar dos barras, como en “c:\\image.png”; lo cual funcionará sólo en Windows, no adopte esa costumbre, estará desperdiciando las SDL.
+
+</p>
+
+</div>
+
+<h3><a name="versiones_binarias_.exe" id="versiones_binarias_.exe">Versiones Binarias (.exe):</a></h3>
+<div class="level3">
+
+<p>
+
+Tenga en cuenta que la versión compilada de su programa necesita de los archivos .dll de las bibliotecas. Si distribuye su programa puede incluir los archivos .dll en la carpeta principal del proyecto, o bien, pedir a los usuarios que obtengan las bibliotecas SDL por su cuenta y las instalen en “c:\windows\system”.
+
+</p>
+
+</div>
+
+<h3><a name="mensajes_de_consola" id="mensajes_de_consola">Mensajes de consola:</a></h3>
+<div class="level3">
+
+<p>
+
+Si realiza impresiones en la consola, con printf (por ejemplo), los parámetros que añadimos al compilar (”-lmingw32 -lSDLmain …”) redireccionarán la impresión a los archivos stdout.txt y stderr.txt. Estos archivos se generarán en la misma carpeta del proyecto cuando lo ejecute.
+</p>
+
+<p>
+Es muy importante respetar el formato de la función principal del programa:
+
+</p>
+<pre class="code c"><span class="kw4">int</span> main <span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span> argv <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <span class="br0">&#91;</span>...<span class="br0">&#93;</span></pre>
+<p>
+en lugar de utilizar “WinMain” o “main” con otros parámetros como “main (void)” o “void main (char argc, char **argv)”.
+</p>
+
+<p>
+Dado que los archivos stdout.txt y stderr.txt reemplazan la consola de mensajes, podemos ocultar esa consola añadiendo el parámetro &#039;-mwindows” al vincular el programa. Finalmente nos quedará:
+
+</p>
+<pre class="code">-lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_mixer -mwindows</pre>
+
+<p>
+Tambien puede evitar que los mensajes de consola se oculten, para ello debe añadir las siguientes lineas:
+
+</p>
+<pre class="code c">freopen <span class="br0">&#40;</span><span class="st0">&quot;CON&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="sy0">,</span> stdout <span class="br0">&#41;</span>;
+freopen <span class="br0">&#40;</span><span class="st0">&quot;CON&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="sy0">,</span> stderr <span class="br0">&#41;</span>;</pre>
+</div>
+
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia <a href="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby-sa%2F2.5%2Fdeed.es" class="media mediafile mf_" title="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Creative Commons</a>. 
+
+</p>
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+        <div style='float: right; margin: 3px;'>
+            <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Subir" onclick="window.scrollTo(0, 0)" title="Subir" /></a>        </div>
+
+    <div class="meta">
+      <div class="doc">
+        referencia/articulos/instalar_devcpp.txt &middot; Última modificación: 03/02/2009 a las 02:59 por hugoruscitti      </div>
+    </div>
+
+   
+
+<div id="pie">
+
+<ul>
+	<li class='contactenos'><a 
+	href='../../comunidad/contactenos.html'>Contáctenos</a></li>
+	
+	<li class='cc'><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Licencia de uso para el sitio</a></li>
+
+	<li class='foro'><a 
+	href='../../foro/index.html'>Foro de mensajes</a></li>
+
+	<li class='comunidad'><a 
+	href='../../comunidad.html'>Sobre el grupo ...</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+Este sitio funciona sobre el motor wiki de <a
+    href='http://wiki.splitbrain.org/wiki:dokuwiki'>DokuWiki</a>.
+<br/>
+&copy; 2003-2008 Hugo Ruscitti
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="../../lib/exe/indexer.php-id=referencia-articulos-instalar_devcpp&amp;1511021369.gif" width="1" height="1" alt=""  /></div>
+</body>
+</html>

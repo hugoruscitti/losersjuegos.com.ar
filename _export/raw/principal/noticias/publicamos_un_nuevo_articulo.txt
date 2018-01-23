@@ -1,0 +1,12 @@
+====== Publicamos un nuevo artículo !!! ======
+
+
+Hoy publicamos un nuevo artículo que explica
+cómo instalar la biblioteca pySFML en windows:
+
+http://www.losersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

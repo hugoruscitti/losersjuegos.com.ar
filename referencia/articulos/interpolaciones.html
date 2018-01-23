@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    Tweener, movimientos mas realistas para tus juegos    [Losersjuegos]
+  </title>
+<link rel="stylesheet" type="text/css" media="screen" href="../../lib/tpl/sidebar/cabecera.css"/>
+  <meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2010-04-04T09:10:51+0400" />
+<meta name="keywords" content="referencia,articulos,interpolaciones" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="interpolaciones-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/referencia/articulos/interpolaciones.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/referencia/articulos/interpolaciones.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+
+  <link rel="shortcut icon" href="../../lib/tpl/sidebar/images/ico.png" />
+  <script type="text/javascript" src="../../lib/tpl/sidebar/dtree.js"></script>
+  <link rel="StyleSheet" href="../../lib/tpl/sidebar/dtree.css" type="text/css" />
+
+
+  
+</head>
+
+<body>
+  <div class="dokuwiki">
+  
+  
+<div id="cabecera">
+    <a href='../../index.html'><img id='logo1' alt='' src="../../lib/tpl/sidebar/ima_cabecera/logo_1.png" width="286" height="50" name="logo1" /></a>
+
+
+    <div id="navi">
+        <ul>
+            <li id='actual'><a href="../../index.html">Web</a></li>
+            <li><a href="../../foro/index.html">Foro</a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class='barrasuperior'>
+      <span class="bchead">Tu estás aquí: </span><a href="../../principal.html"  title="principal">¡Bienvenido!</a> &raquo; <a href="../../referencia.html"  title="referencia">Referencia</a> &raquo; <a href="../articulos.html"  title="referencia:articulos">Artículos</a> &raquo; <a href="interpolaciones.html"  title="referencia:articulos:interpolaciones">Tweener, movimientos mas realistas para tus juegos</a>    </div>
+
+
+      <div class='barra_botones'>
+
+
+        <div class='caja'>
+            <h5>Usuario</h5>
+                                    <form class="button btn_login" method="get" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="37c9187da1adb1dadd25d5de37249fc6" /><input type="submit" value="Entrar" class="button" title="Entrar" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>Buscar páginas</h5>
+<form action="../../index.html" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" size="12" accesskey="f" name="id" class="edit" title="[ALT+F]" /><input type="submit" value="Buscar" class="button" title="Buscar" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+        </div>
+
+        <div class='caja'>
+            <h5>Esta Pagina</h5>
+
+            <form class="button btn_source" method="post" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="submit" value="Ver fuente" class="button" accesskey="v" title="Ver fuente [V]" /></div></form>            <form class="button btn_revs" method="get" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Revisiones anteriores" class="button" accesskey="o" title="Revisiones anteriores [O]" /></div></form>            <form class="button btn_backlink" method="get" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="backlink" /><input type="submit" value="Enlaces anteriores" class="button" title="Enlaces anteriores" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>General</h5>
+
+            <form class="button btn_index" method="get" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Indice" class="button" accesskey="x" title="Indice [X]" /></div></form>            <form class="button btn_recent" method="get" action="interpolaciones.html"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Cambios recientes" class="button" accesskey="r" title="Cambios recientes [R]" /></div></form>        </div>
+
+    </div>
+
+  
+  
+  
+  <div id='sidebar'>
+<div class="dtree">
+
+<script type="text/javascript">
+
+    d = new dTree('d');
+
+
+
+    d.add(0, -1, '');
+
+    d.add(1, 0, 'Principal', '/principal', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png');
+
+        d.add(2, 1, 'Noticias',     '/principal/noticias');
+        d.add(3, 1, 'Anteriores',   '/principal/anteriores');
+        d.add(4, 1, 'Indice',       '/principal/indice');
+
+
+
+
+
+    d.add(5, 0, 'Comunidad', '/comunidad', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png');
+
+        d.add(6, 5, 'Integrantes',      '/comunidad/integrantes');
+        d.add(7, 5, 'Como participar',  '/comunidad/comoparticipar');
+        d.add(8, 5, 'Contacto',         '/comunidad/contactenos');
+        d.add(9, 5, 'Difundir',         '/comunidad/difundir');
+        d.add(10, 5, 'Consejos',        '/comunidad/consejos');
+        d.add(11, 5, 'To Do',           '/comunidad/todo');
+
+
+
+
+
+    d.add(12, 0, 'Juegos', '/juegos', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png');
+
+
+        d.add(13, 12, 'irobot',     '/juegos/irobotgame');
+        d.add(14, 12, 'ceferino',   '/juegos/ceferino');
+        d.add(15, 12, 'asadetris', '/juegos/asadetris');
+        d.add(16, 12, 'asadetrismobile', '/juegos/asadetrismobile');
+        d.add(17, 12, 'volleyball', '/juegos/volleyball');
+        d.add(18, 12, 'pongix',     '/juegos/pongix');
+        d.add(19, 12, 'aqbubble',   '/juegos/aqbubble');
+        d.add(20, 12, 'chanta',     '/juegos/chanta');
+        d.add(21, 12, 'soccerd',    '/juegos/soccerd');
+        d.add(99, 12, 'ceferinomobile', '/juegos/ceferinomobile');
+
+
+    d.add(50, 0, 'Software', '/software', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/software.png',
+            '/lib/tpl/sidebar/iconos/secciones/software.png');
+
+        d.add(53, 50, 'Pilas', '/software/pilas');
+        d.add(52, 50, 'Gimp Pugins', '/software/gimp');
+        d.add(51, 50, 'Live DVD', '/software/livecd');
+
+
+
+
+
+
+    d.add(22, 0, 'Referencia', '/referencia', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png');
+
+
+        d.add(23, 22, 'Ejemplos',   '/referencia/ejemplos');
+        d.add(24, 22, 'Videos',     '/referencia/videos');
+        d.add(25, 22, 'Articulos',  '/referencia/articulos');
+        d.add(26, 22, 'Libros',     '/referencia/libros');
+        d.add(27, 22, 'Apuntes',    '/referencia/apuntes');
+
+
+    d.add(28, 0, 'Traducciones', '/traducciones', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png');
+
+        d.add(29, 28, 'pygame',   '/traducciones/pygame');
+
+ 
+
+    d.add(30, 0, 'Galeria', '/galeria', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png');
+
+
+
+        d.add(31, 30, 'artisticas', '/galeria/artisticas');
+        d.add(32, 30, 'fondos',     '/galeria/fondos');
+        d.add(33, 30, 'sprites',    '/galeria/sprites');
+        d.add(34, 30, 'capturas',   '/galeria/capturas');
+        d.add(35, 30, 'bocetos',    '/galeria/bocetos');
+
+
+
+    d.add(36, 0, 'Links', '/links', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/links.png',
+            '/lib/tpl/sidebar/iconos/secciones/links.png');
+
+
+
+    d.config.folderLinks = true;
+    d.config.useLines = false;
+    d.config.useSelection = true;
+    document.write(d);
+
+</script>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<span style='color: gray; font-size: 8pt'>
+Menu realizado con <a href='http://destroydrop.com/javascripts/tree/default.html'>dTree</a>.
+</span>
+
+
+<!-- no cachefile used, but created -->
+</div>    <div class="page_with_sidebar">
+      <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#tweener_movimientos_mas_realistas_para_tus_juegos" class="toc">Tweener, movimientos mas realistas para tus juegos</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#resumen" class="toc">Resumen</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplos" class="toc">Ejemplos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#idea_general" class="toc">Idea general</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#valores_intermedios_usando_interpolaciones" class="toc">Valores intermedios, usando interpolaciones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#propuestausemos_una_biblioteca" class="toc">Propuesta: Usemos una biblioteca</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#que_es_tweener" class="toc">¿Que es tweener?</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#instalacion_de_la_biblioteca" class="toc">Instalación de la biblioteca</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#como_utilizar_la_biblioteca" class="toc">Cómo utilizar la biblioteca</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#crear_una_interpolacion" class="toc">Crear una interpolación</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#dando_vida_a_las_interpolaciones" class="toc">Dando vida a las interpolaciones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#un_ejemplo_3_automoviles" class="toc">Un ejemplo, 3 automóviles</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplo_interactivo_mover_con_clicks" class="toc">Ejemplo interactivo, mover con clicks</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#no_solo_movimientos" class="toc">No solo movimientos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#uso_avanzado_de_tweener" class="toc">Uso avanzado de Tweener</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#anexootras_ideas_similares" class="toc">Anexo: Otras ideas similares</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#rabbyt" class="toc">Rabbyt</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#cocos2d" class="toc">Cocos2D</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="tweener_movimientos_mas_realistas_para_tus_juegos" id="tweener_movimientos_mas_realistas_para_tus_juegos">Tweener, movimientos mas realistas para tus juegos</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fecha:</strong> 4 de Abril del 2010</div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="resumen" id="resumen">Resumen</a></h2>
+<div class="level2">
+
+<p>
+Veremos una manera sencilla de crear movimientos realistas en nuestros juegos,
+logrando efectos como aceleración, simulando elasticidad y rebotes.
+</p>
+
+<p>
+Vamos a utilizar las bibliotecas <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> y pygame.
+</p>
+
+<p>
+Por último analizaremos en pocas palabras otras estrategias para lograr
+los mismos efectos usando bibliotecas como rabbyt y cocos.
+</p>
+
+</div>
+
+<h2><a name="ejemplos" id="ejemplos">Ejemplos</a></h2>
+<div class="level2">
+
+<p>
+Este artículo incluye varios ejemplos, te recomiendo que
+los descargues y los tengas a mano para seguir la lectura:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../_media/referencia/articulos/interpolaciones/download/ejemplos.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:interpolaciones:download:ejemplos.tar.gz">ejemplos.tar.gz</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="idea_general" id="idea_general">Idea general</a></h2>
+<div class="level2">
+
+<p>
+En los videojuegos cuando queremos representar movimientos, tendemos que
+simularlos, porque desde el primer momento las posiciones de los objetos
+dependen de una simple asignación de valor a una variable.
+</p>
+
+<p>
+Por ejemplo, un automóvil puede estar situado en una posición determinada
+del escenario:
+</p>
+<pre class="code python">auto.<span class="me1">x</span> = <span class="nu0">100</span></pre>
+<p>
+Si quisiéramos moverlo hacia la derecha, digamos, a la posición 500, el
+resultado en pantalla sería bastante brusco:
+</p>
+<pre class="code python">auto.<span class="me1">x</span> = <span class="nu0">500</span></pre>
+<p>
+<a href="../../_detail/referencia/articulos/interpolaciones/image/auto_100_500.png-id=referencia-articulos-interpolaciones.html" class="media" title="referencia:articulos:interpolaciones:image:auto_100_500.png"><img src="../../_media/referencia/articulos/interpolaciones/image/auto_100_500.png" class="media" alt="" /></a>
+</p>
+
+<p>
+
+Por ese motivo, para simular algo mas parecido a la realidad, el automóvil
+tendría que moverse paso a paso para llegar de la posición 100 a la 500,
+por ejemplo dando saltos de unos 10 pixeles:
+</p>
+<pre class="code python">personaje.<span class="me1">x</span> = <span class="nu0">110</span>
+personaje.<span class="me1">x</span> = <span class="nu0">120</span>
+personaje.<span class="me1">x</span> = <span class="nu0">130</span>
+personaje.<span class="me1">x</span> = <span class="nu0">140</span>
+&nbsp;
+<span class="br0">&#91;</span>...<span class="br0">&#93;</span>
+&nbsp;
+personaje.<span class="me1">x</span> = <span class="nu0">480</span>
+personaje.<span class="me1">x</span> = <span class="nu0">490</span>
+personaje.<span class="me1">x</span> = <span class="nu0">500</span></pre>
+<p>
+Ahora bien, esta solución es la que generalmente se suele aplicar en
+muchos juegos. Porque resulta muy simple tomar una variable e incrementar su
+valor con sentencias como <code>posicion_x += 10</code> o similares.
+</p>
+
+<p>
+Pero puede que tu videojuego requiera algo mas complicado que lo
+anterior, imagina que tu automóvil puede frenar poco a poco, o acelerar
+de manera brusca para ganar una carrera donde hay muchos otros objetos
+moviéndose…
+</p>
+
+<p>
+Entonces, en un escenario diferente la solución inicial y mas sencilla
+puede que te resulte difícil de controlar, reutilizar y mejorar.
+</p>
+
+</div>
+
+<h2><a name="valores_intermedios_usando_interpolaciones" id="valores_intermedios_usando_interpolaciones">Valores intermedios, usando interpolaciones</a></h2>
+<div class="level2">
+
+<p>
+
+Las interpolaciones son funciones matemáticas que tienen como objetivo
+obtener todos los valores intermedios entre dos números.
+</p>
+
+<p>
+En los videojuegos las posiciones de los personajes, así como su rotación,
+color o tamaño se representan mediante números, aquí es donde le daremos
+utilidad a las interpolaciones.
+</p>
+
+<p>
+La propuesta de este artículo es que te puedas despreocupar por manipular
+una a una las interpolaciones. Y en su lugar, buscaremos una forma distinta
+de logar movimientos desde el código.
+</p>
+
+<p>
+Este es un ejemplo de código que esperaríamos ver mas adelante:
+</p>
+<pre class="code python">auto.<span class="me1">mover</span><span class="br0">&#40;</span>interpolacion<span class="br0">&#40;</span>desde=0, hasta=<span class="nu0">500</span>, tiempo=<span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+<p>
+<a href="../../_detail/referencia/articulos/interpolaciones/image/interpolacion.png-id=referencia-articulos-interpolaciones.html" class="media" title="referencia:articulos:interpolaciones:image:interpolacion.png"><img src="../../_media/referencia/articulos/interpolaciones/image/interpolacion.png" class="media" alt="" /></a>
+</p>
+
+<p>
+
+Si, con una sola linea de código podremos iniciar un movimiento y
+despreocuparnos por detalles…
+</p>
+
+</div>
+
+<h2><a name="propuestausemos_una_biblioteca" id="propuestausemos_una_biblioteca">Propuesta: Usemos una biblioteca</a></h2>
+<div class="level2">
+
+<p>
+
+La solución que aquí veremos consiste en la siguiente idea: en lugar
+asignarle un valor fijo a nuestras coordenadas, usaremos una biblioteca
+para solicitarle que asigne un valor de manera progresiva, por ejemplo
+desde <code>x=100</code> hasta <code>x=500</code> pasando por todos los valores intermedios.
+</p>
+
+<p>
+En general, no es buena idea escribir una y otra vez las mismas rutinas de
+código para tu juegos. Hoy existen porciones de código muy bien diseñado que
+te conviene re-utilizar, como la biblioteca que utilizaremos aquí:
+<a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a>.
+</p>
+
+</div>
+
+<h2><a name="que_es_tweener" id="que_es_tweener">¿Que es tweener?</a></h2>
+<div class="level2">
+
+<p>
+Tweener es una biblioteca que nos permite realizar interpolaciones
+de manera sencilla para aplicar a casi cualquier parte de un juego.
+</p>
+
+<p>
+Es muy popular entre los desarrolladores de ActionScript y Flash.
+Principalmente porque les permite lograr transformaciones
+de objetos de manera sencilla, despreocupándose por detalles y
+gestión de tiempo.
+</p>
+
+<p>
+Por suerte Tweener no es exclusiva del mundo Flash, dado que
+<em>Benjamin Harling</em> ha realizado una versión alternativa de esta
+biblioteca para python, llamada <strong>PyTweener</strong>.
+</p>
+
+</div>
+
+<h2><a name="instalacion_de_la_biblioteca" id="instalacion_de_la_biblioteca">Instalación de la biblioteca</a></h2>
+<div class="level2">
+
+<p>
+PyTweener es un módulo de python que se puede obtener de la siguiente
+web:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://code.google.com/p/tweener" class="urlextern" title="http://code.google.com/p/tweener"  rel="nofollow">http://code.google.com/p/tweener</a></div>
+</li>
+</ul>
+
+<p>
+
+Lo único que necesitas es descargar el archivo .py que contiene PyTweener
+y copiarlo al mismo directorio de tu programa.
+</p>
+
+<p>
+Una vez copiado el archivo a tu directorio de aplicación
+podrás escribir una sentencia como la siguiente:
+</p>
+<pre class="code python"><span class="kw1">import</span> pytweener</pre>
+<p>
+
+y podrás acceder a la funcionalidad de <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a>.
+</p>
+
+</div>
+
+<h2><a name="como_utilizar_la_biblioteca" id="como_utilizar_la_biblioteca">Cómo utilizar la biblioteca</a></h2>
+<div class="level2">
+
+<p>
+
+En tu juego seguramente tienes una porción de código que se ejecuta
+el principio del programa y otra sección destinada al bucle de juego.
+</p>
+
+<p>
+Para utilizar pytweener tienes que modificar ligeramente esas
+dos partes del juego.
+</p>
+
+<p>
+Estos son los pasos a seguir para integrar <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a>:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> crear un objeto que administrará todas las interpolaciones.</div>
+</li>
+<li class="level1"><div class="li"> actualizarlo frecuentemente desde el bucle del juego.</div>
+</li>
+</ul>
+
+<p>
+
+Veamos el primer paso, cuando tu juego comience tienes
+que iniciar el objeto <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a>:
+</p>
+<pre class="code python"><span class="kw1">import</span> pytweener
+&nbsp;
+tweener = pytweener.<span class="me1">Tweener</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+
+Ahora, la instancia del objeto llamada <code>tweener</code> contendrá todas
+las interpolaciones. Este objeto tiene que ser accesible desde
+cualquier parte del programa que quiera calcular interpolaciones, por
+lo tanto es común que se utilice una variable global para él.
+</p>
+
+</div>
+
+<h2><a name="crear_una_interpolacion" id="crear_una_interpolacion">Crear una interpolación</a></h2>
+<div class="level2">
+
+<p>
+Para crear una interpolación le tienes que indicar al objeto <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a>
+el tipo de interpolación quieres y sobre que otro objeto debe aplicarla.
+</p>
+
+<p>
+El método que te permite crear la interpolación es <code>addTween</code>, observa
+el siguiente ejemplo:
+</p>
+<pre class="code python">auto.<span class="me1">x</span> = 0
+tweener.<span class="me1">addTween</span><span class="br0">&#40;</span>auto, x=<span class="nu0">100</span>, tweenTime=<span class="nu0">5</span><span class="br0">&#41;</span></pre>
+<p>
+Mediante la última sentencia <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> va a cambiar el valor de <code>x</code> (la
+posición del automóvil) progresivamente desde 0 a 100 en el transcurso
+de 5 segundos.
+</p>
+
+<p>
+El primer argumento del método indica el objeto que buscamos
+manipular, el segundo es el atributo que modificaremos y el último es
+la cantidad de tiempo que durará el movimiento.
+</p>
+
+<p>
+Este primer ejemplo es muy simple, pero mas adelante veremos que este
+mismo método se puede utilizar para interpolaciones mucho mas complejas.
+</p>
+
+</div>
+
+<h2><a name="dando_vida_a_las_interpolaciones" id="dando_vida_a_las_interpolaciones">Dando vida a las interpolaciones</a></h2>
+<div class="level2">
+
+<p>
+Lo último que necesitamos para que <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> pueda mover nuestros
+objetos es integrarlo al bucle de juego.
+</p>
+
+<p>
+En una parte interna al bucle de juego tienes que llamar al método
+<code>update</code> e indicarle el tiempo transcurrido desde la última
+actualización, por ejemplo:
+</p>
+<pre class="code python"><span class="kw1">while</span> <span class="kw2">True</span>:
+&nbsp;
+    dt = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">100</span><span class="br0">&#41;</span>
+    tweener.<span class="me1">update</span><span class="br0">&#40;</span>dt / <span class="nu0">1000.0</span><span class="br0">&#41;</span>
+&nbsp;
+    <span class="br0">&#91;</span>...<span class="br0">&#93;</span></pre>
+<p>
+
+En el código anterior tienes algo parecido a un bucle de
+juego en pygame, la sentencia <code>clock.tick(100)</code> le indica a pygame
+que ejecute el juego como máximo a 100 cuadros por segundo. Y la linea
+que sigue le permite a <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> actualizar la posición de todos
+los objetos.
+</p>
+
+<p>
+El argumento que se utiliza en <code>update</code> se divide por 1000.0 para
+que siempre que especifiques una interpolación, la unidad de tiempo
+se exprese en segundos. Por ejemplo, si solicitas una interpolación con
+<code>tweenTime=20</code>, el movimiento durará 20 segundos.
+</p>
+
+</div>
+
+<h2><a name="un_ejemplo_3_automoviles" id="un_ejemplo_3_automoviles">Un ejemplo, 3 automóviles</a></h2>
+<div class="level2">
+
+<p>
+
+Veamos un ejemplo sencillo utilizando la biblioteca pygame; te recomiendo
+que descargues el ejemplo y ejecutes el programa <code>test_pygame.py</code>:
+
+</p>
+<pre class="code">  python test_con_sprite.py</pre>
+
+<p>
+
+El resultado en pantalla es un escenario con tres automóviles, que se
+desplazan de la parte izquierda a la derecha, cada uno de estos
+automóviles tardará 5 segundos en llegar de un lado a otro:
+</p>
+
+<p>
+
+<a href="../../_detail/referencia/articulos/interpolaciones/image/autos.png-id=referencia-articulos-interpolaciones.html" class="media" title="referencia:articulos:interpolaciones:image:autos.png"><img src="../../_media/referencia/articulos/interpolaciones/image/autos.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h2><a name="ejemplo_interactivo_mover_con_clicks" id="ejemplo_interactivo_mover_con_clicks">Ejemplo interactivo, mover con clicks</a></h2>
+<div class="level2">
+
+<p>
+Otro programa sencillo que se incluye en los ejemplos te permite desplazar
+una bomba por la pantalla realizando clicks con el mouse.
+</p>
+
+<p>
+
+<a href="../../_detail/referencia/articulos/interpolaciones/image/bomba.png-id=referencia-articulos-interpolaciones.html" class="media" title="referencia:articulos:interpolaciones:image:bomba.png"><img src="../../_media/referencia/articulos/interpolaciones/image/bomba.png" class="media" alt="" /></a>
+</p>
+
+</div>
+
+<h2><a name="no_solo_movimientos" id="no_solo_movimientos">No solo movimientos</a></h2>
+<div class="level2">
+
+<p>
+Ten en cuenta que en realidad <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> solamente conoce de interpolaciones
+sobre atributos o funciones. Pero en realidad, para nuestros juegos esto
+no solo representa movimientos. Las variables pueden indicar cualquier
+cosa dentro de un juego.
+</p>
+
+<p>
+Por ejemplo, mediante una variable podríamos indicar el tamaño de nuestro
+personaje o logotipo. Si le decimos a <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> que modifique esa variable
+obtendríamos un efecto de aumento de tamaño.
+</p>
+
+<p>
+Cito un ejemplo, si descargas los programas adjuntos observarás uno llamado
+<code>bomba_animada.py</code>. Este programa muestra una bomba de caricatura que
+aumenta de tamaño en pocos segundos:
+
+</p>
+<pre class="code">  python bomba_animada.py</pre>
+
+</div>
+
+<h2><a name="uso_avanzado_de_tweener" id="uso_avanzado_de_tweener">Uso avanzado de Tweener</a></h2>
+<div class="level2">
+
+<p>
+
+Inicialmente vimos el método <code>addTween</code>. Este método es un poco especial,
+porque podemos llamarlo utilizando una cantidad variable de argumentos.
+</p>
+
+<p>
+Para nuestro primer ejemplo alcanzaba con utilizar 3 argumentos: el objeto
+a modificar, el atributo y el tiempo para realizar el movimiento.
+</p>
+
+<p>
+Para sacarle el mayor provecho a <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> existen muchos argumentos
+opcionales para utilizar.
+</p>
+
+<p>
+Veamos la declaración del método:
+</p>
+<pre class="code python">tweener.<span class="me1">addTween</span><span class="br0">&#40;</span><span class="kw2">object</span>, atributo_a_modificar=valor_final, <span class="br0">&#91;</span>tweenTime, tweenType, onCompleteFunction, onUpdateFunction, tweenDelay<span class="br0">&#93;</span></pre>
+<p>
+El primer argumento y el segundo son obligatorios, el resto son opcionales y
+si no los especificamos tomarán valores por defecto:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> tweenTime - indica el tiempo que debe durar la interpolación.</div>
+</li>
+<li class="level1"><div class="li"> onUpdateFunction - función que se llamará cuando termine la interpolación.</div>
+</li>
+<li class="level1"><div class="li"> onUpdateFunction - función que se llamará cada vez que Tweener actualiza.</div>
+</li>
+<li class="level1"><div class="li"> tweenDelay - lo que espera antes de iniciar la interpolación.</div>
+</li>
+<li class="level1"><div class="li"> tweenType - tipo de interpolación a realizar (lineal, con aceleración, etc…)</div>
+</li>
+</ul>
+
+<p>
+El argumento <code>tweenDelay</code> resulta útil para encadenar movimientos. Por
+ejemplo, si queremos que un objeto se mueva a la derecha y luego hacia arriba
+escribiríamos:
+</p>
+<pre class="code python">tweener.<span class="me1">addTween</span><span class="br0">&#40;</span><span class="kw2">object</span>, derecha=<span class="nu0">400</span>, tweenTime=<span class="nu0">10</span><span class="br0">&#41;</span>
+tweener.<span class="me1">addTween</span><span class="br0">&#40;</span><span class="kw2">object</span>, arriba=<span class="nu0">100</span>, tweenDelay=<span class="nu0">10</span>, tweenTime=<span class="nu0">5</span><span class="br0">&#41;</span></pre>
+<p>
+Es decir, el movimiento hacia arriba se iniciará luego de que transcurran 10
+segundos (lo que se necesita esperar a que llegue a la derecha).
+</p>
+
+<p>
+
+Pero a mi entender, uno de los mas interesantes es el argumento <code>tweenType</code>,
+porque te permite alterar la forma en que <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> alcanza el valor
+solicitado.
+</p>
+
+<p>
+Existen diferentes funciones de interpolación, la mas común es la
+interpolación lineal, que avanza paso a paso a la misma velocidad, pero no es
+la única, hay muchas funciones interesantes para probar.
+</p>
+
+<p>
+Esta es una lista de las interpolaciones mas destacadas:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Lineal</div>
+</li>
+<li class="level1"><div class="li"> Back</div>
+</li>
+<li class="level1"><div class="li"> Bounce</div>
+</li>
+<li class="level1"><div class="li"> Circ</div>
+</li>
+<li class="level1"><div class="li"> Cubic</div>
+</li>
+<li class="level1"><div class="li"> Elastic</div>
+</li>
+<li class="level1"><div class="li"> Quad</div>
+</li>
+<li class="level1"><div class="li"> Quart</div>
+</li>
+<li class="level1"><div class="li"> Quint</div>
+</li>
+<li class="level1"><div class="li"> Sine</div>
+</li>
+<li class="level1"><div class="li"> Expo</div>
+</li>
+<li class="level1"><div class="li"> Strong</div>
+</li>
+</ul>
+
+<p>
+
+y para indicarle a <a href="http://code.google.com/p/tweener/" class="urlextern" title="http://code.google.com/p/tweener/"  rel="nofollow">Tweener</a> un tipo de interpolación diferente tienes
+que utilizar el argumento <code>tweenType</code> como se ve a continuación:
+</p>
+<pre class="code python">tweener.<span class="me1">addTween</span><span class="br0">&#40;</span>sprite, x=<span class="nu0">200</span>, tweenType=pytweener.<span class="me1">Easing</span>.<span class="me1">Elastic</span>.<span class="me1">easeOut</span><span class="br0">&#41;</span>
+tweener.<span class="me1">addTween</span><span class="br0">&#40;</span>sprite, y=<span class="nu0">200</span>, tweenType=pytweener.<span class="me1">Easing</span>.<span class="me1">Bounce</span>.<span class="me1">easeInOut</span><span class="br0">&#41;</span>
+tweener.<span class="me1">addTween</span><span class="br0">&#40;</span>sprite, alpha=<span class="nu0">255</span>, tweenType=pytweener.<span class="me1">Easing</span>.<span class="me1">Lineal</span>.<span class="me1">easeNone</span><span class="br0">&#41;</span></pre>
+<p>
+
+Si quieres experimentar y comparar los diferentes tipos de interpolaciones
+puedes visitar la siguiente web:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.robertpenner.com/easing/easing_demo.html" class="urlextern" title="http://www.robertpenner.com/easing/easing_demo.html"  rel="nofollow">http://www.robertpenner.com/easing/easing_demo.html</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="anexootras_ideas_similares" id="anexootras_ideas_similares">Anexo: Otras ideas similares</a></h2>
+<div class="level2">
+
+<p>
+Las interpolaciones se pueden lograr de muchas maneras, aquí hemos
+visto una breve reseña de <strong>tweener</strong>, pero hay alternativas…
+</p>
+
+<p>
+Actualmente hay bibliotecas y motores de juego que comienzan
+a incorporar las interpolaciones para los programadores de juegos
+logremos mejores resultados en menor tiempo.
+</p>
+
+<p>
+Veamos alguna de estas alternativas.
+</p>
+
+</div>
+
+<h3><a name="rabbyt" id="rabbyt">Rabbyt</a></h3>
+<div class="level3">
+
+<p>
+
+Existe una biblioteca llamada <strong>rabbyt</strong>, que se puede utilizar junto
+al lenguaje de programación python y alguna biblioteca multimedia
+como pygame o pyglet.
+</p>
+
+<p>
+En Rabbyt, si queremos hacer que un objeto llamado <code>ruleta</code> realice
+un movimiento tendríamos que escribir:
+</p>
+<pre class="code python">ruleta.<span class="me1">rot</span> = rabbyt.<span class="me1">lerp</span><span class="br0">&#40;</span><span class="nu0">0.0</span>, <span class="nu0">360.0</span>, dt=<span class="nu0">10.0</span><span class="br0">&#41;</span></pre>
+<p>
+la función <code>lerp</code> viene de <code>lineal interpolation</code>, por lo tanto
+logrará que el objeto de un giro completo de 360 grados en unos 10
+segundos pero siempre a la misma velocidad.
+</p>
+
+<p>
+Lo interesante de rabbyt, es que permite hacer animaciones rápidamente,
+no solo por la simplicidad de la sintaxis, sino también porque todos
+sus cálculos internos están codificados en el lenguaje de programación
+C, lo que la hace muy rápida.
+</p>
+
+</div>
+
+<h3><a name="cocos2d" id="cocos2d">Cocos2D</a></h3>
+<div class="level3">
+
+<p>
+
+Otro ejemplo es la biblioteca Cocos2D, una excelente biblioteca que se
+ha construido sobre pyglet para añadirle mucha mas funcionalidad.
+</p>
+
+<p>
+Cocos2D te permite realizar interpolaciones, pero no directamente, sino
+a través de acciones. Las acciones son cambios de estado que hacen
+los sprites (o actores) en el juego.
+</p>
+
+<p>
+
+Veamos un ejemplo: imagina que quieres hacer que un personaje dé una
+vuelta completa de 360 grados, luego se desplace a la derecha unos
+200 pixeles y luego de una vuelta completa pero hacia el otro lado.
+</p>
+
+<p>
+En cocos2D tendrías que escribir algo como lo siguiente:
+</p>
+<pre class="code python">girar = actions.<span class="me1">RotateBy</span><span class="br0">&#40;</span><span class="nu0">360</span>, <span class="nu0">3</span><span class="br0">&#41;</span>                   <span class="co1"># en 3 segundos</span>
+moverse = actions.<span class="me1">MoveBy</span><span class="br0">&#40;</span><span class="nu0">200</span>, <span class="nu0">5</span><span class="br0">&#41;</span>                   <span class="co1"># en 5 segundos</span>
+girar_al_reves = - girar
+&nbsp;
+sprite.<span class="me1">do</span><span class="br0">&#40;</span>girar + moverse + girar_al_reves<span class="br0">&#41;</span></pre>
+<p>
+
+Si, como puedes ver, cocos2D tiene una estrategia muy prolija y novedosa.
+Cada acción es un objeto, y es independiente del personaje que puede
+realizarlas.
+</p>
+
+<p>
+Si queremos que un personaje haga algo, simplemente tenemos que llamar
+a su método “do” indicándole las acciones a realizar. Si le enviamos
+muchas acciones unidas con ”+” entonces las acciones se encadenan
+en el tiempo (primero + luego + por_ultimo).
+</p>
+
+<p>
+En cambio, si queremos hacer dos cosas al mismo tiempo, como girar un
+objeto mientras se mueve, podríamos usar el caracter “pipe”:
+</p>
+<pre class="code python">sprite.<span class="me1">do</span><span class="br0">&#40;</span>girar | moverse<span class="br0">&#41;</span>               <span class="co1"># dos acciones simultaneas</span></pre>
+</div>
+
+<h2><a name="conclusion" id="conclusion">Conclusión</a></h2>
+<div class="level2">
+
+<p>
+
+Las interpolaciones aplicadas a los juegos son una buena idea, produce
+resultados muy realistas y es divertido codificarlas conociendo
+algunas de las herramientas comentadas.
+</p>
+
+<p>
+Espero que este artículo te resulte de utilidad para el desarrollo
+de tus juegos y que te anime a sugerir ideas a la comunidad.
+</p>
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+        <div style='float: right; margin: 3px;'>
+            <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Subir" onclick="window.scrollTo(0, 0)" title="Subir" /></a>        </div>
+
+    <div class="meta">
+      <div class="doc">
+        referencia/articulos/interpolaciones.txt &middot; Última modificación: 04/04/2010 a las 09:10 por hugoruscitti      </div>
+    </div>
+
+   
+
+<div id="pie">
+
+<ul>
+	<li class='contactenos'><a 
+	href='../../comunidad/contactenos.html'>Contáctenos</a></li>
+	
+	<li class='cc'><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Licencia de uso para el sitio</a></li>
+
+	<li class='foro'><a 
+	href='../../foro/index.html'>Foro de mensajes</a></li>
+
+	<li class='comunidad'><a 
+	href='../../comunidad.html'>Sobre el grupo ...</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+Este sitio funciona sobre el motor wiki de <a
+    href='http://wiki.splitbrain.org/wiki:dokuwiki'>DokuWiki</a>.
+<br/>
+&copy; 2003-2008 Hugo Ruscitti
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="../../lib/exe/indexer.php-id=referencia-articulos-interpolaciones&amp;1511021284.gif" width="1" height="1" alt=""  /></div>
+</body>
+</html>

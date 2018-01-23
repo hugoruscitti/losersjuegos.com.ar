@@ -1,0 +1,1593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:pong</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2010-07-26T21:21:52+0400" />
+<meta name="keywords" content="referencia,articulos,pong" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/pong-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="pong.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/pong.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#tutorial_de_iniciacion" class="toc">Tutorial de iniciacion</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#preparandonos" class="toc">Preparandonos</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#requesitos_previos" class="toc">Requesitos previos</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#que_necesitamos" class="toc">Que necesitamos</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#directorio_base_e_imagenes" class="toc">Directorio base e imagenes</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#el_documento_base" class="toc">El documento base</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#importar_e_inicializar" class="toc">1. Importar e inicializar</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#creando_una_ventana" class="toc">2. Creando una ventana</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#cargar_imagenes" class="toc">3. Cargar imagenes</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#poniendo_un_fondo" class="toc">Poniendo un fondo</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#creando_sprites" class="toc">4. Creando Sprites</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#la_clase_bola" class="toc">La clase Bola</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#poniendo_una_bola_en_nuestro_juego" class="toc">Poniendo una Bola en nuestro juego</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#moviendo_sprites" class="toc">5. Moviendo Sprites</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#el_metodo_actualizar" class="toc">El metodo actualizar</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#creando_un_reloj" class="toc">Creando un reloj</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#control_del_teclado" class="toc">6. Control del teclado</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#creando_el_sprite_pala" class="toc">Creando el Sprite Pala</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#moviendo_la_pala" class="toc">Moviendo la pala</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#colisiones" class="toc">7. Colisiones</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#actualizando_el_metodo_actualizar_de_la_clase_bola" class="toc">Actualizando el metodo actualizar de la clase Bola</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#inteligencia_artificial" class="toc">8. Inteligencia Artificial</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#creando_la_pala_de_la_cpu" class="toc">Creando la pala de la CPU</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dotando_de_inteligencia_artificial_a_la_pala" class="toc">Dotando de Inteligencia Artificial a la Pala</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#sistema_de_puntuacion" class="toc">9. Sistema de puntuacion</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#creando_un_sistema_de_puntuacion" class="toc">Creando un sistema de puntuacion</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="tutorial_de_iniciacion" id="tutorial_de_iniciacion">Tutorial de iniciacion</a></h1>
+<div class="level1">
+
+<p>
+
+En este tutoria aprenderemos a usar los aspectos basicos de Pygame. Lo haremos elebarando un clasico de los juegos, el Pong, en el aprenderemos nociones basicas para luego ampliar.
+</p>
+
+</div>
+<!-- SECTION "Tutorial de iniciacion" [1-220] -->
+<h2><a name="preparandonos" id="preparandonos">Preparandonos</a></h2>
+<div class="level2">
+
+</div>
+<!-- SECTION "Preparandonos" [221-247] -->
+<h3><a name="requesitos_previos" id="requesitos_previos">Requesitos previos</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Conocimientos de <strong>Python</strong>. Se da por hecho que se manejan con soltura la creacion de clases, funciones y demas.</div>
+</li>
+<li class="level1"><div class="li"> Algo de <strong>matematicas</strong> y <strong>fisica</strong> basica. Para empezar con conceptos basicos de lo que es un punto matematico y algunas formulas basicas de fisica tenemos de sobra.</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Requesitos previos" [248-568] -->
+<h3><a name="que_necesitamos" id="que_necesitamos">Que necesitamos</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Tener Python y Pygame instalados.</div>
+</li>
+<li class="level1"><div class="li"> Un IDE o editor de texto a eleccion.</div>
+</li>
+<li class="level1"><div class="li"> Un directorio base donde trabajar. Yo he creado una carpeta llamada <strong>pygame</strong> con dos carpetas en el interior llamadas <strong>images</strong> y <strong>sounds</strong>.</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Que necesitamos" [569-824] -->
+<h3><a name="directorio_base_e_imagenes" id="directorio_base_e_imagenes">Directorio base e imagenes</a></h3>
+<div class="level3">
+
+<p>
+
+Lo primero que necesitamos es un lugar de trabajo donde tengamos todos nuestros archivos y recursos necesarios organizados. Yo tengo un directorio llamado pygame donde voy metiendo una carpeta para cada proyecto que hago.
+</p>
+
+<p>
+Os dejo la carpeta inicial del juego que vamos a realizar en este tutorial. Contiene un fichero base(explicado mas abajo) y una carpeta images que contiene las imagenes y una fuente tipografica que usaremos para realixar nuestro juego.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/pong.zip" class="media mediafile mf_zip" title="referencia:articulos:pong.zip">pong.zip</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Directorio base e imagenes" [825-1363] -->
+<h3><a name="el_documento_base" id="el_documento_base">El documento base</a></h3>
+<div class="level3">
+
+<p>
+
+Mi metodo de trabajo es tener todo organizado para que el codigo sea facil de leer, es por eso que antes de empezar voy a compartir mi plantilla base que podeis guardar como <strong>plantilla.py</strong>. A partir de ella escribo mis programas y es desde donde comenzare estos tutoriales.
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "El documento base" [1364-2169] -->
+<h2><a name="importar_e_inicializar" id="importar_e_inicializar">1. Importar e inicializar</a></h2>
+<div class="level2">
+
+<p>
+
+Lo primero que hay que hacer para trabajar con Pygame es importarlo e inicializarlo. Para importarlo basta con las lineas:
+</p>
+<pre class="code python">  <span class="kw1">import</span> pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span></pre>
+<p>
+La primera linea importa pygame y la segunda carga las constantes para poder utilizar, por ejemplo, K_ESCAPE, en lugar de estar de tener que llamarla a traves del modulo Pygame. Una vez importado pasamos a inicializar. Se puede inicializar cualquiera de los modulos de Python por separado, pero para no complicarnos por ahora inicializaremos todo pygame con la linea:
+</p>
+<pre class="code python">  pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esta se debe ejecutar antes de empezar a usar Pygame, un buen lugar es antes de llamar a la funcion main(), justo aqui:
+</p>
+<pre class="code python">  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Con esto ya tenemos importado e inicializado Pygame y estamos listos para trabajar, dejo como se debe tener el archivo hasta ahora:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "1. Importar e inicializar" [2170-3714] -->
+<h2><a name="creando_una_ventana" id="creando_una_ventana">2. Creando una ventana</a></h2>
+<div class="level2">
+
+<p>
+
+Lo primero que necesitamos es definir las constantes del ancho y alto de la ventana, yo estas las defino como constantes porque de momento no vas a hacer cosas complicadas con cambios de resolucion ni nada por el estilo y tenerlas como constantes ayuda a trabajar con ellas desde cualquier clase o funcion.
+</p>
+<pre class="code python">  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span></pre>
+<p>
+Ahora pasamos a crear la ventana, se debe crear dentro de la funcion main(), es tan facil como lo siguiente:
+</p>
+<pre class="code python">  screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+  pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span></pre>
+<p>
+La primera linea crea una ventana, date cuenta que la pasamos la tupla (WIDTH, HEIGHT) para definir las dimensiones de la ventana. La segunda linea sirve para definir el titulo de la ventana. El programa nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Si lo ejecutas te daras cuenta que se crea una ventana, pero esta desaparece al instante. Esto es debido a que necesitamos crear un bucle infinito, que sera el bucle del juego. Lo creamos justo despues de la creacion de la ventana.
+</p>
+<pre class="code python">  <span class="kw1">while</span> <span class="kw2">True</span>:
+      <span class="kw1">pass</span></pre>
+<p>
+Como vemos es un bucle infinito vacio que se ejecuta eternamente y hace que la ventana no se cierra, pero ¡sorpresa!, ahora no hay forma de cerrar la ventana si no es matando el proceso. La solucion consiste en que el bucle infinito compruebe si queremos cerrar la ventana y en ese caso que deje de ejecutarse. Sustituimos las dos lineas anteriores por:
+</p>
+<pre class="code python">  <span class="kw1">while</span> <span class="kw2">True</span>:
+      <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+          <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+              <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span></pre>
+<p>
+La primera linea del bucle recorre con un for <em>pygame.event.get() </em>que es una lista interna de Pygame con los eventos que se estan ejecutando. En la siguiente linea comprobamos que si el tipo de evento es igual a QUIT, es decir, que si le estamos dando a la crucesita de cerrar ventana. En caso de que si, invoca a <em>sys.exit(0)</em>, para el que necesitamos haber importado el <strong>modulo sys</strong>, y cierra el programa. Ya tenemos la manera de crear una ventana y controlar cuando cerrarla.
+</p>
+
+<p>
+El codigo nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "2. Creando una ventana" [3715-7392] -->
+<h2><a name="cargar_imagenes" id="cargar_imagenes">3. Cargar imagenes</a></h2>
+<div class="level2">
+
+<p>
+
+Para cargar una imagen en Pygame vamos a usar una funcion que esta muy bien y facilita mucho el cargar imagenes al vuelo, pongo la funcion y la explicamos linea por linea:
+</p>
+<pre class="code python">  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image</pre>
+<p>
+La <strong>linea 1</strong> define la funcion, recibe dos parametros el nombre/ruta del archivo y la segunda si tiene parte transparente (por defecto definida como falso).
+</p>
+
+<p>
+La<strong> linea 2</strong> asigna a la variable imagen la imagen a traves de la funcion de Pygame <em>pygame.image.load()</em> si se puede sino, en la <strong>lineas 3 y 4</strong> manejan el error y salen del programa.
+</p>
+
+<p>
+La <strong>linea 5 </strong>convierte la imagen al tipo interno de Pygame que hace que sea mucho mas eficiente.
+</p>
+
+<p>
+Las <strong>linea 6</strong> es un condicional que controla si el parametro transparent es verdadero y en caso afirmativo ejecuta las <strong>lineas 7 y 8</strong>, la primera obtiene el color del pixel (0, 0) de la imagen (esquina superior izquierda) y la la <strong>linea 8</strong> lo define como color transparente de la imagen. Es decir que si quieres una imagen con transparencia, el color que actua como transparente se toma del pixel superior izquierdo, asi que asegurate que este color no esta en la imagen.
+</p>
+
+<p>
+Por ultimo la <strong>linea 9</strong> retorna la imagen despues de todo el proceso.
+</p>
+
+<p>
+El programa nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "3. Cargar imagenes" [7393-10221] -->
+<h3><a name="poniendo_un_fondo" id="poniendo_un_fondo">Poniendo un fondo</a></h3>
+<div class="level3">
+
+<p>
+
+Vamos a poner un fondo a nuestra ventana usando nuestra funcion <strong>load_image</strong>. Para cargar la imagen usaremos la siguiente linea, la ponemos justo antes de entrar en el bucle del juego:
+</p>
+<pre class="code python">  background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo.png'</span><span class="br0">&#41;</span></pre>
+<p>
+Como ves no definimos color transparente, porque para el fondo no es necesario.
+</p>
+
+<p>
+Ahora necesitamos “ponerla en la ventana” para ello dentro del bucle principal debemos definir que imagen poner y en que posicion:
+</p>
+<pre class="code python">  screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+<p>
+Esto es lo que hace es poner la imagen la pantalla sobre las que habia, recibe dos parametros (en realidad algunos mas), la imagen a poner y en que lugar situar la esquina superior izquierda de la imagen, en este caso (0, 0), es decir, queremos que la esquina superior izquierda de la imagen este en la posicion (0, 0), con esto conseguimos que el fondo ocupe toda la ventana (si la imagen es mayor o superior a la ventana, claro esta).
+</p>
+
+<p>
+por ultimo, como ultima linea del bucle debemos incluir la siguiente linea:
+</p>
+<pre class="code python">  pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esto lo que hace es actualizar toda la ventana para que se muestren los cambios que han sucedido.
+</p>
+
+<p>
+El programa nos queda de la siguiente manera:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo.png'</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Bien con esto hemos conseguido poner una imagen de fondo y tener una forma facil de cargar imagenes en Pygame. Aconsejo guardar esto como plantilla base de Pygame, pues en casi todos los juegos necesitaremos cargar imagenes y establecer un fondo por defecto.
+</p>
+
+</div>
+<!-- SECTION "Poniendo un fondo" [10222-13101] -->
+<h2><a name="creando_sprites" id="creando_sprites">4. Creando Sprites</a></h2>
+<div class="level2">
+
+<p>
+
+Ahora empieza lo interesante y la escencia de los videojuegos en 2D, la creacion de Sprites.
+</p>
+
+</div>
+<!-- SECTION "4. Creando Sprites" [13102-13227] -->
+<h3><a name="la_clase_bola" id="la_clase_bola">La clase Bola</a></h3>
+<div class="level3">
+
+<p>
+
+Para crear la pelota de nuestro Pong lo primero que necesitamos es la imagen de la pelota, <a href="http://razonartificial.com/wp-content/uploads/2010/02/ball.png" class="urlextern" title="http://razonartificial.com/wp-content/uploads/2010/02/ball.png"  rel="nofollow">descargar esta</a> y guardarla como siempre en el directorio images.
+</p>
+
+<p>
+Ahora vamos a crear una clase para la pelota, que sera el Sprite de nuestra pelota, un Sprite es mas que una imagen, es una superficie que puede interactuar, moverse y demas.
+</p>
+<pre class="code python">  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span></pre>
+<p>
+La <strong>linea 1</strong> crea la clase Bola que hereda los metodos de la clase pygame.sprite.Sprite, esto es muy importante debido a que contiene metodos necesarios para el manejo de Sprites.
+</p>
+
+<p>
+La <strong>linea 2</strong> crea el metodo <em class="u">init</em> que inicializa la clase.
+</p>
+
+<p>
+La <strong>linea 3</strong> invoca al metodo init de la clase heredada, muy importante tambien y dificil de explicar para comenzar.
+</p>
+
+<p>
+La <strong>linea 4</strong> ya nos suena mas y lo que hace es cargar con nuestra funcion load_image() la imagen de la pelota, como vemos tenemos puesto True porque la pelota si tiene zonas transparentes.
+</p>
+
+<p>
+La <strong>linea 5 </strong>es de las cosas mas utiles de pygame la funcion self.image.get_rect() obtiene un rectangulo con las dimensiones y posicion de la imagen (en este caso self.image) y se lo asignamos a self.rect
+</p>
+
+<p>
+Aqui hago un inciso para comentar que get_rect() tiene unos parametros muy utiles que podemos modificar para posicionar y redimensionar nuestra imagen, son los siguientes:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> top, left, bottom, right</div>
+</li>
+<li class="level1"><div class="li"> topleft, bottomleft, topright, bottomright</div>
+</li>
+<li class="level1"><div class="li"> midtop, midleft, midbottom, midright</div>
+</li>
+<li class="level1"><div class="li"> center, centerx, centery</div>
+</li>
+<li class="level1"><div class="li"> size, width, height</div>
+</li>
+<li class="level1"><div class="li"> w, h</div>
+</li>
+</ul>
+
+<p>
+
+Asi que podemos acceder a los diferentes valores como self.rect.centerx que nos devuelve la posicion central de la pelota respecto al ancho de la pantalla, y asi con todos es cuestion de probarlos, pero mas o menos se entiende lo que devuelve cada uno. Lo mejor de todos ellos es que si cambias el valor de alguno el resto se actualiza. Aqui lo teneis mejor expliado.
+</p>
+
+<p>
+En la <strong>linea 6 y 7</strong> usamos las propiedades de rect y con centerx y centery definimos el centro de la pelota en el centro de la pantalla. (aqui vemos porque pusimos WIDTH y HEIGHT como constantes globales).
+</p>
+
+<p>
+La <strong>linea 8 </strong>define la velocidad que queremos para la pelota, separamos la velocidad en dos, la velocidad en el eje x y la velocidad en el eje y, luego veremos porque.
+</p>
+
+</div>
+<!-- SECTION "La clase Bola" [13228-15872] -->
+<h3><a name="poniendo_una_bola_en_nuestro_juego" id="poniendo_una_bola_en_nuestro_juego">Poniendo una Bola en nuestro juego</a></h3>
+<div class="level3">
+
+<p>
+
+Bien una vez creada la clase Bola vamos a crear una bola, para ello como cuando cargamos el fondo, debemos cargarla antes del bucle del juego, con la siguiente linea:
+</p>
+<pre class="code python">  bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Ahora solo debemos “ponerla” en nuestra ventana, ejecutando la siguiente sentencia, despues de la sentencia identica a la del fondo.
+</p>
+<pre class="code python">  screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span></pre>
+<p>
+Como puedes ver ahora no le pasamos la imagen y en vez de unas coordenadas como en el fondo (entonces le pasamos (0, 0)) le pasamos el rect de la bola, con esto conseguiremos mas tarde que cada vez que movamos el rect, moveremos la pelota de sitio.
+</p>
+
+<p>
+Es muy importante “ponerla en pantalla despues y no antes que el fondo porque si pones la pelota y luego pones el fondo encima esta no se vera, como es logico.
+</p>
+
+<p>
+El programa nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Ahora tenemos una pelota en el centro de nuestra pantalla lo siguiente es conseguir que se mueva e interactue con los bordes.
+</p>
+
+</div>
+<!-- SECTION "Poniendo una Bola en nuestro juego" [15873-18627] -->
+<h2><a name="moviendo_sprites" id="moviendo_sprites">5. Moviendo Sprites</a></h2>
+<div class="level2">
+
+</div>
+<!-- SECTION "5. Moviendo Sprites" [18628-18660] -->
+<h3><a name="el_metodo_actualizar" id="el_metodo_actualizar">El metodo actualizar</a></h3>
+<div class="level3">
+
+<p>
+
+A continuacion aprenderemos a mover nuestra bola por la superficie y a calcular los rebotes, para ello emplearemos matematicas y fisica basica.
+</p>
+<pre class="code python">  <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span><span class="br0">&#41;</span>:
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span></pre>
+<p>
+La <strong>linea 1 </strong>define el metodo, recibe el parametro self (como siempre) y el parametro time que es el tiempo transcurrido, mas adelante lo explicamos.
+</p>
+
+<p>
+La <strong>linea 2 y 3 </strong>usa la fisica basica de espacio es igual a la velocidad por el tiempo (e = v*t), por tanto establecemos que el centro de nuestro rectangulo en x es el valor que tenia (self.rect.centerx) mas (+<img src="../../../../lib/images/smileys/icon_smile2.gif" class="middle" alt="=)" /> la valocidad a la que se mueve en el eje x (self.speed[0]) por (*) el tiempo transcurrido (time). Lo mismo se aplica al eje y en la linea 3.
+</p>
+
+<p>
+La <strong>linea 4, 5 y 6</strong> establece que si la parte izquierda del rectangulo de la bola es menor o igual a 0 o mayor o igual a el ancho de la pantalla (WIDTH), es decir, que este en el extremo izquierdo o derecho, la velocidad de x (self.speed[0]) cambie de signo (-self.speed[0]) con esto conseguiremos que vaya hacia el otro lado.
+</p>
+
+<p>
+Las <strong>lineas 7, 8 y 9</strong> es lo mismo pero en el eje y como se puede ver.
+</p>
+
+</div>
+<!-- SECTION "El metodo actualizar" [18661-20202] -->
+<h3><a name="creando_un_reloj" id="creando_un_reloj">Creando un reloj</a></h3>
+<div class="level3">
+
+<p>
+
+Ahora vamos a crear un reloj que controle el tiempo del juego, esto es importante para el movimiento, pues sabemos cuanto tiempo a pasado desde la ultima actualizacion de la pelota y con ello poder situarla en el espacio.
+</p>
+<pre class="code python">  clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esta linea va justo antes de entrar en el bucle del juego y sirve para crear el reloj con el que gestionar el tiempo.
+</p>
+
+<p>
+Ahora necesitamos saber cuanto tiempo pasa cada vez que se ejecuta una intereccion del bucle, para ello dentro del bucle ponemos como primera linea:
+</p>
+<pre class="code python">  <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span></pre>
+<p>
+El 60 que se le pasa como parametro es el framerate, con el nos aseguramos de que el juego no va a mas de la velocidad estipulada. Con ello conseguimos que el juego corra igual en todos los ordenadores. <a href="http://www.losersjuegos.com.ar/traducciones/pygame/time/clock" class="urlextern" title="http://www.losersjuegos.com.ar/traducciones/pygame/time/clock"  rel="nofollow">Aqui mas inftomacion</a>.
+</p>
+
+<p>
+Por ultimo debemos actualizar la posicion de la bola antes de actualizarla en la ventana, es decir antes de los screen.blit.
+</p>
+<pre class="code python">  bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span></pre>
+<p>
+Como ves le pasamos el parametro time que es el tiempo que ha pasado desde la ultima vez que se ejecuto.
+</p>
+
+<p>
+El juego queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span><span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Ya nuestra pelota se mueve y rebota contra las paredes. No es la panace del movimiento, pero esta bien.
+</p>
+
+</div>
+<!-- SECTION "Creando un reloj" [20203-23826] -->
+<h2><a name="control_del_teclado" id="control_del_teclado">6. Control del teclado</a></h2>
+<div class="level2">
+
+<p>
+
+Bien ya tenemos nuestra pelota que se mueve como loca por toda la pantalla. El siguiente paso es crear un nuevo Sprite para las palas, este a diferencia de la bola no se movera solo sino que lo controlaremos nosotros por el teclado.
+</p>
+
+</div>
+<!-- SECTION "6. Control del teclado" [23827-24096] -->
+<h3><a name="creando_el_sprite_pala" id="creando_el_sprite_pala">Creando el Sprite Pala</a></h3>
+<div class="level3">
+
+<p>
+
+La clase Pala es casi identica a la clase Bola, salvo por unos pequeños cambios:
+</p>
+<pre class="code python">  <span class="kw1">class</span> Pala<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, x<span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/pala.png&quot;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = x
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="nu0">0.5</span></pre>
+<p>
+Como vemos es identica salvo que ahora le pasamos el parametro <strong>x</strong> para usarlo en <em>self.rect.centerx</em>, esto es debido a que necesitamos dos palas una en la parte izquierda y otra en la derecha, con el parametro x definimos a que altura del <strong>eje x</strong> queremos colocar el Sprite.
+</p>
+
+<p>
+Otro cambio es la velocidad, como la pala del Pong solo se mueve en el eje y no definimos velocidad para el eje x.
+</p>
+
+<p>
+para crear la pala del jugador ya sabeis, debajo de donde habeis creado la bola poneis la siguiente linea:
+</p>
+<pre class="code python">  pala_jug = Pala<span class="br0">&#40;</span><span class="nu0">30</span><span class="br0">&#41;</span></pre>
+<p>
+La llamo <strong>pala_jug</strong> porque habra otra que sera la <strong>pala_cpu</strong> que sera la que maneje el ordenador. Como ves le paso como valor de <strong>x = 30</strong>, esto quiere decir que <strong>centerx</strong> estara a 30 px del borde derecho de la ventana.
+</p>
+
+<p>
+Por ultimo dentro del bucle lo de siempre, despues de actualizar el fondo y la bola actualizamos la pala:
+</p>
+<pre class="code python">  screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_jug.<span class="me1">image</span>, pala_jug.<span class="me1">rect</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "Creando el Sprite Pala" [24097-25499] -->
+<h3><a name="moviendo_la_pala" id="moviendo_la_pala">Moviendo la pala</a></h3>
+<div class="level3">
+
+<p>
+
+Para mover la pala definimos el metodo <strong>mover</strong> dentro de la clase Pala:
+</p>
+<pre class="code python">  <span class="kw1">def</span> mover<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, keys<span class="br0">&#41;</span>:
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&gt;</span>= 0:
+          <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&lt;</span>= HEIGHT:
+          <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span></pre>
+<p>
+Recibe los parametros self y time como el <strong>metodo</strong> actualizar de la bola y ademas recibe el parametro keys que luego definiremos y que es una lista con el valor booleano de las teclas pulsadas.
+</p>
+
+<p>
+La <strong>linea 2 y 5</strong> comprueban que la parte superior (en el caso de la linea 2) de la pala sea mayor o igual a 0 y que la parte inferior de la pala (linea 5) sea menor o igual que que la altura de la ventana.
+</p>
+
+<p>
+Resumiendo comprueban que la pala no se sale de la ventana.
+</p>
+
+<p>
+La <strong>linea 3</strong> comprueba si la constante <strong>K_UP</strong> de <strong>keys</strong> es 1, lo que querria decir que tenemos presionada la tecla de la flecha hacia arriba del teclado.
+</p>
+
+<p>
+La <strong>linea 5</strong> en caso de tener la tecla presionada <strong>disminuye</strong> el valor de <strong>centery</strong> haciendo que la pala se mueva hacia arriba.
+</p>
+
+<p>
+La <strong>linea 6 y 7</strong> hacen lo mismo, pero para abajo y <strong>aumentando</strong> el valor de <strong>centery</strong>.
+</p>
+
+<p>
+Ahora solo debemos saber que teclas se estan pulsando creando la variable keys, esto se consigue añadiendo la siguiente linea en el bucle principal, justo despues de comprobar el tiempo transcurrido con time.
+</p>
+<pre class="code python">  keys = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esto nos devuelve las teclas pulsadas en una lista como explicamos arriba.
+</p>
+
+<p>
+Por ultimo debemos llamar al metodo mover en el bucle justo despues de actualizar la bola, con la linea:
+</p>
+<pre class="code python">  pala_jug.<span class="me1">mover</span><span class="br0">&#40;</span><span class="kw3">time</span>, keys<span class="br0">&#41;</span></pre>
+<p>
+El codigo nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span><span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="kw1">class</span> Pala<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, x<span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/pala.png&quot;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = x
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="nu0">0.5</span>
+&nbsp;
+      <span class="kw1">def</span> mover<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, keys<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&gt;</span>= 0:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&lt;</span>= HEIGHT:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+      pala_jug = Pala<span class="br0">&#40;</span><span class="nu0">30</span><span class="br0">&#41;</span>
+&nbsp;
+      clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span>
+          keys = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span>
+          pala_jug.<span class="me1">mover</span><span class="br0">&#40;</span><span class="kw3">time</span>, keys<span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_jug.<span class="me1">image</span>, pala_jug.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Ya tenemos nuestra pala que podemos controlar con el teclado, pero la bola como vemos para olimpicamente de ella y la atraviesa. A continuacion aprenderemos a crear colisiones entre Sprites
+</p>
+
+</div>
+<!-- SECTION "Moviendo la pala" [25500-30514] -->
+<h2><a name="colisiones" id="colisiones">7. Colisiones</a></h2>
+<div class="level2">
+
+<p>
+
+Tenemos una pelota que se mueve como loca y una pala que va para arriba y para abajo a nuestra voluntad, es hora de que se den cuenta que estan en el mismo mundo. Vamos a crear colisiones entre los dos sprites.
+</p>
+
+</div>
+<!-- SECTION "7. Colisiones" [30515-30753] -->
+<h3><a name="actualizando_el_metodo_actualizar_de_la_clase_bola" id="actualizando_el_metodo_actualizar_de_la_clase_bola">Actualizando el metodo actualizar de la clase Bola</a></h3>
+<div class="level3">
+
+<p>
+
+Saber si un Sprite colisiona con otro es muy facil en Python, basta con ejecutar el siguiente metodo:
+</p>
+<pre class="code python">  pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span>objeto1, objeto2<span class="br0">&#41;</span></pre>
+<p>
+Esto comprueba si el rectangulo del Sprite objeto1 esta en contacto con el rectangulo de objeto2, por lo que es tan facil como mejorar el metodo actualizar de la clase Bola para que lo tenga en cuenta:
+</p>
+<pre class="code python">  <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug<span class="br0">&#41;</span>:
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span></pre>
+<p>
+Como vemos todo igual, salvo que ahora recibe un parametro mas que es <strong>pala_jug</strong> por el que pasaremos el Sprite con el que queremos comprobar si colisiona, en este caso <strong>pala_jug</strong>.
+</p>
+
+<p>
+Luego al final añadimos 3 lineas con un nuevo condicional con el que comprobamos si la pelota choca contra la pala, en caso afirmativo cambiamos la direccion de la bola como cuando choca con el borde izquierdo de la ventana.
+</p>
+
+<p>
+Por ultimo solo actualizamos la llamada a la funcion <strong>actualizar</strong> que hacemos desde el bucle para pasarle la <strong>pala_jug</strong>.
+</p>
+<pre class="code python">  bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug<span class="br0">&#41;</span></pre>
+<p>
+Y con esto ya hemos logrado que nuestra bola detecte si ha chocado contra la pala del jugador en caso afirmativo “rebota”.
+</p>
+
+<p>
+Asi nos queda el codigo:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="kw1">class</span> Pala<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, x<span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/pala.png&quot;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = x
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="nu0">0.5</span>
+&nbsp;
+      <span class="kw1">def</span> mover<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, keys<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&gt;</span>= 0:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&lt;</span>= HEIGHT:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+      pala_jug = Pala<span class="br0">&#40;</span><span class="nu0">30</span><span class="br0">&#41;</span>
+&nbsp;
+      clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span>
+          keys = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug<span class="br0">&#41;</span>
+          pala_jug.<span class="me1">mover</span><span class="br0">&#40;</span><span class="kw3">time</span>, keys<span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_jug.<span class="me1">image</span>, pala_jug.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+En el siguiente paso crearemos la pala del jugador de la CPU y la dotaremos de Inteligencia Artificial para que golpee la pelota.
+</p>
+
+</div>
+<!-- SECTION "Actualizando el metodo actualizar de la clase Bola" [30754-35914] -->
+<h2><a name="inteligencia_artificial" id="inteligencia_artificial">8. Inteligencia Artificial</a></h2>
+<div class="level2">
+
+<p>
+
+En el siguiente tema no introduciremos ningun concepto nuevo de Pygame, pero si usaremos un poco de todo lo usado en los anteriores tutoriales para crear la pala que controlara el ordenador, se podria decir que es una Inteligencia Artificial muy basica.
+</p>
+
+</div>
+<!-- SECTION "8. Inteligencia Artificial" [35915-36209] -->
+<h3><a name="creando_la_pala_de_la_cpu" id="creando_la_pala_de_la_cpu">Creando la pala de la CPU</a></h3>
+<div class="level3">
+
+<p>
+
+Esto se hace igual que como creamos la <strong>pala_jug</strong> o la <strong>bola</strong>, ponemos la siguiente linea en la funcion principal debajo de <strong>pala_jug</strong>.
+</p>
+<pre class="code python">  pala_cpu = Pala<span class="br0">&#40;</span>WIDTH - <span class="nu0">30</span><span class="br0">&#41;</span></pre>
+<p>
+En su momento pala_jug le pasamos como parametro el valor 30 que queria decir que el centerx estaba a 30 pixeles de el borde izquierdo, ahora le pasamos WIDTH - 30, es decir a 30 pixeles del borde derecho.
+</p>
+
+<p>
+Tambien debemos añadir la linea:
+</p>
+<pre class="code python">  screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_cpu.<span class="me1">image</span>, pala_cpu.<span class="me1">rect</span><span class="br0">&#41;</span></pre>
+<p>
+En el bucle principal, debajo de los demas blit, como siempre. Con esto ya tenemos nuestro Sprite puesto en pantalla.
+</p>
+
+<p>
+Ahora vamos a hacer que detecte tambien las colisiones, para ello volvemos a actualizar el metodo actualizar de la clase Bola:
+</p>
+<pre class="code python">  <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug, pala_cpu<span class="br0">&#41;</span>:
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_cpu<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span></pre>
+<p>
+Como podemos ver añadimos otro parametro al metodo <strong>pala_cpu</strong> que servira para añadirle el Sprite <strong>pala_cpu</strong> como hicimos con <strong>pala_jug</strong> y añadimos las tres ultimas lineas que son identicas a las anteriores salvo que ahora para <strong>pala_cpu</strong>.
+</p>
+
+<p>
+Recordad pasarle el parametro nuevo a la linea que llama a la funcion actualizar de la bola en el bucle del juego. Asi:
+</p>
+<pre class="code python">  ball.<span class="me1">update</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug, pala_cpu<span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "Creando la pala de la CPU" [36210-38201] -->
+<h3><a name="dotando_de_inteligencia_artificial_a_la_pala" id="dotando_de_inteligencia_artificial_a_la_pala">Dotando de Inteligencia Artificial a la Pala</a></h3>
+<div class="level3">
+
+<p>
+
+Bueno ahora viene lo interesante, lograr que la pala se mueva para golpear la bola, esto se hace definiendo otro metodo en la clase <strong>Pala</strong> al metodo lo llamare <strong>ia</strong>.
+</p>
+<pre class="code python">  <span class="kw1">def</span> ia<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, ball<span class="br0">&#41;</span>:
+      <span class="kw1">if</span> ball.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">&gt;</span>= 0 <span class="kw1">and</span> ball.<span class="me1">rect</span>.<span class="me1">centerx</span> <span class="sy0">&gt;</span>= WIDTH/<span class="nu0">2</span>:
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&lt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&gt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span></pre>
+<p>
+En la <strong>linea 1</strong> vemos que recibe como siempre self y time y aparte recibe ball que es la bola, es necesario pues el metodo necesita conocer donde esta la bola.
+</p>
+
+<p>
+En la <strong>linea 2</strong> comprobamos que <em>ball.speed[0] &gt;= 0</em>, es decir, que la velocidad en el eje x de la pelota sea positiva, es decir, que la pelota se este moviendo hacia la derecha (hacia la pala de la cpu) y tambien comprueba que <em>ball.rect.centerx &gt;= WIDTH/2</em> es decir que el centro x de la pelota sea mayor o igual que el centro del tablero, es decir, que la pelota este en el campo de la cpu.
+</p>
+
+<p>
+Por tanto la <strong>linea 2</strong> es un condicional que comprueba que la pelota vaya hacia donde esta la pala de la cpu y que este en su campo, sino, que no se mueva. Esto se hace para que la CPU no sea invencible y no llegue a todas las pelotas.
+</p>
+
+<p>
+La <strong>linea 3</strong> comprueba si el centery de la pelota es menor que el centery de la bola, es decir si la pala esta mas arriba que que la pelota en cullo caso, ejecuta la <strong>linea 4</strong> que mueve la pala de la cpu hacia abajo.
+</p>
+
+<p>
+Las <strong>lineas 5 y 6</strong> hacen lo mismo, pero a la inversa como se ve a simple vista.
+</p>
+
+<p>
+Ahora solo nos queda llamar a la ia junto con las llamadas <strong>actualizar</strong> de la <strong>bola</strong> y <strong>mover</strong> de la <strong>pala_cpu</strong>.
+</p>
+<pre class="code python">  pala_cpu.<span class="me1">ia</span><span class="br0">&#40;</span><span class="kw3">time</span>, bola<span class="br0">&#41;</span></pre>
+<p>
+El codigo nos queda de la siguiente manera:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug, pala_cpu<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_cpu<span class="br0">&#41;</span>:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="kw1">class</span> Pala<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, x<span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/pala.png&quot;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = x
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="nu0">0.5</span>
+&nbsp;
+      <span class="kw1">def</span> mover<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, keys<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&gt;</span>= 0:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&lt;</span>= HEIGHT:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">def</span> ia<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, ball<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> ball.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">&gt;</span>= 0 <span class="kw1">and</span> ball.<span class="me1">rect</span>.<span class="me1">centerx</span> <span class="sy0">&gt;</span>= WIDTH/<span class="nu0">2</span>:
+              <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&lt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+              <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&gt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+      pala_jug = Pala<span class="br0">&#40;</span><span class="nu0">30</span><span class="br0">&#41;</span>
+      pala_cpu = Pala<span class="br0">&#40;</span>WIDTH - <span class="nu0">30</span><span class="br0">&#41;</span>
+&nbsp;
+      clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span>
+          keys = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug, pala_cpu<span class="br0">&#41;</span>
+          pala_jug.<span class="me1">mover</span><span class="br0">&#40;</span><span class="kw3">time</span>, keys<span class="br0">&#41;</span>
+          pala_cpu.<span class="me1">ia</span><span class="br0">&#40;</span><span class="kw3">time</span>, bola<span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_jug.<span class="me1">image</span>, pala_jug.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_cpu.<span class="me1">image</span>, pala_cpu.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Ahora el juego es jugable, pero no tiene ni sistema de puntuacion, ni sonidos ni nada de nada. Pronto lo solucionaremos.
+</p>
+
+</div>
+<!-- SECTION "Dotando de Inteligencia Artificial a la Pala" [38202-44059] -->
+<h2><a name="sistema_de_puntuacion" id="sistema_de_puntuacion">9. Sistema de puntuacion</a></h2>
+<div class="level2">
+
+<p>
+
+En los dos siguientes temas vamos a aprender a manejar fuentes tipograficas en Pygame. Crearemos un sistema de puntuacion para nuestro Pong, consistira en dos marcadores para cada jugador que si consigues meter un punto al rival aumenta en uno. ¿Sencillo no? Vamos alla.
+</p>
+
+</div>
+<!-- SECTION "9. Sistema de puntuacion" [44060-44370] -->
+<h3><a name="creando_un_sistema_de_puntuacion" id="creando_un_sistema_de_puntuacion">Creando un sistema de puntuacion</a></h3>
+<div class="level3">
+
+<p>
+
+Lo primero es crear un sistema que controle los puntos, es decir, comprobar si la bola traspasa las palas y toca el borde de la ventana que tiene detras. Esto lo controlara como siempre la bola y su metodo <strong>actualizar</strong>.
+</p>
+<pre class="code python">  <span class="kw1">def</span> update<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug, pala_cpu, puntos<span class="br0">&#41;</span>:
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0:
+          puntos<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> += <span class="nu0">1</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+          puntos<span class="br0">&#91;</span>0<span class="br0">&#93;</span> += <span class="nu0">1</span>
+&nbsp;
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+      <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_cpu<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">return</span> puntos</pre>
+<p>
+Como vemos le añadimos un nuevo parametro llamado puntos, puntos es una lista que contiene los puntos de los dos jugadores en el el puntos[0] los puntos del jugador y en el puntos[1] los puntos de la cpu.
+</p>
+
+<p>
+Luego añadimos las <strong>lineas de la 5 a la 8</strong> que controlan si la parte izquierda de la pelota (<strong>linea 5</strong>) toca el el borde izquierdo de la ventana en cuyo caso aumenta puntos[1] (el marcador de la cpu) en 1 (<strong>linea 6</strong>). La <strong>lineas 7 y 8</strong> hacen lo mismo, pero a la inversa.
+</p>
+
+<p>
+Por ultimo al final del metodo se <strong>retorna puntos</strong>, necesario para almacenarla en una variable.
+</p>
+
+<p>
+Ahora debemos crear la lista puntos en nuestra funcion principal, yo la he creado justo antes de entrar en el bucle del juego:
+</p>
+<pre class="code python">  puntos = <span class="br0">&#91;</span>0, 0<span class="br0">&#93;</span></pre>
+<p>
+Ahora tenemos que modificar la llamada a <strong>bola.actualizar</strong> dentro del bucle del juego para pasarle nuestra lista puntos y recuperarla de nuevo con los posibles nuevos valores.
+</p>
+<pre class="code python">  puntos = bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug, pala_cpu, puntos<span class="br0">&#41;</span></pre>
+<p>
+Por lo que el codigo nos queda asi:
+</p>
+<pre class="code python">  <span class="co1">#!/usr/bin/env python</span>
+  <span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+  <span class="co1"># Modulos</span>
+  <span class="kw1">import</span> <span class="kw3">sys</span>, pygame
+  <span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+  <span class="co1"># Constantes</span>
+  WIDTH = <span class="nu0">640</span>
+  HEIGHT = <span class="nu0">480</span>
+&nbsp;
+  <span class="co1"># Clases</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">class</span> Bola<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/ball.png&quot;</span>, <span class="kw2">True</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = WIDTH / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="br0">&#91;</span><span class="nu0">0.5</span>, -<span class="nu0">0.5</span><span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">def</span> actualizar<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, pala_jug, pala_cpu, puntos<span class="br0">&#41;</span>:
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0:
+              puntos<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> += <span class="nu0">1</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              puntos<span class="br0">&#91;</span>0<span class="br0">&#93;</span> += <span class="nu0">1</span>
+&nbsp;
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">left</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">right</span> <span class="sy0">&gt;</span>= WIDTH:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&lt;</span>= 0 <span class="kw1">or</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&gt;</span>= HEIGHT:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_jug<span class="br0">&#41;</span>:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">if</span> pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span><span class="kw2">self</span>, pala_cpu<span class="br0">&#41;</span>:
+              <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> = -<span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span>
+              <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> += <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+          <span class="kw1">return</span> puntos
+&nbsp;
+  <span class="kw1">class</span> Pala<span class="br0">&#40;</span>pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#41;</span>:
+      <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, x<span class="br0">&#41;</span>:
+          pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span>.<span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">image</span> = load_image<span class="br0">&#40;</span><span class="st0">&quot;images/pala.png&quot;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span> = <span class="kw2">self</span>.<span class="me1">image</span>.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centerx</span> = x
+          <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> = HEIGHT / <span class="nu0">2</span>
+          <span class="kw2">self</span>.<span class="me1">speed</span> = <span class="nu0">0.5</span>
+&nbsp;
+      <span class="kw1">def</span> mover<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, keys<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">top</span> <span class="sy0">&gt;</span>= 0:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_UP<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+          <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">bottom</span> <span class="sy0">&lt;</span>= HEIGHT:
+              <span class="kw1">if</span> keys<span class="br0">&#91;</span>K_DOWN<span class="br0">&#93;</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+      <span class="kw1">def</span> ia<span class="br0">&#40;</span><span class="kw2">self</span>, <span class="kw3">time</span>, ball<span class="br0">&#41;</span>:
+          <span class="kw1">if</span> ball.<span class="me1">speed</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> <span class="sy0">&gt;</span>= 0 <span class="kw1">and</span> ball.<span class="me1">rect</span>.<span class="me1">centerx</span> <span class="sy0">&gt;</span>= WIDTH/<span class="nu0">2</span>:
+              <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&lt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> += <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+              <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> <span class="sy0">&gt;</span> ball.<span class="me1">rect</span>.<span class="me1">centery</span>:
+                  <span class="kw2">self</span>.<span class="me1">rect</span>.<span class="me1">centery</span> -= <span class="kw2">self</span>.<span class="me1">speed</span> <span class="sy0">*</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="co1"># Funciones</span>
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> load_image<span class="br0">&#40;</span>filename, transparent=<span class="kw2">False</span><span class="br0">&#41;</span>:
+          <span class="kw1">try</span>: image = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>
+          <span class="kw1">except</span> pygame.<span class="me1">error</span>, message:
+                  <span class="kw1">raise</span> <span class="kw2">SystemExit</span>, message
+          image = image.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">if</span> transparent:
+                  color = image.<span class="me1">get_at</span><span class="br0">&#40;</span><span class="br0">&#40;</span>0,0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                  image.<span class="me1">set_colorkey</span><span class="br0">&#40;</span>color, RLEACCEL<span class="br0">&#41;</span>
+          <span class="kw1">return</span> image
+&nbsp;
+  <span class="co1"># ---------------------------------------------------------------------</span>
+&nbsp;
+  <span class="kw1">def</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+      screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span>WIDTH, HEIGHT<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span><span class="st0">&quot;Pruebas Pygame&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+      background_image = load_image<span class="br0">&#40;</span><span class="st0">'images/fondo_pong.png'</span><span class="br0">&#41;</span>
+      bola = Bola<span class="br0">&#40;</span><span class="br0">&#41;</span>
+      pala_jug = Pala<span class="br0">&#40;</span><span class="nu0">30</span><span class="br0">&#41;</span>
+      pala_cpu = Pala<span class="br0">&#40;</span>WIDTH - <span class="nu0">30</span><span class="br0">&#41;</span>
+&nbsp;
+      clock = pygame.<span class="kw3">time</span>.<span class="me1">Clock</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+      puntos = <span class="br0">&#91;</span>0, 0<span class="br0">&#93;</span>
+&nbsp;
+      <span class="kw1">while</span> <span class="kw2">True</span>:
+          <span class="kw3">time</span> = clock.<span class="me1">tick</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span>
+          keys = pygame.<span class="me1">key</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> eventos <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+              <span class="kw1">if</span> eventos.<span class="kw2">type</span> == QUIT:
+                  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span>0<span class="br0">&#41;</span>
+&nbsp;
+          puntos = bola.<span class="me1">actualizar</span><span class="br0">&#40;</span><span class="kw3">time</span>, pala_jug, pala_cpu, puntos<span class="br0">&#41;</span>
+          pala_jug.<span class="me1">mover</span><span class="br0">&#40;</span><span class="kw3">time</span>, keys<span class="br0">&#41;</span>
+          pala_cpu.<span class="me1">ia</span><span class="br0">&#40;</span><span class="kw3">time</span>, bola<span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>background_image, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>bola.<span class="me1">image</span>, bola.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_jug.<span class="me1">image</span>, pala_jug.<span class="me1">rect</span><span class="br0">&#41;</span>
+          screen.<span class="me1">blit</span><span class="br0">&#40;</span>pala_cpu.<span class="me1">image</span>, pala_cpu.<span class="me1">rect</span><span class="br0">&#41;</span>
+          pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> 0
+&nbsp;
+  <span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+      pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+      main<span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esto como vemos no hace “nada” en el juego, ahora tenemos que buscar la manera de mostrar los puntos en nuestro juego. En el proximo tema trataremos con Fuentes tipograficas.
+
+</p>
+
+</div>
+<!-- SECTION "Creando un sistema de puntuacion" [44371-] --></div>
+</body>
+</html>

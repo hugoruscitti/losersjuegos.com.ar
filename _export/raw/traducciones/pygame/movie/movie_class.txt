@@ -1,0 +1,415 @@
+====== Movie ======
+
+/*
+load an mpeg movie file
+*/
+
+Carga un archivo de película MPEG.
+
+<box 90%>
+  * [[traducciones:pygame:movie#Movie]]
+  * [[traducciones:pygame:movie#play]]
+  * [[traducciones:pygame:movie#stop]]
+  * [[traducciones:pygame:movie#pause]]
+  * [[traducciones:pygame:movie#skip]]
+  * [[traducciones:pygame:movie#rewind]]
+  * [[traducciones:pygame:movie#render_frame]]
+  * [[traducciones:pygame:movie#get_frame]]
+  * [[traducciones:pygame:movie#get_time]]
+  * [[traducciones:pygame:movie#get_busy]]
+  * [[traducciones:pygame:movie#get_length]]
+  * [[traducciones:pygame:movie#get_size]]
+  * [[traducciones:pygame:movie#has_video]]
+  * [[traducciones:pygame:movie#has_audio]]
+  * [[traducciones:pygame:movie#set_volume]]
+  * [[traducciones:pygame:movie#set_display]]
+</box>
+
+
+===== Movie =====
+
+<code python>
+pygame.movie.Movie(filename): return Movie
+pygame.movie.Movie(object): return Movie
+</code>
+
+/*
+Load a new MPEG movie stream from a file or a python file object. The Movie
+object operates similar to the Sound objects from pygame.mixer.
+*/
+
+Carga un nuevo flujo de película MPEG a partir de un archivo u objeto tipo
+archivo de python. El objeto Movie funciona de manera similar a los
+objetos Sound de pygame.mixer.
+
+/*
+Movie objects have a target display Surface. The movie is rendered into this
+Surface in a background thread. If the target Surface is the display Surface,
+the movie will try to use the hardware accelerated video overlay. The default
+target is the display Surface.
+*/
+
+Los objetos Movie tienen asignada una superficie destino. La película se
+dibujará sobre esta superficie en un hilo de segundo plano. Si la superficie
+de video es la pantalla principal, entonces se intentará utilizar la aceleración
+de video por hardware. La superficie destino por defecto será la pantalla
+principal.
+
+===== play =====
+
+/*
+start playback of a movie
+*/
+
+Comienza a reproducir una película.
+
+<code python>
+Movie.play(loops=0): return None
+</code>
+
+
+
+/*
+Starts playback of the movie. Sound and video will begin playing if they
+are not disabled. The optional loops argument controls how many times
+the movie will be repeated. A loop value of -1 means the movie will repeat
+forever.
+*/
+
+Comienza a reproducir la película, El sonido y el video comenzarán a 
+reproducirse solo si están habilitados. El argumento opcional ''loops''
+controla cuantas veces se repetirá la película. Un valor de -1 para
+''loops'' significa que la película se reproducirá por siempre.
+
+
+===== stop =====
+
+/*
+stop movie playback
+*/
+
+Detiene la reproducción de la película.
+
+<code python>
+Movie.stop(): return None
+</code>
+
+
+/*
+Stops the playback of a movie. The video and audio playback will be stopped
+at their current position.
+*/
+
+Detiene la reproducción de una película. Tanto la reproducción de
+sonido como de video se detendrán en la posición actual.
+
+
+===== pause =====
+
+/*
+temporarily stop and resume playback
+*/
+
+Detiene de manera temporal, o reanuda, la reproducción de la película.
+
+<code python>
+Movie.pause(): return None
+</code>
+
+
+/*
+This will temporarily stop or restart movie playback.
+*/
+
+Esta función detiene o reanuda la reproducción de la película.
+
+
+
+===== skip =====
+
+/*
+advance the movie playback position
+*/
+
+Avanza la posición de reproducción de la película.
+
+<code python>
+Movie.skip(seconds): return None
+</code>
+
+
+/*
+Advance the movie playback time in seconds. This can be called before the
+movie is played to set the starting playback time. This can only skip the
+movie forward, not backwards. The argument is a floating point number.
+*/
+
+
+Avanza la reproducción de la película en el tiempo especificado. Esta función
+se puede llamar antes de comenzar a reproducir para definir el tiempo
+de inicio. Solamente se puede avanzar hacia adelante, no hacia atrás. El argumento
+puede ser un número real.
+
+
+
+===== rewind =====
+
+/*
+restart the movie playback
+*/
+
+Reinicia la reproducción.
+
+<code python>
+Movie.rewind(): return None
+</code>
+
+
+/*
+Sets the movie playback position to the start of the movie. The movie will
+automatically begin playing even if it stopped.
+*/
+
+Cambia la posición de la película para llevarla al principio. La película
+comenzará a reproducirse desde el principio.
+
+/*
+The can raise a ValueError if the movie cannot be rewound. If the rewind fails
+the movie object is considered invalid.
+*/
+
+Se lanzará la excepción ''ValueError'' si la película no se puede
+reiniciar. Si esta operación falla el objeto ''movie'' se considerará
+inválido.
+
+
+===== render_frame =====
+
+/*
+set the current video frame
+*/
+
+Define el cuadro de video actual.
+
+<code python>
+Movie.render_frame(frame_number): return frame_number
+</code>
+
+
+/*
+This takes an integer frame number to render. It attempts to render the
+given frame from the movie to the target Surface. It returns the real
+frame number that got rendered.
+*/
+
+Esta función recibe un numero de cuadro para imprimir. Intentará
+mostrar el cuadro de la película indicado a la superficie destino. Y
+retorna el número de cuadro real que se muestra.
+
+
+===== get_frame =====
+
+/*
+get the current video frame
+*/
+
+Obtiene el cuadro de video actual.
+
+<code python>
+Movie.get_frame(): return frame_number
+</code>
+
+
+/*
+Returns the integer frame number of the current video frame.
+*/
+
+Retorna el número de cuadro del video actual.
+
+
+
+===== get_time =====
+
+/*
+get the current vide playback time
+*/
+
+Obtiene el tiempo de reproducción actual.
+
+<code python>
+Movie.get_time(): return seconds
+</code>
+
+
+/*
+Return the current playback time as a floating point value in seconds.
+This method currently seems broken and always returns 0.0.
+*/
+
+Retorna el tiempo de reproducción actual como un valor real indicado
+en segundos. Este método parece estar actualmente con un error y
+siempre retorna 0.0
+
+
+
+===== get_busy =====
+
+/*
+check if the movie is currently playing
+*/
+
+Consulta si la película se está reproduciendo.
+
+<code python>
+Movie.get_busy(): return bool
+</code>
+
+
+/*
+Returns true if the movie is currently being played.
+*/
+
+Retorna ''True'' si la película se está reproduciendo.
+
+
+
+===== get_length =====
+
+/*
+the total length of the movie in seconds
+*/
+
+Obtiene la duración de la película en segundos.
+
+<code python>
+Movie.get_length(): return seconds
+</code>
+
+
+/*
+Returns the length of the movie in seconds as a floating point value.
+*/
+
+Retorna la duración de la película en segundos usando un número
+real.
+
+
+
+===== get_size =====
+
+/*
+get the resolution of the video
+*/
+
+Obtiene la resolución de un video.
+
+<code python>
+Movie.get_size(): return (width, height)
+</code>
+
+
+/*
+Gets the resolution of the movie video. The movie will be stretched to
+the size of any Surface, but this will report the natural video size.
+*/
+
+Obtiene la resolución de un video. La película se ajustará al tamaño
+de cualquier superficie, aunque esta función reportará el tamaño
+natural del video.
+
+
+===== has_video =====
+
+/*
+check if the movie file contains video
+*/
+
+Consulta si el archivo de película contiene video.
+
+<code python>
+Movie.get_video(): return bool
+</code>
+
+
+/*
+True when the opened movie file contains a video stream.
+*/
+
+Retorna ''True'' cuando el archivo de película que se abrió
+contiene información de video.
+
+
+
+===== has_audio =====
+
+/*
+check if the movie file contains audio
+*/
+
+Consulta si el archivo de película contiene video.
+
+<code python>
+Movie.get_audio(): return bool
+</code>
+
+
+/*
+True when the opened movie file contains an audio stream.
+*/
+
+Retorna ''True'' cuando el archivo de película que se abrió
+contiene información de audio.
+
+
+===== set_volume =====
+
+/*
+set the audio playback volume
+*/
+
+Define el volumen de reproducción de audio.
+
+<code python>
+Movie.set_volume(value): return None
+</code>
+
+
+/*
+Set the playback volume for this movie. The argument is a value between
+0.0 and 1.0. If the volume is set to 0 the movie audio will not be decoded.
+*/
+
+Define el nivel de volumen para esta película. El argumento ''value'' es
+un número entre 0.0 y 1.0. Se deshabilitará y no procesará el sonido
+si se coloca el volumen en 0.
+
+
+
+===== set_display =====
+
+/*
+set the video target Surface
+*/
+
+Define la superficie de video destino.
+
+<code python>
+Movie.set_display(Surface, rect=None): return None
+</code>
+
+
+/*
+Set the output target Surface for the movie video. You may also pass a rectangle
+argument for the position, which will move and stretch the video into the
+given area.
+*/
+
+Define la superficie destino para el video de la película. También puede
+indicar un argumento rectángulo para definir la posición, el video
+se moverá y adaptará al área indicada.
+
+/*
+If None is passed as the target Surface, the video decoding will be disabled*/
+
+La decodificación de video se deshabilitará si se pasa ''None'' como
+superficie destino.

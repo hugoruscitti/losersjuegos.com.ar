@@ -1,0 +1,76 @@
+====== Comunidad ======
+
+En losersjuegos nuestro mayor objetivo consiste en promover una comunidad de
+personas interesadas en el desarrollo de videojuegos libres.
+
+Por ese motivo hemos llamado a esta sección comunidad, simbolizando nuestro
+deseo de integración y crecimiento continuo.
+
+En los siguientes apartados se resume el concepto del proyecto, sus
+metas, algunas ideas y las formas en que usted puede participar junto a
+nosotros. 
+
+
+
+===== Sobre el proyecto Losersjuegos =====
+
+ Consideramos que es posible crear, aprender y compartir conocimiento desarrollando videojuegos libres. Para ello es vital que las creaciones y recursos estén al alcance de todos, sin diferencias, permitiendo participar a todas las personas que lo deseen.
+
+Desde que comenzamos este proyecto hemos tenido la posibilidad de crear videojuegos, brindar seminarios gratuitos, redactar artículos, construir el sitio web y conocer a muchas personas. Esas pequeñas experiencias nos permitieron planificar una serie de actividades a fin de poder //marcar un camino// hacia el objetivo que nos proponemos:
+
+  * **Desarrollo de videojuegos libres:**  Cada [[juegos|videojuego]] desarrollado en el grupo debe ser Software libre, es decir, se debe permitir su uso, modificación y distribución. De esta manera podremos colaborar a construir conocimiento y experiencia juntos. 
+  * **Generar y difundir documentación:**  Nos proponemos redactar [[:referencia|artículos, ejemplos y otros documentos]] con la intensión de difundir técnicas y conceptos que posibiliten futuros estudios y desarrollos.
+  * **Brindar espacios de comunicación:**  Mantenernos en contacto es muy importante, desarrollando actividades es posible que surjan dudas e ideas muy interesantes. Brindar espacios de comunicación es tan sencillo como elaborar consultas y responder inquietudes. Puede encontrar ejemplos de esta actividad en el foro de mensajes o en nuestro formulario de [[:comunidad:contactenos|contacto]].
+
+
+ Participar de alguna de estas actividades es simple, tal vez por ese motivo nos resulte tan divertido y constructivo participar en Losersjuegos. Cada consulta, respuesta, documento o programa resulta indispensable para descubrir, día a día, a una comunidad de personas libres, participativas y muy solidarias.
+
+La posibilidad de aprender y enseñar está presente en cada una de las actividades. Si bien adopta formas diferentes, el conocimiento siempre estará ahí. Esto nos resulta muy alentador, dado que el proyecto trata sobre aprendizaje, participación y libertad; no simplemente acerca de jugar videojuegos. 
+
+
+===== ¿Que es el software libre? =====
+
+Software Libre es aquel que viene con autorización del autor para que cualquiera pueda utilizar, modificar y distribuir versiones del programa, gratis o a cambio de un precio. El término Libre se refiere a la libertad y no al precio.
+
+
+
+Para que un programa pueda ser calificado como libre debe otorgar a los usuarios 4 libertades fundamentales: 
+
+{{ logotipos:gnu.png|Logotipo del proyecto GNU un sistema operativo libre}}
+
+  * La libertad de ejecutar el programa sea cual sea el propósito.
+  * La libertad de estudiar y/o modificar el programa para ajustarlo a tus necesidades.
+  * La libertad de distribuir copias, ya sea en forma gratuita o a cambio del pago de un precio.
+  * La libertad de distribuir versiones modificadas del programa, de modo que toda la comunidad se beneficie con tus modificaciones.
+
+
+Todo programa libre, debe además, brindar acceso a su código fuente para que estas libertades se puedan llevar a la práctica.
+
+Este es el concepto de Software que adoptamos aquí, tanto para los programas que utilizamos a diario como para aquellos que estamos desarrollando. 
+
+
+
+===== Recomendaciones para nuevos integrantes =====
+
+ Si usted es relativamente nuevo en el proyecto le recomendamos avanzar de manera gradual, paso a paso. Siempre es una buena idea comenzar a participar visitando el [[foro|foro de mensajes]], resulta muy importante habituarse a los problemas mas frecuentes y tomar conocimiento de la [[referencia:referencia|documentación]] que almacenamos en el sitio web.
+
+Es importante que pueda adquirir conocimiento de personas que han pasado mas tiempo en contacto con el proyecto. Así podrá conocerlos mejor, y seguramente, obtendrá muchas ideas útiles para comenzar a sugerir y participar.
+
+
+===== Participe, nadie nace sabiendo =====
+
+
+ Toda persona que lo desee puede participar de este proyecto. Si bien gran parte de los integrantes de la comunidad cuentan con perfiles técnicos, esto no es indispensable. Para integrar el grupo lo mas importante es animarse a participar en alguna de las actividades que mencioné mas arriba.
+
+Note que las actividades pueden parecer algo abstractas a primera vista, pero luego de analizarlas con detenimiento se tornan muy sencillas de llevar a la práctica.
+
+Para facilitar este análisis mencionaré algunos ejemplos de actividades que tal vez quisiera realizar: 
+
+
+  * Si maneja otro tipo de idiomas, como Inglés, podría participar realizando traducciones de artículos sobre el desarrollo de juegos. Existen varios artículos interesantes ahí afuera, pero el idioma es una barrera que no podemos superar sin su ayuda.
+  * Visitando el foro de mensajes puede realizar sugerencias, preguntas, ayudar a otras personas a resolver sus inquietudes y publicar sus trabajos.
+  * Si desarrolla programas no-libres, podría considerar distribuirlos bajo una licencia de software libre como [[otros:es:gpl2|GPL]].
+  * Puede dar a conocer este proyecto a otras personas visitando la sección [[comunidad:difundir]].
+  * Si usted es una artista, puede expresar su talento de muchas maneras: realizando músicas o gráficos para videojuegos, diseñando fondos de pantalla... etc.
+  * Los usuarios de GNU/Linux pueden dar a conocer las herramientas del sistema redactando artículos sobre instalación y uso de varias aplicaciones.
+

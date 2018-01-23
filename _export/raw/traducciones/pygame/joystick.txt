@@ -1,0 +1,148 @@
+====== joystick ======
+
+/*
+pygame module for interacting with joystick devices
+*/
+
+Módulo de pygame para interactuar con dispositivos de joystick.
+
+<box 90%>
+  * [[#init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#get_count]]
+
+**En otra pagina:**
+
+  * [[:traducciones:pygame:joystick:joystick_class]]
+</box>
+
+
+/*
+The joystick module manages the joystick devices on a computer
+(there can be more than one). Joystick devices include
+trackballs and video-game-style gamepads, and the module allows
+the use of multiple buttons and "hats".
+*/
+
+El módulo joystick gestiona los dispositivos de joystick en
+una computadora (podría haber mas de uno). Los dispositivos de
+joystick incluye controles analógicos y tradicionales, y este
+módulo incluso permite usar múltiples botones y palancas.
+
+===== init =====
+
+/*
+initialize the joystick module
+*/
+
+Inicializa el módulo de joystick.
+
+<code python>
+pygame.joystick.init(): return None
+</code>
+
+/*
+This function is called automatically by pygame.init().
+*/
+
+Esta función se llama automáticamente desde ''pygame.init()''.
+
+/*
+It initializes the joystick module. This will scan the system for all joystick
+devices. The module must be initialized before any other functions will work.
+*/
+
+Explora el sistema para buscar todos los dispositivos de joystick. El módulo
+se debe inicializar antes de usar cualquier otra función.
+
+/*
+It is safe to call this function more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+  * [[pythonexample>pygame.joystick.init|buscar código donde se use esta función.]]
+
+
+
+===== quit =====
+
+/*
+uninitialize the joystick module
+*/
+
+Deshabilita el módulo de joystick.
+
+<code python>
+pygame.joystick.quit(): return None
+</code>
+
+/*
+Uninitialize the joystick module. After you call this any existing joystick
+objects will no longer work.
+*/
+
+Deshabilita el módulo de joystick. Después de llamar a esta función cualquier
+objeto de joystick dejará de funcionar.
+
+/*
+It is safe to call this function more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+  * [[pythonexample>pygame.joystick.quit|buscar código donde se use esta función.]]
+
+
+===== get_init =====
+
+/*
+true if the joystick module is initialized
+*/
+
+Devuelve ''True'' si el módulo de joystick está inicializado.
+
+<code python>
+pygame.joystick.get_init(): return bool
+</code>
+
+/*
+Test if the pygame.joystick.init() function has been called.
+*/
+
+Consulta si se ha llamado a la función ''pygame.joystick.init()''.
+
+  * [[pythonexample>pygame.joystick.init|buscar código donde se use esta función.]]
+
+
+===== get_count =====
+
+/*
+number of joysticks on the system
+*/
+
+Cuenta la cantidad de joysticks en el sistema.
+
+<code python>
+pygame.joystick.get_count(): return count
+</code>
+
+/*
+Return the number of joystick devices on the system. The
+count will be 0 if there are no joysticks on the system.
+*/
+
+Retorna el número de dispositivos de joysticks en el sistema. La
+función retornará 0 si no hay joysticks en el sistema.
+
+
+/*
+When you create Joystick objects using Joystick(id), you pass an integer that
+must be lower than this count.
+*/
+
+Debe usar un número inferior a este cuando genere objetos de joystick usando
+''Joystick(id)''.
+
+  * [[pythonexample>pygame.joystick.get_count|buscar código donde se use esta función.]]

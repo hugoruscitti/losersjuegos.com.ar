@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:cdrom:cd</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:55+0300" />
+<meta name="keywords" content="traducciones,pygame,cdrom,cd" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/cdrom/cd-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-cdrom.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="cd.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/cdrom/cd.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#cd" class="toc">CD</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#cd1" class="toc">CD</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#quit" class="toc">quit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_init" class="toc">get_init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#play" class="toc">play</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#stop" class="toc">stop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#pause" class="toc">pause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#resume" class="toc">resume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#eject" class="toc">eject</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_id" class="toc">get_id</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_name" class="toc">get_name</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_busy" class="toc">get_busy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_paused" class="toc">get_paused</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_current" class="toc">get_current</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_empty" class="toc">get_empty</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_numtracks" class="toc">get_numtracks</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_track_audio" class="toc">get_track_audio</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_all" class="toc">get_all</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_track_start" class="toc">get_track_start</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_track_length" class="toc">get_track_length</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="cd" id="cd">CD</a></h1>
+<div class="level1">
+
+
+
+<p>
+Clase para gestionar un dispositivo de cdrom.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#cd" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">CD</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#init" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#quit" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">quit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_init" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#play" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">play</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#stop" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">stop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#pause" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">pause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#resume" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">resume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#eject" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">eject</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_id" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_id</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_name" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_name</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_busy" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_busy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_paused" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_paused</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_current" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_current</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_empty" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_empty</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_numtracks" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_numtracks</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_track_audio" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_track_audio</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_all" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_all</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_track_start" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_track_start</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_track_length" title="traducciones:pygame:cdrom:cd &crarr;" class="wikilink1">get_track_length</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "CD" [1-480] -->
+<h2><a name="cd1" id="cd1">CD</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">cdrom</span>.<span class="me1">CD</span><span class="br0">&#40;</span><span class="kw2">id</span><span class="br0">&#41;</span>: <span class="kw1">return</span> CD</pre>
+
+
+<p>
+Puede crear un objeto CD por cada dispositivo de cdrom en el sistema. Use
+<code>pygame.cdrom.get_count()</code> para determinar cuantos dispositivos existen
+actualmente. El argumento <code>id</code> es un número entero que representa
+al dispositivo, comenzando en 0.
+</p>
+
+
+
+<p>
+El objeto CD no está inicializado, solo puede llamar a <code>CD.get_id()</code> y
+<code>CD.get_name()</code> en un dispositivo no inicializado.
+</p>
+
+
+
+<p>
+
+Es seguro crear múltiples objetos CD para el mismo dispositivo, actuarán
+cooperativamente de forma normal.
+</p>
+
+</div>
+<!-- SECTION "CD" [481-1460] -->
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa un dispositivo de cdrom para utilizar.
+</p>
+<pre class="code">
+CD.init(): return None
+</pre>
+
+
+
+<p>
+Inicializa un dispositivo de cdrom para utilizar. El dispositivo se
+debe inicializar para que funcionen la mayoría de los métodos. Incluso
+si el resto de pygame ha sido inicializado.
+</p>
+
+
+
+<p>
+Puede haber una pausa mientras el dispositivo se inicializa. Evite usar
+<code>CD.init()</code> si el programa parece no detenerse por uno o dos
+segundos.
+</p>
+
+</div>
+<!-- SECTION "init" [1461-2227] -->
+<h2><a name="quit" id="quit">quit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Deshabilita un dispositivo de cdrom.
+</p>
+<pre class="code">
+CD.quit(): return None
+</pre>
+
+
+
+<p>
+Deshabilita un dispositivo de cdrom. Llame a este método cuando
+su programa no valla a acceder al dispositivo por un tiempo.
+</p>
+
+</div>
+<!-- SECTION "quit" [2228-2602] -->
+<h2><a name="get_init" id="get_init">get_init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Devuelve true si el dispositivo de cd está inicializado.
+</p>
+<pre class="code">
+CD.get_init(): return bool
+</pre>
+
+
+
+<p>
+Comprueba si esta unidad de cdrom está inicializada. Es difierente de pygame.cdrom.init, ya que cada unidad debe ser inicializada individualmente.
+</p>
+
+</div>
+<!-- SECTION "get_init" [2603-3070] -->
+<h2><a name="play" id="play">play</a></h2>
+<div class="level2">
+
+
+
+<p>
+Comienza a reproducir audio.
+</p>
+<pre class="code">
+CD.play(track, start=None, end=None): return None
+</pre>
+
+
+
+<p>
+Reproduce audio de un cdrom en la unidad. Además del argumento del número de
+pista, también puedes pasarle el tiempo de comienzo y final de la
+reproducción. El tiempo de inicio y fin están en segundos, y puedes limitar
+la sección de una pista de audio reproducida.
+</p>
+
+
+
+<p>
+Si le pasa el tiempo de inicio pero no el final, se reproducirá audio hasta
+el final de la pista. Si le pasas un tiempo de inicio y &#039;None&#039; para el final,
+el audio se reproducirá hasta el final del disco.
+</p>
+
+
+
+<p>
+Ver <code>CD.get_numtracks</code> y <code>CD.get_track_audio</code> para buscar pistas
+a reproducir.
+</p>
+
+
+
+<p>
+Nota: track 0 es track 1 en el CD. Los números de pista empiezan en cero.
+</p>
+
+</div>
+<!-- SECTION "play" [3071-4456] -->
+<h2><a name="stop" id="stop">stop</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción de audio.
+</p>
+<pre class="code">
+CD.stop(): return None
+</pre>
+
+
+
+<p>
+Detiene la reproducción de audio desde el cdrom. Esto también hará perder
+la posición actual de reproducción. Este método no hace nada si la
+unidad no está reproduciendo en ese momento.
+</p>
+
+</div>
+<!-- SECTION "stop" [4457-4938] -->
+<h2><a name="pause" id="pause">pause</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene temporalmente la reproducción de audio.
+</p>
+<pre class="code">
+CD.pause(): return None
+</pre>
+
+
+
+<p>
+Detiene temporalmente la reproducción de audio en el CD. La reproducción
+se puede resumir en la misma posición con el método <code>CD.resume()</code>. Este
+método no hace nada si la unidad no está reproduciendo en ese momento.
+</p>
+
+
+
+<p>
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en 0.
+</p>
+
+</div>
+<!-- SECTION "pause" [4939-5649] -->
+<h2><a name="resume" id="resume">resume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Reanuda la reproducción de audio.
+</p>
+<pre class="code">
+CD.resume(): return None
+</pre>
+
+
+
+<p>
+Reanuda un CD en pausa. Este método no hace nada si el CD no está en
+pausa o se encuentra reproduciendo.
+</p>
+
+</div>
+<!-- SECTION "resume" [5650-5983] -->
+<h2><a name="eject" id="eject">eject</a></h2>
+<div class="level2">
+
+
+
+<p>
+Expulsa o abre la unidad de cdrom.
+</p>
+<pre class="code">
+CD.eject(): return None
+</pre>
+
+
+
+<p>
+Abrirá la unidad de cdrom y expulsará la bandeja. Si el dispositivo
+está reproduciendo o en pausa se interrumpirá.
+</p>
+
+</div>
+<!-- SECTION "eject" [5984-6349] -->
+<h2><a name="get_id" id="get_id">get_id</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el índice de la unidad de cdrom.
+</p>
+<pre class="code">
+CD.get_id(): return id
+</pre>
+
+
+
+<p>
+Retorna el identificador entero <code>id</code> que se utilizó para crear 
+la instancia de CD. Este método puede operar en un CD no inicializado.
+</p>
+
+</div>
+<!-- SECTION "get_id" [6350-6745] -->
+<h2><a name="get_name" id="get_name">get_name</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el nombre de sistema de la unidad de cdrom.
+</p>
+<pre class="code">
+CD.get_name(): return name
+</pre>
+
+
+
+<p>
+Retorna el nombre de un dispositivo. Este es el nombre de sistema usado para
+representar la unidad. Puede ser el nombre del dispositivo o la letra de
+la unidad. Este método puede funcionar en un dispositivo de CD sin
+inicializar.
+</p>
+
+</div>
+<!-- SECTION "get_name" [6746-7326] -->
+<h2><a name="get_busy" id="get_busy">get_busy</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna <code>True</code> si el dispositivo está reproduciendo audio.
+</p>
+<pre class="code">
+CD.get_busy(): return bool
+</pre>
+
+
+
+<p>
+Retorna <code>True</code> si el dispositivo de cd está ocupado reproduciendo
+audio.
+</p>
+
+</div>
+<!-- SECTION "get_busy" [7327-7632] -->
+<h2><a name="get_paused" id="get_paused">get_paused</a></h2>
+<div class="level2">
+
+
+
+<p>
+Devuelve <code>True</code> si el dispositivo está en pausa.
+</p>
+<pre class="code">
+CD.get_paused(): return bool
+</pre>
+
+
+
+<p>
+Devuelve <code>True</code> si el dispositivo está en pausa.
+</p>
+
+</div>
+<!-- SECTION "get_paused" [7633-7897] -->
+<h2><a name="get_current" id="get_current">get_current</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la posición de la reproducción actual.
+</p>
+<pre class="code">
+CD.get_current(): return track, seconds
+</pre>
+
+
+
+<p>
+Retorna la pista actual y el tiempo de reproducción de esa pista. Este método
+funciona cuando el dispositivo está en pausa o reproduciendo.
+</p>
+
+
+
+<p>
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.
+</p>
+
+</div>
+<!-- SECTION "get_current" [7898-8504] -->
+<h2><a name="get_empty" id="get_empty">get_empty</a></h2>
+<div class="level2">
+
+
+
+<p>
+<code>False</code> si un cdrom está dentro de la unidad.
+</p>
+<pre class="code">
+CD.get_empty(): return bool
+</pre>
+
+
+
+<p>
+Retorna <code>False</code> si actualmente hay un cdrom en la unida. Si la unidad
+está vacía retornará <code>True</code>.
+</p>
+
+</div>
+<!-- SECTION "get_empty" [8505-8878] -->
+<h2><a name="get_numtracks" id="get_numtracks">get_numtracks</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el número de pistas del cdrom.
+</p>
+<pre class="code">
+CD.get_numtracks(): return count
+</pre>
+
+
+
+<p>
+
+Retorna el número de pistas del cdrom en la unidad. Retornará 0 si la
+unidad está vacía o no hay pistas.
+</p>
+
+</div>
+<!-- SECTION "get_numtracks" [8879-9272] -->
+<h2><a name="get_track_audio" id="get_track_audio">get_track_audio</a></h2>
+<div class="level2">
+
+
+
+<p>
+<code>True</code> si la pista del cdrom tienen datos de audio.
+</p>
+<pre class="code">
+CD.get_track_audio(track): return bool
+</pre>
+
+
+
+<p>
+Determina si una pista del cdrom contiene datos de audio. También puede
+llamar a <code>CD.num_tracks()</code> y <code>CD.get_all()</code> para obtener mas información acerca del cdrom.
+</p>
+
+
+
+<p>
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan en
+cero.
+</p>
+
+</div>
+<!-- SECTION "get_track_audio" [9273-9950] -->
+<h2><a name="get_all" id="get_all">get_all</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene toda la información de pistas.
+</p>
+<pre class="code">
+CD.get_all(): return [(audio, start, end, lenth), ...]
+</pre>
+
+
+
+<p>
+Retorna una lista con información de cada pista del cdrom. La información
+consiste en una tupla con cuatro valores. El valor <code>audio</code> será <code>True</code>
+si la pista contiene datos de audio. Los valores <code>start</code>, <code>end</code> y
+<code>length</code> son números reales en segundos. Tanto <code>start</code> como <code>end</code>
+representan tiempos absolutos del disco entero.
+</p>
+
+</div>
+<!-- SECTION "get_all" [9951-10773] -->
+<h2><a name="get_track_start" id="get_track_start">get_track_start</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el tiempo de inicio de una pista de cdrom.
+</p>
+<pre class="code">
+CD.get_track_start(track): return seconds
+</pre>
+
+
+
+<p>
+Retorna el tiempo absoluto en segundos donde está el inicio de la
+pista de cdrom.
+</p>
+
+
+
+<p>
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.
+</p>
+
+</div>
+<!-- SECTION "get_track_start" [10774-11277] -->
+<h2><a name="get_track_length" id="get_track_length">get_track_length</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la duración de una pista.
+</p>
+<pre class="code">
+CD.get_track_length(track): return seconds
+</pre>
+
+
+
+<p>
+Retorna un valor en número real que representa la duración en segundos
+de una pista del cdrom.
+</p>
+
+
+
+<p>
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.
+</p>
+
+</div>
+<!-- SECTION "get_track_length" [11278-] --></div>
+</body>
+</html>

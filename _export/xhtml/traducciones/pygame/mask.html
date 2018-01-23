@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mask</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T21:19:25+0300" />
+<meta name="keywords" content="traducciones,pygame,mask" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/mask-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="mask.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/mask.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="mask" id="mask">mask</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para gestionar máscaras de imágenes.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#from_surface" title="traducciones:pygame:mask &crarr;" class="wikilink1">from_surface</a></div>
+</li>
+</ul>
+
+<p>
+<strong> Otras páginas: </strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/mask/mask.html" class="wikilink1" title="traducciones:pygame:mask:mask">Mask</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Útiles para detectar colisiones entre píxeles perfecta. Una máscara
+utiliza 1 bit por <em>píxel</em> para almacenar qué partes de una imagen
+pueden colisionar.
+</p>
+
+
+
+<p>
+Este módulo es nuevo en pygame 1.8.
+</p>
+
+</div>
+<!-- SECTION "mask" [1-559] -->
+<h2><a name="from_surface" id="from_surface">from_surface</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una máscara (objeto <a href="../../../../traducciones/pygame/mask/mask.html" class="wikilink1" title="traducciones:pygame:mask:mask">Mask</a>) para
+la superficie dada.
+</p>
+<pre class="code">
+pygame.mask.from_surface(Surface, threshold = 127) -&gt; Mask
+</pre>
+
+
+
+<p>
+Interpreta las partes transparentes de la imagen como no-colisionables
+y las partes opacas como colisionables.
+</p>
+
+
+
+<p>
+La transparencia de cada pixel se analiza verificando si es mas grande
+que el valor indicado por <code>threshold</code>.
+</p>
+
+
+
+<p>
+Si la superficie ha sido procesada mediante <code>Surface.set_colorkey</code> entonces
+el valor indicado por <code>threshold</code> no se utilizará.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mask.from_surface" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mask.from_surface">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "from_surface" [560-] --></div>
+</body>
+</html>

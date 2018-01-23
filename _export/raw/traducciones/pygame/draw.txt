@@ -1,0 +1,354 @@
+====== draw ======
+
+/*
+pygame module for drawing shapes
+*/
+
+Módulo de pygame para dibujar figuras.
+
+<box 90%>
+
+  * [[#draw]]
+  * [[#rect]]
+  * [[#polygon]]
+  * [[#circle]]
+  * [[#ellipse]]
+  * [[#arc]]
+  * [[#line]]
+  * [[#lines]]
+  * [[#aaline]]
+  * [[#aalines]]
+</box>
+
+/*
+Draw several simple shapes to a Surface. These functions will work for
+rendering to any format of Surface. Rendering to hardware Surfaces will
+be slower than regular software Surfaces.
+*/
+
+Dibuja varias figuras simples a una superficie. Estas funciones servirán
+para pintar en cualquier formato de superficie. Aunque dibujar en superficies
+almacenadas en Hardware será mas lento que en superficies de Software.
+
+/*
+Most of the functions take a width argument to represent the size of
+stroke around the edge of the shape. If a width of 0 is passed the
+function will actually solid fill the entire shape.
+*/
+
+La mayoría de las funciones admiten un argumento ''width'' para representar
+el tamaño de la linea alrededor del borde de la figura. Si se pasa el parámetro
+''width'' con valor 0, la función pintará la figura entera como sólida.
+
+
+/*
+All the drawing functions respect the clip area for the Surface, and
+will be constrained to that area. The functions return a rectangle
+representing the bounding area of changed pixels.
+*/
+
+Todas las funciones de dibujo respetan el área de recorte para la superficies, y se limitará a esa área. Las funciones retornan un rectángulo representando el área límite de los //pixels// modificados.
+
+/*
+Most of the arguments accept a color argument that is an RGB triplet.
+These can also accept an RGBA quadruplet. The alpha value will be written
+directly into the Surface if it contains pixel alphas, but the draw
+function will not draw transparently. The color argument can also be an
+integer pixel value that is already mapped to the Surface's pixel format.
+*/
+
+La mayoría de las funciones aceptan un argumento ''color'', que es una terna o
+tupla [[:tags:RGB]]. Incluso aceptan una tupla de 4 elementos para
+[[:tags:RGBA]]. El valor ''alpha'' (o componente de transparencia) se dibujará
+directamente en la superficie si ésta contiene la propiedad de transparencia de
+//pixels//, aunque la función de dibujo no dibujará de forma transparente. El argumento ''color'' también puede ser un valor de //pixel// entero que ya esté convertido al formato de //pixel// de la imagen.
+
+/*
+These functions must temporarily lock the Surface they are operating on.
+Many sequential drawing calls can be sped up by locking and unlocking
+the Surface object around the draw calls.
+*/
+
+Estas funciones bloquearan temporalmente la superficie donde están operante. Así que muchas llamadas de dibujo se pueden acelerar bloqueando y desbloqueando la superficie donde se trabaja antes y después de llamar a las funciones de dibujo.
+
+
+===== rect =====
+
+/*
+draw a rectangle shape
+*/
+
+Dibuja una figura rectangular.
+
+<code python>
+pygame.draw.rect(Surface, color, Rect, width=0): return Rect
+</code>
+
+/*
+Draws a rectangular shape on the Surface. The given Rect is the area of the
+rectangle. The width argument is the thickness to draw the outer edge. If
+width is zero then the rectangle will be filled.
+*/
+
+Dibuja una figura rectangular sobre una superficie. El parámetro ''Rect'' dado es el área del rectángulo. El argumento ''width'' es el espesor para dibujar el borde
+exterior de la figura. Si ''width'' se define con valor 0 entonces el rectángulo se pintará completo.
+
+
+/*
+Keep in mind the Surface.fill() method works just as well for drawing filled
+rectangles. In fact the Surface.fill() can be hardware accelerated on some
+platforms with both software and hardware display modes.
+*/
+
+
+Recuerde que el método [[Surface#fill|Surface.fill]] funciona igual de bien para dibujar 
+rectángulos completos. De hecho, [[Surface#fill|Surface.fill]] se puede acelerar por
+medio de Hardware en algunas plataformas tanto con modos de video por Software 
+como Hardware.
+
+
+
+  * [[pythonexample>pygame.draw.rect|buscar código donde se use esta función.]]
+
+
+===== polygon =====
+
+/*
+draw a shape with any number of sides
+*/
+
+Dibuja una figura con cualquier número de lados.
+
+<code python>
+pygame.draw.polygon(Surface, color, pointlist, width=0): return Rect
+</code>
+
+/*
+Draws a polygonal shape on the Surface. The pointlist argument is the
+vertices of the polygon. The width argument is the thickness to draw the
+outer edge. If width is zero then the polygon will be filled.
+*/
+
+Dibuja una figura poligonal en una superficie. El argumento ''pointlist'' es
+una lista de los vértices del polígono. El argumento ''width'' es el espesor
+para dibujar el borde de la figura. Si ''width'' es 0 entonces el polígono
+se pinta por completo.
+
+/*
+For aapolygon, use aalines with the 'closed' parameter.
+*/
+
+Para lograr un polígono con bordes suaves utilice [[#aalines]] con el
+parámetro ''closed''.
+
+{{ :traducciones:pygame:draw:polygon.png |}}
+
+  * [[pythonexample>pygame.draw.polygon|buscar código donde se use esta función.]]
+
+===== circle =====
+
+/*
+draw a circle around a point
+*/
+
+Dibujar un círculo alrededor de un punto.
+
+
+<code python>
+pygame.draw.circle(Surface, color, pos, radius, width=0): return Rect
+</code>
+
+/*
+Draws a circular shape on the Surface. The pos argument is the center of
+the circle, and radius is the size. The width argument is the thickness to
+draw the outer edge. If width is zero then the circle will be filled.
+*/
+
+Dibuja una figura circular sobre una superficie. El argumento ''pos'' es el
+centro del círculo, y ''radius'' es el tamaño. El argumento ''with'' es el
+espesor del borde de la figura. Si ''with'' es 0 entonces el círculo se
+pintará por completo.
+
+{{ :traducciones:pygame:draw:circle.png |}}
+
+  * [[pythonexample>pygame.draw.circle|buscar código donde se use esta función.]]
+
+===== ellipse =====
+
+/*
+draw a round shape inside a rectangle
+*/
+
+Dibuja una elipse dentro del área indicada por un rectángulo.
+
+
+<code python>
+pygame.draw.ellipse(Surface, color, Rect, width=0): return Rect
+</code>
+
+
+/*
+Draws an elliptical shape on the Surface. The given rectangle is the area that
+the circle will fill. The width argument is the thickness to draw the outer
+edge. If width is zero then the ellipse will be filled.
+*/
+
+Dibuja una figura elíptica en una superficie. La figura se dibujará en
+el área delimitada por el rectángulo dado.
+
+
+  * [[pythonexample>pygame.draw.ellipse|buscar código donde se use esta función.]]
+
+
+===== arc =====
+
+/*
+draw a partial section of an ellipse
+*/
+
+Dibuja una sección parcial de una elípse.
+
+<code python>
+pygame.draw.arc(Surface, color, Rect, start_angle, stop_angle, width=1): return Rect
+</code>
+
+
+/*
+Draws an elliptical arc on the Surface. The rect argument is the area that
+the ellipse will fill. The two angle arguments are the initial and final
+angle in radians, with the zero on the right. The width argument is the
+thickness to draw the outer edge.
+*/
+
+Dibuja un arco elíptico en una superficie. La figura se dibujará en el
+área delimitada por el rectángulo. Los dos argumentos ''angle'' son los
+ángulos inicial y final en radianes, donde 0 representa la izquierda. El
+argumento ''width'' es el espesor de la linea de dibujo.
+
+  * [[pythonexample>pygame.draw.arc|buscar código donde se use esta función.]]
+
+
+===== line =====
+
+/*
+draw a straight line segment
+*/
+
+Dibuja un segmento de linea recto.
+
+<code python>
+pygame.draw.line(Surface, color, start_pos, end_pos, width=1): return Rect
+</code>
+
+
+/*
+Draw a straight line segment on a Surface. There are no endcaps, the
+ends are squared off for thick lines.
+*/
+
+Dibuja un segmento de linea recto en una superficie. No se dibujan puntas
+en los extremos de la linea, las terminaciones serán cuadradas para
+lineas muy gruesas.
+
+
+
+  * [[pythonexample>pygame.draw.line|buscar código donde se use esta función.]]
+
+===== lines =====
+
+/*
+draw multiple contiguous line segments
+*/
+
+Dibuja múltiples segmentos de linea continuos.
+
+<code python>
+pygame.draw.lines(Surface, color, closed, pointlist, width=1): return Rect
+</code>
+
+
+/*
+Draw a sequence of lines on a Surface. The pointlist argument is a series
+of points that are connected by a line. If the closed argument is true an
+additional line segment is drawn between the first and last points.
+*/
+
+Dibuja una secuencia de lineas en una superficies. El argumento ''pointlist''
+es una serie de puntos que se conectarán por una linea. Si el argumento
+''closed'' es true se dibujará un segmento de linea adicional entre
+el primer y último punto.
+
+/*
+This does not draw any endcaps or miter joints. Lines with sharp corners and
+wide line widths can have improper looking corners.
+*/
+
+Esta función no dibuja ninguna punta o nodo. Las lineas con esquinas 
+afiladas y grosor de linea muy grande podrían mostrar las intersecciones
+de segmentos de manera inapropiada.
+
+
+  * [[pythonexample>pygame.draw.lines|buscar código donde se use esta función.]]
+
+
+===== aaline =====
+
+/*
+draw fine antialiased lines
+*/
+
+Dibuja lineas suavizadas.
+
+<code python>
+pygame.draw.aaline(Surface, color, startpos, endpos, blend=1): return Rect
+</code>
+
+
+/*
+Draws an anti-aliased line on a surface. This will respect the clipping
+rectangle. A bounding box of the affected area is returned returned as a
+rectangle. If blend is true, the shades will be be blended with existing
+pixel shades instead of overwriting them. This function accepts floating
+point values for the end points. 
+*/
+
+Dibuja una linea suavizada en una superficie. Esta función estima el
+rectángulo afectado. Se retorna el rectángulo que representa el área 
+afectada. Si el parámetro ''blend'' está en valor ''True'', las
+figuras se mezclarán con la tonalidad de los //pixels// existentes
+en lugar de sobre-escribirlos. Esta función acepta valores en números
+realizar para los extremos de los segmentos.
+
+{{ :traducciones:pygame:draw:aaline.png |}}
+
+  * [[pythonexample>pygame.draw.aaline|buscar código donde se use esta función.]]
+
+===== aalines =====
+
+Dibuja múltiples segmentos de linea continuos.
+
+<code python>
+pygame.draw.aalines(Surface, color, closed, pointlist, blend=1): return Rect
+</code>
+
+
+/*
+Draws a sequence on a surface. You must pass at least two points in the
+sequence of points. The closed argument is a simple boolean and if true, a
+line will be draw between the first and last points. The boolean blend
+argument set to true will blend the shades with existing shades instead of
+overwriting them. This function accepts floating point values for the end
+points. */
+
+Dibuja una secuencia de lineas en una superficie. Debe indicar al menos
+dos puntos en la secuencia de puntos (parámetro ''pointlist''). El argumento
+''closed'' es un valor booleano, si es ''True'' se dibujará un segmento
+de linea adicional entre el primer y último punto. Si el argumento ''blend''
+se define a ''True'' la figura se dibujará con las tonalidades existentes
+en lugar de reemplazarlas. Esta función acepta valores en números reales
+para especificar los puntos.
+
+
+{{ :traducciones:pygame:draw:aalines.png |}}
+
+  * [[pythonexample>pygame.draw.aalines|buscar código donde se use esta función.]]

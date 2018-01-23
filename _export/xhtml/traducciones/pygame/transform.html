@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:transform</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:36+0300" />
+<meta name="keywords" content="traducciones,pygame,transform" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/transform-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="transform.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/transform.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#transform" class="toc">transform</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#flip" class="toc">flip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#scale" class="toc">scale</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#rotate" class="toc">rotate</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#rotozoom" class="toc">rotozoom</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#scale2x" class="toc">scale2x</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#smoothscale" class="toc">smoothscale</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#chop" class="toc">chop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#laplacian" class="toc">laplacian</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#average_surfaces" class="toc">average_surfaces</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#threshold" class="toc">threshold</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="transform" id="transform">transform</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para transformar superficies.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#flip" title="traducciones:pygame:transform &crarr;" class="wikilink1">flip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#scale" title="traducciones:pygame:transform &crarr;" class="wikilink1">scale</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#rotate" title="traducciones:pygame:transform &crarr;" class="wikilink1">rotate</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#rotozoom" title="traducciones:pygame:transform &crarr;" class="wikilink1">rotozoom</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#scale2x" title="traducciones:pygame:transform &crarr;" class="wikilink1">scale2x</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#smoothscale" title="traducciones:pygame:transform &crarr;" class="wikilink1">smoothscale</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#chop" title="traducciones:pygame:transform &crarr;" class="wikilink1">chop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#laplacian" title="traducciones:pygame:transform &crarr;" class="wikilink1">laplacian</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#average_surfaces" title="traducciones:pygame:transform &crarr;" class="wikilink1">average_surfaces</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#threshold" title="traducciones:pygame:transform &crarr;" class="wikilink1">threshold</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Una transformación de superficie es una operación que mueve dimensiona los
+píxeles. Todos estas funciones toman una superficie sobre la que operan
+y devuelven una nueva superficie con los resultados.
+</p>
+
+
+
+<p>
+Alguna de las transformaciones se consideran destructivas. Esto significa que
+cada vez que se realizan se pueden perder <em>pixeles</em> de datos. Los ejemplos
+comunes de esto son las operaciones de escalado y rotación. Por ese motivo, 
+es mejor transformar nuevamente la imagen original que seguir transformando
+un imagen muchas veces; por ejemplo, imagine que está animando un resorte
+que salta, que se expande y contrae con el movimiento. Si aplica los
+cambios de tamaño incrementalmente a las imágenes anteriores perderá detalle; en
+lugar de eso siempre comience con la imagen original y cambie el tamaño de
+la misma al tamaño deseado.
+</p>
+
+</div>
+<!-- SECTION "transform" [1-1881] -->
+<h2><a name="flip" id="flip">flip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Invierte la imagen de manera horizontal y vertical.
+</p>
+<pre class="code">
+pygame.transform.flip(Surface, xbool, ybool): return Surface
+</pre>
+
+
+
+<p>
+Puede invertir la superficie ya sea de forma vertical, horizontal, o ambas. Invertir
+una superficies es una tarea no destructiva y retorna una nueva superficie con
+el mismo tamaño.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.flip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.flip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+<a href="../../../../_detail/traducciones/pygame/transform/flip.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:flip.png"><img src="../../../../_media/traducciones/pygame/transform/flip.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "flip" [1882-2553] -->
+<h2><a name="scale" id="scale">scale</a></h2>
+<div class="level2">
+
+
+
+<p>
+Altera el tamaño.
+</p>
+<pre class="code">
+pygame.transform.scale(Surface, (width, height), DestSurface = None): return Surface
+</pre>
+
+
+
+<p>
+Redimensiona una superficie a un nuevo tamaño. Esta es una operación
+rápida que no suaviza los resultados.
+</p>
+
+
+
+<p>
+Se puede usar una superficie destino opcional, en lugar de tener que
+crear una nueva. Esto hace mas rápida la operación si tiene que cambiar
+el tamaño de algo muchas veces. De todas formas, la superficie destino debe
+tener el mismo tamaño que los parámetros <code>width</code> y <code>height</code> indicados. Además
+las superficie destino debe tener el mismo formato.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.scale" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.scale">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/scale.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:scale.png"><img src="../../../../_media/traducciones/pygame/transform/scale.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "scale" [2554-3737] -->
+<h2><a name="rotate" id="rotate">rotate</a></h2>
+<div class="level2">
+
+
+
+<p>
+Aplica rotación a una imagen.
+</p>
+<pre class="code">
+pygame.transform.rotate(Surface, angle): return Surface
+</pre>
+
+
+
+<p>
+Aplica una rotación inversa al sentido de las agujas del reloj sin suavizar. El 
+argumento <code>angle</code> se representa en grados y puede ser cualquier número real.
+La magnitud negativa de <code>angle</code> rotará la imagen en sentido a las agujas
+del reloj.
+</p>
+
+
+
+<p>
+A menos que las rotaciones se incrementen de a 90 grados, la imagen se rellenará
+para almacenarse en un nuevo tamaño. Si la imagen tiene <em>pixels</em> transparentes, 
+el área de relleno será transparente. En otro caso pygame tomará un color que
+coincida con el valor clave de la imagen o el valor de la esquina superior izquierda.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.rotate" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.rotate">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/rotate.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:rotate.png"><img src="../../../../_media/traducciones/pygame/transform/rotate.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "rotate" [3738-5042] -->
+<h2><a name="rotozoom" id="rotozoom">rotozoom</a></h2>
+<div class="level2">
+
+
+
+<p>
+Rotación y cambio de tamaño con filtro.
+</p>
+<pre class="code">
+pygame.transform.rotozoom(Surface, angle, scale): return Surface
+</pre>
+
+
+
+<p>
+Es una transformación combinada de rotación y cambio de tamaño. La superficie
+resultado será una superficie suavizada de 32 bits. El argumento <code>scale</code> es
+un número real que será multiplicado por la resolución actual. El argumento
+<code>angle</code> es un numero real que representa la rotación contra las agujas
+del reloj mediada en grados. Un ángulo de rotación negativo girará la superficie
+en sentido a las agujas del reloj.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.rotozoom" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.rotozoom">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/rotozoom.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:rotozoom.png"><img src="../../../../_media/traducciones/pygame/transform/rotozoom.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "rotozoom" [5043-6160] -->
+<h2><a name="scale2x" id="scale2x">scale2x</a></h2>
+<div class="level2">
+
+
+
+<p>
+Duplica el tamaño de la imagen de manera especial.
+</p>
+<pre class="code">
+pygame.transform.scale2x(Surface, DestSurface = None): Surface
+</pre>
+
+
+
+<p>
+Retorna una nueva imagen que será del doble de tamaño que la original. Utiliza
+el algoritmo <em>AdvanceMAME Scale2X</em> que produce escalado de gráficos evitando
+el dentado o los cuadrados grandes.
+</p>
+
+
+
+<p>
+Se puede usar una superficie destino opcional, en lugar de tener que
+crear una nueva. Esto hace mas rápida la operación si tiene que cambiar
+el tamaño de algo muchas veces. De todas formas, la superficie destino debe
+tener el mismo tamaño que los parámetros <code>width</code> y <code>height</code> indicados. Además
+las superficie destino debe tener el mismo formato.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.scale2x" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.scale2x">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/scale2x.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:scale2x.png"><img src="../../../../_media/traducciones/pygame/transform/scale2x.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "scale2x" [6161-7661] -->
+<h2><a name="smoothscale" id="smoothscale">smoothscale</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia el tamaño de una superficie con suavidad y de forma arbitraria.
+</p>
+<pre class="code">
+pygame.transform.smoothscale(Surface, (width, height), DestSurface = None): return Surface
+</pre>
+
+
+
+<p>
+
+Usa uno de dos algoritmos diferentes para alterar cada una
+de las dimensiones de la superficie. Al reducir la imagen, los
+<em>pixeles</em> destinos serán promedio de los <em>pixeles</em> originales
+que representan. Al aumentar la imagen, se utilizará un filtro
+bilineal. En las arquitecturas <em>amd64</em> y <em>i686</em>, se incluyen
+las rutinas MMX optimizadas que funcionarán mucho mas rápido
+que en otro tipo de equipos.
+</p>
+
+
+
+<p>
+El tamaño es una secuencia de dos números que representa (<code>width</code>, 
+<code>height</code>). Esta función solo opera con superficies de 24 o 32 
+bits. Se lanzará una excepción si la profundidad de color de la
+superficie original es menor a 24 bits.
+</p>
+<pre class="code">
+New in pygame 1.8
+</pre>
+
+<p>
+Esta función es nueva en pygame 1.8.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.smoothscale" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.smoothscale">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/smoothscale.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:smoothscale.png"><img src="../../../../_media/traducciones/pygame/transform/smoothscale.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "smoothscale" [7662-9345] -->
+<h2><a name="chop" id="chop">chop</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene una copia de una imagen con un área interior eliminada.
+</p>
+<pre class="code">
+pygame.transform.chop(Surface, rect): return Surface
+</pre>
+
+
+
+<p>
+Extrae una porción de una imagen. Todos los <em>pixels</em> dentro
+del rectángulo dado se eliminarán. Las áreas diagonales (diagonales
+al rectángulo) se juntarán. La imagen original no se alterará
+por esta operación.
+</p>
+
+
+
+<p>
+Note: Si usted quiere cortar, esta función retorna la parte de la
+imagen sin el área del rectángulo; en su lugar puede imprimir con 
+el rectángulo a una nueva superficie o copiar una <em>subsurface</em>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.chop" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.chop">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/chop.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:chop.png"><img src="../../../../_media/traducciones/pygame/transform/chop.png" class="mediacenter" alt="" /></a>
+</p>
+
+
+
+<p>
+Para ilustrar el ejemplo, imagine que define un rectángulo como se muestra
+en la siguiente imágen. La función <code>chop</code> eliminará tanto el rectángulo como
+la zona roja, creando una nueva superficie con los restos unidos.
+</p>
+
+<p>
+<a href="../../../../_detail/traducciones/pygame/transform/chop_diagram.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:chop_diagram.png"><img src="../../../../_media/traducciones/pygame/transform/chop_diagram.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "chop" [9346-10833] -->
+<h2><a name="laplacian" id="laplacian">laplacian</a></h2>
+<div class="level2">
+
+
+
+<p>
+Busca los bordes en una superficie.
+</p>
+<pre class="code">
+pygame.transform.laplacian(Surface, DestSurface = None): return Surface
+</pre>
+
+
+
+<p>
+Busca los bordes en una superficie usando el algoritmo laplacian.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.laplacian" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.laplacian">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/laplacian.png-id=traducciones-pygame-transform.html" class="media" title="traducciones:pygame:transform:laplacian.png"><img src="../../../../_media/traducciones/pygame/transform/laplacian.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "laplacian" [10834-11357] -->
+<h2><a name="average_surfaces" id="average_surfaces">average_surfaces</a></h2>
+<div class="level2">
+
+
+
+<p>
+Busca la superficie mas similar a partir de muchas otras.
+</p>
+<pre class="code">
+pygame.transform.average_surfaces(Surfaces, DestSurface = None): return Surface
+</pre>
+
+
+
+<p>
+Toma una secuencia de superficies y retorna la superficie con los
+colores mas parecidos a una dada.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.average_surfaces" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.average_surfaces">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "average_surfaces" [11358-11965] -->
+<h2><a name="threshold" id="threshold">threshold</a></h2>
+<div class="level2">
+
+
+
+<p>
+Encuentra cuales y cuantos <em>pixels</em> en una superficie están dentro
+del umbral de un color.
+</p>
+<pre class="code">
+pygame.transform.threshold(DestSurface, Surface, color, threshold = (0,0,0,0), diff_color = (0,0,0,0), change_return = True, Surface =None): return num_threshold_pixels
+</pre>
+
+
+
+<p>
+Puede definir la superficie destino donde todos los <em>pixeles</em> se cambian
+a <code>diff_color</code> cuando no están dentro del umbral <code>threshold</code>.
+</p>
+
+
+
+<p>
+O se puede usar solo para contar los números de <em>pixeles</em> dentro
+del umbral si define <code>change_return</code> a <code>False</code>.
+</p>
+
+
+
+<p>
+Cuando se define la tercera superficie, se usarán los colores de
+ella en lugar del tercer argumento <code>color</code>.
+</p>
+
+
+
+<p>
+
+Puede definir un umbral, <code>threshold</code>, como <code>(r,g,b,a)</code>, donde <code>r</code>,
+<code>g</code>, <code>b</code> pueden ser diferentes umbrales. De forma que si quiere
+puede usar un umbral <code>r</code> de 40 y un umbral <code>b</code> de 2.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.threshold" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.transform.threshold">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+<a href="../../../../_detail/traducciones/pygame/transform/threshold.png-id=traducciones-pygame-transform.html" class="media wikilink2" title="traducciones:pygame:transform:threshold.png"><img src="../../../../_media/traducciones/pygame/transform/threshold.png.html" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "threshold" [11966-] --></div>
+</body>
+</html>

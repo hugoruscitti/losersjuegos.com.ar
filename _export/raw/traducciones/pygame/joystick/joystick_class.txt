@@ -1,0 +1,511 @@
+====== Joystick ======
+
+/* create a new Joystick object */
+
+Genera un nuevo objeto Joystick.
+
+<box 90%>
+  * [[traducciones:pygame:joystick#Joystick]]
+  * [[traducciones:pygame:joystick#init]]
+  * [[traducciones:pygame:joystick#quit]]
+  * [[traducciones:pygame:joystick#get_init]]
+  * [[traducciones:pygame:joystick#get_id]]
+  * [[traducciones:pygame:joystick#get_name]]
+  * [[traducciones:pygame:joystick#get_numaxes]]
+  * [[traducciones:pygame:joystick#get_axis]]
+  * [[traducciones:pygame:joystick#get_numballs]]
+  * [[traducciones:pygame:joystick#get_ball]]
+  * [[traducciones:pygame:joystick#get_numbuttons]]
+  * [[traducciones:pygame:joystick#get_button]]
+  * [[traducciones:pygame:joystick#get_numhats]]
+  * [[traducciones:pygame:joystick#get_hat]]
+</box>
+
+
+
+===== Joystick =====
+
+/*
+create a new Joystick object
+*/
+
+Genera un nuevo objeto Joystick.
+
+<code python>
+pygame.joystick.Joystick(id): return Joystick
+</code>
+
+/*
+Create a new joystick to access a physical device. The id argument must
+be a value from 0 to ''pygame.joystick.get_count() -1''.
+*/
+
+Genera un nuevo objeto Joystick para acceder al dispositivo físico. El
+argumento ''id'' debe ser un valor de 0 a ''pygame.joystick.get_count() -1''.
+
+
+/*
+To access most of the Joystick methods, you'll need to [[traducciones:pygame:joystick#init|init]]() 
+the Joystick. This is separate from making sure the joystick module is
+initialized. When multiple Joysticks objects are created for the
+same physical joystick device (i.e., they have the same ID number),
+the state and values for those Joystick objects
+will be shared.
+*/
+
+Necesita llamar al método [[traducciones:pygame:joystick#init|init()]] del Joystick para acceder
+a la mayoría de los métodos del Joystick. Este método está separado
+de ello para asegurarse que se inicializa el módulo joystick. El estado y
+valores para los objetos Joystick se puede compartir cuando se generan
+múltiples objetos Joystick a partir del mismo dispositivo (por ejemplo, si
+tienen el mismo identificador ''ID'').
+
+/*
+The Joystick object allows you to get information about the types of
+controls on a joystick device. Once the device is initialized the Pygame
+event queue will start receiving events about its input.
+*/
+
+El objeto Joystick le permite obtener información acerca de los
+controles en el dispositivo de Joystick. La cola de eventos
+comenzará a recibir eventos de esta entrada una vez que el
+dispositivo esté inicializado.
+
+
+/*
+You can call the [[traducciones:pygame:joystick#get_name|Joystick.get_name]]() and
+[[traducciones:pygame:joystick#get_id|Joystick.get_id]]() functions without initializing the Joystick object.
+*/
+
+Puede llamar a las funciones ''Joystick.get_name()'' y ''Joystick.get_id()''
+sin inicializar el objeto Joystick.
+
+
+
+
+===== init =====
+
+/*
+initialize the Joystick
+*/
+
+Inicializa el Joystick.
+
+<code python>
+Joystick.init(): return None
+</code>
+
+/*
+The Joystick must be initialized to get most of the information about
+the controls. While the Joystick is initialized the Pygame event queue will
+receive events from the Joystick input.
+*/
+
+El Joystick se debe inicializar para obtener la mayor información
+acerca de los controles. Cuando el Joystick se inicializa la cola
+de eventos de pygame recibirá la entrada de comandos del Joystick.
+
+/*
+It is safe to call this more than once.
+*/
+
+Es seguro llamar a este método mas de una vez.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.init|buscar código donde se use esta función.]]
+
+
+===== quit =====
+
+/*
+uninitialize the Joystick
+*/
+
+Deshabilita el Joystick.
+
+<code python>
+Joystick.quit(): return None
+</code>
+
+/*
+This will unitialize a Joystick. After this the Pygame event queue will
+no longer receive events from the device.
+*/
+
+Este método deshabilita el Joystick. Después de esto, la cola de eventos
+de pygame no recibirá mas eventos del dispositivo.
+
+/*
+It is safe to call this more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+
+
+  * [[pythonexample>pygame.joystick.Joystick.quit|buscar código donde se use esta función.]]
+
+===== get_init =====
+
+/*
+check if the Joystick is initialized
+*/
+
+
+Consulta si el Joystick está incializado.
+
+<code python>
+Joystick.get_init(): return bool
+</code>
+
+/*
+Returns True if the [[traducciones:pygame:joystick#init|init]]() method has already been called
+on this Joystick object.
+*/
+
+Retorna ''True'' si ya se ha llamado al método 
+[[traducciones:pygame:joystick#init|init()]] en este objeto.
+
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_init|buscar código donde se use esta función.]]
+
+
+===== get_id =====
+
+/*
+get the Joystick ID
+*/
+
+Obtiene el identificador del Joystick.
+
+<code python>
+Joystick.get_id(): return int
+</code>
+
+/*
+Returns the integer ID that represents this device. This is the same value
+that was passed to the Joystick() constructor. This method can safely
+be called while the Joystick is not initialized.
+*/
+
+Retorna en número identificador que representa este dispositivo. Este
+valor es el mismo que se ha indicado al constructor del Joystick(). Este
+método se puede llamar de forma segura mientras el Joystick no esté
+inicializado.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_id|buscar código donde se use esta función.]]
+
+===== get_name =====
+
+/*
+get the Joystick system name
+*/
+
+Obtiene el nombre de sistema del Joystick.
+
+
+<code python>
+Joystick.get_name(): return string
+</code>
+
+/*
+Returns the system name for this joystick device. It is unknown what name
+the system will give to the Joystick, but it should be a unique name that
+identifies the device. This method can safely be called while the Joystick
+is not initialized.
+*/
+
+Retorna el nombre de sistema para este dispositivo de Joystick. Se 
+desconoce que nombre dará el sistema al Joystick, aunque debería ser
+un nombre único que identifica al dispositivo. Este método se puede
+llamar con seguridad mientras el Joystick no esté inicializado.
+
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_name|buscar código donde se use esta función.]]
+
+===== get_numaxes =====
+
+/*
+get the number of axes on a Joystick
+*/
+
+Retorna el número de mandos de posición de un joystick.
+
+<code python>
+Joystick.get_numaxes(): return int
+</code>
+
+/*
+Returns the number of input axes are on a Joystick. There will usually be
+two for the position. Controls like rudders and throttles are treated as
+additional axes.
+*/
+
+Retorna el número de mandos de posición de un Joystick. Generalmente
+será de mandos para la posición (horizontal y vertical). Controles
+como aletas de avión o frenos se manejan como mandos de posición adicionales.
+
+/*
+The pygame.JOYAXISMOTION events will be in the range from -1.0 to 1.0. A value
+of 0.0 means the axis is centered. Gamepad devices will usually be -1, 0, or 1
+with no values in between. Older analog joystick axes will not always use the
+full -1 to 1 range, and the centered value will be some area around 0. 
+Analog joysticks usually have a bit of noise in their axis, which will generate
+a lot of rapid small motion events.
+*/
+
+Los eventos ''pygame.JOYAXISMOTION'' estarán en el rango de -1.0 a 1.0. Un
+valor como 0.0 significa que la posición de movimiento está centrada. Los
+controles tradicionales generarán eventos con valores como -1, 0 o 1 sin
+valores intermedios. Los joysticks antiguos y analógicos no siempre
+usarán el rango completo de -1 a 1, y el valor del centro será algún
+área cerca de 0. Los joysticks analógicos generalmente son imprecisos, lo
+que generará un montón de eventos de movimiento muy pequeños.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_numaxes|buscar código donde se use esta función.]]
+
+
+
+===== get_axis =====
+
+/*
+get the current position of an axis
+*/
+
+Obtiene la posición actual.
+
+<code python>
+Joystick.get_axis(axis_number): return float
+</code>
+
+/*
+Returns the current position of a joystick axis. The value will range from
+-1 to 1 with a value of 0 being centered. You may want to take into account
+some tolerance to handle jitter, and joystick drift may keep the joystick
+from centering at 0 or using the full range of position values.
+*/
+
+
+
+Retorna la posición actual del control de un joystick. El valor estará
+en el rengo de -1 a 1, donde un valor como 0 será el centro. Seguramente
+tendrá que tener en cuenta cierta tolerancia en estos valores para
+manejar cualquier vibración.
+
+FIX
+
+/*
+The axis number must be an integer from zero to ''get_numaxes() -1''.
+*/
+
+El parámetro ''axis_number'' debe ser un número entero desde 0 a ''get_numaxes() - 1''.
+
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_axis|buscar código donde se use esta función.]]
+
+===== get_numballs =====
+
+/*
+get the number of trackballs on a Joystick
+*/
+
+Obtiene el número de //trackballs// en un Joystick.
+
+<code>
+Joystick.get_numballs(): return int
+</code>
+
+/*
+Returns the number of trackball devices on a Joystick. These devices work
+similar to a mouse but they have no absolute position; they only have relative
+amounts of movement.
+*/
+
+Retorna el número de dispositivos de //trackballs// en un Joystick. Estos
+dispositivos funcionan de forma similar a un mouse aunque no tienen
+posición absoluta, solo tienen cantidades relativas de movimiento.
+
+
+/*
+The pygame.JOYBALLMOTION event will be sent when the trackball is rolled.
+It will report the amount of movement on the trackball.
+*/
+
+El evento ''pygame.JOYBALLMOTION'' se enviará cuando gire
+el dispositivo de //trackball//. Este evento reportará la cantidad de movimiento
+del //trackball//.
+
+  * [[pythonexample>pygame.joystick.Joystick.get_numballs|buscar código donde se use esta función.]]
+
+===== get_ball =====
+
+/*
+get the relative position of a trackball
+*/
+
+Obtiene la posición relativa del //trackball//.
+
+<code>
+Joystick.get_ball(ball_number): return x, y
+</code>
+
+/*
+Returns the relative movement of a joystick button. The value is a x, y pair
+holding the relative movement since the last call to get_ball.
+*/
+
+Retorna el movimiento relativo de un //trackball// de Joystick. El valor
+retornado es un par (x, y) almacenando el movimiento relativo desde la
+última llamada a ''get_ball''.
+
+
+/*
+The ball number must be an integer from zero to ''get_numballs() -1''.
+*/
+
+El número indicado en el parámetro ''ball_number'' debe ser un
+número entero entre 0 y ''get_numballs() -1''.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_ball|buscar código donde se use esta función.]]
+
+
+===== get_numbuttons =====
+
+/*
+get the number of buttons on a Joystick
+*/
+
+Obtiene el número de botones de un joystick.
+
+<code python>
+Joystick.get_numbuttons(): return int
+</code>
+
+/*
+Returns the number of pushable buttons on the joystick. These buttons have
+a boolean (on or off) state.
+*/
+
+Retorna el número de botones que se pueden pulsar en un joystick. Estos botones
+tienen un estado booleano (activado o desactivado).
+
+/*
+Buttons generate a pygame.JOYBUTTONDOWN and pygame.JOYBUTTONUP event when
+they are pressed and released.
+*/
+
+Los botones generan eventos ''pygame.JOYBUTTONDOWN'' y ''pygame.JOYBUTTONDOWN''
+cuando se pulsan o sueltan.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_numbuttons|buscar código donde se use esta función.]]
+
+
+===== get_button =====
+
+/*
+get the current button state
+*/
+
+Obtiene el estado actual de un botón.
+
+<code python>
+Joystick.get_button(button): return bool
+</code>
+
+/*
+Returns the current state of a joystick button.
+*/
+
+Retorna el estado actual de un botón de joystick.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_button|buscar código donde se use esta función.]]
+
+
+===== get_numhats =====
+
+/*
+get the number of hat controls on a Joystick
+*/
+
+Retorna el número de controles de dirección en un joystick.
+
+<code python>
+Joystick.get_numhats(): return int
+</code>
+
+/*
+Returns the number of joystick hats on a Joystick. Hat devices are like
+miniature digital joysticks on a joystick. Each hat has two axes of input.
+*/
+
+Retorna el número de direccionales de posición en un joystick. Los
+direccionales de un joystick  son como pequeñas flechas que tienen
+dos direcciones.
+
+/*
+The pygame.JOYHATMOTION event is generated when the hat changes position.
+The position attribute for the event contains a pair of values that are
+either -1, 0, or 1. A position of (0, 0) means the hat is centered.
+*/
+
+Los eventos ''pygame.JOYHATMOTION'' se generan cuando los direccionales
+cambian de posición. El atributo ''position'' para el evento contiene un
+par de valores que pueden ser -1, 0 o 1. Una posición como (0, 0) significa
+que el direccional está centrado.
+
+
+  * [[pythonexample>pygame.joystick.Joystick.get_numhats|buscar código donde se use esta función.]]
+
+===== get_hat =====
+
+/*
+get the position of a joystick hat
+*/
+
+Obtiene la posición de un direccional del joystick
+
+<code python>
+Joystick.get_hat(hat_number): return x, y
+</code>
+
+/*
+Returns the current position of a position hat. The position is given as two
+values representing the X and Y position for the hat. (0, 0) means centered.
+A value of -1 means left/down and a value of 1 means right/up: so (-1, 0)
+means left; (1, 0) means right; (0, 1) means up; (1, 1) means upper-right; etc.
+*/
+
+Retorna  la posición actual de un direccional. La posición se da como
+dos valores que representan la posición X e Y del direccional. (0, 0)
+representa el centro. Un valor de -1 significa izquiera o abajo y
+un valor como 1 significa derecha o arriba. Entonces, (-1, 0) significa
+izquierda, (1, 0) significa derecha, (0, 1) significa arriba, (1, 1) significa
+arriba a la derecha etc.
+
+/* error, digital no es la palabra para referirse a estos valores, en todo
+caso se podría decir entero */
+
+/*
+This value is digital, i.e., each coordinate can be -1, 0 or 1 but never
+in-between.
+*/
+
+Este valor es entero, cada coordenada puede ser -1, 0 o 1 pero nunca
+un valor intermedio.
+
+
+/*
+The hat number must be between 0 and ''get_numhats() -1''.
+*/
+
+El número de direccional debe ser un número entre 0 y ''get_numhats() -1''
+
+  * [[pythonexample>pygame.joystick.Joystick.get_hat|buscar código donde se use esta función.]]

@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:fuentes_graficas</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T02:53:23+0300" />
+<meta name="keywords" content="referencia,articulos,fuentes_graficas" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/fuentes_graficas-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="fuentes_graficas.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/fuentes_graficas.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#fuentes_graficas" class="toc">Fuentes gráficas</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#primer_ejemplofuentes_monospace_utilizando_ascii" class="toc">Primer ejemplo: fuentes monospace utilizando ASCII</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#algunos_problemas_del_primer_ejemplo" class="toc">Algunos problemas del primer ejemplo ...</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#segundo_ejemplofuentes_monospace_sin_utilizar_ascii" class="toc">Segundo ejemplo: fuentes monospace sin utilizar ASCII</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#algunos_problemas_del_segundo_ejemplo" class="toc">Algunos problemas del segundo ejemplo ...</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#tercer_ejemplofuentes_variables_y_sin_utilizar_ascii" class="toc">Tercer ejemplo: fuentes variables y sin utilizar ASCII</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#acerca_de_printf" class="toc">Acerca de printf</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusiones" class="toc">Conclusiones</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/fuentes_graficas/fuentes_graficas.pdf" class="media mediafile mf_pdf" title="referencia:articulos:fuentes_graficas:fuentes_graficas.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="fuentes_graficas" id="fuentes_graficas">Fuentes gráficas</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Fuentes gráficas" [72-101] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 23 de Enero del 2006</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [102-192] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+A la hora de programar una aplicación con SDL debemos tener en cuenta que la biblioteca principal (libSDL) no incluye rutinas para el manejo de textos. En principio puede parecernos una desventaja, pero el diseño de SDL nos permite incorporar otro tipo de bibliotecas auxiliares como SDL_TTF para cubrir esos requisitos.
+</p>
+
+<p>
+En el presente artículo analizaremos otra forma de solucionar el manejo de textos, veremos como desarrollar nuestro propio sistema de fuentes gráficas (basadas en mapas de bits), contemplando la existencia de caracteres especiales como las vocales con tilde y la letra ñ.
+
+</p>
+
+</div>
+<!-- SECTION "Introducción" [193-816] -->
+<h2><a name="primer_ejemplofuentes_monospace_utilizando_ascii" id="primer_ejemplofuentes_monospace_utilizando_ascii">Primer ejemplo: fuentes monospace utilizando ASCII</a></h2>
+<div class="level2">
+
+<p>
+
+Comenzaremos por el método mas sencillo. Al momento de iniciar el programa debemos cargar todas las fuentes gráficas en memoria. Todos los caracteres de nuestra fuente se almacenarán en una sola imagen separada en celdas, la siguiente imágen muestra una parte de la grilla:
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/fuente_1.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:fuente_1.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/fuente_1.png" class="mediacenter" alt="" /></a>
+Ahora bien, imagine que quisiéramos imprimir una cadena de texto en el menú principal de un videojuego: “iniciar nuevo juego”. Como nuestra fuente gráfica se encuentra organizada en una sola imagen, necesitamos conocer la posición de cada letra en la grilla al momento de imprimir, uno a uno, todos los caracteres de la cadena: &#039;i&#039;, &#039;n&#039;, &#039;i&#039;, &#039;c&#039;, &#039;i&#039;, &#039;a&#039;, &#039;n&#039;, &#039;d&#039;, &#039;o&#039; …
+</p>
+
+<p>
+Como veíamos en otro artículo, llamado <a href="../../../../referencia/articulos/grilla.html" class="wikilink1" title="referencia:articulos:grilla">Grilla de gráficos y animaciones</a>, podremos indicarle a SDL que imprima en pantalla solo una celda de la grilla. Todas las celdas deberían tener el mismo tamaño para que nos resulte mas sencillo localizarlas mediante un índice:
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/indices_1.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:indices_1.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/indices_1.png" class="mediacenter" alt="" /></a>
+Entonces, para imprimir un caracter de la cadena en pantalla solo tendríamos que conocer qué celda de la grilla representa al caracter.
+</p>
+
+<p>
+He visto que varios videojuegos resuelven esta asociación utilizando el valor numérico que provee la tabla de valores <acronym title="American Standard Code for Information Interchange">ASCII</acronym> (ejecute <em>man ascii</em> para mas detalles).
+</p>
+
+<p>
+En una tabla de caracteres <acronym title="American Standard Code for Information Interchange">ASCII</acronym> se relacionan una serie de caracteres con una representación numérica (en base decimal, octal y hexadecimal). Como el código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> de cada caracter consta de 7 bits, en total encontraremos 128 caracteres, el caracter &#039;A&#039; se corresponde con el número 65, &#039;B&#039; con el número 66 … etc.
+</p>
+
+<p>
+Estos valores numéricos se pueden obtener desde el mismo programa en lenguaje C sin mucho esfuerzo:
+
+</p>
+<pre class="code">print (&quot;El código ASCII de &#039;%c&#039; es &#039;%d&#039;\\n&quot;, &#039;A&#039;, &#039;A&#039;)</pre>
+
+<p>
+Como la grilla de fuentes que esperamos utilizar se encuentra ordenada en base al código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> será simple comenzar a imprimir, solo tendremos que:
+
+</p>
+<ol>
+<li class="level1"><div class="li"> situar el punto destino de impresión en pantalla.</div>
+</li>
+<li class="level1"><div class="li"> recorrer la cadena a imprimir, y por cada caracter:</div>
+<ol>
+<li class="level4"><div class="li"> utilizar su código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> para acceder a la grilla de fuentes.</div>
+</li>
+<li class="level4"><div class="li"> imprimir la celda en pantalla.</div>
+</li>
+<li class="level4"><div class="li"> avanzar el punto de impresión hacia la derecha.</div>
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+
+A continuación se incluye el primer ejemplo: <a href="../../../../_media/referencia/articulos/fuentes_graficas/fuente_sol_1.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:fuentes_graficas:fuente_sol_1.tar.gz">Descargar código fuente.</a>
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/solucion_1.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:solucion_1.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/solucion_1.png" class="mediacenter" title="Vista del ejemplo 1 funcionando" alt="Vista del ejemplo 1 funcionando" /></a>
+</p>
+
+<p>
+Para desarrollar este ejemplo se han utilizado las fuentes tipográficas que incluye el videojuego libre SuperTux (<a href="http://super-tux.sf.net" class="urlextern" title="http://super-tux.sf.net"  rel="nofollow">http://super-tux.sf.net</a>).
+
+</p>
+
+</div>
+<!-- SECTION "Primer ejemplo: fuentes monospace utilizando ASCII" [817-3568] -->
+<h2><a name="algunos_problemas_del_primer_ejemplo" id="algunos_problemas_del_primer_ejemplo">Algunos problemas del primer ejemplo ...</a></h2>
+<div class="level2">
+
+<p>
+
+¿Que ocurriría si quisieramos imprimir el caracter &#039;¿&#039;, &#039;ñ&#039; o &#039;á&#039;?. Al parecer, relacionar el número de caracter con su código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> no resultará a la hora de localizar algunos caracteres que buscamos imprimir.
+</p>
+
+<p>
+El conjunto de caracteres <acronym title="American Standard Code for Information Interchange">ASCII</acronym> es muy reducido, no incluye vocales con tildes, el caracter &#039;ñ&#039;, diéresis (&#039;ü&#039;) y demás.
+
+</p>
+
+</div>
+<!-- SECTION "Algunos problemas del primer ejemplo ..." [3569-3965] -->
+<h2><a name="segundo_ejemplofuentes_monospace_sin_utilizar_ascii" id="segundo_ejemplofuentes_monospace_sin_utilizar_ascii">Segundo ejemplo: fuentes monospace sin utilizar ASCII</a></h2>
+<div class="level2">
+
+<p>
+
+Para contemplar la existencia de caracteres no <acronym title="American Standard Code for Information Interchange">ASCII</acronym>, es preciso utilizar otro método de asociación entre un caracter y su posición en la grilla.
+</p>
+
+<p>
+Existen otros conjuntos de caracteres mas extensos de <acronym title="American Standard Code for Information Interchange">ASCII</acronym> (como <em>unicode</em>), aunque aquí nos limitaremos a utilizar un simple vector de caracteres:
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/indices_2.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:indices_2.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/indices_2.png" class="mediacenter" alt="" /></a>
+Cada celda del vector representará un caracter de nuestra fuente, y el índice (o posición) de cada celda lo utilizaremos como identificador (o código) de cada caracter.
+</p>
+
+<p>
+Como ya no nos preocuparemos por el código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> de ningún caracter, podremos re-definir el orden dentro de la grilla; por ejemplo, en la nueva grilla:
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/fuente_2.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:fuente_2.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/fuente_2.png" class="mediacenter" alt="" /></a>
+sabremos que el primer cuadro (índice 0) representa la letra &#039;a&#039;, el cuadro 45 corresponde a &#039;T&#039;, el cuadro 82 corresponde a &#039;¿&#039; …
+</p>
+
+<p>
+El código fuente de este ejemplo está basado en el anterior. Para que funcione la nueva relación de caracteres se realizaron algunos cambios, el mas importante es la creación de la función:
+</p>
+
+<p>
+Código fuente: <a href="../../../../_media/referencia/articulos/fuentes_graficas/fuentes_sol_2.c.html" class="media mediafile mf_ wikilink2" title="referencia:articulos:fuentes_graficas:fuentes_sol_2.c">fuente_sol_2.c</a> <img src="../../../../lib/images/smileys/fixme.gif" class="middle" alt="FIXME" />
+
+</p>
+<pre class="code c"><span class="br0">&#91;</span>...<span class="br0">&#93;</span>
+<span class="kw4">int</span> obtener_indice <span class="br0">&#40;</span><span class="kw4">char</span> caracter<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <span class="kw4">int</span> i;
+        <span class="kw4">static</span> <span class="kw4">char</span> letras <span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="st0">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>\
+                                <span class="st0">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span> \
+                                <span class="st0">&quot;1234567890&quot;</span> \
+                                <span class="st0">&quot;ñÑáéíóúÁÉÍÓÚäëïöü&quot;</span>\
+                                <span class="st0">&quot;!¡?¿@#$%&amp;'+-=&gt;&lt;*/,.:;-_()[]{}|^`~<span class="es0">\\</span>&quot;</span>\
+                                <span class="st0">&quot;àèìòùâêîôû &quot;</span>;
+&nbsp;
+        <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu19">0</span>; letras <span class="br0">&#91;</span>i<span class="br0">&#93;</span>; i <span class="sy0">++</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>caracter <span class="sy0">==</span> letras <span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                        <span class="kw1">return</span> i;
+                <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+&nbsp;
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a> <span class="br0">&#40;</span><span class="st0">&quot;No se puede encontrar el índice de '%c'<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> caracter<span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="sy0">-</span><span class="nu0">1</span>;
+<span class="br0">&#125;</span>
+<span class="br0">&#91;</span>...<span class="br0">&#93;</span> </pre>
+<p>
+La función <em>obtener_indice</em> informa cual es el cuadro de la grilla gráfica que contiene al caracter dado por el parámetro.
+</p>
+
+<p>
+Note que dicha función nos resuelve las relaciones que antes dependían del código <acronym title="American Standard Code for Information Interchange">ASCII</acronym> de cada caracter, ahora con solo llamar a <em>obtener_indice (&#039;¿&#039;)</em> obtenemos el número de cuadro que debemos conocer para imprimir el caracter en pantalla (82, en este caso):
+
+</p>
+<pre class="code c"><span class="kw4">int</span> indice;
+&nbsp;
+indice <span class="sy0">=</span> obtener_indice <span class="br0">&#40;</span><span class="st0">'a'</span><span class="br0">&#41;</span>;
+imprimir_celda <span class="br0">&#40;</span>indice<span class="sy0">,</span> ima_fuentes<span class="sy0">,</span> screen<span class="br0">&#41;</span>;
+&nbsp;
+SDL_Flip <span class="br0">&#40;</span>screen<span class="br0">&#41;</span>;<span class="st0">&quot;);</span></pre>
+<p>
+A continuación, el segundo ejemplo: <a href="../../../../_media/referencia/articulos/fuentes_graficas/fuente_sol_2.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:fuentes_graficas:fuente_sol_2.tar.gz">Descargar código fuente.</a>
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/solucion_2.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:solucion_2.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/solucion_2.png" class="mediacenter" alt="" /></a>
+
+</p>
+
+</div>
+<!-- SECTION "Segundo ejemplo: fuentes monospace sin utilizar ASCII" [3966-6641] -->
+<h2><a name="algunos_problemas_del_segundo_ejemplo" id="algunos_problemas_del_segundo_ejemplo">Algunos problemas del segundo ejemplo ...</a></h2>
+<div class="level2">
+
+<p>
+
+Habrá notado que en los títulos del artículo se utiliza la palabra <em>monospace</em>, con ello se resume que todas las letras de nuestra fuente tienen el mismo tamaño. Esto no suele ser un problema, si se elige correctamente la decoración de tipografía es probable que el usuario no perciba este detalle.
+</p>
+
+<p>
+Lamentablemente para nosotros, por lo general se busca implementar un sistema de fuentes gráficas cuando se quiere utilizar fuentes decorativas que ofrezcan ambientación a cada escena: Letras irregulares, complejas y, por supuesto, de diferentes tamaños.
+</p>
+
+<p>
+Si tomamos una fuente decorativa, y la utilizamos como si se tratara de una fuente monospace muchos caracteres “angostos”, como la letra &#039;i&#039;, quedarán demasiado separados del resto:
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/monospace.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:monospace.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/monospace.png" class="mediacenter" alt="" /></a>
+Por ese motivo buscaremos implementar una nueva solución, que nos permita utilizar fuentes de tamaño variable.
+
+</p>
+
+</div>
+<!-- SECTION "Algunos problemas del segundo ejemplo ..." [6642-7614] -->
+<h2><a name="tercer_ejemplofuentes_variables_y_sin_utilizar_ascii" id="tercer_ejemplofuentes_variables_y_sin_utilizar_ascii">Tercer ejemplo: fuentes variables y sin utilizar ASCII</a></h2>
+<div class="level2">
+
+<p>
+
+Imprimir una fuente de tamaño variable es algo mas complejo, dado que necesitamos conocer el tamaño de cada letra y dónde se encuentra en la grilla (ahora con celdas de diferente tamaño).
+</p>
+
+<p>
+Si observamos la nueva fuente, los diferentes caracteres podrían tener tamaños muy diversos, aunque por esta vez, solo nos preocuparemos por su tamaño horizontal (todas tendrán la misma altura):
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/fuente_3.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:fuente_3.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/fuente_3.png" class="mediacenter" alt="" /></a>
+En principio, existirán varias formas de gestionar el manejo de estas fuentes, aunque aquí solo analizaremos una estrategia:
+</p>
+
+<p>
+Antes de imprimir algún caracter en pantalla, debemos analizar la longitud horizontal de cada caracter y registrarlo en nuestro programa. Esa tarea de <em>Análisis</em> se realiza al momento de iniciar el programa, por lo tanto, confeccionar la fuentes será mas sencillo para nuestro artista, puede despreocuparse de las <em>viejas</em> celdas por el momento. En el programa de ejemplo dicha tarea se realiza mediante un llamado a la función <em>identificar_rects</em>, enviando como parámetros la imagen que contiene las fuentes y un vector de rectángulos:
+
+</p>
+<pre class="code c">SDL_Surface <span class="sy0">*</span> ima;
+SDL_Rect fuentes <span class="br0">&#91;</span><span class="nu0">150</span><span class="br0">&#93;</span>;
+&nbsp;
+identificar_rects <span class="br0">&#40;</span>ima<span class="sy0">,</span> fuentes<span class="br0">&#41;</span>;</pre>
+<p>
+Luego de llamar a la función, el vector fuentes almacenará en cada una de sus celdas el tamaño de una letra. Cada celda utiliza una estructura de datos (Rectángulo) que nos provee la biblioteca SDL:
+
+</p>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span>
+<span class="br0">&#123;</span>
+        Sint16 x<span class="sy0">,</span> y;
+        Uint16 w<span class="sy0">,</span> h;
+<span class="br0">&#125;</span> SDL_Rect;</pre>
+<p>
+Todos los tamaños de fuente se almacenarán en órden, la primer letra encontrada será guardada en la posición 0 del vector, la siguiente en la posición 1. Por lo tanto necesitaremos nuevamente de un vector de caracteres que nos relacione el un número de índice con el caracter que representa. Utilizaremos para ello la función <em>obtener_indice</em> del ejemplo 2.
+</p>
+
+<p>
+Una vez analizada la fuente se podrá comenzar a imprimir caracteres con la función <em>imprimir_palabra</em>:
+
+</p>
+<pre class="code c">imprimir_palabra <span class="br0">&#40;</span>screen<span class="sy0">,</span> ima<span class="sy0">,</span> fuentes<span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">5</span><span class="sy0">,</span> \<span class="st0">&quot;¡ Hola mundo !<span class="es0">\&quot;</span>);</span></pre>
+<p>
+Para que la función pueda imprimir una cadena completa debe realizar algunas tareas mas específicas, por ejemplo, para imprimir un caracter el procedimiento es:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> buscar su índice numérico (idéntico al ejemplo 2).</div>
+</li>
+<li class="level2"><div class="li"> con el índice se accede al vector de rectángulos que define el tamaño y posición del caracter.</div>
+</li>
+<li class="level2"><div class="li"> se utiliza el rectángulo para imprimir el caracter.</div>
+</li>
+</ul>
+
+<p>
+
+Así quedará nuestro tercer ejemplo: <a href="../../../../_media/referencia/articulos/fuentes_graficas/fuente_sol_3.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:fuentes_graficas:fuente_sol_3.tar.gz">Descargar código fuente</a>
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/fuentes_graficas/solucion_3.png-id=referencia-articulos-fuentes_graficas.html" class="media" title="referencia:articulos:fuentes_graficas:solucion_3.png"><img src="../../../../_media/referencia/articulos/fuentes_graficas/solucion_3.png" class="mediacenter" title="Vista del tercer ejemplo" alt="Vista del tercer ejemplo" /></a>
+</p>
+
+<p>
+En este ejemplo utilicé la fuente tipográfica <em>Lockergnome</em> de Ray Larabie, y luego apliqué algunos efectos simples con el programa libre <a href="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fwww.gimp.org" class="media mediafile mf_" title="http://www.gimp.org">El Gimp</a>, puede utilizar la fuente y, si quiere, puede enviarme algunas fuentes más para que las pueda añadir a esta página.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/fuentes_graficas/fuente_azul.xcf.gz" class="media mediafile mf_gz" title="referencia:articulos:fuentes_graficas:fuente_azul.xcf.gz">Descargar fuente azul</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Tercer ejemplo: fuentes variables y sin utilizar ASCII" [7615-10738] -->
+<h2><a name="acerca_de_printf" id="acerca_de_printf">Acerca de printf</a></h2>
+<div class="level2">
+
+<p>
+
+Si utiliza el lenguaje de programación C seguramente sabrá que una de las funciones mas utilizadas es <em>printf</em>, incluso el primer ejemplo de todo libro de programación suele ser el clásico “Hola mundo !”:
+
+</p>
+<pre class="code c"><span class="co2">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a> <span class="br0">&#40;</span><span class="st0">&quot;Hello World !&quot;</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+<em>printf</em> es una función muy versátil, ya que además cuenta con parámetros variables y gestiona cadenas con formato:
+
+</p>
+<pre class="code c"><span class="kw4">int</span> num <span class="sy0">=</span> <span class="nu0">20</span>;
+<span class="kw4">int</span> letra <span class="sy0">=</span> <span class="st0">'a'</span>;
+&nbsp;
+<a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a> <span class="br0">&#40;</span><span class="st0">&quot;El número %d es entero, y %c es un caracter<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> num<span class="sy0">,</span> letra<span class="br0">&#41;</span>;</pre>
+<p>
+Si quisieramos desarrollar una función como <em>printf</em> e integrarla a nuestro ejemplo de fuentes, tendríamos que generar una nueva función:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> mi_printf <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span> screen<span class="sy0">,</span> SDL_Surface <span class="sy0">*</span> ima<span class="sy0">,</span> SDL_Rect <span class="sy0">*</span> fuentes<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span> formato<span class="sy0">,</span> ...<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        va_list lista;
+        <span class="kw4">char</span> buffer <span class="br0">&#91;</span><span class="nu0">1024</span><span class="br0">&#93;</span>;
+&nbsp;
+        va_start <span class="br0">&#40;</span>lista<span class="sy0">,</span> formato<span class="br0">&#41;</span>;
+        vsprintf <span class="br0">&#40;</span>buffer<span class="sy0">,</span> formato<span class="sy0">,</span> lista<span class="br0">&#41;</span>;
+&nbsp;
+        imprimir_palabra <span class="br0">&#40;</span>screen<span class="sy0">,</span> ima<span class="sy0">,</span> fuentes<span class="sy0">,</span> x<span class="sy0">,</span> y<span class="sy0">,</span> buffer<span class="br0">&#41;</span>;
+&nbsp;
+        va_end <span class="br0">&#40;</span>lista<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+Note que declaramos una función con argumentos variables, de ahí los tres puntos (…) a continuación de <em>char * formato</em>.
+</p>
+
+<p>
+La estructura <em>va_list</em> nos permite gestionar una lista de argumentos variables, para lo cual necesitaremos llamar a <em>va_start</em> indicándole el último argumento conocido antes de los argumentos variables (en este caso el último argumento es <em>char * formato</em>).
+</p>
+
+<p>
+La función <em>vsprintf</em> realizará el trabajo de interpretar una cadena de formatos, por ejemplo <em>“número: %d”</em>, y colocar el resultado en el primer argumento <em>buffer</em>. Esta función es similar a <em>printf</em>, pero en lugar de imprimir el resultado en pantalla lo almacena en una cadena de caracteres.
+</p>
+
+<p>
+Los argumentos variables se pueden procesar mediante una serie de macros como <em>va_start</em>, <em>va_arg</em> y <em>va_end</em>, definidas en la cabecera <em>stdarg.h</em>. Puede consultar las páginas de manual ejecutando <em>man va_start</em> y <em>man printf</em> en su sistema GNU/Linux para mas detalles.
+</p>
+
+<p>
+Pruebe añadir la nueva función al código del ejemplo 3 e intente llamar a:
+
+</p>
+<pre class="code c"><span class="kw4">int</span> vidas <span class="sy0">=</span> <span class="nu0">3</span>;
+&nbsp;
+mi_printf <span class="br0">&#40;</span>screen<span class="sy0">,</span> ima<span class="sy0">,</span> fuentes<span class="sy0">,</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">10</span><span class="sy0">,</span> <span class="st0">&quot;vidas: %d&quot;</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">&#41;</span>;</pre>
+</div>
+<!-- SECTION "Acerca de printf" [10739-12976] -->
+<h2><a name="conclusiones" id="conclusiones">Conclusiones</a></h2>
+<div class="level2">
+
+<p>
+
+Si bien existen bibliotecas como SDL_TTF que nos facilitan el manejo de fuentes, cuando implementamos nuestro propio sistema de fuentes aprendemos algo más acerca del manejo de cadenas y superficies.
+</p>
+
+<p>
+De todas manetras, muchos de los problemas que analizamos aquí se le presentarán aunque utilice SDL_TTF o similares. Recuerde que aún no resolvemos los saltos de línea, un reemplazo para scanf, métodos de alineación (centrado, derecha, izquierda …) y demás. Estas rutinas quedarán pendientes para usted, puede que su videojuego las necesite.
+
+</p>
+
+</div>
+<!-- SECTION "Conclusiones" [12977-13556] -->
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia Creative Commons. Los programas de ejemplo se distribuyen bajo la licencia <acronym title="GNU General Public License">GPL</acronym>. 
+
+</p>
+
+</div>
+<!-- SECTION "Licencia" [13557-] --></div>
+</body>
+</html>

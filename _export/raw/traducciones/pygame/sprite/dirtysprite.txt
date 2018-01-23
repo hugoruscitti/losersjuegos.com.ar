@@ -1,0 +1,70 @@
+====== DirtySprite ======
+
+/*
+a more featureful subclass of Sprite with more attributes
+*/
+
+Una subclase de ''Sprite'' con mas características y funcionalidad.
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:dirtysprite#DirtySprite]]
+</box>
+
+
+===== DirtySprite =====
+
+
+<code python>
+pygame.sprite.DirtySprite(*groups): return DirtySprite
+</code>
+
+/*
+Extra DirtySprite attributes with their default values:
+*/
+
+Esta es una lista de todos los atributos adicionales de
+''DirtySprite'' con sus valores por defecto.
+
+==== dirty = 1 ====
+
+/*
+  * if set to 1, it is repainted and then set to 0 again 
+  * if set to 2 then it is always dirty ( repainted each frame, flag is not reset)
+  * 0 means that it is not dirty and therefor not repainted again
+*/
+
+  * Si vale 1, el sprite de dibujará y luego el atributo se colocará en 0 otra vez.
+  * Si vale 2 entonces el sprite siempre se dibujará (en cada cuadro, el indicador no se colocará a cero).
+  * 0 significa que no representa cambios por lo tanto no se pintará nuevamente.
+
+==== blendmode = 0 ====
+
+/*
+  * its the special_flags argument of blit, blendmodes
+*/
+
+  * Es el argumento ''special_flags'' de la operación ''blit'', ''blendmodes''.
+
+==== source_rect = None ====
+
+/*
+  * source rect to use, remember that it is relative to topleft (0,0) of self.image
+*/
+
+  * rectángulo origen que se usará, recuerde que esta área será relativa a la esquina superior izquierda (0,0) del atributo ''self.image''.
+
+==== visible = 1 ====
+
+/*
+  * normally 1, if set to 0 it will not be repainted (you must set it dirty too to be erased from screen)
+*/
+
+  * normalmente vale 1, si se define a 0 no se volverá a dibujar (también debe definir el atributo ''dirty'' para limpiarlo de la pantalla).
+
+==== layer = 0 ====
+
+/*
+  * (READONLY value, it is read when adding it to the LayeredRenderGroup, for details see doc of LayeredRenderGroup)
+*/
+
+  * Es un valor de solo lectura que se lee cuando se agrega a un grupo de la clase ''LayeredRenderGroup'', par mas detalles vea la documentación de ''LayeredRenderGroup''.

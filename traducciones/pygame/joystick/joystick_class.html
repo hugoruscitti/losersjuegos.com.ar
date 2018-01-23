@@ -1,0 +1,802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    Joystick    [Losersjuegos]
+  </title>
+<link rel="stylesheet" type="text/css" media="screen" href="../../../lib/tpl/sidebar/cabecera.css"/>
+  <meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:54+0300" />
+<meta name="keywords" content="traducciones,pygame,joystick,joystick_class" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../index.html" />
+<link rel="contents" href="joystick_class-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../feed.php-mode=list&amp;ns=traducciones-pygame-joystick.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../../_export/xhtml/traducciones/pygame/joystick/joystick_class.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../_export/raw/traducciones/pygame/joystick/joystick_class.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+
+  <link rel="shortcut icon" href="../../../lib/tpl/sidebar/images/ico.png" />
+  <script type="text/javascript" src="../../../lib/tpl/sidebar/dtree.js"></script>
+  <link rel="StyleSheet" href="../../../lib/tpl/sidebar/dtree.css" type="text/css" />
+
+
+  
+</head>
+
+<body>
+  <div class="dokuwiki">
+  
+  
+<div id="cabecera">
+    <a href='../../../index.html'><img id='logo1' alt='' src="../../../lib/tpl/sidebar/ima_cabecera/logo_1.png" width="286" height="50" name="logo1" /></a>
+
+
+    <div id="navi">
+        <ul>
+            <li id='actual'><a href="../../../index.html">Web</a></li>
+            <li><a href="../../../foro/index.html">Foro</a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class='barrasuperior'>
+      <span class="bchead">Tu estás aquí: </span><a href="../../../principal.html"  title="principal">¡Bienvenido!</a> &raquo; <a href="../../../traducciones.html"  title="traducciones">Traducciones</a> &raquo; <a href="../../pygame.html"  title="traducciones:pygame">pygame</a> &raquo; <a href="joystick.html"  title="traducciones:pygame:joystick:joystick">Joystick</a> &raquo; <a href="joystick_class.html"  title="traducciones:pygame:joystick:joystick_class">Joystick</a>    </div>
+
+
+      <div class='barra_botones'>
+
+
+        <div class='caja'>
+            <h5>Usuario</h5>
+                                    <form class="button btn_login" method="get" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="37c9187da1adb1dadd25d5de37249fc6" /><input type="submit" value="Entrar" class="button" title="Entrar" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>Buscar páginas</h5>
+<form action="../../../index.html" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" size="12" accesskey="f" name="id" class="edit" title="[ALT+F]" /><input type="submit" value="Buscar" class="button" title="Buscar" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+        </div>
+
+        <div class='caja'>
+            <h5>Esta Pagina</h5>
+
+            <form class="button btn_source" method="post" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="submit" value="Ver fuente" class="button" accesskey="v" title="Ver fuente [V]" /></div></form>            <form class="button btn_revs" method="get" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Revisiones anteriores" class="button" accesskey="o" title="Revisiones anteriores [O]" /></div></form>            <form class="button btn_backlink" method="get" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="backlink" /><input type="submit" value="Enlaces anteriores" class="button" title="Enlaces anteriores" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>General</h5>
+
+            <form class="button btn_index" method="get" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Indice" class="button" accesskey="x" title="Indice [X]" /></div></form>            <form class="button btn_recent" method="get" action="joystick_class.html"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Cambios recientes" class="button" accesskey="r" title="Cambios recientes [R]" /></div></form>        </div>
+
+    </div>
+
+  
+  
+  
+  <div id='sidebar'>
+<div class="dtree">
+
+<script type="text/javascript">
+
+    d = new dTree('d');
+
+
+
+    d.add(0, -1, '');
+
+    d.add(1, 0, 'Principal', '/principal', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png');
+
+        d.add(2, 1, 'Noticias',     '/principal/noticias');
+        d.add(3, 1, 'Anteriores',   '/principal/anteriores');
+        d.add(4, 1, 'Indice',       '/principal/indice');
+
+
+
+
+
+    d.add(5, 0, 'Comunidad', '/comunidad', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png');
+
+        d.add(6, 5, 'Integrantes',      '/comunidad/integrantes');
+        d.add(7, 5, 'Como participar',  '/comunidad/comoparticipar');
+        d.add(8, 5, 'Contacto',         '/comunidad/contactenos');
+        d.add(9, 5, 'Difundir',         '/comunidad/difundir');
+        d.add(10, 5, 'Consejos',        '/comunidad/consejos');
+        d.add(11, 5, 'To Do',           '/comunidad/todo');
+
+
+
+
+
+    d.add(12, 0, 'Juegos', '/juegos', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png');
+
+
+        d.add(13, 12, 'irobot',     '/juegos/irobotgame');
+        d.add(14, 12, 'ceferino',   '/juegos/ceferino');
+        d.add(15, 12, 'asadetris', '/juegos/asadetris');
+        d.add(16, 12, 'asadetrismobile', '/juegos/asadetrismobile');
+        d.add(17, 12, 'volleyball', '/juegos/volleyball');
+        d.add(18, 12, 'pongix',     '/juegos/pongix');
+        d.add(19, 12, 'aqbubble',   '/juegos/aqbubble');
+        d.add(20, 12, 'chanta',     '/juegos/chanta');
+        d.add(21, 12, 'soccerd',    '/juegos/soccerd');
+        d.add(99, 12, 'ceferinomobile', '/juegos/ceferinomobile');
+
+
+    d.add(50, 0, 'Software', '/software', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/software.png',
+            '/lib/tpl/sidebar/iconos/secciones/software.png');
+
+        d.add(53, 50, 'Pilas', '/software/pilas');
+        d.add(52, 50, 'Gimp Pugins', '/software/gimp');
+        d.add(51, 50, 'Live DVD', '/software/livecd');
+
+
+
+
+
+
+    d.add(22, 0, 'Referencia', '/referencia', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png');
+
+
+        d.add(23, 22, 'Ejemplos',   '/referencia/ejemplos');
+        d.add(24, 22, 'Videos',     '/referencia/videos');
+        d.add(25, 22, 'Articulos',  '/referencia/articulos');
+        d.add(26, 22, 'Libros',     '/referencia/libros');
+        d.add(27, 22, 'Apuntes',    '/referencia/apuntes');
+
+
+    d.add(28, 0, 'Traducciones', '/traducciones', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png');
+
+        d.add(29, 28, 'pygame',   '/traducciones/pygame');
+
+ 
+
+    d.add(30, 0, 'Galeria', '/galeria', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png');
+
+
+
+        d.add(31, 30, 'artisticas', '/galeria/artisticas');
+        d.add(32, 30, 'fondos',     '/galeria/fondos');
+        d.add(33, 30, 'sprites',    '/galeria/sprites');
+        d.add(34, 30, 'capturas',   '/galeria/capturas');
+        d.add(35, 30, 'bocetos',    '/galeria/bocetos');
+
+
+
+    d.add(36, 0, 'Links', '/links', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/links.png',
+            '/lib/tpl/sidebar/iconos/secciones/links.png');
+
+
+
+    d.config.folderLinks = true;
+    d.config.useLines = false;
+    d.config.useSelection = true;
+    document.write(d);
+
+</script>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<span style='color: gray; font-size: 8pt'>
+Menu realizado con <a href='http://destroydrop.com/javascripts/tree/default.html'>dTree</a>.
+</span>
+
+
+<!-- no cachefile used, but created -->
+</div>    <div class="page_with_sidebar">
+      <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#joystick" class="toc">Joystick</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#joystick1" class="toc">Joystick</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#quit" class="toc">quit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_init" class="toc">get_init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_id" class="toc">get_id</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_name" class="toc">get_name</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_numaxes" class="toc">get_numaxes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_axis" class="toc">get_axis</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_numballs" class="toc">get_numballs</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_ball" class="toc">get_ball</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_numbuttons" class="toc">get_numbuttons</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_button" class="toc">get_button</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_numhats" class="toc">get_numhats</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_hat" class="toc">get_hat</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="joystick" id="joystick">Joystick</a></h1>
+<div class="level1">
+
+
+
+<p>
+Genera un nuevo objeto Joystick.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../joystick.html#joystick" class="wikilink1" title="traducciones:pygame:joystick">Joystick</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#init" class="wikilink1" title="traducciones:pygame:joystick">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#quit" class="wikilink1" title="traducciones:pygame:joystick">quit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_init" class="wikilink1" title="traducciones:pygame:joystick">get_init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_id" class="wikilink1" title="traducciones:pygame:joystick">get_id</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_name" class="wikilink1" title="traducciones:pygame:joystick">get_name</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_numaxes" class="wikilink1" title="traducciones:pygame:joystick">get_numaxes</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_axis" class="wikilink1" title="traducciones:pygame:joystick">get_axis</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_numballs" class="wikilink1" title="traducciones:pygame:joystick">get_numballs</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_ball" class="wikilink1" title="traducciones:pygame:joystick">get_ball</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_numbuttons" class="wikilink1" title="traducciones:pygame:joystick">get_numbuttons</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_button" class="wikilink1" title="traducciones:pygame:joystick">get_button</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_numhats" class="wikilink1" title="traducciones:pygame:joystick">get_numhats</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../joystick.html#get_hat" class="wikilink1" title="traducciones:pygame:joystick">get_hat</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+
+<h2><a name="joystick1" id="joystick1">Joystick</a></h2>
+<div class="level2">
+
+
+
+<p>
+Genera un nuevo objeto Joystick.
+</p>
+<pre class="code python">pygame.<span class="me1">joystick</span>.<span class="me1">Joystick</span><span class="br0">&#40;</span><span class="kw2">id</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Joystick</pre>
+
+
+<p>
+Genera un nuevo objeto Joystick para acceder al dispositivo físico. El
+argumento <code>id</code> debe ser un valor de 0 a <code>pygame.joystick.get_count() -1</code>.
+</p>
+
+
+
+<p>
+Necesita llamar al método <a href="../joystick.html#init" class="wikilink1" title="traducciones:pygame:joystick">init()</a> del Joystick para acceder
+a la mayoría de los métodos del Joystick. Este método está separado
+de ello para asegurarse que se inicializa el módulo joystick. El estado y
+valores para los objetos Joystick se puede compartir cuando se generan
+múltiples objetos Joystick a partir del mismo dispositivo (por ejemplo, si
+tienen el mismo identificador <code>ID</code>).
+</p>
+
+
+
+<p>
+El objeto Joystick le permite obtener información acerca de los
+controles en el dispositivo de Joystick. La cola de eventos
+comenzará a recibir eventos de esta entrada una vez que el
+dispositivo esté inicializado.
+</p>
+
+
+
+<p>
+Puede llamar a las funciones <code>Joystick.get_name()</code> y <code>Joystick.get_id()</code>
+sin inicializar el objeto Joystick.
+</p>
+
+</div>
+
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa el Joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El Joystick se debe inicializar para obtener la mayor información
+acerca de los controles. Cuando el Joystick se inicializa la cola
+de eventos de pygame recibirá la entrada de comandos del Joystick.
+</p>
+
+
+
+<p>
+Es seguro llamar a este método mas de una vez.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="quit" id="quit">quit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Deshabilita el Joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Este método deshabilita el Joystick. Después de esto, la cola de eventos
+de pygame no recibirá mas eventos del dispositivo.
+</p>
+
+
+
+<p>
+Es seguro llamar a esta función mas de una vez.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.quit" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.quit">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_init" id="get_init">get_init</a></h2>
+<div class="level2">
+
+
+
+<p>
+
+Consulta si el Joystick está incializado.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si ya se ha llamado al método 
+<a href="../joystick.html#init" class="wikilink1" title="traducciones:pygame:joystick">init()</a> en este objeto.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_id" id="get_id">get_id</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el identificador del Joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_id</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna en número identificador que representa este dispositivo. Este
+valor es el mismo que se ha indicado al constructor del Joystick(). Este
+método se puede llamar de forma segura mientras el Joystick no esté
+inicializado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_id" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_id">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_name" id="get_name">get_name</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el nombre de sistema del Joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_name</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw3">string</span></pre>
+
+
+<p>
+Retorna el nombre de sistema para este dispositivo de Joystick. Se 
+desconoce que nombre dará el sistema al Joystick, aunque debería ser
+un nombre único que identifica al dispositivo. Este método se puede
+llamar con seguridad mientras el Joystick no esté inicializado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_name" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_name">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_numaxes" id="get_numaxes">get_numaxes</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el número de mandos de posición de un joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_numaxes</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna el número de mandos de posición de un Joystick. Generalmente
+será de mandos para la posición (horizontal y vertical). Controles
+como aletas de avión o frenos se manejan como mandos de posición adicionales.
+</p>
+
+
+
+<p>
+Los eventos <code>pygame.JOYAXISMOTION</code> estarán en el rango de -1.0 a 1.0. Un
+valor como 0.0 significa que la posición de movimiento está centrada. Los
+controles tradicionales generarán eventos con valores como -1, 0 o 1 sin
+valores intermedios. Los joysticks antiguos y analógicos no siempre
+usarán el rango completo de -1 a 1, y el valor del centro será algún
+área cerca de 0. Los joysticks analógicos generalmente son imprecisos, lo
+que generará un montón de eventos de movimiento muy pequeños.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numaxes" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numaxes">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_axis" id="get_axis">get_axis</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la posición actual.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_axis</span><span class="br0">&#40;</span>axis_number<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">float</span></pre>
+
+
+<p>
+Retorna la posición actual del control de un joystick. El valor estará
+en el rengo de -1 a 1, donde un valor como 0 será el centro. Seguramente
+tendrá que tener en cuenta cierta tolerancia en estos valores para
+manejar cualquier vibración.
+</p>
+
+<p>
+FIX
+</p>
+
+
+
+<p>
+El parámetro <code>axis_number</code> debe ser un número entero desde 0 a <code>get_numaxes() - 1</code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_axis" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_axis">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_numballs" id="get_numballs">get_numballs</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el número de <em>trackballs</em> en un Joystick.
+</p>
+<pre class="code">
+Joystick.get_numballs(): return int
+</pre>
+
+
+
+<p>
+Retorna el número de dispositivos de <em>trackballs</em> en un Joystick. Estos
+dispositivos funcionan de forma similar a un mouse aunque no tienen
+posición absoluta, solo tienen cantidades relativas de movimiento.
+</p>
+
+
+
+<p>
+El evento <code>pygame.JOYBALLMOTION</code> se enviará cuando gire
+el dispositivo de <em>trackball</em>. Este evento reportará la cantidad de movimiento
+del <em>trackball</em>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numballs" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numballs">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_ball" id="get_ball">get_ball</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la posición relativa del <em>trackball</em>.
+</p>
+<pre class="code">
+Joystick.get_ball(ball_number): return x, y
+</pre>
+
+
+
+<p>
+Retorna el movimiento relativo de un <em>trackball</em> de Joystick. El valor
+retornado es un par (x, y) almacenando el movimiento relativo desde la
+última llamada a <code>get_ball</code>.
+</p>
+
+
+
+<p>
+El número indicado en el parámetro <code>ball_number</code> debe ser un
+número entero entre 0 y <code>get_numballs() -1</code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_ball" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_ball">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_numbuttons" id="get_numbuttons">get_numbuttons</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el número de botones de un joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_numbuttons</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna el número de botones que se pueden pulsar en un joystick. Estos botones
+tienen un estado booleano (activado o desactivado).
+</p>
+
+
+
+<p>
+Los botones generan eventos <code>pygame.JOYBUTTONDOWN</code> y <code>pygame.JOYBUTTONDOWN</code>
+cuando se pulsan o sueltan.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numbuttons" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numbuttons">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_button" id="get_button">get_button</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el estado actual de un botón.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_button</span><span class="br0">&#40;</span>button<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna el estado actual de un botón de joystick.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_button" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_button">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_numhats" id="get_numhats">get_numhats</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el número de controles de dirección en un joystick.
+</p>
+<pre class="code python">Joystick.<span class="me1">get_numhats</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna el número de direccionales de posición en un joystick. Los
+direccionales de un joystick  son como pequeñas flechas que tienen
+dos direcciones.
+</p>
+
+
+
+<p>
+Los eventos <code>pygame.JOYHATMOTION</code> se generan cuando los direccionales
+cambian de posición. El atributo <code>position</code> para el evento contiene un
+par de valores que pueden ser -1, 0 o 1. Una posición como (0, 0) significa
+que el direccional está centrado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numhats" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_numhats">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="get_hat" id="get_hat">get_hat</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la posición de un direccional del joystick
+</p>
+<pre class="code python">Joystick.<span class="me1">get_hat</span><span class="br0">&#40;</span>hat_number<span class="br0">&#41;</span>: <span class="kw1">return</span> x, y</pre>
+
+
+<p>
+Retorna  la posición actual de un direccional. La posición se da como
+dos valores que representan la posición X e Y del direccional. (0, 0)
+representa el centro. Un valor de -1 significa izquiera o abajo y
+un valor como 1 significa derecha o arriba. Entonces, (-1, 0) significa
+izquierda, (1, 0) significa derecha, (0, 1) significa arriba, (1, 1) significa
+arriba a la derecha etc.
+</p>
+
+
+
+
+
+<p>
+Este valor es entero, cada coordenada puede ser -1, 0 o 1 pero nunca
+un valor intermedio.
+</p>
+
+
+
+<p>
+El número de direccional debe ser un número entre 0 y <code>get_numhats() -1</code>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_hat" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.Joystick.get_hat">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+        <div style='float: right; margin: 3px;'>
+            <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Subir" onclick="window.scrollTo(0, 0)" title="Subir" /></a>        </div>
+
+    <div class="meta">
+      <div class="doc">
+        traducciones/pygame/joystick/joystick_class.txt &middot; Última modificación: 20/01/2009 a las 17:40 (editor externo)      </div>
+    </div>
+
+   
+
+<div id="pie">
+
+<ul>
+	<li class='contactenos'><a 
+	href='../../../comunidad/contactenos.html'>Contáctenos</a></li>
+	
+	<li class='cc'><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Licencia de uso para el sitio</a></li>
+
+	<li class='foro'><a 
+	href='../../../foro/index.html'>Foro de mensajes</a></li>
+
+	<li class='comunidad'><a 
+	href='../../../comunidad.html'>Sobre el grupo ...</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+Este sitio funciona sobre el motor wiki de <a
+    href='http://wiki.splitbrain.org/wiki:dokuwiki'>DokuWiki</a>.
+<br/>
+&copy; 2003-2008 Hugo Ruscitti
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="../../../lib/exe/indexer.php-id=traducciones-pygame-joystick-joystick_class&amp;1511025157.gif" width="1" height="1" alt=""  /></div>
+</body>
+</html>

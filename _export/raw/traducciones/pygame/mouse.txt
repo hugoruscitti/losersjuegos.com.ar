@@ -1,0 +1,353 @@
+====== mouse ======
+
+/*
+pygame module to work with the mouse
+*/
+
+Módulo de pygame para utilizar el mouse.
+
+<box 90%>
+  * [[#get_pressed]]
+  * [[#get_pos]]
+  * [[#get_rel]]
+  * [[#set_pos]]
+  * [[#set_visible]]
+  * [[#get_focused]]
+  * [[#set_cursor]]
+  * [[#get_cursor]]
+</box>
+
+/*
+The mouse functions can be used to get the current state of the mouse device.
+These functions can also alter the system cursor for the mouse.
+*/
+
+Las funciones de este módulo se pueden usar para obtener el estado
+actual del dispositivo de mouse. Estas funciones también pueden
+alterar el cursor del sistema.
+
+/*
+When the display mode is set, the event queue will start receiving mouse
+events. The mouse buttons generate pygame.MOUSEBUTTONDOWN and
+pygame.MOUSEBUTTONUP events when they are pressed and released. These
+events contain a button attribute representing which button was pressed.
+The mouse wheel will generate pygame.MOUSEBUTTONDOWN events when rolled.
+The button will be set to 4 when the wheel is rolled up, and to button
+5 when the wheel is rolled down. Anytime the mouse is moved it generates
+a pygame.MOUSEMOTION event. The mouse movement is broken into small
+and accurate motion events. As the mouse is moving many motion events will
+be placed on the queue. Mouse motion events that are not properly cleaned
+from the event queue are the primary reason the event queue fills up.
+*/
+
+Cuando se define el modo de video, la cola de eventos comenzará a recibir
+eventos de mouse. Los botones del mouse generan los eventos
+''pygame.MOUSEBUTTONDOWN'' y ''pygame.MOUSEBUTTONUP''. Estos eventos
+contienen un atributo ''button'' que representa el botón que se
+ha pulsado. La rueda del mouse generará eventos ''pygame.MOUSEBUTTONDOWN'',
+el atributo ''button'' será 4 si la rueda gira hacia arriba y 5 cuando
+la rueda gire hacia abajo. Se generará el evento ''pygame.MOUSEMOTION''
+en cualquier momento que se mueva el mouse. El movimiento de mouse
+se divide en pequeños y precisos eventos ''MOUSEMOTION''. Los
+eventos de movimiento que no se eliminan de la cola de eventos
+apropiadamente son la razón principal de que la cola de eventos se
+llene.
+
+/*
+If the mouse cursor is hidden, and input is grabbed to the current display
+the mouse will enter a virtual input mode, where the relative movements
+of the mouse will never be stopped by the borders of the screen. See the
+functions pygame.mouse.set_visible() and pygame.event.set_grab() to get
+this configured.
+*/
+
+
+El mouse entrará en modo virtual si se oculta el cursor y se define
+la entrada del mismo como exclusiva de la ventana. Este modo ocasiona
+que los movimiento relativos no se detendrán en los bordes de la pantalla. Vea
+las funciones ''pygame.mouse.set_visible()'' y ''pygame.event.set_grab()''
+para configurarlo así.
+
+
+===== get_pressed =====
+
+/*
+get the state of the mouse buttons
+*/
+
+Obtiene el estado de los botones del mouse.
+
+
+<code python>
+pygame.mouse.get_pressed(): return (button1, button2, button3)
+</code>
+
+
+/*
+Returns a sequence of booleans representing the state of all the mouse
+buttons. A true value means the mouse is currently being pressed at the
+time of the call.
+*/
+
+Retorna una secuencia de valores booleanos representado el estado de todos
+los botones del mouse. Un valor ''True'' significa que el botón está
+pulsado al momento de hacer la llamada a esta función.
+
+/*
+Note, to get all of the mouse events it is better to use either 
+pygame.event.wait() or pygame.event.get() and check all of those events
+to see if they are MOUSEBUTTONDOWN, MOUSEBUTTONUP, or MOUSEMOTION.
+*/
+
+Nota: para obtener todos los eventos del mouse es mejor usar
+''pygame.event.wait()'' o bien ''pygame.event.get()'' y consultar
+todos esos eventos para ver si estos son ''MOUSEBUTTONDOWN'', ''MOUSEBUTTONUP'' o
+''MOUSEMOTION''.
+
+/*
+Note, that on X11 some XServers use middle button emulation.  When you click
+both buttons 1 and 3 at the same time a 2 button event can be emitted.
+*/
+
+Note que en X11 algunos servidores X usan emulación del botón central. 
+Se emitirá un evento del botón 2 cuando pulse al mismo tiempo los botones 1 y 3.
+
+/*
+Note, remember to call pygame.event.get() before this function.  Otherwise 
+it will not work.
+*/
+
+Recuerde llamar a la función ''pygame.event.get()'' antes de usar esta
+función. De otra forma no funcionará.
+
+  * [[pythonexample>pygame.mouse.get_pressed|buscar código donde se use esta función.]]
+
+===== get_pos =====
+
+/*
+get the mouse cursor position
+*/
+
+Obtiene la posición del cursor de mouse.
+
+<code python>
+pygame.mouse.get_pos(): return (x, y)
+</code>
+
+
+/*
+Returns the X and Y position of the mouse cursor. The position is relative
+the the top-left corner of the display. The cursor position can be located
+outside of the display window, but is always constrained to the screen.
+*/
+
+Retorna la posición X e Y del cursor de mouse. La posición será relativa
+a la esquina superior izquierda de la pantalla. El cursor podría
+estar localizado fuera de la ventana, aunque esta función solo
+retornará la posición si está dentro de la ventana.
+
+  * [[pythonexample>pygame.mouse.get_pos|buscar código donde se use esta función.]]
+
+===== get_rel =====
+
+/*
+get the amount of mouse movement
+*/
+
+Obtiene la cantidad de movimiento del mouse.
+
+<code python>
+pygame.mouse.get_rel(): return (x, y)
+</code>
+
+
+/*
+Returns the amount of movement in X and Y since the previous call to this
+function. The relative movement of the mouse cursor is constrained to the
+edges of the screen, but see the virtual input mouse mode for a way around
+this.  Virtual input mode is described at the top of the page.
+*/
+
+Retorna la cantidad de movimiento en X e Y desde la llamada previa a esta
+función. El movimiento relativo del cursor de mouse está restringido
+a los bordes de la pantalla, aunque hay una forma de evitar esto usando
+un modo de mouse virtual. Este modo virtual se describe al principio
+de la página.
+
+
+  * [[pythonexample>pygame.mouse.get_rel|buscar código donde se use esta función.]]
+
+===== set_pos =====
+
+/*
+set the mouse cursor position
+*/
+
+Define la posición del cursor.
+
+<code python>
+pygame.mouse.set_pos([x, y]): return None
+</code>
+
+
+/*
+Set the current mouse position to arguments given. If the mouse cursor is
+visible it will jump to the new coordinates. Moving the mouse will generate
+a new pygaqme.MOUSEMOTION event.
+*/
+
+
+Define la posición actual del mouse. Si el cursor del mouse está visible
+entonces //saltará// a la nueva posición inmediatamente. Mover el
+mouse generará un nuevo evento ''pygame.MOUSEMOTION''.
+
+  * [[pythonexample>pygame.mouse.set_pos|buscar código donde se use esta función.]]
+
+===== set_visible =====
+
+/*
+hide or show the mouse cursor
+*/
+
+Oculta o muestra el cursor del mouse.
+
+<code python>
+pygame.mouse.set_visible(bool): return bool
+</code>
+
+
+/*
+If the bool argument is true, the mouse cursor will be visible. This will
+return the previous visible state of the cursor.
+*/
+
+El cursor del mouse será visible si el argumento ''bool'' es ''True''. Esta
+función retornará el estado de visibilidad anterior del cursor.
+
+
+  * [[pythonexample>pygame.mouse.set_visible|buscar código donde se use esta función.]]
+
+
+===== get_focused =====
+
+/*
+check if the display is receiving mouse input
+*/
+
+Consulta si la ventana está recibiendo la entrada del mouse.
+
+<code python>
+pygame.mouse.get_focused(): return bool
+</code>
+
+
+/*
+Returns true when pygame is receiving mouse input events
+(or, in windowing terminology, is "active" or has the "focus").
+*/
+
+Retorna ''True'' cuando pygame está recibiendo los eventos
+del mouse (o, en la terminología de las ventanas, está //activo//
+o tiene //foco//).
+
+/*
+This method is most useful when working in a window.
+By contrast, in full-screen mode, this method
+always returns true.
+*/
+
+Esté método es mas útil cuando funciona en una ventana. En cambio, en
+un modo de pantalla completa, este método siempre retornará ''True''.
+
+
+/*
+Note: under MS Windows, the window that has the mouse focus
+also has the keyboard focus. But under X-Windows, one window
+can receive mouse events and another receive keyboard events.
+pygame.mouse.get_focused() indicates whether the pygame
+window receives mouse events.
+*/
+
+Note que en sistemas MS Windows, la ventana que tiene el
+foco del mouse también tendrá el foco del teclado. Pero bajo
+sistemas el servidor X (GNU/Linux por ejemplo), una ventana
+podría recibir los eventos del mouse y otra ventana los
+eventos del teclado. La función ''pygame.mouse.get_focused()''
+indica que ventana de pygame recibe los eventos del mouse.
+
+
+  * [[pythonexample>pygame.mouse.get_focused|buscar código donde se use esta función.]]
+
+
+===== set_cursor =====
+
+/*
+set the image for the system mouse cursor
+*/
+
+Define la imagen para el cursor del mouse de sistema.
+
+<code python>
+pygame.mouse.set_cursor(size, hotspot, xormasks, andmasks): return None
+</code>
+
+
+/*
+When the mouse cursor is visible, it will be displayed as a black and white
+bitmap using the given bitmask arrays. The size is a sequence containing
+the cursor width and height. Hotspot is a sequence containing the cursor
+hotspot position. xormasks is a sequence of bytes containing the cursor
+xor data masks. Lastly is andmasks, a sequence of bytes containting the
+cursor bitmask data.
+*/
+
+Cuando el cursor del mouse está visible, se mostrará como un mapa
+de bits en blanco y negro usando un vector de bits. El argumento
+''size'' es una secuencia que contiene el ancho y alto del cursor, ''hotspot''
+es una secuencia que contiene el punto de control, ''xormasks'' es
+una secuencia de bytes que contiene la máscara de datos //xor//. Por
+último ''andmasks'' es una secuencia de bytes que contiene
+los datos de bits del cursor.
+
+
+/*
+Width must be a multiple of 8, and the mask arrays must be the correct
+size for the given width and height. Otherwise an exception is raised.
+*/
+
+El ancho tiene que ser múltiplo de 0, y los vectores deben tener
+el tamaño correcto para el ancho y alto indicado. De otra forma
+se lanzará una excepción.
+
+/*
+See the pygame.cursor module for help creating default and custom 
+masks for the system cursor.
+*/
+
+Vea el módulo ''pygame.cursor'' para obtener ayuda sobre como
+crear vectores personalizados o por defecto para cursores del
+sistema.
+
+  * [[pythonexample>pygame.mouse.set_cursor|buscar código donde se use esta función.]]
+
+===== get_cursor =====
+
+/*
+get the image for the system mouse cursor
+*/
+
+Obtiene la imagen para el cursor del mouse de sistema.
+
+<code python>
+pygame.mouse.get_cursor(): return (size, hotspot, xormasks, andmasks)
+</code>
+
+/*
+Get the information about the mouse system cursor. The return value is the same data
+as the arguments passed into pygame.mouse.set_cursor(). */
+
+Obtiene información acerca del cursor de sistema del mouse. El
+valor de retorno tiene la misma información que los argumentos
+indicados en ''pygame.mouse.set_cursor()''.
+
+  * [[pythonexample>pygame.mouse.get_cursor|buscar código donde se use esta función.]]

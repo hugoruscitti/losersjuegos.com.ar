@@ -1,0 +1,394 @@
+====== PixelArray ======
+
+/*
+pygame object for direct pixel access of surfaces
+*/
+
+Objeto de pygame para obtener acceso directo a los pixels de las
+superficies.
+
+<box 90%>
+  * [[:traducciones:pygame:pixelarray#PixelArray]]
+  * [[:traducciones:pygame:pixelarray#surface]]
+  * [[:traducciones:pygame:pixelarray#make_surface]]
+  * [[:traducciones:pygame:pixelarray#replace]]
+  * [[:traducciones:pygame:pixelarray#extract]]
+  * [[:traducciones:pygame:pixelarray#compare]]
+</box>
+
+
+===== PixelArray =====
+
+<code python>
+pygame.PixelArray(Surface): return PixelArray
+</code>
+
+/*
+The PixelArray wraps up a Surface and provides a direct 2D array access
+to its pixels using the surface its rows as first and its columns as
+second axis. It supports slicing, row and pixel manipluation, slicing
+and slice assignments while inplace operations such as addition,
+subtraction, multiplication, division and so forth are not allowed.
+*/
+
+La clase ''PixelArray'' envuelve una superficie y provee acceso
+directo a sus pixels, usando una matriz de dos dimensiones. Soporta
+operaciones como ''slicing'' (tajadas o rebanadas), manipulación
+de pixel o fila y asignaciones aunque no se permiten las operaciones
+de suma, resta, multiplicación o división...
+
+/*
+While it is possible to assign both, integer color values and RGB(A)
+color tuples, the PixelArray will only use integers for the color
+representation. Thus, checking for certain colors has to be done using
+the Surface.map_rgb() method of the surface, the PixelArray was created
+for.
+*/
+
+Si bien es posible asignar tanto colores en valor entero como
+tuplas RGB(A), la clase ''PixelArray'' utilizará internamente enteros para
+la representación de elementos. Por ello, la consulta de ciertos
+colores se debe realizar usando el método ''Surface.map_rgb()''
+de la superficie.
+
+<code python>
+pxarray = pygame.PixelArray (surface)
+# Check, if the first pixel at the topleft corner is blue
+if pxarray[0][0] == surface.map_rgb ((0, 0, 255)):
+    ...
+</code>
+
+/*
+Pixels can be manipulated using integer values or color tuples.
+*/
+
+Los pixels se pueden manipular usando valores enteros o tuplas
+con las componentes de color.
+
+<code python>
+pxarray[x][y] = 0xFF00FF
+pxarray[x][y] = (255, 0, 255)
+</code>
+
+/*
+If you operate on a slice, you also can use arbitrary sequences or other
+PixelArray objects to modify the pixels. They have to match the size of
+the PixelArray however.
+*/
+
+Si está trabajando sobre una rebanada (o //slice//) puede usar
+secuencias arbitrarias u otros objetos ''PixelArray'' para modificar
+los pixels. De todas formas tienen que coincidir con el tamaño
+del objeto.
+
+/*
+<code python>
+pxarray[a:b] = 0xFF00FF                   # set all pixels to 0xFF00FF
+
+pxarray[a:b] = (0xFF00FF, 0xAACCEE, ... ) # first pixel = 0xFF00FF,
+                                          # second pixel  = 0xAACCEE, ...
+pxarray[a:b] = ((255, 0, 255), (170, 204, 238), ...) # same as above
+pxarray[a:b] = ((255, 0, 255), 0xAACCEE, ...)        # same as above
+
+pxarray[a:b] = otherarray[x:y]            # slice sizes must match
+</code>
+*/
+
+<code python>
+pxarray[a:b] = 0xFF00FF                   # define todos los pixels a 0xFF00FF.  
+pxarray[a:b] = (0xFF00FF, 0xAACCEE, ... ) # El primer pixel a 0xFF00FF, 
+                                          # el segundo a 0xAACCEE.
+pxarray[a:b] = ( (255, 0, 255), (170, 204, 238), ...) # igual que arriba.
+pxarray[a:b] = ( (255, 0, 255), 0xAACCEE, ...)        # igual que arriba.
+
+pxarray[a:b] = otherarray[x:y]            # note que el tamaño de las rebanadas debe coincidir.
+</code>
+
+
+/*
+Note, that something like
+*/
+
+Tenga en cuenta que algo como:
+
+<code python>
+  pxarray[2:4][3:5] = ... 
+</code>
+
+
+/*
+will not cause a rectangular manipulation. Instead it will be first
+sliced to a two-column array, which then shall be sliced by columns once
+more, which will fail due an IndexError. This is caused by the slicing
+mechanisms in python and an absolutely correct behaviour.
+Create a single columned slice first, which you can manipulate then:
+*/
+
+No causará una manipulación rectangular. En lugar de ello primero
+se reducirá a una matriz de dos columnas, que luego se reducirá
+en columnas una vez mas, lo que ocasionará una falla de tipo
+''IndexError''. Esto se debe al mecanismo de rebanadas (//slicing//)
+de python y es un comportamiento absolutamente correcto. En cambio, 
+lo que puede hacer es crear una rebanada de una sola columna
+primero y luego manipularla de la siguiente forma
+
+<code python>
+pxarray[2][3:5] = ...
+pxarray[3][3:5] = ...
+</code>
+
+/*
+If you want to make a rectangular manipulation or create a view of a
+part of the PixelArray, you also can use the subscript abilities.  You
+can easily create different view by creating 'subarrays' using the
+subscripts.
+*/
+
+También puede usar las habilidades de sub-indices, para 
+realizar una manipulación rectangular o crear una
+vista de una parte del objeto ''PixelArray''. Puede crear
+una vista diferente de manera simple creando "sub-arrays" mediante
+los sub-indices.
+
+
+
+/*
+<code python>
+# Create some new PixelArray objects providing a different view
+# of the original array/surface.
+newarray = pxarray[2:4,3:5]
+otherarray = pxarray[::2,::2]
+</code>
+*/
+
+<code python>
+# Genera un nuevo objeto PixelArray otorgando una vista diferente
+# de la superficie o matriz original.
+
+newarray = pxarray[2:4,3:5]
+otherarray = pxarray[::2,::2]
+</code>
+
+/*
+Subscripts also can be used to do fast rectangular pixel manipulations
+instead of iterating over the x or y axis as above.
+*/
+
+Los sub-indices también se puede usar para realizar manipulaciones
+de pixel rectangulares en lugar de recorrer los ejes ''x'' e ''y'' como
+se hacía mas arriba.
+
+<code python>
+pxarray[::2,:] = (0, 0, 0)            # Convierte a negro cada segunda columna.
+</code>
+
+/*
+During its lifetime, the PixelArray locks the surface, thus you
+explicitly have to delete it once its not used anymore and the surface
+should perform operations in the same scope.
+*/
+
+El objeto ''PixelArray'' bloquea la superficie mientras existe, por eso
+tiene que eliminarlo de manera explícita cuando ya no lo use y la
+superficie debería realizar las operaciones en el mismo momento.
+
+/*
+New in pygame 1.8. Subscript support is new in pygame 1.8.1.
+*/
+
+Esta funcionalidad es nueva en pygame 1.8, y los sub-indices son
+nuevos en pygame 1.8.1
+
+
+===== surface =====
+
+/*
+Gets the Surface the PixelArray uses.
+*/
+
+Obtiene la superficie que utiliza el objeto ''PixelArray''.
+
+<code python>
+PixelArray.surface: Return Surface
+</code>
+
+/*
+The Surface, the PixelArray was created for.
+*/
+
+Retorna la superficie para la que se creó el objeto ''PixelArray''.
+
+===== make_surface =====
+
+/*
+Creates a new Surface from the current PixelArray.
+*/
+
+Genera una nueva superficie a partir del objeto ''PixelArray''
+actual.
+
+<code python>
+PixelArray.make_surface (): Return Surface
+</code>
+
+/*
+Creates a new Surface from the current PixelArray. Depending on the
+current PixelArray the size, pixel order etc. will be different from the
+original Surface.
+*/
+
+Genera una nueva superficie a partir del objeto ''PixelArray''. Esta
+superficie puede ser diferente de la original dependiendo del
+tamaño del objeto, el orden de pixel etc.
+
+/*
+<code python>
+# Create a new surface flipped around the vertical axis.
+sf = pxarray[:,::-1].make_surface () 
+</code>
+*/
+
+<code python>
+# Genera una nueva superficie invertida sobre el eje vertical.
+sf = pxarray[:,::-1].make_surface () 
+</code>
+
+/*
+New in pygame 1.8.1.
+*/
+
+
+Esta función es nueva en pygame 1.8.1
+
+===== replace =====
+
+Replaces the passed color in the PixelArray with another one.
+
+<code python>
+PixelArray.replace (color, repcolor, distance=0, weights=(0.299, 0.587, 0.114)): Return None
+</code>
+
+/*
+Replaces the pixels with the passed color in the PixelArray by changing
+them them to the passed replacement color.
+*/
+
+Reemplaza los pixels que tienen el color ''repcolor'' por el color
+''color''.
+
+/*
+It uses a simple weighted euclidian distance formula to calculate the
+distance between the colors. The distance space ranges from 0.0 to 1.0
+and is used as threshold for the color detection. This causes the
+replacement to take pixels with a similar, but not exactly identical
+color, into account as well.
+*/
+
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+
+
+/*
+This is an in place operation that directly affects the pixels of the
+PixelArray.
+*/
+
+Esta es una operación //in place//, lo que significa que afecta directamente
+a los pixels del objeto ''PixelArray''.
+
+/*
+New in pygame 1.8.1.
+*/
+
+Esta función es nueva en pygame 1.8.1
+
+===== extract =====
+
+/*
+Extracts the passed color from the PixelArray.
+*/
+
+Extrae el color indicado del objeto ''PixelArray''.
+
+<code python>
+PixelArray.extract (color, distance=0, weights=(0.299, 0.587, 0.114)): Return PixelArray
+</code>
+
+/*
+Extracts the passed color by changing all matching pixels to white,
+while non-matching pixels are changed to black. This returns a new
+PixelArray with the black/white color mask.
+*/
+
+Extrae el color indicado cambiando todos los pixels que coinciden
+a blanco, mientras que los pixels que no coinciden se cambian
+a color negro. Esta función retorna un nuevo objeto ''PixelArray''
+con la máscara de color blanco y negro.
+
+/*
+It uses a simple weighted euclidian distance formula to calculate the
+distance between the colors.  The distance space ranges from 0.0 to
+1.0 and is used as threshold for the color detection. This causes the
+extraction to take pixels with a similar, but not exactly identical
+color, into account as well.
+*/
+
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+
+/*
+New in pygame 1.8.1.
+*/
+
+Esta función es nueva en pygame 1.8.1
+
+===== compare =====
+
+/*
+Compares the PixelArray with another one.
+*/
+
+Compara el objeto PixelArray con otro.
+
+
+<code python>
+PixelArray.compare (array, distance=0, weights=(0.299, 0.587, 0.114)): Return PixelArray
+</code>
+
+/*
+Compares the contents of the PixelArray with those from the passed PixelArray.
+It returns a new PixelArray with a black/white color mask that indicates the
+differences (white) of both arrays. Both PixelArray objects must have indentical
+bit depths and dimensions.
+*/
+
+Compara el contenido del objeto ''PixelArray'' con otro objecto
+''PixelArray''. Retorna un nuevo objeto ''PixelArray'' con la máscara
+de color blanco y negro que indica las diferencias (en blanco) y similitudes
+(en negro). Los dos objetos ''PixelArray'' deben tener dimensiones y
+cantidad de colores idénticas.
+
+/*
+It uses a simple weighted euclidian distance formula to calculate the
+distance between the colors.  The distance space ranges from 0.0 to
+1.0 and is used as threshold for the color detection. This causes the
+comparision to mark pixels with a similar, but not exactly identical
+color, as black.
+*/
+
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+
+/*
+New in pygame 1.8.1*/
+
+Esta función es nueva en pygame 1.8.1.

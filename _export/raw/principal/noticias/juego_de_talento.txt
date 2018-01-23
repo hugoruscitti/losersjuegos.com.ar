@@ -1,0 +1,21 @@
+====== Juego de talento ======
+Juego de talento es un "virtuality", es decir un reality show vía Internet, con una de duración de 8 semanas, en donde de manera virtual se emula el mismo concepto que hemos visto en la televisión.
+
+Los concursantes de los 24 equipos resultaron seleccionados de entre más de 100 proyectos para desarrollar un videojuego. Durante la duración del "virtuality" tendrán que irlo mejorando conforme las instrucciones y correcciones del jurado, en las áreas de: guión, desarrollo de personajes, storyboard, producción, motores, facilidad de juego y plan de negocios.
+
+El jurado (integrado por profesionales de la industria, profesores universitarios y ejecutivos de empresas de software y publishers) calificará a los grupos de acuerdo a los avances y mejoras conforme a las recomendaciones hechas.
+
+Cada semana, quienes no hayan alcanzado los objetivos solicitados, estarán a merced de la votación del jurado y el público. Conforme al número establecido para cada semana, los que obtengan menos votos deberán abandonar la competencia.
+
+Finalmente, los 6 proyectos que lleguen a la meta serán los ganadores del concurso y entrarán en una etapa de incubación para ser producidos en México y luego comercializados en todo el mundo.
+
+Juego de Talento es una iniciativa diseñada para impulsar el desarrollo de la industria de medios interactivos, en especial la industria del videojuego en México. El modelo de trabajo de este proyecto se compone por una oferta de capacitación dirigida a especialistas en desarrollo de videojuegos y una incubadora de empresas especializada en este industria.
+
+El objetivo de Juego de Talento es impulsar la oferta oculta de talento para insertarla en el mercado nacional e internacional del entretenimiento.
+
+Más información en el sitio: [[http://www.juegodetalento.com|Juego de Talento]]
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

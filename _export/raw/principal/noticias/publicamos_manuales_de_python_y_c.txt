@@ -1,0 +1,13 @@
+====== Publicamos manuales de python y C ======
+
+Publicamos dos manuales básicos de programación, uno sobre el lenguaje
+de programación C y otro sobre el lenguaje python. Ambos manuales han
+sido publicados por la //Universitat Jaume I//.
+
+Visite la sección [[:referencia:libros|libros]] para ver mas detalles.
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

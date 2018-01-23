@@ -1,0 +1,146 @@
+====== cdrom ======
+
+/*
+pygame module for audio cdrom control
+*/
+
+Módulo de pygame para controlar CDROM de audio.
+
+<box 90%>
+  * [[#init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#get_count]]
+
+** Otras páginas: **
+  * [[:traducciones:pygame:cdrom:CD]]
+</box>
+
+
+/*
+The cdrom module manages the CD and DVD drives on a computer. It can
+also control the playback of audio cd's. This module needs to be initialized
+before it can do anything. Each CD object you create represents a cdrom drive
+and must also be initialized individually before it can do most things.
+*/
+
+El módulo cdrom gestiona dispositivos de CD y DVD en una computadora. Puede
+incluso controlar la reproducción de CDs de audio. Antes de hacer algo tiene que
+iniciar el módulo. Cada objeto CD que usted genera representa un dispositivo
+de CD que además necesita inicializarse individualmente antes de hacer la mayoría
+de las cosas.
+
+
+
+===== init =====
+
+/*
+initialize the cdrom module
+*/
+
+Inicializa el módulo de CDROM.
+
+<code>
+pygame.cdrom.init(): return None
+</code>
+
+/*
+Initialize the cdrom module. This will scan the system for all CD devices. The
+module must be initialized before any other functions will work. This
+automatically happens when you call pygame.init().
+*/
+
+Inicializa el módulo cd CDROM. Esta función explorará el sistema buscando todos los
+dispositivos de CD. El módulo se debe inicializar antes de utilizar cualquier
+otra función. Esta inicialización se realiza automáticamente cuando llama a
+la función [[:traducciones:pygame:pygametop#init]].
+
+/*
+It is safe to call this function more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+  * [[pythonexample>pygame.cdrom.init|buscar código donde se use esta función.]]
+
+
+===== quit =====
+
+/*
+uninitialize the cdrom module
+*/
+
+Deshabilita el módulo de CDROM.
+
+
+<code>
+pygame.cdrom.quit(): return None
+</code>
+
+/*
+Uninitialize the cdrom module. After you call this any existing CD objects
+will no longer work.
+*/
+
+Deshabilita el módulo de CDROM. Después de llamar a esta función cualquier
+objecto CD existente dejará de funcionar.
+
+/*
+It is safe to call this function more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+
+  * [[pythonexample>pygame.cdrom.quit|buscar código donde se use esta función.]]
+
+
+===== get_init =====
+
+/*
+true if the cdrom module is initialized
+*/
+
+Informa ''true'' si el módulo cdrom está inicializado.
+
+<code>
+pygame.cdrom.get_init(): return bool
+</code>
+
+/*
+Test if the cdrom module is initialized or not. This is different than the
+CD.init() since each drive must also be initialized individually.
+*/
+
+Verifica si el módulo cdrom está inicializado o no. Esto se diferente a
+CD.init() ya que cada dispositivo también se debe inicializar de forma
+individual.
+
+  * [[pythonexample>pygame.cdrom.get_init|buscar código donde se use esta función.]]
+
+
+
+===== get_count =====
+
+/*
+number of cd drives on the system
+*/
+
+Informa el número de dispositivos de CD en el sistema.
+
+<code>
+pygame.cdrom.get_count(): return count
+</code>
+
+/*
+Return the number of cd drives on the system. When you create CD objects
+you need to pass an integer id that must be lower than this count. The
+count will be 0 if there are no drives on the system.
+*/
+
+Devuelve el número de unidades de CD en el sistema. Cuando usted genera
+objetos CD necesita enviar un número identificador que sea menor que este
+contador. El contador será 0 si no hay dispositivos de CD en el sistema.
+
+
+  * [[pythonexample>pygame.cdrom.get_count|buscar código donde se use esta función.]]

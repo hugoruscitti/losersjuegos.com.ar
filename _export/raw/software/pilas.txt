@@ -1,0 +1,12 @@
+====== Pilas engine ======
+
+
+Pilas es un motor para hacer videojuegos de manera sencilla.
+
+Está dirigido a personas que comienzan a programar videojuegos y quieren lograr resultados interesantes y divertidos en poco tiempo.
+
+[[http://www.pilas-engine.com.ar|Visita el sitio oficial del proyecto]] para obtener mas información.
+
+===== Capturas =====
+
+{{gallery>software:pilas:capturas:*}}

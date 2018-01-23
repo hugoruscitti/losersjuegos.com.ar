@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    sprite    [Losersjuegos]
+  </title>
+<link rel="stylesheet" type="text/css" media="screen" href="../../lib/tpl/sidebar/cabecera.css"/>
+  <meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-01T03:28:53+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../index.html" />
+<link rel="contents" href="sprite-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="../../_export/xhtml/traducciones/pygame/sprite.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../_export/raw/traducciones/pygame/sprite.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+
+  <link rel="shortcut icon" href="../../lib/tpl/sidebar/images/ico.png" />
+  <script type="text/javascript" src="../../lib/tpl/sidebar/dtree.js"></script>
+  <link rel="StyleSheet" href="../../lib/tpl/sidebar/dtree.css" type="text/css" />
+
+
+  
+</head>
+
+<body>
+  <div class="dokuwiki">
+  
+  
+<div id="cabecera">
+    <a href='../../index.html'><img id='logo1' alt='' src="../../lib/tpl/sidebar/ima_cabecera/logo_1.png" width="286" height="50" name="logo1" /></a>
+
+
+    <div id="navi">
+        <ul>
+            <li id='actual'><a href="../../index.html">Web</a></li>
+            <li><a href="../../foro/index.html">Foro</a></li>
+        </ul>
+    </div>
+</div>
+
+        <div class='barrasuperior'>
+      <span class="bchead">Tu estás aquí: </span><a href="../../principal.html"  title="principal">¡Bienvenido!</a> &raquo; <a href="../../traducciones.html"  title="traducciones">Traducciones</a> &raquo; <a href="../pygame.html"  title="traducciones:pygame">pygame</a> &raquo; <a href="sprite.html"  title="traducciones:pygame:sprite">sprite</a>    </div>
+
+
+      <div class='barra_botones'>
+
+
+        <div class='caja'>
+            <h5>Usuario</h5>
+                                    <form class="button btn_login" method="get" action="sprite.html"><div class="no"><input type="hidden" name="do" value="login" /><input type="hidden" name="sectok" value="37c9187da1adb1dadd25d5de37249fc6" /><input type="submit" value="Entrar" class="button" title="Entrar" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>Buscar páginas</h5>
+<form action="../../index.html" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" size="12" accesskey="f" name="id" class="edit" title="[ALT+F]" /><input type="submit" value="Buscar" class="button" title="Buscar" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>
+        </div>
+
+        <div class='caja'>
+            <h5>Esta Pagina</h5>
+
+            <form class="button btn_source" method="post" action="sprite.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="" /><input type="submit" value="Ver fuente" class="button" accesskey="v" title="Ver fuente [V]" /></div></form>            <form class="button btn_revs" method="get" action="sprite.html"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Revisiones anteriores" class="button" accesskey="o" title="Revisiones anteriores [O]" /></div></form>            <form class="button btn_backlink" method="get" action="sprite.html"><div class="no"><input type="hidden" name="do" value="backlink" /><input type="submit" value="Enlaces anteriores" class="button" title="Enlaces anteriores" /></div></form>        </div>
+
+        <div class='caja'>
+            <h5>General</h5>
+
+            <form class="button btn_index" method="get" action="sprite.html"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Indice" class="button" accesskey="x" title="Indice [X]" /></div></form>            <form class="button btn_recent" method="get" action="sprite.html"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Cambios recientes" class="button" accesskey="r" title="Cambios recientes [R]" /></div></form>        </div>
+
+    </div>
+
+  
+  
+  
+  <div id='sidebar'>
+<div class="dtree">
+
+<script type="text/javascript">
+
+    d = new dTree('d');
+
+
+
+    d.add(0, -1, '');
+
+    d.add(1, 0, 'Principal', '/principal', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png', 
+        '/lib/tpl/sidebar/iconos/secciones/principal.png');
+
+        d.add(2, 1, 'Noticias',     '/principal/noticias');
+        d.add(3, 1, 'Anteriores',   '/principal/anteriores');
+        d.add(4, 1, 'Indice',       '/principal/indice');
+
+
+
+
+
+    d.add(5, 0, 'Comunidad', '/comunidad', '', '', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png', 
+        '/lib/tpl/sidebar/iconos/secciones/comunidad.png');
+
+        d.add(6, 5, 'Integrantes',      '/comunidad/integrantes');
+        d.add(7, 5, 'Como participar',  '/comunidad/comoparticipar');
+        d.add(8, 5, 'Contacto',         '/comunidad/contactenos');
+        d.add(9, 5, 'Difundir',         '/comunidad/difundir');
+        d.add(10, 5, 'Consejos',        '/comunidad/consejos');
+        d.add(11, 5, 'To Do',           '/comunidad/todo');
+
+
+
+
+
+    d.add(12, 0, 'Juegos', '/juegos', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png',
+            '/lib/tpl/sidebar/iconos/secciones/juegos.png');
+
+
+        d.add(13, 12, 'irobot',     '/juegos/irobotgame');
+        d.add(14, 12, 'ceferino',   '/juegos/ceferino');
+        d.add(15, 12, 'asadetris', '/juegos/asadetris');
+        d.add(16, 12, 'asadetrismobile', '/juegos/asadetrismobile');
+        d.add(17, 12, 'volleyball', '/juegos/volleyball');
+        d.add(18, 12, 'pongix',     '/juegos/pongix');
+        d.add(19, 12, 'aqbubble',   '/juegos/aqbubble');
+        d.add(20, 12, 'chanta',     '/juegos/chanta');
+        d.add(21, 12, 'soccerd',    '/juegos/soccerd');
+        d.add(99, 12, 'ceferinomobile', '/juegos/ceferinomobile');
+
+
+    d.add(50, 0, 'Software', '/software', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/software.png',
+            '/lib/tpl/sidebar/iconos/secciones/software.png');
+
+        d.add(53, 50, 'Pilas', '/software/pilas');
+        d.add(52, 50, 'Gimp Pugins', '/software/gimp');
+        d.add(51, 50, 'Live DVD', '/software/livecd');
+
+
+
+
+
+
+    d.add(22, 0, 'Referencia', '/referencia', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png',
+            '/lib/tpl/sidebar/iconos/secciones/referencia.png');
+
+
+        d.add(23, 22, 'Ejemplos',   '/referencia/ejemplos');
+        d.add(24, 22, 'Videos',     '/referencia/videos');
+        d.add(25, 22, 'Articulos',  '/referencia/articulos');
+        d.add(26, 22, 'Libros',     '/referencia/libros');
+        d.add(27, 22, 'Apuntes',    '/referencia/apuntes');
+
+
+    d.add(28, 0, 'Traducciones', '/traducciones', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png',
+            '/lib/tpl/sidebar/iconos/secciones/traducciones.png');
+
+        d.add(29, 28, 'pygame',   '/traducciones/pygame');
+
+ 
+
+    d.add(30, 0, 'Galeria', '/galeria', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png',
+            '/lib/tpl/sidebar/iconos/secciones/galeria.png');
+
+
+
+        d.add(31, 30, 'artisticas', '/galeria/artisticas');
+        d.add(32, 30, 'fondos',     '/galeria/fondos');
+        d.add(33, 30, 'sprites',    '/galeria/sprites');
+        d.add(34, 30, 'capturas',   '/galeria/capturas');
+        d.add(35, 30, 'bocetos',    '/galeria/bocetos');
+
+
+
+    d.add(36, 0, 'Links', '/links', '', '',
+            '/lib/tpl/sidebar/iconos/secciones/links.png',
+            '/lib/tpl/sidebar/iconos/secciones/links.png');
+
+
+
+    d.config.folderLinks = true;
+    d.config.useLines = false;
+    d.config.useSelection = true;
+    document.write(d);
+
+</script>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<span style='color: gray; font-size: 8pt'>
+Menu realizado con <a href='http://destroydrop.com/javascripts/tree/default.html'>dTree</a>.
+</span>
+
+
+<!-- no cachefile used, but created -->
+</div>    <div class="page_with_sidebar">
+      <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#sprite" class="toc">sprite</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#spritecollide" class="toc">spritecollide</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collide_rect" class="toc">collide_rect</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collide_rect_ratio" class="toc">collide_rect_ratio</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collide_circle" class="toc">collide_circle</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collide_circle_ratio" class="toc">collide_circle_ratio</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#collide_mask" class="toc">collide_mask</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#groupcollide" class="toc">groupcollide</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#spritecollideany" class="toc">spritecollideany</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="sprite" id="sprite">sprite</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame con clases básicas de objetos para juegos.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <span class="curid"><a href="#spritecollide" class="wikilink1" title="traducciones:pygame:sprite">spritecollide</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#collide_rect" class="wikilink1" title="traducciones:pygame:sprite">collide_rect</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#collide_rect_ratio" class="wikilink1" title="traducciones:pygame:sprite">collide_rect_ratio</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#collide_circle" class="wikilink1" title="traducciones:pygame:sprite">collide_circle</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#collide_circle_ratio" class="wikilink1" title="traducciones:pygame:sprite">collide_circle_ratio</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#collide_mask" class="wikilink1" title="traducciones:pygame:sprite">collide_mask</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#groupcollide" class="wikilink1" title="traducciones:pygame:sprite">groupcollide</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="#spritecollideany" class="wikilink1" title="traducciones:pygame:sprite">spritecollideany</a></span></div>
+</li>
+</ul>
+
+<p>
+
+<strong>Otras paginas:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="sprite/sprite_class.html" class="wikilink1" title="traducciones:pygame:sprite:sprite_class">Sprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/group.html" class="wikilink1" title="traducciones:pygame:sprite:group">Group</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/groupsingle.html" class="wikilink1" title="traducciones:pygame:sprite:groupsingle">GroupSingle</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/layereddirty.html" class="wikilink1" title="traducciones:pygame:sprite:layereddirty">LayeredDirty</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/dirtysprite.html" class="wikilink1" title="traducciones:pygame:sprite:dirtysprite">DirtySprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/layeredupdates.html" class="wikilink1" title="traducciones:pygame:sprite:layeredupdates">LayeredUpdates</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/orderedupdates.html" class="wikilink1" title="traducciones:pygame:sprite:orderedupdates">OrderedUpdates</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="sprite/renderedupdates.html" class="wikilink1" title="traducciones:pygame:sprite:renderedupdates">RenderUpdates</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Este módulo contiene varias clases simples para ser utilizadas
+dentro de los juegos. Hay una clase principal <code>Sprite</code> y varias
+clases <code>Group</code> que contienen sprites. El uso de estas clases es
+completamente opcional cuando se usa pygame. Las clases son
+bastante livianas y solo proveen un punto de partida para el código
+que es común en la mayoría de los juegos.
+</p>
+
+
+
+<p>
+Se espera que la clase <code>Sprite</code> se utilice como clase base para
+los diferentes tipos de objetos en el juego. También hay una clase <code>Group</code>
+básica que simplemente almacena sprites. Un juego podría crear nuevos
+tipos de clases <code>Group</code> que operen sobre instancias de objetos <code>Sprite</code>
+personalizadas.
+</p>
+
+
+
+<p>
+La clase <code>Sprite</code> básica puede dibujar los sprites que contiene
+sobre una superficie. El método <code>Group.draw()</code> requiere que cada
+que cada <code>Sprite</code> tenga los atributos <code>image</code> y <code>rect</code>. El
+método <code>Group.clear()</code> requiere estos mismos atributos para
+poder borrar todos los sprites con fondo de pantalla. También hay
+grupos mas avanzados, por ejemplo <code>pygame.sprite.RenderUpdates()</code>
+y <code>pygame.sprite.OrderedUpdates()</code>.
+</p>
+
+
+
+<p>
+Por último, este módulo contiene varias funciones de colisión. Estas
+ayudan a encontrar sprites que tienen rectángulos de colisión en
+contacto.
+</p>
+
+
+
+<p>
+Los grupos están diseñados para ser muy eficientes al insertar y eliminar
+sprites de ellos. También permiten pruebas sencillas para ver
+si un sprite está dentro del grupo. Un determinado <code>Sprite</code> puede
+estar en cualquier número de grupos. Un juego podría usar algunos
+grupos para controlar la impresión de objetos, y un conjunto separado
+de grupos para controlar la interacción o el movimiento del
+personaje. Considere mantener los sprites dentro de grupos
+organizados en lugar de agregar atributos de tipo a los objetos sprite. Esto
+le ayudará a encontrarlos mas fácilmente en el juego.
+</p>
+
+
+
+<p>
+Los sprites y los grupos manejan sus relaciones con los métodos <code>add()</code>
+y <code>remove()</code>&#039;. Estos métodos pueden aceptar una o varias instancias
+de objetos. Los inicializadores para estas clases también aceptan
+uno o varios objetos para insertar. Es seguro agregar y eliminar
+el mismo <code>Sprite</code> de un grupo.
+</p>
+
+
+
+<p>
+Mientras es posible diseñar clases de sprite y grupos que no
+deriven desde las clases <code>Sprite</code> y <code>AbstractGroup</code> de mas
+arriba, es extremadamente que herede de ellas cuando agregue
+una clase de grupo o sprite.
+</p>
+
+
+
+<p>
+Los sprites no son seguros para operar desde diferentes hilos, por
+lo tanto debe bloquearlos usted mismo si está usando hilos.
+</p>
+
+</div>
+
+<h2><a name="spritecollide" id="spritecollide">spritecollide</a></h2>
+<div class="level2">
+
+
+
+<p>
+Encuentra sprites en el grupo que están en contacto con otro sprite.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">spritecollide</span><span class="br0">&#40;</span>sprite, group, dokill, collided = <span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sprite_list</pre>
+
+
+<p>
+Retorna una lista que contiene todos los sprites en un grupo que están
+colisionando con otro sprite. La intersección se determina comparando
+el atributo <code>Sprite.rect</code> de cada sprite.
+</p>
+
+
+
+<p>
+El argumento <code>dokill</code> es un valor booleando. Si vale <code>True</code> todos
+los sprites que colisionan se eliminarán del grupo.
+</p>
+
+
+
+<p>
+El argumento <code>collided</code> es una función que se utiliza para calcular
+si dos sprites están en contacto, esta función debería tomar dos
+sprites como agumentos y retornar un valor <code>True</code> o <code>False</code> indicado
+si están colisionando. Si no se especifica el valor para el
+argumento, todos los sprites deberán tener un valor <code>rect</code>, que es
+el rectángulo del área de sprite, que se usará para calcular l
+colisión.
+</p>
+
+
+
+<p>
+Funciones de colisión:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> collide_rect</div>
+</li>
+<li class="level1"><div class="li"> collide_rect_ratio</div>
+</li>
+<li class="level1"><div class="li"> collide_circle </div>
+</li>
+<li class="level1"><div class="li"> collide_circle_ratio</div>
+</li>
+<li class="level1"><div class="li"> collide_mask </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.spritecollide" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.spritecollide">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="collide_rect" id="collide_rect">collide_rect</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detección de colisión entre dos sprites, usando rectángulos.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect</span><span class="br0">&#40;</span>left, right<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Consulta la colisión entre dos sprites. Usa la función
+<code>colliderect</code> del módulo <code>rect</code> para calcular la
+colisión. Está diseñada para ser enviada como una
+función de colisión a las funciones generales de colisión.
+Los sprites deben tener atributos <code>rect</code>.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.0
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_rect" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_rect">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="collide_rect_ratio" id="collide_rect_ratio">collide_rect_ratio</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detección de colisión entre dos sprites, usando rectángulos reducidos.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">collide_rect_ratio</span><span class="br0">&#40;</span>ratio<span class="br0">&#41;</span>: <span class="kw1">return</span> collided_callable</pre>
+
+
+<p>
+Verifica colisiones entre dos sprites usando usa versión reducida
+de los rectángulos de sprite.
+</p>
+
+
+
+<p>
+Se generan con un radio, y la instancia retornada está diseñada
+para ser enviada como una función de colisión a las funciones
+generales de colisión.
+</p>
+
+
+
+<p>
+El argumento <code>ratio</code> es un número real, 1.0 indica que será
+del mismo tamaño, 2.0 es el doble de grande y 0.5 es de la mitad
+de tamaño.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_rect_ratio" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_rect_ratio">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="collide_circle" id="collide_circle">collide_circle</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detección de colisión entre dos sprites, usando círculos.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">collide_circle</span><span class="br0">&#40;</span>left, right<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Verifica la colisión entre dos sprites, verificando
+si dos círculos centrados en los sprites están en
+contacto. Si el sprite tiene un atributo <code>radius</code> este
+se usará para crear en círculo, en caso de que no exista
+se creará un círculo lo suficientemente grande para
+contener todo el rectángulo del sprite indicado
+por el atributo <code>rect</code>. Esta función está diseñada
+para ser enviada como función de colisión a las
+funciones generales de colisión. Los sprites deben
+tener los atributos <code>rect</code> y <code>radius</code> (este último
+es opcional).
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_circle" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_circle">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="collide_circle_ratio" id="collide_circle_ratio">collide_circle_ratio</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detección de colisión entre dos sprites, usando una versión
+reducida del círculo.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">collide_circle_ratio</span><span class="br0">&#40;</span>ratio<span class="br0">&#41;</span>: <span class="kw1">return</span> collided_callable</pre>
+
+
+<p>
+Verifica colisiones entre dos sprites usando usa versión reducida
+de los círculos de sprite.
+</p>
+
+
+
+<p>
+
+Se generan con un radio, y la instancia retornada está diseñada
+para ser enviada como una función de colisión a las funciones
+generales de colisión.
+</p>
+
+
+
+<p>
+El argumento <code>ratio</code> es un número real, 1.0 indica que será
+del mismo tamaño, 2.0 es el doble de grande y 0.5 es de la mitad
+de tamaño.
+</p>
+
+
+
+<p>
+El objeto creado verifica la existencia de colisión entre dos sprites, 
+comprobando si los dos círculos con centro en los sprites están
+en contacto luego de haberlos alterado de tamaño. Lo los sprites
+tienen un atributo <code>radius</code> este se usará para crear el círculo, en
+otro caso se creará un círculo lo suficientemente grande grande para
+contener por completo el rectángulo de sprite según su atributo
+<code>rect</code>. Está diseñada
+para ser enviada como función de colisión a las
+funciones generales de colisión. Los sprites deben
+tener los atributos <code>rect</code> y <code>radius</code> (este último
+es opcional).
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_circle_ratio" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_circle_ratio">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="collide_mask" id="collide_mask">collide_mask</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detección de colisión entre dos sprites usando máscaras.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">collide_mask</span><span class="br0">&#40;</span>SpriteLeft, SpriteRight<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Verifica la colisión entre dos sprites, probando si sus
+máscaras de bits se superponen. Si el sprite tiene un
+atributo <code>mask</code>, este atributo se usará como máscara, en
+otro caso se creará la máscara a partir de la imagen
+del sprite. Esta función está diseñada para ser
+enviada como función de colisión a las funciones generales
+de colisión. Los sprites deben tener un atributo <code>rect</code> y
+un atributo opcional de nombre <code>mask</code>.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.0
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_mask" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.collide_mask">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="groupcollide" id="groupcollide">groupcollide</a></h2>
+<div class="level2">
+
+
+
+<p>
+Encuentra todos los sprites que colisionan entre dos grupos.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">groupcollide</span><span class="br0">&#40;</span>group1, group2, dokill1, dokill2<span class="br0">&#41;</span>: <span class="kw1">return</span> Sprite_dict</pre>
+
+
+<p>
+Esta función encontrará intersecciones entre todos los sprites de
+dos grupos. Las intersecciones se determinan comparando los atributos
+<code>Sprite.rect</code> de cada <code>Sprite</code>.
+</p>
+
+
+
+<p>
+Cada sprite dentro del grupo <code>group1</code> se agrega al diccionario de
+retorno como clave. El valor de cada elemento será una lista de los
+sprites del grupo <code>group2</code> que colisionan con el primero.
+</p>
+
+
+
+<p>
+Si algunos de los argumentos <code>dokill</code> vale <code>True</code>, se eliminaran
+los sprites en colisión de sus respectivos grupos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.groupcollide" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.groupcollide">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2><a name="spritecollideany" id="spritecollideany">spritecollideany</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta simple para ver si un sprite colisiona con algún otro en el grupo.
+</p>
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">spritecollideany</span><span class="br0">&#40;</span>sprite, group<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Consulta si el sprite dado colisiona con algún sprite en el grupo. La
+intersección se determina comparando el atributo <code>Sprite.rect</code> de cada
+sprite.
+</p>
+
+
+
+<p>
+Esta prueba de colisión puede ser mas rápida que <code>pygame.sprite.spritecollideany()</code> dado que tiene menos trabajo para hacer. Retornará
+al encontrar la primer colisión.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.spritecollideany" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.sprite.spritecollideany">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+        <div style='float: right; margin: 3px;'>
+            <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Subir" onclick="window.scrollTo(0, 0)" title="Subir" /></a>        </div>
+
+    <div class="meta">
+      <div class="doc">
+        traducciones/pygame/sprite.txt &middot; Última modificación: 01/02/2009 a las 03:28 por hugoruscitti      </div>
+    </div>
+
+   
+
+<div id="pie">
+
+<ul>
+	<li class='contactenos'><a 
+	href='../../comunidad/contactenos.html'>Contáctenos</a></li>
+	
+	<li class='cc'><a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es">Licencia de uso para el sitio</a></li>
+
+	<li class='foro'><a 
+	href='../../foro/index.html'>Foro de mensajes</a></li>
+
+	<li class='comunidad'><a 
+	href='../../comunidad.html'>Sobre el grupo ...</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+Este sitio funciona sobre el motor wiki de <a
+    href='http://wiki.splitbrain.org/wiki:dokuwiki'>DokuWiki</a>.
+<br/>
+&copy; 2003-2008 Hugo Ruscitti
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="../../lib/exe/indexer.php-id=traducciones-pygame-sprite&amp;1511025162.gif" width="1" height="1" alt=""  /></div>
+</body>
+</html>

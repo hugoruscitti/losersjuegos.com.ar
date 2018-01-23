@@ -1,0 +1,44 @@
+====== Don Ceferino Hazaña Mobile ======
+
+
+Ceferino es un gaucho solitario que debe luchar contra los extraterrestres para rescatar a su vaca.
+
+En el juego debes destruir las esferas de color verde pulsando el botón principal o hacia arriba. Cada vez que golpeas una esfera, esta se divide en dos mas pequeñas... 
+
+
+{{gallery>juegos:ceferinomobile:capturas:*}}
+
+
+===== Dispositivos compatibles =====
+
+Este juego cuenta con una resolución de 240x320 pixeles, y ha sido desarrollado
+utilizando el perfil MIDP-2.0 de J2ME.
+
+Los dispositivos en donde se ha probado son:
+
+  * Nokia 6131 (sistema S40).
+  * Nokia 6300 (sistema S40).
+  * Nokia 5130 (ejecutar deshabilitando el sonido).
+
+===== Descarga versión ejecutable =====
+
+{{filelist>juegos:ceferinomobile:descargas:*}}
+
+(descomprima el archivo antes de copiarlo al dispositivo)
+
+===== Descarga código fuente =====
+
+
+{{filelist>juegos:ceferinomobile:descargas_src:*}}
+
+
+
+
+
+===== Licencia =====
+
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU v3, (vea nuestra
+página sobre la [[otros:es:gpl3]]).
+
+{{tag>juegos j2me}}

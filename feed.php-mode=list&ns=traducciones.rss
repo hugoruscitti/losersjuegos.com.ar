@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones</title>
+        <description></description>
+        <link>http://losersjuegos.com.ar/</link>
+        <image rdf:resource="http://losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-12T02:20:04+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283216244&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280974958&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/panda3d?rev=1221074959&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/pygame?rev=1233864717&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff"/>
+                <rdf:li rdf:resource="http://losersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://losersjuegos.com.ar/</link>
+        <url>http://losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T07:15:08+04:00</dc:date>
+        <title>El Gráfico de la Escena</title>
+        <link>http://losersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff</link>
+        <description>El Gráfico de la Escena
+
+
+Panda3D contiene una estructura de datos llamada el gráfico de la
+escena(Scene Graph). El gráfico de la escena es un árbol que contiene
+todos los objetos que deben ser prestados. La raíz del árbol es un
+objeto denominado “render”. Nada es renderizado hasta él es
+introducido por primera vez en el gráfico de la escena.</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283216244&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T04:57:24+04:00</dc:date>
+        <title>Actores</title>
+        <link>http://losersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283216244&amp;do=diff</link>
+        <description>Actores
+
+La clase Actor es para los modelos animados. Tenga en cuenta que usamos loadModel() para los modelos estáticos y Actor cuando son animados. Los dos argumentos del constructor para la clase Actor son el nombre del archivo que contiene el modelo y un diccionario en Python que contiene los nombres de los archivos que contienen las animaciones.</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-10T03:07:15+04:00</dc:date>
+        <title>Sistema de control de cámara por defecto</title>
+        <link>http://losersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff</link>
+        <description>Sistema de control de cámara por defecto
+
+
+De forma predeterminada, Panda3D ejecuta una tarea que le permite mover la cámara con el ratón.
+
+Las teclas para navegar son:
+ Tecla                    Acción                                               Botón Izquierdo	   Mueve hacia la izquierda y derecha.                  Botón derecho   	   Desplazarse hacia delante y atrás.                   Botón Medio  		   Rotar en torno al origen de la aplicación.           Botones Derecho y Medio  Ro…</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280974958&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T06:22:38+04:00</dc:date>
+        <title>Crear una aplicación Panda3D Nueva</title>
+        <link>http://losersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280974958&amp;do=diff</link>
+        <description>Crear una aplicación Panda3D Nueva
+
+Showbase
+
+
+Para iniciar Panda3D, cree un archivo de texto y guardelo con la
+extensión .py. PYPE, SPE y IDLE son editores de texto específicos para
+Python, pero cualquier editor de texto funcionará. Introduzca el
+siguiente texto en su archivo de Python:</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/panda3d?rev=1221074959&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-09-10T23:29:19+04:00</dc:date>
+        <title>Panda3D</title>
+        <link>http://losersjuegos.com.ar/traducciones/panda3d?rev=1221074959&amp;do=diff</link>
+        <description>[Logotipo de Panda 3D]
+
+Participar
+
+
+Necesitamos de tu ayuda para mejorar esta traducción, visita
+la sección Contáctenos si quieres participar.
+
+
+
+
+
+
+	*  Referencia en inglés.
+	*  Páginas ya traducidas en el wiki anterior.
+
+
+
+Índice de contenidos
+
+	*  Panda3D Básico
+	*  tutoriales_de_introduccion
+		*  un_hola_mundo_de_panda
+			*  Crear una aplicación Panda3D Nueva
+			*  El Gráfico de la Escena
+			*  Sistema de control de cámara por defecto
+			*  Actores
+			*  Intervalos y secuencias</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T05:16:22+04:00</dc:date>
+        <title>traducciones:programando_con_panda</title>
+        <link>http://losersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff</link>
+        <description>La sección Programando con Panda de este manual intenta enumerar todas las funciones que Panda3D proporciona.
+
+Este manual no pretende ser completo en el sentido de la inclusión de
+todas las clases, funciones y métodos proporcionado por Panda3D. Si
+eso es lo que está buscando, vaya a la Sección de Referencia en su lugar.</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/pygame?rev=1233864717&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-05T23:11:57+04:00</dc:date>
+        <title>pygame</title>
+        <link>http://losersjuegos.com.ar/traducciones/pygame?rev=1233864717&amp;do=diff</link>
+        <description>[Logotipo de Pygame]
+
+Esta sección cuenta con la traducción al español de la documentación
+oficial de pygame, una biblioteca multimedia para python.
+
+Descarga
+
+
+Si quiere puede descargar una vesión alternativa en formato off-line:
+
+
+	*  
+
+
+
+
+Referencia
+
+Python,
+	pygame</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-04T23:23:30+04:00</dc:date>
+        <title>Panda3D Básico</title>
+        <link>http://losersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff</link>
+        <description>Panda3D Básico
+
+
+Panda3D es un motor 3D: una biblioteca de subrutinas para renderizar en 3D y el desarrollo de juegos. La biblioteca esta escrita en C++ con un conjunto de enlaces Python. El desarrollo de juegos con Panda3D por lo general consiste en escribir un programa Python o C++ que controla la biblioteca Panda3D.</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T02:18:04+04:00</dc:date>
+        <title>traducciones:un_hola_mundo_de_panda</title>
+        <link>http://losersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff</link>
+        <description>Esta tutoría se llama “Un Hello World en Panda”. Es un ejemplo típico de un programa Panda3D simple. Avanzar a través de esta tutoría le permitirá obtener una pequeña familiarización con la API de Panda3D sin tener que aprender todo.
+
+El programa que vamos a crear cargara una pequeña escena que contiene un poco de hierba y un panda. El panda se animará para que camine adelante y atrás sobre la hierba.</description>
+    </item>
+    <item rdf:about="http://losersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T05:07:43+04:00</dc:date>
+        <title>Intervalos y secuencias</title>
+        <link>http://losersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff</link>
+        <description>Intervalos y secuencias
+
+
+Intervalos
+
+Los intervalos son tareas que cambian una propiedad de un valor a otro
+durante un periodo de tiempo especificado. Iniciar un intervalo efectivamente inicia un proceso de fondo que modifica la propiedad durante el período de tiempo especificado.</description>
+    </item>
+</rdf:RDF>

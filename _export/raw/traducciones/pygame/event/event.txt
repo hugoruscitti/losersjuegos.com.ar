@@ -1,0 +1,34 @@
+====== Event ======
+
+/*
+create a new event object
+*/
+
+Genera un nuevo objeto de evento.
+
+<code python>
+pygame.event.Event(type, dict): return Event
+pygame.event.Event(type, * * attributes): return Event
+</code>
+
+/*
+Creates a new event with the given type. The event is created with the
+given attributes and values. The attributes can come from a dictionary
+argument, or as string keys from a dictionary. 
+*/
+
+Genera un nuevo evento a partir del tipo de evento dado. El evento
+se construye con los valores y atributos dados. Los atributos pueden
+venir desde un argumento diccionario, o como cadenas claves de un
+diccionario.
+
+/*
+The given attributes will be readonly attributes on the new event object
+itself. These are the only attributes on the Event object, there are no
+methods attached to Event objects.*/
+
+
+Los atributos dados serán atributos de solo lectura en el nuevo
+objeto de evento. Solo hay atributos en el objeto de evento, no hay
+métodos vinculados a los objetos de evento.
+

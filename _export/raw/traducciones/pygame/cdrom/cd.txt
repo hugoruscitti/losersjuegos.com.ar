@@ -1,0 +1,551 @@
+====== CD ======
+
+/*
+class to manage a cdrom drive
+*/
+
+Clase para gestionar un dispositivo de cdrom.
+
+<box 90%>
+  * [[#CD]]
+  * [[#init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#play]]
+  * [[#stop]]
+  * [[#pause]]
+  * [[#resume]]
+  * [[#eject]]
+  * [[#get_id]]
+  * [[#get_name]]
+  * [[#get_busy]]
+  * [[#get_paused]]
+  * [[#get_current]]
+  * [[#get_empty]]
+  * [[#get_numtracks]]
+  * [[#get_track_audio]]
+  * [[#get_all]]
+  * [[#get_track_start]]
+  * [[#get_track_length]]
+</box>
+
+===== CD =====
+
+<code python>
+pygame.cdrom.CD(id): return CD
+</code>
+
+/*
+You can create a CD object for each cdrom on the system. Use
+pygame.cdrom.get_count() to determine how many drives actually exist. The id
+argument is an integer of the drive, starting at zero.
+*/
+
+Puede crear un objeto CD por cada dispositivo de cdrom en el sistema. Use
+''pygame.cdrom.get_count()'' para determinar cuantos dispositivos existen
+actualmente. El argumento ''id'' es un número entero que representa
+al dispositivo, comenzando en 0.
+
+/*
+The CD object is not initialized, you can only call CD.get_id() and
+CD.get_name() on an uninitialized drive.
+*/
+
+El objeto CD no está inicializado, solo puede llamar a ''CD.get_id()'' y
+''CD.get_name()'' en un dispositivo no inicializado.
+
+
+/*
+It is safe to create multiple CD objects for the same drive, they will all
+cooperate normally.
+*/
+
+
+Es seguro crear múltiples objetos CD para el mismo dispositivo, actuarán
+cooperativamente de forma normal.
+
+
+===== init =====
+
+/*
+initialize a cdrom drive for use
+*/
+
+Inicializa un dispositivo de cdrom para utilizar.
+
+<code>
+CD.init(): return None
+</code>
+
+/*
+Initialize the cdrom drive for use. The drive must be initialized for most CD
+methods to work.  Even if the rest of pygame has been initialized.
+*/
+
+Inicializa un dispositivo de cdrom para utilizar. El dispositivo se
+debe inicializar para que funcionen la mayoría de los métodos. Incluso
+si el resto de pygame ha sido inicializado.
+
+/*
+There may be a brief pause while the drive is initialized. Avoid CD.init()
+if the program should not stop for a second or two.
+*/
+
+Puede haber una pausa mientras el dispositivo se inicializa. Evite usar
+''CD.init()'' si el programa parece no detenerse por uno o dos
+segundos.
+
+
+===== quit =====
+
+/*
+uninitialize a cdrom drive for use
+*/
+
+Deshabilita un dispositivo de cdrom.
+
+<code>
+CD.quit(): return None
+</code>
+
+/*
+Uninitialize a drive for use. Call this when your program will not be accessing
+the drive for awhile.
+*/
+
+Deshabilita un dispositivo de cdrom. Llame a este método cuando
+su programa no valla a acceder al dispositivo por un tiempo.
+
+
+
+===== get_init =====
+
+/*
+true if this cd device initialized
+*/
+
+Devuelve true si el dispositivo de cd está inicializado.
+
+<code>
+CD.get_init(): return bool
+</code>
+
+/*
+Test if this CDROM device is initialized. This is different than the
+pygame.cdrom.init() since each drive must also be initialized individually.
+*/
+
+Comprueba si esta unidad de cdrom está inicializada. Es difierente de pygame.cdrom.init, ya que cada unidad debe ser inicializada individualmente.
+
+
+===== play =====
+
+/*
+start playing audio
+*/
+
+Comienza a reproducir audio.
+
+<code>
+CD.play(track, start=None, end=None): return None
+</code>
+
+/*
+Playback audio from an audio cdrom in the drive. Besides the track number
+argument, you can also pass a starting and ending time for playback. The start
+and end time are in seconds, and can limit the section of an audio track played.
+*/
+
+Reproduce audio de un cdrom en la unidad. Además del argumento del número de
+pista, también puedes pasarle el tiempo de comienzo y final de la
+reproducción. El tiempo de inicio y fin están en segundos, y puedes limitar
+la sección de una pista de audio reproducida.
+
+/*
+If you pass a start time but no end, the audio will play to the end of the
+track. If you pass a start time and 'None' for the end time, the audio will play
+to the end of the entire disc.
+*/
+
+Si le pasa el tiempo de inicio pero no el final, se reproducirá audio hasta
+el final de la pista. Si le pasas un tiempo de inicio y 'None' para el final,
+el audio se reproducirá hasta el final del disco.
+
+/*
+See the CD.get_numtracks() and CD.get_track_audio() to find tracks to playback.
+*/
+
+Ver ''CD.get_numtracks'' y ''CD.get_track_audio'' para buscar pistas
+a reproducir.
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.
+*/
+
+Nota: track 0 es track 1 en el CD. Los números de pista empiezan en cero.
+
+
+
+
+===== stop =====
+
+/*
+stop audio playback
+*/
+
+Detiene la reproducción de audio.
+
+<code>
+CD.stop(): return None
+</code>
+
+
+/*
+Stops playback of audio from the cdrom. This will also lose the current playback
+position. This method does nothing if the drive isn't already playing audio.
+*/
+
+Detiene la reproducción de audio desde el cdrom. Esto también hará perder
+la posición actual de reproducción. Este método no hace nada si la
+unidad no está reproduciendo en ese momento.
+
+
+
+===== pause =====
+
+/*
+temporarily stop audio playback
+*/
+
+Detiene temporalmente la reproducción de audio.
+
+<code>
+CD.pause(): return None
+</code>
+
+/*
+Temporarily stop audio playback on the CD. The playback can be resumed at the
+same point with the CD.resume() method. If the CD is not playing this method
+does nothing.
+*/
+
+Detiene temporalmente la reproducción de audio en el CD. La reproducción
+se puede resumir en la misma posición con el método ''CD.resume()''. Este
+método no hace nada si la unidad no está reproduciendo en ese momento.
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.
+*/
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en 0.
+
+
+===== resume =====
+
+/*
+unpause audio playback
+*/
+
+Reanuda la reproducción de audio.
+
+<code>
+CD.resume(): return None
+</code>
+
+/*
+Unpause a paused CD. If the CD is not paused or already playing, this method
+does nothing.
+*/
+
+Reanuda un CD en pausa. Este método no hace nada si el CD no está en
+pausa o se encuentra reproduciendo.
+
+
+===== eject =====
+
+/*
+eject or open the cdrom drive
+*/
+
+Expulsa o abre la unidad de cdrom.
+
+<code>
+CD.eject(): return None
+</code>
+
+/*
+This will open the cdrom drive and eject the cdrom. If the drive is playing or
+paused it will be stopped.
+*/
+
+Abrirá la unidad de cdrom y expulsará la bandeja. Si el dispositivo
+está reproduciendo o en pausa se interrumpirá.
+
+
+===== get_id =====
+
+/*
+the index of the cdrom drive
+*/
+
+Obtiene el índice de la unidad de cdrom.
+
+<code>
+CD.get_id(): return id
+</code>
+
+/*
+Returns the integer id that was used to create the CD instance. This method can
+work on an uninitialized CD.
+*/
+
+Retorna el identificador entero ''id'' que se utilizó para crear 
+la instancia de CD. Este método puede operar en un CD no inicializado.
+
+
+
+===== get_name =====
+
+/*
+the system name of the cdrom drive
+*/
+
+Obtiene el nombre de sistema de la unidad de cdrom.
+
+<code>
+CD.get_name(): return name
+</code>
+
+/*
+Return the string name of the drive. This is the system name used to represent
+the drive. It is often the drive letter or device name. This method can work on
+an uninitialized CD.
+*/
+
+Retorna el nombre de un dispositivo. Este es el nombre de sistema usado para
+representar la unidad. Puede ser el nombre del dispositivo o la letra de
+la unidad. Este método puede funcionar en un dispositivo de CD sin
+inicializar.
+
+
+
+===== get_busy =====
+
+/*
+true if the drive is playing audio
+*/
+
+Retorna ''True'' si el dispositivo está reproduciendo audio.
+
+<code>
+CD.get_busy(): return bool
+</code>
+
+/*
+Returns True if the drive busy playing back audio.
+*/
+
+Retorna ''True'' si el dispositivo de cd está ocupado reproduciendo
+audio.
+
+
+===== get_paused =====
+
+/*
+true if the drive is paused
+*/
+
+Devuelve ''True'' si el dispositivo está en pausa.
+
+<code>
+CD.get_paused(): return bool
+</code>
+
+/*
+Returns True if the drive is currently paused.
+*/
+
+Devuelve ''True'' si el dispositivo está en pausa.
+
+
+===== get_current =====
+
+/*
+the current audio playback position
+*/
+
+Obtiene la posición de la reproducción actual.
+
+<code>
+CD.get_current(): return track, seconds
+</code>
+
+/*
+Returns both the current track and time of that track. This method works when
+the drive is either playing or paused.
+*/
+
+Retorna la pista actual y el tiempo de reproducción de esa pista. Este método
+funciona cuando el dispositivo está en pausa o reproduciendo.
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.
+*/
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.
+
+
+===== get_empty =====
+
+/*
+False if a cdrom is in the drive
+*/
+
+''False'' si un cdrom está dentro de la unidad.
+
+<code>
+CD.get_empty(): return bool
+</code>
+
+/*
+Return False if there is a cdrom currently in the drive. If the drive is
+empty this will return True.
+*/
+
+Retorna ''False'' si actualmente hay un cdrom en la unida. Si la unidad
+está vacía retornará ''True''.
+
+
+===== get_numtracks =====
+
+/*
+the number of tracks on the cdrom
+*/
+
+Obtiene el número de pistas del cdrom.
+
+<code>
+CD.get_numtracks(): return count
+</code>
+
+/*
+Return the number of tracks on the cdrom in the drive. This will return zero of
+the drive is empty or has no tracks.
+*/
+
+
+Retorna el número de pistas del cdrom en la unidad. Retornará 0 si la
+unidad está vacía o no hay pistas.
+
+
+===== get_track_audio =====
+
+/*
+true if the cdrom track has audio data
+*/
+
+''True'' si la pista del cdrom tienen datos de audio.
+
+<code>
+CD.get_track_audio(track): return bool
+</code>
+
+/*
+Determine if a track on a cdrom contains audio data. You can also call
+CD.num_tracks() and CD.get_all() to determine more information about the cdrom.
+*/
+
+Determina si una pista del cdrom contiene datos de audio. También puede
+llamar a ''CD.num_tracks()'' y ''CD.get_all()'' para obtener mas información acerca del cdrom.
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.
+*/
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan en
+cero.
+
+
+===== get_all =====
+
+/*
+get all track information
+*/
+
+Obtiene toda la información de pistas.
+
+<code>
+CD.get_all(): return [(audio, start, end, lenth), ...]
+</code>
+
+/*
+Return a list with information for every track on the cdrom. The information
+consists of a tuple with four values. The audio value is True if the track
+contains audio data. The start, end, and length values are floating point
+numbers in seconds. Start and end represent absolute times on the entire disc.
+*/
+
+Retorna una lista con información de cada pista del cdrom. La información
+consiste en una tupla con cuatro valores. El valor ''audio'' será ''True''
+si la pista contiene datos de audio. Los valores ''start'', ''end'' y
+''length'' son números reales en segundos. Tanto ''start'' como ''end''
+representan tiempos absolutos del disco entero.
+
+
+===== get_track_start =====
+
+/*
+start time of a cdrom track
+*/
+
+Obtiene el tiempo de inicio de una pista de cdrom.
+
+<code>
+CD.get_track_start(track): return seconds
+</code>
+
+/*
+Return the absolute time in seconds where at start of the cdrom track.
+*/
+
+Retorna el tiempo absoluto en segundos donde está el inicio de la
+pista de cdrom.
+
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.
+*/
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.
+
+
+
+
+===== get_track_length =====
+
+/*
+length of a cdrom track
+*/
+
+Obtiene la duración de una pista.
+
+<code>
+CD.get_track_length(track): return seconds
+</code>
+
+/*
+Return a floating point value in seconds of the length of the cdrom track.
+*/
+
+Retorna un valor en número real que representa la duración en segundos
+de una pista del cdrom.
+
+/*
+Note, track 0 is the first track on the CD.  Track numbers start at zero.*/
+
+
+Nota: track 0 es la primer pista del CD. Los números de pista comienzan
+en cero.

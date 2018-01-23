@@ -1,0 +1,9 @@
+===== Perfil =====
+
+
+
+  * Nick dentro del foro: [[http://www.losersjuegos.com.ar/foro/profile.php?mode=viewprofile&u=439|Shellman]]
+  * Nacido el: 8 Junio de 1984
+  * Locación: Cartagena, Colombia
+  * Intereses: Programación en C, C++, Java, JSP, Python, PHP
+  * Página web: [[http://www.chattagena.com|Chattagena]]

@@ -1,0 +1,34 @@
+====== OrderedUpdates ======
+
+/*
+RenderUpdates class that draws Sprites in order of addition
+*/
+
+Una clase como RenderUpdates que dibuja objetos Sprite
+en el orden en que fueron insertados.
+
+
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:OrderedUpdates#OrderedUpdates]]
+</box>
+
+===== OrderedUpdates =====
+
+
+<code python>
+pygame.sprite.OrderedUpdates(*spites): return OrderedUpdates
+</code>
+
+
+/*
+This class derives from pygame.sprite.RenderUpdates(). It maintains 
+the order in which the Sprites were added to the Group for rendering. 
+This makes adding and removing Sprites from the Group a little slower 
+than regular Groups*/
+
+Esta clase deriva de ''pygame.sprite.RenderUpdates()''. Mantiene
+el orden en que se agregaron los objetos Sprite al grupo para
+imprimirlos. Esto produce que agregar y eliminar objetos del
+grupo sea un poco mas lento que en los Grupos normales.
+

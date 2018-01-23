@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sprite:group</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:51+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite,group" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/sprite/group-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-sprite.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="group.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/sprite/group.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#group" class="toc">Group</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#group1" class="toc">Group</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sprites" class="toc">sprites</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#copy" class="toc">copy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#add" class="toc">add</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#remove" class="toc">remove</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#has" class="toc">has</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#update" class="toc">update</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#draw" class="toc">draw</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clear" class="toc">clear</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#empty" class="toc">empty</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="group" id="group">Group</a></h1>
+<div class="level1">
+
+
+
+<p>
+Clase contenedora para varios Sprites.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#group" class="wikilink1" title="traducciones:pygame:sprite:sprite">Group</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#sprites" class="wikilink1" title="traducciones:pygame:sprite:sprite">sprites</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#copy" class="wikilink1" title="traducciones:pygame:sprite:sprite">copy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#add" class="wikilink1" title="traducciones:pygame:sprite:sprite">add</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#remove" class="wikilink1" title="traducciones:pygame:sprite:sprite">remove</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#has" class="wikilink1" title="traducciones:pygame:sprite:sprite">has</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#update" class="wikilink1" title="traducciones:pygame:sprite:sprite">update</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#draw" class="wikilink1" title="traducciones:pygame:sprite:sprite">draw</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#clear" class="wikilink1" title="traducciones:pygame:sprite:sprite">clear</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#empty" class="wikilink1" title="traducciones:pygame:sprite:sprite">empty</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Group" [1-547] -->
+<h2><a name="group1" id="group1">Group</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">Group</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites<span class="br0">&#41;</span>: <span class="kw1">return</span> Group</pre>
+
+
+<p>
+Un contenedor simple para objetos Sprite. Se puede heredar de esta clase
+para crear contenedores que tengan comportamiento mas específico. El
+constructor toma cualquier número de sprites para agregar en el
+grupo. El grupo soporta las siguientes operaciones estándar de python:
+</p>
+
+
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Operador python </th><th class="col1"> Descripción </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> in </td><td class="col1"> Consulta si un Sprite está incluido </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> len </td><td class="col1"> Cuenta el número de sprites contenidos </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> bool </td><td class="col1"> Consulta si alguno de los sprites están incluidos </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> iter </td><td class="col1"> Itera a través de todos los sprites </td>
+	</tr>
+</table>
+
+
+
+<p>
+Los sprites en el grupo no están ordenados, por lo tanto recorrer o dibujar
+los sprite se realizar sin un orden particular.
+</p>
+
+</div>
+<!-- SECTION "Group" [548-1874] -->
+<h2><a name="sprites" id="sprites">sprites</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una lista de los sprites contenidos en el grupo.
+</p>
+<pre class="code python">Group.<span class="me1">sprites</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> sprite_list</pre>
+
+
+<p>
+Retorna una lista con todos los sprites contenidos en el grupo. También puede
+obtener un iterador para el grupo, aunque no podrá iterar en el grupo mientras
+lo modifica.
+</p>
+
+</div>
+<!-- SECTION "sprites" [1875-2398] -->
+<h2><a name="copy" id="copy">copy</a></h2>
+<div class="level2">
+
+
+
+<p>
+Duplica el grupo.
+</p>
+<pre class="code python">Group.<span class="kw3">copy</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Group</pre>
+
+
+<p>
+Genera un nuevo grupo con los mismos sprites que el original. Si ha creado
+una nueva clase heredando desde Group, el nuevo objeto será de la misma
+clase que el original. Esto funciona solamente si el constructor de la
+clase derivada toma los mismos argumentos que la clase Group.
+</p>
+
+</div>
+<!-- SECTION "copy" [2399-3058] -->
+<h2><a name="add" id="add">add</a></h2>
+<div class="level2">
+
+
+
+<p>
+Agrega sprites al grupo.
+</p>
+<pre class="code python">Group.<span class="me1">add</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Agrega cualquier número de sprites a este grupo. Esta función solo
+agregará sprites que aún no sean miembros del grupo.
+</p>
+
+
+
+<p>
+Cada argumento <code>sprite</code> también puede ser una iterador 
+conteniendo sprites.
+</p>
+
+</div>
+<!-- SECTION "add" [3059-3589] -->
+<h2><a name="remove" id="remove">remove</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina un sprite del grupo.
+</p>
+<pre class="code python">Group.<span class="me1">remove</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Elimina cualquier número de sprites del grupo. Esta función solo elimina
+sprites que son miembros actuales del grupo.
+</p>
+
+
+
+<p>
+Cada argumento <code>sprite</code> puede ser un iterador conteniendo Sprites.
+</p>
+
+</div>
+<!-- SECTION "remove" [3590-4121] -->
+<h2><a name="has" id="has">has</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un grupo contiene sprites.
+</p>
+<pre class="code python">Group.<span class="me1">has</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el grupo contiene todos los sprites dados. Esto es similar
+a utilizar el operador <em>in</em> en el grupo (<code>if sprite in group: … </code>), que
+consulta si un sprite individual pertenece al grupo.
+</p>
+
+
+
+<p>
+Cada argumento <code>sprite</code> puede ser un iterador conteniendo Sprites.
+</p>
+
+</div>
+<!-- SECTION "has" [4122-4835] -->
+<h2><a name="update" id="update">update</a></h2>
+<div class="level2">
+
+
+
+<p>
+Llama al método <code>update</code> en los sprites contenidos.
+</p>
+<pre class="code python">Group.<span class="me1">update</span><span class="br0">&#40;</span><span class="sy0">*</span>args<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Llama al método <code>update())</code> en todos los sprites incluidos en el grupo. La
+clase base <code>Sprite</code> tiene un método <code>update</code> que toma cualquier número
+de argumentos y no hace nada. Los argumento que se pasan a <code>Group.update()</code>
+se pasarán a cada Sprite.
+</p>
+
+
+
+<p>
+No hay forma de obtener el valor de retorno de los métodos <code>update</code> de
+los sprites.
+</p>
+
+</div>
+<!-- SECTION "update" [4836-5679] -->
+<h2><a name="draw" id="draw">draw</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja las imágenes de sprites.
+</p>
+<pre class="code python">Group.<span class="me1">draw</span><span class="br0">&#40;</span>Surface<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Dibuja los sprites contenidos sobre el argumento <code>Surface</code>. Para ello utiliza
+el atributo <code>Sprite.image</code> para la superficie fuente y <code>Sprite.rect</code> para
+la posición.
+</p>
+
+
+
+<p>
+El grupo no almacena los sprites en orden, por lo tanto el orden al
+momento de dibujar es arbitrario.
+</p>
+
+</div>
+<!-- SECTION "draw" [5680-6335] -->
+<h2><a name="clear" id="clear">clear</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja un fondo sobre los sprites.
+</p>
+<pre class="code python">Group.<span class="me1">clear</span><span class="br0">&#40;</span>Surface_dest, background<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Borra los sprites usados en la última llamada a <code>Group.draw()</code>. La superficie
+destino se limpia pintando con el fondo de pantalla sobre las posición
+anterior del sprite.
+</p>
+
+
+
+<p>
+El fondo de pantalla es generalmente una Superficie que tiene las
+mismas dimensiones que la superficie destino. De todas formas, también puede
+ser un nombre de función que tome dos argumentos, la superficie destino y un
+area a limpia. La función <code>background</code> se llamará varias veces para limpiar
+la pantalla.
+</p>
+
+
+
+<p>
+Este es un ejemplo de una función que limpiará los sprites con un
+color rojo.
+</p>
+<pre class="code python"><span class="kw1">def</span> clear_callback<span class="br0">&#40;</span>surf, rect<span class="br0">&#41;</span>:
+    color = <span class="nu0">255</span>, 0, 0
+    surf.<span class="me1">fill</span><span class="br0">&#40;</span>color, rect<span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "clear" [6336-7708] -->
+<h2><a name="empty" id="empty">empty</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina todos los sprites.
+</p>
+<pre class="code python">Group.<span class="me1">empty</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Elimina todos los sprites de este grupo.
+</p>
+
+</div>
+<!-- SECTION "empty" [7709-] --></div>
+</body>
+</html>

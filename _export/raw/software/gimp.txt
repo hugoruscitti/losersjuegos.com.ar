@@ -1,0 +1,51 @@
+====== Gimp Plugins ======
+
+Gimp es uno de los editores de imagenes libre mas importantes, y como
+desarrolladores de juegos lo usamos con frecuencia.
+
+Esta pagina reune complementos para que desarrollar graficos para juegos
+te resulte mas sencillo.
+
+
+===== SpriteSheet Tool =====
+
+El complemento SpriteSheet Tool ha sido desarrollado por
+[[comunidad:integrantes:hugoruscitti]] para que puedas manejar
+grillas de sprites muy facilmente.
+
+El complemento te permite plegar y desplegar cuadros de animación directamente
+desde gimp.
+
+Por ejemplo, cuando quieras sincronizar cuadros de animación te conviene tener
+todos los cuadros de la imagen en difentes capas:
+
+{{:software:gimp:integrated.png|}}
+
+{{:software:gimp:leyers.png|}}
+
+Ahora bien, si quieres integrarlo a un juego es conveniente tener todos los
+cuadros en una sola grilla. Para ello abre el menú **Python-Fu, SpriteTool y create Sheet**:
+
+
+
+El resultado será:
+
+{{:software:gimp:sheet.png|}}
+
+
+y una vez mas, si quieres puedes llevarlo a la forma plegada para hacer modificaciones
+abre el menú **Python-fu, SpriteTool e integrate.**
+
+
+===== Instalación =====
+
+
+Solo tienes que descomprimir el que mostramos a continuación al directorio
+"**.gimp/plug-ins**" de tu directorio home. Por ejemplo, si tu nombre de usuario
+es "guest" la ruta del plugin tiene que ser: **/home/guest/.gimp-2.6/plug-ins**
+
+  * [[https://github.com/hugoruscitti/gimp-spritesheet/archive/master.zip|Descargar]]
+
+
+al terminar de copiar los archivos .py que contiene el archivo anterior, puedes
+abrir gimp y encontrar el menú **Python-Fu, SpriteTool** listo para utilizar.

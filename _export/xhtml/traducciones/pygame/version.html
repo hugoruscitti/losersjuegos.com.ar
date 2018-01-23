@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:version</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:37+0300" />
+<meta name="keywords" content="traducciones,pygame,version" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/version-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="version.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/version.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#version" class="toc">version</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#ver" class="toc">ver</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#vernum" class="toc">vernum</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="version" id="version">version</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo que contiene información de la versión.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#ver" title="traducciones:pygame:version &crarr;" class="wikilink1">ver</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#vernum" title="traducciones:pygame:version &crarr;" class="wikilink1">vernum</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Este módulo se incorpora automáticamente dentro del paquete pygame y ofrece
+unas variables para verificar qué versión de pygame tiene el sistema.
+</p>
+
+</div>
+<!-- SECTION "version" [1-471] -->
+<h2><a name="ver" id="ver">ver</a></h2>
+<div class="level2">
+
+
+
+<p>
+Número de versión como una cadena.
+</p>
+<pre class="code">
+&gt;&gt;&gt; pygame.version.ver
+&#039;1.8.1release&#039;
+</pre>
+
+
+
+<p>
+Es la versión de pygame representada como una cadena. Puede contener un número
+de versión específico, por ejemplo “1.5.2”.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.version.ver" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.version.ver">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "ver" [472-940] -->
+<h2><a name="vernum" id="vernum">vernum</a></h2>
+<div class="level2">
+
+
+
+<p>
+Número de versión en formato de enteros en una tupla.
+</p>
+<pre class="code">
+&gt;&gt;&gt; pygame.version.vernum
+(1, 8, 1)
+</pre>
+
+
+
+<p>
+Esta variable de la versión se puede comparar fácilmente con otros números
+de versiones del mismo formato. Un ejemplo de verificación de versiones de
+pygame podría ser:
+</p>
+<pre class="code python"><span class="kw1">if</span> pygame.<span class="me1">version</span>.<span class="me1">vernum</span> <span class="sy0">&lt;</span> <span class="br0">&#40;</span><span class="nu0">1</span>, <span class="nu0">5</span><span class="br0">&#41;</span>:
+    <span class="kw1">print</span> <span class="st0">'Cuidado, tiene una version muy antigua de pygame (%s)'</span> <span class="sy0">%</span>  pygame.<span class="me1">version</span>.<span class="me1">ver</span>
+    disable_advanced_features = <span class="kw2">True</span></pre><ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.version.vernum" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.version.vernum">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "vernum" [941-] --></div>
+</body>
+</html>

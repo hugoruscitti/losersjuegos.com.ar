@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos comunidad:integrantes</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T14:55:49+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/endaramiz?rev=1236517506&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/hugo_ruscitti?rev=1231023333&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/hugoruscitti?rev=1223146626&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/javier?rev=1232461478&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/joksnet?rev=1232461478&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/lacabra25?rev=1233938569&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/shellman?rev=1236093915&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/endaramiz?rev=1236517506&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-08T16:05:06+04:00</dc:date>
+        <title>Perfil</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/endaramiz?rev=1236517506&amp;do=diff</link>
+        <description>Perfil
+
+	*  Nick dentro del foro: endaramiz
+	*  Email: 
+	*  Nacido en: 1989
+	*  Ocupación: Estudiante, 1º de Ingeniería técnica de informática de gestión
+	*  Locación: Barcelona, España
+	*  Intereses: Programación de videojuegos y algoritmia</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/hugo_ruscitti?rev=1231023333&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-04T01:55:33+04:00</dc:date>
+        <title>comunidad:integrantes:hugo_ruscitti</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/hugo_ruscitti?rev=1231023333&amp;do=diff</link>
+        <description>comunidad:integrantes:hugoruscitti&lt;strong&gt;You will be redirected to  in approximately 10 seconds.&lt;/strong&gt;&lt;script&gt;url=&quot;/comunidad/integrantes/hugoruscitti&quot;;setTimeout(&quot;location.href=url&quot;,10000);&lt;/script&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/hugoruscitti?rev=1223146626&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-10-04T22:57:06+04:00</dc:date>
+        <title>Hugo Ruscitti</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/hugoruscitti?rev=1223146626&amp;do=diff</link>
+        <description>Perfil
+
+	*  Nick dentro del foro: hugoruscitti
+	*  Nacido el: 7 Octubre de 1983
+	*  Locación: Capital Federal Buenos Aires, Argentina
+	*  Intereses: Programación en C, C++ y Python (principalmente)
+	*  Gustos musicales: Ver perfil en Last.fm</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/javier?rev=1232461478&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:38+04:00</dc:date>
+        <title>Felipe Javier</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/javier?rev=1232461478&amp;do=diff</link>
+        <description>[Javier, el Tétrico]
+ E-mail:       Nombre:     Felipe Javier V. H.  Lugar:      Guanajuato, México  Intereses:  Programar y escuchar True Metal  Metas:      Hacer un VidiJuego por turnos, de veras.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/joksnet?rev=1232461478&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:38+04:00</dc:date>
+        <title>Juan Manuel Martínez</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/joksnet?rev=1232461478&amp;do=diff</link>
+        <description>[Juan Manuel Martínez]</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-09-14T01:50:07+04:00</dc:date>
+        <title>Jorge Araya Navarro</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff</link>
+        <description>Perfil?
+
+	*  nick dentro del querido foro: shackra
+	*  fecha de nacimiento: 28 de diciembre de 1990
+	*  localizacion: Siquirres, Limón, Costa Rica behind you!
+	*  intereses: programar en lenguaje python, C. Crear juegos sea en 2D ó 3D.
+	*  deportes: jugar mucho Metal Gear Solid 3 en mi PS2, hacer BMX, practicar Jujitsu y Judo.
+	*  influencias: Hideo Kojima, Steven Spielberg, Jigorō Kanō, Edwin Delarosa.
+	*  Motores para video juegos: PySFML.
+	*  Repositorio de código fuente: Bitbucket (Merc…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/lacabra25?rev=1233938569&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-06T19:42:49+04:00</dc:date>
+        <title>Jesús Hernández Gormaz</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/lacabra25?rev=1233938569&amp;do=diff</link>
+        <description>Perfil
+
+	*  Nick dentro del foro: lacabra25
+	*  Nacido el: 18 Septiembre de 1991
+	*  Locación: Tenerife, España
+	*  Intereses: Programación en C y aprender algun dia ensamblador</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/shellman?rev=1236093915&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-03T18:25:15+04:00</dc:date>
+        <title>Perfil</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/shellman?rev=1236093915&amp;do=diff</link>
+        <description>Perfil
+
+	*  Nick dentro del foro: Shellman
+	*  Nacido el: 8 Junio de 1984
+	*  Locación: Cartagena, Colombia
+	*  Intereses: Programación en C, C++, Java, JSP, Python, PHP
+	*  Página web: Chattagena</description>
+    </item>
+</rdf:RDF>

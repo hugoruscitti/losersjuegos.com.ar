@@ -1,0 +1,140 @@
+{{:referencia:articulos:make_games:make_games.pdf|Ver PDF}}
+====== ¿Cómo hacer juegos? Un camino al desarrollo de videojuegos ======
+
+===== Créditos =====
+    * **Autor**: Geoff Howland
+    * **Traducido por**: José Jorge Enríquez Rodríguez
+    * **Fecha**: 19 de Septiembre del 2006
+
+===== Introducción =====
+Cuando platico con personas que buscan entrar al desarrollo de juegos, algunas de las primeras cosas que a menudo me preguntan son, "¿cómo puedo hacer juegos?" o "quiero hacer un juego como Quake/Everquest/Starcraft y...? La primera pregunta es muy difícil de responder, ya que hay muchísimos aspectos posibles por comentar, y cada uno de ellos puede ser infinitamente complejo.
+
+La segunda, sin embargo, va a un extremo irreal en cuanto a expectativas. Starcraft, Everquest y Quake fueron creados por equipos de profesionales con presupuestos de algunos millones de dólares. Y aún más importante, todos esos juegos fueron hechos por gente con mucha experiencia en la creación de juegos. No sólo decidieron hacer un juego y éstos se convirtieron en mega éxitos, sino que iniciaron con cosas pequeñas y de allí forjaron su camino hacia arriba. Este es el punto que cualquier persona interesada en entrar al desarrollo de videjouegos debe entender y repetir, repetir, repetir hasta que se vuelva parte de su pensamiento y no le sea posible entender la vida sin esta verdad tan evidente y universal.
+
+Hasta que entiendas que todas las habilidades en el desarrollo de juegos son aprendidas mediante la experiencia, (lo cual quiere decir que inicies con cosas pequeñas y desarrolles tu camino hacia las complicadas), estarás destinado a nunca terminar tus proyectos. Aún para el infinitesimal número de equipos que consiguen terminar un proyecto no trivial antes de haber creado algunos más pequeños para aprender, simplemente les tomará mucho más tiempo que si hubieran iniciado con proyectos más pequeños.
+
+
+{{gallery>:referencia:articulos:quake3.jpg}}
+
+===== Entonces, ¿por dónde empiezo? =====
+==== Tetris ====
+Tetris es el juego perfecto para iniciar tu jornada en el camino a convertirte en un hábil desarrollador de videojuegos. ¿Por qué? Porque Tetris contiene todos los elementos que se encuentran en todos los juegos, y puede ser creado con el menor esfuerzo de todos ellos. También, no necesitas ser un artista para crear un Tetris que se vea bien. Cualquier persona que pueda dibujar un bloque, que es cualquier persona con un programa de dibujo, puede crear una versión de calidad comercial de Tetris.
+
+Ese es otro de los beneficios de empezar con un Tetris. No sólo puedes crear un juego completamente funcional, que es adictivo y divertido, sino que también se verá tan bien como cualquier versión comercial del mismo. Los bloques son bloques sin importar quién los dibuje, y los tetraminos (las figuras empleadas en Tetris) son sólo una colección de cuatro bloques.
+
+Tetris tiene todos los componentes que TODOS los juegos tienen en común. Tiene un ciclo de juego (el proceso de repetirse una y otra vez hasta que el juego finalice). El ciclo de juego lee cierta entrada, la procesa, actualiza los elementos del juego (los tetraminos que van cayendo), y checa las condiciones de triunfo/derrota.
+
+Todos y cada uno de los juegos que crees deberán realizar todas estas cosas, por lo que el aprender e implementar el proceso es algo muy importante. Después de que hayas completado todo el proceso por primera vez, tendrás un mejor panorama sobre qué tan difícil y cuánto tiempo te tomará realizar futuros juegos. Si no haces esto al menos una vez nunca tendrás un conocimiento adecuado de cada uno de estos elementos. Cuando tengas proyectos más grandes, habrá más aspectos desconocidos que no podrás analizar tanto en complejidad como en tiempo. Si nisiquiera entiendes completamente todo el proceso porque has fallado en LLEVARLO A CABO, muy probablemente no podrás proyectar ni estimar tiempos adecuadamente y no tendrás éxito en tu tarea.
+
+<html>
+<center>
+<a href="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/amazing_blocks.png" border="0"><img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/amazing_blocks_thumb.png" /></a>
+<br />
+<font size="-2">Un clon de Tetris llamado Amazing Blocks</font>
+</center>
+</html>
+
+Algo que debo mencionar es que, cuando crees tu juego del Tetris, no puedes llamarlo "Tetris". Tetris es una marca registrada por la Tetris Company, propiedad de Alexey Pajitnov, el creador de Tetris. A ellos pertenece el derecho exclusivo de usar el nombre Tetris, y supongo que ganarían algún juicio alegando que no puedes crear un juego con la sílaba "tris" en el que haya bloques descendiendo, ya que obviamente se estaría aprovechando de la popularidad del nombre Tetris.
+
+Sin embargo, no hay ningún problema si llamas a tu juego "El cielo está cayendo", o cualquier cosa sin un "tris", ya que ellos no son dueños del modo de juego, de la interfaz o de la idea de bloques que caen. Si alguien te dice lo contrario, respóndeles que no se puede ser dueño de una idea, y si necesitas más pruebas puedes buscar información al respecto en la USPTO (http://www.uspto.gov/).
+
+==== ¿Qué sigue? ====
+
+Una vez que hayas completa y absolutamente terminado tu versión de Tetris, estás listo para el siguiente reto: Breakout.
+
+Breakout es también un juego similar, pero agrega una detección de colisiones mucho más avanzada que la que se necesitó en Tetris. También necesitarás agregar algo de física para los rebotes de la pelota con diferentes porciones de la raqueta y los bloques.
+
+La estructura del nivel también se vuelve un problema a tomar en cuenta, y para tener más de un nivel tendrás que ingeniarte algún modo de guardar los mapas. Con esto te enfrentarás a otro componente de cualquier juego un poco más grande, la carga de recursos y la transición entre diferentes niveles.
+
+Después de que termines tu obra maestra de Breakout debieras comenzar la creación de un PacMan. PacMan significará un paso evolutivo ya que agrega el elemento de la inteligencia artificial (IA). Quizá no te hayas percatado de esto, pero en el Pacman original los cuatro diferentes fantasmas tenían diferentes metas para vencerte como un equipo. El fantasma agresivo intentaba seguir el camino más corto hacia el jugador, logrando que lo evitarás directamente. El interceptor intentaría ir al cruce más cercano al que te moverías para evitar al agresor. Un segundo interceptor intentaría mantenerse más hacia el centro y evitar que uses los túneles hacia los lados. El último fantasma se movería aleatoriamente lo que a menudo hacía que permaneciera en una sección a la que necesitaras llegar para finalizar el mapa.
+
+Este tipo de IA era bastante avanzado para los juegos de su tiempo, y te dará un buen reto como tu primer juego con enemigos con IA.
+
+Pac-Man también incrementa la complejidad de los mapas, y cuenta con más flexibilidad para el uso de sonidos, ya que ciertamente el sonido fué uno de los elementos cruciales en el éxito de Pac-Man. (Después de todo, ¿qué sería Pac-Man sin ese sonido de "wakka-wakka"?).
+
+<html>
+<center>
+<img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/pac_man.png" />
+<br />
+<font size="-2">Pac-Man. Un verdadero clásico.</font>
+</center>
+</html>
+
+El último juego que te sugiero crear es un "side scroller" o con scroll de lado, tal como Super Mario Bros, un juego en el que puedes saltar sobre múltiples plataformas, disparar, agacharte e interactuar con los enemigos. Ya que este juego implica una mayor cantidad de arte gráfico, te sugiero que consideres el uso de SpriteLib, que cuenta con varios gráficos gratuitos y fáciles de utilizar, disponible en http://www.flyingyogi.com/fun/spritelib.html.
+
+<html>
+<center>
+<img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/mario.png" />
+<br />
+<font size="-2">Super Mario Brothers 2</font>
+</center>
+</html>
+
+Los juegos con scroll introducen la posibilidad de una IA más compleja mediante la aparición de jefes de nivel que cuentan con patrones que debes aprender para poder derrotarlos, así como una mayor complejidad en pantalla. Ahora debes crear una pantalla que sea capaz de desplazarse en por lo menos dos direcciones, sino es que cuatro, y manejar el clipping en pantalla, que puede implicar cierta curva de aprendizaje. También debes trabajar en la física para los saltos, rebotes del personaje o el disparo de proyectiles.
+
+También se requieren más enemigos que para los juegos anteriores, y necesitarás conocer en todo momento su estado (vivo/muerto, activo/inactivo), ya sea porque se encuentren en pantalla o porque ya los hayas eliminado. La complejidad para guardar los niveles se incrementará y seguramente en este punto necesitarás crear un editor de niveles.
+
+El editor de niveles debiera ser capaz de colocar tiles, visualizar los tiles disponibles, desplazarse por el mapa, permitir seleccionar tiles para dibujarlos, cortar y pegar, deshacer y colocar enemigos. Si decides evitar escribir cualquiera de estas características, muy probablemente lo lamentarás, y si cuentas con el apoyo de un artista o un diseñador de niveles, no estarán muy contentos contigo (¿cómo te sentirías si para editar un nivel tuvieras que examinar un montón de archivos de texto con una gran cantidad de números y comas?). También te sugeriría crear respaldos de todos los mapas previamente guardados, ya que es mucho más fácil recargar una versión anterior que recrearla por completo.
+
+Finalmente, ¡el juego de plataformas es una condición de victoria real! Cuando llegues al final de este juego, en serio habrás LLEGADO a algún lado, ahora ya puedes agregar una historia conforme el juego se desarrolle (y no olvides algún tipo de fuegos artificiales al final del nivel, para que el jugador tenga la sensación de logro y un premio REAL por terminar el juego, es anticlimático el poner simplemente "¡Has ganado!" en la pantalla cuando el jugador ha pasado incontables horas tratando de pasar el juego).
+
+===== Dando el toque final... =====
+El terminar un juego no significa simplemente llegar a un punto donde sea jugable, y entonces ir por el siguiente, ese no es un juego terminado. Un juego terminado tendrá una pantalla de presentación, un logo al salir, un menú de opciones (de ser necesario, o al menos las instrucciones sobre cómo jugarlo), pantallas de introducción al juego, pantallas de recompensa y una pantalla con la tabla de puntuaciones (cuando sea necesaria).
+
+Si no pudieras poner tu juego en una máquina arcade de los 80s y no distinguir si el juego es el original de la máquina por los modos que muestra (a excepción del modo de demostración), entonces tu juego no está terminado.
+
+Hay una gran diferencia entre un juego que está "en los puros huesos", y un juego al que ya has puesto todos los detalles finales. Esta diferencia será cuestión de unos cuantos días o hasta dos semanas (dependiendo del tamaño del juego). Se volverá más pesada (algunas veces exponencialmente) conforme te muevas del Tetris al Breakout y así sucesivamente.
+
+El resultado, sin embargo, será muy importante, tanto en términos de tu entendimiento del desarrollo de juegos, como para tu propio orgullo y satisfacción en tu trabajo. (¡Los logros cuentan para la autoestima!).
+
+<html>
+<center>
+<img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/galaga.png" />
+<br />
+<font size="-2">Galaga: Todo explicado en un vistazo</font>
+</center>
+</html>
+
+No es sencillo mostrar tu juego y tener que explicar constantemente a quienes lo prueben lo que deben hacer y que se sientan de la misma manera que si no hubieran tenido problemas en entrar al juego y que todo estuviera bien presentado. Otros desarrolladores de juegos suelen ser más comprensivos, ya que ellos están conscientes el proceso.
+
+Pero aún más importante, aprenderás todos los detalles que se presentan al realmente finalizar un juego. Si te detienes simplemente en hacer funcionar el modo de juego, te perderás de los detalles que involucra el encapsular el todo, lo que dejará vacíos en tu mente cuando intentes planear proyectos más grandes en el futuro.
+
+===== Pero, ¡estos juegos son estúpidos! =====
+De hecho, estos juegos muestran claramente la base de la jugabilidad de TODOS los juegos. Agrega una bonita interfaz 3D a un juego de disparos y seguirá siendo un juego de disparos. Podrías crear el mismo juego en 2D con una vista superior y el modo de juego sería codificado exactamente en la misma manera.
+
+¿Es estúpido ser capaz de crear un juego con EXACTAMENTE los mismos controles, respuesta y enemigos que Quake? Si le quitas la interfaz 3D, y das un vistazo a lo que realmente ocurre desde una vista superior, ¿todavía parece tan lejos de lograr?
+
+Aún así, este no es un proyecto para principiantes. Hay muchos otros elementos que necesitan ser desarrollados y definidos para un primer proyecto, por lo que te recomiendo ampliamente que sigas el orden de los juegos que sugiero y que avances gradualmente en tu entendimiento del desarrollo de juegos. (Cuando aprendiste a nadar, ¿INMEDIATAMENTE diste un clavado en el agua más profunda? ¡NO! Empezaste por la orilla, luego aprendiste a flotar y a progresar a partir de ello).
+
+Antes de empezar cualquier cosa, debes tener claramente algo en tu mente, qué es lo que quieres obtener de ello. ¿Quieres crear juegos, o sólo duplicar la tecnología con que cuenta Quake? Si estás interesado en la tecnología, entonces sáltate todo lo relacionado con los juegos e inicia con la tecnología de gráficos.
+
+<html>
+<center>
+<img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/gauntlet.png" />
+<br />
+<font size="-2">Gauntlet</font>
+</center>
+</html>
+
+Si realmente estás interesado en crear juegos, entonces necesitas hacer a un lado tu deseo de crear el siguiente mega éxito y enfocarte en desarrollar tus habilidades para hacerlo. La mejor manear de lograrlo es a través de crear y (más importante aún) terminar tus juegos, que es en lo que te dará experiencia el seguir este camino (o uno similar).
+
+===== ¡Enorgullécete de tus juegos! =====
+No oyes a los universitarios avergonzarse de ir a la universidad porque aún no tienen un trabajo. Estás aprendiendo, y aún el hacer un juego sencillo es difícil, especialmente si quieres hacerlo BIEN. Esto se ve claramente cuando observas a toda esa gente que NO ha hecho siquiera juegos sencillos pero hablan constantemente sobre el tema. Una vez que hayas finalizado tu juego, considérate como una persona con más experiencia que cualquiera que no ha terminado un juego aún cuando su idea suena fenomenal y que podría competir con lo último en videojuegos.
+
+Si no puede jugarse, no es un juego. Cuando tengas un producto terminado que puedas mostrar, debes aceptarlo por lo que es, no por lo que no es ni compararlo con lo que han desarrollado otras personas con más de 5 años de experiencia, con presupuestos millonarios y dedicados al desarrollo de juegos de tiempo completo.
+
+===== Ya hice mi juego, ¿dónde está mi Ferrari? =====
+Lo siento, un juego, dos juegos, cinco juegos probablemente no te lo darán. El año pasado se liberaron más de 3,500 juegos para la PC, y sólo unos cuantos lograron hacer una buena cantidad de dinero. La mayoría de los que lo consiguieron no fueron hechos por pequeños grupos, sino por grandes compañías y probablemente contaban con presupuestos multimillonarios, y definitivamente contaron con campañas publicitarias cercanas o superiores al millón de dólares. Aunque no es un mundo al que no puedas entrar, simplemente que se necesita bastante tiempo y experiencia y un buen currículum en la creación de juegos de calidad, que con suerte se vendan bien, para que las compañías distribuidoras tengan confianza en tu equipo, y te confíen este tipo de responsabilidad financiera.
+
+<html>
+<center>
+<img src="http://www.testlosersjuegos.com.ar/_media/referencia/articulos/make_games/ferrari.png" />
+<br />
+<font size="-2">Decisiones, decisiones.
+</font>
+</center>
+</html>
+
+Sin embargo, hay más cosas involucradas en vivir de la creación de juegos que los presupuestos multimillonarios y te sugiero fuertemente que le des un vistazo también a esas otras cosas. No hay nada de vergonzoso en crear juegos autofinanciados, pueden ser tan o más divertidos que los costosos juegos comerciales, y es mucho más fácil hacer que un distribuidor confíe en ti con presupuestos más pequeños. Y sobre todo, no tienes que pasar años trabajando en el mismo proyecto, y si las cosas no salen bien, no sentirás que se ha perdido demasiado.
+
+Solo ten un mejor entendimiento de lo que realmente quieres obtener al crear juegos y entonces concéntrate en hacerlo una realidad. 

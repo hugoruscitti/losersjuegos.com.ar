@@ -1,0 +1,77 @@
+====== Asadetris ======
+
+Asadetris es un videojuego similar a Tetris.
+
+
+Todo el escenario está representado por el estómago de una
+persona, las piezas son porciones de comida que usted tiene
+que acomodar correctamente.
+
+{{:juegos:asadetris:asadetris_3.png|}}
+
+
+===== Sobre el desarrollo =====
+
+
+Asadetris es un juego desarrollado en equipo, un grupo de
+personas con ganas de hacer un juego divertido, libre y que
+les permita aprender del desarrollo.
+
+Este grupo está abierto a sugerencias y nuevos participantes,
+vea los mensajes de foro mas abajo para obtener mas detalles.
+
+
+===== Código del proyecto =====
+
+
+Como este proyecto está en desarrollo y es grupal, contamos
+con un repositorio de código en común. Ahí publicamos el código
+fuente del juego y todos los cambios que realizamos.
+
+Para obtener una copia del código necesita el software "Mercurial"
+y luego escribir el siguiente comando:
+
+<code>
+hg clone https://asadetris.googlecode.com/hg/ asadetris
+</code>
+
+También puedes suscribirte a la lista de correo "alerts" para
+recibir un correo de notificación cada vez que alguien actualiza
+el repositorio:
+
+  * [[http://groups.google.es/group/losersjuegos-alerts]]
+
+===== Documentación =====
+
+
+Contamos con varios documentos de planificación, diseño y
+programación para este proyecto directamente en el sitio
+de google.code:
+
+  * [[http://asadetris.googlecode.com/hg/doc/build/html/index.html]]
+
+esta documentación se actualiza directamente desde el
+repositorio del proyecto.
+
+
+===== Enlaces relacionados en el foro de mensajes =====
+
+
+El origen de este proyecto es que todas las personas se puedan
+integrar, por ese motivo escribimos todo lo relacionado con el
+proyecto en el foro de mensajes.
+
+Si le interesa el proyecto, lo invitamos a visitar los mensajes
+del foro sobre este juego:
+
+
+  * [[http://www.losersjuegos.com.ar/foro/viewtopic.php?t=585|Propuesta inicial]]
+  * [[http://www.losersjuegos.com.ar/foro/viewforum.php?f=14|Seccion del foro dedicada al proyecto]]
+
+
+===== Licencia =====
+
+
+Este proyecto, tanto el código, los gráficos y los documentos se
+distribuyen bajo los términos de la licencia GPL versión 3.
+

@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sprite:layeredupdates</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:50+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite,layeredupdates" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/sprite/layeredupdates-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-sprite.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="layeredupdates.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/sprite/layeredupdates.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#layeredupdates" class="toc">LayeredUpdates</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#layeredupdates1" class="toc">LayeredUpdates</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#add" class="toc">add</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#sprites" class="toc">sprites</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#draw" class="toc">draw</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_sprites_at" class="toc">get_sprites_at</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_sprite" class="toc">get_sprite</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#remove_sprites_of_layer" class="toc">remove_sprites_of_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#layers" class="toc">layers</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#change_layer" class="toc">change_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_layer_of_sprite" class="toc">get_layer_of_sprite</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_top_layer" class="toc">get_top_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_bottom_layer" class="toc">get_bottom_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#move_to_front" class="toc">move_to_front</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#move_to_back" class="toc">move_to_back</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_top_sprite" class="toc">get_top_sprite</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_sprites_from_layer" class="toc">get_sprites_from_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#switch_layer" class="toc">switch_layer</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="layeredupdates" id="layeredupdates">LayeredUpdates</a></h1>
+<div class="level1">
+
+
+
+<p>
+El grupo LayeredUpdates maneja capas (layers) que dibujan como grupos
+<code>OrderedUpdates</code>.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#layeredupdates" class="wikilink1" title="traducciones:pygame:sprite:sprite">LayeredUpdates</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#add" class="wikilink1" title="traducciones:pygame:sprite:sprite">add</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#sprites" class="wikilink1" title="traducciones:pygame:sprite:sprite">sprites</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#draw" class="wikilink1" title="traducciones:pygame:sprite:sprite">draw</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_sprites_at" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_sprites_at</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_sprite" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_sprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#remove_sprites_of_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">remove_sprites_of_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#layers" class="wikilink1" title="traducciones:pygame:sprite:sprite">layers</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#change_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">change_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_layer_of_sprite" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_layer_of_sprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_top_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_top_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_bottom_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_bottom_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#move_to_front" class="wikilink1" title="traducciones:pygame:sprite:sprite">move_to_front</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#move_to_back" class="wikilink1" title="traducciones:pygame:sprite:sprite">move_to_back</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_top_sprite" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_top_sprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_sprites_from_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_sprites_from_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#switch_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">switch_layer</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "LayeredUpdates" [1-1077] -->
+<h2><a name="layeredupdates1" id="layeredupdates1">LayeredUpdates</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">LayeredUpdates</span><span class="br0">&#40;</span><span class="sy0">*</span>spites, <span class="sy0">*</span> <span class="sy0">*</span>kwargs<span class="br0">&#41;</span>: <span class="kw1">return</span> LayeredUpdates</pre>
+
+
+<p>
+Este grupo es completamente compatible con la clase <code>pygame.sprite.Sprite</code>.
+</p>
+
+
+
+<p>
+Usted puede definir la capa por defecto a través del argumento <code>kwargs</code>
+usando el parámetro de nombre <code>default_layer</code> y un número entero
+para indicar la capa. La capa por defecto es 0.
+</p>
+
+
+
+<p>
+Si el sprite que se agrega al grupo tiene un atributo de nombre <code>layer</code>,
+entonces se utilizará ese atributo para determinar en que capa se
+va a agregar el sprite. Si el argumento <code>kwarg</code> contiene el parámetro
+<code>layer</code> entonces los sprites se agregarán a esa capa (ignorando el
+atributo <code>sprite.layer</code>). Se utilizará la capa por defecto para insertar
+los sprites si no se utiliza ninguna de las formas descritas mas arriba.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8.0
+</p>
+
+</div>
+<!-- SECTION "LayeredUpdates" [1078-2487] -->
+<h2><a name="add" id="add">add</a></h2>
+<div class="level2">
+
+
+
+<p>
+Agrega un sprite o una secuencia de sprites a un grupo.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">add</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites, <span class="sy0">*</span> <span class="sy0">*</span>kwargs<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Si el sprite que se agrega al grupo tiene un atributo de nombre <code>layer</code>,
+entonces se utilizará ese atributo para determinar en que capa se
+va a agregar el sprite. Si el argumento <code>kwarg</code> contiene el parámetro
+<code>layer</code> entonces los sprites se agregarán a esa capa (ignorando el
+atributo <code>sprite.layer</code>). Se utilizará la capa por defecto para insertar
+los sprites si no se utiliza ninguna de las formas descritas mas arriba.
+</p>
+
+</div>
+<!-- SECTION "add" [2488-3410] -->
+<h2><a name="sprites" id="sprites">sprites</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una lista de sprites ordenados (primero los de atrás, luego los del frente).
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">sprites</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> sprites</pre>
+</div>
+<!-- SECTION "sprites" [3411-3650] -->
+<h2><a name="draw" id="draw">draw</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja todos los sprites ordenados sobre la superficie indicada.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">draw</span><span class="br0">&#40;</span>surface<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect_list</pre>
+</div>
+<!-- SECTION "draw" [3651-3875] -->
+<h2><a name="get_sprites_at" id="get_sprites_at">get_sprites_at</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una lista de los todos los sprites en esa posición.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_sprites_at</span><span class="br0">&#40;</span>pos<span class="br0">&#41;</span>: <span class="kw1">return</span> colliding_sprites</pre>
+
+
+<p>
+Los sprites mas abajo se retornan primero, y por último los que
+están mas arriba.
+</p>
+
+</div>
+<!-- SECTION "get_sprites_at" [3876-4233] -->
+<h2><a name="get_sprite" id="get_sprite">get_sprite</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el sprite que está en el índice indicado por <code>idx</code>.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_sprite</span><span class="br0">&#40;</span>idx<span class="br0">&#41;</span>: <span class="kw1">return</span> sprite</pre>
+
+
+<p>
+Emite  la excepción <code>IndexOutOfBounds</code> si el argumento
+<code>idx</code> no está comprendido en el rango.
+</p>
+
+</div>
+<!-- SECTION "get_sprite" [4234-4625] -->
+<h2><a name="remove_sprites_of_layer" id="remove_sprites_of_layer">remove_sprites_of_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina todos los sprites de la capa o layer y los
+retorna como una lista.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">remove_sprites_of_layer</span><span class="br0">&#40;</span>layer_nr<span class="br0">&#41;</span>: <span class="kw1">return</span> sprites</pre>
+</div>
+<!-- SECTION "remove_sprites_of_layer" [4626-4897] -->
+<h2><a name="layers" id="layers">layers</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una lista de las capas definidas, ordenadas desde mas
+lejanas a mas cercanas.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">layers</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> layers</pre>
+</div>
+<!-- SECTION "layers" [4898-5142] -->
+<h2><a name="change_layer" id="change_layer">change_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia la capa de un sprite.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">change_layer</span><span class="br0">&#40;</span>sprite, new_layer<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El sprite se debería haber agregado para dibujar. Esta tarea
+no se verifica.
+</p>
+
+</div>
+<!-- SECTION "change_layer" [5143-5473] -->
+<h2><a name="get_layer_of_sprite" id="get_layer_of_sprite">get_layer_of_sprite</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna la capa o layer en la que se encuentra
+el sprite actualmente.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_layer_of_sprite</span><span class="br0">&#40;</span>sprite<span class="br0">&#41;</span>: <span class="kw1">return</span> layer</pre>
+
+
+<p>
+Se retornará la capa por defecto si el sprite no se encuenta
+en el grupo.
+</p>
+
+</div>
+<!-- SECTION "get_layer_of_sprite" [5474-5863] -->
+<h2><a name="get_top_layer" id="get_top_layer">get_top_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna la capa superior.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_top_layer</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> layer</pre>
+</div>
+<!-- SECTION "get_top_layer" [5864-6017] -->
+<h2><a name="get_bottom_layer" id="get_bottom_layer">get_bottom_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna la capa inferior.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_bottom_layer</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> layer</pre>
+</div>
+<!-- SECTION "get_bottom_layer" [6018-6180] -->
+<h2><a name="move_to_front" id="move_to_front">move_to_front</a></h2>
+<div class="level2">
+
+
+
+<p>
+Trae un sprite a la capa superior.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">move_to_front</span><span class="br0">&#40;</span>sprite<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Trae el sprite al frente cambiando la capa del sprite a la capa
+mas alta (agrega el sprite al final de esa capa).
+</p>
+
+</div>
+<!-- SECTION "move_to_front" [6181-6582] -->
+<h2><a name="move_to_back" id="move_to_back">move_to_back</a></h2>
+<div class="level2">
+
+
+
+<p>
+Mueve el sprite a la capa inferior.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">move_to_back</span><span class="br0">&#40;</span>sprite<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Mueve el sprite a la capa inferior, produciendo que el
+sprite aparezca detrás de los demás y se genere una
+capa adicional.
+</p>
+
+</div>
+<!-- SECTION "move_to_back" [6583-7002] -->
+<h2><a name="get_top_sprite" id="get_top_sprite">get_top_sprite</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el sprite que se encuentra mas arriba.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_top_sprite</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sprite</pre>
+</div>
+<!-- SECTION "get_top_sprite" [7003-7185] -->
+<h2><a name="get_sprites_from_layer" id="get_sprites_from_layer">get_sprites_from_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna todos los sprites de una capa, ordenados según se
+han insertado.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">get_sprites_from_layer</span><span class="br0">&#40;</span>layer<span class="br0">&#41;</span>: <span class="kw1">return</span> sprites</pre>
+
+
+<p>
+Retorna todos los sprites de una capa, ordenados según se han
+insertado. Este método usa una búsqueda lineal y los sprites
+no se eliminarán de la capa.
+</p>
+
+</div>
+<!-- SECTION "get_sprites_from_layer" [7186-7753] -->
+<h2><a name="switch_layer" id="switch_layer">switch_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Intercambia los sprites de la capa <code>layer1</code> a la capa <code>layer2</code>.
+</p>
+<pre class="code python">LayeredUpdates.<span class="me1">switch_layer</span><span class="br0">&#40;</span>layer1_nr, layer2_nr<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Los números de capa deben existir, aunque esto no se verifica
+en el método.
+</p>
+
+</div>
+<!-- SECTION "switch_layer" [7754-] --></div>
+</body>
+</html>

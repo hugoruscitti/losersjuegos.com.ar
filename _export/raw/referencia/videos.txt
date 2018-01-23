@@ -1,0 +1,24 @@
+====== Videos, tutoriales y conferencias ======
+
+Esta sección contiene videos de tutoriales y conferencias relacionadas con el desarrollo de juegos. 
+
+
+<subpage pilas_2011|Haciendo videojuegos con pilas>
+Video grabado en pyday 2011 (cordoba) sobre pilas-engine, un
+motor para hacer videjuegos de manera sencilla.
+</subpage>
+
+<subpage pilas_2010|Pilas, un motor para hacer juegos diferente>
+Esta charla muestra el motor para realizar videojuegos "pilas", que desarrollamos
+varios programadores en losersjuegos.
+
+El video se grabó en el evento Conurbania 2010 y cubre gran parte de la funcionalidad
+del motor y algunos conceptos básicos sobre desarrollo de juegos.
+</subpage>
+
+
+<subpage python_y_pygame_cafeconf_2007|Como desarrollar juegos con python y pygame>
+La charla está orientada a toda persona con interés de conocer el desarrollo de juegos. Cubre temas como "¿por qué desarrollar juegos?", "¿que es python?", "pygame", "como hacer un juego paso a paso" y mas.
+
+Conferencia realizada en el evento CaFeCONF 2007 en la Universidad de la Empresa UADE (ciudad de Buenos Aires). El 6 de Octubre de 2007.
+</subpage>

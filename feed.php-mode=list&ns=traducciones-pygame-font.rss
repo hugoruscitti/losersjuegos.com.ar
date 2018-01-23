@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:font</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-21T12:17:17+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/font/font?rev=1231872109&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/font/font_class?rev=1233862392&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/font/sysfont?rev=1231781857&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/font/font?rev=1231872109&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-13T21:41:49+04:00</dc:date>
+        <title>Font</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/font/font?rev=1231872109&amp;do=diff</link>
+        <description>Genera un nuevo objeto Font a partir de un archivo.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Font
+
+
+pygame.font.Font(filename, size): return Font
+pygame.font.Font(object, size): return Font
+
+
+
+
+Carga una fuente nueva a partir de un nombre de archivo u objeto archivo
+de python dado. El argumento size es la altura de la fuente en
+pixeles. Si el argumento filename vale None, pygame cargará
+la tipografía por defecto. Se lanzará una excepción si la fuente
+indicada p…</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/font/font_class?rev=1233862392&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-05T22:33:12+04:00</dc:date>
+        <title>Font</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/font/font_class?rev=1233862392&amp;do=diff</link>
+        <description>Genera un nuevo objeto Font a partir de un archivo.
+
+	*  Font
+	*  render
+	*  size
+	*  set_underline
+	*  get_underline
+	*  set_bold
+	*  get_bold
+	*  set_italic
+	*  metrics
+	*  get_italic
+	*  get_linesize
+	*  get_height
+	*  get_ascent
+	*  get_descent</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/font/sysfont?rev=1231781857&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-12T20:37:37+04:00</dc:date>
+        <title>SysFont</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/font/sysfont?rev=1231781857&amp;do=diff</link>
+        <description>Genera un objeto Font a partir de las fuentes del sistema.
+
+SysFont
+
+
+pygame.font.SysFont(name, size, bold=False, italic=False): return Font
+
+
+
+
+Retorna un nuevo objeto Font que se carga a partir de las fuentes del sistema. La
+fuente deberá coincidir con las opciones bold e italic solicitadas. Si
+no se encuentra una fuente de sistema adecuada esta función retornará la
+fuente por defecto de pygame. El parámetro name puede ser una lista de
+nombres para explorar.</description>
+    </item>
+</rdf:RDF>

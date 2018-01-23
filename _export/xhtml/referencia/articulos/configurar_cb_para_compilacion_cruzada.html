@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:configurar_cb_para_compilacion_cruzada</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2012-03-13T09:39:17+0400" />
+<meta name="keywords" content="referencia,articulos,configurar_cb_para_compilacion_cruzada" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/configurar_cb_para_compilacion_cruzada-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="configurar_cb_para_compilacion_cruzada.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/configurar_cb_para_compilacion_cruzada.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#codeblocks_para_compilar_ejecutables_de_windows_en_gnulinux" class="toc">Code::Blocks para compilar ejecutables de Windows en GNU/Linux</a></span></div>
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introduccion</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#manos_a_la_obra" class="toc">¡Manos a la obra!</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#finalizando" class="toc">Finalizando</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="codeblocks_para_compilar_ejecutables_de_windows_en_gnulinux" id="codeblocks_para_compilar_ejecutables_de_windows_en_gnulinux">Code::Blocks para compilar ejecutables de Windows en GNU/Linux</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Code::Blocks para compilar ejecutables de Windows en GNU/Linux" [1-78] -->
+<h3><a name="introduccion" id="introduccion">Introduccion</a></h3>
+<div class="level3">
+
+<p>
+
+en un articulo anterior <a href="../../../../comunidad/integrantes/hugoruscitti.html" class="wikilink1" title="comunidad:integrantes:hugoruscitti">Hugo Ruscitti</a> hablo sobre la compilacion cruzada, esto en resumen, hablaba sobre compilar un codigo fuente C a un ejecutable de Windows.
+el problema… bueno, no existe un problema en si mismo. La manera de hacer un ejecutable desde la shell de nuestro sistema GNU/Linux es bastante sencilla.
+¿Pero y si trabajamos dentro de un editor como Code::Blocks?, seria muy desagradable tener que abrir una shell y movernos hasta donde se encuantra nuestro codigo fuente para luego compilar nuestro codigo fuente y terminar con un bonito ejecutable. si encuentras que esto es mucho trabajo para ti y necesitas una manera de compilar ejecutables sin salir de Code::Blocks, ¡pues sigue leyendo este articulo!.
+</p>
+
+</div>
+<!-- SECTION "Introduccion" [79-867] -->
+<h3><a name="manos_a_la_obra" id="manos_a_la_obra">¡Manos a la obra!</a></h3>
+<div class="level3">
+
+<p>
+
+Bien, tomando en cuenta el articulo de compilación cruzada, haremos lo siguiente.
+Primero ejecutaremos Code::Blocks, lo siguiente que haremos sera ir al menú “Tools” y luego dar
+clic sobre “Configure tools…”.
+</p>
+
+<p>
+Se abrirá una pequeña ventana titulada “User-defined tools” con varios botones al lado derecho de
+la misma. El botón que nos interesa es el “Add”, le damos clic.
+</p>
+
+<p>
+Otra ventana mas se abrirá, esta se titula “Edit tool”. Contiene varios campos para rellenar con
+texto, “Name” sera el campo para el nombre para identificar nuestra herramienta para la
+compilación cruzada, “Executable” se usa para especificar el archivo binario que sera nuestra
+herramienta en si dentro de C::B. Otro campo importante es “Parameters”, aquí introduciremos los
+argumentos (ó parámetros) que requiere (si fuera el caso) nuestro archivo binario. Podemos ignorar
+el ultimo campo.
+</p>
+
+<p>
+Bien, en el campo “Name” ponemos lo que mas nos guste y que identifique nuestra herramienta
+para la compilación cruzada, por ejemplo, <em>exe-cuneitor</em> estará bien.
+En el campo “Executable” le damos clic al botón con los puntos suspensivos ”[…]”, esto debería
+abrir una ventana de navegación de archivos. Ahora bien vamos a nuestra carpeta raíz (asegurate de
+tener privilegios para leer carpetas del sistema) buscamos el binario del que se hablo en el articulo
+de compilacion cruzada, el “i586-mingw32msvc-gcc” que esta en /usr/bin como en cualquiera de
+nuestros sistemas GNU/Linux (bueno, a menos en mi sistema operativo GNU/Linux Ubuntu
+aparece ahí. Tal vez para ti sea en otro lugar).
+</p>
+
+<p>
+En el ultimo campo que nos interesa, “Parameters”, utilizaremos las macros de C::B para darle
+argumentos validos al compilador (o nuestra herramienta), usaremos $
+{ACTIVE_EDITOR_FILENAME} que especifica el nombre del archivo fuente que queremos
+compilar en el momento que lo estemos editando (ojo: no compilaremos todo el proyecto que
+estemos desarrollando). Para resumir, el campo “Parameters” quedara así:
+</p>
+<pre class="code">  ${ACTIVE_EDITOR_FILENAME} -o ${ACTIVE_EDITOR_FILENAME}.exe</pre>
+
+<p>
+Para finalizar, puedes dejar como esta el área “Launching options”, esto define si al ejecutar nuestra
+herramienta se visualizara una pequeña ventana de consola, escondida con redireccionamiento
+estándar de la salida, etc.
+</p>
+
+</div>
+<!-- SECTION "¡Manos a la obra!" [868-3171] -->
+<h3><a name="finalizando" id="finalizando">Finalizando</a></h3>
+<div class="level3">
+
+<p>
+
+ahora que tienes tu herramienta correctamente configurada puedes confirmar los cambios para cerrar la ventana “User-defined tools”, ahora, escribe un hola mundo en C para probar la herramienta. Veras que al lado del codigo fuente aparece un binario con extencion .Exe, listo!!!, ya podemos hacer la compilacion cruzada con Code::Blocks.
+</p>
+
+</div>
+
+<h5><a name="la_manera_python" id="la_manera_python">La manera Python</a></h5>
+<div class="level5">
+
+<p>
+
+si no te gusta que tu binario aparezca con la extension .C antes del .Exe podria recomendarte una manera pythonistico. es el mismo metodo y sus parametros, solo que usariamos un script de python que llame al compilador “i586-mingw32msvc-gcc” y que tambien se encargue de arreglar el nombre del archivo binario de salida.
+hablare de esto en otro articulo.
+</p>
+
+<p>
+Bye!~ <img src="../../../../lib/images/smileys/icon_smile2.gif" class="middle" alt="=)" />  — <em><a href="../../../../referencia/apuntes/jorge_araya_navarro.html" class="wikilink2" title="referencia:apuntes:jorge_araya_navarro" rel="nofollow">jorge_araya_navarro</a> 03/05/2010 a las 20:14</em>
+
+</p>
+
+</div>
+<!-- SECTION "Finalizando" [3172-] --></div>
+</body>
+</html>

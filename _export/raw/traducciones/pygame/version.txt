@@ -1,0 +1,77 @@
+====== version ======
+
+/*
+small module containing version information
+*/
+
+Módulo que contiene información de la versión.
+
+<box 90%>
+  * [[#ver]]
+  * [[#vernum]]
+</box>
+
+
+/*
+This module is automatically imported into the pygame package and offers a
+few variables to check with version of pygame has been imported.
+*/
+
+Este módulo se incorpora automáticamente dentro del paquete pygame y ofrece
+unas variables para verificar qué versión de pygame tiene el sistema.
+
+===== ver =====
+
+/*
+version number as a string
+*/
+
+Número de versión como una cadena.
+
+<code>
+>>> pygame.version.ver
+'1.8.1release'
+</code>
+
+/*
+This is the version represented as a string. It can contain a micro release
+number as well, e.g., '1.5.2'
+*/
+
+Es la versión de pygame representada como una cadena. Puede contener un número
+de versión específico, por ejemplo "1.5.2".
+
+  * [[pythonexample>pygame.version.ver|buscar código donde se use esta función.]]
+
+===== vernum =====
+
+/*
+tupled integers of the version
+*/
+
+Número de versión en formato de enteros en una tupla.
+
+<code>
+>>> pygame.version.vernum
+(1, 8, 1)
+</code>
+
+
+/*
+This variable for the version can easily be compared with other version
+numbers of the same format. An example of checking Pygame version numbers
+would look like this:
+*/
+
+Esta variable de la versión se puede comparar fácilmente con otros números
+de versiones del mismo formato. Un ejemplo de verificación de versiones de
+pygame podría ser:
+
+
+<code python>
+if pygame.version.vernum < (1, 5):
+    print 'Cuidado, tiene una version muy antigua de pygame (%s)' %  pygame.version.ver
+    disable_advanced_features = True
+</code>
+
+  * [[pythonexample>pygame.version.vernum|buscar código donde se use esta función.]]

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+<link rel="self" type="application/atom+xml" href="http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=454" />
+
+<title>LosersJuegos</title>
+<subtitle>Desarrollando videojuegos libres</subtitle>
+<link href="http://losersjuegos.com.ar/foro/index.php" />
+<updated>2009-01-23T20:08:03+00:00</updated>
+
+<author><name><![CDATA[LosersJuegos]]></name></author>
+<id>http://losersjuegos.com.ar/foro/feed.php?f=8&amp;t=454</id>
+<entry>
+<author><name><![CDATA[endaramiz]]></name></author>
+<updated>2009-01-23T20:08:03+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1936#p1936</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1936#p1936"/>
+<title type="html"><![CDATA[Problemas con punteros a clases  (C++)]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1936#p1936"><![CDATA[
+Gracias! si se que queda todo un poco más confuso, pero creo que he entendido el ejemplo y su funcionamiento. Le echaré un vistazo al libro para profundizar más en el tema.<br /><br />Igualmente esto es para practicar y aprender. En &quot;la vida real&quot; lo haría de otra forma. Por ejemplo, metiendo las funciones en una clase que es lo que hace en el tutorial.<br /><br />Saludos.<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1809">endaramiz</a> — Vie Ene 23, 2009 8:08 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Juan Carlos]]></name></author>
+<updated>2009-01-23T03:37:29+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1935#p1935</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1935#p1935"/>
+<title type="html"><![CDATA[Problemas con punteros a clases  (C++)]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1935#p1935"><![CDATA[
+Hola, la funcion &quot;apilar&quot; funciona casi bien. El problema es que tu funcion espera como parametro un &quot;puntero a nodo&quot; y desde la funcion main se llama a dicha funcion y se le pasa como argumento un &quot;puntero a nodo&quot;.<br /><br />Pero cual es el problema?<br /><br />Los lenguajes como C o C++ pasa por los parametros &quot;por valor&quot;, o sea que hacen una copia de los parametros. De esta manera, el puntero &quot;lista&quot; que hay en la funcion main, es copiado y luego es usado en la funcion &quot;apilar&quot;.<br /><br />La solucion?<br /><br />Una opcion es trabajar con &quot;punteros a punteros a nodos&quot;, sin embargo la sintaxis se vuelve bastante confusa.<br /><br />He aqui el codigo<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code>#include &lt;iostream&gt;<br />using namespace std;<br /><br />class nodo &#123;<br />    public:<br />        nodo&#40;&#41; &#123;<br />            siguiente = NULL;<br />        &#125;<br />        int valor;<br />        nodo *siguiente;<br />&#125;;<br /><br />void inicia&#40;nodo **n, int x&#41; &#123;<br />    *n = new nodo&#40;&#41;;<br />    &#40;*n&#41;-&gt;valor = x;<br />    cerr &lt;&lt; &quot;c0:&quot; &lt;&lt; &#40;*n&#41;-&gt;valor;<br />&#125;<br /><br />void apilar&#40;nodo **n, int x&#41; &#123;<br />    if &#40;*n == NULL&#41; inicia&#40;n, x&#41;;<br />    else &#123;<br />        nodo **i;<br />        i = n;<br />        while &#40;&#40;*i&#41;-&gt;siguiente&#41; i = &amp;&#40;*i&#41;-&gt;siguiente;<br />        nodo *aux;<br />        aux = new nodo&#40;&#41;;<br />        aux-&gt;valor = x;<br />        &#40;*i&#41;-&gt;siguiente = aux;<br />    &#125;<br />    cerr &lt;&lt; &quot;c1:&quot; &lt;&lt; &#40;*n&#41;-&gt;valor;<br />&#125;<br /><br />void elimina&#40;nodo *n&#41; &#123;<br />    nodo *i;<br />    i = n;<br />    while &#40;i&#41; &#123;<br />        nodo *aux;<br />        aux = i;<br />        i = i-&gt;siguiente;<br />        delete aux;<br />    &#125;<br />&#125;<br /><br />void escribe&#40;nodo *n&#41; &#123;<br />    cout &lt;&lt; endl;<br />    nodo *i;<br />    i = n;<br />    while &#40;i&#41; &#123;<br />        cout &lt;&lt; i-&gt;valor &lt;&lt; ' ';<br />        i = i-&gt;siguiente;<br />    &#125;<br />    cout &lt;&lt; endl;<br />&#125;<br /><br />int main&#40;&#41; &#123;<br />    nodo *lista;<br />    lista = NULL;<br /><br />    //lista = new nodo&#40;&#41;; se se descomenta esto,<br />    //lista-&gt;valor = 5; funciona bien.<br /><br />    int n;<br /><br />    while &#40;cin &gt;&gt; n&#41; &#123;<br />        apilar&#40;&amp;lista, n&#41;;<br />        cerr &lt;&lt; &quot;c2:&quot; &lt;&lt; lista-&gt;valor;<br /><br />    &#125;<br /><br />    escribe&#40;lista&#41;;<br />    elimina&#40;lista&#41;;<br /><br />&#125;<br /></code></dd></dl><br /><br />Las funciones &quot;escribe&quot; y &quot;elimina&quot; no las he observado detenidamente asi que no se si funcionan correctamente.<br /><br />Saludos<br /><br />Nota: los punteros siempre dan problemas, te recomiendo el libro de Bruce Eckel, Thinking in C++. Muy buen libro, disponible en internet de forma gratuita.<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1787">Juan Carlos</a> — Vie Ene 23, 2009 3:37 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[endaramiz]]></name></author>
+<updated>2009-01-20T17:55:14+00:00</updated>
+<id>http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1926#p1926</id>
+<link href="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1926#p1926"/>
+<title type="html"><![CDATA[Problemas con punteros a clases  (C++)]]></title>
+
+<content type="html" xml:base="http://losersjuegos.com.ar/foro/viewtopic.php?t=454&amp;p=1926#p1926"><![CDATA[
+Como C++ lo que más problemas me da, por ahora, son los punteros a clases, memoria dinámica... He decidido intentar hacer un programa para practicar. Lo que intenta hacer es que cada vez que introduces un número, crea un nodo que lo pone al final de una lista. Y los saca por pantalla cuando introduces algo que no sea un int. <br />El problema que tengo creo que está en la función &quot;inicia&quot;. Es como si no hiciese nada. Lo que tengo entendido que hace esta función, es crear una clase en la dirección de memoria que le señala el puntero ¿no? pero al salir de la función es como si no hubiese hecho nada. Se supone que si trabaja en una dirección de memoria, si que se queda guardado ¿no? :S<br />El caso es que solo pasa con esa función. si lo inicio en el main directamente, no hay ningún problema.<br /><dl class="codebox"><dt>Code: </dt><dd><code>#include &lt;iostream&gt;<br />using namespace std;<br /><br />class nodo &#123;<br />    public:<br />        nodo&#40;&#41; &#123;<br />            siguiente = NULL;<br />        &#125;<br />        int valor;<br />        nodo *siguiente;<br />&#125;;<br /><br />void inicia&#40;nodo *n, int x&#41; &#123;<br />    n = new nodo&#40;&#41;;<br />    n-&gt;valor = x;<br />    cerr &lt;&lt; &quot;c0:&quot; &lt;&lt; n-&gt;valor;<br />&#125;<br /><br />void apilar&#40;nodo *n, int x&#41; &#123;<br />    if &#40;n == NULL&#41; inicia&#40;n, x&#41;;<br />    else &#123;<br />        nodo *i;<br />        i = n;<br />        while &#40;i-&gt;siguiente&#41; i = i-&gt;siguiente;<br />        nodo *aux;<br />        aux = new nodo&#40;&#41;;<br />        aux-&gt;valor = x;<br />        i-&gt;siguiente = aux;<br />    &#125;<br />    cerr &lt;&lt; &quot;c1:&quot; &lt;&lt; n-&gt;valor;<br />&#125;<br /><br />void elimina&#40;nodo *n&#41; &#123;<br />    nodo *i;<br />    i = n;<br />    while &#40;i&#41; &#123;<br />        nodo *aux;<br />        aux = i;<br />        i = i-&gt;siguiente;<br />        delete aux;<br />    &#125;<br />&#125;<br /><br />void escribe&#40;nodo *n&#41; &#123;<br />    cout &lt;&lt; endl;<br />    nodo *i;<br />    i = n;<br />    while &#40;i&#41; &#123;<br />        cout &lt;&lt; i-&gt;valor &lt;&lt; ' ';<br />        i = i-&gt;siguiente;<br />    &#125;<br />    cout &lt;&lt; endl;<br />&#125;<br /><br />int main&#40;&#41; &#123;<br />    nodo *lista;<br />    lista = NULL;<br /><br />    //lista = new nodo&#40;&#41;; se se descomenta esto,<br />    //lista-&gt;valor = 5; funciona bien.<br />    <br />    int n;<br />    while &#40;cin &gt;&gt; n&#41; &#123;<br />        apilar&#40;lista, n&#41;;<br />        cerr &lt;&lt; &quot;c2:&quot; &lt;&lt; lista-&gt;valor;<br />    &#125;<br />    <br />    escribe&#40;lista&#41;;<br />    elimina&#40;lista&#41;;<br />&#125;<br /></code></dd></dl><br /><br />¿Mis suposiciones son ciertas? ¿Por qué falla?<br /><br />Me he ido guiando con un documento de la web c con clase pero no quiero complicarme tanto.<br /><br />Saludos y gracias de antemano.<p>Estadísticas: Publicado por <a href="http://losersjuegos.com.ar/foro/memberlist.php?mode=viewprofile&amp;u=1809">endaramiz</a> — Mar Ene 20, 2009 5:55 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,292 @@
+====== pygametop ======
+
+/*
+the top level pygame package
+*/
+
+El paquete pygame de nivel superior.
+
+
+<box 90%>
+  * [[traducciones:pygame#init]]
+  * [[traducciones:pygame#quit]]
+  * [[traducciones:pygame#error]]
+  * [[traducciones:pygame#get_error]]
+  * [[traducciones:pygame#get_sdl_version]]
+  * [[traducciones:pygame#get_sdl_byteorder]]
+  * [[traducciones:pygame#register_quit]]
+</box>
+
+
+/*
+The pygame package represents the top-level package for others to use. Pygame
+itself is broken into many submodules, but this does not affect programs that
+use Pygame.
+*/
+
+El paquete pygame representa el paquete de nivel superior para los demás.
+Pygame en sí está dividida en varios submódulos, aunque esto no afecta a
+los programas que utilizan la biblioteca.
+
+/*
+As a convenience, most of the top-level variables in pygame have been placed
+inside a module named 'pygame.locals'. This is meant to be used with
+'from pygame.locals import *', in addition to 'import pygame'.
+*/
+
+Por convención, la mayoría de las variables de nivel superior en pygame
+se han colocado dentro de un módulo llamado [[:traducciones:pygame:locals]]. De forma que se pueda combinar ''from pygame.locals import *'' además
+de ''import pygame''.
+
+/*
+When you 'import pygame' all available pygame submodules are automatically
+imported. Be aware that some of the pygame modules are considered "optional",
+and may not be available. In that case, Pygame will provide a placeholder object
+instead of the module, which can be used to test for availability.
+*/
+
+Cuando incorpora pygame mediante ''import pygame'', todos los módulos
+de pygame disponibles se cargan automáticamente. Tenga presente que algunos
+submódulos se consideran //opcionales//, por lo tanto podrían no estar
+disponibles. En ese caso, pygame proveerá un objeto marcador de posición
+en lugar del módulo, que se puede usar para verificar la disponibilidad
+del módulo ((por ejemplo, el submodulo ''font'' es opcional, si quiere
+conocer su disponibilidad puede llamar a la función 
+''pygame.font.get_init()'')).
+
+
+===== init =====
+
+/*
+initialize all imported pygame modules
+*/
+
+Inicializa todos los módulos de pygame incorporados.
+
+<code python>
+pygame.init(): return (numpass, numfail)
+</code>
+
+
+/*
+Initialize all imported Pygame modules. No exceptions will be raised if a
+module fails, but the total number if successful and failed inits will be
+returned as a tuple. You can always initialize individual modules manually,
+but pygame.init is a convenient way to get everything started. The init()
+functions for individual modules will raise exceptions when they fail.
+*/
+
+Inicializa todos los módulos de pygame incorporados. No se notificarán
+excepciones si un módulo falla, aunque el número total de módulos
+inicializados correctamente o fallidos se retornarán como
+una tupla cuando llame a esta función. De todas formas, siempre puede
+inicializar módulos de forma individual, solo que
+''pygame.init'' es una forma útil de inicializar todos los módulos a la
+vez. Las funciones ''init'' para módulos individuales sí notificarán
+excepciones cuando fallen.
+
+/*
+You may want to initalise the different modules seperately to speed up 
+your program or to not use things your game does not.
+*/
+
+Tal vez usted quiera inicializar los diferentes módulos de manera separada
+para incrementar la velocidad de su programa, o no solicitar cosas que
+su programa no utilizará.
+
+
+/*
+It is safe to call this init() more than once: repeated calls will have no effect.
+This is true even if you have pygame.quit() all the modules.
+*/
+
+Es seguro llamar a esta función más de una vez, llamadas sucesivas no tendrán
+efecto. Esto es así incluso cuando halla llamado a 
+[[:traducciones:pygame:pygametop#quit]] para descargar todos los módulos.
+
+  * [[pythonexample>pygame.init|buscar código donde se use esta función.]]
+
+===== quit =====
+
+/*
+uninitialize all pygame modules
+*/
+
+Deshabilita todos los módulos de pygame.
+
+<code python>
+pygame.quit(): return None
+</code>
+
+/*
+Uninitialize all pygame modules that have previously been initialized. When
+the Python interpreter shuts down, this method is called regardless, so your
+program should not need it, except when it wants to terminate its pygame
+resources and continue. It is safe to call this function more than once:
+repeated calls have no effect. 
+*/
+
+Deshabilita todos los módulos de pygame que anteriormente se han
+inicializado. Cuando el intérprete de python se cierra, esté método se
+llamará automáticamente, por lo tanto sus programas podrían no necesitar
+llamarlo, excepto si usted quiere liberar sus recursos de pygame y continuar.
+
+Es seguro llamar a esta función mas de una vez, sucesivas llamadas no tendrán
+efecto.
+
+/*
+Note, that pygame.quit will not exit your program.  Consider letting your 
+program end in the same way a normal python program will end.
+*/
+
+Note que ''pygame.quit'' no terminará su programa. Considere cerrar o
+terminar su programa de la misma forma que lo hace en un programa de python
+habitual.
+
+  * [[pythonexample>pygame.quit|buscar código donde se use esta función.]]
+
+===== error =====
+
+/*
+standard pygame exception
+*/
+
+Excepción de pygame por defecto.
+
+<code python>
+raise pygame.error, message
+</code>
+
+/*
+This exception is raised whenever a pygame or SDL operation fails. You can
+catch any anticipated problems and deal with the error. The exception is
+always raised with a descriptive message about the problem.
+*/
+
+Esta excepción se notifica siempre que una operación de pygame o SDL falla. Puede capturar problemas anticipados y tratar con el error. La excepción se
+notifica siempre con un mensaje descriptivo acerca del problema.
+
+/*
+Derived from the RuntimeError exception, which can also be used to catch these
+raised errors.
+*/
+
+/* FIX: creo no entender correctamente esta frase */
+
+Como deriva de la excepción ''RuntimeError'', también se puede usar para
+capturar estos errores.
+
+  * [[pythonexample>pygame.error|buscar código donde se use esta función.]]
+
+===== get_error =====
+
+/*
+get the current error message
+*/
+
+Obtiene el mensaje de error actual.
+
+<code python>
+pygame.get_error(): return errorstr
+</code>
+
+
+/*
+SDL maintains an internal error message. This message will usually be given to
+you when pygame.error is raised. You will rarely need to call this function.
+*/
+
+SDL mantiene un mensaje de error interno. Este mensaje generalmente se le
+informará cuando se notifique una excepción
+[[:traducciones:pygame:pygametop#error]]. Por lo tanto seguramente no
+necesitará llamar a esta función.
+
+  * [[pythonexample>pygame.get_error|buscar código donde se use esta función.]]
+
+===== get_sdl_version =====
+
+/*
+get the version number of SDL
+*/
+
+Obtiene el número de versión de SDL.
+
+<code python>
+pygame.get_sdl_version(): return major, minor, patch
+</code>
+
+
+/*
+Returns the three version numbers of the SDL library. This version is
+built at compile time. It can be used to detect which features may not
+be available through Pygame.
+*/
+
+Retorna los tres números de versión de la biblioteca SDL. Esta versión
+se construye al momento de la compilación de pygame (instalación) no en
+tiempo de ejecución. Puede usarse para detectar que características pueden
+o no estar disponibles a través de pygame.
+
+/*
+get_sdl_version is new in pygame 1.7.0
+*/
+
+''get_sdl_version'' es una nueva característica en pygame 1.7.0.
+
+  * [[pythonexample>pygame.get_sdl_version|buscar código donde se use esta función.]]
+
+===== get_sdl_byteorder =====
+
+/*
+get the byte order of SDL
+*/
+
+Obtiene el orden de bytes de SDL.
+
+<code python>
+pygame.get_sdl_byteorder(): return int
+</code>
+
+
+/*
+Returns the byte order of the SDL library. It returns LIL_ENDIAN for
+little endian byte order and BIG_ENDIAN for big endian byte order.
+*/
+
+Obtiene el orden de bytes de la biblioteca SDL. Retorna ''LIL_ENDIAN''
+para el orden //little endian// o ''BIG_ENDIAN'' para el orden
+//big endian//.
+
+/*
+get_sdl_byteorder is new in pygame 1.8
+*/
+
+''get_sdl_byteorder'' es una característica nueva en pygame 1.8.
+
+  * [[pythonexample>pygame.get_sdl_byteorder|buscar código donde se use esta función.]]
+
+===== register_quit =====
+
+/*
+register a function to be called when pygame quits
+*/
+
+Registra una función para se llame cuando pygame finaliza.
+
+<code python>
+register_quit(callable): return None
+</code>
+
+
+/*
+When pygame.quit is called, all registered quit functions are called. Pygame
+modules do this automatically when they are initializing. This function is
+not be needed for regular pygame users. 
+*/
+
+Cuando se llama a la función ''pygame.quit'', todas las funciones de salida
+se llamarán. Los módulos de pygame hacen esto automáticamente cuando son
+inicializadas. Esta función no es necesaria para usuarios de pygame en
+general.
+
+  * [[pythonexample>pygame.register_quit|buscar código donde se use esta función.]]

@@ -1,0 +1,444 @@
+====== scrap ======
+
+/*
+pygame module for clipboard support.
+*/
+
+Módulo de pygame que ofrece soporte para el portapapeles (//clipboard//).
+
+<box 90%>
+  * [[#init]]
+  * [[#get]]
+  * [[#get_types]]
+  * [[#put]]
+  * [[#contains]]
+  * [[#lost]]
+  * [[#set_mode]]
+</box>
+
+/*
+The scrap module is for getting and putting stuff from the clipboard.
+So you can copy and paste things between pygame, and other application
+types. It defines some basic own data types 
+*/
+
+El módulo ''scrap'' se utiliza para obtener o colocar cosas en el
+portapapeles. De forma que pueda copiar y pegar datos entre pygame
+y otro tipo de aplicaciones. Este módulo define algunos tipos
+de datos básicos:
+
+/*
+  * SCRAP_PPM
+  * SCRAP_PBM
+  * SCRAP_BMP
+  * SCRAP_TEXT
+*/
+
+  * SCRAP_PPM
+  * SCRAP_PBM
+  * SCRAP_BMP
+  * SCRAP_TEXT
+
+/*
+to be placed into the clipboard and allows to use define own clipboard
+types. SCRAP_PPM, SCRAP_PBM and SCRAP_BMP are suitable for surface
+buffers to be shared with other applications, while SCRAP_TEXT is an
+alias for the plain text clipboard type.
+*/
+
+Estos tipos de datos básicos se pueden colorar en el portapapeles
+y permiten usar tipos de datos propios. SCRAP_PPM, SCRAP_PBM y SCRAP_BMP
+son adecuados para compartir datos de superficies gráficas
+con otras aplicaciones, mientra que SCRAP_TEXT es indicado para
+intercambiar texto plano.
+
+/*
+The SCRAP_* types refer to the following MIME types and register those
+as well as the default operating system type for this type of data:
+*/
+
+Los tipos de datos SCRAP_* hacen referencia a los siguientes tipos
+MIME, y pygame los registra correctamente como los tipos de datos
+por defecto del sistema operativo:
+
+/*
+^ Type ^ MIME type ^ data ^
+| SCRAP_TEXT | text/plain | for plain text |
+| SCRAP_PBM | image/pbm | for PBM encoded image data |
+| SCRAP_PPM | image/ppm | for PPM encoded image data |
+| SCRAP_BMP | image/bmp | for BMP encoded image data |
+*/
+
+^ Tipo pygame ^ Tipo MIME ^ Datos ^
+| SCRAP_TEXT | text/plain | para texto plano |
+| SCRAP_PBM | image/pbm | para datos de imagen PBM |
+| SCRAP_PPM | image/ppm | para datos de imagen PPM |
+| SCRAP_BMP | image/bmp | para datos de imagen BMP |
+
+/*
+Depending on the platform additional types are automatically registered
+when data is placed into the clipboard to guarantee a consistent sharing
+behaviour with other applications. The following listed types can be
+used as string to be passed to the respective pygame.scrap module
+functions.
+*/
+
+Dependiendo de la plataforma, cuando los datos se colocan dentro del
+portapapeles se registran algunos tipos de datos adicionales de 
+forma automática para garantizar un comportamiento de intercambio 
+consistente
+con otras aplicaciones. Los siguientes tipos indicados en la lista
+se puede usar como cadenas para enviarse a las respectivas funciones
+del módulo ''pygame.scrap''.
+
+
+/*
+For Windows platforms, the additional types are supported automatically
+and resolve to their internal definitions:
+*/
+
+En las plataformas Windows se soportan tipos de datos adicionales de
+forma automática y se resuelven sus definiciones internas:
+
+/*
+  * text/plain;charset=utf-8 for UTF-8 encoded text
+  * audio/wav                for WAV encoded audio
+  * image/tiff               for TIFF encoded image data
+*/
+
+  * text/plain;charset=utf-8   Para texto en formato UTF-8
+  * audio/wav                  Para audio en formato WAV
+  * image/tiff                 Para imágenes en formato TIFF
+
+/*
+For X11 platforms, the additional types are supported automatically
+and resolve to their internal definitions:
+*/
+
+En las plataformas X11 se soportan los siguientes tipos de datos
+adicionales:
+
+
+/*
+  * UTF8_STRING               for UTF-8 encoded text
+  * text/plain;charset=utf-8  for UTF-8 encoded text
+  * COMPOUND_TEXT             for COMPOUND text
+*/
+
+  * UTF8_STRING               Para texto en formato UTF-8
+  * text/plain;charset=utf-8  Para texto en formato UTF-8
+  * COMPOUND_TEXT             Para texto COMPOUND
+
+/*
+As stated before you can define own types for the clipboard, those
+however might not be usable by other applications. Thus data pasted into
+the clipboard using
+*/
+
+Como se ha comentado anteriormente, usted puede definir sus propios
+tipos de datos para el portapapeles, de todas formas estos podrían
+ser inutilizables por otras aplicaciones. Así, la información
+que se envía al portapapeles usando:
+
+
+<code>
+pygame.scrap.put ("own_data", data)
+</code>
+
+
+/*
+can only be used by applications, which query the clipboard for the
+"own_data" type.
+*/
+
+sólo podría usarse por aplicaciones que consulten el portapapeles
+buscando el tipo de datos "own_data".
+
+/*
+<note warning>
+EXPERIMENTAL!
+
+New in pygame 1.8. Only works for Windows, X11 and Mac OS X so far.  On
+Mac OSX only text works at the moment - other types will be supported in
+the next release.
+</note>
+*/
+
+<note warning>
+Este módulo es **experimental**:
+
+Es una funcionalidad nueva en pygame 1.8, solo funciona en Window, X11
+y Mac OS X. En Mac OS X solo funciona el intercambio de texto, los
+otros tipos de datos estarán disponibles en la siguiente versión.
+</note>
+
+===== init =====
+
+/*
+Initializes the scrap module.
+*/
+
+Inicializa el módulo scrap.
+
+<code python>
+scrap.init () -> None
+</code>
+
+
+/*
+Tries to initialize the scrap module and raises an exception, if it
+fails. Note that this module requires a set display surface, so you have
+to make sure, you acquired one earlier using pygame.display.set_mode().
+*/
+
+Intenta inicializar el módulo ''scrap'' y lanza un excepción si
+falla. Tenga en cuenta que este módulo necesita tener una superficie
+de visualización, por lo tanto debe asegurarse de haber adquirido
+una anteriormente usando la función ''pygame.display.set_mode()'''.
+
+===== get =====
+
+/*
+Gets the data for the specified type from the clipboard.
+*/
+
+Obtiene los datos para el tipo indicado del portapapeles.
+
+<code python>
+scrap.get (type) -> string
+</code>
+
+
+/*
+Returns the data for the specified type from the clipboard.
+The data is returned as string and might need further processing.
+If no data for the passed type is available, None is returned.
+*/
+
+Retorna los datos para el tipo de dato especificado desde el
+portapapeles. Los datos se retornan como cadenas y podrían
+necesitar futuros arreglos. Se retornará ''None'' si no hay
+datos del tipo de dato indicado.
+
+<code python>
+text = pygame.scrap.get (SCRAP_TEXT)
+
+if text:
+    # Hacer cosas con el texto
+else:
+    print "Parace que no hay texto en el portapapeles."
+</code>
+
+===== get_types =====
+
+/*
+Gets a list of the available clipboard types.
+*/
+
+Obtiene una lista de los tipos de portapapeles disponibles.
+
+<code python>
+scrap.get_types () -> list
+</code>
+
+
+/*
+Gets a list of strings with the identifiers for the available
+clipboard types. Each identifier can be used in the scrap.get()
+method to get the clipboard content of the specific type.
+If there is no data in the clipboard, an empty list is returned.
+*/
+
+Obtiene una lista de cadenas con los identificadores de los
+tipos de portapapeles disponibles. Cada identificador se puede
+usar en el método ''scrap.get()'' para obtener el contenido
+del portapapeles en el tipo específico. Se retornará una
+lista vacía si no hay datos en el portapapeles.
+
+/*
+<code python>
+types = pygame.scrap.get_types ()
+for t in types:
+    if "text" in t:
+        # There is some content with the word "text" in it. It's
+        # possibly text, so print it.
+        print pygame.scrap.get (t)
+</code>
+*/
+
+<code python>
+types = pygame.scrap.get_types ()
+for t in types:
+    if "text" in t:
+        # Hay cierto contenido con la palabra "text", posiblemente
+        # sea texto, por lo tanto se impimirá:
+        print pygame.scrap.get (t)
+</code>
+
+===== put =====
+
+/*
+Places data into the clipboard.
+*/
+
+Coloca datos dentro del portapapeles.
+
+<code python>
+scrap.put(type, data) -> None
+</code>
+
+
+
+/*
+Places data for a specific clipboard type into the clipboard.
+The data must be a string buffer. The type is a string identifying
+the type of data placed into the clipboard. This can be one of the
+native SCRAP_PBM, SCRAP_PPM, SCRAP_BMP or SCRAP_TEXT values or an own
+string identifier.
+*/
+
+Coloca información para un tipo de dato específico en el portapapeles.
+Los datos deben estar en formato de cadena. El argumento
+''type'' debe ser una cadena que identifica el tipo de dato que
+se colocará en el portapapeles. Este argumento puede ser uno
+de los valores nativos como ''SCRAP_PBM'', ''SCRAP_PPM'', ''SCRAP_BMP'', ''SCRAP_TEXT'' o un identificador de cadena de su tipo de dato
+personalizado.
+
+/*
+The method raises an exception, if the content could not be placed
+into the clipboard.
+*/
+
+Este método lanza una excepción si el contenido indicado no
+se puede colocar en el portapapeles.
+
+Un ejemplo:
+
+/*
+<code python>
+fp = open ("example.bmp", "rb")
+pygame.scrap.put (SCRAP_BMP, fp.read ())
+fp.close ()
+# Now you can acquire the image data from the clipboard in other
+# applications.
+
+pygame.scrap.put (SCRAP_TEXT, "A text to copy")
+pygame.scrap.put ("Plain text", "A text to copy")
+</code>
+*/
+
+<code python>
+fp = open ("example.bmp", "rb")
+pygame.scrap.put (SCRAP_BMP, fp.read ())
+fp.close ()
+# Ahora puede obtener la información desde otras aplicaciones
+# usando el portapapeles.
+
+pygame.scrap.put (SCRAP_TEXT, "A text to copy")
+pygame.scrap.put ("Plain text", "A text to copy")
+</code>
+
+===== contains =====
+
+/*
+Checks, whether a certain type is available in the clipboard.
+*/
+
+Consulta si un cierto tipo de dato se encuentra en el portapapeles.
+
+<code python>
+scrap.contains (type) -> bool
+</code>
+
+
+/*
+Returns True, if data for the passed type is available in the
+clipboard, False otherwise.
+*/
+
+Retorna ''True'' si el tipo de dato que se ha enviado está
+disponible en el portapapeles. En otro caso retornará ''False''.
+
+/*
+<code python>
+if pygame.scrap.contains (SCRAP_TEXT):
+    print "There is text in the clipboard."
+if pygame.scrap.contains ("own_data_type"):
+    print "There is stuff in the clipboard."
+</code>
+*/
+
+<code python>
+if pygame.scrap.contains (SCRAP_TEXT):
+    print "Hay texto en el portapapeles."
+if pygame.scrap.contains ("own_data_type"):
+    print "Existe información personalizada en el portapapeles."
+</code>
+
+===== lost =====
+
+/*
+Checks whether the clipboard is currently owned by the application.
+*/
+
+Consulta si el portapapeles está en dominio de la aplicación.
+
+<code python>
+scrap.lost() -> bool
+</code>
+
+
+/*
+Returns True, if the clipboard is currently owned by the pygame
+application, False otherwise.
+*/
+
+Retorna ''True'' si el portapapeles está siendo utilizado por
+otra aplicación.
+
+/*
+<code python>
+if pygame.scrap.lost ():
+   print "No content from me anymore. The clipboard is used by someone else."
+</code>
+*/
+
+<code python>
+if pygame.scrap.lost ():
+   print "No hay contenido para mi, el portapapeles está siendo utilizado por alguien mas..."
+</code>
+
+===== set_mode =====
+
+/*
+Sets the clipboard access mode.
+*/
+
+Define el modo de acceso al portapapeles.
+
+<code python>
+scrap.set_mode(mode) -> None
+</code>
+
+
+/*
+Sets the access mode for the clipboard. This is only of interest for X11
+environments, where clipboard modes for mouse selections
+(SRAP_SELECTION) and the clipboard (SCRAP_CLIPBOARD) are
+available. Setting the mode to SCRAP_SELECTION in other environments
+will not cause any difference.
+*/
+
+Define el modo de acceso al portapapeles. Este modo solo es de interés
+para los entornos X11, donde están disponibles los modos de selección
+por mouse (SRAP_SELECTION) y el portapapeles (SCRAP_CLIPBOARD). Solicitar
+el modo ''SCRAP_SELECTION'' en otros entornos no causará ninguna diferencia.
+
+/*
+If a value different from SCRAP_CLIPBOARD or SCRAP_SELECTION is passed,
+a ValueError will be raised.
+*/
+
+
+Se lanzará un excepción ''ValueError'' si se envía un valor
+diferente a ''SCRAP_CLIPBOARD'' o ''SCRAP_SELECTION''.

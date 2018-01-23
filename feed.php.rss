@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T07:27:51+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/links?rev=1320847694&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software?rev=1303825707&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia/blend?rev=1284424756&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283215900&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal?rev=1282429484&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280966404&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-09T07:02:13+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Gimp Plugins</title>
+        <link>http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff</link>
+        <description>Gimp es uno de los editores de imagenes libre mas importantes, y como
+desarrolladores de juegos lo usamos con frecuencia.
+
+Esta pagina reune complementos para que desarrollar graficos para juegos
+te resulte mas sencillo.
+
+SpriteSheet Tool
+
+
+El complemento SpriteSheet Tool ha sido desarrollado por
+Hugo Ruscitti para que puedas manejar
+grillas de sprites muy facilmente.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-24T16:45:15+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>sidebar</title>
+        <link>http://www.loosersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-06-24T20:48:56+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Don ceferino en HTML5 !!! - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff</link>
+        <description>Gracias al proyecto emscripten, podemos disfrutar del videojuego
+Don Ceferino Hazaña directamente en el navegador:
+
+&lt;http://marco-c.github.io/ceferinoweb/&gt;
+
+
+Mas sobre emscripten:
+
+&lt;https://github.com/kripken/emscripten/wiki&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-02-27T17:54:48+04:00</dc:date>
+        <dc:creator>daniel</dc:creator>
+        <title>Pygame: Introducción a Pygame de Python</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Pete Shinners
+		*  Traducido por: Daniela López Seco
+		*  Fecha: Sábado 20 de Enero del 2007
+
+Introducción
+
+
+Este artículo es una introducción a la biblioteca Pygame para programadores Python. La versión original apareció en PyZine, volumen 1 tercera edición. Esta versión contiene revisiones menores, para crear un mejor artículo. Pygame es una biblioteca de extensión de Python que encapsula la funcionalidad de la biblioteca SDL y sus ayudantes.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-12-28T13:47:28+04:00</dc:date>
+        <dc:creator>Ezequiel Pereira</dc:creator>
+        <title>Como participar</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/comoparticipar?rev=1356688048&amp;do=diff</link>
+        <description>Esta sección esta dedicada a todas las personas interesadas
+en participar junto a nosotros en el proyecto
+Losersjuegos.
+
+Note que existen muchas formas de participar, aquí solo hemos
+reunido las mas frecuentes para que pueda darse una idea. Si
+encuentra necesario realizar
+sugerencias sobre este documento recuerde que siempre podrá utilizar
+la sección Contáctenos y ayudar a mejorarlo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-09-14T01:50:07+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>Jorge Araya Navarro</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/integrantes/jorge_araya_navarro?rev=1347573007&amp;do=diff</link>
+        <description>Perfil?
+
+	*  nick dentro del querido foro: shackra
+	*  fecha de nacimiento: 28 de diciembre de 1990
+	*  localizacion: Siquirres, Limón, Costa Rica behind you!
+	*  intereses: programar en lenguaje python, C. Crear juegos sea en 2D ó 3D.
+	*  deportes: jugar mucho Metal Gear Solid 3 en mi PS2, hacer BMX, practicar Jujitsu y Judo.
+	*  influencias: Hideo Kojima, Steven Spielberg, Jigorō Kanō, Edwin Delarosa.
+	*  Motores para video juegos: PySFML.
+	*  Repositorio de código fuente: Bitbucket (Merc…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-08-03T03:30:58+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>principal:noticias:curso_de_experto_en_desarrollo_de_videojuegos_gratuito - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff</link>
+        <description>En ecetia.com nos encontramos un articulo escrito por Paola Mejia, el cual nos presenta un Curso de experto en Desarrollo de Videojuegos por la Universidad de Castilla-La Mancha. Son 4 libros en formato electrónico o físico. Cada uno cubre la programación gráfica, inteligencia artificial, networking, etc.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-04-28T03:21:16+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>To Do, cosas para hacer</title>
+        <link>http://www.loosersjuegos.com.ar/comunidad/todo?rev=1335568876&amp;do=diff</link>
+        <description>Aquí encontrará una lista de todas las tareas que tenemos planificado realizar. El objetivo
+de la lista es poner por escrito todas las actividades que no debemos olvidar, y
+que pronto se realizarán.
+
+Desarrollo
+
+Foro de mensajes
+&lt;http://www.testlosersjuegos.com.ar/foro&gt;
+Paginas por completar
+
+
+Hay una serie de secciones que aún debemos completar, cada elemento
+representa una pequeña tarea; y las más complejas tienen el nombre
+de quien las está realizado a la derecha.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-04-23T04:43:50+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>Charla pilas en Mexico DF</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff</link>
+        <description>En este video se muestran algunos conceptos basicos sobre pilas-engine, una biblioteca
+para hacer juegos con python.
+
+El video se grabó en la reunion del grupo python-mexico, en las instalaciones
+de ikibox, en el DF (mexico).
+
+Mirar esté fantástico video</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-03-13T09:39:17+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>Code::Blocks para compilar ejecutables de Windows en GNU/Linux - despues de muchos años, veo que alguien (o yo mismo) escribio mal el nombre del sistema operativo libre por excelencia</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff</link>
+        <description>Introduccion
+
+
+en un articulo anterior Hugo Ruscitti hablo sobre la compilacion cruzada, esto en resumen, hablaba sobre compilar un codigo fuente C a un ejecutable de Windows.
+el problema... bueno, no existe un problema en si mismo. La manera de hacer un ejecutable desde la shell de nuestro sistema GNU/Linux es bastante sencilla.
+¿Pero y si trabajamos dentro de un editor como Code::Blocks?, seria muy desagradable tener que abrir una shell y movernos hasta donde se encuantra nuestro codigo fuent…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-26T21:21:45+04:00</dc:date>
+        <dc:creator>Geo</dc:creator>
+        <title>Cómo Crear un Prototipo de Juego en Menos de 7 Días: parte 2/3 - Traducción completa, hace falta revisar algunas expresiones.</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff</link>
+        <description>*  &lt;http://www.losersjuegos.com.ar/foro/viewtopic.php?f=2&amp;t=796&gt;
+
+
+
+
+
+
+
+2. Diseño: Creatividad y el Mito de las Lluvias de Ideas
+
+
+
+Una gran idea aparece en una fracción de segundo, pero esperar a que esa luz llegue puede ser insoportable. No se puede forzar la aparición de una gran idea, pero esta sección puede ayudar a cultivar tu creatividad.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-11T05:39:15+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Haciendo videojuegos con pilas - creado</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/videos/pilas_2011?rev=1320975555&amp;do=diff</link>
+        <description>Recursos
+
+	*  Visita el sitio oficial de pilas-engine
+	*  Descargar diapositivas</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-11T05:16:42+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Videos, tutoriales y conferencias</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff</link>
+        <description>Esta sección contiene videos de tutoriales y conferencias relacionadas con el desarrollo de juegos. 
+
+
+
+
+
+
+
+
+“”
+
+
+
+
+
+
+
+
+“”“”“”“”</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/links?rev=1320847694&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-09T18:08:14+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Links</title>
+        <link>http://www.loosersjuegos.com.ar/links?rev=1320847694&amp;do=diff</link>
+        <description>Aquí encontrará varios sitios y proyectos que le recomendamos visitar.
+
+Comunidades y blogs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bibliotecas para desarrollar juegos
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recursos para tus proyectos Libres</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T18:03:12+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Publicamos video de pilas en conurbania - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff</link>
+        <description>Publicamos el video de pilas en conurbania y agregamos
+enlaces al proyecto pilas en la web:
+
+
+	*  Pilas, un motor para hacer videojuegos diferente</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T17:59:15+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Pilas engine</title>
+        <link>http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff</link>
+        <description>Pilas es un motor para hacer videojuegos de manera sencilla.
+
+Está dirigido a personas que comienzan a programar videojuegos y quieren lograr resultados interesantes y divertidos en poco tiempo.
+
+Visita el sitio oficial del proyecto para obtener mas información.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software?rev=1303825707&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T17:48:27+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Software - colocando acceso a pilas engine.</title>
+        <link>http://www.loosersjuegos.com.ar/software?rev=1303825707&amp;do=diff</link>
+        <description>Para desarrollar videojuegos puede utilizar una gran cantidad de programas
+interesantes como los que mostramos a continuación.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-11-29T06:37:31+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Pilas, un motor para hacer videojuegos diferente - creado</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/videos/pilas_2010?rev=1291001851&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-10-19T01:21:45+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>pilas en el evento Conurbania - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff</link>
+        <description>Este 13 de Noviembre estaremos en el evento
+conurbania presentando el engine de videojuegos
+pilas.
+
+Visita la web del evento para mas detalles e incribirte:
+
+&lt;http://conurbania.org/pagina/cronograma-de-charlas&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-14T04:53:44+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>sf.Blend Class Reference - creado</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff</link>
+        <description>Enumerate the blending modes for drawable objects.
+
+Alpha Pixel = Src * a + Dest * (1 - a).
+
+Add Pixel = Src + Dest.
+
+Multiply Pixel = Src * Dest.
+
+None No blending.
+ 
+
+Attributes
+ 
+
+Add
+ 
+
+Alpha
+ 
+
+Multiply
+ 
+
+None</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-14T04:50:32+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>PySFML Referencia</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff</link>
+        <description>PySFML es un binding de SFML para python, SFML significa “Simple Fast Media Library” o “Libreria Simple y Rapida para Media” en español.
+SFML promete ser el remplazo a SDL, según los autores del engine.
+
+Estas paginas no pretender ser ningún tutorial sobre el uso de PySFML.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia/blend?rev=1284424756&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-14T04:39:16+04:00</dc:date>
+        <dc:creator>Jorge Araya Navarro</dc:creator>
+        <title>sf.Blend Class Reference - creado</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/pysfml_referencia/blend?rev=1284424756&amp;do=diff</link>
+        <description>Enumerate the blending modes for drawable objects.
+
+Alpha Pixel = Src * a + Dest * (1 - a).
+
+Add Pixel = Src + Dest.
+
+Multiply Pixel = Src * Dest.
+
+None No blending.
+
+
+Attributes
+
+Add
+
+Alpha
+
+Multiply
+
+None</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-07T03:19:43+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Pilas ya tiene web propia - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff</link>
+        <description>Como muchos ya saben, comenzamos a realizar
+un motor de videojuegos llamado Pilas. 
+
+[logotipo de pilas]
+
+Y la nueva noticias es que ahora tenemos web:
+
+&lt;http://www.pilas-engine.com.ar&gt;
+
+Para conocer mas del proyecto te invitamos a que
+veas la web y consultes en el foro.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-02T05:34:10+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Cargadores de juegos - creado</title>
+        <link>http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff</link>
+        <description>Los cargadores de juegos sirven para simplificar la ejecución de
+juegos en Windows.
+
+Aquí encontrarás una lista de los cargadores que armamos para
+distintas bibliotecas. Escoje el que te resulte mas útil, y si
+quieres saber cómo se han realizado lee el artículo de esta web.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T05:16:22+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>traducciones:programando_con_panda - creado</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/programando_con_panda?rev=1283217382&amp;do=diff</link>
+        <description>La sección Programando con Panda de este manual intenta enumerar todas las funciones que Panda3D proporciona.
+
+Este manual no pretende ser completo en el sentido de la inclusión de
+todas las clases, funciones y métodos proporcionado por Panda3D. Si
+eso es lo que está buscando, vaya a la Sección de Referencia en su lugar.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T05:07:43+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>Intervalos y secuencias - creado</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/usando_intervalos_para_mover_al_panda?rev=1283216863&amp;do=diff</link>
+        <description>Intervalos y secuencias
+
+
+Intervalos
+
+Los intervalos son tareas que cambian una propiedad de un valor a otro
+durante un periodo de tiempo especificado. Iniciar un intervalo efectivamente inicia un proceso de fondo que modifica la propiedad durante el período de tiempo especificado.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283215900&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-31T04:51:40+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>Actores - creado</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/cargando_y_animando_el_modelo_del_panda?rev=1283215900&amp;do=diff</link>
+        <description>Actores
+
+La clase Actor es para los modelos animados. Tenga en cuenta que usamos loadModel() para los modelos estáticos y Actor cuando son animados. Los dos argumentos del constructor para la clase Actor son el nombre del archivo que contiene el modelo y un diccionario en Python que contiene los nombres de los archivos que contienen las animaciones.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal?rev=1282429484&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-22T02:24:44+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>¡Bienvenido! - Se ha restaurado la vieja versión</title>
+        <link>http://www.loosersjuegos.com.ar/principal?rev=1282429484&amp;do=diff</link>
+        <description>[Don Ceferino Hazaña]
+
+LosersJuegos es un grupo de programadores y artistas que se dedican a realizar videojuegos libres, bajo los términos de la licencia GPL.
+
+El mayor objetivo del grupo es promover una comunidad de desarrolladores donde la libertad, el aprendizaje y la solidaridad sean primordiales ante todo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-22T02:23:56+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Libros y manuales - Se ha restaurado la vieja versión</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff</link>
+        <description>En esta sección encontrará diversos manuales, artículos y otros documentos de referencia.
+
+Si quiere puede sugerir mas documentos para esta sección, solo comuniquese con nosotros o envienos el documento. Recuerde que solo añadiremos recursos de libre difusión.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-14T08:05:19+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>nuevo modelo 3d - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff</link>
+        <description>Publicamos un ejemplo sobre la biblioteca panda3d, en
+la que se muestra al cooperativista del videojuego
+ayni en 3D:
+
+&lt;http://www.losersjuegos.com.ar/referencia/ejemplos&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-14T07:58:05+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Ejemplos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff</link>
+        <description>En esta sección encontrará ejemplos muy sencillos para analizar y modificar.
+
+
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: Agosto 2010
+		*  Lenguaje de programación: Python
+		*  Biblioteca: panda3d
+
+
+Descripción:
+
+
+
+
+
+	*  Autor: Juan Guerrero
+		*  Fecha: Marzo 2009
+		*  Lenguaje de programación: Python
+		*  Biblioteca: pygame</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-10T06:40:45+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Como instalar PySFML en windows</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff</link>
+        <description>Créditos
+
+	*  fecha: Agosto 2010
+	*  autor: Hugo Ruscitti
+
+SFML es una biblioteca que permite crear aplicaciones multimedia
+de manera sencilla, tiene soporte para que puedas
+escribir tus aplicaciones en varios lenguajes y utiliza
+internamente la funcionalidad que provee opengl.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-10T03:07:15+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>Sistema de control de cámara por defecto</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/controlando_la_camara?rev=1281395235&amp;do=diff</link>
+        <description>Sistema de control de cámara por defecto
+
+
+De forma predeterminada, Panda3D ejecuta una tarea que le permite mover la cámara con el ratón.
+
+Las teclas para navegar son:
+ Tecla                    Acción                                               Botón Izquierdo	   Mueve hacia la izquierda y derecha.                  Botón derecho   	   Desplazarse hacia delante y atrás.                   Botón Medio  		   Rotar en torno al origen de la aplicación.           Botones Derecho y Medio  Ro…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-09T02:48:02+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Publicamos un nuevo artículo !!! - creado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff</link>
+        <description>Hoy publicamos un nuevo artículo que explica
+cómo instalar la biblioteca pySFML en windows:
+
+&lt;http://www.losersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-09T01:51:25+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Artículos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff</link>
+        <description>Aquí encontrará una serie de tutoriales breves acerca de las técnicas, 
+herramientas y bibliotecas que puede utilizar a la hora de crear
+videojuegos.
+
+
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: Agosto 2010
+
+
+
+
+
+	*  Autor: Adrián Guerra Marrero
+	*  Fecha: 26/07/2010</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T07:15:08+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>El Gráfico de la Escena - creado</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/cargando_la_escena_de_cesped?rev=1280978108&amp;do=diff</link>
+        <description>El Gráfico de la Escena
+
+
+Panda3D contiene una estructura de datos llamada el gráfico de la
+escena(Scene Graph). El gráfico de la escena es un árbol que contiene
+todos los objetos que deben ser prestados. La raíz del árbol es un
+objeto denominado “render”. Nada es renderizado hasta él es
+introducido por primera vez en el gráfico de la escena.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280966404&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T04:00:04+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>Crear una aplicación Panda3D Nueva - creado</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/iniciando_panda3d?rev=1280966404&amp;do=diff</link>
+        <description>Crear una aplicación Panda3D Nueva
+
+Showbase
+
+
+Para iniciar Panda3D, cree un archivo de texto y guardelo con la
+extensión .py. PYPE, SPE y IDLE son editores de texto específicos para
+Python, pero cualquier editor de texto funcionará. Introduzca el
+siguiente texto en su archivo de Python:</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-05T02:18:04+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>traducciones:un_hola_mundo_de_panda</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/un_hola_mundo_de_panda?rev=1280960284&amp;do=diff</link>
+        <description>Esta tutoría se llama “Un Hello World en Panda”. Es un ejemplo típico de un programa Panda3D simple. Avanzar a través de esta tutoría le permitirá obtener una pequeña familiarización con la API de Panda3D sin tener que aprender todo.
+
+El programa que vamos a crear cargara una pequeña escena que contiene un poco de hierba y un panda. El panda se animará para que camine adelante y atrás sobre la hierba.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-04T23:23:30+04:00</dc:date>
+        <dc:creator>Alejandro Varas</dc:creator>
+        <title>Panda3D Básico</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/que_es_panda3d?rev=1280949810&amp;do=diff</link>
+        <description>Panda3D Básico
+
+
+Panda3D es un motor 3D: una biblioteca de subrutinas para renderizar en 3D y el desarrollo de juegos. La biblioteca esta escrita en C++ con un conjunto de enlaces Python. El desarrollo de juegos con Panda3D por lo general consiste en escribir un programa Python o C++ que controla la biblioteca Panda3D.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-01T06:57:04+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Nuevo foro y feeds</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff</link>
+        <description>Hemos instalado una nueva versión de phpbb en nuestro
+foro, y además instalamos soporte de feeds para
+que se puedan leer los post nuevos directamente
+desde un lector de noticias.
+
+La dirección del foro es:
+
+&lt;http://www.losersjuegos.com.ar/foro&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-07-31T10:10:05+04:00</dc:date>
+        <dc:creator>Hugo Ruscitti</dc:creator>
+        <title>Cómo Crear un Prototipo de Juego en Menos de 7 Días: parte 1/3 - algunas correcciones.</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff</link>
+        <description>*  &lt;http://www.losersjuegos.com.ar/foro/viewtopic.php?f=2&amp;t=796&gt;
+
+
+
+
+
+
+
+
+Tips y Trucos de 4 Estudiantes de Posgrado que Crearon más de 50 Juegos en un Semestre
+
+
+
+“”
+
+
+
+
+
+He aquí una idea loca de juego: Arrastrar bolas de Goo [nt: brea o limo] parlanchinas para construir una torre gigante que sea cada vez más alta. Las bolas de Goo se retuercen y ríen, y trepan hacia la cima pasando sobre las espaldas de sus hermanos, pero ¡cuidado! Hay una batalla constante contra la gravedad, si creas…</description>
+    </item>
+</rdf:RDF>

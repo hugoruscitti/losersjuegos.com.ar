@@ -1,0 +1,72 @@
+====== pygame ======
+
+{{logotipos:pygame.png|Logotipo de Pygame}}
+
+Esta sección cuenta con la traducción al español de la documentación
+oficial de pygame, una biblioteca multimedia para python.
+
+===== Descarga =====
+
+Si quiere puede descargar una vesión alternativa en formato off-line:
+
+  * {{:traducciones:pygame:pygame_esp_20090205.pdf|}}
+
+/*
+Reference
+*/
+
+
+===== Referencia =====
+
+
+<pagelist&notags>
+  * [[:traducciones:pygame:pygametop|pygame]]
+  * [[:traducciones:pygame:cdrom|pygame.cdrom]]
+  * [[:traducciones:pygame:cdrom:CD|pygame.cdrom.CD]]
+  * [[:traducciones:pygame:color|pygame.color]]
+  * [[:traducciones:pygame:cursors|pygame.cursors]]
+  * [[:traducciones:pygame:display|pygame.display]]
+  * [[:traducciones:pygame:display:Info|pygame.display.Info]]
+  * [[:traducciones:pygame:draw|pygame.draw]]
+  * [[:traducciones:pygame:event|pygame.event]]
+  * [[:traducciones:pygame:event:event_class|pygame.event.Event]]
+  * [[:traducciones:pygame:font|pygame.font]]
+  * [[:traducciones:pygame:font:font_class|pygame.font.Font]]
+  * [[:traducciones:pygame:font:SysFont|pygame.font.SysFont]]
+  * [[:traducciones:pygame:image|pygame.image]]
+  * [[:traducciones:pygame:joystick|pygame.joystick]]
+  * [[:traducciones:pygame:joystick:joystick_class|pygame.joystick.Joystick]]
+  * [[:traducciones:pygame:key|pygame.key]]
+  * [[:traducciones:pygame:mask|pygame.mask]]
+  * [[:traducciones:pygame:mask:mask_class|pygame.mask.Mask]]
+  * [[:traducciones:pygame:mixer|pygame.mixer]]
+  * [[:traducciones:pygame:mixer:music|pygame.mixer.music]]
+  * [[:traducciones:pygame:mixer:Channel|pygame.mixer.Channel]]
+  * [[:traducciones:pygame:mixer:Sound|pygame.mixer.Sound]]
+  * [[:traducciones:pygame:mouse|pygame.mouse]]
+  * [[:traducciones:pygame:movie|pygame.movie]]
+  * [[:traducciones:pygame:movie:movie_class|pygame.movie.Movie]]
+  * [[:traducciones:pygame:overlay|pygame.overlay]]
+  * [[:traducciones:pygame:pixelarray|pygame.pixelarray]]
+  * [[:traducciones:pygame:rect|pygame.rect]]
+  * [[:traducciones:pygame:scrap|pygame.scrap]] 
+  * [[:traducciones:pygame:surfarray|pygame.surfarray]]
+  * [[:traducciones:pygame:surface|pygame.surface]]
+  * [[:traducciones:pygame:sprite|pygame.sprite]]
+  * [[:traducciones:pygame:sprite:sprite_class|pygame.sprite.Sprite]]
+  * [[:traducciones:pygame:sprite:Group|pygame.sprite.Group]]
+  * [[:traducciones:pygame:sprite:GroupSingle|pygame.sprite.GroupSingle]]
+  * [[:traducciones:pygame:sprite:LayeredDirty|pygame.sprite.LayeredDirty]]
+  * [[:traducciones:pygame:sprite:DirtySprite|pygame.sprite.DirtySprite]]
+  * [[:traducciones:pygame:sprite:LayeredUpdates|pygame.sprite.LayeredUpdates]]
+  * [[:traducciones:pygame:sprite:OrderedUpdates|pygame.sprite.OrderedUpdates]]
+  * [[:traducciones:pygame:sprite:RenderedUpdates|pygame.sprite.RenderedUpdates]]
+  * [[:traducciones:pygame:sndarray|pygame.sndarray]]
+  * [[:traducciones:pygame:time|pygame.time]]
+  * [[:traducciones:pygame:time:clock|pygame.time.clock]]
+  * [[:traducciones:pygame:transform|pygame.transform]]
+  * [[:traducciones:pygame:version|pygame.version]]
+</pagelist>
+
+
+{{tag>python pygame}}

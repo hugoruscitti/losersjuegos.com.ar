@@ -1,0 +1,62 @@
+====== Apuntes y guias breves ======
+
+Esta sección contiene documentos que consideramos útiles para tener cerca de nuestros escritorios a la hora de programar. Los siguientes documentos pueden ayudarle a recordar conceptos básicos cuando quiera retomar su tareas de programación.
+
+Si usted utiliza guías breves como las que encuentra en esta sección, por favor envienos una copia de las mismas para ampliar esta sección.
+
+
+<srcpage pysfml|Tarjeta de referencia sobre pySFML>
+  * **Autor:**  Hugo Ruscitti
+  * **Idioma:** Español
+  * **Descargar:** {{:referencia:apuntes:pysfml:pysfml_reference_card.pdf|}}
+
+**Descripción:** Muestra ejemplos y los objetos mas utilizados para hacer juegos con pySFML.
+</srcpage>
+
+
+
+<srcpage dokuwiki|Tarjeta de referencia sobre Dokuwiki>
+  * **Autor:**  Hugo Ruscitti
+  * **Idioma:** Español
+  * **Descargar:** {{:referencia:apuntes:dokuwiki:dokuwiki.pdf|}}
+
+**Descripción:** Reune los elementos mas utilizados de la sintáxis utilizada para editar el sitio web de losersjuegos.
+</srcpage>
+
+
+
+
+
+
+
+
+<srcpage tarjeta_ansi_c|Tarjeta de referencia rápida C (ANSI) >
+  * **Autor:**  Joseph H. Silverman
+  * **Traducción:** ariel50
+  * **Idioma:** Español
+  * **Descargar:** {{:referencia:apuntes:tarjeta_ansi_c:tarjeta_ansi_c.pdf|}}
+
+**Descripción:** Muestra los conceptos de utilización mas importates del estándar ANSI del lenguaje C: prototipos de funciones, precedencia de operadores, tipos de datos, manejo de archivos... etc. 
+</srcpage>
+
+
+
+
+<srcpage guia_de_ejemplos_sobre_pygame|Guia de ejemplos sobre pygame >
+  * **Autor:**  Hugo Ruscitti
+  * **Idioma:** Español
+  * **Descargar:** {{:referencia:apuntes:guia_de_ejemplos_sobre_pygame:guia_de_ejemplos_sobre_pygame.pdf|}}
+
+**Descripción:** Pygame es un conjunto de rutinas para desarrollar videojuegos con el lenguaje de programación Python. Esta guia cuenta con ejemplos de tareas habituales para los programadores de juegos: crear un bucle principal, cargar imágenes, gestionar eventos... etc. 
+</srcpage>
+
+
+<srcpage debian|Tarjeta de referencia para Debian GNU/Linux >
+  * **Autor:**  W. Borgert
+  * **Traducción:** G. Wolf
+  * **Idioma:** Español
+  * **Sitio fuente:** [[http://people.debian.org/~debacle/refcard/]]
+  * **Descargar:** {{:referencia:apuntes:debian:debian.pdf|}}
+
+**Descripción:** Reune los comandos de administración e instalación de programas mas utilizados en el sistema Debian GNU/Linux. 
+</srcpage>

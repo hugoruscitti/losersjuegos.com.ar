@@ -1,0 +1,223 @@
+====== cursors ======
+
+
+/*
+pygame module for cursor resources
+*/
+
+Módulo de pygame para cursores de mouse.
+
+<box 90%>
+  * [[#compile]]
+  * [[#load_xbm]]
+</box>
+
+/*
+Pygame offers control over the system hardware cursor. Pygame only supports
+black and white cursors for the system. You control the cursor with functions
+inside pygame.mouse.
+*/
+
+Pygame ofrece control sobre el cursor de hardware del sistema. Pygame solo
+soporta cursores blancos y negros para el sistema. Usted controla
+el cursor del mouse con funciones del módulo ''pygame.mouse''.
+
+/*
+This cursors module contains functions for loading and unencoding various
+cursor formats. These allow you to easily store your cursors in external files
+or directly as encoded python strings.
+*/
+
+Esta módulo contiene funciones para cargar y decodificar varios formatos
+gráficos de cursor. Esto le permite fácilmente almacenar sus cursores
+en archivos externos o directamente en cadenas de python con formato.
+
+/*
+The module includes several standard cursors. The pygame.mouse.set_cursor
+function takes several arguments. All those arguments have been stored in a
+single tuple you can call like this:
+*/
+
+El módulo incluye varios cursores estándar. La función ''pygame.mouse.set_cursor''
+toma varios argumentos, todos estos argumentos se pueden agrupar en una
+tupla para que usted puede llamarlo así:
+
+<code python>
+pygame.mouse.set_cursor(*pygame.cursors.arrow)
+</code>
+
+
+/*
+This module also contains a few cursors as formatted strings. You'll need to pass these to pygame.cursors.compile
+function before you can use them. The example call would look like this:
+*/
+
+Esta módulo también contiene unos pocos cursos en cadenas con formato. Necesitará
+pasar estas cadenas a la función ''pygame.cursors.compile'' antes de usarlos. Una
+llamada de ejemplo podría verse así:
+
+<code python>
+cursor = pygame.cursors.compile(pygame.cursors.textmarker_strings)
+pygame.mouse.set_cursor(*cursor)
+</code>
+
+/*
+The following variables are cursor bitmaps that can be used as cursor:
+*/
+
+Las siguientes variables son imágenes que se pueden usar como cursor:
+
+/*
+  * pygame.cursors.arrow
+  * pygame.cursors.diamond
+  * pygame.cursors.broken_x
+  * pygame.cursors.tri_left
+  * pygame.cursors.tri_right
+*/
+
+  * pygame.cursors.arrow
+  * pygame.cursors.diamond
+  * pygame.cursors.broken_x
+  * pygame.cursors.tri_left
+  * pygame.cursors.tri_right
+
+/*
+The following strings can be converted into cursor bitmaps with
+pygame.cursors.compile:
+*/
+
+Las siguientes cadenas se pueden convertir en imágenes de cursor
+con la función ''pygame.cursor.compile''.
+
+/*
+  * pygame.cursors.thickarrow_strings
+  * pygame.cursors.sizer_x_strings
+  * pygame.cursors.sizer_y_strings
+  * pygame.cursors.sizer_xy_strings
+*/
+
+  * pygame.cursors.thickarrow_strings
+  * pygame.cursors.sizer_x_strings
+  * pygame.cursors.sizer_y_strings
+  * pygame.cursors.sizer_xy_strings
+ 
+===== compile =====
+
+
+/*
+create binary cursor data from simple strings
+*/
+
+Genera datos de cursor binario desde una simple cadena.
+
+<code pygame>
+pygame.cursor.compile(strings, black='X', white='.', xor='o'): return data, mask
+</code>
+
+
+/*
+A sequence of strings can be used to create binary cursor data for the system
+cursor. The return values are the same format needed by
+pygame.mouse.set_cursor
+*/
+
+Se puede usar una secuencia de cadenas para crear datos de cursor
+binario para el cursor de sistema. Los valores de retorno tiene el mismo
+formato necesario por ''pygame.mouse.set_cursor''.
+
+/*
+If you are creating your own cursor strings, you can use any value represent
+the black and white pixels. Some system allow you to set a special toggle
+color for the system color, this is also called the xor color. If the system
+does not support xor cursors, that color will simply be black.
+*/
+
+Si está creando su propias cadenas de cursor, puede usar cualquier valor
+representando los pixeles blancos y negros. Algunos sistemas le permiten definir
+un color especial de contraste (o inversión), generalmente llamado el color
+xor. Si el sistema no soporta cursores xor, este color simplemente se verá
+como negro.
+
+/*
+The width of the strings must all be equal and be divisible by 8. An example
+set of cursor strings looks like this
+*/
+
+La longitud de las cadenas debe ser igual para todas y debe ser divisible
+por 8. Un ejemplo de cadenas de cursor se ven así:
+
+<code python>
+thickarrow_strings = (               #sized 24x24
+  "XX                      ",
+  "XXX                     ",
+  "XXXX                    ",
+  "XX.XX                   ",
+  "XX..XX                  ",
+  "XX...XX                 ",
+  "XX....XX                ",
+  "XX.....XX               ",
+  "XX......XX              ",
+  "XX.......XX             ",
+  "XX........XX            ",
+  "XX........XXX           ",
+  "XX......XXXXX           ",
+  "XX.XXX..XX              ",
+  "XXXX XX..XX             ",
+  "XX   XX..XX             ",
+  "     XX..XX             ",
+  "      XX..XX            ",
+  "      XX..XX            ",
+  "       XXXX             ",
+  "       XX               ",
+  "                        ",
+  "                        ",
+  "                        ")
+</code>
+
+  * [[pythonexample>pygame.cursors.compile|buscar código donde se use esta función.]]
+
+===== load_xbm =====
+
+/*
+load cursor data from an xbm file
+*/
+
+Carga datos de cursor desde un archivo xbm.
+
+<code python>
+pygame.cursors.load_xbm(cursorfile, maskfile=None): return cursor_args
+</code>
+
+
+/*
+This loads cursors for a simple subset of XBM files. XBM files are
+traditionally used to store cursors on unix systems, they are an ascii format
+used to represent simple images.
+*/
+
+Esta función cargar cursor desde archivos XBM. Los archivos XBM se 
+usan tradicionalmente para almacenar cursor en sistemas UNIX, estos están
+en formato ascii para representar imágenes simples.
+
+/*
+Sometimes the black and white color values will be split into two separate XBM files. You can pass a second maskfile argument to load the two images into a single cursor.
+*/
+
+A veces los valores de color blanco y negro se pueden dividir en dos archivos XBM
+separados. Puede pasar un segundo argumento ''maskfile'' para cargar las
+dos imágenes en un solo cursor.
+
+/*
+The cursorfile and maskfile arguments can either be filenames or filelike object with the readlines method.
+*/
+
+Los argumentos ''maskfile'' y ''cursorfile'' pueden ser tanto nombres de archivo como
+objetos similares a ''file'', es decir, con el método ''readlines''.
+
+/*
+The return value cursor_args can be passed directly to the pygame.mouse.set_cursor function.*/
+
+El valor de retorno ''cursor_args'' se puede pasar directamente a la función
+''pygame.mouse.set_cursor''.
+
+  * [[pythonexample>pygame.cursors.load_xbm|buscar código donde se use esta función.]]

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sndarray</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:33+0300" />
+<meta name="keywords" content="traducciones,pygame,sndarray" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/sndarray-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="sndarray.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/sndarray.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#sndarray" class="toc">sndarray</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#array" class="toc">array</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#make_sound" class="toc">make_sound</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#use_arraytype" class="toc">use_arraytype</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_arraytype" class="toc">get_arraytype</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_arraytypes" class="toc">get_arraytypes</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="sndarray" id="sndarray">sndarray</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para acceder a muestras de sonido.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/sndarray.html#array" class="wikilink1" title="traducciones:pygame:sndarray">array</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/sndarray.html#make_sound" class="wikilink1" title="traducciones:pygame:sndarray">make_sound</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/sndarray.html#use_arraytype" class="wikilink1" title="traducciones:pygame:sndarray">use_arraytype</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/sndarray.html#get_arraytype" class="wikilink1" title="traducciones:pygame:sndarray">get_arraytype</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/sndarray.html#get_arraytypes" class="wikilink1" title="traducciones:pygame:sndarray">get_arraytypes</a></span></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Contiene funciones para convertir desde objetos de sonido a vectores
+de Numeric o numpy. Este módulo estará disponible solo cuando
+pygame pueda utilizar los paquetes Numeric o numpy.
+</p>
+
+
+
+<p>
+Los datos de sonido se componen de miles de muestras por segundo, y
+cada muestra es la amplitud de la onda en un momento particular
+del tiempo. Por ejemplo, en el formato 22-kHz, el elemento número
+5 del vector es la amplitud de onda luego de 5/22000 segundos.
+</p>
+
+
+
+<p>
+Cada muestra es un número de 8 o 16 bits, dependiendo del formato. Un
+archivo de sonido estéreo tiene dos valores por muestra, mientras
+que un archivo de sonido mono tiene solo uno.
+</p>
+
+
+
+<p>
+Los sistemas de vector soportados son:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> numeric</div>
+</li>
+<li class="level1"><div class="li"> numpy</div>
+</li>
+</ul>
+
+
+
+<p>
+Por defecto se elije Numeric, si está instalado. En otro caso, se
+usará numpy (si está instalado). Si ninguno de los dos está instalado, el
+módulo notificará una excepción <em>ImportError</em>.
+</p>
+
+
+
+<p>
+El sistema de vector se puede cambiar en tiempo de ejecución usando
+el método <code>use_arraytype()</code>, que requiere uno los sistemas especificados
+mas arriba como cadena.
+</p>
+
+
+
+<p>
+Nota: numpy y Numeric no son completamente compatibles. Algunas
+manipulaciones de vectores pueden funcionar en un sistema, pero tener
+un comportamiento diferente o incluso no funcionar en otro.
+</p>
+
+
+
+<p>
+Además, a diferencia de Numeric, numpy puede usar enteros sin signo
+de 16 bits. Si la muestra representa dados de 16 bits los sonidos con
+datos de 16 bits se tratarán como números sin signo. En cambio, Numeric
+siempre utilizará enteros con signo para la representación, es importante
+tener esto en mente, ya que usted puede estar utilizando funciones
+del módulo y sorprenderse por los valores.
+</p>
+
+</div>
+<!-- SECTION "sndarray" [1-3572] -->
+<h2><a name="array" id="array">array</a></h2>
+<div class="level2">
+
+
+
+<p>
+Copia muestras de sonido en un vector.
+</p>
+<pre class="code python">pygame.<span class="me1">sndarray</span>.<span class="kw3">array</span><span class="br0">&#40;</span>Sound<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw3">array</span></pre>
+
+
+<p>
+Genera un nuevo vector para los datos de sonido y copia las muestras. El
+vector siempre tendrá el mismo formato retornado por 
+<code>pygame.mixer.get_init()</code>
+</p>
+
+</div>
+<!-- SECTION "array" [3573-4042] -->
+<h2><a name="make_sound" id="make_sound">make_sound</a></h2>
+<div class="level2">
+
+
+
+<p>
+Convierte un vector en un objeto Sound.
+</p>
+<pre class="code python">pygame.<span class="me1">sndarray</span>.<span class="me1">make_sound</span><span class="br0">&#40;</span><span class="kw3">array</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sound</pre>
+
+
+<p>
+Genera un nuevo objeto Sound reproducible desde un vector. Se debe
+inicializar el módulo mixer y el formato del vector debe ser similar
+al formato de audio de mixer.
+</p>
+
+</div>
+<!-- SECTION "make_sound" [4043-4548] -->
+<h2><a name="use_arraytype" id="use_arraytype">use_arraytype</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el sistema de vector que se debe utilizar para los vectores
+de sonido.
+</p>
+<pre class="code python">pygame.<span class="me1">sndarray</span>.<span class="me1">use_arraytype</span> <span class="br0">&#40;</span>arraytype<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Utiliza el sistema de vector solicitado para las funciones
+del módulo. Actualmente los sistemas soportados son:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> numeric </div>
+</li>
+<li class="level1"><div class="li"> numpy</div>
+</li>
+</ul>
+
+
+
+<p>
+Se notificará la excepción <em>ValueError</em> si no está disponible el
+sistema solicitado.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8
+</p>
+
+</div>
+<!-- SECTION "use_arraytype" [4549-5294] -->
+<h2><a name="get_arraytype" id="get_arraytype">get_arraytype</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el sistema de vector disponible.
+</p>
+<pre class="code python">pygame.<span class="me1">sndarray</span>.<span class="me1">get_arraytype</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">str</span></pre>
+
+
+<p>
+Retorna el sistema de vector actualmente activo. Este será un valor
+de la tupla de <code>get_arraytypes()</code> e indica que sistema de vector
+se está utilizando para la creación de vectores.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8
+</p>
+
+</div>
+<!-- SECTION "get_arraytype" [5295-5904] -->
+<h2><a name="get_arraytypes" id="get_arraytypes">get_arraytypes</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene los sistemas de vector actualmente soportados.
+</p>
+<pre class="code python">pygame.<span class="me1">sndarray</span>.<span class="me1">get_arraytypes</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">tuple</span></pre>
+
+
+<p>
+Verifica que sistemas de vector están disponibles y los retorna
+como una tupla de cadenas. Los valores de la tupla se pueden usar
+directamente en la función <code>pygame.sndarray.use_arraytype()</code>. Se
+retornará <code>None</code> si no se encuentra un sistema de vector soportado.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8
+</p>
+
+</div>
+<!-- SECTION "get_arraytypes" [5905-] --></div>
+</body>
+</html>

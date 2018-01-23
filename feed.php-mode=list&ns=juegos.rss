@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos juegos</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:02:20+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/aqbubble?rev=1230556880&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/asadetris?rev=1247343077&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/asadetrismobile?rev=1261420553&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/ceferino?rev=1224086251&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/ceferinomobile?rev=1261420580&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/chanta?rev=1232459965&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/irobotgame?rev=1232459961&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/pongix?rev=1232463371&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/soccerd?rev=1230557095&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/juegos/volleyball?rev=1199299432&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/aqbubble?rev=1230556880&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-29T16:21:20+04:00</dc:date>
+        <title>Aquatic Bubble</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/aqbubble?rev=1230556880&amp;do=diff</link>
+        <description>En Aquatic Bubble debes eliminar a todos los enemigos del nivel. Para hacerlo debes disparar contra ellos hasta atraparlos en burbujas y luego ... “¡ hacerlos reventar !”. 
+
+Capturas de pantalla
+
+Descargas
+
+Licencia
+
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la Licencia Pública de GNU v2 (en español)).</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/asadetris?rev=1247343077&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-07-12T00:11:17+04:00</dc:date>
+        <title>Asadetris</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/asadetris?rev=1247343077&amp;do=diff</link>
+        <description>Asadetris es un videojuego similar a Tetris.
+
+
+Todo el escenario está representado por el estómago de una
+persona, las piezas son porciones de comida que usted tiene
+que acomodar correctamente.
+
+
+
+Sobre el desarrollo
+
+Asadetris es un juego desarrollado en equipo, un grupo de
+personas con ganas de hacer un juego divertido, libre y que
+les permita aprender del desarrollo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/asadetrismobile?rev=1261420553&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-12-21T21:35:53+04:00</dc:date>
+        <title>Asadetris</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/asadetrismobile?rev=1261420553&amp;do=diff</link>
+        <description>Un juego muy similar a Tetris donde el escenario es el estómago de un personaje. Cada pieza representa una
+porción de comida que el jugador debe acomodar correctamente para seguir jugando.
+
+El juego termina cuando la comida llega a la parte superior del escenario.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/ceferino?rev=1224086251&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-10-15T19:57:31+04:00</dc:date>
+        <title>Don Ceferino Hazaña</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/ceferino?rev=1224086251&amp;do=diff</link>
+        <description>Don Ceferino Hazaña es un gaucho de Argentina que debe rescatar a su vaca de los extraterrestres. Al mejor estilo super pang, en este juego lo mas importante es la destreza del jugador.
+
+
+A continuación encontrará varias versiones de este juego para descargar. Tenga en cuenta que muchos usuarios nos ayudaron a adaptarlo (léase “port”) otros sistemas como Gentoo y Amiga. Por ese motivo le recomendamos realizar una búsqueda de Ceferino en la web.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/ceferinomobile?rev=1261420580&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-12-21T21:36:20+04:00</dc:date>
+        <title>Don Ceferino Hazaña Mobile</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/ceferinomobile?rev=1261420580&amp;do=diff</link>
+        <description>Ceferino es un gaucho solitario que debe luchar contra los extraterrestres para rescatar a su vaca.
+
+En el juego debes destruir las esferas de color verde pulsando el botón principal o hacia arriba. Cada vez que golpeas una esfera, esta se divide en dos mas pequeñas...</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/chanta?rev=1232459965&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:25+04:00</dc:date>
+        <title>Chanta claus</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/chanta?rev=1232459965&amp;do=diff</link>
+        <description>En el juego Chanta Claus, nuestro protagonista debe recolectar varios billetes de dólares dispersos en cada nivel. Cuando llegamos a recolectar todos, podremos acceder al próximo nivel. 
+
+
+Existen 2 versiones de este juego, la versión reciente (desarrollada con SDL y C++) y una versión antigua sólo para sistemas D.O.S. Hemos incluido la descarga de ambas mas abajo, aunque solo continuaremos desarrollando la versión reciente. Ambas versiones están disponibles bajo la licencia GPL.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/irobotgame?rev=1232459961&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:21+04:00</dc:date>
+        <title>I Robot ?</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/irobotgame?rev=1232459961&amp;do=diff</link>
+        <description>I robot? es un juego de baile donde el jugador debe seguir una secuencia
+de movimientos con el mouse.
+
+Nuestra protagonista es una chica que vive en un mundo dominado por los
+robots, y la única forma de que no la descubran es infiltrarse en un grupo
+de baile. Tu misión es ayudarla a seguir la coreografía, si fallas te descubrirán...</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/pongix?rev=1232463371&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:56:11+04:00</dc:date>
+        <title>Pongix</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/pongix?rev=1232463371&amp;do=diff</link>
+        <description>Pongix es un videojuego muy simple para dos jugadores inspirado en el clásico Pong.
+
+Comenzamos a desarrollar el programa para participar de la propuesta “Pong” que realizaron varios usuarios de la lista de correo SDL en español. La propuesta consistía en desarrollar varias versiones diferentes del videojuego Pong con las bibliotecas SDL, cada versión podía incluir sus propias variantes.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/soccerd?rev=1230557095&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-29T16:24:55+04:00</dc:date>
+        <title>Soccer Deathmatch</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/soccerd?rev=1230557095&amp;do=diff</link>
+        <description>Soccer Deathmatch es un juego de fútbol focalizado en la diversión de usuario, nuestra mayor influencia a sido Goal 3.
+
+Jugando a Soccer Deathmatch se encontrará ante varios escenarios y personajes de caricaturas de videojuegos y la televisión. Existen un total de 70 jugadores, entre los que podemos mensionar a: Lara Croft, Ryu, Ken, Goku, Iory...</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/juegos/volleyball?rev=1199299432&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-01-02T21:43:52+04:00</dc:date>
+        <title>Pocket Volleyball</title>
+        <link>http://www.loosersjuegos.com.ar/juegos/volleyball?rev=1199299432&amp;do=diff</link>
+        <description>Volleyball es un videojuego deportivo muy simple protagonizado por dos pingüinos. Es un juego para dos personas, cada uno debe golpear a la pelota y enviarla al terreno oponente, si logra que la pelota toque el campo de su oponente obtendrá un tanto.</description>
+    </item>
+</rdf:RDF>

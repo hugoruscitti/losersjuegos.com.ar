@@ -1,0 +1,12 @@
+====== nuevo modelo 3d ======
+
+Publicamos un ejemplo sobre la biblioteca panda3d, en
+la que se muestra al cooperativista del videojuego
+ayni en 3D:
+
+http://www.losersjuegos.com.ar/referencia/ejemplos
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

@@ -1,0 +1,446 @@
+====== Channel ======
+
+/*
+Create a Channel object for controlling playback
+*/
+
+Genera un objeto ''Channel'' (canal de audio) para controlar
+la reproducción de audio.
+
+<box 90%>
+  * [[#Channel]]
+  * [[#play]]
+  * [[#stop]]
+  * [[#pause]]
+  * [[#unpause]]
+  * [[#fadeout]]
+  * [[#set_volume]]
+  * [[#get_volume]]
+  * [[#get_busy]]
+  * [[#get_sound]]
+  * [[#queue]]
+  * [[#get_queue]]
+  * [[#set_endevent]]
+  * [[#get_endevent]]
+</box>
+
+
+===== Channel =====
+
+<code python>
+pygame.mixer.Channel(id): return Channel
+</code>
+
+/*
+Return a Channel object for one of the current channels. The id must
+be a value from 0 to the value of pygame.mixer.get_num_channels().
+*/
+
+Retorna un objeto ''Channel'' para uno de los canales actuales. El
+argumento ''id'' debe ser un valor entre 0 y el valor que devuelve
+''pygame.mixer.get_num_channels()''.
+
+/*
+The Channel object can be used to get fine control over the playback
+of Sounds. A channel can only playback a single Sound at time. Using
+channels is entirely optional since pygame can manage them by default.
+*/
+
+El objeto ''Channel'' se puede usar para obtener un control preciso
+sobre la reproducción de sonidos. Un canal solo puede reproducir un
+objeto ''Sound'' a la vez. Como pygame por defecto maneja por su
+cuenta estos objetos, utilizarlos es completamente opcional.
+
+===== play =====
+
+/*
+play a Sound on a specific Channel
+*/
+
+Reproduce un sonido en un canal específico.
+
+
+<code python>
+Channel.play(Sound, loops=0, maxtime=0, fade_ms=0): return None
+</code>
+
+
+/*
+This will begin playback of a Sound on a specific Channel. If the Channel
+is currently playing any other Sound it will be stopped.
+*/
+
+Comenzará a reproducir un sonido en un canal específico. Se interrumpirá
+cualquier sonido que esté sonando en este canal.
+
+/*
+The loops argument has the same meaning as in Sound.play(): it is the
+number of times to repeat the sound after the first time. If it is
+3, the sound will be played 4 times (the first time, then three more).
+If loops is -1 then the playback will repeat indefinitely.
+*/
+
+El argumento ''loops'' tiene el mismo significado que en ''Sound.play()'': es
+el número de veces que se repetirá el sonido luego de sonar la primera
+vez. Si vale 3, entonces el sonido se reproducirá 4 veces (la primera y
+luego 3 veces mas). Si ''loops'' vale -1, entonces el sonido se repetirá
+indefinidamente.
+
+/*
+As in Sound.play(), the maxtime argument can be used to
+stop playback of the Sound after a given number of milliseconds.
+*/
+
+Como en ''Sound.play()'', el argumento ''maxtime'' se puede usar
+para detener la reproducción de sonido luego de un tiempo determinado
+(indicado en milisegundos).
+
+/*
+As in Sound.play(), the fade_ms argument can be used fade in the sound.
+*/
+
+Al igual que ''Sound.play()'', el argumento ''fade_ms'' se puede
+usar para alterar progresivamente el volumen de un sonido.
+
+===== stop =====
+
+/*
+stop playback on a Channel
+*/
+
+Detiene la reproducción de sonido en el canal de audio.
+
+<code python>
+Channel.stop(): return None
+</code>
+
+/*
+Stop sound playback on a channel. After playback is stopped the channel
+becomes available for new Sounds to play on it.
+*/
+
+Detiene la reproducción de sonido en el canal. Luego de interrumpir la
+reproducción el canal quedará disponible para que nuevos sonidos
+puedan sonar en él.
+
+===== pause =====
+
+/*
+temporarily stop playback of a channel
+*/
+
+Detiene temporalmente la reproducción de un canal.
+
+
+<code python>
+Channel.pause(): return None
+</code>
+
+
+/*
+Temporarily stop the playback of sound on a channel. It can be resumed at
+a later time with Channel.unpause()
+*/
+
+Detiene de forma temporal la reproducción de sonido en un canal. Este
+sonido se puede reanudar nuevamente mediante la función ''Channel.unpause()''.
+
+===== unpause =====
+
+/*
+resume pause playback of a channel
+*/
+
+Reanuda la reproducción en un canal.
+
+<code python>
+Channel.unpause(): return None
+</code>
+
+/*
+Resume the playback on a paused channel.
+*/
+
+Continúa la reproducción en un canal que está en pausa.
+
+===== fadeout =====
+
+/*
+stop playback after fading channel out
+*/
+
+Detiene la reproducción luego de reducir el volumen.
+
+<code python>
+Channel.fadeout(time): return None
+</code>
+
+/*
+Stop playback of a channel after fading out the sound over the given
+time argument in milliseconds.
+*/
+
+Detiene la reproducción de un canal luego de reducir progresivamente el
+volumen de un sonido en el tiempo indicado por el argumento ''time''
+(en milisegundos).
+
+
+===== set_volume =====
+
+/*
+set the volume of a playing channel
+*/
+
+Define el volumen de un canal de reproducción.
+
+<code python>
+Channel.set_volume(value): return None
+Channel.set_volume(left, right): return None
+</code>
+
+/*
+Set the volume (loudness) of a playing sound. When a channel starts to play its
+volume value is reset. This only affects the current sound. The value
+argument is between 0.0 and 1.0.
+*/
+
+Define el volumen, o latencia, de un sonido. El nivel de volumen
+se reinicia cuando un canal comienza a reproducir nuevamente. Esta
+función solo afecta al sonido actual. El argument ''value'' debe
+ser un número entre 0.0 y 1.0
+
+
+/*
+If one argument is passed, it will be the volume of both speakers.
+If two arguments are passed and the mixer is in stereo mode, the
+first argument will be the volume of the left speaker and the second
+will be the volume of the right speaker. (If the second argument is
+None, the first argument will be the volume of both speakers.)
+*/
+
+Si se pasa un solo argumento, este se interpretará como el volumen
+de ambos parlantes. Si se pasan dos argumento y el módulo ''mixer''
+usa el modo estéreo, entonces el primer argumento será el volumen
+del parlante izquierdo y el segundo argumento será el
+volumen del parlante derecho. (Si el segundo argumento es None, entonces
+el primer argumento se interpretará como el volumen de ambos
+parlantes.)
+
+
+
+/*
+If the channel is playing a Sound on which set_volume() has also
+been called, both calls are taken into account. For example:
+*/
+
+Si el canal está reproduciendo un sonido en donde se ha llamado
+a la función ''set_volume()'', se tendrán en cuenta las dos
+llamadas. Por ejemplo:
+
+
+<code python>
+sound = pygame.mixer.Sound("s.wav")
+channel = s.play()      # El sonido suena al máximo de volúmen.
+sound.set_volume(0.9)   # Ahora al 90% de si volumen.
+sound.set_volume(0.6)   # Ahora al 60% (el anterior valor de descarta).
+channel.set_volume(0.5) # Ahora al 30% (porque 0.6 * 0.5 = 0.3).
+</code>
+
+===== get_volume =====
+
+/*
+get the volume of the playing channel
+*/
+
+Obtiene el volumen del canal de reproducción.
+
+<code python>
+Channel.get_volume(): return value
+</code>
+
+/*
+Return the volume of the channel for the current playing sound. This
+does not take into account stereo separation used by Channel.set_volume.
+The Sound object also has its own volume which is mixed with the channel.
+*/
+
+Retorna el volumen del canal para el sonido que es está reproduciendo. 
+Esta función no tiene en cuenta la separación estéreo que se
+ha utilizado en ''Channel.set_volume''. El objeto ''Sound'' también
+tiene su propio volumen que se mezcla con el del canal.
+
+
+
+===== get_busy =====
+
+/*
+check if the channel is active
+*/
+
+Consulta si el canal está activo.
+
+<code python>
+Channel.get_busy(): return bool
+</code>
+
+/*
+Returns true if the channel is activily mixing sound. If the channel is
+idle this returns False.
+*/
+
+Retorna ''True'' si el canal está reproduciendo audio, y retornará ''False''
+si el canal está inactivo.
+
+===== get_sound =====
+
+/*
+get the currently playing Sound
+*/
+
+Obtiene el sonido que se está reproduciendo actualmente.
+
+<code python>
+Channel.get_sound(): return Sound
+</code>
+
+/*
+Return the actual Sound object currently playing on this channel. If the
+channel is idle None is returned.
+*/
+
+Retorna el objeto ''Sound'' que se está reproduciendo en este canal. Retornará
+''None'' si el canal está inactivo.
+
+===== queue =====
+
+/*
+queue a Sound object to follow the current
+*/
+
+Coloca un objeto ''Sound'' en la cola para seguir al actual.
+
+<code python>
+Channel.queue(Sound): return None
+</code>
+
+/*
+When a Sound is queued on a Channel, it will begin playing immediately
+after the current Sound is finished. Each channel can only have a single
+Sound queued at a time. The queued Sound will only play if the current
+playback finished automatically. It is cleared on any other call to
+Channel.stop() or Channel.play().
+*/
+
+Un objeto ''Sound'' comienza a reproducirse inmediatamente después de
+otro si se coloca en la cola de reproducción del canal. Cada canal
+solo puede tener un sonido en cola al mismo tiempo. El sonido en cola
+solo se reproducirá si el sonido actual finaliza normalmente. En otro caso, si
+se llama a ''Channel.stop()'' o ''Channel.play()'', el sonido en cola
+se cancelará.
+
+/*
+If there is no sound actively playing on the Channel then the Sound
+will begin playing immediately.
+*/
+
+El sonido comenzará a reproducirse inmediatamente si no hay otro
+sonido en curso.
+
+
+===== get_queue =====
+
+/*
+return any Sound that is queued
+*/
+
+Retorna cualquier objeto ''Sound'' que esté en cola.
+
+<code python>
+Channel.get_queue(): return Sound
+</code>
+
+/*
+If a Sound is already queued on this channel it will be returned. Once
+the queued sound begins playback it will no longer be on the queue.
+*/
+
+Se retornará el sonido que esté en cola para este canal. Una vez
+que el sonido comienza a reproducirse ya no estará en la cola de
+reproducción.
+
+===== set_endevent =====
+
+/*
+have the channel send an event when playback stops
+*/
+
+Hace que el canal envíe un evento cuando la reproducción finalice.
+
+<code python>
+Channel.set_endevent(): return None
+Channel.set_endevent(type): return None
+</code>
+
+/*
+When an endevent is set for a channel, it will send an event to the pygame
+queue every time a sound finishes playing on that channel (not just the
+first time). Use pygame.event.get() to retrieve the endevent once it's sent.
+*/
+
+Cuando se define un evento de terminación para el canal, se enviará un
+evento a la cola de eventos cada vez que un sonido termine de reproducirse
+en este canal (no solo la primera vez). Use la función ''pygame.event.get()''
+para recibir el evento de terminación una vez que halla sido enviado.
+
+/*
+Note that if you called Sound.play(n) or Channel.play(sound,n), the end event is
+sent only once: after the sound has been played "n+1" times (see the
+documentation of Sound.play).
+*/
+
+Note que si ha llamado a ''Sound.play(n)'' o ''Channel.play(sound, n)'', el
+evento de terminación se enviará una sola vez, luego de reproducirse "n+1" veces (vea
+la documentación de ''Sound.play'').
+
+/*
+If Channel.stop() or Channel.play() is called while the sound was still
+playing, the event will be posted immediately.
+*/
+
+Se enviará el evento de terminación inmediatamente si se llama a ''Channel.stop()''
+o ''Channel.play()'' mientras el sonido está en reproducción.
+
+/*
+The type argument will be the event id sent to the queue. This can be
+any valid event type, but a good choice would be a value between
+pygame.locals.USEREVENT and pygame.locals.NUMEVENTS.
+If no type argument is given then the Channel will stop sending endevents.
+*/
+
+El argumento ''type'' indica el identificador de evento para enviar
+a la cola de eventos. Puede ser válido usar cualquier tipo de evento, aunque
+una buena elección debería ser optar por un valor entre ''pygame.locals.USEREVENT''
+y ''pygame.locals.NUMEVENTS''. 
+
+El canal dejará de enviar eventos si se llama a esta función sin argumentos.
+
+===== get_endevent =====
+
+/*
+get the event a channel sends when playback stops
+*/
+
+Obtiene el evento que un canal emite cuando finaliza la reproducción.
+
+<code python>
+Channel.get_endevent(): return type
+</code>
+
+/*
+Returns the event type to be sent every time the Channel finishes playback
+of a Sound. If there is no endevent the function returns pygame.NOEVENT*/
+
+Retorna el tipo de evento que se enviará cada vez que el canal termina
+de reproducir un objeto ''Sound''. Esta función retornará ''pygame.NOEVENT''
+si el canal no tiene asignado un evento para emitir.
+

@@ -1,0 +1,1878 @@
+====== Surface ======
+
+/*
+pygame object for representing images
+*/
+
+Objeto de pygame para representar imágenes.
+
+
+<box 90%>
+  * [[#Surface]]
+  * [[#blit]]
+  * [[#convert]]
+  * [[#convert_alpha]]
+  * [[#copy]]
+  * [[#fill]]
+  * [[#set_colorkey]]
+  * [[#get_colorkey]]
+  * [[#set_alpha]]
+  * [[#get_alpha]]
+  * [[#lock]]
+  * [[#unlock]]
+  * [[#mustlock]]
+  * [[#get_locked]]
+  * [[#get_locks]]
+  * [[#get_at]]
+  * [[#set_at]]
+  * [[#get_palette]]
+  * [[#get_palette_at]]
+  * [[#set_palette]]
+  * [[#set_palette_at]]
+  * [[#map_rgb]]
+  * [[#unmap_rgb]]
+  * [[#set_clip]]
+  * [[#get_clip]]
+  * [[#subsurface]]
+  * [[#get_parent]]
+  * [[#get_abs_parent]]
+  * [[#get_offset]]
+  * [[#get_abs_offset]]
+  * [[#get_size]]
+  * [[#get_width]]
+  * [[#get_height]]
+  * [[#get_rect]]
+  * [[#get_bitsize]]
+  * [[#get_bytesize]]
+  * [[#get_flags]]
+  * [[#get_pitch]]
+  * [[#get_masks]]
+  * [[#set_masks]]
+  * [[#get_shifts]]
+  * [[#set_shifts]]
+  * [[#get_losses]]
+  * [[#get_bounding_rect]]
+  * [[#get_buffer]]
+</box>
+
+
+===== Surface =====
+
+<code python>
+pygame.Surface( (width, height), flags=0, depth=0, masks=None): return Surface
+pygame.Surface( (width, height), flags=0, Surface): return Surface
+</code>
+
+
+/*
+A pygame Surface is used to represent any image. The Surface has a fixed
+resolution and pixel format. Surfaces with 8bit pixels use a color palette
+to map to 24bit color.
+*/
+
+Un objeto Surface de pygame se utiliza para representar cualquier imagen.
+La superficie tiene un formato de pixel y resolución fija. Las superficies
+con pixeles de 8 bits usan una paleta de 256 colores.
+
+/*
+Call pygame.Surface() to create a new image object. The Surface will be
+cleared to all black. The only required arguments are the sizes. With no
+additional arguments, the Surface will be created in a format that best
+matches the display Surface.
+*/
+
+Invoque ''pygame.Surface()'' para crear un nuevo objeto image. La superficie
+será completamente negra. El único argumento requerido es el tamaño. La
+superficie se creará con el formato que mejor coincida con la pantalla
+actual si no se especifican los argumentos adicionales.
+
+/*
+The pixel format can be controlled by passing the bit depth or an existing
+Surface. The flags argument is a bitmask of additional features for the
+surface. You can pass any combination of these flags:
+*/
+
+El formato de pixel se puede controlar especificando la profundidad
+de colores o una superficie existente. El argumento ''flags'' es una
+combinación de características adiciones para la superficie. Puede
+utilizar cualquier combinación de estas:
+
+/*
+  * HWSURFACE, creates the image in video memory
+  * SRCALPHA, the pixel format will include a per-pixel alpha
+*/
+
+  * HWSURFACE: Genera la imagen en la memoria de video.
+  * SRCALPHA: El formato de pixel incluirá transparencias por pixel.
+
+
+/*
+Both flags are only a request, and may not be possible for all displays and
+formats.
+*/
+
+Ambas opciones son solo una solicitud, tal vez no sea posible para
+todos los modos de video.
+
+/*
+Advance users can combine a set of bitmasks with a depth value. The masks
+are a set of 4 integers representing which bits in a pixel will represent
+each color. Normal Surfaces should not require the masks argument.
+*/
+
+Los usuarios avanzados pueden combinar un conjunto de opciones con
+un valor ''depth''. El argumento ''masks'' es un conjunto de 4 números
+enteros que especifica cuales bits representan a cada color en el
+pixel. Las superficies normales no requieren el argumento ''mask''.
+
+/*
+Surfaces can have many extra attributes like alpha planes, colorkeys, source
+rectangle clipping. These functions mainly effect how the Surface is blitted
+to other Surfaces. The blit routines will attempt to use hardware acceleratio
+when possible, otherwise will use highly optimized software blitting methods.
+*/
+
+Las superficies pueden tener varios atributos adicionales como planos
+alpha, colores clave o recortes. Estas funciones afectan principalmente
+a la forma en que se imprime la superficie sobre otra. Las rutinas ''blit''
+intentarán usar aceleración de hardware cuando sea posible, en caso contrario
+usarán métodos de impresión por software muy optimizados.
+
+/*
+There are three types of transparency supported in Pygame: colorkeys, 
+surface alphas, and pixel alphas. Surface alphas can be mixed with colorkeys,
+but an image with per pixel alphas cannot use the other modes. Colorkey
+transparency makes a single color value transparent. Any pixels matching
+the colorkey will not be drawn. The surface alpha value is a single value
+that changes the transparency for the entire image. A surface alpha of 255
+is opaque, and a value of 0 is completely transparent.
+*/
+
+
+Existen tres tipos de transparencia en pygame: colores clave,
+transparencia de superficie, y transparencia de pixel. La transparencia
+de superficie se puede combinar con colores clave, pero las imágenes con
+transparencia de pixel no puede usar los otros modos. La transparencia
+por color clave hace transparente un solo color. No se imprimirán
+los pixeles que coincidan con el color clave. La transparencia
+de superficie es un valor individual que cambia la transparencia de la
+imagen completa. Una transparencia de superficie de 255 será opaca mientras
+que un valor de 0 será completamente transparente.
+
+/*
+Per pixel alphas are different because they store a transparency value for
+every pixel. This allows for the most precise transparency effects, but it
+also the slowest. Per pixel alphas cannot be mixed with surface alpha and
+colorkeys.
+*/
+
+La transparencia de pixel es diferente porque se almacena el valor
+de transparencia de cada pixel. Esto permite crear efectos de transparencia
+mas precisos, pero es algo mas lento. La transparencia de pixel no
+se puede mezclar con los otros tipos de transparencia.
+
+/*
+There is support for pixel access for the Surfaces. Pixel access on hardware
+surfaces is slow and not recommended. Pixels can be accessed using the get_at()
+and set_at() functions. These methods are fine for simple access, but will be
+considerably slow when doing of pixel work with them. If you plan on doing a
+lot of pixel level work, it is recommended to use the pygame.surfarray module,
+which can treat the surfaces like large multidimensional arrays
+(and it's quite quick).
+*/
+
+Existe soporte para acceder a los pixels de la superficie. El acceso
+pixels en superficies de hardware es lento y no se recomienda. Estos
+métodos son adecuados para acceso simple, pero serán considerablemente
+lentos cuando realice mucho trabajo de pixels con ellos. Si planea
+realizar mucho trabajo a nivel de pixels se recomienda usar el
+módulo ''pygame.surfarray'' que puede tratar a las superficies como
+vectores de varias dimensiones (y es bastante rápido).
+
+/*
+Any functions that directly access a surface's pixel data will need that
+surface to be lock()'ed. These functions can lock() and unlock() the surfaces
+themselves without assistance. But, if a function will be called many times,
+there will be a lot of overhead for multiple locking and unlocking of the
+surface. It is best to lock the surface manually before making the function
+call many times, and then unlocking when you are finished. All functions that
+need a locked surface will say so in their docs. Remember to leave the Surface
+locked only while necessary.
+*/
+
+Cualquier función que acceda directamente a los datos de pixels de
+la superficie necesitarán que la superficie esté bloqueada. Estas
+funciones pueden bloquear (''block()'') o desbloquear (''unlock()'')
+las superficies por ellas mismas si ayuda, pero, si habrá una sobrecarga
+muy grande de múltiples bloqueos o desbloqueos si se llama a esta
+función muchas veces. Es mejor bloquear manualmente la superficie antes
+de llamar a las funciones muchas veces, y luego desbloquear la superficie
+cuando se halla finalizado. Todas las funciones que necesitan bloquear
+la superficie lo indican en la documentación. Recuerde dejar la superficie
+bloqueada solo mientras sea necesario.
+
+/*
+Surface pixels are stored internally as a single number that has all the
+colors encoded into it. Use the Surface.map_rgb() and Surface.unmap_rgb()
+to convert between individual red, green, and blue values into a packed
+integer for that Surface.
+*/
+
+Los pixels de la superficie se almacenan internamente como un número
+individual que tiene todos los colores agrupados. Use las funciones
+''Surface.map_rgb()'' y ''Surface.unmap_rgb()'' para convertir entre
+valores individuales (rojo, verde y azul) en colores agrupados para
+la superficie.
+
+/*
+Surfaces can also reference sections of other Surfaces. These are created
+with the Surface.subsurface() method. Any change to either Surface will 
+effect the other.
+*/
+
+Las superficies también pueden ser una referencia a una sección
+de otra superficie. Se generan con el método ''Surface.subsurface()''. Cualquier cambio en alguna de las dos superficie que verá reflejado
+en ambas.
+
+/*
+Each Surface contains a clipping area. By default the clip area covers the
+entire Surface. If it is changed, all drawing operations will only effect
+the smaller area.
+*/
+
+Cada superficie contiene un área de recorte. Por defecto el área
+de recorte cubre la superficie entera. Si esta área de modifica, todas
+las operaciones de dibujado solo afectarán un área mas pequeña.
+
+
+
+===== blit =====
+
+/*
+draw one image onto another
+*/
+
+Dibuja una imagen sobre otra.
+
+<code python>
+Surface.blit(source, dest, area=None, special_flags = 0): return Rect
+</code>
+
+/*
+Draws a source Surface onto this Surface. The draw can be positioned with
+the dest argument. Dest can either be pair of coordinates representing the
+upper left corner of the source. A Rect can also be passed as the destination
+and the topleft corner of the rectangle will be used as the position for the
+blit. The size of the destination rectangle does not effect the blit.
+*/
+
+Dibuja una superficie ''source'' sobre otra. La impresión se puede
+posicionar usando el argumento ''dest''. ''dest'' puede ser un
+par de coordenadas representando la esquina superior izquierda o bien
+un rectángulo, cuya esquina superior izquierda representará la posición
+destino de impresión. El tamaño de rectángulo destino no afectará
+la impresión.
+
+/*
+An optional area rectangle can be passed as well. This represents a smaller
+portion of the source Surface to draw.
+*/
+ 
+Se puede pasar un rectángulo opcional como argumento ''area''. Este
+representa una porción mas pequeña de la superficie ''source'' a imprimir.
+
+/*
+An optional special flags is for passing in 
+*/
+
+La opción ''special_flags'' puede tomar los siguientes valores:
+
+/*
+new in 1.8.0: 
+
+  * BLEND_ADD
+  * BLEND_SUB
+  * BLEND_MULT
+  * BLEND_MIN
+  * BLEND_MAX
+
+new in 1.8.1: 
+
+  * BLEND_RGBA_ADD
+  * BLEND_RGBA_SUB
+  * BLEND_RGBA_MULT
+  * BLEND_RGBA_MIN
+  * BLEND_RGBA_MAX
+  * BLEND_RGB_ADD
+  * BLEND_RGB_SUB
+  * BLEND_RGB_MULT
+  * BLEND_RGB_MIN
+  * BLEND_RGB_MAX
+*/
+
+
+  * BLEND_ADD
+  * BLEND_SUB
+  * BLEND_MULT
+  * BLEND_MIN
+  * BLEND_MAX
+  * BLEND_RGBA_ADD
+  * BLEND_RGBA_SUB
+  * BLEND_RGBA_MULT
+  * BLEND_RGBA_MIN
+  * BLEND_RGBA_MAX
+  * BLEND_RGB_ADD
+  * BLEND_RGB_SUB
+  * BLEND_RGB_MULT
+  * BLEND_RGB_MIN
+  * BLEND_RGB_MAX
+
+
+/*
+With other special blitting flags perhaps added in the future.
+*/
+
+Note, tal vez se agreguen mas opciones de impresión en el futuro.
+
+/*
+The return rectangle is the area of the affected pixels, excluding any pixels
+outside the destination Surface, or outside the clipping area.
+*/
+
+El rectángulo retornado representa el área de los pixels afectados, excluyendo
+cualquier pixel fuera de la superficie destino o el área de recorte.
+
+/*
+Pixel alphas will be ignored when blitting to an 8 bit Surface.
+*/
+
+Se ignorarán los pixels alpha cuand se imprima sobre una superficie de 8 bits.
+
+/*
+special_flags new in pygame 1.8.
+*/
+
+La opción ''special_flags'' es nueva en pygame 1.8.
+
+===== convert =====
+
+/*
+change the pixel format of an image
+*/
+
+Cambia el formato de pixel de una imagen.
+
+<code python>
+Surface.convert(Surface): return Surface
+Surface.convert(depth, flags=0): return Surface
+Surface.convert(masks, flags=0): return Surface
+Surface.convert(): return Surface
+</code>
+
+/*
+Creates a new copy of the Surface with the pixel format changed. The new pixel
+format can be determined from another existing Surface. Otherwise depth,
+flags, and masks arguments can be used, similar to the pygame.Surface() call.
+*/
+
+Genera una nueva copia de la superficie con un formato de pixel
+modificado. El nuevo formato de pixel se puede determinar a partir de otra
+superficie existente. Otra posibilidad es especificar los argumentos ''depth'', 
+''flags'' y ''mask'', de manera similar a ''pygame.Surface()''
+
+/*
+If no arguments are passed the new Surface will have the same pixel format
+as the display Surface. This is always the fastest format for blitting. It
+is a good idea to convert all Surfaces before they are blitted many times.
+*/
+
+La superficie nueva tendrá el mismo formato de pixel de la pantalla si
+no envía ningún argumento. Este formato será el mas rápido de imprimir. Es
+una buena idea convertir todas las superficies antes de imprimirlas
+varias veces.
+
+/*
+The converted Surface will have no pixel alphas. They will be stripped if
+the original had them. See Surface.convert_alpha() for preserving or creating
+per-pixel alphas.
+*/
+
+
+La superficie convertida podría no tener pixels alpha, dado que serán
+eliminados si la superficie original los tenía. Vea la función
+''Surface.convert_alpha()'' para crear o preservar superficies con
+canal alpha.
+
+
+
+===== convert_alpha =====
+
+/*
+change the pixel format of an image including per pixel alphas
+*/
+
+
+<code python>
+Surface.convert_alpha(Surface): return Surface
+Surface.convert_alpha(): return Surface
+</code>
+
+/*
+Creates a new copy of the surface with the desired pixel format. The new
+surface will be in a format suited for quick blitting to the given format
+with per pixel alpha. If no surface is given, the new surface will be
+optimized for blitting to the current display.
+*/
+
+Genera una nueva copia de la superficie con el formato de pixel deseado. La
+superficie nueva tendrá un formato adecuado para imprimirse mas rápidamente
+el formato indicado con canal alpha. Si no se especifica el argumento
+''surface'', la nueva superficie se optimizará para el formato de pantalla
+actual.
+
+/*
+Unlike the Surface.convert() method, the pixel format for the new image will not
+be exactly the same as the requested source, but it will be optimized for
+fast alpha blitting to the destination.
+*/
+
+A diferencia del método ''Surface.convert()'', el formato de pixel para la
+imagen nueva podría no ser exactamente el mismo que se pide, aunque se
+optimizará para imprimirse sobre la superficie destino.
+
+
+===== copy =====
+
+/*
+create a new copy of a Surface
+*/
+
+Genera una nueva copia de la superficie.
+
+<code python>
+Surface.copy(): return Surface
+</code>
+
+/*
+Makes a duplicate copy of a Surface. The new Surface will have the same
+pixel formats, color palettes, and transparency settings as the original.
+*/
+
+Hace una copia duplicada de un superficie. La superficie nueva tendrá
+el mismo formato de pixel, paletas de colores y configuración
+de transparencia que la original.
+
+
+
+===== fill =====
+
+/*
+fill Surface with a solid color
+*/
+
+Pinta una superficie con un color solido.
+
+<code python>
+Surface.fill(color, rect=None, special_flags=0): return Rect
+</code>
+
+
+/*
+Fill the Surface with a solid color. If no rect argument is given the
+entire Surface will be filled. The rect argument will limit the fill to
+a specific area. The fill will also be contained by the Surface clip area.
+*/
+
+Pinta la superficie con un color solido. Se pintará la superficie entera
+si no se especifica el argumento ''rect''. El argumento ''rect'' limitará
+la modificación al área especificada. La operación de pintado también
+se limitará por el área de recorte de la superficie.
+
+/*
+The color argument can be either a RGB sequence, a RGBA sequence or 
+a mapped color index.  If using RGBA, the Alpha (A part of RGBA) is ignored 
+unless the surface uses per pixel alpha (Surface has the SRCALPHA flag).
+*/
+
+El argumento ''color'' puede ser una secuencia ''RGB'', ''RGBA'' o un
+índice de una paleta de colores. Si usa el formato ''RGB'' se ignorará
+el componente alpha (una parte de ''RGBA'') a menos que la superficie
+use transparencia por pixel (atributo ''SRCALPHA'').
+
+/*
+An optional special_flags is for passing in 
+new in 1.8.0: 
+*/
+
+A partir de pygame 1.8.0 puede usar las siguientes opciones adicionales:
+
+/*
+  * BLEND_ADD
+  * BLEND_SUB
+  * BLEND_MULT
+  * BLEND_MIN
+  * BLEND_MAX
+*/
+
+  * BLEND_ADD
+  * BLEND_SUB
+  * BLEND_MULT
+  * BLEND_MIN
+  * BLEND_MAX
+
+/*
+new in 1.8.1: 
+*/
+
+Y a partir de pygame 1.8.1 se suman:
+
+/*
+  * BLEND_RGBA_ADD
+  * BLEND_RGBA_SUB
+  * BLEND_RGBA_MULT
+  * BLEND_RGBA_MIN
+  * BLEND_RGBA_MAX
+  * BLEND_RGB_ADD
+  * BLEND_RGB_SUB
+  * BLEND_RGB_MULT
+  * BLEND_RGB_MIN
+  * BLEND_RGB_MAX
+*/
+
+  * BLEND_RGBA_ADD
+  * BLEND_RGBA_SUB
+  * BLEND_RGBA_MULT
+  * BLEND_RGBA_MIN
+  * BLEND_RGBA_MAX
+  * BLEND_RGB_ADD
+  * BLEND_RGB_SUB
+  * BLEND_RGB_MULT
+  * BLEND_RGB_MIN
+  * BLEND_RGB_MAX
+
+/*
+With other special blitting flags perhaps added in the future.
+*/
+
+/*
+This will return the affected Surface area.
+*/
+
+Esta función retornará el área afectada de la superficie.
+
+
+===== set_colorkey =====
+
+/*
+Set the transparent colorkey
+*/
+
+Define el color clave de transparencia.
+
+
+<code python>
+Surface.set_colorkey(Color, flags=0): return None
+Surface.set_colorkey(None): return None
+</code>
+
+/*
+Set the current color key for the Surface. When blitting this Surface onto
+a destination, and pixels that have the same color as the colorkey will be
+transparent. The color can be an RGB color or a mapped color integer. If None
+is passed, the colorkey will be unset.
+*/
+
+Define el color clave para la superficie. Cuando imprima esta superficie
+sobre otra, cualquier pixel que tenga el mismo color que el color
+clave no se imprimirá. El argumento ''color'' puede ser un color ''RGB'' o
+un indice de una paleta de colores. Si se envía ''None'' como argumento
+entonces se deshabilitará el color clave.
+
+/*
+The colorkey will be ignored if the Surface is formatted to use per pixel
+alpha values. The colorkey can be mixed with the full Surface alpha value.
+*/
+
+Se ignorará el color clave si la superficie tiene un formato para
+usar valores alpha por pixel. La transparencia por color clave se
+puede mezclar con la transparencia a nivel de superficie.
+
+/*
+The optional flags argument can be set to pygame.RLEACCEL to provide better
+performance on non accelerated displays. An RLEACCEL Surface will be slower
+to modify, but quicker to blit as a source.
+*/
+
+Se puede definir el argumento opcional ''flags'' a ''pygame.RLEACCEL''
+para obtener mejor rendimiento en pantallas que no tengan aceleración
+de video. Una superficie ''RLEACCEL'' puede ser mas lenta de modificar, pero
+se imprimirá mas rápido.
+
+
+
+===== get_colorkey =====
+
+/*
+Get the current transparent colorkey
+*/
+
+Obtiene el color clave de transparencia actual.
+
+<code>
+Surface.get_colorkey(): return RGB or None
+</code>
+
+
+/*
+Return the current colorkey value for the Surface. If the colorkey is not
+set then None is returned.
+*/
+
+Retorna el color clave actual de la superficie. Si la superficie no tiene
+color clave la función retornará ''None''.
+
+
+===== set_alpha =====
+
+/*
+set the alpha value for the full Surface image
+*/
+
+Define el valor de transparencia para toda la superficie.
+
+<code python>
+Surface.set_alpha(value, flags=0): return None
+Surface.set_alpha(None): return None
+</code>
+
+/*
+Set the current alpha value fo r the Surface. When blitting this Surface onto
+a destination, the pixels will be drawn slightly transparent. The alpha value
+is an integer from 0 to 255, 0 is fully transparent and 255 is fully
+opaque. If None is passed for the alpha value, then the Surface alpha will
+be disabled.
+*/
+
+Define el valor de transparencia para la superficie. Cuando se imprima
+esta superficie sobre otra los pixels se dibujarán ligeramente transparentes. El
+valor de transparencia es un número entero de 0 a 255, 0 representa completamente
+transparente y 255 completamente opaco. Se deshabilitará la transparencia
+de la superficie si se pasa ''None'' como valor de transparencia.
+
+/*
+This value is different than the per pixel Surface alpha. If the Surface
+format contains per pixel alphas, then this alpha value will be ignored.
+If the Surface contains per pixel alphas, setting the alpha value to None
+will disable the per pixel transparency.
+*/
+
+Esta transparencia es diferente a la transparencia por pixel. Se ignorará
+este valor de transparencia si la superficie contiene pixels con transparencia. Si
+la superficie contiene transparencia por pixel, cuando llame a esta función
+con el argumento ''None'' se deshabilitará esa transparencia por pixel.
+
+/*
+The optional flags argument can be set to pygame.RLEACCEL to provide better
+performance on non accelerated displays. An RLEACCEL Surface will be slower
+to modify, but quicker to blit as a source.
+*/
+
+El argumento adicional ''flags'' se puede definir como ''pygame.RLEACCEL'' para
+obtener mayor rendimiento en pantallas que no tengan aceleración de video. Una
+superficie ''RLEACCEL'' será mas lenta de modificar, aunque será mas rápido
+imprimirla sobre otra.
+
+
+
+===== get_alpha =====
+
+/*
+get the current Surface transparency value
+*/
+
+Obtiene el valor de transparencia de la superficie.
+
+
+<code python>
+Surface.get_alpha(): return int_value or None
+</code>
+
+
+/*
+Return the current alpha value for the Surface. If the alpha value is not
+set then None is returned.
+*/
+
+Retorna el valor de transparencia actual para la superficie. Se retornará
+''None'' si el valor de transparencia no está definido.
+
+
+
+
+===== lock =====
+
+/*
+lock the Surface memory for pixel access
+*/
+
+Bloquea la memoria de la superficie para acceder a sus pixels.
+
+<code python>
+Surface.lock(): return None
+</code>
+
+/*
+Lock the pixel data of a Surface for access. On accelerated Surfaces, the
+pixel data may be stored in volatile video memory or nonlinear compressed
+forms. When a Surface is locked the pixel memory becomes available to access
+by regular software. Code that reads or writes pixel values will need the
+Surface to be locked.
+*/
+
+Bloquea los datos de pixel de una superficie para acceder a ellos. En la
+superficies aceleradas, los datos de pixels podrían estar almacenados
+en memoria de video volátil o en formas no lineales bajo compresión. Cuando
+se bloquea una superficie la información de pixels se convierte en un
+formato accesible. El código que lee o escribe valores de pixels necesitará
+que la superficie se bloquee para realizar esas tareas.
+
+/*
+Surfaces should not remain locked for more than necessary. A locked Surface
+can often not be displayed or managed by Pygame.
+*/
+
+Las superficies no deberían permanecer bloqueadas mas de lo necesario. Una
+superficie bloqueada podría no mostrarse o ser manipulada por pygame.
+
+
+/*
+Not all Surfaces require locking. The Surface.mustlock() method can determine
+if it is actually required. There is no performance penalty for locking and
+unlocking a Surface that does not need it.
+*/
+
+No todas las superficies necesitan bloquease. El método ''Surface.mustlock()''
+puede determinar si la superficie requiere bloquease. De todas formas, no
+hay desventaja al bloquear o desbloquear una superficie que no lo necesita.
+
+
+/*
+All pygame functions will automatically lock and unlock the Surface data as
+needed. If a section of code is going to make calls that will repeatedly
+lock and unlock the Surface many times, it can be helpful to wrap the block
+inside a lock and unlock pair.
+*/
+
+Todas las funciones de pygame bloquearán o desbloquearán automáticamente
+los datos de la superficie si es necesario. Si una sección de código hace
+varias llamas para modificar la superficie, entonces se bloqueará y
+desbloqueará muchas veces la superficie. Por este motivo, es mucho
+mas útil bloquear la superficie manualmente, luego modificarla muchas
+veces y luego desbloquearla manualmente.
+
+/*
+It is safe to nest locking and unlocking calls. The surface will only be
+unlocked after the final lock is released.
+*/
+
+Es seguro anidar llamas para bloquear y desbloquear. La superficie solo se
+desbloqueará después de soltar el último bloqueo.
+
+
+
+===== unlock =====
+
+/*
+unlock the Surface memory from pixel access
+*/
+
+Desbloquea la memoria de la superficie del acceso a pixels.
+
+<code python>
+Surface.unlock(): return None
+</code>
+
+
+/*
+Unlock the Surface pixel data after it has been locked. The unlocked Surface
+can once again be drawn and managed by Pygame. See the Surface.lock() 
+documentation for more details.
+*/
+
+Desbloquea los datos de pixels de la superficie  luego de que ha
+sido bloqueada. La superficie desbloqueada podrá imprimirse nuevamente
+por pygame. Vea la documentación de ''Surface.lock()'' para mas detalles.
+
+/*
+All pygame functions will automatically lock and unlock the Surface data as
+needed. If a section of code is going to make calls that will repeatedly
+lock and unlock the Surface many times, it can be helpful to wrap the block
+inside a lock and unlock pair.
+*/
+
+Todas las funciones de pygame bloquearán o desbloquearán automáticamente
+los datos de la superficie si es necesario. Si una sección de código hace
+varias llamas para modificar la superficie, entonces se bloqueará y
+desbloqueará muchas veces la superficie. Por este motivo, es mucho
+mas útil bloquear la superficie manualmente, luego modificarla muchas
+veces y luego desbloquearla manualmente.
+
+/*
+It is safe to nest locking and unlocking calls. The surface will only be
+unlocked after the final lock is released.
+*/
+
+Es seguro anidar llamas para bloquear y desbloquear. La superficie solo se
+desbloqueará después de soltar el último bloqueo.
+
+
+===== mustlock =====
+
+/*
+test if the Surface requires locking
+*/
+
+Verifica si la superficie necesita bloquearse.
+
+<code python>
+Surface.mustlock(): return bool
+</code>
+
+
+/*
+Returns True if the Surface is required to be locked to access pixel data.
+Usually pure software Surfaces do not require locking. This method is
+rarely needed, since it is safe and quickest to just lock all Surfaces as
+needed.
+*/
+
+Retorna ''True'' si la superficie se debe bloquear para acceder a sus
+datos de pixel. Usualmente las superficies de software pura no necesitan
+bloquease. Este método no se usa con frecuencia, dado que es seguro
+y mas rápido directamente bloquear todas las superficies como sea
+necesario.
+
+/*
+All pygame functions will automatically lock and unlock the Surface data as
+needed. If a section of code is going to make calls that will repeatedly
+lock and unlock the Surface many times, it can be helpful to wrap the block
+inside a lock and unlock pair.
+*/
+
+Todas las funciones de pygame bloquearán o desbloquearán automáticamente
+los datos de la superficie si es necesario. Si una sección de código hace
+varias llamas para modificar la superficie, entonces se bloqueará y
+desbloqueará muchas veces la superficie. Por este motivo, es mucho
+mas útil bloquear la superficie manualmente, luego modificarla muchas
+veces y luego desbloquearla manualmente.
+
+===== get_locked =====
+
+/*
+test if the Surface is current locked
+*/
+
+Consulta si la superficie está bloqueada.
+
+<code python>
+Surface.get_locked(): return bool
+</code>
+
+
+/*
+Returns True when the Surface is locked. It doesn't matter how many times
+the Surface is locked.
+*/
+
+Retorna ''True'' cuando la superficie está bloqueada. Esta función
+no se fija o preocupa sobre cuantas veces se ha bloqueado la superficie.
+
+===== get_locks =====
+
+/*
+Gets the locks for the Surface
+*/
+
+Obtiene los bloqueos de la superficie.
+
+
+<code>
+Surface.get_locks(): return tuple
+</code>
+
+
+/*
+Returns the currently existing locks for the Surface. 
+*/
+
+Retorna los bloqueos existentes para la superficie.
+
+
+===== get_at =====
+
+/*
+get the color value at a single pixel
+*/
+
+Obtiene el valor de color de un pixel
+
+<code python>
+Surface.get_at( (x, y) ): return Color
+</code>
+
+
+/*
+Return the RGBA color value at the given pixel. If the Surface has no per
+pixel alpha, then the alpha value will always be 255 (opaque). If the pixel
+position is outside the area of the Surface an IndexError exception will
+be raised.
+*/
+
+Retorna el valor de color RGBA en la posición indicada. Si la superficie
+no tiene transparencia por pixel, entonces el valor alpha del color
+será siempre 255 (completamente opaco). Se lanzará una excepción ''IndexError''
+si la posición del pixel está fuera del área de la superficie.
+
+/*
+Getting and setting pixels one at a time is generally too slow to be used
+in a game or realtime situation.
+*/
+
+Obtener y definir los pixels de a uno a la vez es una tarea generalmente lenta
+para ser utilizada en un juego o una situación de tiempo real.
+
+/*
+This function will temporarily lock and unlock the Surface as needed.
+*/
+
+Esta función bloqueará y desbloqueará la superficie temporalmente como sea
+necesario.
+
+
+
+===== set_at =====
+
+/*
+set the color value for a single pixel
+*/
+
+Define el valor de color para un pixel.
+
+<code python>
+Surface.set_at( (x, y), Color): return None
+</code>
+
+
+/*
+Set the RGBA or mapped integer color value for a single pixel. If the Surface
+does not have per pixel alphas, the alpha value is ignored. Settting pixels
+outside the Surface area or outside the Surface clipping will have no effect.
+*/
+
+Define el valor de color RGBA o entero (si utiliza paleta) de un
+pixel. Si la superficie no tiene transparencia por pixel, entonces
+el valor alpha se ignorará. No tendrá ningún efecto definir pixels
+fuera del área total o el área de recorte de la superficie.
+
+/*
+Getting and setting pixels one at a time is generally too slow to be used
+in a game or realtime situation.
+*/
+
+
+Obtener y definir los pixels de a uno a la vez es una tarea generalmente lenta
+para ser utilizada en un juego o una situación de tiempo real.
+
+/*
+This function will temporarily lock and unlock the Surface as needed.
+*/
+
+Esta función bloqueará y desbloqueará la superficie temporalmente como sea
+necesario.
+
+
+===== get_palette =====
+
+/*
+get the color index palette for an 8bit Surface
+*/
+
+Obtiene la paleta de colores para una superficie de 8 bits.
+
+<code python>
+Surface.get_palette(): return [RGB, RGB, RGB, ...]
+</code>
+
+
+/*
+Return a list of up to 256 color elements that represent the indexed colors
+used in an 8bit Surface. The returned list is a copy of the palette, and 
+changes will have no effect on the Surface.
+*/
+
+Retorna una lista de a lo máximo 256 elementos de color que representan
+los colores utilizados en una superficie de 8bits. La lista que se retorna
+es una copia de la paleta, y los cambios que se realicen en esta copia
+no tendrán efecto sobre la superficie.
+
+
+===== get_palette_at =====
+
+/*
+get the color for a single entry in a palette
+*/
+
+Obtiene el color de una entrada de la paleta de colores.
+
+<code python>
+Surface.get_palette_at(index): return RGB
+</code>
+
+
+/*
+Returns the red, green, and blue color values for a single index in a Surface
+palette. The index should be a value from 0 to 255.
+*/
+
+Retorna los valores rojo, verde y azul de un elemento de la paleta de colores
+de la superficie. El argumento ''index'' debería ser un valor entre 0 y 255.
+
+
+
+===== set_palette =====
+
+/*
+set the color palette for an 8bit Surface
+*/
+
+Define la paleta de colores para una superficie de 8 bits.
+
+<code python>
+Surface.set_palette([RGB, RGB, RGB, ...]): return None
+</code>
+
+
+/*
+Set the full palette for an 8bit Surface. This will replace the colors in 
+the existing palette. A partial palette can be passed and only the first
+colors in the original palette will be changed.
+*/
+
+Define la paleta completa para una superficie de 8 bits. Esta función
+reemplazará los colores de la paleta existente. Se puede enviar una
+paleta parcial, de modo que solo se reemplazarán los primeros elementos
+de la misma.
+
+/*
+This function has no effect on a Surface with more than 8bits per pixel.
+*/
+
+Esta función no hace nada sobre una superficie con mas de 8 bits por
+pixel.
+
+
+
+
+===== set_palette_at =====
+
+/*
+set the color for a single index in an 8bit Surface palette
+*/
+
+Define el color para un solo elemento en una paleta de colores.
+
+<code python>
+Surface.set_at(index, RGB): return None
+</code>
+
+
+/*
+Set the palette value for a single entry in a Surface palette. The index should
+be a value from 0 to 255.
+*/
+
+Define el valor de un color en la paleta de una superficie. El valor del
+argumento ''index'' debería estar ente 0 y 255.
+
+/*
+This function has no effect on a Surface with more than 8bits per pixel.
+*/
+
+Esta función no hace nada sobre una superficie con mas de 8 bits por
+pixel.
+
+
+===== map_rgb =====
+
+/*
+convert a color into a mapped color value
+*/
+
+Convierte un color en un formato empaquetado.
+
+
+<code python>
+Surface.map_rgb(Color): return mapped_int
+</code>
+
+
+/*
+Convert an RGBA color into the mapped integer value for this Surface. The
+returned integer will contain no more bits than the bit depth of the Surface.
+Mapped color values are not often used inside Pygame, but can be passed to
+most functions that require a Surface and a color.
+*/
+
+Convierte un color RGBA en un número entero empaquetado para esta superficie. El
+número entero retornado no contendrá mas bits que la profundidad de color
+de la superficie. Estos valores empaquetados no se usan con frecuencia dentro
+de pygame, aunque se pueden pasar como argumento a varias funciones que
+soliciten una superficie y un color.
+
+/*
+See the Surface object documentation for more information about colors 
+and pixel formats.
+*/
+
+Vea la documentación del objeto ''Surface'' para obtener mas información
+acerca de los colores y los formatos de pixel.
+
+
+
+===== unmap_rgb =====
+
+/*
+convert a mapped integer color value into a Color
+*/
+
+Convierte el valor de un entero empaquetado en un color.
+
+<code python>
+Surface.map_rgb(mapped_int): return Color
+</code>
+
+
+/*
+Convert an mapped integer color into the RGB color components for this Surface.
+Mapped color values are not often used inside Pygame, but can be passed to
+most functions that require a Surface and a color.
+*/
+
+Convierte un color de formato empaquetado en un conjunto de componentes de
+color RGB para esta superficie. Estos valores empaquetados no se usan con
+frecuencia dentro de pygame, aunque se pueden pasar como argumento a varias
+funciones que soliciten una superficie y un color.
+
+
+/*
+See the Surface object documentation for more information about colors 
+and pixel formats.
+*/
+
+
+Vea la documentación del objeto ''Surface'' para obtener mas información
+acerca de los colores y los formatos de pixel.
+
+===== set_clip =====
+
+/*
+set the current clipping area of the Surface
+*/
+
+Define el área de recorte para la superficie.
+
+<code python>
+Surface.set_clip(rect): return None
+Surface.set_clip(None): return None
+</code>
+
+/*
+Each Surface has an active clipping area. This is a rectangle that represents
+the only pixels on the Surface that can be modified. If None is passed for the
+rectangle the full Surface will be available for changes.
+*/
+
+Cada superficie tiene una área de recorte activa. Este recorte es un
+rectángulo que representa a los pixels que se pueden modificar en una
+superficie. Toda la superficie se podrá modificar si se pasa ''None'' como
+área de recorte.
+
+/*
+The clipping area is always restricted to the area of the Surface itself. If
+the clip rectangle is too large it will be shrunk to fit inside the Surface.
+*/
+
+
+El área de recorte está siempre limitada al área de la superficie en sí misma. Si
+el rectángulo de recorte es mas grande, entonces se encogerá para caber dentro
+de la superficie.
+
+
+===== get_clip =====
+
+/*
+get the current clipping area of the Surface
+*/
+
+Obtiene el área de recorte actual de la superficie.
+
+<code python>
+Surface.get_clip(): return Rect
+</code>
+
+
+/*
+Return a rectangle of the current clipping area. The Surface will always
+return a valid rectangle that will never be outside the bounds of the image.
+If the Surface has had None set for the clipping area, the Surface will 
+return a rectangle with the full area of the Surface.
+*/
+
+Retorna una rectángulo que representa el área de recorte. La superficie
+siempre retornará un rectángulo válido que nunca estará por afuera de
+los bordes de la superficie. La superficie retornará el área completa de
+la misma si no se ha definido un área de recorte.
+
+
+===== subsurface =====
+
+/*
+create a new surface that references its parent
+*/
+
+Genera una nueva superficie que hace referencia a su pariente.
+
+<code python>
+Surface.subsurface(Rect): return Surface
+</code>
+
+
+/*
+Returns a new Surface that shares its pixels with its new parent. The new
+Surface is considered a child of the original. Modifications to either
+Surface pixels will effect each other. Surface information like clipping
+area and color keys are unique to each Surface.
+*/
+
+Retorna una nueva superficie que comparte sus pixels con su superficie
+pariente. La nueva superficie se considera hija de la original. Las modificaciones
+a los pixels de cualquier de las dos superficies afectará a la otra. La
+información de la superficie como el área de recorte o los colores clave son
+únicos para cada superficie.
+
+/*
+The new Surface will inherit the palette, color key, and alpha settings from
+its parent.
+*/
+
+La nueva superficie heredará la paleta, colores clave y configuración
+de transparencia de su padre.
+
+
+/*
+It is possible to have any number of subsurfaces and subsubsurfaces on the
+parent. It is also possible to subsurface the display Surface if the display
+mode is not hardware accelerated.
+*/
+
+Es posible tener cualquier número de //sub-superficies// y //sub-sub-superficies//
+de una superficie. También es posible tener una //sub-superficie// de la
+pantalla principal si el modo de video no está acelerado por software.
+
+
+/*
+See the Surface.get_offset(), Surface.get_parent() to learn more
+about the state of a subsurface.
+*/
+
+Vea las funciones //Surface.get_offset()// y //Subsurfaces.get_parent()//
+para aprender mas acerca del estado de una //sub-superficie//.
+
+
+===== get_parent =====
+
+/*
+find the parent of a subsurface
+*/
+
+Encuentra el padre de una //sub-superficie//.
+
+<code python>
+Surface.get_parent(): return Surface
+</code>
+
+
+/*
+Returns the parent Surface of a subsurface. If this is not a subsurface
+then None will be returned.
+*/
+
+Retorna el padre de una //sub-superficie//. Si el receptor no es una
+//sub-superficie// entonces se retornará None.
+
+
+===== get_abs_parent =====
+
+/*
+find the top level parent of a subsurface
+*/
+
+Obtiene el padre de mayor nivel de una superficie.
+
+<code python>
+Surface.get_abs_parent(): return Surface
+</code>
+
+
+/*
+Returns the parent Surface of a subsurface. If this is not a subsurface
+then this surface will be returned.
+*/
+
+Retorna el padre de una //sub-superficie//. Se retornará ''None'' si
+el receptor no es una //sub-superficie//.
+
+
+===== get_offset =====
+
+/*
+find the position of a child subsurface inside a parent
+*/
+
+Encuentra la posición la superficie hija dentro del la superficie padre.
+
+<code python>
+Surface.get_offset(): return (x, y)
+</code>
+
+
+/*
+Get the offset position of a child subsurface inside of a parent. If the
+Surface is not a subsurface this will return (0, 0).
+*/
+
+Obtiene la posición de desplazamiento de una //sub-superficie// dentro
+de la superficie padre. Retornará (0, 0) si la superficie no es una
+//sub-superficie//.
+
+
+===== get_abs_offset =====
+
+/*
+find the absolute position of a child subsurface inside its top level parent
+*/
+
+Obtiene la posición absoluta de una superficie hija en relación a su
+padre de mayor nivel.
+
+<code python>
+Surface.get_abs_offset(): return (x, y)
+</code>
+
+
+/*
+Get the offset position of a child subsurface inside of its top level
+parent Surface. If the Surface is not a subsurface this will return (0, 0).
+*/
+
+Obtiene la posición desplazamiento de una superficie hija en relación
+a superficie padre de nivel superior. Retornará (0, 0) si la superficie
+no es una //sub-superficie//.
+
+
+===== get_size =====
+
+/*
+get the dimensions of the Surface
+*/
+
+Obtiene las dimensiones de una superficie.
+
+<code python>
+Surface.get_size(): return (width, height)
+</code>
+
+
+/*
+Return the width and height of the Surface in pixels.
+*/
+
+Retorna el ancho y alto de una superficie medida en pixels.
+
+
+
+===== get_width =====
+
+/*
+get the width of the Surface
+*/
+
+Obtiene el ancho de una superficie.
+
+<code python>
+Surface.get_width(): return width
+</code>
+
+
+/*
+Return the width of the Surface in pixels.
+*/
+
+Retorna el ancho de una superficie medida en pixels.
+
+
+
+
+===== get_height =====
+
+/*
+get the height of the Surface
+*/
+
+Obtiene la altura de una superficie.
+
+<code python>
+Surface.get_height(): return height
+</code>
+
+
+/*
+Return the height of the Surface in pixels.
+*/
+
+Retorna la altura de una superficies medida en pixels.
+
+
+
+
+===== get_rect =====
+
+/*
+get the rectangular area of the Surface
+*/
+
+Obtiene el área rectangular de una superficie.
+
+<code>
+Surface.get_rect(*\*kwargs): return Rect
+</code>
+
+
+/*
+Returns a new rectangle covering the entire surface. This rectangle will
+always start at 0, 0 with a width. and height the same size as the image.
+*/
+
+Retorna un nuevo rectángulo que cubre la superficie entera. Este
+rectángulo siempre comenzará en la posición (0, 0) y tendrá el
+ancho y alto idéntico al tamaño de la imagen.
+
+/*
+You can pass keyword argument values to this function. These named values
+will be applied to the attributes of the Rect before it is returned. An
+example would be 'mysurf.get_rect(center=(100,100))' to create a rectangle
+for the Surface centered at a given position.
+*/
+
+Puede pasar valores clave como argumentos a esta función. Estos
+argumentos se aplicarán a los atributos del rectángulo antes de
+ser retornado. Un ejemplo podría ser ''mysurf.get_rect(center=(100,100))''
+para crear un rectángulo de la superficie con centro en la posición
+(100, 100).
+
+
+
+===== get_bitsize =====
+
+/*
+get the bit depth of the Surface pixel format
+*/
+
+Obtiene la profundidad de colores en bits del formato de pixel de la superficie.
+
+<code>
+Surface.get_bitsize(): return int
+</code>
+
+
+/*
+Returns the number of bits used to represent each pixel. This value may not
+exactly fill the number of bytes used per pixel. For example a 15 bit Surface
+still requires a full 2 bytes.
+*/
+
+Retorna el número de bits utilizados para representar cada pixel. Este valor
+podría no coincidir exactamente con el número de bytes usados por pixel. Por
+ejemplo, una superficie de 15 bits requiere 2 bytes completos.
+
+
+===== get_bytesize =====
+
+/*
+get the bytes used per Surface pixel
+*/
+
+Obtiene el número de bytes utilizados por pixel de la superficie.
+
+<code>
+Surface.get_bytesize(): return int
+</code>
+
+
+/*
+Return the number of bytes used per pixel.
+*/
+
+Retorna el número de bytes utilizados por pixel.
+
+
+
+
+===== get_flags =====
+
+/*
+get the additional flags used for the Surface
+*/
+
+Obtiene las opciones adicionales utilizadas por la superficie.
+
+<code python>
+Surface.get_flags(): return int
+</code>
+
+
+/*
+Returns a set of current Surface features. Each feature is a bit in the
+flags bitmask. Typical flags are HWSURFACE, RLEACCEL, SRCALPHA, and SRCCOLORKEY.
+*/
+
+Retorna el conjunto de propiedades de la superficie. Cada propiedad es
+un bit en la máscara de bits ''flags''. Las propiedades habituales son
+''HWSURFACE'', ''RLEACCEL'', ''SRCALPHA'' y ''SRCCOLORKEY''.
+
+/*
+Here is a more complete list of flags.  A full list can be found in SDL_video.h
+*/
+
+Esta es una lista mas completa de propiedades. La lista completa de estas
+propiedades se puede encontrar en el archivo {{SDL_video.h}}.
+
+/*
+^ Flag  ^ Bitmask ^ Description ^ 
+| SWSURFACE | 0x00000000 | Surface is in system memory |
+| HWSURFACE | 0x00000001 | Surface is in video memory |
+| ASYNCBLIT | 0x00000004 | Use asynchronous blits if possible |
+*/
+
+^ Atributo  ^ Máscara de bits ^ Descripción ^ 
+| SWSURFACE | 0x00000000 | La superficie está en la memoria de sistema |
+| HWSURFACE | 0x00000001 | La superficie está en la memoria de video |
+| ASYNCBLIT | 0x00000004 | Usa impresión asíncrona cuando sea posible |
+
+/*
+Available for pygame.display.set_mode()
+*/
+
+y algunas disponibles para la función ''pygame.display.set_mode()'':
+
+/*
+^ Flag  ^ Bitmask ^ Description ^ 
+| ANYFORMAT | 0x10000000 | Allow any video depth/pixel-format |
+| HWPALETTE | 0x20000000 | Surface has exclusive palette |
+| DOUBLEBUF | 0x40000000 | Set up double-buffered video mode |
+| FULLSCREEN | 0x80000000 | Surface is a full screen display |
+| OPENGL | 0x00000002 | Create an OpenGL rendering context |
+| OPENGLBLIT | 0x0000000A | Create an OpenGL rendering context for blit (Obsolete) |
+| RESIZABLE | 0x00000010 | This video mode may be resized |
+| NOFRAME | 0x00000020 | No window caption or edge frame |
+*/
+
+^ Atributo  ^ Máscara de bits ^ Descripción ^ 
+| ANYFORMAT | 0x10000000 | Permite cualquier formato de pixel o color |
+| HWPALETTE | 0x20000000 | La superficie tiene una paleta exclusiva |
+| DOUBLEBUF | 0x40000000 | Define un modo de video con Double Buffer |
+| FULLSCREEN | 0x80000000 | La superficie opera en modo pantalla completa |
+| OPENGL | 0x00000002 | Genera un contexto de impresión para OpenGL |
+| OPENGLBLIT | 0x0000000A | Genera un contexto de impresión 2D para Opengl (en desuso) |
+| RESIZABLE | 0x00000010 | El modo de video se puede redimensionar |
+| NOFRAME | 0x00000020 | No usar borde o título para esta ventana |
+
+/*
+Used internally (read-only)
+*/
+
+otras utilizadas internamente (de solo lectura)
+
+/*
+^ Flag  ^ Bitmask ^ Description ^ 
+| HWACCEL | 0x00000100 | Blit uses hardware acceleration |
+| SRCCOLORKEY | 0x00001000 | Blit uses a source color key |
+| RLEACCELOK | 0x00002000 | Private flag |
+| RLEACCEL | 0x00004000	| Surface is RLE encoded |
+| SRCALPHA | 0x00010000	| Blit uses source alpha blending |
+| PREALLOC | 0x01000000	| Surface uses preallocated memory |
+*/
+
+^ Atributo  ^ Máscara de bits ^ Descripción ^ 
+| HWACCEL | 0x00000100 | La operación de impresión usa aceleración por hardware |
+| SRCCOLORKEY | 0x00001000 | La operación de impresión usa un color clave para simular transparencia |
+| RLEACCELOK | 0x00002000 | Atributo privado |
+| RLEACCEL | 0x00004000	| La superficie está empaquetada con el formato RLE |
+| SRCALPHA | 0x00010000	| La operación de impresión utiliza la transparencia original |
+| PREALLOC | 0x01000000	| La superficie utiliza memoria pre-solicitada |
+
+
+===== get_pitch =====
+
+/*
+get the number of bytes used per Surface row
+*/
+
+Obtiene el número de bytes utilizados por cada fila de la superficie.
+
+<code python>
+Surface.get_pitch(): return int
+</code>
+
+
+/*
+Return the number of bytes separating each row in the Surface. Surfaces
+in video memory are not always linearly packed. Subsurfaces will also have a
+larger pitch than their real width.
+*/
+
+Retorna el número de bytes que separan a cada fila de pixels en una superficie. Las
+superficies en memoria de video no siempre se almacenan en forma lineal. Las //sub-superficies//
+también podrían tener un ''pitch'' mas grande que su verdadera longitud.
+
+/*
+This value is not needed for normal Pygame usage.
+*/
+
+Este valor no es necesario para el uso habitual de pygame.
+
+
+===== get_masks =====
+
+/*
+the bitmasks needed to convert between a color and a mapped integer
+*/
+
+Obtiene la máscara de bits necesaria para convertir entre un color
+RGB y un color empaquetado.
+
+<code python>
+Surface.get_masks(): return (R, G, B, A)
+</code>
+
+
+/*
+Returns the bitmasks used to isolate each color in a mapped integer.
+*/
+
+Retorna la máscara de bits que se utiliza para empaquetar cada
+color en un número entero.
+
+/*
+This value is not needed for normal Pygame usage.
+*/
+
+Este valor no se necesita para el uso normal de pygame.
+
+
+
+
+
+===== set_masks =====
+
+/*
+set the bitmasks needed to convert between a color and a mapped integer
+*/
+
+Define la máscara de bits necesaria para convertir entre un color
+RGB en un color en formato empaquetado.
+
+<code>
+Surface.set_masks( (r,g,b,a) ): return None
+</code>
+
+
+/*
+This is not needed for normal Pygame usage.
+*/
+
+Esta función no se necesita para el uso habitual de pygame.
+
+
+
+/*
+New in pygame 1.8.1
+*/
+
+Es una función nueva a partir de pygame 1.8.1.
+
+
+
+
+===== get_shifts =====
+
+/*
+the bit shifts needed to convert between a color and a mapped integer
+*/
+
+Obtiene los bits de intercambios necesarios para convertir un
+color RGB en un color en formato empaquetado.
+
+<code python>
+Surface.get_shifts(): return (R, G, B, A)
+</code>
+
+
+/*
+Returns the pixel shifts need to convert between each color and a mapped
+integer.
+*/
+
+Retorna los bits de intercambio de pixel necesarios para convertir
+el formato de cada color.
+
+/*
+This value is not needed for normal Pygame usage.
+*/
+
+Este valor no se necesita para el uso habitual de pygame.
+
+
+
+
+===== set_shifts =====
+
+/*
+sets the bit shifts needed to convert between a color and a mapped integer
+*/
+
+Define los bits de intercambios necesarios para convertir un
+color RGB en un color en formato empaquetado.
+
+<code python>
+Surface.get_shifts( (r,g,b,a) ): return None
+</code>
+
+
+/*
+This is not needed for normal Pygame usage.
+*/
+
+Esta función no se necesita para el uso habitual de pygame.
+
+/*
+New in pygame 1.8.1
+*/
+
+Esta función es nueva a partir de pygame 1.8.1.
+
+
+===== get_losses =====
+
+/*
+the significant bits used to convert between a color and a mapped integer
+*/
+
+Obtiene los bits significativos que se usan para convertir el
+formato de color.
+
+<code python>
+Surface.get_losses(): return (R, G, B, A)
+</code>
+
+
+/*
+Return the least significant number of bits stripped from each color
+in a mapped integer.
+*/
+
+Retorna el número menos significativo de bits agrupados por
+cada color en un número entero empaquetado.
+
+
+/*
+This value is not needed for normal Pygame usage.
+*/
+
+
+Este valor no se necesita para el uso habitual de pygame.
+
+
+
+===== get_bounding_rect =====
+
+/*
+find the smallest rect containing data
+*/
+
+Obtiene el rectángulo mas pequeño que contiene información.
+
+<code python>
+Surface.get_bounding_rect(min_alpha = 1): return Rect
+</code>
+
+
+/*
+Returns the smallest rectangular region that contains all the pixels
+in the surface that have an alpha value greater than or equal to the
+minimum alpha value. 
+*/
+
+Retorna la región rectangular mas pequeña que contiene todos los
+pixels en una superficie que tienen un atributo de transparencia
+mas grande o igual que le indicado por argumento.
+
+/*
+This function will temporarily lock and unlock the Surface as needed.
+*/
+
+Esta función bloqueará y desbloqueará temporalmente la superficie.
+
+/*
+New in pygame 1.8.
+*/
+
+Esta función es nueva en pygame 1.8.
+
+
+
+
+===== get_buffer =====
+
+/*
+acquires a buffer object for the pixels of the Surface.
+*/
+
+Obtiene un objeto buffer para los pixels de la superficie.
+
+<code python> 
+Surface.get_buffer(): return BufferProxy
+</code>
+
+
+/*
+Return a buffer object for the pixels of the Surface. The buffer can be
+used for direct pixel access and manipulation.
+*/
+
+Retorna un objeto buffer para los pixels de la superficie. El buffer
+se puede usar para acceder y manipular directamente los pixels.
+
+/*
+This method implicitly locks the Surface. The lock will be released,
+once the returned BufferProxy object is deleted.
+*/
+
+Este método bloquea y desbloquea la superficie de forma implícita. El
+bloqueo a la superficie se anulará una vez que el objeto ''BufferProxy''
+sea eliminado.
+
+/*
+New in pygame 1.8*/
+
+Esta función es nueva en pygame 1.8.

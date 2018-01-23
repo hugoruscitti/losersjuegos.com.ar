@@ -1,0 +1,237 @@
+====== font ======
+
+/*
+pygame module for loading and rendering fonts
+*/
+
+Módulo de pygame para cargar y dibujar fuentes.
+
+<box 90%>
+  * [[#init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#get_default_font]]
+  * [[#get_fonts]]
+  * [[#match_font]]
+
+**Otras páginas:**
+
+  * [[:traducciones:pygame:font:Font]]
+  * [[:traducciones:pygame:font:SysFont]]
+</box>
+
+
+/*
+The font module allows for rendering TrueType fonts into a new Surface
+object. This module is optional and requires SDL_ttf as a dependency. You
+should test that pygame.font is available and initialized before attempting
+to use the module.
+*/
+
+El módulo font permite dibujar fuentes //TrueType// sobre objetos Surface
+nuevos. Este módulo es opcional y requiere //SDL_ttf// como una
+dependencia. Usted debería verificar si ''pygame.font'' está disponible
+e inicializado antes de intentar utilizarlo.
+
+/*
+Most of the work done with fonts are done by using the actual Font objects.
+The module by itself only has routines to initialize the module and create
+Font objects with pygame.font.Font().
+*/
+
+La mayor parte del trabajo con fuentes se realiza usando los objetos
+Font. El módulo en sí solo tiene rutinas para inicializar el módulo
+y crear objetos Font con ''pygame.font.Font()''.
+
+/*
+You can load fonts from the system by using the pygame.font.SysFont()
+function. There are a few other functions to help lookup the system fonts.
+*/
+
+Puede cargar fuentes desde el sistema usando la función 
+''pygame.font.SysFont()''. Hay otras funciones para ayudar a encontrar
+fuentes del sistema.
+
+/*
+Pygame comes with a builtin default font. This can always be accessed by
+passing None as the font name.
+*/
+
+Pygame viene con una fuente incorporada por defecto. Se puede acceder
+a esta utilizando ''None'' como el nombre de fuente.
+
+
+
+===== init =====
+
+/*
+initialize the font module
+*/
+
+Inicializa el módulo font.
+
+<code python>
+pygame.font.init(): return None
+</code>
+
+/*
+This method is called automatically by pygame.init().
+It initializes the font module. The module must be initialized before any
+other functions will work.
+*/
+
+Este método se llama automáticamente por ''pygame.init()''. Su función es
+inicializar el módulo font. El módulo se debe inicializar antes de
+utilizar cualquier otra función.
+
+/*
+It is safe to call this function more than once.
+*/
+
+Es seguro llamar a esta función mas de una vez.
+
+  * [[pythonexample>pygame.font.init|buscar código donde se use esta función.]]
+
+
+===== quit =====
+
+/*
+uninitialize the font module
+*/
+
+Deshabilita el módulo font.
+
+<code python>
+pygame.font.quit(): return None
+</code>
+
+/*
+Manually uninitialize SDL_ttf's font system. This is called
+automatically by pygame.quit().
+*/
+
+Deshabilita de forma manual el sistema de fuentes de SDL_ttf. Esta
+función se llama automáticamente por ''pygame.quit()''.
+
+/*
+It is safe to call this function even if font is currently
+not initialized.
+*/
+
+Es seguro llamar a esta función incluso si el módulo no está
+inicializado.
+
+  * [[pythonexample>pygame.font.quit|buscar código donde se use esta función.]]
+
+===== get_init =====
+
+/*
+true if the font module is initialized
+*/
+
+Retorna True si el módulo font está inicializado.
+
+<code python>
+pygame.font.get_init(): return bool
+</code>
+
+/*
+Test if the font module is initialized or not.
+*/
+
+Verifica si el módulo font está inicializado o no.
+
+
+  * [[pythonexample>pygame.font.get_init|buscar código donde se use esta función.]]
+
+===== get_default_font =====
+
+/*
+get the filename of the default font
+*/
+
+Obtiene el nombre de archivo de la fuente por defecto.
+
+<code python>
+pygame.font.get_default_font(): return string
+</code>
+
+/*
+Return the filename of the system font. This is not the full path to the file.
+This file can usually be found in the same directory as the font module, but
+it can also be bundled in separate archives.
+*/
+
+Retorna el nombre de archivo de la fuente de sistema. El nombre no es la ruta
+completa al archivo. Este archivo se puede encontrar en el mismo directorio
+que el módulo font, aunque también puede estar en un paquete separado.
+
+
+  * [[pythonexample>pygame.font.get_default_font|buscar código donde se use esta función.]]
+
+===== get_fonts =====
+
+/*
+get all available fonts
+*/
+
+Obtiene todas las fuentes disponibles.
+
+<code python>
+pygame.font.get_fonts(): return list of strings
+</code>
+
+/*
+Returns a list of all the fonts available on the system. The names of the 
+fonts will be set to lowercase with all spaces and punctuation removed. 
+This works on most systems, but some will return an empty list if they cannot 
+find fonts.
+*/
+
+Retorna una lista de todos las fuentes disponibles en el sistema. Los nombres
+de las fuentes se mostrarán en minúsculas sin espacios o puntuación. Esta
+rutina funciona en la mayoría de los sistema, pero en algunos retorna una
+lista vacía si no puede entrar las fuentes.
+
+
+  * [[pythonexample>pygame.font.get_fonts|buscar código donde se use esta función.]]
+
+===== match_font =====
+
+/*
+find a specific font on the system
+*/
+
+Busca una fuentes específica del sistema.
+
+<code python>
+pygame.font.match_font(name, bold=False, italic=False): return path
+</code>
+
+/*
+Returns the full path to a font file on the system. If bold or italic are
+set to true, this will attempt to find the correct family of font.
+*/
+
+Retorna la ruta completa a un archivo de fuente en el sistema. Si se
+usa True en los argumentos ''bold'' o ''italic'', se intentará encontrar
+la familia o fuente correcta.
+
+/*
+The font name can actually be a comma separated list of font names to try.
+If none of the given names are found, None is returned.
+*/
+
+El nombre de la fuente puede ser una lista de nombres para probar. Se
+retorna None si ninguno de los nombres dados se encuentra.
+
+
+==== Por ejemplo ====
+
+<code python>
+print pygame.font.match_font('bitstreamverasans')
+# output is: /usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf
+# (but only if you have Vera on your system)
+</code>
+
+  * [[pythonexample>pygame.font.match_font|buscar código donde se use esta función.]]

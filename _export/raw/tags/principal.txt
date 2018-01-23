@@ -1,0 +1,28 @@
+[[Discusión]]
+====== Etiquetas ======
+
+Esta sección reune todos los términos y categorías de uso
+frecuente dentro del sitio.
+
+
+===== Lenguajes de programación =====
+
+  * [[python]]
+  * [[C]]
+  * [[Cpp|C++]]
+
+
+===== Bibliotecas =====
+
+  * [[SDL]]
+  * [[SDL_image]]
+  * [[SDL_ttf]]
+  * [[pygame]]
+  * [[panda3d]]
+  * [[pyglet]]
+  * [[cocos]]
+  * [[allegro]]
+
+===== Otros =====
+
+  * [[dokuwiki]]

@@ -1,0 +1,34 @@
+====== Soccer Deathmatch ======
+
+Soccer Deathmatch es un juego de fútbol focalizado en la diversión de usuario, nuestra mayor influencia a sido Goal 3.
+
+Jugando a Soccer Deathmatch se encontrará ante varios escenarios y personajes de caricaturas de videojuegos y la televisión. Existen un total de 70 jugadores, entre los que podemos mensionar a: Lara Croft, Ryu, Ken, Goku, Iory... 
+
+
+
+
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:soccerd:capturas:*}}
+
+
+
+
+
+===== Descargas =====
+
+{{filelist>juegos:soccerd:descargas:anteriores:*}}
+
+
+
+===== Licencia =====
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+
+
+{{tag>juegos SDL C}}

@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:pixelarray</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-28T17:12:46+0300" />
+<meta name="keywords" content="traducciones,pygame,pixelarray" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/pixelarray-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="pixelarray.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/pixelarray.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#pixelarray" class="toc">PixelArray</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#pixelarray1" class="toc">PixelArray</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#surface" class="toc">surface</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#make_surface" class="toc">make_surface</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#replace" class="toc">replace</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#extract" class="toc">extract</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#compare" class="toc">compare</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="pixelarray" id="pixelarray">PixelArray</a></h1>
+<div class="level1">
+
+
+
+<p>
+Objeto de pygame para obtener acceso directo a los pixels de las
+superficies.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#pixelarray" class="wikilink1" title="traducciones:pygame:pixelarray">PixelArray</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#surface" class="wikilink1" title="traducciones:pygame:pixelarray">surface</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#make_surface" class="wikilink1" title="traducciones:pygame:pixelarray">make_surface</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#replace" class="wikilink1" title="traducciones:pygame:pixelarray">replace</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#extract" class="wikilink1" title="traducciones:pygame:pixelarray">extract</a></span></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="../../../../traducciones/pygame/pixelarray.html#compare" class="wikilink1" title="traducciones:pygame:pixelarray">compare</a></span></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "PixelArray" [1-477] -->
+<h2><a name="pixelarray1" id="pixelarray1">PixelArray</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">PixelArray</span><span class="br0">&#40;</span>Surface<span class="br0">&#41;</span>: <span class="kw1">return</span> PixelArray</pre>
+
+
+<p>
+La clase <code>PixelArray</code> envuelve una superficie y provee acceso
+directo a sus pixels, usando una matriz de dos dimensiones. Soporta
+operaciones como <code>slicing</code> (tajadas o rebanadas), manipulación
+de pixel o fila y asignaciones aunque no se permiten las operaciones
+de suma, resta, multiplicación o división…
+</p>
+
+
+
+<p>
+Si bien es posible asignar tanto colores en valor entero como
+tuplas RGB(A), la clase <code>PixelArray</code> utilizará internamente enteros para
+la representación de elementos. Por ello, la consulta de ciertos
+colores se debe realizar usando el método <code>Surface.map_rgb()</code>
+de la superficie.
+</p>
+<pre class="code python">pxarray = pygame.<span class="me1">PixelArray</span> <span class="br0">&#40;</span>surface<span class="br0">&#41;</span>
+<span class="co1"># Check, if the first pixel at the topleft corner is blue</span>
+<span class="kw1">if</span> pxarray<span class="br0">&#91;</span>0<span class="br0">&#93;</span><span class="br0">&#91;</span>0<span class="br0">&#93;</span> == surface.<span class="me1">map_rgb</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>0, 0, <span class="nu0">255</span><span class="br0">&#41;</span><span class="br0">&#41;</span>:
+    ...</pre>
+
+
+<p>
+Los pixels se pueden manipular usando valores enteros o tuplas
+con las componentes de color.
+</p>
+<pre class="code python">pxarray<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span> = 0xFF00FF
+pxarray<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#91;</span>y<span class="br0">&#93;</span> = <span class="br0">&#40;</span><span class="nu0">255</span>, 0, <span class="nu0">255</span><span class="br0">&#41;</span></pre>
+
+
+<p>
+Si está trabajando sobre una rebanada (o <em>slice</em>) puede usar
+secuencias arbitrarias u otros objetos <code>PixelArray</code> para modificar
+los pixels. De todas formas tienen que coincidir con el tamaño
+del objeto.
+</p>
+
+
+<pre class="code python">pxarray<span class="br0">&#91;</span>a:b<span class="br0">&#93;</span> = 0xFF00FF                   <span class="co1"># define todos los pixels a 0xFF00FF.  </span>
+pxarray<span class="br0">&#91;</span>a:b<span class="br0">&#93;</span> = <span class="br0">&#40;</span>0xFF00FF, 0xAACCEE, ... <span class="br0">&#41;</span> <span class="co1"># El primer pixel a 0xFF00FF, </span>
+                                          <span class="co1"># el segundo a 0xAACCEE.</span>
+pxarray<span class="br0">&#91;</span>a:b<span class="br0">&#93;</span> = <span class="br0">&#40;</span> <span class="br0">&#40;</span><span class="nu0">255</span>, 0, <span class="nu0">255</span><span class="br0">&#41;</span>, <span class="br0">&#40;</span><span class="nu0">170</span>, <span class="nu0">204</span>, <span class="nu0">238</span><span class="br0">&#41;</span>, ...<span class="br0">&#41;</span> <span class="co1"># igual que arriba.</span>
+pxarray<span class="br0">&#91;</span>a:b<span class="br0">&#93;</span> = <span class="br0">&#40;</span> <span class="br0">&#40;</span><span class="nu0">255</span>, 0, <span class="nu0">255</span><span class="br0">&#41;</span>, 0xAACCEE, ...<span class="br0">&#41;</span>        <span class="co1"># igual que arriba.</span>
+&nbsp;
+pxarray<span class="br0">&#91;</span>a:b<span class="br0">&#93;</span> = otherarray<span class="br0">&#91;</span>x:y<span class="br0">&#93;</span>            <span class="co1"># note que el tamaño de las rebanadas debe coincidir.</span></pre>
+
+
+<p>
+Tenga en cuenta que algo como:
+</p>
+<pre class="code python">  pxarray<span class="br0">&#91;</span><span class="nu0">2</span>:<span class="nu0">4</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span>:<span class="nu0">5</span><span class="br0">&#93;</span> = ...</pre>
+
+
+<p>
+No causará una manipulación rectangular. En lugar de ello primero
+se reducirá a una matriz de dos columnas, que luego se reducirá
+en columnas una vez mas, lo que ocasionará una falla de tipo
+<code>IndexError</code>. Esto se debe al mecanismo de rebanadas (<em>slicing</em>)
+de python y es un comportamiento absolutamente correcto. En cambio, 
+lo que puede hacer es crear una rebanada de una sola columna
+primero y luego manipularla de la siguiente forma
+</p>
+<pre class="code python">pxarray<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span>:<span class="nu0">5</span><span class="br0">&#93;</span> = ...
+<span class="me1">pxarray</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span>:<span class="nu0">5</span><span class="br0">&#93;</span> = ...</pre>
+
+
+<p>
+También puede usar las habilidades de sub-indices, para 
+realizar una manipulación rectangular o crear una
+vista de una parte del objeto <code>PixelArray</code>. Puede crear
+una vista diferente de manera simple creando “sub-arrays” mediante
+los sub-indices.
+</p>
+
+
+<pre class="code python"><span class="co1"># Genera un nuevo objeto PixelArray otorgando una vista diferente</span>
+<span class="co1"># de la superficie o matriz original.</span>
+&nbsp;
+newarray = pxarray<span class="br0">&#91;</span><span class="nu0">2</span>:<span class="nu0">4</span>,<span class="nu0">3</span>:<span class="nu0">5</span><span class="br0">&#93;</span>
+otherarray = pxarray<span class="br0">&#91;</span>::<span class="nu0">2</span>,::<span class="nu0">2</span><span class="br0">&#93;</span></pre>
+
+
+<p>
+Los sub-indices también se puede usar para realizar manipulaciones
+de pixel rectangulares en lugar de recorrer los ejes <code>x</code> e <code>y</code> como
+se hacía mas arriba.
+</p>
+<pre class="code python">pxarray<span class="br0">&#91;</span>::<span class="nu0">2</span>,:<span class="br0">&#93;</span> = <span class="br0">&#40;</span>0, 0, 0<span class="br0">&#41;</span>            <span class="co1"># Convierte a negro cada segunda columna.</span></pre>
+
+
+<p>
+El objeto <code>PixelArray</code> bloquea la superficie mientras existe, por eso
+tiene que eliminarlo de manera explícita cuando ya no lo use y la
+superficie debería realizar las operaciones en el mismo momento.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8, y los sub-indices son
+nuevos en pygame 1.8.1
+</p>
+
+</div>
+<!-- SECTION "PixelArray" [478-6334] -->
+<h2><a name="surface" id="surface">surface</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la superficie que utiliza el objeto <code>PixelArray</code>.
+</p>
+<pre class="code python">PixelArray.<span class="me1">surface</span>: Return Surface</pre>
+
+
+<p>
+Retorna la superficie para la que se creó el objeto <code>PixelArray</code>.
+</p>
+
+</div>
+<!-- SECTION "surface" [6335-6641] -->
+<h2><a name="make_surface" id="make_surface">make_surface</a></h2>
+<div class="level2">
+
+
+
+<p>
+Genera una nueva superficie a partir del objeto <code>PixelArray</code>
+actual.
+</p>
+<pre class="code python">PixelArray.<span class="me1">make_surface</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>: Return Surface</pre>
+
+
+<p>
+Genera una nueva superficie a partir del objeto <code>PixelArray</code>. Esta
+superficie puede ser diferente de la original dependiendo del
+tamaño del objeto, el orden de pixel etc.
+</p>
+
+
+<pre class="code python"><span class="co1"># Genera una nueva superficie invertida sobre el eje vertical.</span>
+sf = pxarray<span class="br0">&#91;</span>:,::-<span class="nu0">1</span><span class="br0">&#93;</span>.<span class="me1">make_surface</span> <span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+
+
+<p>
+
+Esta función es nueva en pygame 1.8.1
+</p>
+
+</div>
+<!-- SECTION "make_surface" [6642-7521] -->
+<h2><a name="replace" id="replace">replace</a></h2>
+<div class="level2">
+
+<p>
+
+Replaces the passed color in the PixelArray with another one.
+</p>
+<pre class="code python">PixelArray.<span class="me1">replace</span> <span class="br0">&#40;</span>color, repcolor, distance=0, weights=<span class="br0">&#40;</span><span class="nu0">0.299</span>, <span class="nu0">0.587</span>, <span class="nu0">0.114</span><span class="br0">&#41;</span><span class="br0">&#41;</span>: Return <span class="kw2">None</span></pre>
+
+
+<p>
+Reemplaza los pixels que tienen el color <code>repcolor</code> por el color
+<code>color</code>.
+</p>
+
+
+
+<p>
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+</p>
+
+
+
+<p>
+Esta es una operación <em>in place</em>, lo que significa que afecta directamente
+a los pixels del objeto <code>PixelArray</code>.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1
+</p>
+
+</div>
+<!-- SECTION "replace" [7522-8802] -->
+<h2><a name="extract" id="extract">extract</a></h2>
+<div class="level2">
+
+
+
+<p>
+Extrae el color indicado del objeto <code>PixelArray</code>.
+</p>
+<pre class="code python">PixelArray.<span class="me1">extract</span> <span class="br0">&#40;</span>color, distance=0, weights=<span class="br0">&#40;</span><span class="nu0">0.299</span>, <span class="nu0">0.587</span>, <span class="nu0">0.114</span><span class="br0">&#41;</span><span class="br0">&#41;</span>: Return PixelArray</pre>
+
+
+<p>
+Extrae el color indicado cambiando todos los pixels que coinciden
+a blanco, mientras que los pixels que no coinciden se cambian
+a color negro. Esta función retorna un nuevo objeto <code>PixelArray</code>
+con la máscara de color blanco y negro.
+</p>
+
+
+
+<p>
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1
+</p>
+
+</div>
+<!-- SECTION "extract" [8803-10137] -->
+<h2><a name="compare" id="compare">compare</a></h2>
+<div class="level2">
+
+
+
+<p>
+Compara el objeto PixelArray con otro.
+</p>
+<pre class="code python">PixelArray.<span class="me1">compare</span> <span class="br0">&#40;</span><span class="kw3">array</span>, distance=0, weights=<span class="br0">&#40;</span><span class="nu0">0.299</span>, <span class="nu0">0.587</span>, <span class="nu0">0.114</span><span class="br0">&#41;</span><span class="br0">&#41;</span>: Return PixelArray</pre>
+
+
+<p>
+Compara el contenido del objeto <code>PixelArray</code> con otro objecto
+<code>PixelArray</code>. Retorna un nuevo objeto <code>PixelArray</code> con la máscara
+de color blanco y negro que indica las diferencias (en blanco) y similitudes
+(en negro). Los dos objetos <code>PixelArray</code> deben tener dimensiones y
+cantidad de colores idénticas.
+</p>
+
+
+
+<p>
+Usa una formula de distancia euclidea simple para calcular
+la distancia entre los colores. Los espacios de distancia
+van desde 0.0 a 1.0 y se usan como umbral para detectar el color. Esto
+causa que la operación de reemplazo tome pixels con un color similar, 
+pero no exactamente el mismo.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.8.1.
+</p>
+
+</div>
+<!-- SECTION "compare" [10138-] --></div>
+</body>
+</html>

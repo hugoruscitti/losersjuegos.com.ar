@@ -1,0 +1,154 @@
+====== Mask ======
+
+/*
+pygame object for representing 2d bitmasks
+*/
+
+Objeto de pygame para representar máscaras de bit 2D.
+
+<box 90%>
+  * [[#get_size]]
+  * [[#get_at]]
+  * [[#set_at]]
+  * [[#overlap]]
+  * [[#overlap_area]]
+  * [[#get_bounding_rects]]
+</box>
+
+<code>
+pygame.Mask((width, height)): return Mask
+</code>
+
+
+===== get_size =====
+
+/*
+Returns the size of the mask.
+*/
+
+Retorna el tamaño de una máscara.
+
+<code>
+Mask.get_size() -> width,height
+</code>
+
+
+
+===== get_at =====
+
+/*
+Returns nonzero if the bit at (x,y) is set.
+*/
+
+Retorna un valor distinto de 0 si el bit en la posición
+(x, y) es colisionable.
+
+<code>
+Mask.get_at( (x,y) ) -> int
+</code>
+
+
+/*
+Coordinates start at (0,0) is top left - just like Surfaces.
+*/
+
+Las coordenadas comienzan en (0, 0), que es la parte superior
+izquierda, al igual que ocurre con las superficies.
+
+
+===== set_at =====
+
+/*
+Sets the position in the mask given by x and y.
+*/
+
+Define el valor de colisión de la máscara en la posición ''x'' e
+''y'' indicada.
+
+<code>
+Mask.set_at( (x,y),value)
+</code>
+
+
+
+===== overlap =====
+
+/*
+Returns the point of intersection if the masks overlap with the given offset - or None if it does not overlap.
+*/
+
+Retorna el punto de intersección si las máscaras están super-posicionadas
+por el desplazamiento dato. O bien retorna None si no están
+super-posicionadas.
+
+<code>
+Mask.overlap(othermask, offset) -> x,y
+</code>
+
+/*
+The overlap tests uses the following offsets (which may be negative):
+*/
+
+La prueba de superposición utiliza los siguientes desplazamientos
+(que pueden ser negativos):
+
+<code>
+  +----+----------..
+  |A   | yoffset   
+  |  +-+----------..
+  +--|B        
+  |xoffset      
+  |  |
+  :  :  
+</code>
+
+
+===== overlap_area =====
+
+/*
+Returns the number of overlapping 'pixels'.
+*/
+
+Retorna el número de //pixeles// super-posicionados.
+
+<code>
+Mask.overlap_area(othermask, offset) -> numpixels
+</code>
+
+
+/*
+You can see how many pixels overlap with the other mask given.  This can
+be used to see in which direction things collide, or to see how much the
+two masks collide.
+*/
+
+Puede ver cuantos //pixeles// están super-posicionados con otra
+máscara dada. Puede ser utilizado para ver en que dirección colisionan
+las cosas, o para ver en que grado (de cantidad) colisionan las
+máscaras.
+
+
+===== get_bounding_rects =====
+
+/*
+Returns a list of bounding rects of regions of set pixels.
+*/
+
+Retorna una lista de rectángulos delimitadores de las regiones
+de //pixeles// que definen colisión.
+
+
+<code>
+Mask.get_bounding_rects() -> Rects
+</code>
+
+
+/*
+This gets a bounding rect of connected regions of set pixels.  A
+bounding rect is one for which each of the connected pixels is inside
+the rect.
+*/
+
+Obtiene un rectángulo de regiones conectadas de //pixeles// que
+definen colisión. El rectángulo de colisión representa los //pixeles//
+conectados dentro de su región.

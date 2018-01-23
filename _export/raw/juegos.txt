@@ -1,0 +1,72 @@
+====== Juegos ======
+
+Mediante esta sección podrá conocer los videojuegos en los que estamos trabajando, seleccione alguno de ellos para obtener mas detalles.
+
+===== Completos para PC =====
+
+<subpage irobotgame|I Robot?>
+Eres la única persona en un mundo gobernado por robots, ¡Que no te descubran!.
+</subpage>
+
+<subpage ceferino|Don Ceferino Hazaña>
+Don Ceferino Hazaña debe rescatar a su vaca secuestrada por un grupo de extraterrestres.
+</subpage>
+
+
+===== Completos para móviles =====
+
+
+<subpage asadetrismobile|Asadetris Mobile>
+Un juego similar a Tetris para teléfonos celulares.
+</subpage>
+
+
+<subpage ceferinomobile|Ceferino Mobile>
+Version del juego Don Ceferino para teléfonos celulares.
+</subpage>
+
+===== En desarrollo para PC =====
+
+
+<subpage asadetris|Asadetris>
+Asadetris es un juego similar a Tetris, pero donde las piezas son porciones
+de comida que tienes que acomodar lo mas rápido que puedas.
+</subpage>
+
+
+
+===== Desatendidos =====
+
+Los siguientes juegos están sin terminar, y por el momento
+no hay proyectos de desarrollo trabajando en ellos.
+
+
+<subpage volleyball|Pocket Volleyball>
+Juega un partido de volley ball con tus personajes favoritos.
+</subpage>
+
+
+
+<subpage pongix|Pongix>
+Un homenaje al videojuego clásico Pong.
+</subpage>
+
+
+
+<subpage aqbubble|Aquatic Bubble>
+Vive una experiencia de acción acuática.
+</subpage>
+
+
+
+<subpage chanta|Chanta Claus>
+Recolecta todo el dinero que puedas para tus próximas navidades (para comprar regalos a los niños, claro).
+</subpage>
+
+
+
+<subpage soccerd|Soccer Deathmatch>
+Personajes clásicos, en formato miniatura, juegan partidos de fútbol donde vale todo.
+</subpage>
+
+

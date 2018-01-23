@@ -1,0 +1,455 @@
+====== transform ======
+
+/*
+pygame module to transform surfaces
+*/
+
+Módulo de pygame para transformar superficies.
+
+<box 90%>
+  * [[#flip]]
+  * [[#scale]]
+  * [[#rotate]]
+  * [[#rotozoom]]
+  * [[#scale2x]]
+  * [[#smoothscale]]
+  * [[#chop]]
+  * [[#laplacian]]
+  * [[#average_surfaces]]
+  * [[#threshold]]
+</box>
+
+/*
+A Surface transform is an operation that moves or resizes the pixels. All
+these functions take a Surface to operate on and return a new Surface with
+the results.
+*/
+
+Una transformación de superficie es una operación que mueve dimensiona los
+píxeles. Todos estas funciones toman una superficie sobre la que operan
+y devuelven una nueva superficie con los resultados.
+
+/*
+Some of the transforms are considered destructive. These means every time
+they are performed they lose pixel data. Common examples of this are resizing
+and rotating. For this reason, it is better to retransform the original surface than to 
+keep transforming an image multiple times. (For example, suppose you are animating
+a bouncing spring which expands and contracts. If you applied the size changes
+incrementally to the previous images, you would lose detail. Instead, always
+begin with the original image and scale to the desired size.)
+*/
+
+Alguna de las transformaciones se consideran destructivas. Esto significa que
+cada vez que se realizan se pueden perder //pixeles// de datos. Los ejemplos
+comunes de esto son las operaciones de escalado y rotación. Por ese motivo, 
+es mejor transformar nuevamente la imagen original que seguir transformando
+un imagen muchas veces; por ejemplo, imagine que está animando un resorte
+que salta, que se expande y contrae con el movimiento. Si aplica los
+cambios de tamaño incrementalmente a las imágenes anteriores perderá detalle; en
+lugar de eso siempre comience con la imagen original y cambie el tamaño de
+la misma al tamaño deseado.
+
+
+
+===== flip =====
+
+/*
+flip vertically and horizontally
+*/
+
+Invierte la imagen de manera horizontal y vertical.
+
+<code>
+pygame.transform.flip(Surface, xbool, ybool): return Surface
+</code>
+
+/*
+This can flip a Surface either vertically, horizontally, or both. Flipping
+a Surface is nondestructive and returns a new Surface with the same dimensions.
+*/
+
+Puede invertir la superficie ya sea de forma vertical, horizontal, o ambas. Invertir
+una superficies es una tarea no destructiva y retorna una nueva superficie con
+el mismo tamaño.
+
+
+  * [[pythonexample>pygame.transform.flip|buscar código donde se use esta función.]]
+
+
+{{ :traducciones:pygame:transform:flip.png |}}
+
+
+===== scale =====
+
+/*
+resize to new resolution
+*/
+
+Altera el tamaño.
+
+<code>
+pygame.transform.scale(Surface, (width, height), DestSurface = None): return Surface
+</code>
+
+/*
+Resizes the Surface to a new resolution. This is a fast scale operation
+that does not sample the results. 
+*/
+
+Redimensiona una superficie a un nuevo tamaño. Esta es una operación
+rápida que no suaviza los resultados.
+
+/*
+An optional destination surface can be used, rather than have it create 
+a new one.  This is quicker if you want to repeatedly scale something.  
+However the destination must be the same size as the (width, height) passed 
+in.  Also the destination surface must be the same format.
+*/
+
+Se puede usar una superficie destino opcional, en lugar de tener que
+crear una nueva. Esto hace mas rápida la operación si tiene que cambiar
+el tamaño de algo muchas veces. De todas formas, la superficie destino debe
+tener el mismo tamaño que los parámetros ''width'' y ''height'' indicados. Además
+las superficie destino debe tener el mismo formato.
+
+
+  * [[pythonexample>pygame.transform.scale|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:scale.png |}}
+
+
+===== rotate =====
+
+/*
+rotate an image
+*/
+
+Aplica rotación a una imagen.
+
+<code>
+pygame.transform.rotate(Surface, angle): return Surface
+</code>
+
+/*
+Unfiltered counterclockwise rotation. The angle argument represents degrees
+and can be any floating point value. Negative angle amounts will rotate
+clockwise.
+*/
+
+Aplica una rotación inversa al sentido de las agujas del reloj sin suavizar. El 
+argumento ''angle'' se representa en grados y puede ser cualquier número real.
+La magnitud negativa de ''angle'' rotará la imagen en sentido a las agujas
+del reloj.
+
+/*
+Unless rotating by 90 degree increments, the image will be padded larger
+to hold the new size. If the image has pixel alphas, the padded area will
+be transparent. Otherwise pygame will pick a color that matches the Surface
+colorkey or the topleft pixel value.
+*/
+
+A menos que las rotaciones se incrementen de a 90 grados, la imagen se rellenará
+para almacenarse en un nuevo tamaño. Si la imagen tiene //pixels// transparentes, 
+el área de relleno será transparente. En otro caso pygame tomará un color que
+coincida con el valor clave de la imagen o el valor de la esquina superior izquierda.
+
+
+  * [[pythonexample>pygame.transform.rotate|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:rotate.png |}}
+
+===== rotozoom =====
+
+
+/*
+filtered scale and rotation
+*/
+
+Rotación y cambio de tamaño con filtro.
+
+<code>
+pygame.transform.rotozoom(Surface, angle, scale): return Surface
+</code>
+
+/*
+This is a combined scale and rotation transform. The resulting Surface will
+be a filtered 32-bit Surface. The scale argument is a floating point value
+that will be multiplied by the current resolution. The angle argument is
+a floating point value that represents the counterclockwise degrees to
+rotate. A negative rotation angle will rotate clockwise.
+*/
+
+Es una transformación combinada de rotación y cambio de tamaño. La superficie
+resultado será una superficie suavizada de 32 bits. El argumento ''scale'' es
+un número real que será multiplicado por la resolución actual. El argumento
+''angle'' es un numero real que representa la rotación contra las agujas
+del reloj mediada en grados. Un ángulo de rotación negativo girará la superficie
+en sentido a las agujas del reloj.
+
+  * [[pythonexample>pygame.transform.rotozoom|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:rotozoom.png |}}
+
+===== scale2x =====
+
+/*
+specialized image doubler
+*/
+
+Duplica el tamaño de la imagen de manera especial.
+
+<code>
+pygame.transform.scale2x(Surface, DestSurface = None): Surface
+</code>
+
+/*
+This will return a new image that is double the size of the original. It uses
+the AdvanceMAME Scale2X algorithm which does a 'jaggie-less' scale of bitmap
+graphics.
+ 
+This really only has an effect on simple images with solid colors. On
+photographic and antialiased images it will look like a regular unfiltered
+scale.
+*/
+
+Retorna una nueva imagen que será del doble de tamaño que la original. Utiliza
+el algoritmo //AdvanceMAME Scale2X// que produce escalado de gráficos evitando
+el dentado o los cuadrados grandes.
+
+
+/*
+An optional destination surface can be used, rather than have it create 
+a new one.  This is quicker if you want to repeatedly scale something.  
+However the destination must be twice the size of the source surface passed 
+in.  Also the destination surface must be the same format.
+*/
+
+Se puede usar una superficie destino opcional, en lugar de tener que
+crear una nueva. Esto hace mas rápida la operación si tiene que cambiar
+el tamaño de algo muchas veces. De todas formas, la superficie destino debe
+tener el mismo tamaño que los parámetros ''width'' y ''height'' indicados. Además
+las superficie destino debe tener el mismo formato.
+
+
+  * [[pythonexample>pygame.transform.scale2x|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:scale2x.png |}}
+
+===== smoothscale =====
+
+/*
+scale a surface to an arbitrary size smoothly
+*/
+
+Cambia el tamaño de una superficie con suavidad y de forma arbitraria.
+
+
+<code>
+pygame.transform.smoothscale(Surface, (width, height), DestSurface = None): return Surface
+</code>
+
+/*
+Uses one of two different algorithms for scaling each
+dimension of the input surface as required.  For shrinkage,
+the output pixels are area averages of the colors they
+cover.  For expansion, a bilinear filter is used. For the
+amd64 and i686 architectures, optimized MMX routines are
+included and will run much faster than other machine types.
+*/
+
+
+Usa uno de dos algoritmos diferentes para alterar cada una
+de las dimensiones de la superficie. Al reducir la imagen, los
+//pixeles// destinos serán promedio de los //pixeles// originales
+que representan. Al aumentar la imagen, se utilizará un filtro
+bilineal. En las arquitecturas //amd64// y //i686//, se incluyen
+las rutinas MMX optimizadas que funcionarán mucho mas rápido
+que en otro tipo de equipos.
+
+/*
+The size is a 2 number sequence for (width, height). This
+function only works for 24-bit or 32-bit surfaces.  An
+exception will be thrown if the input surface bit depth is
+less than 24.
+*/
+
+El tamaño es una secuencia de dos números que representa (''width'', 
+''height''). Esta función solo opera con superficies de 24 o 32 
+bits. Se lanzará una excepción si la profundidad de color de la
+superficie original es menor a 24 bits.
+
+
+<code>
+New in pygame 1.8
+</code>
+
+Esta función es nueva en pygame 1.8.
+
+  * [[pythonexample>pygame.transform.smoothscale|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:smoothscale.png |}}
+
+===== chop =====
+
+
+/*
+gets a copy of an image with an interior area removed
+*/
+
+Obtiene una copia de una imagen con un área interior eliminada.
+
+<code>
+pygame.transform.chop(Surface, rect): return Surface
+</code>
+
+/*
+Extracts a portion of an image. All vertical and
+horizontal pixels surrounding the given rectangle area are removed.
+The corner areas (diagonal to the rect) are then brought together.
+(The original image is not altered by this operation.)
+*/
+
+Extrae una porción de una imagen. Todos los //pixels// dentro
+del rectángulo dado se eliminarán. Las áreas diagonales (diagonales
+al rectángulo) se juntarán. La imagen original no se alterará
+por esta operación.
+
+/*
+NOTE: If you want a "crop" that returns the part of an image within
+a rect, you can blit with a rect to a new surface or copy a subsurface. 
+*/
+
+Note: Si usted quiere cortar, esta función retorna la parte de la
+imagen sin el área del rectángulo; en su lugar puede imprimir con 
+el rectángulo a una nueva superficie o copiar una //subsurface//.
+
+
+  * [[pythonexample>pygame.transform.chop|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:chop.png |}}
+
+
+/* Agregado por cuenta propia */
+
+Para ilustrar el ejemplo, imagine que define un rectángulo como se muestra
+en la siguiente imágen. La función ''chop'' eliminará tanto el rectángulo como
+la zona roja, creando una nueva superficie con los restos unidos.
+
+{{ :traducciones:pygame:transform:chop_diagram.png |}}
+
+===== laplacian =====
+
+/*
+find edges in a surface
+*/
+
+Busca los bordes en una superficie.
+
+<code>
+pygame.transform.laplacian(Surface, DestSurface = None): return Surface
+</code>
+
+/*
+Finds the edges in a surface using the laplacian algorithm.
+*/
+
+Busca los bordes en una superficie usando el algoritmo laplacian.
+
+/*
+New in pygame 1.8
+*/
+
+Esta función es nueva en pygame 1.8.
+
+  * [[pythonexample>pygame.transform.laplacian|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:laplacian.png |}}
+
+
+===== average_surfaces =====
+
+/*
+find the average surface from many surfaces.
+*/
+
+Busca la superficie mas similar a partir de muchas otras.
+
+<code>
+pygame.transform.average_surfaces(Surfaces, DestSurface = None): return Surface
+</code>
+
+/*
+Takes a sequence of surfaces and returns a surface with average colors from each
+of the surfaces.
+*/
+
+Toma una secuencia de superficies y retorna la superficie con los
+colores mas parecidos a una dada.
+
+
+/*
+New in pygame 1.8
+*/
+
+Esta función es nueva en pygame 1.8.
+
+  * [[pythonexample>pygame.transform.average_surfaces|buscar código donde se use esta función.]]
+
+===== threshold =====
+
+/*
+finds which, and how many pixels in a surface are within a threshold of a color.
+*/
+
+Encuentra cuales y cuantos //pixels// en una superficie están dentro
+del umbral de un color.
+
+<code>
+pygame.transform.threshold(DestSurface, Surface, color, threshold = (0,0,0,0), diff_color = (0,0,0,0), change_return = True, Surface =None): return num_threshold_pixels
+</code>
+
+
+/*
+It can set the destination surface where all of the pixels not within the 
+threshold are changed to diff_color.
+*/
+
+Puede definir la superficie destino donde todos los //pixeles// se cambian
+a ''diff_color'' cuando no están dentro del umbral ''threshold''.
+
+/*
+Or it can be used to just count the number of pixels within the threshold if you set
+change_return to False.
+*/
+
+O se puede usar solo para contar los números de //pixeles// dentro
+del umbral si define ''change_return'' a ''False''.
+
+/*
+When given the optional third surface, it will use the colors in that rather 
+than the 3rd position "color" arg.
+*/
+
+Cuando se define la tercera superficie, se usarán los colores de
+ella en lugar del tercer argumento ''color''.
+
+
+/*
+You can use a threshold of (r,g,b,a) where the r,g,b can have different thresholds. So
+you could use an r threshold of 40 and a blue threshold of 2 if you like.
+*/
+
+
+Puede definir un umbral, ''threshold'', como ''(r,g,b,a)'', donde ''r'',
+''g'', ''b'' pueden ser diferentes umbrales. De forma que si quiere
+puede usar un umbral ''r'' de 40 y un umbral ''b'' de 2.
+
+/*
+New in pygame 1.8
+*/
+
+Esta función es nueva en pygame 1.8.
+
+  * [[pythonexample>pygame.transform.threshold|buscar código donde se use esta función.]]
+
+{{ :traducciones:pygame:transform:threshold.png |}}

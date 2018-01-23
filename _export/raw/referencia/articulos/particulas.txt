@@ -1,0 +1,99 @@
+====== Propuesta sobre Partículas ======
+
+===== Introducción =====
+
+En la lista de correo [[http://groups.google.com/group/sdl-es?hl=es|SDL en Español]]  solemos realizar propuestas de desarrollo. Estas propuestas son similares a los concursos de programación, donde los participantes construyen una solución bajo una temática para luego mostrarla a todos los demás.
+
+En esta ocasión, el objetivo de la propuesta consiste en desarrollar un programa demostración que realice un efecto visual mediante partículas. Por ejemplo se podrían realizar efectos clásicos como lluvia, nieve, fuego o explosiones, por citar algunos ejemplos.
+
+Los participantes pueden utilizar cualquier lenguaje de programación pero siempre utilizando la biblioteca SDL o adaptaciones de la misma, como ocurre con el paquete 'pygame' en el lenguaje de programación Python.
+
+La propuesta ha comenzado el día 17 de Febrero del 2007 y ha finalizado el 19 de Marzo del 2007.
+
+En este artículo reuniremos varias entregas de esta propuesta junto a los ejemplos y rutinas que circularon en la lista de correo durante esos días. 
+
+
+===== Entregas realizadas: =====
+
+==== Confetti Simulator ====
+
+
+Consiste en un confeti atraído por diferentes fuerzas, una de ellas se puede alterar con el movimiento del mouse.
+
+gskbyte ha utilizado el lenguaje de programación C++ junto a SDL y STL (por ejemplo la clase vector). 
+
+
+{{gallery>:referencia:articulos:particulas:imagenes:confetti_simulator.png}} 
+
+  *  Autor: gskbyte
+  * e-mail: gskbyte (arroba) gmail (punto) com
+  * Web: http://www.gskbyte.net/
+  * {{:referencia:articulos:particulas:confetti_simulator.zip|Descargar}}
+
+==== Rains, Snow y Stars ====
+
+
+RCAF ha participado con 3 ejemplos de su motor para partículas, la clase CParticleSystem define el comportamiento general de los tres sistemas. El autor a utilizado C++, STL y SDL.
+
+El ejemplo Rain muestra un efecto de lluvia sobre una imagen, Snow muestra un efecto de nieve y Stars un campo de estrellas. 
+
+
+{{gallery>:referencia:articulos:particulas:imagenes:rc:}}
+
+  *  Autor: Roberto Albornoz Figueroa
+  * e-mail: ralbornoz (arroba) gmail (punto) com
+  * Web: http://www.blogrcaf.com
+  * {{:referencia:articulos:particulas:rain.zip|Descargar Rain}}
+  * {{:referencia:articulos:particulas:snow.zip|Descargar Snow}}
+  * {{:referencia:articulos:particulas:stars.zip|Descargar Stars}}
+
+
+==== Asteroids ====
+
+
+El jugador debe controlar una nave espacial mediante los direccionales del teclado. Con la tecla "space" o "enter" puede disparar misiles contra asteroides de color verde.
+
+Puede observar los efectos de partículas en las trayectorias de misiles y en las explosiones de los asteroides.
+
+Se ha utilizado el lenguaje de programación Python y el módulo Pygame. También se han utilizado los gráficos de libre distribución desarrollados por 'Ari Feldman'. 
+
+{{gallery>:referencia:articulos:particulas:imagenes:asteroids.png}}
+
+  * Autor: Hugo Ruscitti
+  * e-mail: hugoruscitti (arroba) gmail (punto) com
+  * {{:referencia:articulos:particulas:asteroids.tar.gz|Descargar fuente}}
+  * {{:referencia:articulos:particulas:asteroids_win.zip|Descargar versión para Windows (cortesía de RCAF)}}
+
+
+==== Ejemplos básicos con python ====
+
+
+Los ejemplos básicos con python son un conjunto de tres programas que implementan distintos efectos de partículas.
+
+El primer programa muestra un campo de estrellas, el segundo es similar aunque cada estrellas deja un rastro de su movimiento, y el tercer programa es una gráfica del símbolo infinito en movimiento. 
+
+
+{{gallery>:referencia:articulos:particulas:imagenes:basicos_con_python.png}}
+
+
+
+  *  Autor: Hugo Ruscitti
+  * e-mail: hugoruscitti (arroba) gmail (punto) com
+  * {{:referencia:articulos:particulas:basicos_con_python.tar.gz|Descargar}}
+
+
+
+==== Estrellas Simple ====
+
+
+Una implementación en C del clásico 'campo de estrellas'.
+
+{{gallery>:referencia:articulos:particulas:imagenes:estrellas_simple.png}}
+
+
+
+  * Autor: Hugo Ruscitti
+  * e-mail: hugoruscitti (arroba) gmail (punto) com
+  * {{:referencia:articulos:particulas:estrellas_simple.tar.gz|Descargar}}
+
+

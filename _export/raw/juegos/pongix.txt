@@ -1,0 +1,30 @@
+====== Pongix ======
+
+
+Pongix es un videojuego muy simple para dos jugadores inspirado en el clásico Pong.
+
+Comenzamos a desarrollar el programa para participar de la propuesta "Pong" que realizaron varios usuarios de la lista de correo [[http://www.elistas.net/lista/sdl|SDL en español]]. La propuesta consistía en desarrollar varias versiones diferentes del videojuego Pong con las bibliotecas SDL, cada versión podía incluir sus propias variantes. 
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:pongix:capturas:*}}
+
+
+
+
+===== Descargas =====
+
+
+{{filelist>juegos:pongix:descargas:*}}
+
+
+
+===== Licencia =====
+
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+{{tag>juegos SDL C}}

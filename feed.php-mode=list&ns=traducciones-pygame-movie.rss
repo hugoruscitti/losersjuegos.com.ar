@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:movie</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-16T15:57:39+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie?rev=1232462457&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie_class?rev=1233072251&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie?rev=1232462457&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:40:57+04:00</dc:date>
+        <title>Movie</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie?rev=1232462457&amp;do=diff</link>
+        <description>load an mpeg movie file
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Movie
+
+
+pygame.movie.Movie(filename): return Movie
+pygame.movie.Movie(object): return Movie
+
+
+Load a new MPEG movie stream from a file or a python file object. The Movie
+object operates similar to the Sound objects from pygame.mixer.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie_class?rev=1233072251&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-27T19:04:11+04:00</dc:date>
+        <title>Movie</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/movie/movie_class?rev=1233072251&amp;do=diff</link>
+        <description>Carga un archivo de película MPEG.
+
+	*  Movie
+	*  play
+	*  stop
+	*  pause
+	*  skip
+	*  rewind
+	*  render_frame
+	*  get_frame
+	*  get_time
+	*  get_busy
+	*  get_length
+	*  get_size
+	*  has_video
+	*  has_audio
+	*  set_volume
+	*  set_display
+
+Movie
+
+
+pygame.movie.Movie(filename): return Movie
+pygame.movie.Movie(object): return Movie</description>
+    </item>
+</rdf:RDF>

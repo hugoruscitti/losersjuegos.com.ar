@@ -1,0 +1,18 @@
+====== Mejoras en el complemento To do ======
+
+Se ha incorporado algo de funcionalidad adicional al plugin
+To do, ahora es posible crear listas con diferentes niveles y
+hay dos nuevos elementos para indicar fallos y aciertos.
+
+[ ] por realizar, primer nivel.
+..[ ] algo mas especifico de la tarea.
+..[ ] otra subtarea.
+[+] un acierto.
+[-] un error.
+..[-] otro error de menor nivel.
+..[x] con algo realizado.
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

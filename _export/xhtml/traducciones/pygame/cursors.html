@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:cursors</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T21:03:53+0300" />
+<meta name="keywords" content="traducciones,pygame,cursors" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/cursors-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="cursors.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/cursors.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#cursors" class="toc">cursors</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#compile" class="toc">compile</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#load_xbm" class="toc">load_xbm</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="cursors" id="cursors">cursors</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para cursores de mouse.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#compile" title="traducciones:pygame:cursors &crarr;" class="wikilink1">compile</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#load_xbm" title="traducciones:pygame:cursors &crarr;" class="wikilink1">load_xbm</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Pygame ofrece control sobre el cursor de hardware del sistema. Pygame solo
+soporta cursores blancos y negros para el sistema. Usted controla
+el cursor del mouse con funciones del módulo <code>pygame.mouse</code>.
+</p>
+
+
+
+<p>
+Esta módulo contiene funciones para cargar y decodificar varios formatos
+gráficos de cursor. Esto le permite fácilmente almacenar sus cursores
+en archivos externos o directamente en cadenas de python con formato.
+</p>
+
+
+
+<p>
+El módulo incluye varios cursores estándar. La función <code>pygame.mouse.set_cursor</code>
+toma varios argumentos, todos estos argumentos se pueden agrupar en una
+tupla para que usted puede llamarlo así:
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">set_cursor</span><span class="br0">&#40;</span><span class="sy0">*</span>pygame.<span class="me1">cursors</span>.<span class="me1">arrow</span><span class="br0">&#41;</span></pre>
+
+
+<p>
+Esta módulo también contiene unos pocos cursos en cadenas con formato. Necesitará
+pasar estas cadenas a la función <code>pygame.cursors.compile</code> antes de usarlos. Una
+llamada de ejemplo podría verse así:
+</p>
+<pre class="code python">cursor = pygame.<span class="me1">cursors</span>.<span class="kw2">compile</span><span class="br0">&#40;</span>pygame.<span class="me1">cursors</span>.<span class="me1">textmarker_strings</span><span class="br0">&#41;</span>
+pygame.<span class="me1">mouse</span>.<span class="me1">set_cursor</span><span class="br0">&#40;</span><span class="sy0">*</span>cursor<span class="br0">&#41;</span></pre>
+
+
+<p>
+Las siguientes variables son imágenes que se pueden usar como cursor:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> pygame.cursors.arrow</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.diamond</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.broken_x</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.tri_left</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.tri_right</div>
+</li>
+</ul>
+
+
+
+<p>
+Las siguientes cadenas se pueden convertir en imágenes de cursor
+con la función <code>pygame.cursor.compile</code>.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> pygame.cursors.thickarrow_strings</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.sizer_x_strings</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.sizer_y_strings</div>
+</li>
+<li class="level1"><div class="li"> pygame.cursors.sizer_xy_strings</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "cursors" [1-2891] -->
+<h2><a name="compile" id="compile">compile</a></h2>
+<div class="level2">
+
+
+
+<p>
+Genera datos de cursor binario desde una simple cadena.
+</p>
+<pre class="code pygame">pygame.cursor.compile(strings, black='X', white='.', xor='o'): return data, mask</pre>
+
+
+<p>
+Se puede usar una secuencia de cadenas para crear datos de cursor
+binario para el cursor de sistema. Los valores de retorno tiene el mismo
+formato necesario por <code>pygame.mouse.set_cursor</code>.
+</p>
+
+
+
+<p>
+Si está creando su propias cadenas de cursor, puede usar cualquier valor
+representando los pixeles blancos y negros. Algunos sistemas le permiten definir
+un color especial de contraste (o inversión), generalmente llamado el color
+xor. Si el sistema no soporta cursores xor, este color simplemente se verá
+como negro.
+</p>
+
+
+
+<p>
+La longitud de las cadenas debe ser igual para todas y debe ser divisible
+por 8. Un ejemplo de cadenas de cursor se ven así:
+</p>
+<pre class="code python">thickarrow_strings = <span class="br0">&#40;</span>               <span class="co1">#sized 24x24</span>
+  <span class="st0">&quot;XX                      &quot;</span>,
+  <span class="st0">&quot;XXX                     &quot;</span>,
+  <span class="st0">&quot;XXXX                    &quot;</span>,
+  <span class="st0">&quot;XX.XX                   &quot;</span>,
+  <span class="st0">&quot;XX..XX                  &quot;</span>,
+  <span class="st0">&quot;XX...XX                 &quot;</span>,
+  <span class="st0">&quot;XX....XX                &quot;</span>,
+  <span class="st0">&quot;XX.....XX               &quot;</span>,
+  <span class="st0">&quot;XX......XX              &quot;</span>,
+  <span class="st0">&quot;XX.......XX             &quot;</span>,
+  <span class="st0">&quot;XX........XX            &quot;</span>,
+  <span class="st0">&quot;XX........XXX           &quot;</span>,
+  <span class="st0">&quot;XX......XXXXX           &quot;</span>,
+  <span class="st0">&quot;XX.XXX..XX              &quot;</span>,
+  <span class="st0">&quot;XXXX XX..XX             &quot;</span>,
+  <span class="st0">&quot;XX   XX..XX             &quot;</span>,
+  <span class="st0">&quot;     XX..XX             &quot;</span>,
+  <span class="st0">&quot;      XX..XX            &quot;</span>,
+  <span class="st0">&quot;      XX..XX            &quot;</span>,
+  <span class="st0">&quot;       XXXX             &quot;</span>,
+  <span class="st0">&quot;       XX               &quot;</span>,
+  <span class="st0">&quot;                        &quot;</span>,
+  <span class="st0">&quot;                        &quot;</span>,
+  <span class="st0">&quot;                        &quot;</span><span class="br0">&#41;</span></pre><ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.cursors.compile" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.cursors.compile">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "compile" [2892-5234] -->
+<h2><a name="load_xbm" id="load_xbm">load_xbm</a></h2>
+<div class="level2">
+
+
+
+<p>
+Carga datos de cursor desde un archivo xbm.
+</p>
+<pre class="code python">pygame.<span class="me1">cursors</span>.<span class="me1">load_xbm</span><span class="br0">&#40;</span>cursorfile, maskfile=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> cursor_args</pre>
+
+
+<p>
+Esta función cargar cursor desde archivos XBM. Los archivos XBM se 
+usan tradicionalmente para almacenar cursor en sistemas UNIX, estos están
+en formato ascii para representar imágenes simples.
+</p>
+
+
+
+<p>
+A veces los valores de color blanco y negro se pueden dividir en dos archivos XBM
+separados. Puede pasar un segundo argumento <code>maskfile</code> para cargar las
+dos imágenes en un solo cursor.
+</p>
+
+
+
+<p>
+Los argumentos <code>maskfile</code> y <code>cursorfile</code> pueden ser tanto nombres de archivo como
+objetos similares a <code>file</code>, es decir, con el método <code>readlines</code>.
+</p>
+
+
+
+<p>
+El valor de retorno <code>cursor_args</code> se puede pasar directamente a la función
+<code>pygame.mouse.set_cursor</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.cursors.load_xbm" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.cursors.load_xbm">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "load_xbm" [5235-] --></div>
+</body>
+</html>

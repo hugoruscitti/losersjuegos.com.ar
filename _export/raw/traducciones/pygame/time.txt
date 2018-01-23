@@ -1,0 +1,137 @@
+====== time ======
+
+Módulo de pygame para gestionar tiempo.
+
+<box 90%>
+  * [[#get_ticks]]
+  * [[#wait]]
+  * [[#delay]]
+  * [[#set_timer]]
+
+** En otra pagina: **
+
+  * [[traducciones:pygame:time:Clock]]
+</box>
+
+/*
+Times in pygame are represented in milliseconds (1/1000 seconds).
+Most platforms have a limited time resolution of around 10 milliseconds.
+*/
+
+El tiempo se representa en milisegundos, lo cual es equivalente a
+Segundos*1000. (Por lo que 2500 milisegundos son 2.5 segundos).
+
+La mayoría de las plataformas tienen una resolución de tiempo limitada a 10
+milisegundos (aproximadamente.)
+
+/*
+get_ticks
+get the time in milliseconds
+pygame.time.get_ticks(): return milliseconds
+*/
+
+===== get_ticks =====
+
+<code python> pygame.time.get_ticks() -> int</code>
+
+/*
+Return the number of millisconds since pygame.init() was called. Before
+pygame is initialized this will always be 0.
+*/
+
+Indica el tiempo en milisegundos desde que se llamó a //pygame.init()//. Siempre devuelve 0 antes de que pygame.init() se llame.
+
+  * [[pythonexample>pygame.time.get_ticks|buscar código donde se use esta función.]]
+
+
+/*
+wait
+pause the program for an amount of time
+pygame.time.wait(milliseconds): return time
+*/
+
+===== wait =====
+<code python>pygame.time.wait(milisegundos) -> int</code>
+
+/*
+Will pause for a given number of milliseconds. This function sleeps the
+process to share the processor with other programs. A program that waits
+for even a few milliseconds will consume very little processor time.
+It is slightly less accurate than the pygame.time.delay() function.
+ 
+This returns the actual number of milliseconds used.
+*/
+
+Hace una pausa. Está función duerme el programa para compartir la CPU
+con otros procesos. Ésta función es menos exacta que la función [[#delay]].
+
+Devuelve el número actual de milisegundos usados.
+
+  * [[pythonexample>pygame.time.wait|buscar código donde se use esta función.]]
+
+/*
+delay
+pause the program for an amount of time
+pygame.time.delay(milliseconds): return time
+*/
+
+===== delay =====
+
+<code python>pygame.time.delay(milliseconds) -> int</code>
+
+/*
+Will pause for a given number of milliseconds. This function will use the
+processor (rather than sleeping) in order to make the delay more accurate than pygame.time.wait().
+ 
+This returns the actual number of milliseconds used.
+*/
+
+Hace una pausa durante el número de milisegundos especificados. Esta función usa 
+la CPU para realizar el retardo más exacto que [[#wait]].
+
+La función devuelve el número actual de milisegundos usados.
+
+  * [[pythonexample>pygame.time.delay|buscar código donde se use esta función.]]
+
+/*
+set_timer
+repeatedly create an event on the event queue
+pygame.time.set_timer(eventid, milliseconds): return None
+*/
+
+===== set_timer =====
+
+<code pygame>pygame.time.set_timer(event_id, milliseconds) -> None</code>
+
+/*
+Set an event type to appear on the event queue every given number of
+milliseconds. The first event will not appear until the amount of time has
+passed.
+
+Every event type can have a separate timer attached to it. It is best to
+use the value between pygame.USEREVENT and pygame.NUMEVENTS.
+
+To disable the timer for an event, set the milliseconds argument to 0.
+*/
+
+Define un tipo de evento para que aparezca en la cola de eventos a intervalos
+de tiempo regulares. El primer evento no aparecerá a menos que la cantidad de
+tiempo especificado halla concluido.
+
+Cada tipo de evento puede tener un temporizador separado asociado a él. Para
+definir el valor de //event_id// es mejor usar un valor entre
+//pygame.USEREVENT// y //pygame.NUMEVENTS//.
+
+Para deshabilitar el temporizador para un //event// defina el argumento
+//milliseconds// a 0.
+
+  * [[pythonexample>pygame.time.set_timer|buscar código donde se use esta función.]]
+
+/*
+Clock
+create an object to help track time
+pygame.time.Clock(): return Clock
+
+Creates a new Clock object that can be used to track an amount of time.
+The clock also provides several functions to help control a game's framerate.
+*/

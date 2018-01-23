@@ -1,0 +1,100 @@
+#cabecera
+{
+    margin: 0;
+    padding: 0;
+    font: small sans-serif;
+    height: 50px;
+    background-color: rgb(194, 233, 187);
+    border-bottom: 0;
+    margin-bottom: 0;
+    background-color: rgb(194, 233, 187);
+    background-image: url('ima_cabecera/fondo.png');
+}
+
+#navi
+{
+    padding: 31px 10px 0 0;
+    text-align: right;
+}
+
+#navi ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navi li
+{
+    display: inline;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: rgb(120, 120, 120);
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    background-position: bottom;
+    background-image: url('ima_cabecera/fondo.png');
+}
+
+#navi li a
+{
+    text-decoration: none;
+    border: 1px solid black;
+    border-bottom: 0;
+    background-image: url('ima_cabecera/fondo.png');
+    background-position: bottom;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    margin: 0;
+    background-image: url('ima_cabecera/solapa_inactiva.png');
+    background-position: bottom;
+}
+
+
+
+#navi li a:link
+{
+    height: 18px;
+    color: black;
+}
+
+#navi li a:hover
+{
+    text-decoration: none;
+    background-image: url('ima_cabecera/solapa_hover.png');
+}
+
+#navi li a:visited
+{
+    color: black;
+}
+
+#navi li#actual a
+{
+    background-image: url('ima_cabecera/solapa_actual.png');
+}
+
+
+img#logo1
+{
+    height: 50px;
+    width: 286px; 
+    float: left;
+    background-image: url('ima_cabecera/logo_1.png');
+    padding: 0;
+    border: 0;
+}
+
+#contenido
+{
+    border: 1px solid black;
+    margin: 5px;
+    border-top: 0;
+    margin-top: 0;
+    background-color: white;
+    padding: 1em;
+}

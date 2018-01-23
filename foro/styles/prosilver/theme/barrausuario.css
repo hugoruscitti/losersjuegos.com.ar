@@ -1,0 +1,77 @@
+.barra_usuario
+{
+        background-image: url('ima/foro/barra.png');
+        border-bottom: 1px solid black;
+        padding: 5px;
+        text-align: center;
+}
+
+        .barra_usuario ul
+        {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+        }
+                .barra_usuario li
+                {
+                        margin-right: 1em;
+                        padding-left: 30px;
+                        background-repeat: no-repeat;
+                        background-position: 0.5em;
+                        display: inline;
+                }
+
+                .barra_usuario ul li.regresar
+                {
+                        background-image: url('iconos/mini/regresar.png');
+                }
+
+                .barra_usuario ul li.perfil
+                {
+                        background-image: url('iconos/mini/perfil.png');
+                }
+
+                .barra_usuario ul li.grupos
+                {
+                        background-image: url('iconos/mini/grupos.png');
+                }
+
+                .barra_usuario ul li.lista
+                {
+                        background-image: url('iconos/mini/lista.png');
+                }
+
+                .barra_usuario ul li.registrar
+                {
+                        background-image: url('iconos/mini/registrar.png');
+                }
+
+                .barra_usuario ul li.faq
+                {
+                        background-image: url('iconos/mini/faq.png');
+                }
+
+                .barra_usuario ul li.buscar
+                {
+                        background-image: url('iconos/mini/buscar.png');
+                }
+
+                .barra_usuario ul li.email
+                {
+                        background-image: url('iconos/mini/email.png');
+                }
+
+
+
+        .barra_usuario a.link,  .barra_usuario a,  .barra_usuario a:visited
+        {
+                color: rgb(80, 80, 205);
+                text-decoration: none;
+        }
+
+        .barra_usuario a:hover
+        {
+                color: rgb(50, 50, 100);
+                text-decoration: underline;
+        }
+

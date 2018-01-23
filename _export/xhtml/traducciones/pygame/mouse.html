@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mouse</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-21T22:22:08+0300" />
+<meta name="keywords" content="traducciones,pygame,mouse" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/mouse-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="mouse.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/mouse.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#mouse" class="toc">mouse</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#get_pressed" class="toc">get_pressed</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_pos" class="toc">get_pos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_rel" class="toc">get_rel</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_pos" class="toc">set_pos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_visible" class="toc">set_visible</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_focused" class="toc">get_focused</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_cursor" class="toc">set_cursor</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_cursor" class="toc">get_cursor</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="mouse" id="mouse">mouse</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para utilizar el mouse.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#get_pressed" title="traducciones:pygame:mouse &crarr;" class="wikilink1">get_pressed</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_pos" title="traducciones:pygame:mouse &crarr;" class="wikilink1">get_pos</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_rel" title="traducciones:pygame:mouse &crarr;" class="wikilink1">get_rel</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_pos" title="traducciones:pygame:mouse &crarr;" class="wikilink1">set_pos</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_visible" title="traducciones:pygame:mouse &crarr;" class="wikilink1">set_visible</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_focused" title="traducciones:pygame:mouse &crarr;" class="wikilink1">get_focused</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_cursor" title="traducciones:pygame:mouse &crarr;" class="wikilink1">set_cursor</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_cursor" title="traducciones:pygame:mouse &crarr;" class="wikilink1">get_cursor</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Las funciones de este módulo se pueden usar para obtener el estado
+actual del dispositivo de mouse. Estas funciones también pueden
+alterar el cursor del sistema.
+</p>
+
+
+
+<p>
+Cuando se define el modo de video, la cola de eventos comenzará a recibir
+eventos de mouse. Los botones del mouse generan los eventos
+<code>pygame.MOUSEBUTTONDOWN</code> y <code>pygame.MOUSEBUTTONUP</code>. Estos eventos
+contienen un atributo <code>button</code> que representa el botón que se
+ha pulsado. La rueda del mouse generará eventos <code>pygame.MOUSEBUTTONDOWN</code>,
+el atributo <code>button</code> será 4 si la rueda gira hacia arriba y 5 cuando
+la rueda gire hacia abajo. Se generará el evento <code>pygame.MOUSEMOTION</code>
+en cualquier momento que se mueva el mouse. El movimiento de mouse
+se divide en pequeños y precisos eventos <code>MOUSEMOTION</code>. Los
+eventos de movimiento que no se eliminan de la cola de eventos
+apropiadamente son la razón principal de que la cola de eventos se
+llene.
+</p>
+
+
+
+<p>
+
+El mouse entrará en modo virtual si se oculta el cursor y se define
+la entrada del mismo como exclusiva de la ventana. Este modo ocasiona
+que los movimiento relativos no se detendrán en los bordes de la pantalla. Vea
+las funciones <code>pygame.mouse.set_visible()</code> y <code>pygame.event.set_grab()</code>
+para configurarlo así.
+</p>
+
+</div>
+<!-- SECTION "mouse" [1-2780] -->
+<h2><a name="get_pressed" id="get_pressed">get_pressed</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el estado de los botones del mouse.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">get_pressed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>button1, button2, button3<span class="br0">&#41;</span></pre>
+
+
+<p>
+Retorna una secuencia de valores booleanos representado el estado de todos
+los botones del mouse. Un valor <code>True</code> significa que el botón está
+pulsado al momento de hacer la llamada a esta función.
+</p>
+
+
+
+<p>
+Nota: para obtener todos los eventos del mouse es mejor usar
+<code>pygame.event.wait()</code> o bien <code>pygame.event.get()</code> y consultar
+todos esos eventos para ver si estos son <code>MOUSEBUTTONDOWN</code>, <code>MOUSEBUTTONUP</code> o
+<code>MOUSEMOTION</code>.
+</p>
+
+
+
+<p>
+Note que en X11 algunos servidores X usan emulación del botón central. 
+Se emitirá un evento del botón 2 cuando pulse al mismo tiempo los botones 1 y 3.
+</p>
+
+
+
+<p>
+Recuerde llamar a la función <code>pygame.event.get()</code> antes de usar esta
+función. De otra forma no funcionará.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_pressed" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_pressed">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_pressed" [2781-4407] -->
+<h2><a name="get_pos" id="get_pos">get_pos</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la posición del cursor de mouse.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">get_pos</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>x, y<span class="br0">&#41;</span></pre>
+
+
+<p>
+Retorna la posición X e Y del cursor de mouse. La posición será relativa
+a la esquina superior izquierda de la pantalla. El cursor podría
+estar localizado fuera de la ventana, aunque esta función solo
+retornará la posición si está dentro de la ventana.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_pos" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_pos">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_pos" [4408-5148] -->
+<h2><a name="get_rel" id="get_rel">get_rel</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la cantidad de movimiento del mouse.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">get_rel</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>x, y<span class="br0">&#41;</span></pre>
+
+
+<p>
+Retorna la cantidad de movimiento en X e Y desde la llamada previa a esta
+función. El movimiento relativo del cursor de mouse está restringido
+a los bordes de la pantalla, aunque hay una forma de evitar esto usando
+un modo de mouse virtual. Este modo virtual se describe al principio
+de la página.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_rel" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_rel">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_rel" [5149-6000] -->
+<h2><a name="set_pos" id="set_pos">set_pos</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define la posición del cursor.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">set_pos</span><span class="br0">&#40;</span><span class="br0">&#91;</span>x, y<span class="br0">&#93;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+
+Define la posición actual del mouse. Si el cursor del mouse está visible
+entonces <em>saltará</em> a la nueva posición inmediatamente. Mover el
+mouse generará un nuevo evento <code>pygame.MOUSEMOTION</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_pos" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_pos">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_pos" [6001-6635] -->
+<h2><a name="set_visible" id="set_visible">set_visible</a></h2>
+<div class="level2">
+
+
+
+<p>
+Oculta o muestra el cursor del mouse.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">set_visible</span><span class="br0">&#40;</span><span class="kw2">bool</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+El cursor del mouse será visible si el argumento <code>bool</code> es <code>True</code>. Esta
+función retornará el estado de visibilidad anterior del cursor.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_visible" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_visible">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_visible" [6636-7171] -->
+<h2><a name="get_focused" id="get_focused">get_focused</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si la ventana está recibiendo la entrada del mouse.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">get_focused</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando pygame está recibiendo los eventos
+del mouse (o, en la terminología de las ventanas, está <em>activo</em>
+o tiene <em>foco</em>).
+</p>
+
+
+
+<p>
+Esté método es mas útil cuando funciona en una ventana. En cambio, en
+un modo de pantalla completa, este método siempre retornará <code>True</code>.
+</p>
+
+
+
+<p>
+Note que en sistemas <acronym title="Microsoft">MS</acronym> Windows, la ventana que tiene el
+foco del mouse también tendrá el foco del teclado. Pero bajo
+sistemas el servidor X (GNU/Linux por ejemplo), una ventana
+podría recibir los eventos del mouse y otra ventana los
+eventos del teclado. La función <code>pygame.mouse.get_focused()</code>
+indica que ventana de pygame recibe los eventos del mouse.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_focused" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_focused">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_focused" [7172-8656] -->
+<h2><a name="set_cursor" id="set_cursor">set_cursor</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define la imagen para el cursor del mouse de sistema.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">set_cursor</span><span class="br0">&#40;</span>size, hotspot, xormasks, andmasks<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cuando el cursor del mouse está visible, se mostrará como un mapa
+de bits en blanco y negro usando un vector de bits. El argumento
+<code>size</code> es una secuencia que contiene el ancho y alto del cursor, <code>hotspot</code>
+es una secuencia que contiene el punto de control, <code>xormasks</code> es
+una secuencia de bytes que contiene la máscara de datos <em>xor</em>. Por
+último <code>andmasks</code> es una secuencia de bytes que contiene
+los datos de bits del cursor.
+</p>
+
+
+
+<p>
+El ancho tiene que ser múltiplo de 0, y los vectores deben tener
+el tamaño correcto para el ancho y alto indicado. De otra forma
+se lanzará una excepción.
+</p>
+
+
+
+<p>
+Vea el módulo <code>pygame.cursor</code> para obtener ayuda sobre como
+crear vectores personalizados o por defecto para cursores del
+sistema.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_cursor" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.set_cursor">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_cursor" [8657-10352] -->
+<h2><a name="get_cursor" id="get_cursor">get_cursor</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la imagen para el cursor del mouse de sistema.
+</p>
+<pre class="code python">pygame.<span class="me1">mouse</span>.<span class="me1">get_cursor</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>size, hotspot, xormasks, andmasks<span class="br0">&#41;</span></pre>
+
+
+<p>
+Obtiene información acerca del cursor de sistema del mouse. El
+valor de retorno tiene la misma información que los argumentos
+indicados en <code>pygame.mouse.set_cursor()</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_cursor" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mouse.get_cursor">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_cursor" [10353-] --></div>
+</body>
+</html>

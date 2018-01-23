@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sprite:sprite_class</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:50+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite,sprite_class" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/sprite/sprite_class-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-sprite.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="sprite_class.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/sprite/sprite_class.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#sprite" class="toc">Sprite</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#sprite1" class="toc">Sprite</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#update" class="toc">update</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#add" class="toc">add</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#remove" class="toc">remove</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#kill" class="toc">kill</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#alive" class="toc">alive</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#groups" class="toc">groups</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="sprite" id="sprite">Sprite</a></h1>
+<div class="level1">
+
+
+
+<p>
+Una clase base para objetos del juego visibles.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#sprite" class="wikilink1" title="traducciones:pygame:sprite">Sprite</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#update" class="wikilink1" title="traducciones:pygame:sprite">update</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#add" class="wikilink1" title="traducciones:pygame:sprite">add</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#remove" class="wikilink1" title="traducciones:pygame:sprite">remove</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#kill" class="wikilink1" title="traducciones:pygame:sprite">kill</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#alive" class="wikilink1" title="traducciones:pygame:sprite">alive</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#groups" class="wikilink1" title="traducciones:pygame:sprite">groups</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Sprite" [1-435] -->
+<h2><a name="sprite1" id="sprite1">Sprite</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">Sprite</span><span class="br0">&#40;</span><span class="sy0">*</span>groups<span class="br0">&#41;</span>: <span class="kw1">return</span> Sprite</pre>
+
+
+<p>
+Es la clase base para los objetos visibles del juego. Las clases
+derivadas sobre-escribirán el método <code>Sprite.update()</code> y asignarán
+un valor a los atributos <code>Sprite.image</code> y <code>Sprite.rect</code>. El
+constructor puede aceptar cualquier número de objetos <code>Group</code> a
+donde se insertará el objeto.
+</p>
+
+
+
+<p>
+Cuando genera una subclase de Sprite, asegúrese de llamar al constructor
+de la clase base antes de agregar el <em>Sprite</em> a los grupos.
+</p>
+
+</div>
+<!-- SECTION "Sprite" [436-1309] -->
+<h2><a name="update" id="update">update</a></h2>
+<div class="level2">
+
+
+
+<p>
+Método para control el comportamiento del sprite.
+</p>
+<pre class="code python">Sprite.<span class="me1">update</span><span class="br0">&#40;</span><span class="sy0">*</span>args<span class="br0">&#41;</span>:</pre>
+
+
+<p>
+La implementación por defecto de este método no hace nada; es 
+solo un <em>hueco</em> conveniente que puede sobreescribir. Este método
+se llama desde <code>Group.update()</code> con cualquier argumento que
+se le envíe.
+</p>
+
+
+
+<p>
+No hay necesidad de usar este método si no está utilizando el
+método del mismo nombre en la clase <code>Group</code>.
+</p>
+
+</div>
+<!-- SECTION "update" [1310-2103] -->
+<h2><a name="add" id="add">add</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inserta el sprite a los grupos.
+</p>
+<pre class="code python">Sprite.<span class="me1">add</span><span class="br0">&#40;</span><span class="sy0">*</span>groups<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Se puede pasar cualquier número de grupos como argumentos. El <em>Sprite</em>
+se insertará en los grupos, a menos que ya forme parte de ellos.
+</p>
+
+</div>
+<!-- SECTION "add" [2104-2520] -->
+<h2><a name="remove" id="remove">remove</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina un sprite de los grupos.
+</p>
+<pre class="code python">Sprite.<span class="me1">remove</span><span class="br0">&#40;</span><span class="sy0">*</span>groups<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Se puede pasar cualquier número de grupos como argumentos. El <em>Sprite</em>
+será eliminado de los grupos a los que pertenezca.
+</p>
+
+</div>
+<!-- SECTION "remove" [2521-2937] -->
+<h2><a name="kill" id="kill">kill</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina el <em>Sprite</em> de todos los grupos.
+</p>
+<pre class="code python">Sprite.<span class="me1">kill</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+
+El <em>Sprite</em> será eliminado de todos los grupos a los que pertenezca. No
+se cambiará nada acerca del estado del <em>Sprite</em>. Es posible continuar
+usando el <em>Sprite</em> luego de haber llamado a este método, incluyendo
+agregarlo a otros grupos.
+</p>
+
+</div>
+<!-- SECTION "kill" [2938-3574] -->
+<h2><a name="alive" id="alive">alive</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el sprite pertenece a algún grupo.
+</p>
+<pre class="code python">Sprite.<span class="me1">alive</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando el <em>Sprite</em> pertenece a uno o
+mas grupos.
+</p>
+
+</div>
+<!-- SECTION "alive" [3575-3876] -->
+<h2><a name="groups" id="groups">groups</a></h2>
+<div class="level2">
+
+
+
+<p>
+Lista los grupos que contienen este sprite.
+</p>
+<pre class="code python">Sprite.<span class="me1">groups</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> group_list</pre>
+
+
+<p>
+Retorna una lista de todos los grupos que contienen a este
+sprite.
+</p>
+
+</div>
+<!-- SECTION "groups" [3877-] --></div>
+</body>
+</html>

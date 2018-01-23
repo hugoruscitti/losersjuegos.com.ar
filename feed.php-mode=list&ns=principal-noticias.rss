@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos principal:noticias</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:02:09+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/asadetris_nuevo_desarrollo_colaborativo?rev=1246721210&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/biblioteca_simple_network_library_disponible_para_usarse_en_juegos_libres?rev=1239715464&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/habilitamos_la_descarga_de_ubuntu_personalizado?rev=1235482079&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/juego_de_talento?rev=1232461479&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/liberamos_asadetrismobile_para_celulares?rev=1247453418&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_complemento_to_do?rev=1232461479&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_sistema_de_noticias?rev=1232461483&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo?rev=1270358014&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo_para_grafistas?rev=1271153019&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_para_gimp?rev=1270273844&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_to_do?rev=1232461480&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_cofre?rev=1234833448&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_nieve?rev=1236272939&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_don_ceferino_para_celulares?rev=1261274898&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_manuales_de_python_y_c?rev=1234618497&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_una_nueva_tarjeta_de_referencia?rev=1257117786&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/principal/noticias/subimos_nuestro_nuevo_site?rev=1233858227&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/asadetris_nuevo_desarrollo_colaborativo?rev=1246721210&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-07-04T19:26:50+04:00</dc:date>
+        <title>Asadetris, nuevo desarrollo colaborativo</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/asadetris_nuevo_desarrollo_colaborativo?rev=1246721210&amp;do=diff</link>
+        <description>Iniciamos el desarrollo de un nuevo proyecto llamado “asadetris”. Consiste
+en crear un videojuego similar a tetris, pero de participación abierta. Todos
+pueden integrar el grupo de desarrollo.
+
+Para mas detalles puedes observar la propuesta en el foro de mensajes:</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/biblioteca_simple_network_library_disponible_para_usarse_en_juegos_libres?rev=1239715464&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-04-14T17:24:24+04:00</dc:date>
+        <title>Biblioteca Simple Network Library disponible para usarse en juegos libres</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/biblioteca_simple_network_library_disponible_para_usarse_en_juegos_libres?rev=1239715464&amp;do=diff</link>
+        <description>La biblioteca Simple Network Library alcanza la versión 0.0.0 por lo que ya esta disponible para usarse en aquellos juegos libres que necesiten comunicarse a través de la red. Soporta los nombres de direcciones IPv4 e IPv6 y los protocolos TCP y UDP. Soporta el manejo de grupos de conexiones para evitar el bloqueo al comproba el estado de los sockets.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-04-23T04:43:50+04:00</dc:date>
+        <title>Charla pilas en Mexico DF</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/charla_pilas_en_mexico_df?rev=1335141830&amp;do=diff</link>
+        <description>En este video se muestran algunos conceptos basicos sobre pilas-engine, una biblioteca
+para hacer juegos con python.
+
+El video se grabó en la reunion del grupo python-mexico, en las instalaciones
+de ikibox, en el DF (mexico).
+
+Mirar esté fantástico video</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-08-03T03:30:58+04:00</dc:date>
+        <title>principal:noticias:curso_de_experto_en_desarrollo_de_videojuegos_gratuito</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/curso_de_experto_en_desarrollo_de_videojuegos_gratuito?rev=1343950258&amp;do=diff</link>
+        <description>En ecetia.com nos encontramos un articulo escrito por Paola Mejia, el cual nos presenta un Curso de experto en Desarrollo de Videojuegos por la Universidad de Castilla-La Mancha. Son 4 libros en formato electrónico o físico. Cada uno cubre la programación gráfica, inteligencia artificial, networking, etc.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-06-24T20:48:56+04:00</dc:date>
+        <title>Don ceferino en HTML5 !!!</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/don_ceferino_en_html5?rev=1372092536&amp;do=diff</link>
+        <description>Gracias al proyecto emscripten, podemos disfrutar del videojuego
+Don Ceferino Hazaña directamente en el navegador:
+
+&lt;http://marco-c.github.io/ceferinoweb/&gt;
+
+
+Mas sobre emscripten:
+
+&lt;https://github.com/kripken/emscripten/wiki&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/habilitamos_la_descarga_de_ubuntu_personalizado?rev=1235482079&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-24T16:27:59+04:00</dc:date>
+        <title>Habilitamos la descarga de Ubuntu personalizado</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/habilitamos_la_descarga_de_ubuntu_personalizado?rev=1235482079&amp;do=diff</link>
+        <description>Luego de varios dias sin actualizar, hemos subido al servidor
+la imagen del DVD del sistema operativo Ubuntu GNU/Linux personalizado
+para desarrollar videojuegos. Este sistema funciona directamente
+desde el disco DVD, y contiene todo lo necesario para comenzar
+a realizar videojuegos: bibliotecas, manuales, ejemplos ... etc.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/juego_de_talento?rev=1232461479&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:39+04:00</dc:date>
+        <title>Juego de talento</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/juego_de_talento?rev=1232461479&amp;do=diff</link>
+        <description>Juego de talento es un “virtuality”, es decir un reality show vía Internet, con una de duración de 8 semanas, en donde de manera virtual se emula el mismo concepto que hemos visto en la televisión.
+
+Los concursantes de los 24 equipos resultaron seleccionados de entre más de 100 proyectos para desarrollar un videojuego. Durante la duración del “virtuality” tendrán que irlo mejorando conforme las instrucciones y correcciones del jurado, en las áreas de: guión, desarrollo de persona…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/liberamos_asadetrismobile_para_celulares?rev=1247453418&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-07-13T06:50:18+04:00</dc:date>
+        <title>Liberamos AsadetrisMobile, para celulares</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/liberamos_asadetrismobile_para_celulares?rev=1247453418&amp;do=diff</link>
+        <description>Hoy liberamos nuestro primer juego para celulares utilizando
+la tecnologia J2ME.
+
+
+	*  &lt;http://www.losersjuegos.com.ar/juegos/asadetrismobile&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_complemento_to_do?rev=1232461479&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:39+04:00</dc:date>
+        <title>Mejoras en el complemento To do</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_complemento_to_do?rev=1232461479&amp;do=diff</link>
+        <description>Se ha incorporado algo de funcionalidad adicional al plugin
+To do, ahora es posible crear listas con diferentes niveles y
+hay dos nuevos elementos para indicar fallos y aciertos.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_sistema_de_noticias?rev=1232461483&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:43+04:00</dc:date>
+        <title>Mejoras en el sistema de noticias</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/mejoras_en_el_sistema_de_noticias?rev=1232461483&amp;do=diff</link>
+        <description>A partir de ahora, el sistema de noticias permite a los usuarios opinar y obtener información sobre la categoría de la noticia.
+
+DokuWiki</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo?rev=1270358014&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-04-04T09:13:34+04:00</dc:date>
+        <title>Nuevo artículo</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo?rev=1270358014&amp;do=diff</link>
+        <description>Publicamos un nuevo artículo llamado Tweener, movimientos mas realistas para tus juegos.
+
+Visita la sección de artículos para ver mas detalles.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo_para_grafistas?rev=1271153019&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-04-13T14:03:39+04:00</dc:date>
+        <title>Nuevo artículo para grafistas</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_articulo_para_grafistas?rev=1271153019&amp;do=diff</link>
+        <description>Publicamos un nuevo artículo llamado Bases Técnicas Para Grafistas.
+
+Visita la sección de artículos para ver mas detalles.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_para_gimp?rev=1270273844&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-04-03T09:50:44+04:00</dc:date>
+        <title>Nuevo complemento para gimp</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_para_gimp?rev=1270273844&amp;do=diff</link>
+        <description>Inauguramos una nueva sección de la web donde publicaremos plugins
+para Gimp. Para comenzar subimos un conjunto de scripts para manejar
+sprites.
+
+Visita la sección Gimp Plugins para mas detalles.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_to_do?rev=1232461480&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:40+04:00</dc:date>
+        <title>Nuevo complemento To do</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_complemento_to_do?rev=1232461480&amp;do=diff</link>
+        <description>Se ha incorporado un nuevo complemento que permite crear listas
+de tareas de manera sencilla. Algo que utilizaremos en la sección 
+To Do, cosas para hacer.
+
+Aquí tiene un ejemplo:</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_cofre?rev=1234833448&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-17T04:17:28+04:00</dc:date>
+        <title>Nuevo ejemplo &quot;cofre&quot;</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_cofre?rev=1234833448&amp;do=diff</link>
+        <description>Se ha publicado un nuevo ejemplo llamado cofre que muestra
+una caja con dos estados, abierta y cerrada.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_nieve?rev=1236272939&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-03-05T20:08:59+04:00</dc:date>
+        <title>nuevo ejemplo &quot;nieve&quot;</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_ejemplo_nieve?rev=1236272939&amp;do=diff</link>
+        <description>Se ha publicado un nuevo ejemplo que muestra como implementar
+colisiones a nivel de pixel usando el objeto Mask de pygame.
+
+Ver la sección ejemplos</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-01T06:57:04+04:00</dc:date>
+        <title>Nuevo foro y feeds</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_foro_y_feeds?rev=1280631424&amp;do=diff</link>
+        <description>Hemos instalado una nueva versión de phpbb en nuestro
+foro, y además instalamos soporte de feeds para
+que se puedan leer los post nuevos directamente
+desde un lector de noticias.
+
+La dirección del foro es:
+
+&lt;http://www.losersjuegos.com.ar/foro&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-14T08:05:19+04:00</dc:date>
+        <title>nuevo modelo 3d</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/nuevo_modelo_3d?rev=1281758719&amp;do=diff</link>
+        <description>Publicamos un ejemplo sobre la biblioteca panda3d, en
+la que se muestra al cooperativista del videojuego
+ayni en 3D:
+
+&lt;http://www.losersjuegos.com.ar/referencia/ejemplos&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-10-19T01:21:45+04:00</dc:date>
+        <title>pilas en el evento Conurbania</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/pilas_en_el_evento_conurbania?rev=1287436905&amp;do=diff</link>
+        <description>Este 13 de Noviembre estaremos en el evento
+conurbania presentando el engine de videojuegos
+pilas.
+
+Visita la web del evento para mas detalles e incribirte:
+
+&lt;http://conurbania.org/pagina/cronograma-de-charlas&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-07T03:19:43+04:00</dc:date>
+        <title>Pilas ya tiene web propia</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/pilas_ya_tiene_web_propia?rev=1283815183&amp;do=diff</link>
+        <description>Como muchos ya saben, comenzamos a realizar
+un motor de videojuegos llamado Pilas. 
+
+[logotipo de pilas]
+
+Y la nueva noticias es que ahora tenemos web:
+
+&lt;http://www.pilas-engine.com.ar&gt;
+
+Para conocer mas del proyecto te invitamos a que
+veas la web y consultes en el foro.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_don_ceferino_para_celulares?rev=1261274898&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-12-20T05:08:18+04:00</dc:date>
+        <title>Publicamos Don Ceferino para Celulares</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_don_ceferino_para_celulares?rev=1261274898&amp;do=diff</link>
+        <description>Hoy publicamos la versión de nuestro clásico “Don Ceferino Hazaña” para
+dispositivos celulares.
+
+Puedes ver este juego en la sección Juegos Juegos</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_manuales_de_python_y_c?rev=1234618497&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-14T16:34:57+04:00</dc:date>
+        <title>Publicamos manuales de python y C</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_manuales_de_python_y_c?rev=1234618497&amp;do=diff</link>
+        <description>Publicamos dos manuales básicos de programación, uno sobre el lenguaje
+de programación C y otro sobre el lenguaje python. Ambos manuales han
+sido publicados por la Universitat Jaume I.
+
+Visite la sección libros para ver mas detalles.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-09T02:48:02+04:00</dc:date>
+        <title>Publicamos un nuevo artículo !!!</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_un_nuevo_articulo?rev=1281307682&amp;do=diff</link>
+        <description>Hoy publicamos un nuevo artículo que explica
+cómo instalar la biblioteca pySFML en windows:
+
+&lt;http://www.losersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows&gt;</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_una_nueva_tarjeta_de_referencia?rev=1257117786&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-11-02T02:23:06+04:00</dc:date>
+        <title>publicamos una nueva tarjeta de referencia</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_una_nueva_tarjeta_de_referencia?rev=1257117786&amp;do=diff</link>
+        <description>En la sección aputen Apuntes y guias breves encontrarás una
+nueva tarjeta sobre pySFML, una biblioteca para hacer juegos
+desde python.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T18:03:12+04:00</dc:date>
+        <title>Publicamos video de pilas en conurbania</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/publicamos_video_de_pilas_en_conurbania?rev=1303826592&amp;do=diff</link>
+        <description>Publicamos el video de pilas en conurbania y agregamos
+enlaces al proyecto pilas en la web:
+
+
+	*  Pilas, un motor para hacer videojuegos diferente</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/principal/noticias/subimos_nuestro_nuevo_site?rev=1233858227&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-05T21:23:47+04:00</dc:date>
+        <title>Subimos nuestro nuevo site</title>
+        <link>http://www.loosersjuegos.com.ar/principal/noticias/subimos_nuestro_nuevo_site?rev=1233858227&amp;do=diff</link>
+        <description>Hoy publicamos nuestro nuevo sitio web con formato wiki. El
+sistema web está basado en dokuwiki, un motor de sitios web
+muy fácil de utilizar.
+
+Junto a la actualización del sitio web hemos publicado la
+traducción completa de la documentación
+de pygame 1.8 al español.</description>
+    </item>
+</rdf:RDF>

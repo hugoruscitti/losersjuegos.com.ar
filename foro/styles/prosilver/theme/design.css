@@ -1,0 +1,1779 @@
+/**
+ * Design elements for default Template
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author Anika Henke <henke@cosmocode.de>
+ */
+
+/* -------------- general elements --------------- */
+
+#previsualizacion
+{
+    display: none;
+}
+
+
+body {
+	font-family: sans-serif, serif;
+	color: rgb(60, 60, 60);
+	background-color: rgb(200, 200, 190);
+        font-size: 11pt;
+}
+
+
+/* the document */
+div.dokuwiki
+{
+	background-color: white;
+	margin: 5px;
+	background-image: url('ima/menu.png');
+	background-repeat: repeat-y;
+	border: 1px solid black;
+        padding:0;
+}
+
+div.dokuwiki div.notify
+{
+    background-color: #ffffcc;
+    border-bottom: 1px solid black;
+
+}
+
+div.dokuwiki div.page {
+  margin: 4px 2em 0 1em;
+  text-align: justify;
+}
+
+div.dokuwiki table {
+  font-size: 100%;
+}
+
+div.dokuwiki tr,
+div.dokuwiki td,
+div.dokuwiki th {
+}
+
+div.dokuwiki img {
+  border: 0;
+}
+
+div.dokuwiki p,
+div.dokuwiki blockquote,
+div.dokuwiki table,
+{
+  margin: 0 0 1.0em 0;
+}
+div.dokuwiki pre 
+{
+}
+
+div.dokuwiki hr {
+  border: 0px;
+  border-top: 1px solid __border__;
+  text-align: center;
+  height: 0px;
+}
+
+div.dokuwiki div.nothing {
+  text-align: center;
+  margin: 2em;
+}
+
+/* ---------------- forms ------------------------ */
+
+div.dokuwiki form {
+  border: none;
+  display: inline;
+}
+
+div.dokuwiki label.block {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+}
+
+div.dokuwiki label.simple {
+  display: block;
+  text-align: left;
+  font-weight: normal;
+}
+
+div.dokuwiki label.block input.edit {
+  width: 50%;
+}
+
+div.dokuwiki fieldset {
+  width: 300px;
+  text-align: center;
+  border: 1px solid __border__;
+  padding: 1em;
+  margin: auto;
+}
+
+div.dokuwiki textarea.edit {
+  font-family: monospace;
+  font-size: 14px;
+  color: __text__;
+  background-color: __background__;
+  border: 1px solid __border__;
+  padding: 0.3em 0 0 0.3em;
+  width: 100%;
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body div.dokuwiki textarea.edit {
+    /*
+  background:  __background__ url("images/inputshadow.png.html") repeat-x top;
+  */
+}
+
+div.dokuwiki input.edit,
+div.dokuwiki select.edit {
+  font-size: 100%;
+  border: 1px solid gray;
+  color: __text__;
+  background-color: __background__;
+  vertical-align: middle;
+  margin: 1px;
+  padding: 0.20em 0.3em;
+  display: inline;
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body div.dokuwiki input.edit,
+html>body div.dokuwiki select.edit {
+    /*
+  background:  __background__ url("images/inputshadow.png.html") repeat-x top;
+  */
+}
+
+div.dokuwiki select.edit {
+  padding: 0.1em 0;
+}
+
+div.dokuwiki input.missing {
+  font-size: 100%;
+  border: 1px solid __border__;
+  color: __text__;
+  background-color: #ffcccc;
+  vertical-align: middle;
+  margin: 1px;
+  padding: 0.20em 0.3em;
+  display: inline;
+}
+
+/* disabled style - not understood by IE */
+div.dokuwiki textarea.edit[disabled],
+div.dokuwiki textarea.edit[readonly],
+div.dokuwiki input.edit[disabled],
+div.dokuwiki input.edit[readonly],
+div.dokuwiki select.edit[disabled] {
+  background-color: __background_neu__!important;
+  color: __text_neu__!important;
+}
+
+/* edit form */
+div.dokuwiki div.toolbar,
+div.dokuwiki div#wiki__editbar {
+   margin: 2px 0;
+   text-align: left;
+}
+div.dokuwiki div#size__ctl {
+   float: right;
+   width: 60px;
+   height: 2.7em;
+}
+div.dokuwiki #size__ctl img {
+   cursor: pointer;
+}
+div.dokuwiki div#wiki__editbar div.editButtons {
+   float: left;
+   padding: 0 1.0em 0.7em 0;
+}
+div.dokuwiki div#wiki__editbar div.summary {
+   float: left;
+}
+div.dokuwiki .nowrap {
+   white-space: nowrap;
+}
+div.dokuwiki div#draft__status {
+  float: right;
+  color: __text_alt__;
+}
+
+/* --------- buttons ------------------- */
+
+
+div.dokuwiki input.button,
+div.dokuwiki button.button {
+    /*
+  border: 1px solid __border__;
+  color: __text__;
+  background-color: __background__;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 100%;
+  cursor: pointer;
+  margin: 1px;
+  padding: 0.125em 0.4em;
+  */
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body div.dokuwiki input.button,
+html>body div.dokuwiki button.button {
+    /*
+  background:  __background__ url("images/buttonshadow.png.html") repeat-x bottom;
+  */
+}
+
+* html div.dokuwiki input.button,
+* html div.dokuwiki button.button {
+    /*
+  height: 1.8em;
+  */
+}
+
+div.dokuwiki div.secedit input.button {
+    /*
+  border: 1px solid __border__;
+  color: __text__;
+  background-color: __background__;
+  vertical-align: middle;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  cursor: pointer;
+  float: right;
+  display: inline;
+    */
+float: right;
+color: gray;
+border: 0;
+background: none;
+cursor: pointer;
+
+}
+
+div.dokuwiki div.secedit input.button:hover
+{
+    color: black;
+}
+
+
+
+/* ----------- page navigator ------------- */
+
+div.dokuwiki div.pagenav {
+    margin: 1em 0 0 0;
+}
+
+div.dokuwiki div.pagenav-prev {
+    text-align: right;
+    float: left;
+    width: 49%
+}
+
+div.dokuwiki div.pagenav-next {
+    text-align: left;
+    float: right;
+    width: 49%
+}
+
+/* --------------- Links ------------------ */
+
+div.dokuwiki a:link,
+div.dokuwiki a:visited {
+  color: __extern__;
+}
+div.dokuwiki a:hover,
+div.dokuwiki a:active {
+  color: __text__;
+  color: blue;
+  text-decoration: underline;
+}
+
+div.dokuwiki h1 a,
+div.dokuwiki h2 a,
+div.dokuwiki h3 a,
+div.dokuwiki h4 a,
+div.dokuwiki h5 a,
+div.dokuwiki a.nolink {
+
+  text-decoration: none !important;
+}
+
+div.dokuwiki h1 a:hover,
+div.dokuwiki h2 a:hover,
+div.dokuwiki h3 a:hover,
+div.dokuwiki h4 a:hover,
+div.dokuwiki h5 a:hover
+{
+    color:  rgb(62, 122, 199);
+}
+
+/* external link */
+div.dokuwiki a.urlextern {
+  background: transparent url("images/link_icon.gif.html") 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+/* windows share */
+div.dokuwiki a.windows {
+  background: transparent url("images/windows.gif.html") 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+/* interwiki link (icon are set by dokuwiki) */
+div.dokuwiki a.interwiki {
+    padding-left: 20px;
+}
+
+/* link to some embedded media */
+div.dokuwiki a.media {
+}
+
+div.dokuwiki a.urlextern:link,
+div.dokuwiki a.windows:link,
+div.dokuwiki a.interwiki:link {
+  color: __extern__;
+}
+
+div.dokuwiki a.urlextern:visited,
+div.dokuwiki a.windows:visited,
+div.dokuwiki a.interwiki:visited {
+  color: purple;
+}
+div.dokuwiki a.urlextern:hover,
+div.dokuwiki a.urlextern:active,
+div.dokuwiki a.windows:hover,
+div.dokuwiki a.windows:active,
+div.dokuwiki a.interwiki:hover,
+div.dokuwiki a.interwiki:active {
+  color: __text__;
+  color: blue;
+}
+
+/* email link */
+div.dokuwiki a.mail {
+  background: transparent url("images/mail_icon.gif.html") 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+/* existing wikipage */
+div.dokuwiki a.wikilink1 {
+  color: __existing__;
+}
+
+/* not existing wikipage */
+div.dokuwiki a.wikilink2 {
+  color: __missing__ !important;
+}
+
+/* ------------- Page elements ----------------- */
+
+div.dokuwiki div.preview {
+  clear: left;
+  padding: 10px;
+  border: 2px solid gray;
+}
+
+div.dokuwiki div.breadcrumbs {
+  background-color: __background_neu__;
+  color: __text_neu__;
+  font-size: 80%;
+  padding: 0 0 0 4px;
+  border-bottom: 1px solid gray;
+}
+
+div.dokuwiki span.user {
+  color: __text_other__;
+  font-size: 90%;
+}
+
+div.dokuwiki li.minor {
+  color: __text_neu__;
+  font-style: italic;
+}
+
+/* embedded images */
+div.dokuwiki img.media {
+  margin: 3px;
+}
+
+div.dokuwiki img.medialeft {
+  border: 0;
+  float: left;
+  margin: 0 1.5em 0 0;
+}
+
+div.dokuwiki img.mediaright {
+  border: 0;
+  float: right;
+  margin: 0 0 0 1.5em;
+}
+
+div.dokuwiki img.mediacenter {
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* smileys */
+div.dokuwiki img.middle {
+  vertical-align: middle;
+}
+
+div.dokuwiki acronym {
+  cursor: help;
+  border-bottom: 1px dotted __text__;
+}
+
+/* general headline setup */
+div.dokuwiki h1,
+div.dokuwiki h2,
+div.dokuwiki h3,
+div.dokuwiki h4,
+div.dokuwiki h5 {
+    color:  rgb(62, 122, 199);
+    background-color: inherit;
+    margin: 2em 0 1em 0;
+    padding: 0.5em 0 0 0;
+}
+
+div.dokuwiki h1
+{
+    margin-top: 0;
+}
+
+/* special headlines */
+div.dokuwiki h1 {font-size: 17pt; }
+div.dokuwiki h2 {font-size: 15pt; }
+div.dokuwiki h2 {font-size: 14pt; }
+
+/* indent different sections */
+div.dokuwiki div.level1 {margin-left: 0.1em;}
+div.dokuwiki div.level2 {margin-left: 0.2em;}
+div.dokuwiki div.level3 {margin-left: 0.3em;}
+div.dokuwiki div.level4 {margin-left: 0.4em;}
+div.dokuwiki div.level5 {margin-left: 0.5em;}
+
+/* unordered lists */
+div.dokuwiki ul {
+  line-height: 1.5em;
+  list-style-type: square;
+  list-style-image: none;
+  margin: 0 0 0.5em 1.5em;
+  padding-left: 1em;
+  margin-left: 1em;
+  color: __text_alt__;
+}
+
+/* ordered lists */
+div.dokuwiki ol {
+  line-height: 1.5em;
+  list-style-image: none;
+  margin: 0 0 0.5em 1.5em;
+  color: __text_alt__;
+  font-weight: bold;
+
+  padding-left: 1em;
+  margin-left: 1em;
+
+}
+
+/* the list items overriding the ul/ol definition */
+div.dokuwiki .li {
+  color: __text__;
+  font-weight: normal;
+}
+
+div.dokuwiki ol {list-style-type: decimal}
+div.dokuwiki ol ol {list-style-type: upper-roman}
+div.dokuwiki ol ol ol {list-style-type: lower-alpha}
+div.dokuwiki ol ol ol ol {list-style-type: lower-greek}
+
+div.dokuwiki li.open {
+  list-style-image: url("images/open.gif.html");
+    /*list-style-type: circle;*/
+}
+
+div.dokuwiki li.closed {
+  list-style-image: url("images/closed.gif.html");
+    /*list-style-type: disc;*/
+}
+
+div.dokuwiki blockquote {
+  border-left: 2px solid __border__;
+  padding-left: 3px;
+}
+
+div.dokuwiki pre {
+    padding: 5px;
+  color: __text__;
+  border: 1px solid __border__;
+}
+
+/* code blocks by indention */
+div.dokuwiki pre.pre {
+  background-color: __background_other__;
+}
+
+/* code blocks by code tag */
+div.dokuwiki pre.code {
+  border: 1px solid #cccccc;
+  margin: 2em;
+  margin-left: 1em;
+  padding-left: 10px;
+  background-color: rgb(255, 249, 235);
+}
+
+/* inline code words */
+div.dokuwiki code {
+    color: black;
+}
+
+/* code blocks by file tag */
+div.dokuwiki pre.file {
+  background-color: __background_alt__;
+}
+
+/* inline tables */
+div.dokuwiki table.inline {
+  background-color: __background__;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+div.dokuwiki table.inline th {
+  padding: 5px;
+  border: 1px solid __border__;
+  background-color: __background_alt__;
+}
+
+div.dokuwiki table.inline td {
+  padding: 5px;
+  border: 1px solid __border__;
+}
+
+/* ---------- table of contents ------------------- */
+
+div.dokuwiki div.toc {
+  margin: 1.2em 0 0 2em;
+  width: 200px;
+  font-size: 80%;
+  display: none;
+}
+
+div.dokuwiki div.tocheader {
+  border: 1px solid __border__;
+  background-color: __background_alt__;
+  text-align: left;
+  font-weight: bold;
+  padding: 3px;
+  margin-bottom: 2px;
+}
+
+div.dokuwiki div.tocheader img {
+  width: 0.8em;
+  height: 0.8em;
+  float: right;
+  margin: 0.3em 3px 0 0;
+  cursor: pointer;
+}
+
+div.dokuwiki #toc__inside {
+  border: 1px solid __border__;
+  background-color: __background__;
+  text-align: left;
+  padding: 0.5em 0 0.7em 0;
+}
+
+div.dokuwiki ul.toc {
+  list-style-type: none;
+  list-style-image: none;
+  line-height: 1.2em;
+  padding-left: 1em;
+  margin: 0;
+}
+
+div.dokuwiki ul.toc li {
+  background: transparent url("images/tocdot2.gif.html") 0 0.6em no-repeat;
+  padding-left: 0.4em;
+}
+
+div.dokuwiki ul.toc li.clear {
+  background-image: none;
+  padding-left: 0.4em;
+}
+
+div.dokuwiki a.toc:link,
+div.dokuwiki a.toc:visited {
+  color: __extern__;
+}
+
+div.dokuwiki a.toc:hover,
+div.dokuwiki a.toc:active {
+  color: __text__;
+}
+
+/* ---------------------------- Diff rendering --------------------------*/
+div.dokuwiki table.diff {
+  background-color: __background__;
+  width: 100%;
+}
+div.dokuwiki td.diff-blockheader {
+  font-weight: bold;
+}
+div.dokuwiki table.diff th {
+  border-bottom: 1px solid __border__;
+  font-size: 120%;
+  width: 50%;
+  font-weight: normal;
+  text-align: left;
+}
+div.dokuwiki table.diff td {
+  font-family: monospace;
+  font-size: 100%;
+}
+div.dokuwiki td.diff-addedline {
+  background-color: #ddffdd;
+}
+div.dokuwiki td.diff-deletedline {
+    background-color: #ffffbb;
+}
+div.dokuwiki td.diff-context {
+    background-color: __background_neu__;
+}
+div.dokuwiki span.diffchange {
+  color: red;
+}
+
+/* --------------------- footnotes -------------------------------- */
+
+div.dokuwiki div.footnotes {
+  clear: both;
+  border-top: 1px solid __border__;
+  padding-left: 1em;
+  margin-top: 1em;
+}
+
+div.dokuwiki div.fn {
+  font-size: 90%;
+}
+
+div.dokuwiki a.fn_top {
+  vertical-align: super;
+  font-size: 80%;
+}
+
+div.dokuwiki a.fn_bot {
+  vertical-align: super;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+/* insitu-footnotes */
+div.insitu-footnote {
+  font-size: 80%;
+  line-height: 1.2em;
+  border: 1px solid __border__;
+  background-color: __background_other__;
+  text-align: left;
+  padding: 4px;
+  max-width: 40%;    /* IE's width is handled in javascript */
+}
+
+/* overcome IE issue with one line code or file boxes which require h. scrolling */
+* html .insitu-footnote pre.code,
+* html .insitu-footnote pre.file {
+  padding-bottom: 18px;
+}
+
+/* --------------- search result formating --------------- */
+div.dokuwiki .search_result {
+  margin-bottom: 6px;
+  padding: 0 10px 0 30px;
+}
+
+div.dokuwiki .search_snippet {
+  color: black;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+div.dokuwiki .search_sep {
+  color: __text__;
+}
+
+div.dokuwiki .search_hit {
+  color: __text__;
+  background-color: __highlight__;
+}
+
+div.dokuwiki div.search_quickresult {
+  margin: 0 0 15px 30px;
+  padding: 0 10px 10px 0;
+  border-bottom: 1px dashed __border__;
+}
+div.dokuwiki div.search_quickresult h3 {
+  margin: 0 0 1.0em 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+div.dokuwiki ul.search_quickhits {
+  margin: 0 0 0.5em 1.0em;
+}
+
+div.dokuwiki ul.search_quickhits li {
+  margin: 0 1.0em 0 1.0em;
+  float:left;
+  width: 30%;
+}
+
+/* ------------------ Additional ---------------------- */
+
+div.footerinc {
+    text-align: center;
+    font-size: x-small;
+}
+.footerinc a img {
+    opacity: 0.5;
+    border: 0;
+}
+
+.footerinc a:hover img {
+    opacity: 1;
+}
+
+/* ---------- AJAX quicksearch ----------- */
+
+div.dokuwiki div.ajax_qsearch {
+  position: absolute;
+  right: 237px;;
+  width: 200px;
+  opacity: 0.9;
+  display: none;
+  font-size: 80%;
+  line-height: 1.2em;
+  border: 1px solid __border__;
+  background-color: __background_other__;
+  text-align: left;
+  padding: 4px;
+}
+
+/* --------- Toolbar -------------------- */
+button.toolbutton {
+  background-color: __background__;
+  padding: 0px;
+  margin: 0 1px 0 0;
+  border: 1px solid __border__;
+  cursor: pointer;
+}
+
+/* nice alphatransparency background except for IE <7 */
+html>body button.toolbutton {
+  /* background:  __background__ url("images/buttonshadow.png.html") repeat-x bottom; */
+
+    padding: 2px;
+    margin-right: 3px;
+    margin-top: 3px;
+    background-color: rgb(250, 250, 250);
+
+}
+
+div.picker {
+  width: 250px;
+  border: 1px solid __border__;
+  background-color: __background_alt__;
+}
+
+button.pickerbutton {
+  padding: 0px;
+  margin: 0 1px 1px 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 80%;
+  cursor: pointer;
+}
+
+/* ---------- Spellchecking ------------- */
+
+div.dokuwiki a.spell_error {
+  color: #f00;
+  text-decoration: underline;
+}
+
+div.dokuwiki div#spell__suggest {
+  background-color: __background__;
+  padding: 2px;
+  border: 1px solid __text__;
+  font-size: 80%;
+  display: none;
+}
+
+div.dokuwiki div#spell__result {
+  border: 1px solid __border__;
+  color: __text__;
+  font-size: 14px;
+  padding: 3px;
+  background-color: __background_other__;
+  display: none;
+}
+
+div.dokuwiki span.spell_noerr {
+  color: #093;
+}
+
+div.dokuwiki span.spell_wait {
+  color: #06c;
+}
+
+/* ---------------  Image Details  ----------------- */
+
+div.dokuwiki div.img_big {
+  float: left;
+  margin-right: 0.5em;
+}
+
+div.dokuwiki dl.img_tags dt {
+  font-weight: bold;
+  background-color: __background_alt__;
+}
+div.dokuwiki dl.img_tags dd {
+  background-color: __background_neu__;
+}
+
+div.dokuwiki div.imagemeta {
+  color: __text_neu__;
+  font-size: 70%;
+  line-height: 95%;
+}
+
+div.dokuwiki div.imagemeta img.thumb {
+  float:left;
+  margin-right: 0.1em;
+}
+
+
+
+
+
+
+
+/**
+ * Design elements for sidebar
+*/
+
+/* the document */
+div.dokuwiki div.page_with_sidebar {
+  padding-left: 180px;
+  padding-right: 200px;
+}
+
+div.dokuwiki div.page_with_sidebar input
+{
+    border: 1px solid black;
+}
+
+
+
+/* ---- Sidebar ---- */
+div.dokuwiki div#sidebar {
+    margin:0;
+width: 140px;
+float: left;
+padding-left: 10px;
+padding-bottom: 2em;
+font-size: 10pt;
+}
+
+
+div.dokuwiki div#sidebar ul {
+    margin-left: 3em;
+    padding-left: 0;
+    margin-bottom: 1em;
+}
+
+div.dokuwiki div#sidebar ul ul {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+div.dokuwiki div#sidebar ul li {
+margin-bottom: 4px;
+}
+
+div.dokuwiki div#sidebar ul li.clear {
+  background-image: none;
+}
+
+div.dokuwiki div#sidebar a {
+  text-decoration:none;
+}
+
+div.dokuwiki div#sidebar a:hover {
+color: __text__;
+text-decoration:underline; 
+}
+
+div.dokuwiki div#sidebar a.urlextern {
+background: transparent;
+padding: 0;  
+color: __extern__;
+text-decoration:none;
+}
+
+/* special headlines */
+div.dokuwiki div#sidebar h1 a{
+    font-size: 10pt; 
+    border-bottom: none;
+    font-weight: normal;
+}
+
+div.dokuwiki div#sidebar p
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/**
+ * Tableless Layout for default template
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author moraes <moraes@tipos.com.br>
+ */
+
+
+/* -------------- top row --------------- */
+div.dokuwiki .header {
+	background-color: rgb(194, 233, 187);
+	background-image: url('ima/fondo.png');
+	height: 50px;
+}
+
+
+table#formulario
+{
+    background-color: #d1e6c5;
+    border: 1px solid gray;
+    margin: 10px;
+}
+
+div.dokuwiki .pagename {
+  float: right;
+  font-weight: bolder;
+  color: __background_alt__;
+  text-align: left;
+  vertical-align: middle;
+  padding: 10px 1px 0 0;
+}
+
+div.dokuwiki .pagename a {
+  color: __extern__ !important;
+  text-decoration: none !important;
+}
+
+
+
+span.small
+{
+	font-size: x-small;
+}
+
+div.dokuwiki .logo a {
+  color: __background_alt__ !important;
+  text-decoration: none !important;
+  font-variant: small-caps;
+  letter-spacing: 2pt;
+}
+
+div.dokuwiki .tagline {
+  float: left;
+  color: __text_neu__;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+  padding: 10px 0 0 30px;
+}
+
+
+/* ---------------  top and bottom bar ---------------- */
+div.dokuwiki .bar {
+  border-top: 1px solid black;
+  background: #ccc;
+  padding: 5px;
+  clear: both;
+  font-size: small;
+}
+
+div.dokuwiki .bar-left {
+  float: left;
+}
+
+div.dokuwiki .bar-right {
+  float: right;
+  text-align: right;
+}
+
+div.dokuwiki #bar__bottom {
+}
+
+/* ------------- File Metadata ----------------------- */
+
+div.dokuwiki div.meta {
+  clear: both;
+  margin-top: 1em;
+  color: __text_alt__;
+  font-size: 70%;
+}
+
+div.dokuwiki div.meta div.user {
+  float: left;
+}
+
+div.dokuwiki div.meta div.doc{
+  text-align: right;
+  padding: 5px;
+  font-size: small;
+}
+
+
+/* ---- Current ID highlighting ---- */
+div.dokuwiki .curid {
+    text-decoration: underline;
+}
+
+
+
+/********************************/
+
+#navigator_tab
+{
+    padding: 0;
+    margin: 0;
+    padding-top: 30px;
+    height: 20px;
+    background: url('inferior.png.html') repeat-x bottom;
+}
+
+#tabnav ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+#tabnav li
+{
+    margin: 0; 
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+#tabnav a:link, #tabnav a:visited, #tabnav a span, #tabnav a
+{
+    float: right;
+    display: block;
+    background: #ccc;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 2px 10px 2px 10px;
+    margin-right: 4px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #666;
+}
+#tabnav a:link.active, #tabnav a:visited.active
+{
+    border-bottom: 1px solid #f5f5f5;
+    background: #f5f5f5;
+    color: #000;
+}
+#tabnav a:hover
+{
+    background: #fff;
+}
+
+
+ #tabnav ul li a {
+     display: inline-block;
+     white-space: nowrap;
+     width: 1px;
+ }
+
+/* Commented backslash hack hides rule from IE5-Mac \*/
+#tabnab a, #tabnav a span
+{
+float: none
+}
+/* End IE5-Mac hack */
+
+
+
+/********************************/
+
+div.barra_botones
+{
+    padding: 5px;
+    padding-left: 10px;
+    font-size: small;
+    float: right;
+    text-align: right;
+    text-align: center;
+    width: 170px;
+}
+
+    div.barra_botones span#user
+    {
+        color: gray;
+        font-size: x-small;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    div.barra_botones input.button
+    {
+        border: 1px solid white;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        margin: auto;
+        margin-bottom: 3px;
+        cursor: pointer;
+    }
+
+    div.barra_botones input.button:hover
+    {
+        border: 1px solid black;
+        background-color: rgb(255, 255, 200);
+    }
+
+    div.barra_botones div.caja
+    {
+        border: 1px solid #3366cc;
+        margin-bottom: 15px;
+    }
+
+    div.barra_botones div.caja h5
+    {
+        margin: 0;
+        margin-bottom: 3px;
+        padding: 3px;
+        background-color: #e0e5ff;
+    }
+
+
+div.barrasuperior
+{
+    margin: 0;
+    background-color: white;
+    padding-left: 5px;
+    font-size: small;
+    border-bottom: 1px solid black;
+}
+
+
+
+#cabecera #logo
+{
+    background-image: url('ima/logo_1.png');
+    width: 286px;
+    height: 49px;
+    float: left;
+    padding-left: 300px;
+    background-repeat: no-repeat;
+}
+
+#secciones
+{
+    float: left;
+    padding-left: 5px;
+    padding-bottom: 2em;
+    margin-top: 1em;
+}
+
+    #secciones h1
+    {
+        border: 0;
+        font-size: 10pt;
+        vertical-align: middle;
+        margin-top: 0;
+    }
+
+    #secciones h1 + h1, #secciones ul + h1
+    {
+    }
+
+    #secciones ul
+    {
+    }
+
+        #secciones ul li
+        {
+            margin-bottom: 0;
+        }
+
+        #secciones ul li em
+        {
+            font-size: xx-small;
+            color: gray;
+            font-style: normal;
+        }
+
+    #secciones a.link, #secciones a, #secciones a:visited
+    {
+        color: black;
+        text-decoration: none;
+    }
+
+    #secciones h1 a, #secciones h1 a:visited
+    {
+        color: rgb(62, 122, 199);
+    }
+
+    #secciones a:hover
+    {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    #secciones span
+    {
+        background-repeat: no-repeat;
+        background-position: left middle;
+        display: block;
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5em;
+    }
+
+        #secciones span.principal
+        {
+            background-image: url('iconos/secciones/principal.png');
+        }
+
+        #secciones span.noticias
+        {
+            background-image: url('iconos/secciones/noticias.png');
+        }
+
+        #secciones span.juegos
+        {
+            background-image: url('iconos/secciones/juegos.png');
+        }
+
+        #secciones span.traducciones
+        {
+            background-image: url('iconos/secciones/traducciones.png.html');
+        }
+
+        #secciones span.software
+        {
+            background-image: url('iconos/secciones/software.png.html');
+        }
+
+        #secciones span.referencia
+        {
+            background-image:url('iconos/secciones/referencia.png');
+        }
+
+        #secciones span.galeria
+        {
+            background-image: url('iconos/secciones/galeria.png');
+        }
+
+        #secciones span.comunidad
+        {
+            background-image: url('iconos/secciones/comunidad.png');
+        }
+
+        #secciones span.links
+        {
+            background-image: url('iconos/secciones/links.png');
+        }
+
+
+div.subpage
+{
+    padding: 5pt;
+    margin-top: 20pt;
+}
+
+    div.subpage img
+    {
+        border: 1px solid gray;
+        float: left;
+    }
+
+    div.subpage div.texto
+    {
+        margin-left: 90px;
+        margin-bottom: 5px;
+        font-size: small;
+        padding: 5px;
+        border: 1px solid #bbbbdd;
+        background: #e4ecf8;
+    }
+
+        div.subpage div.texto h1
+        {
+            padding-top: 0;
+            margin-top: 0;
+            font-size: 11pt;
+            font-weight: bolder;
+        }
+
+		div.subpage h1 a
+		{
+                    text-decoration: none;
+		}
+
+
+div.link
+{
+    padding: 5pt;
+    margin-top: 20pt;
+}
+
+    div.link img
+    {
+        border: 1px solid gray;
+        float: left;
+    }
+
+    div.link div.texto
+    {
+        margin-left: 90px;
+        margin-bottom: 5px;
+        font-size: small;
+        padding: 5px;
+        border: 1px solid #bbbbdd;
+        background: #e4ecf8;
+    }
+
+        div.link div.texto h1
+        {
+            padding-top: 0;
+            margin-top: 0;
+            font-size: 11pt;
+            font-weight: bolder;
+        }
+
+		div.link h1 a
+		{
+                    text-decoration: none;
+		}
+
+#pie
+{
+    margin:0;
+    padding:0;
+	background-color: rgb(240, 240, 240);
+	border-top: 1px solid black;
+	border-right: 0;
+
+	margin: auto;
+	clear: both;
+
+	font-size: 8pt;
+	text-align: center;
+
+	padding: 0.5em;
+}
+
+	#pie ul
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#pie li
+	{
+		padding: 5px;
+		margin-left: 2em;
+		padding-left: 25px;
+		background-repeat: no-repeat;
+		background-position: 0.5em center;
+		margin-bottom: 0.25em;
+		display: inline;
+	}
+
+		#pie li.contactenos
+		{
+			background-image: url('iconos/mini/contactenos.png');
+		}
+
+		#pie li.comunidad
+		{
+			background-image: url('iconos/mini/comunidad.png');
+		}
+
+		#pie li.foro
+		{
+			background-image: url('iconos/mini/foro.png');
+		}
+
+
+		#pie li.cc
+		{
+			background-image: url('iconos/mini/cc.png');
+		}
+
+	#pie a.link, #pie a, #pie a:visited
+	{
+		color: rgb(100, 100, 255);
+		text-decoration: none;
+	}
+
+	#pie h1 a, #pie h1 a:visited
+	{
+		color: rgb(62, 122, 199);
+	}
+
+	#pie a:hover
+	{
+		color: blue;
+		text-decoration: underline;
+	}
+
+
+	
+
+
+		
+#panel
+{
+	text-align: right;
+	padding: 0;
+	margin:0;
+	border: 1px solid red;
+}
+
+	#panel form
+	{
+
+		padding: 5px;
+		margin: 0;
+	}
+
+	#panel form input
+	{
+		border: 1px solid black;
+		padding: 0;
+		margin: 0;
+	}
+
+	#panel form input:hover
+	{
+		background-color: white;
+	}
+
+
+
+#cuadro_articulo
+{
+	float: right;
+	border: 1px solid black;
+	padding: 0;
+	background-image: url('ima/cuadro_articulo.png');
+	font-size: x-small;
+        text-align: center;
+}
+
+	#cuadro_articulo h6
+	{
+		font-size: x-small;
+		padding: 2px;
+		margin: 0;
+                color: white;
+                text-align: center;
+                background-color: gray;
+	}
+
+	#cuadro_articulo ul
+	{
+		padding: 0.5em;
+		margin: 0;
+	}
+
+		#cuadro_articulo ul li
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+span.small
+{
+	font-size: x-small;
+}
+
+ul li.regresar
+{
+	background-image: url('iconos/mini/regresar.png');
+}
+
+
+
+
+
+
+div.dokuwiki div.comment_wrapper {
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  border: 1px solid rgb(100, 100, 200);
+}
+
+div.dokuwiki div.comment_form {
+}
+
+div.dokuwiki #discussion__comment_form label input.edit {
+  width: 75%;
+}
+
+div.dokuwiki .comment_head {
+  color: __text_neu__;
+  clear: both;
+}
+
+div.dokuwiki .comment_head abbr {
+  border-bottom: 1em;
+}
+
+div.dokuwiki .comment_head span.author {
+  background: transparent url("images/user.gif.html") 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+div.dokuwiki .comment_head abbr.published {
+  background: transparent url("images/date.gif.html") 0px 1px no-repeat;
+  padding: 1px 0px 1px 16px;
+}
+
+div.dokuwiki .comment_body {
+    border: 0;
+  border-left: 2px solid gray;
+  padding: 0.5em;
+}
+
+div.dokuwiki div.comment_replies {
+}
+
+div.dokuwiki div.comment_hidden {
+  opacity: 0.5;
+}
+
+div.dokuwiki div.comment_buttons {
+  float: right;
+  font-size: 10px;
+  cursor: pointer;
+  margin-top: -21px;
+  padding-bottom: 1em;
+}
+
+div.dokuwiki div.comment_buttons input.button {
+  border: 1px solid __border__;
+  color: __text__;
+  background-color: __background__;
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 0 0 0.5em;
+}
+
+div.dokuwiki div.newthread_form {
+  clear: both;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+div.dokuwiki #discussion__newthread_form input.edit {
+  width: 95%;
+}
+
+div.dokuwiki ul.admin_discussion li.hidden {
+  display: list-item;
+  opacity: 0.5;
+}
+
+div.dokuwiki ul.admin_discussion span.abstract {
+  color: __text_neu__;
+}
+
+
+div.gallery img
+{
+    border: 1px solid black;
+}
+
+
+
+/* Titulares de las paginas principales y secciones mas comunes */
+
+h1 a#comunidad
+{
+    background-image: url('iconos/secciones/comunidad.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+h1 a#principal
+{
+    background-image: url('iconos/secciones/principal.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+h1 a#bienvenido
+{
+    background-image: url('iconos/secciones/principal.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+h1 a#juegos
+{
+    background-image: url('iconos/secciones/juegos.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+h1 a#software
+{
+    background-image: url('iconos/secciones/software.png.html');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+h1 a#referencia
+{
+    background-image: url('iconos/secciones/referencia.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+h1 a#galeria
+{
+    background-image: url('iconos/secciones/galeria.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+h1 a#links
+{
+    background-image: url('iconos/secciones/links.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+h2 a#descargas
+{
+    background-image: url('iconos/secciones/descargas.png.html');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+h1 a#noticias
+{
+    background-image: url('iconos/secciones/noticias.png');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+h1 a#traducciones
+{
+    background-image: url('iconos/secciones/traducciones.png.html');
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+
+
+div.filelist {
+        background-color: rgb(245, 245, 230);
+        border: 1px solid rgb(225, 225, 220);
+        padding: 5px;
+        width: 90%;
+        margin: auto;
+}
+
+
+    div.tasknew
+    {
+        background-image: url('ima/new.png.html');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        margin-bottom: 5px;
+    }
+
+
+    div.taskdone
+    {
+        background-image: url('ima/done.png.html');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        color: #CCC;
+        text-decoration: line-through;
+        margin-bottom: 5px;
+    }
+
+
+    div.taskyes
+    {
+        background-image: url('ima/yes.png.html');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        margin-bottom: 5px;
+    }
+
+    div.taskno
+    {
+        background-image: url('ima/no.png.html');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        margin-bottom: 5px;
+    }
+
+
+pre
+{
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

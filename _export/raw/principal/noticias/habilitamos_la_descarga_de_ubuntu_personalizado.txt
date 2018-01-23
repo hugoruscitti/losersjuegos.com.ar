@@ -1,0 +1,12 @@
+====== Habilitamos la descarga de Ubuntu personalizado ======
+
+Luego de varios dias sin actualizar, hemos subido al servidor
+la imagen del DVD del sistema operativo Ubuntu GNU/Linux personalizado
+para desarrollar videojuegos. Este sistema funciona directamente
+desde el disco DVD, y contiene todo lo necesario para comenzar
+a realizar videojuegos: bibliotecas, manuales, ejemplos ... etc. 
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

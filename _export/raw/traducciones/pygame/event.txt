@@ -1,0 +1,618 @@
+====== event ======
+
+
+
+/*
+pygame module for interacting with events and queues
+*/
+
+Módulo de pygame para interactuar con eventos y pedidos.
+
+<box 90%>
+
+  * [[#pump]]
+  * [[#get]]
+  * [[#poll]]
+  * [[#wait]]
+  * [[#peek]]
+  * [[#clear]]
+  * [[#event_name]]
+  * [[#set_blocked]]
+  * [[#set_allowed]]
+  * [[#get_blocked]]
+  * [[#set_grab]]
+  * [[#get_grab]]
+  * [[#post]]
+
+** Otras páginas: **
+  * [[:traducciones:pygame:event:event_class]]
+</box>
+
+/*
+Pygame handles all it's event messaging through an event queue. The routines
+in this module help you manage that event queue. The input queue is heavily
+dependent on the pygame display module. If the display has not been
+initialized and a video mode not set, the event queue will not really work.
+ 
+*/
+
+Pygame maneja todos sus mensajes de eventos a través de una cola
+de eventos. Las rutinas de este módulo le ayudarán a manejar esta
+cola de eventos. Los eventos de entrada son extremadamente dependientes
+del módulo ''display'' de pygame. La cola de eventos no funcionará a menos
+que se halla inicializado el módulo display y el modo de video.
+
+/*
+The queue is a regular queue of Event objects, there are a variety of ways
+to access the events it contains. From simply checking for the existance of
+events, to grabbing them directly off the stack.
+*/
+
+La cola de eventos es una lista de objetos Event, hay diversas maneras
+de acceder a los eventos que esta contiene. Desde consultar por la existencia
+de eventos, a extraerlos directamente de la pila.
+
+/*
+All events have a type identifier. This event type is in between the values
+of NOEVENT and NUMEVENTS. All user defined events can have the value of
+USEREVENT or higher. It is recommended make sure your event id's follow this
+system.
+*/
+
+Todos los eventos tienen un identificador ''type''. Este identificador
+está entre los valores NOEVENT y NUMEVENTS. Todos los eventos definidos
+por el usuario pueden tener el valor de USEREVENT o superior. Se recomienda
+asegurarse de que sus identificadores de evento sigan este sistema.
+
+/*
+To get the state of various input devices, you can forego the event queue
+and access the input devices directly with their appropriate modules; mouse,
+key, and joystick. If you use this method, remember that pygame requires some
+form of communication with the system window manager and other parts of the
+platform. To keep pygame in synch with the system, you will need to call
+pygame.event.pump() to keep everything current. You'll want to call this
+function usually once per game loop.
+*/
+
+Para obtener el estado de varios dispositivos de entrada puede olvidar
+la cola de eventos y acceder a los dispositivos directamente desde sus
+módulos asignados: ''mouse'', ''key'' y ''joystick''. Si usa este método, 
+recuerde que pygame requiere alguna forma de comunicación con el sistema
+de ventanas y otras partes del sistema. Para mantener a pygame en
+coherencia con el sistema necesita llamar a ''pygame.event.pump'' periodicamente, usualmente una vez por ciclo del bucle de juego.
+
+
+
+
+/*
+The event queue offers some simple filtering. This can help performance
+slightly by blocking certain event types from the queue, use the
+pygame.event.set_allowed() and pygame.event.set_blocked() to work with
+this filtering. All events default to allowed.
+*/
+
+La cola de eventos ofrece una forma de filtro simple. Esto puede ayudar
+a mejorar el rendimiento bloqueando ciertos tipos de eventos de la
+cola, use las funciones ''pygame.event.set_allowed()'' y 
+''pygame.event.set_blocked()'' para trabajar con este filtrado. Por
+defecto todos los eventos están permitidos.
+
+/*
+Joysticks will not send any events until the device has been initialized.
+*/
+
+Los controles de Joystick no emitirán ningún evento a menos que se
+inicialice el dispositivo.
+
+
+/*
+An Event object contains an event type and a readonly set of member data.
+The Event object contains no method functions, just member data. Event
+objects are retrieved from the pygame event queue. You can create your
+own new events with the pygame.event.Event() function.
+*/
+
+Un objeto Evento contiene un tipo de evento y un conjunto de miembros, o
+atributos, de solo lectura. El objeto Evento no contiene métodos, solo
+información. Estos objetos se obtienen desde la cola de eventos. E incluso
+puede crear sus propios eventos con una llamada a ''pygame.event.Event()''.
+
+
+
+/*
+Your program must take steps to keep the event queue from overflowing. If the
+program is not clearing or getting all events off the queue at regular
+intervals, it can overflow.  When the queue overflows an exception is thrown.
+*/
+
+Su programa debe seguir ciertos pasos para evitar que la cola de eventos
+se sobrepase del límite. Si el programa no limpia o elimina los eventos
+de la cola de eventos en intervalos regulares, esta podría desbordarse. Se
+lanzará una excepción si la cola desborda.
+
+/*
+All Event objects contain an event type identifier in the Event.type member.
+You may also get full access to the Event's member data through the Event.dict
+method. All other member lookups will be passed through to the Event's
+dictionary values.
+*/
+
+Todos los objetos ''Event'' contienen un identificador de tipo en el
+atributo ''Event.type''. Usted puede obtener acceso a todos los atributos
+del evento a través el método ''Event.dict''. Todas las otras búsquedas
+de atributos pasarán a través de los valores de diccionario del evento.
+
+/*
+While debugging and experimenting, you can print the Event objects for a
+quick display of its type and members. Events that come from the system
+will have a guaranteed set of member items based on the type. Here is a
+list of the Event members that are defined with each type.
+*/
+
+Puede imprimir los objetos Event para ver rápidamente su tipo y atributos
+mientras depura o experimenta. Los eventos que vienen desde el sistema
+tendrán un grupo asegurado de atributos basados en cada tipo. Esta es una
+lista de los atributos de evento que se definen para cada tipo:
+
+/*
+^ Type ^ Attributes ^
+| QUIT | none |
+| ACTIVEEVENT | gain, state |
+| KEYDOWN | unicode, key, mod |
+| KEYUP | key, mod |
+| MOUSEMOTION | pos, rel, buttons |
+| MOUSEBUTTONUP | pos, button |
+| MOUSEBUTTONDOWN | pos, button |
+| JOYAXISMOTION | joy, axis, value |
+| JOYBALLMOTION | joy, ball, rel |
+| JOYHATMOTION | joy, hat, value |
+| JOYBUTTONUP | joy, button |
+| JOYBUTTONDOWN | joy, button |
+| VIDEORESIZE | size, w, h |
+| VIDEOEXPOSE | none |
+| USEREVENT | code |
+*/
+
+^ Tipo (atributo ''type'') ^ Atributos ^
+| QUIT | none |
+| ACTIVEEVENT | gain, state |
+| KEYDOWN | unicode, key, mod |
+| KEYUP | key, mod |
+| MOUSEMOTION | pos, rel, buttons |
+| MOUSEBUTTONUP | pos, button |
+| MOUSEBUTTONDOWN | pos, button |
+| JOYAXISMOTION | joy, axis, value |
+| JOYBALLMOTION | joy, ball, rel |
+| JOYHATMOTION | joy, hat, value |
+| JOYBUTTONUP | joy, button |
+| JOYBUTTONDOWN | joy, button |
+| VIDEORESIZE | size, w, h |
+| VIDEOEXPOSE | none |
+| USEREVENT | code |
+
+
+
+
+===== pump =====
+
+/*
+internally process pygame event handlers
+*/
+
+Procesa internamente los manejadores de evento de pygame.
+
+<code python>
+pygame.event.pump(): return None
+</code>
+
+
+/*
+For each frame of your game, you will need to make some sort of call to the
+event queue. This ensures your program can internally interact with the rest
+of the operating system. If you are not using other event functions in your
+game, you should call pygame.event.pump() to allow pygame to handle internal
+actions.
+*/
+
+Para cada cuadro de visualización de su juego necesitará hacer alguna
+clase de llamada a la cola de eventos. Esta función se asegura de que
+su programa puede interactuar internamente con el resto del sistema
+operativo. Debería utilizar esta función si no está usando otras funciones
+de eventos en su juego, esto permitirá que pygame pueda manejar acciones
+internas.
+
+/*
+This function is not necessary if your program is consistently processing
+events on the queue through the other pygame.event functions.
+*/
+
+Esta función no se necesita si su programa procesa eventos de manera
+consistente a través de otras funciones de ''pygame.event''.
+
+/*
+There are important things that must be dealt with internally in the event
+queue. The main window may need to be repainted or respond to the system.
+If you fail to make a call to the event queue for too long, the system
+may decide your program has locked up.
+*/
+
+Hay varias tareas importantes que se deben realizar internamente en
+la cola de eventos. La ventana principal podría necesitar responderle
+al sistema o ser redibujada. Si usted no consulta la cola de eventos
+por mucho tiempo, el sistema podría interpretar que su programa está
+inactivo o con un error.
+
+
+  * [[pythonexample>pygame.event.pump|buscar código donde se use esta función.]]
+
+===== get =====
+
+/*
+get events from the queue
+*/
+
+Obtiene eventos de la cola.
+
+<code python>
+pygame.event.get(): return Eventlist
+pygame.event.get(type): return Eventlist
+pygame.event.get(typelist): return Eventlist
+</code>
+
+/*
+This will get all the messages and remove them from the queue. If a type or
+sequence of types is given only those messages will be removed from the queue.
+*/
+
+Obtendrá todos los mensajes de eventos y los eliminará de la cola. Si se
+le especifica un tipo o secuencia de tipos de evento solo esos mensajes
+se eliminarán de la cola.
+
+/*
+If you are only taking specific events from the queue, be aware that the queue
+could eventually fill up with the events you are not interested.
+*/
+
+Si solo está interesado en eventos específicos de la cola, tenga cuidado
+que la cola podría llenarse eventualmente con eventos en los que
+no esté interesado.
+
+
+
+  * [[pythonexample>pygame.event.get|buscar código donde se use esta función.]]
+
+===== poll =====
+
+/*
+get a single event from the queue
+*/
+
+Obtiene un solo evento de la cola.
+
+<code python>
+pygame.event.poll(): return Event
+</code>
+
+
+/*
+Returns a single event from the queue. If the event queue is empty an event
+of type pygame.NOEVENT will be returned immediately. The returned event is
+removed from the queue.
+*/
+
+Retorna un evento individual de la cola. Si la cola de eventos está vacía
+se retornará un evento de tipo ''pygame.NOEVENT'' inmediatamente. El evento
+que se retorna se eliminará de la cola.
+
+
+  * [[pythonexample>pygame.event.poll|buscar código donde se use esta función.]]
+
+
+===== wait =====
+
+/*
+wait for a single event from the queue
+*/
+
+Espera por la llegada de un evento en la cola.
+
+<code python>
+pygame.event.wait(): return Event
+</code>
+
+
+/*
+Returns a single event from the queue. If the queue is empty this function
+will wait until one is created. The event is removed from the queue once it
+has been returned. While the program is waiting it will sleep in an idle 
+state. This is important for programs that want to share the system with 
+other applications.
+*/
+
+Retorna un evento individual de la cola. Esta función espera hasta que
+un evento llegue si es que la cola está vacía. El evento se elimina de
+la cola una vez que ha sido retornado. Mientras el programa está esperando
+el proceso dormirá en un estado de espera. Esto es importante para programas
+que quieres compartir los recursos de sistema con otras aplicaciones.
+
+
+  * [[pythonexample>pygame.event.wait|buscar código donde se use esta función.]]
+
+===== peek =====
+
+/*
+test if event types are waiting on the queue
+*/
+
+Consulta si un tipo de evento está esperando en la cola.
+
+<code python>
+pygame.event.peek(type): return bool
+pygame.event.peek(typelist): return bool
+</code>
+
+/*
+Returns true if there are any events of the given type waiting on the queue.
+If a sequence of event types is passed, this will return True if any of those
+events are on the queue.
+*/
+
+Retorna ''True'' si existe algunos de los eventos solicitados esperando
+en la cola de eventos. Si se pasa una secuencia de tipos de eventos, se
+retornará ''True'' si alguno de esos eventos está en la cola.
+
+
+
+  * [[pythonexample>pygame.event.peek|buscar código donde se use esta función.]]
+
+===== clear =====
+
+/*
+remove all events from the queue
+*/
+
+Elimina todos los eventos de la cola.
+
+<code python>
+pygame.event.clear(): return None
+pygame.event.clear(type): return None
+pygame.event.clear(typelist): return None
+</code>
+
+/*
+Remove all events or events of a specific type from the queue. This has the
+same effect as pygame.event.get() except nothing is returned. This can be
+slightly more effecient when clearing a full event queue.
+*/
+
+Elimina todos los eventos (o de un tipo específico) de la cola. Esta función
+tiene el mismo efecto que ''pygame.event.get()'' excepto que no retorna
+nada. Puede ser ligeramente mas eficiente cuando limpia toda la cola
+de eventos.
+
+
+  * [[pythonexample>pygame.event.clear|buscar código donde se use esta función.]]
+
+===== event_name =====
+
+/*
+get the string name from and event id
+*/
+
+Obtiene el nombre de un identificador de evento.
+
+<code python>
+pygame.event.event_name(type): return string
+</code>
+
+
+/*
+Pygame uses integer ids to represent the event types. If you want to report
+these types to the user they should be converted to strings. This will return
+a the simple name for an event type. The string is in the WordCap style.
+*/
+
+Pygame utiliza identificadores en números enteros para representar
+tipos de eventos. Si quiere reportar estos valores al usuario debería
+convertirlos a cadenas de texto. Esta función retornará el nombre
+para un tipo de evento. La cadena sigue el estilo PalabrasComoTitulo.
+
+<code python>
+>>> pygame.event.event_name(1)
+'ActiveEvent'
+</code>
+
+
+  * [[pythonexample>pygame.event.event_name|buscar código donde se use esta función.]]
+
+===== set_blocked =====
+
+/*
+control which events are allowed on the queue
+*/
+
+Controla que eventos se permiten en la cola.
+
+<code python>
+pygame.event.set_blocked(type): return None
+pygame.event.set_blocked(typelist): return None
+pygame.event.set_blocked(None): return None
+</code>
+
+/*
+The given event types are not allowed to appear on the event queue. By default
+all events can be placed on the queue. It is safe to disable an event type
+multiple times.
+*/
+
+El tipo de evento especificado será excluido de poder aparecer en la
+cola de eventos. Por defecto todos los eventos podrá colocarse en la
+cola. Es seguro deshabilitar un tipo de evento muchas veces.
+
+/*
+If None is passed as the argument, this has the opposite effect and ALL of
+the event types are allowed to be placed on the queue.
+*/
+
+
+Si se pasa None como argumento, esto producirá el efecto contrario y
+se permitirán todos los tipos de eventos en la cola.
+
+  * [[pythonexample>pygame.event.set_blocked|buscar código donde se use esta función.]]
+
+
+===== set_allowed =====
+
+/*
+control which events are allowed on the queue
+*/
+
+Controla que eventos se permitirán en la cola.
+
+<code python>
+pygame.event.set_allowed(type): return None
+pygame.event.set_allowed(typelist): return None
+pygame.event.set_allowed(None): return None
+</code>
+
+/*
+The given event types are allowed to appear on the event queue. By default
+all events can be placed on the queue. It is safe to enable an event type
+multiple times.
+*/
+
+El tipo indicado será incluido para aparecer en la cola de eventos. Por
+defecto todos los eventos pueden colocarse en la cola de eventos. Es
+seguro habilitar un tipo de evento varias veces.
+
+
+/*
+If None is passed as the argument, NONE of the event types are allowed to be 
+placed on the queue.
+*/
+
+Si se pasa ''None'' como argumento, ninguno de los tipos de eventos
+podrá estar en la cola de eventos.
+
+
+  * [[pythonexample>pygame.event.set_allowed|buscar código donde se use esta función.]]
+
+===== get_blocked =====
+
+/*
+test if a type of event is blocked from the queue
+*/
+
+Consulta si está bloqueado de la cola un tipo de evento.
+
+<code python>
+pygame.event.get_blocked(type): return bool
+</code>
+
+
+/*
+Returns true if the given event type is blocked from the queue.
+*/
+
+Retorna ''True'' si el tipo de evento dado ha sido bloqueado
+de la cola de eventos.
+
+
+
+  * [[pythonexample>pygame.event.get_blocked|buscar código donde se use esta función.]]
+
+===== set_grab =====
+
+/*
+control the sharing of input devices with other applications
+*/
+
+Controla la posibilidad de compartir los dispositivos de entrada
+con otras aplicaciones.
+
+<code python>
+pygame.event.set_grab(bool): return None
+</code>
+
+
+/*
+When your program runs in a windowed environment, it will share the mouse
+and keyboard devices with other applications that have focus. If your 
+program sets the event grab to True, it will lock all input into your
+program. 
+*/
+
+Cuando su programa corre en un entorno de ventana, este compartirá los
+dispositivos de mouse y teclado con otras aplicaciones que estén
+seleccionadas (con foco). Si su programa llama a ''set_grab(True)'', se
+bloquearán todas las entras de dispositivos a su programa.
+
+/*
+It is best to not always grab the input, since it prevents the user from doing
+other things on their system.
+*/
+
+Es mejor no usar esta función siempre, dado que imposibilita al usuario
+de hacer otras cosas en su sistema.
+
+
+  * [[pythonexample>pygame.event.set_grab|buscar código donde se use esta función.]]
+
+
+===== get_grab =====
+
+/*
+test if the program is sharing input devices
+*/
+
+Consulta si el programa está compartiendo los dispositivos en entrada.
+
+<code python>
+pygame.event.get_grab(): return bool
+</code>
+
+
+/*
+Returns true when the input events are grabbed for this application. Use
+pygame.event.set_grab() to control this state.
+*/
+
+Retorna ''True'' cuando los eventos de entrada son exclusivos de esta
+aplicación. Use ''pygame.event.set_grab()'' para controlar este estado.
+
+  * [[pythonexample>pygame.event.get_grab|buscar código donde se use esta función.]]
+
+
+===== post =====
+
+/*
+place a new event on the queue
+*/
+
+Coloca un nuevo evento en la cola.
+
+<code python>
+pygame.event.post(Event): return None
+</code>
+
+
+/*
+This places a new event at the end of the event queue. These Events will later
+be retrieved from the other queue functions.
+*/
+
+Esta función coloca un nuevo evento al final de la cola de eventos. Estos
+eventos se recibirán mas tarde que los otros eventos ya en la cola.
+
+/*
+This is usually used for placing pygame.USEREVENT events on the queue. Although
+any type of event can be placed, if using the sytem event types your program
+should be sure to create the standard attributes with appropriate values.
+*/
+
+Se usa frecuentemente para colocar eventos pygame.USEREVENT en la cola.
+Aunque se puede colocar cualquier tipo de evento, si utiliza tipos de
+eventos de sistema se asegurará de crear los atributos por defecto con
+los valores adecuados.
+
+  * [[pythonexample>pygame.event.post|buscar código donde se use esta función.]]

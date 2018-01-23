@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos referencia:articulos</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:01:15+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/automatas?rev=1232551453&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/bases_tecnicas_grafistas?rev=1271149600&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/bucle?rev=1232461487&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/chimp_line_by_line?rev=1262962628&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/como_empezar?rev=1232461484&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/compilacion_cruzada?rev=1273006990&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/conceptos_basicos?rev=1234053606&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/contador?rev=1232998178&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/crear_personaje?rev=1232461482&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/desarrollo_de_juegos_sobre_gnu?rev=1233140180&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/extremeprogramming?rev=1220769792&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/fuentes_graficas?rev=1232461487&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/grilla?rev=1232461487&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/hackers_slackers?rev=1232461484&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/import_and_initialize?rev=1234046572&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_devcpp?rev=1233619186&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_juego?rev=1234022904&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sdl?rev=1234033820&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/interpolaciones?rev=1270357851&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/make_games?rev=1232461486&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/making_games_with_pygame?rev=1255732061&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/menu?rev=1232892735&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/moveit?rev=1232461485&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/particulas?rev=1228248498&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/plataformas?rev=1232124744&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/pong?rev=1280164912&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/roundrect?rev=1232238729&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/seno_coseno?rev=1234122531&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/un_juego_paso_a_paso?rev=1233463141&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos/why_sdl?rev=1232461486&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/automatas?rev=1232551453&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-21T18:24:13+04:00</dc:date>
+        <title>Autómatas y animaciones (II)</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/automatas?rev=1232551453&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: 30 de Julio del 2005
+
+Introducción
+
+
+Un personaje de video juego suele realizar varios movimientos simples como: saltar, correr, disparar etc.
+
+En algunos juegos la cantidad de movimientos por personaje es numerosa y suele combinarse. Por ejemplo, en el videojuego Street Fighter el jugador puede “golpear mientras salta”, o “patear agachado en el suelo”.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/bases_tecnicas_grafistas?rev=1271149600&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-04-13T13:06:40+04:00</dc:date>
+        <title>Bases Técnicas Para Grafistas</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/bases_tecnicas_grafistas?rev=1271149600&amp;do=diff</link>
+        <description>&lt;http://vgafib.upc.es/wiki/index.php/Bases_Técnicas_Para_Grafistas&gt;
+
+Créditos
+
+	*  Autor:
+		*  David Ramírez Reina
+
+	*  Contribuciones:
+	*  Imágenes:
+		*  blit_clip_composicion, terreno_isometrico: David Ramírez Reina
+		*  mapa_tiles, spritesheet: Walter Velázquez. Modificadas por Hugo Ruscitti (extraídas de Losersjuegos).
+		*  anim_caminar, apartado Transformaciones básicas: Walter Velázquez (extraídas de Losersjuegos). Modificadas por David Ramírez Reina.
+		*  parallax1, parallax2: …</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/bucle?rev=1232461487&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:47+04:00</dc:date>
+        <title>Bucle principal y velocidad constante</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/bucle?rev=1232461487&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: 9 de Marzo del 2005
+
+Introducción
+
+
+Habitualmente un videojuego realiza varias tareas invisibles al jugador: captura el estado de los controles, verifica colisiones, procesa eventos, altera estructuras, etc.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/chimp_line_by_line?rev=1262962628&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-01-08T17:57:08+04:00</dc:date>
+        <title>Chimp, un juego paso a paso</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/chimp_line_by_line?rev=1262962628&amp;do=diff</link>
+        <description>*  Título original: Line By Line Chimp
+	*  Autor original: Pete Shinners
+	*  Traducción por: Hugo Ruscitti
+
+
+
+
+Introducción
+
+
+
+
+En los ejemplos de pygame encontrará uno muy simple llamado “chimp”. Este
+ejemplo simula un mono que se mueve por una pantalla pequeña con la
+promesa de que si lo golpeas te dará una recompesa. El ejemplo en sí es muy
+simple, y un poco cutre en el manejo de errores, pero igualmente, este ejemplo
+muestra muchas de las habilidades de pygame, como la creación d…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/como_empezar?rev=1232461484&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:44+04:00</dc:date>
+        <title>¿Como empezar en el Desarrollo de Videojuegos?</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/como_empezar?rev=1232461484&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Roberto Albornoz Figueroa (RCAF)
+	*  Fecha: 2 de Octubre del 2006
+
+Introducción
+
+
+La mayoría de las personas que han estudiado o están cursando alguna carrera
+relacionada con computación e informática y han pasado por ramos relacionados
+con la programación, se han preguntado alguna vez: ¿Cómo se hace un
+videojuego?, ¿Qué tengo que saber? ¿Por donde empiezo? y muchas preguntas más.
+Muchos han intentado hacerlo sin resultado alguno, otros en cambio han…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/compilacion_cruzada?rev=1273006990&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-05-05T01:03:10+04:00</dc:date>
+        <title>Compilación cruzada</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/compilacion_cruzada?rev=1273006990&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: 31 de Agosto del 2006
+
+Introducción
+
+Este trabajo presenta una serie de consejos e indicaciones sobre como generar programas multimedia para Windows desde un sistema operativo como GNU/Linux.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/conceptos_basicos?rev=1234053606&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-08T03:40:06+04:00</dc:date>
+        <title>Conceptos Básicos para el Desarrollo de Videojuegos 2D</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/conceptos_basicos?rev=1234053606&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Roberto Albornoz Figueroa (RCAF)
+	*  Fecha: 10 de Enero del 2007
+
+Introducción
+
+
+Una de las razones para comenzar a desarrollar primero videojuegos 2D, es que
+los conceptos involucrados son mucho más simples y fáciles de asimilar.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2012-03-13T09:39:17+04:00</dc:date>
+        <title>Code::Blocks para compilar ejecutables de Windows en GNU/Linux</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/configurar_cb_para_compilacion_cruzada?rev=1331617157&amp;do=diff</link>
+        <description>Introduccion
+
+
+en un articulo anterior Hugo Ruscitti hablo sobre la compilacion cruzada, esto en resumen, hablaba sobre compilar un codigo fuente C a un ejecutable de Windows.
+el problema... bueno, no existe un problema en si mismo. La manera de hacer un ejecutable desde la shell de nuestro sistema GNU/Linux es bastante sencilla.
+¿Pero y si trabajamos dentro de un editor como Code::Blocks?, seria muy desagradable tener que abrir una shell y movernos hasta donde se encuantra nuestro codigo fuent…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/contador?rev=1232998178&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-26T22:29:38+04:00</dc:date>
+        <title>Como crear un contador sencillo para nuestros juegos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/contador?rev=1232998178&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Arturo Luna Contreras (sofoke)
+		*  Fecha: Enero del 2008
+
+Resumen
+
+
+Este es un pequeño tutorial de como crear con SDL y SDL_TTF un contador sencillo para nuestros juegos... Para este tutorial asumiré que el usuario ya tiene instalado SDL y todo lo necesario para leer fuentes truetype... También para hacerlo un poco más entendible para muchos lo realizaremos en C...</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/crear_personaje?rev=1232461482&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:42+04:00</dc:date>
+        <title>Como crear un personaje para Pocket Volleyball</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/crear_personaje?rev=1232461482&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: 2 de Marzo del 2006
+
+Introducción
+
+Pocket Volleyball ha sido diseñado con la intensión de facilitar la inclusión de nuevos personajes, no necesitará preocuparse por reconstruir el programa o configurarlo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/desarrollo_de_juegos_sobre_gnu?rev=1233140180&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-28T13:56:20+04:00</dc:date>
+        <title>Charla: Desarrollo de juegos sobre GNU/Linux</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/desarrollo_de_juegos_sobre_gnu?rev=1233140180&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti / Gabriel Valentin
+		*  Fecha: 14 de Mayo del 2005
+
+Introducción
+
+
+El presente documento reúne una serie de diapositivas que fueron presentadas en el evento CTT (Charlas Técnicas Trimestrales) del 14 de Mayo, organizado por el grupo de usuarios CaFeLUG en la Universidad de Belgrano (Bs. As. Argentina)</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/extremeprogramming?rev=1220769792&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-09-07T10:43:12+04:00</dc:date>
+        <title>Embracing Fun: Why Extreme Programming is Great for Game Development</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/extremeprogramming?rev=1220769792&amp;do=diff</link>
+        <description>*  By Bill Schofield
+	*  Gamasutra
+	*  March 1 , 2007
+	*  URL: &lt;http://www.gamasutra.com/features/20070301/schofield_01.shtml&gt;
+	*  Traducción por: Dora Zárate
+
+
+
+
+
+Programación Extrema (XP desde ahora) es una metodología de desarrollo de
+Software ágil, que se enfoca en adaptarse al cambio en lugar de
+predecirlo. El poder de la metodología XP consiste en permitir a los creadores
+del juego hacer grandes juegos de manera confiable mientras se conocen las distintas
+(y a menudo competitivas) ne…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/fuentes_graficas?rev=1232461487&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:47+04:00</dc:date>
+        <title>Fuentes gráficas</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/fuentes_graficas?rev=1232461487&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: 23 de Enero del 2006
+
+Introducción
+
+
+A la hora de programar una aplicación con SDL debemos tener en cuenta que la biblioteca principal (libSDL) no incluye rutinas para el manejo de textos. En principio puede parecernos una desventaja, pero el diseño de SDL nos permite incorporar otro tipo de bibliotecas auxiliares como SDL_TTF para cubrir esos requisitos.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/grilla?rev=1232461487&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:47+04:00</dc:date>
+        <title>Grilla de gráficos y animaciones (I)</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/grilla?rev=1232461487&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: 27 de Marzo del 2005
+
+Introducción
+
+
+Veremos como almacenar varios cuadros de animación en un solo archivo para realizar una animación muy simple.
+
+Esto nos resultará de utilidad para manejar animaciones y comprender los próximos artículos.
+Creando los gráficos del personaje</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/hackers_slackers?rev=1232461484&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:44+04:00</dc:date>
+        <title>Hackers, slackers, and shackles: el futuro del software libre</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/hackers_slackers?rev=1232461484&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Matt Barton
+	*  Traducido por: Daniela López Seco
+	*  Fecha: Sábado 3 de Junio del 2006
+
+Introducción
+
+
+[Figure 1: Type This by Seb Brassard © 2005]
+
+
+Hasta ahora, nosotros, los jugadores de video juegos no nos hemos percatado de
+la continua batalla entre los desarrolladores de software libre  y
+propietario. Después de todo, la mayoría empezamos a jugar ya sea en máquinas
+cerradas en oscuros locales de videos juegos o por consolas misteriosas con
+igual de…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/import_and_initialize?rev=1234046572&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-08T01:42:52+04:00</dc:date>
+        <title>Pygame: Importar e inicializar</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/import_and_initialize?rev=1234046572&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Pete Shinners
+		*  Traducido por: Hugo Ruscitti
+		*  Fecha: 23 de Noviembre del 2006
+
+Introducción
+
+
+Lograr que pygame este importado e inicializado es un proceso muy simple. Además es lo suficiente flexible para darle el control sobre lo que está ocurriendo. Pygame es una colección de diferentes módulos en un único paquete de Python. Algunos de los módulos están escritos en C, y otros están escritos en Python. Algunos módulos son opcionales, y podría…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_devcpp?rev=1233619186&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-03T02:59:46+04:00</dc:date>
+        <title>Como instalar Dev-C++ y SDL en Windows</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/instalar_devcpp?rev=1233619186&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: Sábado 9 de Julio del 2005
+
+Sobre Dev-C++
+
+
+Dev-C++ (o devcpp) es un entorno de desarrollo integrado (IDE) para los lenguajes de programación C y C++.
+
+Incluye el compilador Mingw, una adaptación del compilador GCC (GNU Compiler Collection) para Windows, y un conjunto de herramientas que facilitan el desarrollo en sistemas Windows.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_juego?rev=1234022904&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-07T19:08:24+04:00</dc:date>
+        <title>Compilar e instalar un juego desde sus fuentes</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/instalar_juego?rev=1234022904&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: 13 de Marzo de 2005
+
+Introducción:
+
+Este procedimiento es habitual en muchos programas libres para GNU/Linux. Consiste en varios pasos: descomprimir, configurar e instalar el programa:
+
+Si el archivo descargado es programa-1.0.tar.gz, debemos ejecutar:</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sdl?rev=1234033820&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-07T22:10:20+04:00</dc:date>
+        <title>Guia de instalación de las bibliotecas SDL en GNU/Linux</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sdl?rev=1234033820&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: 6 de Febrero del 2005
+
+Introducción
+
+Algunas distribuciones de GNU/Linux incluyen las bibliotecas SDL y todo lo necesario entre sus archivos de instalación. Con lo cual la instalación en esos sistemas es demasiado sencilla para crear un documento de instalación.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-10T06:40:45+04:00</dc:date>
+        <title>Como instalar PySFML en windows</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/instalar_sfml_en_windows?rev=1281408045&amp;do=diff</link>
+        <description>Créditos
+
+	*  fecha: Agosto 2010
+	*  autor: Hugo Ruscitti
+
+SFML es una biblioteca que permite crear aplicaciones multimedia
+de manera sencilla, tiene soporte para que puedas
+escribir tus aplicaciones en varios lenguajes y utiliza
+internamente la funcionalidad que provee opengl.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/interpolaciones?rev=1270357851&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-04-04T09:10:51+04:00</dc:date>
+        <title>Tweener, movimientos mas realistas para tus juegos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/interpolaciones?rev=1270357851&amp;do=diff</link>
+        <description>Créditos
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: 4 de Abril del 2010
+
+Resumen
+
+Veremos una manera sencilla de crear movimientos realistas en nuestros juegos,
+logrando efectos como aceleración, simulando elasticidad y rebotes.
+
+Vamos a utilizar las bibliotecas Tweener y pygame.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/make_games?rev=1232461486&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:46+04:00</dc:date>
+        <title>¿Cómo hacer juegos? Un camino al desarrollo de videojuegos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/make_games?rev=1232461486&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Geoff Howland
+		*  Traducido por: José Jorge Enríquez Rodríguez
+		*  Fecha: 19 de Septiembre del 2006
+
+Introducción
+
+Cuando platico con personas que buscan entrar al desarrollo de juegos, algunas de las primeras cosas que a menudo me preguntan son, “¿cómo puedo hacer juegos?” o “quiero hacer un juego como Quake/Everquest/Starcraft y...? La primera pregunta es muy difícil de responder, ya que hay muchísimos aspectos posibles por comentar, y cada uno…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/making_games_with_pygame?rev=1255732061&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-10-17T02:27:41+04:00</dc:date>
+        <title>HACER JUEGOS CON PYGAME</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/making_games_with_pygame?rev=1255732061&amp;do=diff</link>
+        <description>*  Título original: Making Games with Pygame
+	*  Autor original: Tom Chance
+	*  Traducción por: Juan Guerrero
+
+INDICE
+
+	*  Introducción
+		*  Un apunte sobre el estilo de codificación
+
+
+	*  Revisión: bases de Pygame
+		*  El juego básico de Pygame
+		*  Objetos básicos de Pygame
+		*  Blitting
+		*  El bucle de eventos
+		*  Ta-da!</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/menu?rev=1232892735&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-25T17:12:15+04:00</dc:date>
+        <title>Como crear un menú para tu juego</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/menu?rev=1232892735&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: Diciembre del 2007
+
+Resumen
+
+
+Construiremos un menú de opciones para un videojuego, debatiendo diferentes estrategias de diseño e implementación. Este menú le permitirá a los usuarios del videojuego seleccionar diferentes opciones como 'iniciar el juego', 'ver los creditos', 'terminar el programa' etc.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/moveit?rev=1232461485&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:45+04:00</dc:date>
+        <title>Pygame: ¡Ayuda!, ¿Como muevo una imagen?</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/moveit?rev=1232461485&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Pete Shinners
+	*  Traducido por: Dora Zárate
+	*  Fecha: Domingo 17 de Junio del 2007
+
+Introducción
+
+A mucha gente que es nueva en la programación y gráficos les cuesta trabajo entender como hacer que una imagen se mueva alrededor de la pantalla.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/particulas?rev=1228248498&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-02T23:08:18+04:00</dc:date>
+        <title>Propuesta sobre Partículas</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/particulas?rev=1228248498&amp;do=diff</link>
+        <description>Introducción
+
+
+En la lista de correo SDL en Español  solemos realizar propuestas de desarrollo. Estas propuestas son similares a los concursos de programación, donde los participantes construyen una solución bajo una temática para luego mostrarla a todos los demás.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/plataformas?rev=1232124744&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-16T19:52:24+04:00</dc:date>
+        <title>Colisión de plataformas</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/plataformas?rev=1232124744&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: Domingo 17 de Abril del 2005
+
+Introducción
+
+
+
+
+Los videojuegos de plataformas fueron muy populares en los primeros años de las consolas portátiles; Mario Bros, Donkey Kong y Sonic son muy buenos ejemplos de esta clase de juegos.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/pong?rev=1280164912&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-07-26T21:21:52+04:00</dc:date>
+        <title>Tutorial de iniciacion</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/pong?rev=1280164912&amp;do=diff</link>
+        <description>En este tutoria aprenderemos a usar los aspectos basicos de Pygame. Lo haremos elebarando un clasico de los juegos, el Pong, en el aprenderemos nociones basicas para luego ampliar.
+
+Preparandonos
+
+Requesitos previos
+
+	*  Conocimientos de Python. Se da por hecho que se manejan con soltura la creacion de clases, funciones y demas.
+	*  Algo de matematicas y fisica basica. Para empezar con conceptos basicos de lo que es un punto matematico y algunas formulas basicas de fisica tenemos de sobra.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-07-31T10:10:05+04:00</dc:date>
+        <title>Cómo Crear un Prototipo de Juego en Menos de 7 Días: parte 1/3</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game?rev=1280556605&amp;do=diff</link>
+        <description>*  &lt;http://www.losersjuegos.com.ar/foro/viewtopic.php?f=2&amp;t=796&gt;
+
+
+
+
+
+
+
+
+Tips y Trucos de 4 Estudiantes de Posgrado que Crearon más de 50 Juegos en un Semestre
+
+
+
+“”
+
+
+
+
+
+He aquí una idea loca de juego: Arrastrar bolas de Goo [nt: brea o limo] parlanchinas para construir una torre gigante que sea cada vez más alta. Las bolas de Goo se retuercen y ríen, y trepan hacia la cima pasando sobre las espaldas de sus hermanos, pero ¡cuidado! Hay una batalla constante contra la gravedad, si creas…</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-26T21:21:45+04:00</dc:date>
+        <title>Cómo Crear un Prototipo de Juego en Menos de 7 Días: parte 2/3</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/prototype_a_game_2?rev=1322328105&amp;do=diff</link>
+        <description>*  &lt;http://www.losersjuegos.com.ar/foro/viewtopic.php?f=2&amp;t=796&gt;
+
+
+
+
+
+
+
+2. Diseño: Creatividad y el Mito de las Lluvias de Ideas
+
+
+
+Una gran idea aparece en una fracción de segundo, pero esperar a que esa luz llegue puede ser insoportable. No se puede forzar la aparición de una gran idea, pero esta sección puede ayudar a cultivar tu creatividad.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2013-02-27T17:54:48+04:00</dc:date>
+        <title>Pygame: Introducción a Pygame de Python</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/pygame_intro?rev=1361973288&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Pete Shinners
+		*  Traducido por: Daniela López Seco
+		*  Fecha: Sábado 20 de Enero del 2007
+
+Introducción
+
+
+Este artículo es una introducción a la biblioteca Pygame para programadores Python. La versión original apareció en PyZine, volumen 1 tercera edición. Esta versión contiene revisiones menores, para crear un mejor artículo. Pygame es una biblioteca de extensión de Python que encapsula la funcionalidad de la biblioteca SDL y sus ayudantes.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/roundrect?rev=1232238729&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-18T03:32:09+04:00</dc:date>
+        <title>Roundrect</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/roundrect?rev=1232238729&amp;do=diff</link>
+        <description>Introducción
+
+
+El 6 de Agosto Fhenix propuso a los miembros de la lista de correo SDL en Español realizar un ejercicio con las bibliotecas SDL.
+
+El ejercicio consistía en desarrollar una función que imprima un rectángulo con los bordes redondeados.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/seno_coseno?rev=1234122531&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-08T22:48:51+04:00</dc:date>
+        <title>Usando seno y coseno</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/seno_coseno?rev=1234122531&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Amarillion
+	*  Traducido por: Carlos Gabriel Valentin
+	*  Fecha: 15 de Febrero del 2006
+
+Introducción
+
+En este articulo discutiremos algunas técnicas de programación de juegos,
+todas en torno a un tema central: las funciones seno y coseno.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/un_juego_paso_a_paso?rev=1233463141&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-01T07:39:01+04:00</dc:date>
+        <title>Como desarollar un videojuego paso a paso con SDL</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/un_juego_paso_a_paso?rev=1233463141&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Hugo Ruscitti / Gabriel Valentin
+	*  Fecha: 23 de Octubre del 2005
+
+Introducción
+
+Las siguientes diapositivas fueron presentadas en el evento anual de Software
+Libre CaFeCONF 2005 en la ciudad de Buenos Aires (Argentina).</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos/why_sdl?rev=1232461486&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T17:24:46+04:00</dc:date>
+        <title>¿Por que SDL?</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos/why_sdl?rev=1232461486&amp;do=diff</link>
+        <description>[Ver PDF]
+
+
+Créditos
+
+	*  Autor: Bob Pendleton (Robert C. Pendleton)
+		*  Traducido por: Daniela López Seco.
+		*  Fecha: 4 de Octubre del 2005
+
+Portable, fácil (y así) poderoso
+
+
+Como escribí en Agosto del 2002, estuve usando SDL (Simple DirectMedia Layer) casi un año. Antes de elegir SDL dedique años de mi tiempo libre mirando diferentes bibliotecas de desarrollo de juegos y probándolas. Estaba buscando una biblioteca que tuviera una licencia razonable. Una biblioteca que me permitiera …</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,12 @@
+====== Nuevo complemento para gimp ======
+
+Inauguramos una nueva sección de la web donde publicaremos plugins
+para Gimp. Para comenzar subimos un conjunto de scripts para manejar
+sprites.
+
+Visita la sección [[software:gimp|Gimp Plugins]] para mas detalles.
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

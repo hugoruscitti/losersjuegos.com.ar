@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:event</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-21T12:17:15+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/event/event?rev=1231442657&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/event/event_class?rev=1232214752&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/event/event?rev=1231442657&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-08T22:24:17+04:00</dc:date>
+        <title>Event</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/event/event?rev=1231442657&amp;do=diff</link>
+        <description>Genera un nuevo objeto de evento.
+
+
+pygame.event.Event(type, dict): return Event
+pygame.event.Event(type, * * attributes): return Event
+
+
+
+
+Genera un nuevo evento a partir del tipo de evento dado. El evento
+se construye con los valores y atributos dados. Los atributos pueden
+venir desde un argumento diccionario, o como cadenas claves de un
+diccionario.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/event/event_class?rev=1232214752&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T20:52:32+04:00</dc:date>
+        <title>Event</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/event/event_class?rev=1232214752&amp;do=diff</link>
+        <description>Genera un nuevo objeto de evento.
+
+
+pygame.event.Event(type, dict): return Event
+pygame.event.Event(type, * * attributes): return Event
+
+
+
+
+Genera un nuevo evento a partir del tipo de evento dado. El evento
+se construye con los valores y atributos dados. Los atributos pueden
+venir desde un argumento diccionario, o como cadenas claves de un
+diccionario.</description>
+    </item>
+</rdf:RDF>

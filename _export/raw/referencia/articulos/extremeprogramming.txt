@@ -1,0 +1,478 @@
+====== Embracing Fun: Why Extreme Programming is Great for Game Development ======
+
+  * By Bill Schofield
+  * Gamasutra
+  * March 1 , 2007
+  * URL: http://www.gamasutra.com/features/20070301/schofield_01.shtml
+  * Traducción por: Dora Zárate
+
+
+{{ :referencia:articulos:extremeprogramming:extreme_programming.jpg |}}
+
+/*
+Extreme Programming (XP) ((Beck, Kent. Extreme Programming Explained, Embrace
+Change, Second Edition.
+Boston: Addison-Wesley, 2004.)) is an Agile Software Development Methodology
+that focuses on adapting to change instead of predicting it. The power of XP
+methodology is that it allows game developers to reliably make great games
+while meeting the diverse (and often competing) needs of publishers,
+management and the developers themselves. 
+*/
+
+Programación Extrema (XP desde ahora) es una metodología de desarrollo de
+Software ágil, que se enfoca en adaptarse al cambio en lugar de
+predecirlo. El poder de la metodología XP consiste en permitir a los creadores
+del juego hacer grandes juegos de manera confiable mientras se conocen las distintas
+(y a menudo competitivas) necesidades de los editores, técnicos y
+desarrolladores en sí mismos.
+
+/*
+Conventional wisdom tells us that 
+doing more for one of these groups will take away from the others. XP
+challenges this conventional wisdom and enables the development team to
+deliver high quality results that meet the needs of all stakeholders.
+*/ 
+
+El saber popular nos dice que haciendo
+mas por cada uno de estos grupos nos alejaríamos de los otros. XP desafía esta
+visión y le permite al grupo de desarrollo lograr resultados de alta calidad
+que puedan satisfacer las necesidades de todos los sectores.
+
+/*
+XP more reliably yields great products because of its focus on rapid releases
+of working software. Rapid releases of working software mean that the game
+designer can see what the highest priority features look like without having
+to wait for very large systems to be implemented. This allows the designer to
+find fun gameplay more easily and “steer” the game towards the most fun
+features as quickly as possible.
+*/
+
+XP produce grandes productos porque se enfoca en la prematura liberación
+del software en desarrollo. La prematura liberación del software en desarrollo
+significa que el diseñador del juego puede ver como lucen las características
+de mas alta prioridad sin tener que esperar a que un gran sistema sea
+implementado. Esto permite al diseñador encontrar una modalidad de juego
+divertida mas fácilmente y conducir al juego hacia las características mas
+divertidas lo antes posible.
+
+
+/*
+//So XP encourages the designer to steer the game during development and make
+more changes to the game design?// This is exactly what most programmers don’t
+want to hear! If your software is difficult and painful to change then rapid
+steering is the last thing you want. But the reality is that in order to find
+the fun gameplay the designer is going to want to change direction as she
+learns more about how the game actually works. If the programmer’s job is to
+make a great game then we need to do our best to allow as much steering as we
+can. Extreme Programming practices focus development energy into delivering
+results quickly and keeping the project flexible.
+*/
+
+Entonces XP ¿alienta al diseñador a gobernar el juego durante el
+desarrollo y hacer mas cambios al diseño?. ¡Esto es exactamente lo que la
+mayoría de los programadores no quiere escuchar!. Si tu software es difícil y
+doloroso de cambiar entonces un "cambio de planes" será lo último que querrás.
+Pero en realidad, para encontrar un modo de juego divertido el diseñador querrá cambiar de dirección mientras aprende como funciona el desarrollo en la actualidad. Si el trabajo del programador es hacer un gran juego entonces necesitamos hacer nuestro mejor esfuerzo para permitirle tanto manejo como podamos. La Programación Extrema procura concentrar energía del desarrollo en obtener resultados rápidamente y mantener el proyecto flexible.
+
+/*
+This sounds great in theory, but you’re probably now wondering what exactly
+does XP do that allows for a project that is easy to steer? It uses mutually
+reinforcing practices that keep the code as simple and healthy as possible. In
+short, XP requires that the team prioritizes the features, works on them in
+order, only writes code that is needed for implemented features, and
+continually applies small design improvements to keep the code healthy.
+*/
+
+Esto suena grandioso en teoría, pero probablemente ahora te estés
+preguntando, ¿que hace exactamente XP para permitir que un proyecto sea fácil de
+manejar?. XP usa recíprocamente prácticas reforzadas para mantener el código tan
+simple y saludable como sea posible. Para resumir, XP requiere que el equipo
+priorice las características mas importantes, que las trabaje en orden, solo
+escriba el código que sea necesario para implementarlas, y que aplique
+constantemente pequeñas mejoras de diseño para mantener al código
+saludable.
+
+/*
+The remainder of this article provides an overview of five key XP practices
+including Test Driven Development, Pair Programming, Continuous Design, Real
+Customer Involvement and Energized Work. These practices, along with other XP
+practices not included here, allow a team to rapidly deliver visible results.
+The visible results inform the designer who can then steer the game in a
+positive direction. Because the programmers have been keeping the code
+flexible, making this code do something new is comparatively easy which leads
+to the next cycle of visible results.
+*/
+
+El resto del artículo nos da una perspectiva que 5 prácticas claves de XP:
+Test Driven Development, Part Programming, Continuous Desing, Real Customer
+Involvement y Energized Work. Estas prácticas junto con otras prácticas XP
+no mencionadas aquí, le permiten al grupo publicar resultados visibles
+rapidamente. Los resultados visibles informan al diseñador, quien luego puede
+manejar el juego en una dirección positiva. Porque los diseñadores han estado
+manteniendo el código flexile, hacer que este código haga algo nuevo es
+comparativamente fácil lo cual lleva al próximo ciclo de resultados
+visibles.
+
+
+/*
+As you review these practices it is important to remember that XP is not about
+automated unit-tests, a 40-hour work week, nor is it about pair programming.
+While most good XP teams do all of those things, they are simply the means to
+the end of delivering a great product. This is what XP is about – delivering
+great games.
+*/
+
+Mientras examinas estas prácticas es importante recordar que XP no es
+acerca de cada una de sus prácticas: test automatizados, 40 horas de 
+trabajo por semana, ni tampoco es un sobre programar de a pares. Mientrasla mayoría de los buenos equipos XP hacen todas estas cosas, ellos son simplemente el medio para finalizar de construir un gran producto. De eso se trata XP, construir grandes juegos.
+
+/*
+===== Test Driven Development  =====
+*/
+
+===== Test Driven Development  =====
+
+/*
+When practicing Test Driven Development (TDD)
+(( Beck, Kent. Test-Driven Development by Example. Boston: Addison-Wesley,
+2003.  Pair Programming3)), programmers write a small piece
+of code that describes how they want a new feature in the program to function.
+This piece of code is called a “unit test” and it initially fails because the
+feature the test describes has not been implemented yet. The programmer knows
+that she is done with that feature once the test passes. This process has a
+number of benefits, but automated unit testing is the most visible one.
+*/
+
+Cuando practicamos Test Drive Development (TDD), los programadores
+escriben una pequeña pieza de código que describe como quieren que una nueva
+característica en el programa funcione. Esta pieza de código se llama "Unit
+Test" e inicialmente falla porque la característica que el test describe no ha
+sido implementada aún. El programador sabe que ha concluido esa
+característica una vez que el "test" funcione. Este proceso tiene muchos 
+beneficios pero, "Automated unit testing" es el mas visible.
+
+/*
+Automated Unit Tests are tests that show that each piece of the software does
+what the programmer thinks it does. Developers can easily run these tests to
+validate that any changes they have made did not break already implemented
+features. These tests allow them to rapidly and safely make changes to the
+project.
+*/
+
+Automated Unit Tests son test que prueban que cada pieza del software
+hace lo que el programador cree que hace. Los desarrolladores pueden
+facilmente correr estos test para validad que ningún cambio de los que han
+hecho rompieron las características ya implementadas. Estos test le permiten
+hacer cambios en el proyecto de manera rápida y segura.
+
+/*
+Regression is one of the most insidious forms of friction that a development
+team encounters. Early in the project there are only a few features that need
+to continue to work but as the team makes progress and the project grows,
+there often become so many features that it is nearly impossible to keep them
+all working at the same time (or even know which ones are working). Automated
+tests give us a framework that scales with the number of features we have thus
+allowing us to implement new features without worrying about hidden
+regression.
+*/
+
+La regresión es una de las formas mas insidiosas de fricción que un
+equipo debe afrontar. En una etapa inicial del proyecto hay solo unas
+pocas características en las que se necesita trabajar pero a medida que 
+el equipo avanza y el proyecto crece, a menudo aparecen tantas características 
+que es casi imposible mantenerlas funcionando a la vez (e incluso saber 
+cuales están funcionando). Automated Tests nos da un marco de trabajo que
+escala con el número de características que tenemos por lo tanto nos 
+permite implementar nuevas características sin preocuparnos por la 
+regresión escondida.
+
+/*
+Another benefit of TDD is that it helps the programming team feel happy and
+energized by constantly rewarding them with lots of little successes, through
+passing tests, as they move closer to the bigger success of a working feature.
+*/
+
+Otro beneficio de TDD es que ayuda al equipo de programación haciéndolos
+sentir felices y energizados mediante constantes recompensas de pequeños
+éxitos, a través de test aprobados, mientras se acercan a el gran triunfode una característica funcional.
+
+/*
+===== Pair Programming =====
+*/
+
+===== Pair Programming =====
+
+/*
+Pair Programming ((Williams, Laurie and Kessler, Robert. Pair Programming Illuminated. Boston:
+Addison-Wesley, 2003.)) is the process of having two programmers work on the same
+computer at the same time. Typically one of the programmers is ‘driving’ (i.e.
+typing and deciding what code gets typed in) while the other ‘navigates’. The
+navigator doesn’t focus on tactical errors that the driver might make.
+Instead, they think about the context that they are working in. They ask
+questions like: ‘How does this new code fit in with the existing code?’ and
+‘Is there a way we could change the code we just finished to make it simpler
+or better?’
+*/
+
+Pair Programming es el proceso de tener dos programadores trabajando en
+la misma computadora a la vez. Generalmente uno de los programadores es
+**conductor** (esto es, escribir y decidir que código está escribiendo) mientras 
+que el otro es **navegador**. El navegador no se enfoca en errores tácticos que el
+conductor podría hacer. En lugar de eso, piensa en el contexto en el
+que están trabajando. El navegante se hace preguntas como: "¿Como se acopla este código con el código existente?" y "¿Hay un modo de que podamos cambiar el código recién terminado para hacerlo mejor?".
+
+/*
+The quality and simplicity of the code that two programmers create is usually
+far beyond what they would create separately because they are many fewer
+missed opportunities to improve the code. “Two heads are better than one”
+leads to much higher quality code. This higher quality code is easier and
+safer to change than code written by only one member of the pair.
+*/
+
+La calidad y la simplicidad del código que dos programadores hacen es
+generalmente mejor del que crearían de forma separada, debido a que hay
+muchas menos oportunidades perdidas para mejorar el código. "Dos cabezas son
+mejor que una", conduce un código de calidad superior. Este código de calidad
+superior es fácil y seguro de cambiar que el código escrito por
+un único miembro del equipo.
+
+/*
+Game programmers are almost always making small design decisions. These
+decisions can lead to the game being much more (or less) fun. Having two
+creative people brainstorming for a few minutes can lead to exceptional
+results. Pairing encourages these quick discussions without the overhead of
+gathering people for a big meeting or interrupting anyone.
+*/
+
+Los programadores de juego están casi siempre tomando pequeñas
+decisiones de diseño. Estas decisiones pueden llevar a que el juego sea
+mucho mas (o mucho menos) divertido. Tener a dos personas creativas derramándoselos sesos por unos minutos
+puede llevar a resultados excepcionales. Trabajar en equipo de a pares
+alienta a tomar estás decisiones rápidas sin tener que reunir gente para una
+asamblea o interrumpir a alguien.
+
+/*
+Pairing helps build solid and happy teams by forming bonds of trust through
+shared experiences, lots of personal interaction, and the reduced frustration
+from not getting stuck as often. 
+*/
+
+Esta actividad ayuda a construir equipos sólidos y felices formando lazos de
+confianza a través de experiencias compartidas, mucha interacción
+personal, y reduce la frustración de quedarse atascado a menudo.
+
+/*
+===== Continuous Design =====
+*/
+
+===== Continuous Design =====
+
+/*
+Continuous Design ((Shore, Jim. Continuous Design. IEEE Software, vol. 21, no.1, pp. 20-22,
+Jan/Feb, 2004. Online http://www.martinfowler.com/ieeeSoftware/continuousDesign.pdf))
+is the art of keeping the software design in tune with what
+the program needs to do today. This means that you don’t build the generalized
+system until the program needs the generality, but you **do** ensure that your
+design for the simpler version of the system is well designed. Writing less
+code does not imply taking shortcuts or hacking; it only means that you should
+implement only what you need because it is easier to change the direction of a
+code-base when there is less code.
+*/
+
+Continous Desing es el arte de mantener el diseño del software a tono
+con lo que el programa necesita hacer hoy. Si te aseguras que el diseño para
+la versión mas simple del sistema está bien, esto significa que no construyes
+el sistema generalizado sino hasta que el programa necesita la
+**generalidad**.
+
+Escribir menos código no implica tomar atajos o hacer cambios bruscos; solo
+significa que deberías implementar solo aquello que necesitas porque será mas
+fácil cambiar la dirección de un código base cuando hay menos código.
+
+/*
+Part of the Continuous Design process is refactoring, which is changing code
+to make it healthier without changing any of its features. As you understand
+your design better or as the simpler design doesn’t suit the growing needs of
+the software you often find that the program would be healthier or simpler if
+the code looked different. Refactoring is how we keep the code flexible.
+*/
+
+Una parte del proceso de "Continous Desing" es **reconstruir** (o //refactoring//), lo cual significa cambiar
+el código para hacerlo mas saludable sin cambiar ninguna de sus
+características. Si tu comprensión del diseño mejora como así tambiénel diseño mas simple no se adapta a las necesidades crecientes del software, a 
+menudo hallas que el programa sería mas saludable o mas simple si el código 
+se viese diferente. **Reconstruir** es la respuesta a como mantenemos el 
+código flexible.
+
+/*
+Continuous design leads to simpler code. Simpler code is easier to understand
+and less frustrating. This helps people feel competent, confident and safe.
+All of which lead to a happy and energized team.
+*/
+
+//Continous Desing// nos lleva a un código mas simple. Un código mas simple
+es mas fácil de entender y menos frustrante. Esto ayuda a sentirse competente,
+confiado y seguro. Lo cual lleva a un equipo a sentirse feliz y energizado.
+
+/*
+===== Real Customer Involvement =====
+*/
+
+===== Real Customer Involvement =====
+
+/*
+In simplest terms, Real Customer Involvement ((Beck, Kent. Extreme Programming 
+Explained, Embrace Change, Second Edition. Boston: Addison-Wesley, 2004. 
+pp. 61-62)) is having real users play the
+game as early as possible. Since the team has been focusing on visible results
+this should be very early in the development cycle. This helps the team
+prioritize features and make better guesses in the future.
+*/
+
+En términos simples, //Real Customer Involment// significa tener usuarios
+reales jugando al juego tan temprano como sea posible. Dado que el equipo se ha
+enfocado en obtener resultados visibles, esto debería ser notorio en unaetapa prematura de desarrollo. Esto ayuda al equipo a priorizar características y hacer mejores suposiciones en el futuro.
+
+/*
+Another version of this is having the designer work extremely closely with
+programmers while the features are being implemented. This focuses programming
+effort where it will do the most good, gets the best trade-offs made and lets
+the designer say “That is good enough for now.” When programmers are focusing
+on providing visible results quickly and the designers can provide useful
+feedback about what is fun and what isn’t they can find the fun together.
+*/
+
+Otra visión de esto es tener el trabajo del diseñador muy cerca de los
+programadores mientras las características se están implementando. Esto
+enfoca el esfuerzo de programación donde este dará el mejor resultado,
+conseguirá las decisiones mas convenientes y le permitirá
+al diseñador decir "Es suficientemente bueno por ahora". Cuando los
+programadores están enfocados en proveer resultados visibles y el
+diseñador puede proveer una realimentación útil sobre lo que es divertido o
+no, ambos grupos pueden encontrar la diversión juntos.
+
+/*
+Working with someone to get the result that works best for them makes both the
+client and the developer happy. This cooperative approach to implementing
+features also builds strong bonds of trust which is always good for a team.
+*/
+
+Trabajar con alguien para conseguir un resultado que funcione mejor para ellos
+hace felices tanto al cliente como a los desarrolladores. Este acercamiento 
+cooperativo a implementar características también construye fuertes lazos 
+de confiabilidad, lo que es muy bueno para el equipo.
+
+
+/*
+===== Energized Work =====
+*/
+
+===== Energized Work =====
+
+/*
+Energized Work ((Beck, Kent. Extreme Programming Explained, Embrace 
+Change, Second Edition. Boston: Addison-Wesley, 2004. pp. 41-42)) also 
+known as Sustainable Pace or 40 Hour Work-Week, is the
+practice of only working as many hours as you are being productive. Working
+when you are tired or ill leads to: slow work, many mistakes, unhappiness, and
+longer periods of tiredness or illness.
+*/
+
+/*
+//Energized Work//, también conocido como //Sustantaine Pace// o //40 Hour Work
+Week//, es la práctica de trabajar solamente tantas horas como seas productivo.
+Because programming is fundamentally about ideas, programmers can make lots of
+progress in a short amount of time if they can come up with the right ideas at
+the right time. But coming up with these ideas is the hard part; our brains
+need to be operating at 100% or they are not likely to deliver their best
+solutions. Energized work keeps our brains healthy and happy so they can more
+often do the work that we need them to do.
+*/
+
+Trabajar cuando estás cansado o enfermo conduce a: trabajar lento, muchos
+errores, infelicidad y largos periodos de cansancio o enfermedad. Porque
+programar es fundamentalmente acerca de ideas, los programadores pueden
+hacer mucho progreso en un corto tiempo si se les presentan las ideas
+correctas al tiempo correcto. Pero encontrarse con estas ideas es la parte dura,
+nuestras mentes necesitan estar operando al 100% o no será probable que nos den
+su mejor solución. //Energized Work// mantiene nuestro cerebro saludable y 
+feliz, de forma que realice el trabajo que necesitamos que hagan mas seguido.
+
+/*
+Energized work helps support all of the other XP practices and keeps
+programmers doing their best work which yields better code and a more fun
+game.
+*/
+
+//Energized Work// ayuda a mejorar el resto de las prácticas de XP y mantiene
+a los programadores haciendo su mejor trabajo lo cual produce un mejor código
+y un juego mas divertido.
+
+/*
+===== Conclusion =====
+*/
+
+===== Conclusión =====
+
+/*
+As I stated at the beginning of this article, XP is not about automated
+unit-tests, a 40-hour work week, nor is it about pair programming. While most
+good XP teams do all of those things, they are simply the means to the end of
+delivering a great product. This is what XP is about – delivering great games.
+*/
+
+Como hice notar al comienzo de este artículo, XP no es acerca de test
+automatizados, //40 hour work week//, ni es acerca de //pair programming//.
+Mientras la mayoría de los buenos equipos de XP hacen todas estas cosas, ellos
+son simplemente los medios para construir un gran producto. De eso
+se trata XP, construir grandes juego.
+
+/*
+The power of XP methodology is that it allows game developers to reliably make
+great games while meeting the diverse needs of the various stakeholders
+involved in the development process:
+*/
+
+El poder de la metodología XP es que permite a los desarrolladores del
+juego confiar en hacer grandes juegos mientras reúnen las necesidades diversas
+de numerosos interesados envueltos en el desarrollo del proceso.
+
+/*
+  * Publishers’ needs are met because their products are more fun, they see visible progress more often, and when their marketing needs change the game can change to meet those new needs. 
+  * Management is happy because team morale is higher, the game can change to meet new business requirements, and visible progress and feedback let them know that the team is on track to hit their milestones.
+
+  * Team members are happier because so many of the XP practices are rewarding, fun and energizing.
+*/
+
+  * Las necesidades de los editores se conocen porque sus productos son mas divertidos, ellos ven progresos mas seguido y cuando su mercado cambia el juego se puede modificar para encontrar aquellas nuevas necesidades.
+  * La administración se alegra porque la moral del equipo está mas alta, el juego puede cambiar para encontrar nuevos requerimientos del negocio y el progreso visible y la reacción les permite saber que el equipo está en el buen camino para lograr sus metas.
+  * Los miembros del equipo se alegran porque muchas de las practicas tienen recompensas, son divertidas y energizantes.
+
+/*
+In the end, it makes sense that that everyone can win using XP because we all
+want the same thing, “to make great games.” Learning More About XP
+*/
+
+Al final, tiene sentido que cualquiera pueda ganar usando XP porque nosotros queremos lo mismo, "hacer grandes juegos".
+
+===== Aprendiendo mas acerca de XP =====
+
+/*
+These practices, along with the other XP practices: Whole Team, Planning Game,
+Small Releases, Customer Tests, Continuous Integration, Collective Code
+Ownership, Coding Standard and Metaphor, allow a team to rapidly deliver
+visible results. There are many excellent resources you can utilize if you
+want to learn more about XP or any of its practices. Kent Beck’s book, Extreme
+Programming Explained, is generally regarded as the best introduction to XP
+and I also recommend these web sites:
+*/
+
+Estas prácticas, así como otras prácticas no comentadas aquí: //Whole Team//, 
+//Planning Game//, //Small Releases//, //Customer Test//, //Continuons //Integratison//, //Collective Code Ownership//, //Coding Standard// y ////Methafor//, le permiten a un equipo entregar resultados visibles
+rapidamente. Hay muchos buenos recursos que puede utilizar si
+quiere aprender mas sobre XP o cualquiera de sus prácticas. El libro de Ken
+Beck, //Exteme Programming Explained// es generalmente reconocido como la mejor
+introducción a XP. También recomiendo estos sitios web:
+
+  * http://www.extremeprogramming.org/
+  * http://www.xprogramming.com/xpmag/whatisxp.htm

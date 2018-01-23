@@ -1,0 +1,24 @@
+====== Jesús Hernández Gormaz ======
+
+
+<note important>Sin foto por el momento</note>
+/*{{:comunidad:integrantes:hugoruscitti.jpg|}}*/
+
+{{:comunidad:integrantes:mail_elrinconjhg.png|}}
+
+/* La imagen de correo electrónico ha sido
+   generada gracias al siguiente sitio:
+
+        http://services.nexodyne.com/email/
+*/
+
+
+
+===== Perfil =====
+
+
+
+  * Nick dentro del foro: [[http://www.losersjuegos.com.ar/foro/profile.php?mode=viewprofile&u=1912|lacabra25]]
+  * Nacido el: 18 Septiembre de 1991
+  * Locación: Tenerife, España
+  * Intereses: Programación en C y aprender algun dia ensamblador

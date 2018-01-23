@@ -1,0 +1,16 @@
+====== Traducciones ======
+
+Esta sección contiene proyectos de traducción de las bibliotecas que
+recomendamos para hacer videojuegos.
+
+<subpage pygame|Pygame>
+Es una biblioteca para realizar videojuegos en 2D con python. Permite acceder
+a la funcionalidad de SDL pero de manera muy sencilla.
+</subpage>
+
+/*
+<subpage panda3d|Panda 3D>
+Un motor o biblioteca para hacer videojuegos en 3D, se puede utilizar mediante
+los lenguajes de programación C++ o python.
+</subpage>
+*/

@@ -1,0 +1,14 @@
+====== Asadetris, nuevo desarrollo colaborativo ======
+
+Iniciamos el desarrollo de un nuevo proyecto llamado "asadetris". Consiste
+en crear un videojuego similar a tetris, pero de participación abierta. Todos
+pueden integrar el grupo de desarrollo.
+
+Para mas detalles puedes observar la propuesta en el foro de mensajes:
+
+http://www.losersjuegos.com.ar/foro/viewtopic.php?t=585
+
+{{tag>pygame}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

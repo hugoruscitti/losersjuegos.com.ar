@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mask:mask_class</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:56+0300" />
+<meta name="keywords" content="traducciones,pygame,mask,mask_class" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/mask/mask_class-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-mask.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="mask_class.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/mask/mask_class.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#mask" class="toc">Mask</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#get_size" class="toc">get_size</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_at" class="toc">get_at</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_at" class="toc">set_at</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#overlap" class="toc">overlap</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#overlap_area" class="toc">overlap_area</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_bounding_rects" class="toc">get_bounding_rects</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="mask" id="mask">Mask</a></h1>
+<div class="level1">
+
+
+
+<p>
+Objeto de pygame para representar máscaras de bit 2D.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#get_size" class="wikilink1" title="traducciones:pygame:mask">get_size</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#get_at" class="wikilink1" title="traducciones:pygame:mask">get_at</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#set_at" class="wikilink1" title="traducciones:pygame:mask">set_at</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#overlap" class="wikilink1" title="traducciones:pygame:mask">overlap</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#overlap_area" class="wikilink1" title="traducciones:pygame:mask">overlap_area</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/mask.html#get_bounding_rects" class="wikilink1" title="traducciones:pygame:mask">get_bounding_rects</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+<pre class="code">
+pygame.Mask((width, height)): return Mask
+</pre>
+
+</div>
+<!-- SECTION "Mask" [1-464] -->
+<h2><a name="get_size" id="get_size">get_size</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el tamaño de una máscara.
+</p>
+<pre class="code">
+Mask.get_size() -&gt; width,height
+</pre>
+
+</div>
+<!-- SECTION "get_size" [465-610] -->
+<h2><a name="get_at" id="get_at">get_at</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna un valor distinto de 0 si el bit en la posición
+(x, y) es colisionable.
+</p>
+<pre class="code">
+Mask.get_at( (x,y) ) -&gt; int
+</pre>
+
+
+
+<p>
+Las coordenadas comienzan en (0, 0), que es la parte superior
+izquierda, al igual que ocurre con las superficies.
+</p>
+
+</div>
+<!-- SECTION "get_at" [611-992] -->
+<h2><a name="set_at" id="set_at">set_at</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el valor de colisión de la máscara en la posición <code>x</code> e
+<code>y</code> indicada.
+</p>
+<pre class="code">
+Mask.set_at( (x,y),value)
+</pre>
+
+</div>
+<!-- SECTION "set_at" [993-1196] -->
+<h2><a name="overlap" id="overlap">overlap</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el punto de intersección si las máscaras están super-posicionadas
+por el desplazamiento dato. O bien retorna None si no están
+super-posicionadas.
+</p>
+<pre class="code">
+Mask.overlap(othermask, offset) -&gt; x,y
+</pre>
+
+
+
+<p>
+La prueba de superposición utiliza los siguientes desplazamientos
+(que pueden ser negativos):
+</p>
+<pre class="code">
+  +----+----------..
+  |A   | yoffset   
+  |  +-+----------..
+  +--|B        
+  |xoffset      
+  |  |
+  :  :  
+</pre>
+
+</div>
+<!-- SECTION "overlap" [1197-1850] -->
+<h2><a name="overlap_area" id="overlap_area">overlap_area</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el número de <em>pixeles</em> super-posicionados.
+</p>
+<pre class="code">
+Mask.overlap_area(othermask, offset) -&gt; numpixels
+</pre>
+
+
+
+<p>
+Puede ver cuantos <em>pixeles</em> están super-posicionados con otra
+máscara dada. Puede ser utilizado para ver en que dirección colisionan
+las cosas, o para ver en que grado (de cantidad) colisionan las
+máscaras.
+</p>
+
+</div>
+<!-- SECTION "overlap_area" [1851-2436] -->
+<h2><a name="get_bounding_rects" id="get_bounding_rects">get_bounding_rects</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna una lista de rectángulos delimitadores de las regiones
+de <em>pixeles</em> que definen colisión.
+</p>
+<pre class="code">
+Mask.get_bounding_rects() -&gt; Rects
+</pre>
+
+
+
+<p>
+Obtiene un rectángulo de regiones conectadas de <em>pixeles</em> que
+definen colisión. El rectángulo de colisión representa los <em>pixeles</em>
+conectados dentro de su región.
+</p>
+
+</div>
+<!-- SECTION "get_bounding_rects" [2437-] --></div>
+</body>
+</html>

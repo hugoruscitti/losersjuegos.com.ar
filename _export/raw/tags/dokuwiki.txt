@@ -1,0 +1,15 @@
+====== DokuWiki ======
+
+{{:wiki:dokuwiki-128.png|}}
+
+DokuWiki es un sistema de wiki simple y fácil de utilizar que permite la edición
+colaborativa de un sitio web. 
+
+Este sitio web está construido sobre DokuWiki porque consideramos que ofrece
+una de las formas mas interesantes de contruir una web en equipo, y de forma
+cooperativa.
+
+
+===== Referencias externas =====
+
+  * [[http://www.dokuwiki.org|Sitio Oficial de DokuWiki]]

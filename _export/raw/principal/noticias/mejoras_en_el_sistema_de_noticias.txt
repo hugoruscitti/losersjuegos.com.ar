@@ -1,0 +1,10 @@
+====== Mejoras en el sistema de noticias ======
+
+A partir de ahora, el sistema de noticias permite a los usuarios opinar y obtener información sobre la categoría de la noticia.
+
+
+
+{{tag>dokuwiki}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

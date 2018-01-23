@@ -1,0 +1,138 @@
+{{:referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_gnu.pdf|Ver PDF}}
+======Charla: Desarrollo de juegos sobre GNU/Linux======
+=====Créditos=====
+
+    * **Autor:** Hugo Ruscitti / Gabriel Valentin
+    * **Fecha:** 14 de Mayo del 2005
+
+=====Introducción=====
+
+El presente documento reúne una serie de diapositivas que fueron presentadas en el evento CTT (Charlas Técnicas Trimestrales) del 14 de Mayo, organizado por el grupo de usuarios CaFeLUG en la Universidad de Belgrano (Bs. As. Argentina)
+
+Si quiere puede descargar los archivos fuente, tanto de las diapositivas, como de los ejemplos mostrados:
+
+    * {{:referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_GNU_LINUX_noimg.sxi}}
+    * {{:referencia:articulos:desarrollo_de_juegos_sobre_gnu:desarrollo_de_juegos_sobre_GNU_LINUX.sxi}}
+    * {{:referencia:articulos:desarrollo_de_juegos_sobre_gnu:ejemplos-0.3.tar.gz}}
+
+=====Inicio=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img0.png }}
+
+=====Conceptos sobre videojuegos=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img1.png }}
+
+Cada grupo de desarrollo tiene su visión de los videojuegos.
+
+Analizando las propuestas de cada grupo nos encontramos con 3 conceptos generales.
+
+    * Los juegos cerrados para PC y consolas recreativas: simplemente nos proponen jugar, es idéntico comprar juegos para la PC y la consola recreativa. Sólo podemos jugar con la tecnología que otros desarrollan.
+
+Esto no siempre fue así, en //Los años 80// era muy común oír que un pequeño grupo de estudiantes desarrollaban videojuegos dentro de una habitación, lamentablemente pocos compartían sus conocimientos con el resto de las personas.
+
+Así, quienes conocemos las ventajas de utilizar GNU/Linux, proponemos un nuevo concepto: no buscamos desarrollar juegos encerrados en una habitación aislados de todo. Podemos crear, aprender y compartir conocimiento sobre tecnología desarrollando videojuegos completamente libres.
+
+En esta charla adoptamos únicamente el último concepto, videojuegos libres.
+=====Sobre el proyecto LosersJuegos=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img2.png }}
+
+En base a este concepto comenzamos un proyecto llamado LosersJuegos.
+
+Buscamos promover el conocimiento y los proyectos que impulsan el desarrollo de videojuegos completamente libres.
+
+La licencia GPL garantiza los términos de uso legal que un programa debe tener para ser considerado libre, básicamente otorga 4 libertades fundamentales:
+
+    * La libertad de ejecutar el programa sea cual sea el propósito.
+    * La libertad de estudiar y/o modificar el programa para ajustarlo a tus necesidades.
+    * La libertad de distribuir copias, ya sea en forma gratuita o a cambio del pago de un precio.
+    * La libertad de distribuir versiones modificadas del programa, de modo que toda la comunidad se beneficie con tus modificaciones.
+
+Existen otras licencias con términos similares, todas son bienvenidas siempre y cuando sean compatibles con la licencia GPL.
+
+Nuestro principal interés se basa en aprender y desarrollar sobre tecnología. Nadie nace sabiendo, es importante recordarlo.
+=====Modelo de desarrollo: D.O.S.=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img3.png }}
+
+Antes de proponer nuestro modelo de desarrollo veremos a grandes rasgos que modelos existían años atrás:
+
+En el sistema operativo DOS tenías todo el equipo a tu disposición, se acostumbraba (dados los límites tecnológicos) a economizar cada recurso y a utilizar Assembler como mínimo en todas las rutinas críticas, como el acceso a video y sonido.
+=====Modelo de desarrollo: Direct X=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img4.png }}
+
+Unos años mas tarde Microsoft compró a una empresa de Londres, llamada Render Morphics, lo que hoy en dia conocemos como Direct-X.
+
+La propuesta era diferente, en este caso contábamos con una biblioteca (//library// en inglés, frecuentemene traducida como //librería//).
+
+Una biblioteca es un conjunto de rutinas que nos facilitan ciertas tareas. En este caso facilitan el acceso a los dispositivos multimedia (Audio, Video etc.) sin preocuparnos por el modelo de cada dispositivo de Hardware.
+
+Con esta explicación queremos dejar en evidencia que los modelos de desarrollo cambian. Así como cambiamos el modelo de DOS por Direct-X y Windows, hoy nos preguntamos: ¿ Direct-X es adecuado en la actualidad ?
+
+Un modelo de desarrollo debe adaptarse a su época, hoy utilizamos GNU/Linux como muchos usuarios (cada vez más). El Software Libre representa una propuesta muy interesante. Existen dispositivos, lenguajes de programación y sistemas operativos mucho mas variados que a mediados de los 90.
+
+Direct-X no resuelve nada de esto, es una tecnología cerrada. Sólo la empresa que cuenta con los derechos legales correspondientes puede darnos la posibilidad de adaptar este modelo a la realidad. Este es el motivo principal por el cual no existen muchos juegos para GNU/Linux, están atados al modelo DirectX.
+=====Modelo de desarrollo: SDL (I)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img5.png }}
+
+Pero existe otro modelo mejor adaptado a la actualidad, SDL.
+
+Es muy simple de utilizar, funciona en varios sistemas operativos y soporta muchos lenguajes de programación.
+
+Además se distribuye bajo la licencia LGPL, lo cual nos asegura que no estaremos sujetos a las decisiones o conveniencias de una empresa. Podremos ver, estudiar, modificar y distribuir todo el código de la biblioteca y así extender su soporte.
+=====Modelo de desarrollo: SDL (II)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img6.png }}
+
+Otra característica de SDL es su diseño, SDL resuelve el acceso básico al sistema multimedia, por ejemplo: podemos indicarle a la biblioteca que genere una ventana, reproduzca un sonido e imprima algún gráfico.
+
+Si buscamos extender estas funcionalidades tenemos la posibilidad añadir otras bibliotecas como OpenGL (generalmente para manejar gráficos en 3D), SDL_image (para cargar formatos de imágenes como PNG, JPEG etc.) y SDL_Net (para el manejo de redes)
+
+Existen muchas otras bibliotecas en www.libsdl.org
+=====Ejemplos con SDL=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img7.png }}
+
+Estas diapositivas no incluyen una descripciónn detallada de cada ejemplo, en el evento se mostraron los programas en funcionamiento a modo de taller, intercambiando consultas y comentarios.
+
+Para acentar por escrito una explicación preferimos hacerlo mediante artículos individuales, puede encontrar estos artículos en www.losersjuegos.com.ar (sección documentos).
+
+Recuerde desacargar los ejemplos {{:referencia:articulos:desarrollo_de_juegos_sobre_gnu:ejemplos-0.3.tar.gz|pulsando aquí.}}
+=====Crear una ventana=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img8.png }}
+
+=====Manejo de imágenes=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img9.png }}
+
+=====Velocidad constante (I)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img10.png }}
+
+=====Velocidad constante (II)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img11.png }}
+
+=====Procesos y optimización gráfica=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img12.png }}
+
+=====Colisiones=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img13.png }}
+
+=====SDL_Net (I)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img14.png }}
+
+=====SDL_Net (II)=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img15.png }}
+
+=====Preguntas=====
+
+{{ :referencia:articulos:desarrollo_de_juegos_sobre_gnu:img16.png }}

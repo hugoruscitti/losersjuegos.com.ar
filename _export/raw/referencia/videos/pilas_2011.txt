@@ -1,0 +1,10 @@
+====== Haciendo videojuegos con pilas ======
+
+<html>
+<iframe src="http://player.vimeo.com/video/23735704?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe><p><a href="http://vimeo.com/23735704">Haciendo videojuegos con pilas</a> from <a href="http://vimeo.com/user5340810">Hugo Ruscitti</a> on <a href="http://vimeo.com">Vimeo</a>.</p><p>También puedes ver las diapositivas de esta charla <a class="reference external" href="/doc/pilas_pyday_04_2011.pdf">aquí</a>.</p>
+</html>
+
+===== Recursos =====
+
+  * [[http://example.com|Visita el sitio oficial de pilas-engine]]
+  * [[http://example.com|Descargar diapositivas]]

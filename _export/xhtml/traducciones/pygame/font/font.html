@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:font:font</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:56+0300" />
+<meta name="keywords" content="traducciones,pygame,font,font" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/font/font-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-font.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="font.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/font/font.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#font" class="toc">Font</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#font1" class="toc">Font</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#render" class="toc">render</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#size" class="toc">size</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_underline" class="toc">set_underline</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_underline" class="toc">get_underline</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_bold" class="toc">set_bold</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_bold" class="toc">get_bold</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_italic" class="toc">set_italic</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#metrics" class="toc">metrics</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_italic" class="toc">get_italic</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_linesize" class="toc">get_linesize</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_height" class="toc">get_height</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_ascent" class="toc">get_ascent</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_descent" class="toc">get_descent</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="font" id="font">Font</a></h1>
+<div class="level1">
+
+
+
+<p>
+Genera un nuevo objeto Font a partir de un archivo.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#font" title="traducciones:pygame:font:font &crarr;" class="wikilink1">Font</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#render" title="traducciones:pygame:font:font &crarr;" class="wikilink1">render</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#size" title="traducciones:pygame:font:font &crarr;" class="wikilink1">size</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_underline" title="traducciones:pygame:font:font &crarr;" class="wikilink1">set_underline</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_underline" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_underline</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_bold" title="traducciones:pygame:font:font &crarr;" class="wikilink1">set_bold</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_bold" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_bold</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_italic" title="traducciones:pygame:font:font &crarr;" class="wikilink1">set_italic</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#metrics" title="traducciones:pygame:font:font &crarr;" class="wikilink1">metrics</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_italic" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_italic</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_linesize" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_linesize</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_height" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_height</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_ascent" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_ascent</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_descent" title="traducciones:pygame:font:font &crarr;" class="wikilink1">get_descent</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Font" [1-402] -->
+<h2><a name="font1" id="font1">Font</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">Font</span><span class="br0">&#40;</span>filename, size<span class="br0">&#41;</span>: <span class="kw1">return</span> Font
+pygame.<span class="me1">font</span>.<span class="me1">Font</span><span class="br0">&#40;</span><span class="kw2">object</span>, size<span class="br0">&#41;</span>: <span class="kw1">return</span> Font</pre>
+
+
+<p>
+Carga una fuente nueva a partir de un nombre de archivo u objeto archivo
+de python dado. El argumento <code>size</code> es la altura de la fuente en
+pixeles. Si el argumento <code>filename</code> vale <code>None</code>, pygame cargará
+la tipografía por defecto. Se lanzará una excepción si la fuente
+indicada por los argumentos no se puede cargar. No se puede cambiar
+el tamaño de una fuente una vez creado el objeto.
+</p>
+
+
+
+<p>
+Los objetos Font se usan principalmente para imprimir texto en superficies
+nuevas. La impresión puede simular características como <strong>negrita</strong> y <em>cursiva</em>, 
+aunque es mejor cargar fuentes que ya tengan estos atributos. El texto
+a imprimir puede ser unicode o texto normal.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Font" [403-1859] -->
+<h2><a name="render" id="render">render</a></h2>
+<div class="level2">
+
+
+
+<p>
+Imprime texto en una nueva superficie.
+</p>
+<pre class="code python">Font.<span class="me1">render</span><span class="br0">&#40;</span>text, antialias, color, background=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Surface</pre>
+
+
+<p>
+Genera una nueva superficie con el texto especificado dentro de
+ella. Pygame no provee una manera directa de imprimir texto en
+una superficie existente: en lugar de eso debe usar esta función
+para crear una imagen del texto y luego volcar esta imagen en
+la otra superficie.
+</p>
+
+
+
+<p>
+El texto solamente puede ser de una linea: Los caracteres que indican
+salto de linea no se imprimen. El argumento <code>antialias</code> es un valor
+booleano: si vale <code>True</code> los caracteres tendrán bordes suaves. El argumento
+<code>color</code> es el color del texto, por ejemplo puede usar (0, 0, 255)
+para definir el color azul. El argumento opcional <code>background</code> es el
+color para utilizar de fondo. Si no se especifica un fondo, el área
+fuera del texto será transparente.
+</p>
+
+
+
+<p>
+La superficie retornada será del tamaño necesario para alojar el texto (el
+tamaño lo retorna la función <code>Font.size()</code>). Si se envía una cadena
+vacía en lugar de texto, se retornará una superficie negra que tendrá
+un <em>pixel</em> de ancho y la altura de la fuente.
+</p>
+
+
+
+<p>
+Retornará distintos tipos de superficie dependiendo del tipo de fondo y 
+suavidad (<code>antialias</code>) solicitado. Por razones de rendimiento es bueno
+conocer el tipo de imagen que se usará. Si no usa <code>antialias</code> se retornará
+una superficie de 8 bits con una paleta de dos colores. Si el fondo es
+transparente se usará una transparencia por color (colorkey). Las imágenes
+con <code>antialias</code> se generan en superficies RGB de 24 bit, y se
+incluirá un pixel <em>alpha</em> si el fondo es transparente.
+</p>
+
+
+
+<p>
+Sugerencia de optimización: Si sabe que el destino de impresión para el
+texto siempre tendrá un color uniforme, y utiliza <code>antialias</code>, podrá
+mejorar el rendimiento especificando el color de fondo al crear
+la superficie. Esto produce una imagen que tiene información de transparencia
+por color en lugar de transparencia alpha (mucho menos eficiente).
+</p>
+
+
+
+<p>
+Si usa &#039;\n&#039; en el texto, se pintará una letra desconocida, generalmente
+un rectángulo. En lugar de ello tendrá que manejar los saltos de linea
+usted mismo.
+</p>
+
+
+
+<p>
+La operación de imprimir texto no se puede realizar simultáneamente desde
+diferentes hilos (concepto <a href="http://es.wikipedia.org/wiki/Thread-Safety:Thread%20safe" class="urlextern" title="http://es.wikipedia.org/wiki/Thread-Safety:Thread safe"  rel="nofollow">http://es.wikipedia.org/wiki/Thread-Safety:Thread safe</a>), 
+por lo tanto solo un hilo puede imprimir texto a la vez.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.render" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.render">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "render" [1860-6321] -->
+<h2><a name="size" id="size">size</a></h2>
+<div class="level2">
+
+
+
+<p>
+Determina la cantidad de tamaño necesario para dibujar texto.
+</p>
+<pre class="code python">Font.<span class="me1">size</span><span class="br0">&#40;</span>text<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>width, height<span class="br0">&#41;</span></pre>
+
+
+<p>
+Retorna la dimensión necesaria para dibujar el texto. Se puede usar para
+determinar la posición necesaria para el texto antes de imprimirlo. Y también
+se puede usar para separar palabras u otros efectos de posicionado.
+</p>
+
+
+
+<p>
+Tengan en cuenta que la mayoría de las fuentes utiliza el procedimiento
+<a href="http://en.wikipedia.org/wiki/Kerning" class="urlextern" title="http://en.wikipedia.org/wiki/Kerning"  rel="nofollow">Kerning</a> que ajusta el ancho de ciertos
+pares de letras. Por ejemplo, el ancho de “ae” no siempre coincidirá con el ancho
+de “a” + “b”. 
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.size" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.size">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "size" [6322-7474] -->
+<h2><a name="set_underline" id="set_underline">set_underline</a></h2>
+<div class="level2">
+
+
+
+<p>
+Controla si el texto se dibujará con un subrayado.
+</p>
+<pre class="code python">Font.<span class="me1">set_underline</span><span class="br0">&#40;</span><span class="kw2">bool</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cuando se habilita, todas las fuentes que se dibujen incluirán un subrayado. El
+subrayado siempre tendrá un pixel de grosor, independiente del tamaño de la
+fuente. Esto se puede combinar con los modos <strong>negrita</strong> y <em>cursiva</em>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_underline" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_underline">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_underline" [7475-8181] -->
+<h2><a name="get_underline" id="get_underline">get_underline</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el texto se dibujará con un subrayado.
+</p>
+<pre class="code python">Font.<span class="me1">get_underline</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando está habilitado el subrayado de texto.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_underline" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_underline">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_underline" [8182-8592] -->
+<h2><a name="set_bold" id="set_bold">set_bold</a></h2>
+<div class="level2">
+
+
+
+<p>
+Habilita el dibujado de texto en negrita falso.
+</p>
+<pre class="code python">Font.<span class="me1">set_bold</span><span class="br0">&#40;</span><span class="kw2">bool</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Habilita el dibujado de texto en negrita. Este es un estiramiento falso
+de la fuente que no se verá muy bien en varios tipos de fuente. Si puede
+cargar la fuente de un archivo de fuente negrita real, la fuente sí
+tendrá diferentes grosores que la fuente normal. Este modo se puede
+mezclar con los modos subrayado y <em>cursiva</em>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_bold" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_bold">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_bold" [8593-9486] -->
+<h2><a name="get_bold" id="get_bold">get_bold</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el texto se dibujará en negrita.
+</p>
+<pre class="code python">Font.<span class="me1">get_bold</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando el modo de dibujado en negrita está habilitado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_bold" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_bold">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_bold" [9487-9881] -->
+<h2><a name="set_italic" id="set_italic">set_italic</a></h2>
+<div class="level2">
+
+
+
+<p>
+Habilita el dibujado de texto en cursiva falso.
+</p>
+<pre class="code python">Font.<span class="me1">set_bold</span><span class="br0">&#40;</span><span class="kw2">bool</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Habilita el dibujado de texto en cursiva. Esto es una deformación falsa
+de la fuente que no se verá muy bien en varios tipos de fuente. Si puede
+cargar la fuente de un archivo de fuente cursiva real, la fuente sí
+tendrá diferente aspecto que la fuente normal. Este modo se puede
+mezclar con los modos negrita y subrayado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_italic" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.set_italic">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_italic" [9882-10776] -->
+<h2><a name="metrics" id="metrics">metrics</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna las medidas de cada letra de la cadena indicada.
+</p>
+<pre class="code python">Font.<span class="me1">metrics</span><span class="br0">&#40;</span>text<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">list</span></pre>
+
+
+<p>
+La lista retornada contiene tuplas para cada caracter, que contienen el
+desplazamiento mínimo en X, el desplazamiento máximo en X, el desplazamiento
+mínimo en Y, el desplazamiento mínimo en Y el desplazamiento anticipado de
+el otro caracter. 
+<code>[(minx, maxx, miny, maxy, advance), (minx, maxx, miny, maxy, advance), …]</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.metrics" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.metrics">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "metrics" [10777-11686] -->
+<h2><a name="get_italic" id="get_italic">get_italic</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el texto se dibujará en cursiva.
+</p>
+<pre class="code python">Font.<span class="me1">get_italic</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando el dibujado de fuente en cursiva está habilitado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_italic" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_italic">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_italic" [11687-12098] -->
+<h2><a name="get_linesize" id="get_linesize">get_linesize</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el espacio de linea de un texto.
+</p>
+<pre class="code python">Font.<span class="me1">get_linesize</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna la altura en <em>pixeles</em> de una linea de texto. Se recomienda esta cantidad
+de espacio entre lineas cuando dibuje varias lineas de texto.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_linesize" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_linesize">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_linesize" [12099-12672] -->
+<h2><a name="get_height" id="get_height">get_height</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la altura de una fuente.
+</p>
+<pre class="code python">Font.<span class="me1">get_height</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna la altura en <em>pixels</em> del texto que se dibuja. Este es el tamaño
+aproximado de cada figura en la fuente.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_height" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_height">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+<hr />
+
+</div>
+<!-- SECTION "get_height" [12673-13177] -->
+<h2><a name="get_ascent" id="get_ascent">get_ascent</a></h2>
+<div class="level2">
+
+<p>
+
+get the ascent of the font
+</p>
+<pre class="code python">Font.<span class="me1">get_ascent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna la altura en <em>pixeles</em> del ascendente de la fuente. El ascendente
+es el numero de <em>pixeles</em> desde el anillo (o linea superior) de la
+parte superior de la fuente.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_ascent" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_ascent">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+
+Las siguiente imagen ilustra las medidas:
+</p>
+
+<p>
+<a href="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fwww.fotonostra.com%2Fgrafico%2Ffotos%2Fpartesletra.gif" class="media" title="http://www.fotonostra.com/grafico/fotos/partesletra.gif"><img src="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fwww.fotonostra.com%2Fgrafico%2Ffotos%2Fpartesletra.gif" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "get_ascent" [13178-13793] -->
+<h2><a name="get_descent" id="get_descent">get_descent</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna el descendente de la fuente.
+</p>
+<pre class="code python">Font.<span class="me1">get_descent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna la altura en <em>pixeles</em> del descendente de la fuente. El descendente
+es el numero de <em>pixeles</em> desde la basa (o linea base) de la parte inferior
+de la fuente.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_descent" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.Font.get_descent">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+<p>
+Las siguiente imagen ilustra las medidas:
+</p>
+
+<p>
+<a href="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fwww.fotonostra.com%2Fgrafico%2Ffotos%2Fpartesletra.gif" class="media" title="http://www.fotonostra.com/grafico/fotos/partesletra.gif"><img src="http://losersjuegos.com.ar/lib/exe/fetch.php?media=http%3A%2F%2Fwww.fotonostra.com%2Fgrafico%2Ffotos%2Fpartesletra.gif" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "get_descent" [13794-] --></div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:overlay</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-27T21:09:36+0300" />
+<meta name="keywords" content="traducciones,pygame,overlay" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/overlay-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="overlay.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/overlay.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#overlay" class="toc">Overlay</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#display" class="toc">display</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_location" class="toc">set_location</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_hardware" class="toc">get_hardware</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="overlay" id="overlay">Overlay</a></h1>
+<div class="level1">
+
+
+
+<p>
+Objeto de pygame para gráficos de video 
+<a href="http://en.wikipedia.org/wiki/Hardware_overlay" class="urlextern" title="http://en.wikipedia.org/wiki/Hardware_overlay"  rel="nofollow">overlay</a>
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#overlay" title="traducciones:pygame:overlay &crarr;" class="wikilink1">Overlay</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#display" title="traducciones:pygame:overlay &crarr;" class="wikilink1">display</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_location" title="traducciones:pygame:overlay &crarr;" class="wikilink1">set_location</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_hardware" title="traducciones:pygame:overlay &crarr;" class="wikilink1">get_hardware</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+<pre class="code">
+pygame.Overlay(format, (width, height)): return Overlay
+</pre>
+
+
+
+<p>
+El objeto <code>Overlay</code> provee soporte para acceder a superficies
+overlay de hardware. Los <em>overlay</em> de video no usan el formato
+estándar RGB y pueden usar diferentes resoluciones de datos para
+crear un sola imagen.
+</p>
+
+
+
+<p>
+Los objectos <code>Overlay</code> representan el acceso a bajo nivel a la
+pantalla de hardware. Para usar este objeto debe conocer los detalles
+técnicos de los <code>overlays</code> de video.
+</p>
+
+
+
+<p>
+El formato de <code>Overlay</code> determina el tipo de datos que se usaran. No todo
+el hardware soportará todos los tipos de formatos. Esta es una lista
+de los tipos de formato disponibles.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> YV12_OVERLAY</div>
+</li>
+<li class="level1"><div class="li"> IYUV_OVERLAY</div>
+</li>
+<li class="level1"><div class="li"> YUV2_OVERLAY</div>
+</li>
+<li class="level1"><div class="li"> UYVY_OVERLAY</div>
+</li>
+<li class="level1"><div class="li"> YVYU_OVERLAY</div>
+</li>
+</ul>
+
+
+
+<p>
+Los argumentos <code>width</code> y <code>height</code> controlan el tamaño de datos
+de la imagen <code>overlay</code>. Esta imagen se puede mostrar en cualquier
+tamaño, no solo en el tamaño original.
+</p>
+
+
+
+<p>
+Los objetos <code>overlay</code> no se pueden ocultar, y siempre se verán
+sobre el contenido de la pantalla.
+</p>
+
+</div>
+<!-- SECTION "Overlay" [1-2183] -->
+<h2><a name="display" id="display">display</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define los datos de pixel del <code>overlay</code>.
+</p>
+<pre class="code python">Overlay.<span class="me1">display</span><span class="br0">&#40;</span> <span class="br0">&#40;</span>y, u, v<span class="br0">&#41;</span> <span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+Overlay.<span class="me1">display</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Muestra los datos <code>yuv</code> en los planos <code>overlay</code> de SDL. Los
+argumentos <code>y</code>, <code>u</code>, y <code>v</code> pueden ser cadenas o datos binarios. Los
+datos deben estar en el formato correcto que se utilizó para
+crear el objeto.
+</p>
+
+
+
+<p>
+Si no se indican argumentos, el objeto se dibujará con los datos
+actuales. Esto puede ser útil cuando el objeto no está acelerado por
+hardware.
+</p>
+
+
+
+<p>
+No se validan las cadenas, y cadenas de tamaño inapropiado podrían
+interrumpir el programa.
+</p>
+
+</div>
+<!-- SECTION "display" [2184-3275] -->
+<h2><a name="set_location" id="set_location">set_location</a></h2>
+<div class="level2">
+
+
+
+<p>
+Controla donde se mostrará el <code>overlay</code>.
+</p>
+<pre class="code python">Overlay.<span class="me1">set_location</span><span class="br0">&#40;</span>rect<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Define la posición de la superficie. El <code>overlay</code> se mostrará en
+una posición relativa a la superficie de pantalla principal. Esta
+operación no dibuja nuevamente el <code>overlay</code>, este se actualizará
+en la siguiente llamada a <code>Overlay.display()</code>.
+</p>
+
+</div>
+<!-- SECTION "set_location" [3276-3927] -->
+<h2><a name="get_hardware" id="get_hardware">get_hardware</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el objeto <code>Overlay</code> tiene aceleración por hardware.
+</p>
+<pre class="code python">Overlay.<span class="me1">get_hardware</span><span class="br0">&#40;</span>rect<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">int</span></pre>
+
+
+<p>
+Retorna un valor <code>True</code> cuando el objeto <code>Overlay</code> esté acelerado
+por hardware. Se utilizará impresión por software si la plataforma
+no soporta aceleración por hardware.
+</p>
+
+</div>
+<!-- SECTION "get_hardware" [3928-] --></div>
+</body>
+</html>

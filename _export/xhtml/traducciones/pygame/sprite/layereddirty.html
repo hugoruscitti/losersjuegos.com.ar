@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sprite:layereddirty</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:51+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite,layereddirty" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/sprite/layereddirty-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-sprite.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="layereddirty.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/sprite/layereddirty.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#layereddirty" class="toc">LayeredDirty</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#layereddirty1" class="toc">LayeredDirty</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#draw" class="toc">draw</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clear" class="toc">clear</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#repaint_rect" class="toc">repaint_rect</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_clip" class="toc">set_clip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_clip" class="toc">get_clip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#change_layer" class="toc">change_layer</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_timing_treshold" class="toc">set_timing_treshold</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="layereddirty" id="layereddirty">LayeredDirty</a></h1>
+<div class="level1">
+
+
+
+<p>
+El grupo LayeredDirty está diseñado para objetos DirtySprite, y es
+subclase de LayeredUpdates.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#layereddirty" class="wikilink1" title="traducciones:pygame:sprite:sprite">LayeredDirty</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#draw" class="wikilink1" title="traducciones:pygame:sprite:sprite">draw</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#clear" class="wikilink1" title="traducciones:pygame:sprite:sprite">clear</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#repaint_rect" class="wikilink1" title="traducciones:pygame:sprite:sprite">repaint_rect</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#set_clip" class="wikilink1" title="traducciones:pygame:sprite:sprite">set_clip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#get_clip" class="wikilink1" title="traducciones:pygame:sprite:sprite">get_clip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#change_layer" class="wikilink1" title="traducciones:pygame:sprite:sprite">change_layer</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite/sprite.html#set_timing_treshold" class="wikilink1" title="traducciones:pygame:sprite:sprite">set_timing_treshold</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "LayeredDirty" [1-603] -->
+<h2><a name="layereddirty1" id="layereddirty1">LayeredDirty</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">LayeredDirty</span><span class="br0">&#40;</span><span class="sy0">*</span>spites, <span class="sy0">*</span> <span class="sy0">*</span>kwargs<span class="br0">&#41;</span>: <span class="kw1">return</span> LayeredDirty</pre>
+
+
+<p>
+Este grupo requiere objetos <code>pygame.sprite.DirtySprite</code> o cualquier
+tipo de sprite que tenga los siguientes atributos.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> image</div>
+</li>
+<li class="level1"><div class="li"> rect</div>
+</li>
+<li class="level1"><div class="li"> dirty</div>
+</li>
+<li class="level1"><div class="li"> visible</div>
+</li>
+<li class="level1"><div class="li"> blendmode (vea la documentación de <code>DirtySprite</code>).</div>
+</li>
+</ul>
+
+
+
+<p>
+Este grupo utiliza una técnica de marcas <code>dirty</code>, por lo tanto
+es mas rápido que los grupos <code>pygame.sprite.RenderUpdates</code> si
+usted tiene varios sprites estáticos. Además cambia automáticamente
+entre dos modalidades de actualización: pantalla completa o actualización
+<code>dirty rectangles</code>, por lo tanto no tendrá que preocuparse de que
+tendría que ser mas rápido.
+</p>
+
+
+
+<p>
+Al igual que en <code>pygame.sprite.Group</code>, puede especificar algunos
+atributos adicionales a través de parámetros.
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> _use_update: Puede valer True o False, por defecto vale False.</div>
+</li>
+<li class="level1"><div class="li"> _default_layer: layer o capa por defecto en donde se insertarán los sprites que no tienen layer.</div>
+</li>
+<li class="level1"><div class="li"> _time_threshold: tiempo de tolerancia para alternar entre el modo de actualización de pantalla completa y <code>dirty rectangles</code>, por defecto vale 1000./80 == 1000/fps.</div>
+</li>
+</ul>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8.0
+</p>
+
+</div>
+<!-- SECTION "LayeredDirty" [604-2676] -->
+<h2><a name="draw" id="draw">draw</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja todos los sprites en el orden correcto sobre la superficie indicada.
+</p>
+<pre class="code python">LayeredDirty.<span class="me1">draw</span><span class="br0">&#40;</span>surface, bgd=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect_list</pre>
+
+
+<p>
+También puede especificar un fondo de pantalla. Si el fondo de pantalla
+ya está definido entonces el argumento <code>bgd</code> no tendrá efecto.
+</p>
+
+</div>
+<!-- SECTION "draw" [2677-3171] -->
+<h2><a name="clear" id="clear">clear</a></h2>
+<div class="level2">
+
+
+
+<p>
+Se usa para definir un fondo de pantalla.
+</p>
+<pre class="code python">LayeredDirty.<span class="me1">clear</span><span class="br0">&#40;</span>surface, bgd<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+</div>
+<!-- SECTION "clear" [3172-3333] -->
+<h2><a name="repaint_rect" id="repaint_rect">repaint_rect</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja nuevamente el área indicada.
+</p>
+<pre class="code python">LayeredDirty.<span class="me1">repaint_rect</span><span class="br0">&#40;</span>screen_rect<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El argumento <code>screen_rect</code> está en coordenadas de pantalla.
+</p>
+
+</div>
+<!-- SECTION "repaint_rect" [3334-3614] -->
+<h2><a name="set_clip" id="set_clip">set_clip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el área donde se puede dibujar. Para descartar este recorte
+solo indique <code>None</code> como argumento.
+</p>
+<pre class="code python">LayeredDirty.<span class="me1">set_clip</span><span class="br0">&#40;</span>screen_rect=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+</div>
+<!-- SECTION "set_clip" [3615-3901] -->
+<h2><a name="get_clip" id="get_clip">get_clip</a></h2>
+<div class="level2">
+
+
+
+
+
+<p>
+Obtiene el área donde se dibujará, conocida como área de recorte.
+</p>
+<pre class="code python">LayeredDirty.<span class="me1">get_clip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Rect</pre>
+</div>
+<!-- SECTION "get_clip" [3902-4203] -->
+<h2><a name="change_layer" id="change_layer">change_layer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia la capa o layer de un sprite.
+</p>
+<pre class="code python">change_layer<span class="br0">&#40;</span>sprite, new_layer<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El sprite tendría que haber sido insertado para dibujarse. Esta
+tarea no se verifica.
+</p>
+
+</div>
+<!-- SECTION "change_layer" [4204-4536] -->
+<h2><a name="set_timing_treshold" id="set_timing_treshold">set_timing_treshold</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define la tolerancia en milisegundos.
+</p>
+<pre class="code python">set_timing_treshold<span class="br0">&#40;</span>time_ms<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Por defecto esto vale 1000./80, donde 80 es la cantidad de cuadros
+por segundo (fps) que se quiere para cambiar a modo de actualización por
+pantalla completa.
+</p>
+
+</div>
+<!-- SECTION "set_timing_treshold" [4537-] --></div>
+</body>
+</html>

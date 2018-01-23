@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:mask</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-19T21:08:29+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask?rev=1229975335&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask_class?rev=1232215281&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask?rev=1229975335&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-22T22:48:55+04:00</dc:date>
+        <title>Mask</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask?rev=1229975335&amp;do=diff</link>
+        <description>Objeto de pygame para representar máscaras de bit 2D.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+pygame.Mask((width, height)): return Mask
+
+
+get_size
+
+
+
+
+Retorna el tamaño de una máscara.
+
+
+Mask.get_size() -&gt; width,height
+
+
+get_at
+
+
+
+
+Retorna un valor distinto de 0 si el bit en la posición
+(x, y) es colisionable.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask_class?rev=1232215281&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T21:01:21+04:00</dc:date>
+        <title>Mask</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/mask/mask_class?rev=1232215281&amp;do=diff</link>
+        <description>Objeto de pygame para representar máscaras de bit 2D.
+
+	*  get_size
+	*  get_at
+	*  set_at
+	*  overlap
+	*  overlap_area
+	*  get_bounding_rects
+
+
+pygame.Mask((width, height)): return Mask
+
+
+get_size
+
+
+
+
+Retorna el tamaño de una máscara.
+
+
+Mask.get_size() -&gt; width,height</description>
+    </item>
+</rdf:RDF>

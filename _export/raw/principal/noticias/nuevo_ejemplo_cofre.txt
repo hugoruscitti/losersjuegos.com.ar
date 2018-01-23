@@ -1,0 +1,10 @@
+====== Nuevo ejemplo "cofre" ======
+
+{{:referencia:ejemplos:cofre:mini.png |}}
+Se ha publicado un nuevo ejemplo llamado [[:referencia:ejemplos|cofre]] que muestra
+una caja con dos estados, abierta y cerrada.
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

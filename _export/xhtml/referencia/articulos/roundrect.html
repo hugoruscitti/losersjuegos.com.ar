@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:roundrect</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:43+0300" />
+<meta name="keywords" content="referencia,articulos,roundrect" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/roundrect-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="roundrect.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/roundrect.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#roundrect" class="toc">Roundrect</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#propuesta" class="toc">Propuesta:</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#funcion_a_realizar" class="toc">Función a realizar:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#fecha_de_finalizacion" class="toc">Fecha de finalización:</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#entregas" class="toc">Entregas</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#solucion_realizada_por_fhenix" class="toc">Solución realizada por Fhenix</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#solucion_realizada_por_geo" class="toc">Solución realizada por Geo</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#solucion_realizada_por_hugo_ruscitti" class="toc">Solución realizada por Hugo Ruscitti</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="roundrect" id="roundrect">Roundrect</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Roundrect" [1-24] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+El 6 de Agosto <em>Fhenix</em> propuso a los miembros de la lista de correo SDL en Español realizar un ejercicio con las bibliotecas SDL.
+</p>
+
+<p>
+El ejercicio consistía en desarrollar una función que imprima un rectángulo con los bordes redondeados.
+</p>
+
+<p>
+En este apartado incluimos la propuesta y las entregas realizadas por los integrantes de la Lista de correo.
+</p>
+
+</div>
+<!-- SECTION "Introducción" [25-404] -->
+<h2><a name="propuesta" id="propuesta">Propuesta:</a></h2>
+<div class="level2">
+
+<p>
+
+Debe realizar una función que imprima un rectángulo con las esquinas redondeadas utilizando la biblioteca SDL. Puede utilizar las funciones simples que incluye su documentación, como <em>putpixel</em>.
+</p>
+
+<p>
+La siguiente imagen muestra el resultado deseado
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/roundrect/ejemplo.png-id=referencia-articulos-roundrect.html" class="media" title="referencia:articulos:roundrect:ejemplo.png"><img src="../../../../_media/referencia/articulos/roundrect/ejemplo.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Propuesta:" [405-730] -->
+<h3><a name="funcion_a_realizar" id="funcion_a_realizar">Función a realizar:</a></h3>
+<div class="level3">
+
+<p>
+
+Para realizar el programa, sugerimos el siguiente prototipo de función:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> rectangulo <span class="br0">&#40;</span>SDL_Surface <span class="sy0">*</span> destino<span class="sy0">,</span> <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">int</span> h<span class="sy0">,</span> <span class="kw4">int</span> w<span class="sy0">,</span> <span class="kw4">int</span> radio<span class="sy0">,</span> Uint32 color<span class="br0">&#41;</span></pre>
+<p>
+Donde:
+</p>
+<ul>
+<li class="level1"><div class="li"> destino = superficie a imprimir.</div>
+</li>
+<li class="level1"><div class="li"> x, y = coordenada de la esquina superior izquierda.</div>
+</li>
+<li class="level1"><div class="li"> h, w = alto y ancho del rectangulo.</div>
+</li>
+<li class="level1"><div class="li"> radio = difuminación de los bordes.</div>
+</li>
+<li class="level1"><div class="li"> color = color del rectángulo (retorno de SDL_MapRGB)</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Función a realizar:" [731-1184] -->
+<h3><a name="fecha_de_finalizacion" id="fecha_de_finalizacion">Fecha de finalización:</a></h3>
+<div class="level3">
+
+<p>
+
+La fecha de entrega será el día 28 de Agosto del 2005.
+</p>
+
+</div>
+<!-- SECTION "Fecha de finalización:" [1185-1277] -->
+<h2><a name="entregas" id="entregas">Entregas</a></h2>
+<div class="level2">
+
+<p>
+
+A continuación se incluyen, en orden alfabético, las soluciones del ejercicio.
+</p>
+
+</div>
+<!-- SECTION "Entregas" [1278-1381] -->
+<h3><a name="solucion_realizada_por_fhenix" id="solucion_realizada_por_fhenix">Solución realizada por Fhenix</a></h3>
+<div class="level3">
+
+<p>
+
+<a href="../../../../referencia/articulos/roundrect/fhenix.png.html" class="media" title="referencia:articulos:roundrect:fhenix.png"><img src="../../../../_media/referencia/articulos/roundrect/d7c9d269cb304e0c02d5be8564260c50.media.153x120-w=153&amp;h=120.png" class="mediacenter" alt="" width="153" height="120" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Autor: Fhenix</div>
+</li>
+<li class="level2"><div class="li"> e-mail: phenix (arroba) softhome (punto) net</div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/roundrect/fhenix/roundrect_fhenix.zip" class="media mediafile mf_zip" title="referencia:articulos:roundrect:fhenix:roundrect_fhenix.zip">Descargar</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Solución realizada por Fhenix" [1382-1680] -->
+<h3><a name="solucion_realizada_por_geo" id="solucion_realizada_por_geo">Solución realizada por Geo</a></h3>
+<div class="level3">
+
+<p>
+
+<a href="../../../../referencia/articulos/roundrect/geo.png.html" class="media" title="referencia:articulos:roundrect:geo.png"><img src="../../../../_media/referencia/articulos/roundrect/aedf2a02dbd2b5d3bf9254f080b75302.media.160x120-w=160&amp;h=120.png" class="mediacenter" alt="" width="160" height="120" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Autor: José Jorge Enríquez Rodríguez (Geo)</div>
+</li>
+<li class="level2"><div class="li"> e-mail: josejorge (arroba) gmail (punto) com</div>
+</li>
+<li class="level2"><div class="li"> web: <a href="http://jenriquez.zzl.org" class="urlextern" title="http://jenriquez.zzl.org"  rel="nofollow">http://jenriquez.zzl.org</a></div>
+</li>
+<li class="level2"><div class="li"> Licencia: GNU Lesser General Public License (<acronym title="GNU Lesser General Public License">LGPL</acronym>)</div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/roundrect/geo/roundrect_geo.zip" class="media mediafile mf_zip" title="referencia:articulos:roundrect:geo:roundrect_geo.zip">Descargar</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Solución realizada por Geo" [1681-2089] -->
+<h3><a name="solucion_realizada_por_hugo_ruscitti" id="solucion_realizada_por_hugo_ruscitti">Solución realizada por Hugo Ruscitti</a></h3>
+<div class="level3">
+
+<p>
+
+<a href="../../../../referencia/articulos/roundrect/hugoruscitti.png.html" class="media" title="referencia:articulos:roundrect:hugoruscitti.png"><img src="../../../../_media/referencia/articulos/roundrect/4f843c862de29376f3a7c5e84cfa8d8a.media.147x120-w=147&amp;h=120.png" class="mediacenter" alt="" width="147" height="120" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Autor: Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> e-mail: hugoruscitti (arroba) yahoo (punto) com (punto) ar</div>
+</li>
+<li class="level2"><div class="li"> web: <a href="http://www.losersjuegos.com.ar" class="urlextern" title="http://www.losersjuegos.com.ar"  rel="nofollow">www.losersjuegos.com.ar</a></div>
+</li>
+<li class="level2"><div class="li"> Licencia: GNU General Public License (<acronym title="GNU General Public License">GPL</acronym>)</div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/roundrect/hugoruscitti/roundrect_hugoruscitti.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:roundrect:hugoruscitti:roundrect_hugoruscitti.tar.gz">Descargar</a></div>
+</li>
+<li class="level2"><div class="li"> nota: Fhenix corrigió algunos errores del código fuente.</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Solución realizada por Hugo Ruscitti" [2090-2592] -->
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia <a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es" class="urlextern" title="http://creativecommons.org/licenses/by-sa/2.5/deed.es"  rel="nofollow">Creative Commons</a>. 
+</p>
+
+</div>
+<!-- SECTION "Licencia" [2593-] --></div>
+</body>
+</html>

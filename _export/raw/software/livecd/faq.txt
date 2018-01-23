@@ -1,0 +1,89 @@
+====== Guía de preguntas frecuentes ======
+
+
+===== ¿Existe la posibilidad de instalar el sistema? =====
+
+
+Sí, tiene varias formas de iniciar el sistema de instalación:
+
+  - Seleccionando la opción **Instalar Ubuntu** desde el menú inicial.
+  - Seleccionando el icono de instalación en el escritorio una vez iniciado el
+    sistema.
+
+
+===== ¿Como puedo activar los efectos de escritorio? =====
+
+
+Una vez instalado el sistema, debe pulsar el botón derecho del mouse sobre el
+escritorio y elegir la opción Cambiar el fondo de escritorio.
+
+
+{{software:livecd:preferencias.png|}}
+
+
+Aparecerá una ventana con varias solapas, elija Efectos visuales y luego Extra o
+Personalizado.
+
+Tenga en cuenta que necesita Hardware de video especial para tener la
+posibilidad de habilitar estos efectos visuales.
+
+
+===== ¿Que material de referencia se incluye y donde se encuentra? =====
+
+
+Se incluyen manuales, diapositivas de charlas, juegos de ejemplo y diversos
+artículos sobre desarrollo de videojuegos.
+
+Encontrará todo este material dentro del directorio **extras** que se encuentra en
+el Escritorio del sistema.
+
+
+===== ¿Como puedo ejecutar los juegos que se incluyen? =====
+
+
+Varios juegos que se incluyen han sido desarrollados con el lenguaje de programación
+python, por lo tanto, hay dos grandes formas de ejecutarlos: Puede explorar los
+archivos del programa con el navegador de ficheros Nautilus, hacer doble-click con
+el mouse y seleccionar ejecutar. O bien, puede ingresar en el directorio del juego y
+escribir:
+
+  python archivo_del_juego.py
+
+
+donde archivo_del_juego.py suele ser un archivo de nombre: "run_game.py" o
+"test.py".
+
+
+===== ¿Como puedo actualizar el sistema o instalar programas adicionales? =====
+
+
+Este sistema conserva todas las características del sistema Ubuntu, por lo tanto,
+una vez instalado el sistema en su equipo podrá actualizar, instalar o eliminar
+cualquier programa como si se tratara de Ubuntu.
+
+En el menú Sistema / Administración, encontrará un programa bajo el nombre Gestor de
+paquetes Synaptic. Este programa le permitirá gestionar la instalación de programas
+de manera sencilla.
+
+Le recomendamos consultar la Guia Ubuntu (http://www.guia-ubuntu.org/) para
+obtener mas información al respecto.
+
+===== ¿Este sistema es compatible con Windows? =====
+
+En principio no, aunque todos los programas que desarrolle con las bibliotecas
+incluidas aquí podrán funcionar en otros sistemas. No solo Windows, también en Mac,
+QNX, BSD...
+
+Si quiere ejecutar programas para otro sistema como Windows, necesitará programas de
+emulación adicionales. Puede instalar programas como: WINE, QEMU o DOSBox siguiendo
+las instrucciones de la pregunta "¿como puedo actualizar o instalar programas
+adicionales?".
+
+
+===== ¿Donde puedo obtener ayuda o soporte si tengo una consulta? =====
+
+
+Este sistema personalizado no cuenta con un servicio de soporte técnico, el
+asesoramiento que pueda recibir por parte de nosotros es comunitario y sin
+garantía alguna; lo invitamos a consultarnos visitando el foro de
+loserjuegos (http://www.losersjuegos.com.ar/foro). 

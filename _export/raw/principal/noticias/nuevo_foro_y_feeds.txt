@@ -1,0 +1,19 @@
+====== Nuevo foro y feeds ======
+
+Hemos instalado una nueva versión de phpbb en nuestro
+foro, y además instalamos soporte de feeds para
+que se puedan leer los post nuevos directamente
+desde un lector de noticias.
+
+La dirección del foro es:
+
+http://www.losersjuegos.com.ar/foro
+
+y el feed del foro se puede obtener de:
+
+http://www.losersjuegos.com.ar/foro/feed.php
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

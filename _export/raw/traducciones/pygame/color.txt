@@ -1,0 +1,286 @@
+====== Color ======
+
+/*
+pygame object for color representations
+*/
+
+Objeto de pygame para representaciones de color.
+
+<box 90%>
+  * [[#Color]]
+  * [[#r]]
+  * [[#g]]
+  * [[#b]]
+  * [[#a]]
+  * [[#cmy]]
+  * [[#hsva]]
+  * [[#hsla]]
+  * [[#i1i2i3]]
+  * [[#normalize]]
+  * [[#correct_gamma]]
+</box>
+
+
+===== Color =====
+
+<code python>
+pygame.Color(name): Return Color
+pygame.Color(r, g, b, a): Return Color
+pygame.Color(rgbvalue): Return Color
+</code>
+
+/*
+The Color class represents RGBA color values using a value range of
+0-255. It allows basic arithmetic operations to create new colors,
+supports conversions to other color spaces such as HSV or HSL and lets
+you adjust single color channels.
+*/
+
+La clase Color representa valores de color RGBA usando un rango de
+valores de 0 a 255. Permite operaciones aritméticas básica para 
+crear colores nuevos, soporta conversiones a otros formato de
+color como HSV o HLS y le permite ajuntar canales de color de
+manera individual.
+
+/*
+New in pygame 1.8.1.
+*/
+
+Esta clase es nueva en pygame 1.8
+
+
+===== r =====
+
+/*
+Gets or sets the red value of the Color.
+*/
+
+Obtiene o define el componente rojo del Color.
+
+<code>
+Color.r: Return int
+</code>
+
+/*
+The red value of the Color.
+*/
+
+El valor rojo de un Color.
+
+===== g =====
+
+/*
+Gets or sets the green value of the Color.
+*/
+
+Obtiene o define el componente green del Color.
+
+<code>
+Color.g: Return int
+</code>
+
+/*
+The green value of the Color.
+*/
+
+El valor verde del Color.
+
+===== b =====
+
+/*
+Gets or sets the blue value of the Color.
+*/
+
+Obtiene o define el componente azul del Color.
+
+<code>
+Color.b: Return int
+</code>
+
+/*
+The blue value of the Color.
+*/
+
+El valor azul del Color.
+
+===== a =====
+
+/*
+Gets or sets the alpha value of the Color.
+*/
+
+
+Obtiene o define el componente alpha (transparencia) del Color.
+
+<code>
+Color.a: Return int
+</code>
+
+/*
+The alpha value of the Color.
+*/
+
+El valor alpha (transparencia) del Color.
+
+===== cmy =====
+
+/*
+Gets or sets the CMY representation of the Color.
+*/
+
+Obtiene o define la representación CMY del Color.
+
+<code>
+Color.cmy: Return tuple
+</code>
+
+/*
+The CMY representation of the Color. The CMY components are in the
+ranges C = [0, 1], M = [0, 1], Y = [0, 1]. Note that this will not
+return the absolutely exact CMY values for the set RGB values in all
+cases. Due to the RGB mapping from 0-255 and the CMY mapping from 0-1
+rounding errors may cause the CMY values to differ slightly from what
+you might expect.
+*/
+
+Es la representación CMY del Color. Los componentes CMY están en
+el rango C = [0, 1], M = [0, 1], Y = [0, 1]. Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación CMY (de 0 a 1) pueden
+causar que los valores CMY difieran ligeramente de los que usted
+espera.
+
+===== hsva =====
+
+/*
+Gets or sets the HSVA representation of the Color.
+*/
+
+Obtiene o define la representación HSVA del Color.
+
+<code>
+Color.hsva: Return tuple
+</code>
+
+/*
+The HSVA representation of the Color. The HSVA components are in the
+ranges H = [0, 360], S = [0, 100], V = [0, 100], A = [0, 100]. Note that
+this will not return the absolutely exact HSV values for the set RGB
+values in all cases. Due to the RGB mapping from 0-255 and the HSV
+mapping from 0-100 and 0-360 rounding errors may cause the HSV values to
+differ slightly from what you might expect.
+*/
+
+Es la representación HSVA del Color. Los componentes HSVA están
+en el rango H = [0, 320], S = [0, 100], V = [0, 100], A = [0, 100].
+Note que no se devolverá la representación absolutamente exacta para 
+los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación HSVA (de 0 a 100 y
+0 a 360) pueden
+causar que los valores HSV difieran ligeramente de los que usted
+espera.
+
+
+
+===== hsla =====
+
+/*
+Gets or sets the HSLA representation of the Color.
+*/
+
+Obtiene o define la representación HSLA del Color.
+
+<code>
+Color.hsla: Return tuple
+</code>
+
+/*
+The HSLA representation of the Color. The HSLA components are in the
+ranges H = [0, 360], S = [0, 100], V = [0, 100], A = [0, 100]. Note that
+this will not return the absolutely exact HSL values for the set RGB
+values in all cases. Due to the RGB mapping from 0-255 and the HSL
+mapping from 0-100 and 0-360 rounding errors may cause the HSL values to
+differ slightly from what you might expect.
+*/
+
+Es la representación HSLA del Color. Los componentes HSLA están en
+los rangos H = [0, 360], S = [0, 100], V = [0, 100], A = [0, 100].
+Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación HSLA (de 0 a 100 y
+0 a 360) pueden
+causar que los valores HSL difieran ligeramente de los que usted
+espera.
+
+===== i1i2i3 =====
+
+/*
+Gets or sets the I1I2I3 representation of the Color.
+*/
+
+Obtiene o define la representación ''I1I2I3'' del Color.
+
+<code>
+Color.i1i2i3: Return tuple
+</code>
+
+/*
+The I1I2I3 representation of the Color. The I1I2I3 components are in the
+ranges I1 = [0, 1], I2 = [-0.5, 0.5], I3 = [-0.5, 0.5]. Note that this
+will not return the absolutely exact I1I2I3 values for the set RGB
+values in all cases. Due to the RGB mapping from 0-255 and the I1I2I3
+mapping from 0-1 rounding errors may cause the I1I2I3 values to differ
+slightly from what you might expect.
+*/
+
+Es la representación I1I2I3 del color. Los componentes I1I2I3 están
+en el rango I1 = [0, 1], I2 = [-0.5, 0.5], I3 = [-0.5, 0.5]. 
+Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación I1I2I3 (de 0 a 1)
+pueden
+causar que los valores I1I2I3 difieran ligeramente de los que usted
+espera.
+
+===== normalize =====
+
+/*
+Returns the normalized RGBA values of the Color.
+*/
+
+Retorna los valores RGBA normalizados de un Color.
+
+<code>
+Color.normalize(): Return tuple
+</code>
+
+/*
+Returns the normalized RGBA values of the Color as floating point
+values.
+*/
+
+Retorna los valores RGBA normalizados de un Color como valores de
+números reales.
+
+===== correct_gamma =====
+
+/*
+Applies a certain gamma value to the Color.
+*/
+
+Aplica un cierto valor gamma a el Color.
+
+<code>
+Color.correct_gamma (gamma): Return Color
+</code>
+
+/*
+Applies a certain gamma value to the Color and returns a new Color with
+the adjusted RGBA values*/
+
+Aplica un cierto valor gamma  a el Color y retorna un nuevo color
+con los valores RGBA ajustados.

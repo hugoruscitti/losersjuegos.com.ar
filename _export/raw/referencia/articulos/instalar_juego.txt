@@ -1,0 +1,53 @@
+{{:referencia:articulos:instalar_juego:instalar_juego.pdf|Ver PDF}}
+====== Compilar e instalar un juego desde sus fuentes ======
+
+===== Créditos =====
+
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 13 de Marzo de 2005
+
+
+===== Introducción: =====
+
+
+Este procedimiento es habitual en muchos programas libres para GNU/Linux. Consiste en varios pasos: descomprimir, configurar e instalar el programa:
+
+Si el archivo descargado es programa-1.0.tar.gz, debemos ejecutar:
+
+<code>
+tar xzf programa-1.0.tar.gzcd programa-1.0.tar.gz./configure
+</code>
+
+
+Que verificará, entre otras cosas, que contamos con las bibliotecas necesarias para compilar el programa.
+
+Si este paso finalizó correctamente, compilamos:
+
+<code>
+make
+</code>
+
+
+E instalamos el programa como usuario root (administrador):
+
+<code>
+make install
+</code>
+
+o bien (para sistemas que utilicen //sudo// como Ubuntu):
+
+<code>
+sudo make install
+</code>
+
+
+Por defecto, el script ./configure define el directorio de instalación a /usr/local/share. Solo el usuario root puede añadir archivos en esa ruta, por esa era necesario cambiar de usuario. Si quiere evitar ese cambio a root tiene que ejecutar:
+
+<code>
+./configure --prefix=DST
+makemake install
+</code>
+
+(*) Donde DST es la ruta del directorio destino, por ejemplo /home/hugo/test
+
+Así podremos realizar pruebas sobre un programa sin involucrar al usuario root o los directorios de sistema. 

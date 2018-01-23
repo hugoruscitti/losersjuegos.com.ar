@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos principal</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T15:45:50+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/principal/anteriores?rev=1230938611&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/principal/indice?rev=1220643734&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/principal/noticias?rev=1232459951&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/principal/anteriores?rev=1230938611&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-03T02:23:31+04:00</dc:date>
+        <title>Noticias anteriores</title>
+        <link>http://www.losersjuegos.com.ar/principal/anteriores?rev=1230938611&amp;do=diff</link>
+        <description>Esta sección incluye las noticias históricas de losersjuegos. Considere
+esta página solo como un reporte histórico desde el año 2003. Generalmente
+no tiene mayor importancia para los usuarios nuevos.
+
+Note que los vínculos de esta sección están deshabilitado, debido 
+a que formaban parte de nuestro sitio web anterior.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/principal/indice?rev=1220643734&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-09-05T23:42:14+04:00</dc:date>
+        <title>Mapa del sitio</title>
+        <link>http://www.losersjuegos.com.ar/principal/indice?rev=1220643734&amp;do=diff</link>
+        <description>Esta página resume el contenido completo del sitio, ofreciendo accesos
+directos a cada sección. Si usted es nuevo en este sitio le recomendamos visitar
+el contenido del sitio desde el menú de contenidos de la izquierda (agrupado por
+categorías). Esta página solo es recomendable cuando desea acceder rápidamente a
+secciones conocidas con anterioridad.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/principal/noticias?rev=1232459951&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:59:11+04:00</dc:date>
+        <title>Noticias</title>
+        <link>http://www.losersjuegos.com.ar/principal/noticias?rev=1232459951&amp;do=diff</link>
+        <description></description>
+    </item>
+</rdf:RDF>

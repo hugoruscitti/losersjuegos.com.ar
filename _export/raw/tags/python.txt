@@ -1,0 +1,11 @@
+====== Python ======
+
+{{:tags:python.png|}}
+
+Python es un lenguaje de programación dinámico, orientado a objetos y multiplataforma.
+
+===== Referencias externas =====
+
+  * [[http://www.python.org/|Web oficial de python]]
+  * [[http://es.wikipedia.org/wiki/Python|Descripción de python en castellado desde wikipedia]]
+  * [[http://www.openbookproject.net/thinkcs/python/spanish2e/|Cómo Pensar como un Informático]] - Tutorial en castellano.

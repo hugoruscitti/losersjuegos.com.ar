@@ -1,0 +1,183 @@
+====== Overlay ======
+
+/*
+pygame object for video overlay graphics
+*/
+
+Objeto de pygame para gráficos de video 
+[[http://en.wikipedia.org/wiki/Hardware_overlay|overlay]]
+
+<box 90%>
+  * [[#Overlay]]
+  * [[#display]]
+  * [[#set_location]]
+  * [[#get_hardware]]
+</box>
+
+
+
+<code>
+pygame.Overlay(format, (width, height)): return Overlay
+</code>
+
+
+/*
+The Overlay objects provide support for accessing hardware video overlays.
+Video overlays do not use standard RGB pixel formats, and can use multiple
+resolutions of data to create a single image.
+*/
+
+El objeto ''Overlay'' provee soporte para acceder a superficies
+overlay de hardware. Los //overlay// de video no usan el formato
+estándar RGB y pueden usar diferentes resoluciones de datos para
+crear un sola imagen.
+
+/*
+The Overlay objects represent lower level access to the display hardware.
+To use the object you must understand the technical details of video overlays.
+*/
+
+Los objectos ''Overlay'' representan el acceso a bajo nivel a la
+pantalla de hardware. Para usar este objeto debe conocer los detalles
+técnicos de los ''overlays'' de video.
+
+/*
+The Overlay format determines the type of pixel data used. Not all hardware
+will support all types of overlay formats. Here is a list of available
+format types:
+*/
+
+El formato de ''Overlay'' determina el tipo de datos que se usaran. No todo
+el hardware soportará todos los tipos de formatos. Esta es una lista
+de los tipos de formato disponibles.
+
+/*
+  * YV12_OVERLAY
+  * IYUV_OVERLAY
+  * YUV2_OVERLAY
+  * UYVY_OVERLAY
+  * YVYU_OVERLAY
+*/
+
+  * YV12_OVERLAY
+  * IYUV_OVERLAY
+  * YUV2_OVERLAY
+  * UYVY_OVERLAY
+  * YVYU_OVERLAY
+
+
+/*
+The width and height arguments control the size for the overlay image data.
+The overlay image can be displayed at any size, not just the resolution of
+the overlay.
+*/
+
+Los argumentos ''width'' y ''height'' controlan el tamaño de datos
+de la imagen ''overlay''. Esta imagen se puede mostrar en cualquier
+tamaño, no solo en el tamaño original.
+
+/*
+The overlay objects are always visible, and always show above the regular
+display contents.
+*/
+
+Los objetos ''overlay'' no se pueden ocultar, y siempre se verán
+sobre el contenido de la pantalla.
+
+
+
+===== display =====
+
+/*
+set the overlay pixel data
+*/
+
+Define los datos de pixel del ''overlay''.
+
+<code python>
+Overlay.display( (y, u, v) ): return None
+Overlay.display(): return None
+</code>
+
+/*
+Display the yuv data in SDL's overlay planes. The y, u, and v
+arguments are strings of binary data. The data must be in the correct
+format used to create the Overlay.
+*/
+
+Muestra los datos ''yuv'' en los planos ''overlay'' de SDL. Los
+argumentos ''y'', ''u'', y ''v'' pueden ser cadenas o datos binarios. Los
+datos deben estar en el formato correcto que se utilizó para
+crear el objeto.
+
+/*
+If no argument is passed in, the Overlay will simply be redrawn with the
+current data. This can be useful when the Overlay is not really hardware
+accelerated.
+*/
+
+Si no se indican argumentos, el objeto se dibujará con los datos
+actuales. Esto puede ser útil cuando el objeto no está acelerado por
+hardware.
+
+
+/*
+The strings are not validated, and improperly sized strings could crash the
+program.
+*/
+
+No se validan las cadenas, y cadenas de tamaño inapropiado podrían
+interrumpir el programa.
+
+
+
+
+===== set_location =====
+
+/*
+control where the overlay is displayed
+*/
+
+Controla donde se mostrará el ''overlay''.
+
+
+<code python>
+Overlay.set_location(rect): return None
+</code>
+
+
+/*
+Set the location for the overlay. The overlay will always be shown relative
+to the main display Surface. This does not actually redraw the overlay, it
+will be updated on the next call to Overlay.display().
+*/
+
+Define la posición de la superficie. El ''overlay'' se mostrará en
+una posición relativa a la superficie de pantalla principal. Esta
+operación no dibuja nuevamente el ''overlay'', este se actualizará
+en la siguiente llamada a ''Overlay.display()''.
+
+
+
+===== get_hardware =====
+
+/*
+test if the Overlay is hardware accelerated
+*/
+
+Consulta si el objeto ''Overlay'' tiene aceleración por hardware.
+
+<code python>
+Overlay.get_hardware(rect): return int
+</code>
+
+
+/*
+Returns a True value when the Overlay is hardware accelerated. If the platform
+does not support acceleration, software rendering is used
+*/
+
+Retorna un valor ''True'' cuando el objeto ''Overlay'' esté acelerado
+por hardware. Se utilizará impresión por software si la plataforma
+no soporta aceleración por hardware.
+

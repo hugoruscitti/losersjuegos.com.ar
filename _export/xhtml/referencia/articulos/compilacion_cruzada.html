@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:compilacion_cruzada</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2010-05-05T01:03:10+0400" />
+<meta name="keywords" content="referencia,articulos,compilacion_cruzada" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/compilacion_cruzada-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="compilacion_cruzada.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/compilacion_cruzada.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#compilacion_cruzada" class="toc">Compilación cruzada</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#el_por_que_de_la_cuestion" class="toc">El por qué de la cuestión</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#requisitos" class="toc">Requisitos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#nuestro_programa_ejecutable_para_gnulinux" class="toc">Nuestro programa ejecutable para GNU/Linux</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#compilando_para_sistemas_windows_con_mingw" class="toc">Compilando para sistemas Windows con MinGW</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#analizando_el_resultado_de_la_compilacion" class="toc">Analizando el resultado de la compilación</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#utilizando_bibliotecas" class="toc">Utilizando bibliotecas</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#instalando_la_biblioteca_sdl" class="toc">Instalando la biblioteca SDL</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#compilar_un_programa_que_utiliza_sdl_para_gnu" class="toc">Compilar un programa que utiliza SDL para GNU</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#compilar_un_programa_con_sdl_para_windows_desde_gnu" class="toc">Compilar un programa con SDL para Windows desde GNU</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#en_caso_de_errores" class="toc">En caso de errores ...</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#verificando_el_funcionamiento_del_programa" class="toc">Verificando el funcionamiento del programa:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#bibliotecas_adicionales" class="toc">Bibliotecas Adicionales</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/compilacion_cruzada/compilacion_cruzada.pdf" class="media mediafile mf_pdf" title="referencia:articulos:compilacion_cruzada:compilacion_cruzada.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="compilacion_cruzada" id="compilacion_cruzada">Compilación cruzada</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Compilación cruzada" [79-114] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fecha:</strong> 31 de Agosto del 2006</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [115-206] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+Este trabajo presenta una serie de consejos e indicaciones sobre como generar programas multimedia para Windows desde un sistema operativo como GNU/Linux.
+</p>
+
+<p>
+Dado que la temática que trataremos es de cierta complejidad, he decidido no crear una referencia completa sobre las herramientas que utilizaremos, en su lugar intentaré abordar el asunto de manera práctica, creando ejemplos de aplicaciones funcionales. De esta forma podrá conocer los componentes mas elementales del proceso y ver sus resultados inmediatos. 
+</p>
+
+<p>
+Ten en cuenta que puedes usar un entorno de programación como Code::Blocks leyendo
+el artículo anexo: <a href="../../../../referencia/articulos/configurar_cb_para_compilacion_cruzada.html" class="wikilink1" title="referencia:articulos:configurar_cb_para_compilacion_cruzada">Code::Blocks para compilar ejecutables de Windows en GNU/Linux</a>
+</p>
+
+</div>
+<!-- SECTION "Introducción" [207-925] -->
+<h2><a name="el_por_que_de_la_cuestion" id="el_por_que_de_la_cuestion">El por qué de la cuestión</a></h2>
+<div class="level2">
+
+<p>
+GNU/Linux cuenta con una extensa galería de recursos para quienes disfrutamos de la programación. Entre aplicaciones y bibliotecas, GNU/Linux ofrece un entorno confortable y flexible, incluso, para desarrolladores de aplicaciones multimedia.
+</p>
+
+<p>
+Una herramienta para programadores muy interesante es Mingw (“Minimalistic GNU for Windows”), que nació con la intensión de adaptar varias herramientas de desarrollo del sistema GNU a entornos Windows.
+</p>
+
+<p>
+Si bien encontrará varios usos para Mingw, aquí lo utilizaremos para lograr que nuestro sistema GNU pueda generar archivos ejecutables para sistemas Windows. En general, a este proceso de “exportar” aplicaciones a otros sistemas o arquitecturas se lo denomina “cross-building”, “cross-compile”, o como decidimos llamarlo en este artículo: “compilación cruzada”.
+</p>
+
+<p>
+Este recurso de soporte a otros sistemas nos permite ampliar nuestras posibilidades de crear programas Multiplataforma, sin cambiar de sistema y utilizando siempre Software Libre. 
+</p>
+
+</div>
+<!-- SECTION "El por qué de la cuestión" [926-1968] -->
+<h2><a name="requisitos" id="requisitos">Requisitos</a></h2>
+<div class="level2">
+
+<p>
+Para seguir este tutorial le recomiendo contar con algunas herramientas que veremos mas adelante: gcc, mingw y wine. Muchas distribuciones de GNU/Linux cuentan con sistemas administradores de paquetes que le permiten instalar y desinstalar programas con facilidad, por ese motivo no debería tener problemas en comenzar a probar los ejemplos de este artículo.
+</p>
+
+<p>
+El proceso de instalación en mi sistema Debian GNU/Linux llevó unos pocos segundos. Si utiliza este mismo sistema, u otro basado en él como Ubuntu o Knoppix, ejecute como usuario administrador (root):
+</p>
+<pre class="code">
+apt-get install mingw32
+</pre>
+
+<p>
+ El sistema de paquetes `apt` le informará que necesita instalar, como mínimo, otros 2 paquetes llamados `mingw32-runtime` y `mingw32-binutils`. Indique Sí y continúe.
+</p>
+
+<p>
+Si todo sale bien obtendrá un mensaje como: 
+</p>
+<pre class="code">
+Configurando mingw32-binutils (2.15.94-20050118.1-1) ...
+Configurando mingw32-runtime (3.7-1) ...
+Configurando mingw32 (3.4.2.20040916.1-2) ...
+</pre>
+
+<p>
+En cambio, si se le presenta algún tipo de problema puede recurrir a las versiones en código fuente disponibles en el sitio oficial de <a href="http://www.mingw.org/" class="urlextern" title="http://www.mingw.org/"  rel="nofollow">Mingw</a>, o bien, obtener un entorno de compilación completo en el sitio de la biblioteca <a href="http://www.libsdl.org/extras/win32/cross/" class="urlextern" title="http://www.libsdl.org/extras/win32/cross/"  rel="nofollow">SDL</a>.
+</p>
+
+</div>
+<!-- SECTION "Requisitos" [1969-3285] -->
+<h2><a name="nuestro_programa_ejecutable_para_gnulinux" id="nuestro_programa_ejecutable_para_gnulinux">Nuestro programa ejecutable para GNU/Linux</a></h2>
+<div class="level2">
+
+<p>
+Seguramente alguna vez ha escrito el clásico programa que imprime en pantalla la leyenda “hola mundo !”. Este sencillo programa nos resultará de mucha utilidad como primer ejemplo. 
+</p>
+<pre class="code c"><span class="co2">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Hola mundo!<span class="es0">\n</span>&quot;</span><span class="br0">&#41;</span>;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;<span class="es0">\n</span>&quot;</span><span class="br0">&#41;</span>;
+    <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;pulse ENTER para continuar<span class="es0">\n</span>&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+    getchar<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+&nbsp;
+    <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+ Para crear un programa ejecutable compatible con GNU/Linux podemos invocar al compilador gcc de la siguiente manera:
+</p>
+<pre class="code">
+gcc hola_mundo.c
+</pre>
+
+<p>
+
+Mediante dicho comando, se generará un archivo ejecutable llamado `a.out`. Ahora estamos en condiciones de ejecutar el programa escribiendo:
+</p>
+<pre class="code">
+./a.out
+</pre>
+
+<p>
+Tenga en cuenta que también podría alterar el nombre del programa generado (a.out) especificando el comando `-o` como se muestra a continuación:
+</p>
+<pre class="code">
+gcc hola_mundo.c -o hola
+</pre>
+
+<p>
+de forma que el archivo generado reciba el nombre `hola` en lugar de `a.out`. 
+</p>
+
+</div>
+<!-- SECTION "Nuestro programa ejecutable para GNU/Linux" [3286-4306] -->
+<h2><a name="compilando_para_sistemas_windows_con_mingw" id="compilando_para_sistemas_windows_con_mingw">Compilando para sistemas Windows con MinGW</a></h2>
+<div class="level2">
+
+<p>
+El programa anterior funcionaría solamente en GNU/Linux. Si nuestra intensión es generar una versión funcional para sistemas Windows podemos recurrir a MinGW. La forma de utilizar esta herramienta en GNU es muy similar al resto de los programas como gcc y make, en Mingw encontrará una serie de programas que cumplen las tareas de `procesar`, `compilar` y `enlazar` aplicaciones pero generando archivos ejecutables para sistemas Windows.
+</p>
+
+<p>
+En nuestro caso, el programa que reemplaza la tarea de generar el programa ejecutable será i586-mingw32-gcc, por lo tanto si ejecutamos:
+</p>
+<pre class="code">
+i586-mingw32msvc-gcc hola_mundo.c -o hola.exe
+</pre>
+
+<p>
+
+Obtendremos el archivo ejecutable hola.exe para sistemas Windows. Note que he utilizado la opción `-o` como en el ejemplo de comando anterior para definir el nombre del programa.
+</p>
+
+<p>
+gcc no es único programa incluido en Mingw, existen muchos otros bajo la misma nomenclatura, donde se utiliza el prefijo i586-mingw32msvc. Por ejemplo, para generar programas en lenguaje C++ puede utilizar el programa i586-mingw32msvc-g++. 
+</p>
+
+</div>
+<!-- SECTION "Compilando para sistemas Windows con MinGW" [4307-5433] -->
+<h2><a name="analizando_el_resultado_de_la_compilacion" id="analizando_el_resultado_de_la_compilacion">Analizando el resultado de la compilación</a></h2>
+<div class="level2">
+
+<p>
+El programa que generamos con MinGW ya está en condiciones de funcionar en un sistema operativo como Windows, solo debería trasladar el programa ejecutable a ese sistema junto con su biblioteca mingwm10.dll. Aunque también existe la posibilidad de analizar el funcionamiento del programa desde nuestro propio sistema GNU/Linux, simulando un entorno de funcionamiento Windows.
+</p>
+
+<p>
+Existe un programa muy popular en GNU que nos permite interpretar aplicaciones para Windows, este programa se llama Wine, y se incluye en numerosos repertorios de programas. En el caso de las distribuciones basadas en Debian GNU/Linux es probable que necesite instalarlo mediante el sistema `apt`. Para ello ejecute como administrador del sistema (root) el siguiente comando: 
+</p>
+<pre class="code">
+apt-get install wine winesetuptk
+</pre>
+
+<p>
+El segundo programa (winesetuptk) se utiliza para definir los parámetros de configuración de wine de manera sencilla.
+</p>
+
+<p>
+Cuando termine de instalar el programa podrá correr aplicaciones diseñadas para sistemas Windows desde su sistema GNU invocando a los comandos:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> wine: para cargar y ejecutar programas gráficos.</div>
+</li>
+<li class="level1"><div class="li"> wineconsole: para cargar y ejecutar programas de consola.</div>
+</li>
+</ul>
+
+<p>
+Para verificar que nuestro programa `hola.exe` funciona mediante wine podemos ejecutar: 
+</p>
+<pre class="code">
+wineconsole hola.exe
+</pre>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/compilacion_cruzada/imagenes/hola.png-id=referencia-articulos-compilacion_cruzada.html" class="media" title="referencia:articulos:compilacion_cruzada:imagenes:hola.png"><img src="../../../../_media/referencia/articulos/compilacion_cruzada/imagenes/hola.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Note que los programas para Windows suelen clasificarse en dos grupos: los programas de `consola` y las aplicaciones `gráficas`. Aquí comencé con un programa sencillo para mostrar que puede compilarlo tanto para GNU como Windows, este primer ejemplo es un programa de `consola`.
+</p>
+
+<p>
+Analicemos otro ejemplo; en la documentación del programa MinGW existe un programa que utiliza rutinas propias de los sistemas Windows. Lo utilizaremos para mostrar como funciona Wine con un programa gráfico. 
+</p>
+<pre class="code c"><span class="co2">#include &lt;windows.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    MessageBox<span class="br0">&#40;</span><span class="kw2">NULL</span><span class="sy0">,</span> <span class="st0">&quot;Hello, world!&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Hello, world!&quot;</span><span class="sy0">,</span> MB_OK<span class="br0">&#41;</span>;
+    <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+Si genera un archivo ejecutable en base a este programa gráfico mediante Mingw32, luego podrá invocar al programa wine como se muestra a continuación:
+</p>
+<pre class="code">
+wine hello.exe
+</pre>
+
+<p>
+
+Obteniendo en pantalla: 
+</p>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/compilacion_cruzada/imagenes/hello_wine.png-id=referencia-articulos-compilacion_cruzada.html" class="media" title="referencia:articulos:compilacion_cruzada:imagenes:hello_wine.png"><img src="../../../../_media/referencia/articulos/compilacion_cruzada/imagenes/hello_wine.png" class="media" alt="" /></a>
+</p>
+
+<p>
+
+Si bien este no es un programa de `consola` debería tener en cuenta que en los sistemas Windows aparecerá, de todas maneras, una pantalla de color negro a modo de `consola`. Para evitar que esto ocurra debe indicarle a MinGW que el programa será completamente `gráfico` mediante la opción `-mwindows`: 
+</p>
+<pre class="code">
+i586-mingw32msvc-gcc hello.c -o hello.exe -mwindows
+</pre>
+
+</div>
+<!-- SECTION "Analizando el resultado de la compilación" [5434-8197] -->
+<h2><a name="utilizando_bibliotecas" id="utilizando_bibliotecas">Utilizando bibliotecas</a></h2>
+<div class="level2">
+
+<p>
+MinGW también puede establecer vínculos entre nuestros programas y diversas bibliotecas dinámicas, simplemente debe obtener las bibliotecas de desarrollo que necesite, colocarlas en el directorio adecuado e indicarle a MinGW que las utilizará.
+</p>
+
+<p>
+Para mostrar esta posibilidad tomaremos como ejemplo un programa multimedia que utiliza la biblioteca SDL llamado <a href="../../../../_media/referencia/articulos/compilacion_cruzada/mouse.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:compilacion_cruzada:mouse.tar.gz">mouse.tar.gz</a>. Primero instalaremos el entorno de desarrollo, luego generamos el programa y por último analizaremos su funcionamiento mediante `wine`.
+</p>
+
+</div>
+<!-- SECTION "Utilizando bibliotecas" [8198-8798] -->
+<h2><a name="instalando_la_biblioteca_sdl" id="instalando_la_biblioteca_sdl">Instalando la biblioteca SDL</a></h2>
+<div class="level2">
+
+<p>
+En el sitio web <a href="http://www.libsdl.org" class="urlextern" title="http://www.libsdl.org"  rel="nofollow">www.libsdl.org</a> encontrará una versión de la biblioteca indicada como `mingw32`, al momento de escribir este artículo la versión mas reciente es 1.2.13 y el archivo para descargar recibe el nombre de <a href="http://www.libsdl.org/release/SDL-devel-1.2.13-mingw32.tar.gz" class="urlextern" title="http://www.libsdl.org/release/SDL-devel-1.2.13-mingw32.tar.gz"  rel="nofollow">sdl-devel-1.2.13-mingw32.tar.gz</a>. O ingrese en el <a href="http://www.libsdl.org/release/" class="urlextern" title="http://www.libsdl.org/release/"  rel="nofollow">directorio de imágenes</a> para buscar otra versión mas reciente.
+</p>
+
+<p>
+Ahora bien, si tomamos como ejemplo el archivo citado. Para instalarlo hay que ejecutar:
+</p>
+<pre class="code">
+tar xzvf sdl-devel-1.2.13-mingw32.tar.gz
+cd SDL-1.2.13
+sudo
+mkdir /usr/local/cross-tools/
+mkdir /usr/local/cross-tools/i386-mingw32/
+mkdir /usr/local/cross-tools/i386-mingw32msvc/
+make cross
+exit
+</pre>
+
+<p>
+
+Si por algún motivo quiere alterar el directorio de instalación de la biblioteca deberá editar el archivo Makefile incluido en el directorio SDL-1.2.10 y reemplazar la linea:
+</p>
+<pre class="code">
+CROSS_PATH := /usr/local/cross-tools/i386-mingw32msvc/
+</pre>
+
+</div>
+<!-- SECTION "Instalando la biblioteca SDL" [8799-9856] -->
+<h2><a name="compilar_un_programa_que_utiliza_sdl_para_gnu" id="compilar_un_programa_que_utiliza_sdl_para_gnu">Compilar un programa que utiliza SDL para GNU</a></h2>
+<div class="level2">
+
+<p>
+Antes de continuar recordemos como utilizar la utilidad `sdl-config` para crear aplicaciones nativas en GNU/Linux:
+</p>
+
+<p>
+El proceso de compilación de un programa que utiliza bibliotecas requiere de varias especificaciones (que bibliotecas enlazar, donde residen las cabeceras .h, etc). En GNU/Linux estas especificaciones se suelen indicar mediante programas (o scripts) que obtienen todos los parámetros necesarios para realizar la compilación, en el caso de las bibliotecas SDL existe el comando sdl-config, que nos facilita la tarea de realizar especificaciones. Por ejemplo:
+</p>
+<pre class="code">
+sdl-config --cflags
+</pre>
+
+<p>
+nos informa todos los parámetros necesarios para iniciar el proceso de compilación (generar los ficheros objeto). Además:
+</p>
+<pre class="code">
+sdl-config --libs
+</pre>
+
+<p>
+
+nos indica las opciones que debemos especificar para enlazar el programa a las bibliotecas. Así, nuestro programa se puede compilar en GNU/Linux mediante el comando:
+</p>
+<pre class="code">
+gcc mouse `sdl-config --cflags --libs`
+</pre>
+
+<p>
+
+Las comillas invertidas (``) le permiten a gcc obtener el retorno de sdl-config y utilizarlo como argumento. En este caso sería equivalente invocar a sdl-config –cflags –libs, copiar su resultado en pantalla y colocarlo como argumento al generar el programa con gcc.
+</p>
+
+<p>
+Una vez invocada la compilación, nuestro programa de ejemplo se podrá ejecutar mediante el comando:
+</p>
+<pre class="code">
+./mouse
+</pre>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/compilacion_cruzada/imagenes/sdl_gnu.png-id=referencia-articulos-compilacion_cruzada.html" class="media" title="referencia:articulos:compilacion_cruzada:imagenes:sdl_gnu.png"><img src="../../../../_media/referencia/articulos/compilacion_cruzada/imagenes/sdl_gnu.png" class="media" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Compilar un programa que utiliza SDL para GNU" [9857-11384] -->
+<h2><a name="compilar_un_programa_con_sdl_para_windows_desde_gnu" id="compilar_un_programa_con_sdl_para_windows_desde_gnu">Compilar un programa con SDL para Windows desde GNU</a></h2>
+<div class="level2">
+
+<p>
+El proceso de compilación mediante MinGW es muy similar, solo que debemos reemplazar la llamada a sdl-config por un script situado en:
+</p>
+<pre class="code">
+/usr/local/cross-tools/i386-mingw32/bin/sdl-config
+</pre>
+
+<p>
+
+Este script funciona de manera similar a la herramienta sdl-config nativa de GNU/Linux. Por ejemplo si queremos obtener todas las opciones de compilación y enlace para nuestros programas con gcc invocamos a:
+</p>
+<pre class="code">
+/usr/local/cross-tools/i386-mingw32/bin/sdl-config --cflags --libs
+</pre>
+
+<p>
+
+Para probar nuestro ejemplo completo, ejecutemos las siguientes sentencias en un intérprete de órdenes:
+</p>
+<pre class="code">
+alias gcc_cross=i586-mingw32msvc-gcc
+alias sdl-config_cross=/usr/local/cross-tools/i386-mingw32/bin/sdl-config
+gcc_cross mouse.c -o mouse.exe `sdl-config_cross --cflags --libs`
+</pre>
+
+<p>
+Note que las llamadas a `alias` nos facilitan escribir los comandos completos. Para analizar otra alternativa de compilación puede descargar el <a href="../../../../_media/referencia/articulos/compilacion_cruzada/mouse.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:compilacion_cruzada:mouse.tar.gz">ejemplo completo</a> e invocar al comando “make mingw32”.
+</p>
+
+</div>
+<!-- SECTION "Compilar un programa con SDL para Windows desde GNU" [11385-12511] -->
+<h2><a name="en_caso_de_errores" id="en_caso_de_errores">En caso de errores ...</a></h2>
+<div class="level2">
+
+<p>
+Si el proceso de compilación falla indicando que no se encuentran las cabeceras SDL.h, posiblemente se deba a un error del script `sdl-config`. Note que las bibliotecas SDL se suelen instalar dentro de un directorio llamado “include” o “include/SDL”, el script `sdl-config` debe indicar con precisión el lugar exacto en donde residen estos archivos.
+</p>
+
+<p>
+Lamentablemente he notado que la versión actual de sdl-config no indica correctamente la ruta de estos archivos .h en mi sistema. Si en su equipo ocurre lo mismo intente editar el archivo /usr/local/cross-tools/i386-mingw32/bin/sdl-config como administrador de sistema (root) y cambie la linea:
+</p>
+<pre class="code">
+echo -I${prefix}/include/SDL -D_GNU_SOURCE=1 -Dmain=SDL_main
+</pre>
+
+<p>
+
+por:
+</p>
+<pre class="code">
+echo -I${prefix}/include -D_GNU_SOURCE=1 -Dmain=SDL_main
+</pre>
+
+<p>
+Otro problema muy frecuente en la utilización de esta biblioteca se encuentra en la inclusión del archivo “SDL.h” al código de nuestro programa. La forma mas adecuada de incluir este archivo es mediante:
+</p>
+<pre class="code">
+#include &quot;SDL.h&quot;
+</pre>
+
+<p>
+Es cierto que existen muchas formas de indicar la ruta a un archivo como este (“SDL/SDL.h”, “sdl.H” etc.), aunque sería deseable que adopte solo aquella forma que le brinda mayores posibilidades de generar el programa en diferentes sistemas sin cambiar una sola linea del programa.
+</p>
+
+</div>
+<!-- SECTION "En caso de errores ..." [12512-13881] -->
+<h2><a name="verificando_el_funcionamiento_del_programa" id="verificando_el_funcionamiento_del_programa">Verificando el funcionamiento del programa:</a></h2>
+<div class="level2">
+
+<p>
+A diferencia de nuestro primer ejemplo, este programa se encuentra vinculado a la biblioteca dinámica SDL y por ese motivo necesitará del archivo <em>SDL.dll</em> para que todo funcione correctamente. Tanto en sistemas Windows como mediante Wine podrá resolver esta dependencia situando el archivo <em>SDL.dll</em> dentro del directorio donde reside el archivo ejecutable: 
+</p>
+<pre class="code">
+cp /usr/local/cross-tools/i386-mingw32/bin/SDL.dll ./
+</pre>
+
+<p>
+Ahora observemos como funciona nuestro programa con Wine:
+</p>
+<pre class="code">
+wine mouse.exe
+</pre>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/compilacion_cruzada/imagenes/sdl_wine.png-id=referencia-articulos-compilacion_cruzada.html" class="media" title="referencia:articulos:compilacion_cruzada:imagenes:sdl_wine.png"><img src="../../../../_media/referencia/articulos/compilacion_cruzada/imagenes/sdl_wine.png" class="media" alt="" /></a>
+</p>
+
+<p>
+
+si ejecutamos este mismo programa en un sistema Windows notaremos que su funcionalidad es idéntica: 
+</p>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/compilacion_cruzada/imagenes/mouse.png-id=referencia-articulos-compilacion_cruzada.html" class="media" title="referencia:articulos:compilacion_cruzada:imagenes:mouse.png"><img src="../../../../_media/referencia/articulos/compilacion_cruzada/imagenes/mouse.png" class="media" alt="" /></a>
+</p>
+
+<p>
+Si utiliza programas SDL con frecuencia, tal vez le resulte mas útil situar el archivo <em>SDL.dll</em> dentro de la carpeta “Windows\system” (en el sistema Windows) o en “$HOME/.wine/fake_windows/Windows/System” (si utiliza Wine). Esto evitará que necesite copiar el archivo .dll en cada proyecto que realice. 
+</p>
+
+</div>
+<!-- SECTION "Verificando el funcionamiento del programa:" [13882-15023] -->
+<h2><a name="bibliotecas_adicionales" id="bibliotecas_adicionales">Bibliotecas Adicionales</a></h2>
+<div class="level2">
+
+<p>
+SDL cuenta con una serie de bibliotecas adicionales para brindar soporte a otras tareas como utilizar ficheros <acronym title="Scalable Vector Graphics">SVG</acronym> (formato de imágenes vectoriales), <acronym title="Motion Picture Experts Group Layer 3">MP3</acronym> (música), <acronym title="Graphical User Interface">GUI</acronym> (interfases visuales), etc. Añadir estas bibliotecas a su proyecto es muy sencillo, solo debe obtener las bibliotecas de desarrollo que necesite para sistemas Windows (o aquellas indicadas para mingw32) y ubicar los archivos .h dentro del directorio:
+</p>
+<pre class="code">
+/usr/local/cross-tools/i386-mingw32/include/
+</pre>
+
+<p>
+Luego necesitará copiar los archivos de biblioteca (.a/.la) en:
+</p>
+<pre class="code">
+/usr/local/cross-tools/i386-mingw32/lib/
+</pre>
+
+<p>
+Por último, no olvide que los usuarios de sus aplicaciones necesitarán tener los archivos .dll en su sistema a la hora de ejecutar los programas. 
+</p>
+
+</div>
+<!-- SECTION "Bibliotecas Adicionales" [15024-15819] -->
+<h2><a name="conclusion" id="conclusion">Conclusión</a></h2>
+<div class="level2">
+
+<p>
+GNU/Linux incluye una extensa colección de programas interesantes para todo tipo de usuarios. A mi entender, Mingw es una herramienta indispensable para aquellos programadores que estudiamos el desarrollo de programas libres y Multiplataforma. Aquí solo hemos visto el principio de la historia …
+</p>
+
+</div>
+<!-- SECTION "Conclusión" [15820-16148] -->
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia Creative Commons. Los programas de ejemplo se distribuyen bajo la licencia <acronym title="GNU General Public License">GPL</acronym>. 
+
+</p>
+
+</div>
+<!-- SECTION "Licencia" [16149-] --></div>
+</body>
+</html>

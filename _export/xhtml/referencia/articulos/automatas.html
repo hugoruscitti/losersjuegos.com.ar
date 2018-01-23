@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:automatas</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-21T18:24:13+0300" />
+<meta name="keywords" content="referencia,articulos,automatas" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/automatas-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="automatas.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/automatas.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#automatas_y_animaciones_ii" class="toc">Autómatas y animaciones (II)</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#estados" class="toc">Estados</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#automata" class="toc">Autómata</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#interpretacion_informal_del_automata" class="toc">Interpretación informal del autómata:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#implementando_un_gestor_de_estados" class="toc">Implementando un gestor de estados:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#ejemplo" class="toc">Ejemplo:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#diagrama_de_transiciones" class="toc">Diagrama de transiciones:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#referencia" class="toc">Referencia</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión:</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/automatas/automatas.pdf" class="media mediafile mf_pdf" title="referencia:articulos:automatas:automatas.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="automatas_y_animaciones_ii" id="automatas_y_animaciones_ii">Autómatas y animaciones (II)</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Autómatas y animaciones (II)" [58-99] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 30 de Julio del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [100-190] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+Un personaje de video juego suele realizar varios movimientos simples como: saltar, correr, disparar etc.
+</p>
+
+<p>
+En algunos juegos la cantidad de movimientos por personaje es numerosa y suele combinarse. Por ejemplo, en el videojuego <a href="http://en.wikipedia.org/wiki/Street_Fighter" class="urlextern" title="http://en.wikipedia.org/wiki/Street_Fighter"  rel="nofollow">Street Fighter</a> el jugador puede “golpear mientras salta”, o “patear agachado en el suelo”.
+</p>
+
+<p>
+En este último caso, programar el comportamiento de un personaje se hace más difícil a medida que crece el número de acciones involucradas.
+</p>
+
+<p>
+En este artículo veremos como gestionar un conjunto de movimientos mediante autómatas finitos. Al final del artículo se presenta una pequeña demostración de un video juego de peleas.
+
+</p>
+
+</div>
+<!-- SECTION "Introducción" [191-916] -->
+<h2><a name="estados" id="estados">Estados</a></h2>
+<div class="level2">
+
+<p>
+
+Un estado representa el comportamiento del personaje en un momento dado. Cada estado reacciona de manera diferente a los eventos (como la pulsación de una tecla) y está asociado a una animación diferente:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/automatas/estados.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:estados.png"><img src="../../../../_media/referencia/articulos/automatas/estados.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+En este caso, el personaje de la figura cuenta con el estado PARADO, ya que tiene una animación asociada y reacciona de manera diferente ante un evento como “golpear”, en comparación a otro estado como SALTA.
+
+</p>
+
+</div>
+<!-- SECTION "Estados" [917-1405] -->
+<h2><a name="automata" id="automata">Autómata</a></h2>
+<div class="level2">
+
+<p>
+
+Un autómata finito es un modelo lógico asociado a una serie de propiedades, entre ellas, un conjunto de estados, un alfabeto y una relación de transición.
+</p>
+
+<p>
+Pero para nuestra aplicación no será necesario profundizar en la definición formal de autómatas, en su lugar optamos por presentar el concepto de manera informal.
+
+</p>
+
+</div>
+<!-- SECTION "Autómata" [1406-1753] -->
+<h2><a name="interpretacion_informal_del_automata" id="interpretacion_informal_del_automata">Interpretación informal del autómata:</a></h2>
+<div class="level2">
+
+<p>
+
+Podemos imaginar a un autómata como una máquina que se encuentra en un estado particular, y que ante determinados eventos cambia de un estado a otro.
+</p>
+
+<p>
+Nuestro personaje funcionará como un autómata:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/automatas/estados_2.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:estados_2.png"><img src="../../../../_media/referencia/articulos/automatas/estados_2.png" class="mediacenter" alt="" /></a>
+</p>
+
+<p>
+Cuando comienza el juego estamos en posición de combate (un estado), si pulsamos hacia arriba (un evento) comenzamos a saltar. Saltar será nuestro nuevo estado, y en él tendremos una serie de posibilidades nuevas como realizar una “patada voladora”.
+</p>
+
+<p>
+Este criterio se puede apreciar fácilmente mediante un diagrama de transiciones:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/automatas/automata_reducido.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:automata_reducido.png"><img src="../../../../_media/referencia/articulos/automatas/automata_reducido.png" class="mediacenter" title="diagrama de transiciones simple" alt="diagrama de transiciones simple" /></a>
+</p>
+
+<p>
+De la figura podemos deducir algunas características:
+
+</p>
+<pre class="code"> 1. El autómata no puede estar en mas de un estado al mismo tiempo.
+ 2. Los eventos relacionan a los estados entre sí.
+ 3. No todos los eventos implican un cambio de estado, para este ejemplo un evento como &quot;agachar&quot; no tiene sentido mientras el personaje se encuentra en estado &quot;salta&quot;.</pre>
+
+</div>
+<!-- SECTION "Interpretación informal del autómata:" [1754-2841] -->
+<h2><a name="implementando_un_gestor_de_estados" id="implementando_un_gestor_de_estados">Implementando un gestor de estados:</a></h2>
+<div class="level2">
+
+<p>
+
+Existen varias formas de implementar un gestor de estados partiendo de un autómata. Si bien el modelo original será idéntico, cada implementación difiere en eficiencia y complejidad.
+</p>
+
+<p>
+Aquí, como en el resto de los artículos, optamos por un criterio simple y fácil de implementar, el objetivo de los ejemplos es brindar una base de prueba para interpretar. Seguramente encontrará formas más eficientes de implementar este programa utilizando punteros a funciones o polimorfismo.
+
+</p>
+
+</div>
+<!-- SECTION "Implementando un gestor de estados:" [2842-3375] -->
+<h2><a name="ejemplo" id="ejemplo">Ejemplo:</a></h2>
+<div class="level2">
+
+<p>
+
+A continuación podrá descargar el ejemplo del artículo.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/automatas/ejemplo.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:ejemplo.png"><img src="../../../../_media/referencia/articulos/automatas/ejemplo.png" class="mediacenter" title="El programa de ejemplo en GNU/Linux" alt="El programa de ejemplo en GNU/Linux" /></a>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/automatas/automatas.zip" class="media mediafile mf_zip" title="referencia:articulos:automatas:automatas.zip">Versión ejecutable para Windows</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/automatas/automatas.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:automatas:automatas.tar.gz">Código fuente en lenguaje C para GNU/Linux</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="http://www.losersjuegos.com.ar/referencia/articulos/automatas/doc/index.html" class="urlextern" title="http://www.losersjuegos.com.ar/referencia/articulos/automatas/doc/index.html"  rel="nofollow">Ver el código fuente on-line</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/automatas/automata.dia" class="media mediafile mf_" title="referencia:articulos:automatas:automata.dia">Bajar el diagrama de transiciones en formato .dia</a></div>
+</li>
+</ul>
+
+<p>
+
+En el programa podemos manejar al personaje con los direccionales del teclado y mediante las teclas &#039;x&#039; y &#039;z&#039; podemos “patear” y “golpear con el puño” respectivamente.
+</p>
+
+<p>
+El título de la ventana nos indica el estado actual del autómata.
+</p>
+
+<p>
+El personaje almacena su estado actual junto con el resto de sus propiedades dentro de la estructura actor:
+
+</p>
+<pre class="code c"><span class="kw2">enum</span> estado <span class="br0">&#123;</span> PARADO<span class="sy0">,</span> SALTA<span class="sy0">,</span> GOLPEA <span class="br0">&#91;</span>...<span class="br0">&#93;</span> <span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw4">struct</span> actor
+<span class="br0">&#123;</span>
+        <span class="kw2">enum</span> estado;
+        <span class="kw4">int</span> x;
+        <span class="kw4">int</span> y;
+        <span class="br0">&#91;</span>...<span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre>
+<p>
+El manejo general del personaje consiste en llamar de manera periódica a la función:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> actor_actualizar <span class="br0">&#40;</span><span class="kw4">struct</span> actor <span class="sy0">*</span> obj<span class="br0">&#41;</span></pre>
+<p>
+que selecciona, en base al estado del actor, que función se debe procesar para representar el comportamiento en ese instante.
+</p>
+
+<p>
+Así, cada estado se encuentra asociado a una función independiente que recibe los datos del personaje y las teclas pulsadas:
+
+</p>
+<pre class="code c"><span class="kw4">void</span> actor_estado_parado <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Unit8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="kw4">void</span> actor_estado_camina <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Uint8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="kw4">void</span> actor_estado_agachado <span class="br0">&#40;</span><span class="kw4">struct</span> <span class="sy0">*</span> actor obj<span class="sy0">,</span> Uint8 <span class="sy0">*</span> key<span class="br0">&#41;</span>;
+<span class="br0">&#91;</span>...<span class="br0">&#93;</span></pre>
+</div>
+<!-- SECTION "Ejemplo:" [3376-5052] -->
+<h2><a name="diagrama_de_transiciones" id="diagrama_de_transiciones">Diagrama de transiciones:</a></h2>
+<div class="level2">
+
+<p>
+
+El siguiente gráfico es una versión reducida del diagrama de transiciones utilizado en el ejemplo:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/automatas/diagrama.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:diagrama.png"><img src="../../../../_media/referencia/articulos/automatas/diagrama.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Diagrama de transiciones:" [5053-5242] -->
+<h2><a name="referencia" id="referencia">Referencia</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/automatas/referencia.png-id=referencia-articulos-automatas.html" class="media" title="referencia:articulos:automatas:referencia.png"><img src="../../../../_media/referencia/articulos/automatas/referencia.png" class="mediacenter" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "Referencia" [5243-5317] -->
+<h2><a name="conclusion" id="conclusion">Conclusión:</a></h2>
+<div class="level2">
+
+<p>
+
+La mayor parte del trabajo dedicado a esta técnica consiste en diseñar un autómata que cubra nuestros requerimientos; a partir de ahí, la implementación posterior es muy sencilla y fácil de modificar.
+
+</p>
+
+</div>
+<!-- SECTION "Conclusión:" [5318-5548] -->
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia <a href="http://creativecommons.org/licenses/by-sa/2.5/deed.es" class="urlextern" title="http://creativecommons.org/licenses/by-sa/2.5/deed.es"  rel="nofollow">Creative Commons.</a>
+
+</p>
+
+</div>
+<!-- SECTION "Licencia" [5549-] --></div>
+</body>
+</html>

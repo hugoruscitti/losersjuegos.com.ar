@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mixer:music</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-26T16:06:54+0300" />
+<meta name="keywords" content="traducciones,pygame,mixer,music" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/mixer/music-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-mixer.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="music.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/mixer/music.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#music" class="toc">music</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#load" class="toc">load</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#play" class="toc">play</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#rewind" class="toc">rewind</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#stop" class="toc">stop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#pause" class="toc">pause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#unpause" class="toc">unpause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#fadeout" class="toc">fadeout</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_volume" class="toc">set_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_volume" class="toc">get_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_busy" class="toc">get_busy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_pos" class="toc">get_pos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#queue" class="toc">queue</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_endevent" class="toc">set_endevent</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_endevent" class="toc">get_endevent</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="music" id="music">music</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para controlar la reproducción de música.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#load" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">load</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#play" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">play</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#rewind" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">rewind</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#stop" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">stop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#pause" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">pause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#unpause" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">unpause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#fadeout" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">fadeout</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_volume" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">set_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_volume" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">get_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_busy" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">get_busy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_pos" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">get_pos</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#queue" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">queue</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_endevent" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">set_endevent</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_endevent" title="traducciones:pygame:mixer:music &crarr;" class="wikilink1">get_endevent</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+El módulo music está muy relacionado con el módulo <code>pygame.mixer</code>. Use
+el módulo music para controlar la reproducción de música en el módulo
+mixer.
+</p>
+
+
+
+<p>
+La diferencia entre la reproducción de música y la reproducción de un sonido
+es que la música se reproduce mientras se carga, y nunca se carga completamente
+de una vez. El módulo mixer soporta solamente la reproducción de una música
+a la vez.
+</p>
+
+</div>
+<!-- SECTION "music" [1-1146] -->
+<h2><a name="load" id="load">load</a></h2>
+<div class="level2">
+
+
+
+<p>
+Carga un archivo de música para reproducir.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cargará el archivo de música y lo preparará para reproducir. Se detendrá
+cualquier música si se estaba reproduciendo. Esta función no comenzará
+a reproducir la música.
+</p>
+
+
+
+<p>
+Tenga en cuenta que la música solo se puede cargar a partir del nombre
+de un archivo, no se puede cargar desde objetos <code>file</code> como las otras
+funciones para cargar recursos de pygame.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.load" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.load">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "load" [1147-2048] -->
+<h2><a name="play" id="play">play</a></h2>
+<div class="level2">
+
+
+
+<p>
+Comienza a reproducir un flujo de música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">play</span><span class="br0">&#40;</span>loops=0, start=<span class="nu0">0.0</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Reproducirá la música que se ha cargado. Si la música ya estaba sonando
+entonces se reiniciará.
+</p>
+
+
+
+<p>
+El argumento <code>loops</code> controla el número de veces que se debe reproducir
+la canción. Por ejemplo, <code>play(5)</code> causará que la canción suene
+una vez y luego se repita 5 veces; es decir, unas 6 veces. Si el argumento
+<code>loop</code> vale -1 se repetirá la reproducción indefinidamente.
+</p>
+
+
+
+<p>
+El argumento de posición <code>start</code> controla a partir de donde comenzará
+a reproducirse. La posición de inicio depende del formato de música utilizado.
+Los formatos <acronym title="Motion Picture Experts Group Layer 3">MP3</acronym> y OGG utilizan la posición como tiempo medido en
+segundos. La música en formato MOD usará <code>start</code> como el número de patrón. Si
+no se puede definir la posición de inicio se lanzará la excepción <code>NotImplementedError</code>.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.play" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.play">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "play" [2049-3781] -->
+<h2><a name="rewind" id="rewind">rewind</a></h2>
+<div class="level2">
+
+
+
+<p>
+Reinicia la música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">rewind</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Reinicia la reproducción de la música actual para iniciar desde
+el principio.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.rewind" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.rewind">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "rewind" [3782-4146] -->
+<h2><a name="stop" id="stop">stop</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción de música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">stop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detiene la reproducción de música si se está reproduciendo.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.stop" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.stop">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "stop" [4147-4514] -->
+<h2><a name="pause" id="pause">pause</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene de forma temporal la reproducción.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">pause</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detiene de forma temporal la reproducción de música. Con la
+función <code>pygame.mixer.music.unpause()</code> puede continuar la
+reproducción.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.pause" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.pause">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "pause" [4515-5032] -->
+<h2><a name="unpause" id="unpause">unpause</a></h2>
+<div class="level2">
+
+
+
+<p>
+Continúa reproduciendo una canción en pausa.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">unpause</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Continúa la reproducción de una canción luego de que esta se
+ha pausado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.unpause" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.unpause">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "unpause" [5033-5446] -->
+<h2><a name="fadeout" id="fadeout">fadeout</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción de música luego de reducir su volumen.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">fadeout</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detendrá la reproducción de música luego de haber reducido el volumen
+en el tiempo especificado (en milisegundos).
+</p>
+
+
+
+<p>
+Note que esta función puede bloquear el programa mientras altera
+el volumen.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.fadeout" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.fadeout">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "fadeout" [5447-6131] -->
+<h2><a name="set_volume" id="set_volume">set_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el volumen de la música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">set_volume</span><span class="br0">&#40;</span>value<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Define el volumen de la reproducción de música. El argumento <code>value</code>
+es un número entre 0.0 y 1.0. Se redefine el nivel de volumen cuando
+se carga una nueva música.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.set_volume" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.set_volume">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_volume" [6132-6695] -->
+<h2><a name="get_volume" id="get_volume">get_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el volumen de la música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">get_volume</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> value</pre>
+
+
+<p>
+Retorna el volumen actual para el mezclador. El valor debe estar
+entre 0.0 y 1.0.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_volume" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_volume">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_volume" [6696-7120] -->
+<h2><a name="get_busy" id="get_busy">get_busy</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si se está reproduciendo música.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">get_busy</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando se está reproduciendo música. Retornará
+<code>False</code> si el módulo está desocupado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_busy" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_busy">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_busy" [7121-7609] -->
+<h2><a name="get_pos" id="get_pos">get_pos</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el tiempo de reproducción.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">get_pos</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw3">time</span></pre>
+
+
+<p>
+Obtiene el número de milisegundos desde que el módulo ha comenzado
+a reproducir música. El tiempo que se retorna solo representa cuanto
+tiempo a estado reproduciendo música, este valor no tiene en cuenta
+cualquier desplazamiento de posición inicial.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_pos" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_pos">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_pos" [7610-8328] -->
+<h2><a name="queue" id="queue">queue</a></h2>
+<div class="level2">
+
+
+
+<p>
+Pone en cola un archivo de música para seguir al actual.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">queue</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Esta función carga un archivo de música y lo pone en una cola. Un
+archivo que se encuentra en la cola comenzará a sonar cuando
+la música actual termine normalmente. La cola de canciones
+se perderá si la música actual se interrumpe o intercambia.
+</p>
+
+
+
+<p>
+El siguiente ejemplo reproducirá una canción de <em>Bach</em> seis
+veces y luego reproducirá una de <em>Mozart</em>:
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">'bach.ogg'</span><span class="br0">&#41;</span>
+pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">play</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span>               <span class="co1"># Reproduce 6 veces, no 5.</span>
+pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">queue</span><span class="br0">&#40;</span><span class="st0">'mozart.ogg'</span><span class="br0">&#41;</span></pre><ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.queue" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.queue">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "queue" [8329-9449] -->
+<h2><a name="set_endevent" id="set_endevent">set_endevent</a></h2>
+<div class="level2">
+
+
+
+<p>
+Hace que el módulo envíe un evento cuando la reproducción termine.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">set_endevent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">set_endevent</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Esta función hace que pygame emita una señal (con ayuda de la
+cola de eventos) cuando el módulo termine de reproducir. El argumento
+determina que tipo de evento se quiere emite.
+</p>
+
+
+
+<p>
+El evento se emitirá cada vez que una canción termine, no solo
+la primera vez. Para anular la emisión de eventos llame a esta
+función sin argumentos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.set_endevent" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.set_endevent">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_endevent" [9450-10481] -->
+<h2><a name="get_endevent" id="get_endevent">get_endevent</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el evento que un canal emite cuando termina de reproducir.
+</p>
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">music</span>.<span class="me1">get_endevent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">type</span></pre>
+
+
+<p>
+Retorna el tipo de evento que será enviado cada vez que el
+módulo termine de reproducir. La función retornará <code>pygame.NOEVENT</code>
+si no hay un evento asociado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_endevent" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.mixer.music.get_endevent">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_endevent" [10482-] --></div>
+</body>
+</html>

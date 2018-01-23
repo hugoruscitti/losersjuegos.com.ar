@@ -1,0 +1,10 @@
+====== publicamos una nueva tarjeta de referencia ======
+
+En la sección aputen [[referencia:apuntes]] encontrarás una
+nueva tarjeta sobre pySFML, una biblioteca para hacer juegos
+desde python.
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

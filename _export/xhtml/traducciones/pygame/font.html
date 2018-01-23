@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:font</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:26+0300" />
+<meta name="keywords" content="traducciones,pygame,font" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/font-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="font.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/font.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#font" class="toc">font</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#quit" class="toc">quit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_init" class="toc">get_init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_default_font" class="toc">get_default_font</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_fonts" class="toc">get_fonts</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#match_font" class="toc">match_font</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#por_ejemplo" class="toc">Por ejemplo</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="font" id="font">font</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para cargar y dibujar fuentes.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#init" title="traducciones:pygame:font &crarr;" class="wikilink1">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#quit" title="traducciones:pygame:font &crarr;" class="wikilink1">quit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_init" title="traducciones:pygame:font &crarr;" class="wikilink1">get_init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_default_font" title="traducciones:pygame:font &crarr;" class="wikilink1">get_default_font</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_fonts" title="traducciones:pygame:font &crarr;" class="wikilink1">get_fonts</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#match_font" title="traducciones:pygame:font &crarr;" class="wikilink1">match_font</a></div>
+</li>
+</ul>
+
+<p>
+
+<strong>Otras páginas:</strong>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/font/font.html" class="wikilink1" title="traducciones:pygame:font:font">Font</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/font/sysfont.html" class="wikilink1" title="traducciones:pygame:font:sysfont">SysFont</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+El módulo font permite dibujar fuentes <em>TrueType</em> sobre objetos Surface
+nuevos. Este módulo es opcional y requiere <em>SDL_ttf</em> como una
+dependencia. Usted debería verificar si <code>pygame.font</code> está disponible
+e inicializado antes de intentar utilizarlo.
+</p>
+
+
+
+<p>
+La mayor parte del trabajo con fuentes se realiza usando los objetos
+Font. El módulo en sí solo tiene rutinas para inicializar el módulo
+y crear objetos Font con <code>pygame.font.Font()</code>.
+</p>
+
+
+
+<p>
+Puede cargar fuentes desde el sistema usando la función 
+<code>pygame.font.SysFont()</code>. Hay otras funciones para ayudar a encontrar
+fuentes del sistema.
+</p>
+
+
+
+<p>
+Pygame viene con una fuente incorporada por defecto. Se puede acceder
+a esta utilizando <code>None</code> como el nombre de fuente.
+</p>
+
+</div>
+<!-- SECTION "font" [1-1789] -->
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa el módulo font.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Este método se llama automáticamente por <code>pygame.init()</code>. Su función es
+inicializar el módulo font. El módulo se debe inicializar antes de
+utilizar cualquier otra función.
+</p>
+
+
+
+<p>
+Es seguro llamar a esta función mas de una vez.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "init" [1790-2458] -->
+<h2><a name="quit" id="quit">quit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Deshabilita el módulo font.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Deshabilita de forma manual el sistema de fuentes de SDL_ttf. Esta
+función se llama automáticamente por <code>pygame.quit()</code>.
+</p>
+
+
+
+<p>
+Es seguro llamar a esta función incluso si el módulo no está
+inicializado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.quit" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.quit">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "quit" [2459-3067] -->
+<h2><a name="get_init" id="get_init">get_init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna True si el módulo font está inicializado.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">get_init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Verifica si el módulo font está inicializado o no.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_init" [3068-3443] -->
+<h2><a name="get_default_font" id="get_default_font">get_default_font</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el nombre de archivo de la fuente por defecto.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">get_default_font</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw3">string</span></pre>
+
+
+<p>
+Retorna el nombre de archivo de la fuente de sistema. El nombre no es la ruta
+completa al archivo. Este archivo se puede encontrar en el mismo directorio
+que el módulo font, aunque también puede estar en un paquete separado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_default_font" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_default_font">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_default_font" [3444-4174] -->
+<h2><a name="get_fonts" id="get_fonts">get_fonts</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene todas las fuentes disponibles.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">get_fonts</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">list</span> of strings</pre>
+
+
+<p>
+Retorna una lista de todos las fuentes disponibles en el sistema. Los nombres
+de las fuentes se mostrarán en minúsculas sin espacios o puntuación. Esta
+rutina funciona en la mayoría de los sistema, pero en algunos retorna una
+lista vacía si no puede entrar las fuentes.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_fonts" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.get_fonts">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_fonts" [4175-4950] -->
+<h2><a name="match_font" id="match_font">match_font</a></h2>
+<div class="level2">
+
+
+
+<p>
+Busca una fuentes específica del sistema.
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">match_font</span><span class="br0">&#40;</span>name, bold=<span class="kw2">False</span>, italic=<span class="kw2">False</span><span class="br0">&#41;</span>: <span class="kw1">return</span> path</pre>
+
+
+<p>
+Retorna la ruta completa a un archivo de fuente en el sistema. Si se
+usa True en los argumentos <code>bold</code> o <code>italic</code>, se intentará encontrar
+la familia o fuente correcta.
+</p>
+
+
+
+<p>
+El nombre de la fuente puede ser una lista de nombres para probar. Se
+retorna None si ninguno de los nombres dados se encuentra.
+</p>
+
+</div>
+<!-- SECTION "match_font" [4951-5742] -->
+<h3><a name="por_ejemplo" id="por_ejemplo">Por ejemplo</a></h3>
+<div class="level3">
+<pre class="code python"><span class="kw1">print</span> pygame.<span class="me1">font</span>.<span class="me1">match_font</span><span class="br0">&#40;</span><span class="st0">'bitstreamverasans'</span><span class="br0">&#41;</span>
+<span class="co1"># output is: /usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf</span>
+<span class="co1"># (but only if you have Vera on your system)</span></pre><ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.match_font" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.font.match_font">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Por ejemplo" [5743-] --></div>
+</body>
+</html>

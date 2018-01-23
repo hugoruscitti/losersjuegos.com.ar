@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:import_and_initialize</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T01:42:52+0300" />
+<meta name="keywords" content="referencia,articulos,import_and_initialize" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/import_and_initialize-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="import_and_initialize.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/import_and_initialize.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#pygameimportar_e_inicializar" class="toc">Pygame: Importar e inicializar</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#importar" class="toc">Importar</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#iniciar" class="toc">Iniciar</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#salir" class="toc">Salir</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#notas" class="toc">Notas</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/import_and_initialize/import_and_initialize.pdf" class="media mediafile mf_pdf" title="referencia:articulos:import_and_initialize:import_and_initialize.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="pygameimportar_e_inicializar" id="pygameimportar_e_inicializar">Pygame: Importar e inicializar</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Pygame: Importar e inicializar" [82-124] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Pete Shinners</div>
+</li>
+<li class="level2"><div class="li"> <strong>Traducido por:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 23 de Noviembre del 2006</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [125-258] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+Lograr que pygame este importado e inicializado es un proceso muy simple. Además es lo suficiente flexible para darle el control sobre lo que está ocurriendo. Pygame es una colección de diferentes módulos en un único paquete de Python. Algunos de los módulos están escritos en C, y otros están escritos en Python. Algunos módulos son opcionales, y podrían no estar presentes siempre.
+</p>
+
+<p>
+Esto es solo una introducción rápida acerca de que ocurre cuando importa pygame. Para una explicación mas clara definitivamente vea los ejemplos de pygame.
+
+</p>
+
+</div>
+<!-- SECTION "Introducción" [259-837] -->
+<h2><a name="importar" id="importar">Importar</a></h2>
+<div class="level2">
+
+<p>
+
+Primero debemos importar el paquete pygame. Desde la versión 1.4 de pygame esta ha sido actualizada para ser mucho mas fácil. La mayoría de los juegos importan todo pygame de la siguiente forma:
+
+</p>
+<pre class="code python"><span class="kw1">import</span> pygame
+<span class="kw1">from</span> pygame.<span class="kw2">locals</span> <span class="kw1">import</span> <span class="sy0">*</span></pre>
+<p>
+La primera linea es la única realmente necesaria. Se encarga de importar todos los módulos de disponibles dentro del paquete pygame. La segunda linea es opcional, y coloca un grupo limitado de constantes y funciones dentro del espacio de nombres global de su script [1].
+</p>
+
+<p>
+Una cosa importante para tener es mente es que muchos de los módulos de pygame son opcionales. Por ejemplo, uno de esos es el módulo &#039;font&#039;. Cuando usted escribe “import pygame”, pygame verificará si el módulo &#039;font&#039; está disponible. Si el módulo &#039;font&#039; está disponible será importado como “pygame.font”. Si el módulo no está disponible. “pygame.font” se definirá con el valor None (ninguno).
+</p>
+
+<p>
+Esto hace que sea bastante fácil probar si el módulo “font” está disponible.
+
+</p>
+
+</div>
+<!-- SECTION "Importar" [838-1877] -->
+<h2><a name="iniciar" id="iniciar">Iniciar</a></h2>
+<div class="level2">
+
+<p>
+
+Antes de que pueda hacer mucho con pygame, necesitará inicializar el módulo. La forma mas común de hacer esto es realizar una llamada a:
+
+</p>
+<pre class="code python">pygame.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Esta rutina intentará inicializar todos los módulos de pygame por usted. No todos los módulos de pygame necesitan ser inicializados, pero de esta manera automáticamente se inicializarán aquellos que lo requieran. También puede inicializar fácilmente cada módulo de pygame a mano. Por ejemplo, para inicializar solamente el módulo &#039;font&#039; solo debería llamar a:
+
+</p>
+<pre class="code python">pygame.<span class="me1">font</span>.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+Note que si se produce un error cuando inicializa con “pygame.init()”, este fallará silenciosamente. Cuando inicializa módulos a mano como este, cualquier error producirá una excepción. Cualquiera de los módulos que deba ser inicializado también tiene una función “get_init()”, que retornará True (verdadero) si el módulo ha sido inicializado.
+</p>
+
+<p>
+Es seguro llamar a la función “init()” por cada módulo mas de una vez.
+
+</p>
+
+</div>
+<!-- SECTION "Iniciar" [1878-2908] -->
+<h2><a name="salir" id="salir">Salir</a></h2>
+<div class="level2">
+
+<p>
+
+Los módulos que son inicializados usualmente tienen una función “quit()” que limpiará todo. No es necesario llamarla explícitamente, ya que pygame cerrará de manera limpia todos los módulos inicializados cuando python termine.
+
+</p>
+
+</div>
+<!-- SECTION "Salir" [2909-3158] -->
+<h2><a name="notas" id="notas">Notas</a></h2>
+<div class="level2">
+
+<p>
+
+1 - Importar las constantes de pygame facilita la escritura de muchas rutinas. Por ejemplo, luego de llamar a “from pygame.locals import *” tendrá acceso a constantes como “K_LEFT” directamente. De otra forma, si evita dicha linea, deberá referirse a las constantes especificando exactamente donde se encuentran. En este caso podría acceder a la constante mediante “pygame.K_LEFT” o “pygame.constants.K_LEFT” 
+
+</p>
+
+</div>
+<!-- SECTION "Notas" [3159-] --></div>
+</body>
+</html>

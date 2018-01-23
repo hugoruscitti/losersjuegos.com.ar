@@ -1,0 +1,64 @@
+====== movie ======
+
+
+/*
+pygame module for playback of mpeg video
+*/
+
+Módulo de pygame para reproducir video //mpeg//.
+
+<box 90%>
+**Otras páginas:**
+  * [[:traducciones:pygame:movie:movie_class]]
+</box>
+
+
+/*
+Pygame can playback video and audio from basic encoded MPEG1 video files.
+Movie playback happens in background threads, which makes playback easy to
+manage.
+*/
+
+Pygame puede reproducir audio y video desde archivos de video
+codificados con MPEG1. La reproducción de video ocurre en segundo plano (en
+un hilo diferente), lo que hace mas sencillo de manejar la reproducción.
+
+/*
+<note warning>
+pygame.movie currently does not work on windows with the latest pygame release.  
+As no one has managed to get smpeg working there.  The alternative is to use 
+[[http://www.pymedia.org]]
+</note>
+*/
+
+<note warning>
+El módulo ''pygame.movie'' actualmente no funciona en sistemas Windows. Y
+como no hay forma de tenerlo funcionado ahí, una alternativa es 
+utilizar la biblioteca [[http://www.pymedia.org]].
+</note>
+
+/*
+The audio for Movies must have full control over the sound system. This means
+the pygame.mixer module must be uninitialized if the movie's sound is to be played.
+The common solution is to call pygame.mixer.quit() before the movie begins. The
+mixer can be reinitialized after the movie is finished.
+*/
+
+El audio para el objeto Movie deberá tener control total sobre el 
+sistema de sonido. Esto significa que el módulo ''pygame.mixer'' deberá
+estar deshabilitado si se quiere reproducir el audio del video. La
+solución habitual es llamar a ''pygame.mixer.quit()'' antes de
+reproducir el video. El módulo ''mixer'' se puede iniciar mas tarde
+cuando el video termine.
+
+/*
+The video overlay planes are drawn on top of everything in the display window.
+To draw the movie as normal graphics into the display window, create an
+offscreen Surface and set that as the movie target. Then once per frame blit
+that surface to the screen*/
+
+La imagen del video se imprimirá en pantalla arriba de todo lo que esté en
+la ventana. Para imprimir el contenido del video como gráficos normales
+puede: crear una superficie fuera de la pantalla y definirla como la
+superficie destino del video. Luego, imprimir esta superficie sobre la
+pantalla una vez por cuadro.

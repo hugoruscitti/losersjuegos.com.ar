@@ -1,0 +1,344 @@
+====== Group ======
+
+/*
+container class for many Sprites
+*/
+
+Clase contenedora para varios Sprites.
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:#Group]]
+  * [[:traducciones:pygame:sprite:#sprites]]
+  * [[:traducciones:pygame:sprite:#copy]]
+  * [[:traducciones:pygame:sprite:#add]]
+  * [[:traducciones:pygame:sprite:#remove]]
+  * [[:traducciones:pygame:sprite:#has]]
+  * [[:traducciones:pygame:sprite:#update]]
+  * [[:traducciones:pygame:sprite:#draw]]
+  * [[:traducciones:pygame:sprite:#clear]]
+  * [[:traducciones:pygame:sprite:#empty]]
+</box>
+
+===== Group =====
+
+<code python>
+pygame.sprite.Group(*sprites): return Group
+</code>
+
+
+/*
+A simple container for Sprite objects. This class can be inherited to
+create containers with more specific behaviors. The constructor takes any 
+number of Sprite arguments to add to the Group. The group supports the
+following standard Python operations:
+*/
+
+Un contenedor simple para objetos Sprite. Se puede heredar de esta clase
+para crear contenedores que tengan comportamiento mas específico. El
+constructor toma cualquier número de sprites para agregar en el
+grupo. El grupo soporta las siguientes operaciones estándar de python:
+
+
+
+/*
+^ Python operator ^ Description ^
+| in | test if a Sprite is contained |
+| len | the number of Sprites contained |
+| bool | test if any Sprites are contained |
+| iter | iterate through all the Sprites |
+*/
+
+
+^ Operador python ^ Descripción ^
+| in | Consulta si un Sprite está incluido |
+| len | Cuenta el número de sprites contenidos |
+| bool | Consulta si alguno de los sprites están incluidos |
+| iter | Itera a través de todos los sprites |
+
+
+/*
+The Sprites in the Group are not ordered, so drawing and iterating the 
+Sprites is in no particular order.
+*/
+
+Los sprites en el grupo no están ordenados, por lo tanto recorrer o dibujar
+los sprite se realizar sin un orden particular.
+
+
+
+===== sprites =====
+
+/*
+list of the Sprites this Group contains
+*/
+
+Retorna una lista de los sprites contenidos en el grupo.
+
+<code python>
+Group.sprites(): return sprite_list
+</code>
+
+
+/*
+Return a list of all the Sprites this group contains. You can also get an
+iterator from the group, but you cannot iterator over a Group while modifying
+it.
+*/
+
+Retorna una lista con todos los sprites contenidos en el grupo. También puede
+obtener un iterador para el grupo, aunque no podrá iterar en el grupo mientras
+lo modifica.
+
+
+
+===== copy =====
+
+/*
+duplicate the Group
+*/
+
+Duplica el grupo.
+
+<code python>
+Group.copy(): return Group
+</code>
+
+
+/*
+Creates a new Group with all the same Sprites as the original. If you
+have subclassed Group, the new object will have the same (sub-)class as
+the original. This only works if the derived class's constructor takes
+the same arguments as the Group class's.
+*/
+
+Genera un nuevo grupo con los mismos sprites que el original. Si ha creado
+una nueva clase heredando desde Group, el nuevo objeto será de la misma
+clase que el original. Esto funciona solamente si el constructor de la
+clase derivada toma los mismos argumentos que la clase Group.
+
+
+
+===== add =====
+
+/*
+add Sprites to this Group
+*/
+
+Agrega sprites al grupo.
+
+<code python>
+Group.add(*sprites): return None
+</code>
+
+
+/*
+Add any number of Sprites to this Group. This will only add Sprites that are
+not already members of the Group.
+*/
+
+Agrega cualquier número de sprites a este grupo. Esta función solo
+agregará sprites que aún no sean miembros del grupo.
+
+/*
+Each sprite argument can also be a iterator containing Sprites. 
+*/
+
+Cada argumento ''sprite'' también puede ser una iterador 
+conteniendo sprites.
+
+
+
+===== remove =====
+
+/*
+remove Sprites from the Group
+*/
+
+Elimina un sprite del grupo.
+
+<code python>
+Group.remove(*sprites): return None
+</code>
+
+
+/*
+Remove any number of Sprites from the Group. This will only remove Sprites
+that are already members of the Group.
+*/
+
+Elimina cualquier número de sprites del grupo. Esta función solo elimina
+sprites que son miembros actuales del grupo.
+
+/*
+Each sprite argument can also be a iterator containing Sprites. 
+*/
+
+Cada argumento ''sprite'' puede ser un iterador conteniendo Sprites.
+
+
+===== has =====
+
+/*
+test if a Group contains Sprites
+*/
+
+Consulta si un grupo contiene sprites.
+
+<code python>
+Group.has(*sprites): return None
+</code>
+
+
+/*
+Return True if the Group contains all of the given sprites. This is similar to
+using the "in" operator on the Group ("if sprite in group: ..."), which tests if 
+a single Sprite belongs to a Group.
+*/
+
+Retorna ''True'' si el grupo contiene todos los sprites dados. Esto es similar
+a utilizar el operador //in// en el grupo (''if sprite in group: ... ''), que
+consulta si un sprite individual pertenece al grupo.
+
+
+/*
+Each sprite argument can also be a iterator containing Sprites. 
+*/
+
+Cada argumento ''sprite'' puede ser un iterador conteniendo Sprites.
+
+
+
+===== update =====
+
+/*
+call the update method on contained Sprites
+*/
+
+Llama al método ''update'' en los sprites contenidos.
+
+<code python>
+Group.update(*args): return None
+</code>
+
+
+/*
+Calls the update() method on all Sprites in the Group. The base Sprite class
+has an update method that takes any number of arguments and does nothing.
+The arguments passed to Group.update() will be passed to each Sprite.
+*/
+
+Llama al método ''update())'' en todos los sprites incluidos en el grupo. La
+clase base ''Sprite'' tiene un método ''update'' que toma cualquier número
+de argumentos y no hace nada. Los argumento que se pasan a ''Group.update()''
+se pasarán a cada Sprite.
+
+/*
+There is no way to get the return value from the Sprite.update() methods.
+*/
+
+No hay forma de obtener el valor de retorno de los métodos ''update'' de
+los sprites.
+
+
+
+===== draw =====
+
+/*
+blit the Sprite images
+*/
+
+Dibuja las imágenes de sprites.
+
+<code python>
+Group.draw(Surface): return None
+</code>
+
+
+/*
+Draws the contained Sprites to the Surface argument. This uses the Sprite.image
+attribute for the source surface, and Sprite.rect for the position.
+*/
+
+Dibuja los sprites contenidos sobre el argumento ''Surface''. Para ello utiliza
+el atributo ''Sprite.image'' para la superficie fuente y ''Sprite.rect'' para
+la posición.
+
+/*
+The Group does not keep sprites in any order, so the draw order is arbitrary.
+*/
+
+El grupo no almacena los sprites en orden, por lo tanto el orden al
+momento de dibujar es arbitrario.
+
+
+===== clear =====
+
+/*
+draw a background over the Sprites
+*/
+
+Dibuja un fondo sobre los sprites.
+
+<code python>
+Group.clear(Surface_dest, background): return None
+</code>
+
+
+/*
+Erases the Sprites used in the last Group.draw() call. The destination
+Surface is cleared by filling the drawn Sprite positions with the background.
+*/
+
+Borra los sprites usados en la última llamada a ''Group.draw()''. La superficie
+destino se limpia pintando con el fondo de pantalla sobre las posición
+anterior del sprite.
+
+
+/*
+The background is usually a Surface image the same dimensions as the
+destination Surface. However, it can also be a callback function that takes
+two arguments; the destination Surface and an area to clear. The background
+callback function will be called several times each clear.
+*/
+
+El fondo de pantalla es generalmente una Superficie que tiene las
+mismas dimensiones que la superficie destino. De todas formas, también puede
+ser un nombre de función que tome dos argumentos, la superficie destino y un
+area a limpia. La función ''background'' se llamará varias veces para limpiar
+la pantalla.
+
+/*
+Here is an example callback that will clear the Sprites with solid red:
+*/
+
+Este es un ejemplo de una función que limpiará los sprites con un
+color rojo.
+
+<code python>
+def clear_callback(surf, rect):
+    color = 255, 0, 0
+    surf.fill(color, rect)
+</code>
+
+
+
+===== empty =====
+
+/*
+remove all Sprites
+*/
+
+Elimina todos los sprites.
+
+<code python>
+Group.empty(): return None
+</code>
+
+/*
+Removes all Sprites from this Group.
+*/
+
+Elimina todos los sprites de este grupo.
+
+
+

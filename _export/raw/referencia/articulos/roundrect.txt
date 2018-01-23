@@ -1,0 +1,69 @@
+====== Roundrect ======
+===== Introducción =====
+
+El 6 de Agosto //Fhenix// propuso a los miembros de la lista de correo SDL en Español realizar un ejercicio con las bibliotecas SDL.
+
+El ejercicio consistía en desarrollar una función que imprima un rectángulo con los bordes redondeados.
+
+En este apartado incluimos la propuesta y las entregas realizadas por los integrantes de la Lista de correo.
+
+===== Propuesta: =====
+
+Debe realizar una función que imprima un rectángulo con las esquinas redondeadas utilizando la biblioteca SDL. Puede utilizar las funciones simples que incluye su documentación, como //putpixel//.
+
+La siguiente imagen muestra el resultado deseado
+
+{{ :referencia:articulos:roundrect:ejemplo.png }}
+
+==== Función a realizar: ====
+
+Para realizar el programa, sugerimos el siguiente prototipo de función:
+<code c>void rectangulo (SDL_Surface * destino, int x, int y, int h, int w, int radio, Uint32 color)</code>
+
+Donde:
+  * destino = superficie a imprimir.
+  * x, y = coordenada de la esquina superior izquierda.
+  * h, w = alto y ancho del rectangulo.
+  * radio = difuminación de los bordes.
+  * color = color del rectángulo (retorno de SDL_MapRGB)
+
+==== Fecha de finalización: ====
+
+La fecha de entrega será el día 28 de Agosto del 2005.
+
+===== Entregas =====
+
+A continuación se incluyen, en orden alfabético, las soluciones del ejercicio.
+
+==== Solución realizada por Fhenix ====
+
+[[:referencia:articulos:roundrect:fhenix.png|{{ :referencia:articulos:roundrect:fhenix.png?153x120 }}]]
+
+    * Autor: Fhenix
+    * e-mail: phenix (arroba) softhome (punto) net
+    * {{:referencia:articulos:roundrect:fhenix:roundrect_fhenix.zip|Descargar}}
+
+==== Solución realizada por Geo ====
+
+[[:referencia:articulos:roundrect:geo.png|{{ :referencia:articulos:roundrect:geo.png?160x120 }}]]
+
+    * Autor: José Jorge Enríquez Rodríguez (Geo)
+    * e-mail: josejorge (arroba) gmail (punto) com
+    * web: http://jenriquez.zzl.org
+    * Licencia: GNU Lesser General Public License (LGPL)
+    * {{:referencia:articulos:roundrect:geo:roundrect_geo.zip|Descargar}}
+
+==== Solución realizada por Hugo Ruscitti ====
+
+[[:referencia:articulos:roundrect:hugoruscitti.png|{{ :referencia:articulos:roundrect:hugoruscitti.png?147x120 }}]]
+
+    * Autor: Hugo Ruscitti
+    * e-mail: hugoruscitti (arroba) yahoo (punto) com (punto) ar
+    * web: www.losersjuegos.com.ar
+    * Licencia: GNU General Public License (GPL)
+    * {{:referencia:articulos:roundrect:hugoruscitti:roundrect_hugoruscitti.tar.gz|Descargar}}
+    * nota: Fhenix corrigió algunos errores del código fuente.
+
+===== Licencia =====
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la Licencia [[http://creativecommons.org/licenses/by-sa/2.5/deed.es|Creative Commons]]. 

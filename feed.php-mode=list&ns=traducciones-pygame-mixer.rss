@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:mixer</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-15T01:51:21+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/channel?rev=1232991382&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/music?rev=1232975214&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/sound?rev=1231033814&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/channel?rev=1232991382&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-26T20:36:22+04:00</dc:date>
+        <title>Channel</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/channel?rev=1232991382&amp;do=diff</link>
+        <description>Genera un objeto Channel (canal de audio) para controlar
+la reproducción de audio.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Channel
+
+
+pygame.mixer.Channel(id): return Channel
+
+
+
+
+Retorna un objeto Channel para uno de los canales actuales. El
+argumento id debe ser un valor entre 0 y el valor que devuelve
+pygame.mixer.get_num_channels().</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/music?rev=1232975214&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-26T16:06:54+04:00</dc:date>
+        <title>music</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/music?rev=1232975214&amp;do=diff</link>
+        <description>Módulo de pygame para controlar la reproducción de música.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+
+
+El módulo music está muy relacionado con el módulo pygame.mixer. Use
+el módulo music para controlar la reproducción de música en el módulo
+mixer.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/sound?rev=1231033814&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-04T04:50:14+04:00</dc:date>
+        <title>Sound</title>
+        <link>http://www.loosersjuegos.com.ar/traducciones/pygame/mixer/sound?rev=1231033814&amp;do=diff</link>
+        <description>Genera un nuevo objeto Sound a partir de un archivo.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Sound
+
+
+pygame.mixer.Sound(filename): return Sound
+pygame.mixer.Sound(buffer): return Sound
+pygame.mixer.Sound(object): return Sound
+
+
+
+
+Carga un nuevo sonido a partir de un nombre de archivo, un archivo
+de python o un objeto de almacenamiento que se pueda leer. Se realizará
+un ajuste limitado de frecuencia para que coincida con los argumentos
+de inicialización del módulo mixer.</description>
+    </item>
+</rdf:RDF>

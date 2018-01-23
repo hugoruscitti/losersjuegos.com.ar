@@ -1,0 +1,463 @@
+====== music ======
+
+/*
+pygame module for controlling streamed audio
+*/
+
+Módulo de pygame para controlar la reproducción de música.
+
+<box 90%>
+  * [[#load]]
+  * [[#play]]
+  * [[#rewind]]
+  * [[#stop]]
+  * [[#pause]]
+  * [[#unpause]]
+  * [[#fadeout]]
+  * [[#set_volume]]
+  * [[#get_volume]]
+  * [[#get_busy]]
+  * [[#get_pos]]
+  * [[#queue]]
+  * [[#set_endevent]]
+  * [[#get_endevent]]
+</box>
+
+
+/*
+The music module is closely tied to pygame.mixer. Use the music module to
+control the playback of music in the sound mixer.
+*/
+
+El módulo music está muy relacionado con el módulo ''pygame.mixer''. Use
+el módulo music para controlar la reproducción de música en el módulo
+mixer.
+
+/*
+The difference between the music playback and regular Sound playback is that
+the music is streamed, and never actually loaded all at once. The mixer system
+only supports a single music stream at once. 
+*/
+
+La diferencia entre la reproducción de música y la reproducción de un sonido
+es que la música se reproduce mientras se carga, y nunca se carga completamente
+de una vez. El módulo mixer soporta solamente la reproducción de una música
+a la vez.
+
+
+===== load =====
+
+/*
+Load a music file for playback
+*/
+
+Carga un archivo de música para reproducir.
+
+<code python>
+pygame.mixer.music.load(filename): return None
+</code>
+
+
+/*
+This will load a music file and prepare it for playback. If a music stream
+is already playing it will be stopped. This does not start the music playing.
+*/
+
+Cargará el archivo de música y lo preparará para reproducir. Se detendrá
+cualquier música si se estaba reproduciendo. Esta función no comenzará
+a reproducir la música.
+
+/*
+Music can only be loaded from filenames, not python file objects like the
+other pygame loading functions.
+*/
+
+Tenga en cuenta que la música solo se puede cargar a partir del nombre
+de un archivo, no se puede cargar desde objetos ''file'' como las otras
+funciones para cargar recursos de pygame.
+
+
+  * [[pythonexample>pygame.mixer.music.load|buscar código donde se use esta función.]]
+
+
+===== play =====
+
+/*
+Start the playback of the music stream
+*/
+
+Comienza a reproducir un flujo de música.
+
+<code python>
+pygame.mixer.music.play(loops=0, start=0.0): return None
+</code>
+
+
+/*
+This will play the loaded music stream. If the music is already playing it
+will be restarted.
+*/
+
+Reproducirá la música que se ha cargado. Si la música ya estaba sonando
+entonces se reiniciará.
+
+/*
+The loops argument controls the number of repeats a music will play.
+play(5) will cause the music to played once, then repeated five times,
+for a total of six. If the loops is -1 then the music will repeat indefinitely.
+*/
+
+El argumento ''loops'' controla el número de veces que se debe reproducir
+la canción. Por ejemplo, ''play(5)'' causará que la canción suene
+una vez y luego se repita 5 veces; es decir, unas 6 veces. Si el argumento
+''loop'' vale -1 se repetirá la reproducción indefinidamente.
+
+/*
+The starting position argument controls where in the music the song starts
+playing. The starting position is dependent on the format of music playing.
+MP3 and OGG use the position as time (in seconds). MOD music it is the
+pattern order number. Passing a startpos will raise a NotImplementedError
+if it cannot set the start position
+*/
+
+El argumento de posición ''start'' controla a partir de donde comenzará
+a reproducirse. La posición de inicio depende del formato de música utilizado.
+Los formatos MP3 y OGG utilizan la posición como tiempo medido en
+segundos. La música en formato MOD usará ''start'' como el número de patrón. Si
+no se puede definir la posición de inicio se lanzará la excepción ''NotImplementedError''.
+
+
+  * [[pythonexample>pygame.mixer.music.play|buscar código donde se use esta función.]]
+
+===== rewind =====
+
+/*
+restart music
+*/
+
+Reinicia la música.
+
+<code python>
+pygame.mixer.music.rewind(): return None
+</code>
+
+
+/*
+Resets playback of the current music to the beginning.
+*/
+
+Reinicia la reproducción de la música actual para iniciar desde
+el principio.
+
+
+  * [[pythonexample>pygame.mixer.music.rewind|buscar código donde se use esta función.]]
+
+
+===== stop =====
+
+/*
+stop the music playback
+*/
+
+Detiene la reproducción de música.
+
+<code python>
+pygame.mixer.music.stop(): return None
+</code>
+
+
+/*
+Stops the music playback if it is currently playing.
+*/
+
+Detiene la reproducción de música si se está reproduciendo.
+
+
+
+
+
+  * [[pythonexample>pygame.mixer.music.stop|buscar código donde se use esta función.]]
+
+===== pause =====
+
+/*
+temporarily stop music playback
+*/
+
+Detiene de forma temporal la reproducción.
+
+<code python>
+pygame.mixer.music.pause(): return None
+</code>
+
+
+/*
+Temporarily stop playback of the music stream. It can be resumed
+with the pygame.mixer.music.unpause() function.
+*/
+
+Detiene de forma temporal la reproducción de música. Con la
+función ''pygame.mixer.music.unpause()'' puede continuar la
+reproducción.
+
+
+  * [[pythonexample>pygame.mixer.music.pause|buscar código donde se use esta función.]]
+
+===== unpause =====
+
+/*
+resume paused music
+*/
+
+Continúa reproduciendo una canción en pausa.
+
+<code python>
+pygame.mixer.music.unpause(): return None
+</code>
+
+
+/*
+This will resume the playback of a music stream after it has been paused.
+*/
+
+Continúa la reproducción de una canción luego de que esta se
+ha pausado.
+
+
+  * [[pythonexample>pygame.mixer.music.unpause|buscar código donde se use esta función.]]
+
+===== fadeout =====
+
+/*
+stop music playback after fading out
+*/
+
+Detiene la reproducción de música luego de reducir su volumen.
+
+<code python>
+pygame.mixer.music.fadeout(time): return None
+</code>
+
+
+/*
+This will stop the music playback after it has been faded out over the
+specified time (measured in milliseconds).
+*/
+
+Detendrá la reproducción de música luego de haber reducido el volumen
+en el tiempo especificado (en milisegundos).
+
+/*
+Note, that this function blocks until the music has faded out.
+*/
+
+Note que esta función puede bloquear el programa mientras altera
+el volumen.
+
+
+  * [[pythonexample>pygame.mixer.music.fadeout|buscar código donde se use esta función.]]
+
+
+===== set_volume =====
+
+/*
+set the music volume
+*/
+
+Define el volumen de la música.
+
+<code python>
+pygame.mixer.music.set_volume(value): return None
+</code>
+
+
+
+/*
+Set the volume of the music playback. The value argument is between
+0.0 and 1.0. When new music is loaded the volume is reset.
+*/
+
+Define el volumen de la reproducción de música. El argumento ''value''
+es un número entre 0.0 y 1.0. Se redefine el nivel de volumen cuando
+se carga una nueva música.
+
+  * [[pythonexample>pygame.mixer.music.set_volume|buscar código donde se use esta función.]]
+
+
+===== get_volume =====
+
+/*
+get the music volume
+*/
+
+Obtiene el volumen de la música.
+
+<code python>
+pygame.mixer.music.get_volume(): return value
+</code>
+
+
+/*
+Returns the current volume for the mixer. The value will be between 0.0
+and 1.0.
+*/
+
+Retorna el volumen actual para el mezclador. El valor debe estar
+entre 0.0 y 1.0.
+
+
+  * [[pythonexample>pygame.mixer.music.get_volume|buscar código donde se use esta función.]]
+
+===== get_busy =====
+
+/*
+check if the music stream is playing
+*/
+
+Consulta si se está reproduciendo música.
+
+<code python>
+pygame.mixer.music.get_busy(): return bool
+</code>
+
+
+/*
+Returns True when the music stream is actively playing. When the music
+is idle this returns False.
+*/
+
+Retorna ''True'' cuando se está reproduciendo música. Retornará
+''False'' si el módulo está desocupado.
+
+
+  * [[pythonexample>pygame.mixer.music.get_busy|buscar código donde se use esta función.]]
+
+===== get_pos =====
+
+/*
+get the music play time
+*/
+
+Obtiene el tiempo de reproducción.
+
+<code python>
+pygame.mixer.music.get_pos(): return time
+</code>
+
+
+/*
+This gets the number of milliseconds that the music has been playing for.
+The returned time only represents how long the music has been playing; it
+does not take into account any starting position offsets.
+*/
+
+Obtiene el número de milisegundos desde que el módulo ha comenzado
+a reproducir música. El tiempo que se retorna solo representa cuanto
+tiempo a estado reproduciendo música, este valor no tiene en cuenta
+cualquier desplazamiento de posición inicial.
+
+
+
+  * [[pythonexample>pygame.mixer.music.get_pos|buscar código donde se use esta función.]]
+
+===== queue =====
+
+/*
+queue a music file to follow the current
+*/
+
+Pone en cola un archivo de música para seguir al actual.
+
+<code python>
+pygame.mixer.music.queue(filename): return None
+</code>
+
+
+/*
+This will load a music file and queue it. A queued music file will begin
+as soon as the current music naturally ends. If the current music is ever
+stopped or changed, the queued song will be lost.
+*/
+
+Esta función carga un archivo de música y lo pone en una cola. Un
+archivo que se encuentra en la cola comenzará a sonar cuando
+la música actual termine normalmente. La cola de canciones
+se perderá si la música actual se interrumpe o intercambia.
+
+/*
+The following example will play music by Bach six times, then play
+music by Mozart once:
+*/
+
+El siguiente ejemplo reproducirá una canción de //Bach// seis
+veces y luego reproducirá una de //Mozart//:
+
+<code python>
+pygame.mixer.music.load('bach.ogg')
+pygame.mixer.music.play(5)               # Reproduce 6 veces, no 5.
+pygame.mixer.music.queue('mozart.ogg')
+</code>
+
+
+  * [[pythonexample>pygame.mixer.music.queue|buscar código donde se use esta función.]]
+
+
+===== set_endevent =====
+
+/*
+have the music send an event when playback stops
+*/
+
+Hace que el módulo envíe un evento cuando la reproducción termine.
+
+<code python>
+pygame.mixer.music.set_endevent(): return None
+pygame.mixer.music.set_endevent(type): return None
+</code>
+
+/*
+This causes Pygame to signal (by means of the event queue) when
+the music is done playing. The argument determines the type of
+event that will be queued.
+*/
+
+Esta función hace que pygame emita una señal (con ayuda de la
+cola de eventos) cuando el módulo termine de reproducir. El argumento
+determina que tipo de evento se quiere emite.
+
+/*
+The event will be queued every time the music finishes, not just
+the first time. To stop the event from being queued, call this
+method with no argument.
+*/
+
+El evento se emitirá cada vez que una canción termine, no solo
+la primera vez. Para anular la emisión de eventos llame a esta
+función sin argumentos.
+
+
+
+  * [[pythonexample>pygame.mixer.music.set_endevent|buscar código donde se use esta función.]]
+
+===== get_endevent =====
+
+/*
+get the event a channel sends when playback stops
+*/
+
+Obtiene el evento que un canal emite cuando termina de reproducir.
+
+
+<code python>
+pygame.mixer.music.get_endevent(): return type
+</code>
+
+/*
+Returns the event type to be sent every time the music finishes playback.
+If there is no endevent the function returns pygame.NOEVENT*/
+
+Retorna el tipo de evento que será enviado cada vez que el
+módulo termine de reproducir. La función retornará ''pygame.NOEVENT''
+si no hay un evento asociado.
+
+  * [[pythonexample>pygame.mixer.music.get_endevent|buscar código donde se use esta función.]]

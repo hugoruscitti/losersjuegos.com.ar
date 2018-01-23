@@ -1,0 +1,163 @@
+====== Clock ======
+
+Objeto que gestiona tiempo.
+<box 90%>
+  * [[#Clock]]
+  * [[#Clock.tick]]
+  * [[#Clock.tick_busy_loop]]
+  * [[#Clock.get_time]]
+  * [[#Clock.get_rawtime]]
+  * [[#Clock.get_fps]]
+</box>
+
+==== Clock() ====
+
+<code python>pygame.time.Clock(): return Clock</code>
+
+Crea un nuevo objeto Clock que puede ser usado para gestionar tiempo.
+El objeto Clock también provee varias funciones para controlar la velocidad 
+(o //framerate//) de un juego.
+
+  * [[pythonexample>pygame.time.Clock|buscar código donde se use esta función.]]
+
+/*
+tick
+update the clock
+Clock.tick(framerate=0): return milliseconds
+control timer events
+*/
+
+==== Clock.tick ====
+
+<code python>Clock.tick(framerate=0): return milliseconds</code>
+
+
+/*
+This method should be called once per frame. It will compute how many
+milliseconds have passed since the previous call.
+
+If you pass the optional framerate argument the function will delay to keep 
+the game running slower than the given ticks per second.  This can be used 
+to help limit the runtime speed of a game. By calling Clock.tick(40) once 
+per frame, the program will never run at more than 40 frames per second.
+
+Note that this function uses SDL_Delay function which is not accurate 
+on every platform, but does not use much cpu.  Use tick_busy_loop
+if you want an accurate timer, and don't mind chewing cpu.
+*/
+
+Este método debería llamarse una vez por actualización. Calcula internamente
+cuantos milisegundos han transcurrido desde la llamada anterior.
+
+Si especifica el argumento //framerate// la función esperará el tiempo necesario
+para mantener al juego corriendo a la velocidad solicitada. Puede usarse para
+limitar la velocidad de ejecución del juego. Llamando al método con el valor
+40 (//Clock.tick(40)//) una vez por actualización, el programa nunca funcionará
+a más de 40 cuadros por segundo de velocidad.
+
+Note que esta función utiliza la función //SDL_Delay// que no es muy precisa en todas las plataformas, pero no usa mucho CPU. Use el método 
+[[#Clock.tick_busy_loop]] si desea un temporizador preciso.
+
+  * [[pythonexample>pygame.time.Clock.tick|buscar código donde se use esta función.]]
+
+/*
+tick_busy_loop
+update the clock
+Clock.tick_busy_loop(framerate=0): return milliseconds
+control timer events
+*/
+
+==== Clock.tick_busy_loop ====
+
+<code python>Clock.tick_busy_loop(framerate=0): return milliseconds</code>
+
+/*
+This method should be called once per frame. It will compute how many
+milliseconds have passed since the previous call.
+
+If you pass the optional framerate argument the function will delay to keep 
+the game running slower than the given ticks per second.  This can be used 
+to help limit the runtime speed of a game. By calling Clock.tick(40) once 
+per frame, the program will never run at more than 40 frames per second.
+
+Note that this function uses pygame.time.delay, which uses lots of cpu
+in a busy loop to make sure that timing is more acurate.
+
+New in pygame 1.8.0.
+*/
+
+Este método debería llamarse una vez por actualización. Calcula internamente
+cuantos milisegundos han transcurrido desde la llamada anterior.
+
+Si especifica el argumento //framerate// la función esperará el tiempo necesario
+para mantener al juego corriendo a la velocidad solicitada. Puede usarse para
+limitar la velocidad de ejecución del juego. Llamando al método con el valor
+40 (//Clock.tick(40)//) una vez por actualización, el programa nunca funcionará
+a más de 40 cuadros por segundo de velocidad.
+
+Note que esta función utiliza la función [[#delay]], que utiliza un montón de CPU
+en un bucle para asegurarse que el cálculo de tiempo es mas preciso.
+
+
+  * [[pythonexample>pygame.time.Clock.tick_busy_loop|buscar código donde se use esta función.]]
+
+/*
+get_time
+time used in the previous tick
+Clock.get_time(): return milliseconds
+*/
+
+==== Clock.get_time ====
+
+<code python>Clock.get_time(): return milliseconds</code>
+
+/*
+Returns the parameter passed to the last call to Clock.tick().
+It is the number of milliseconds passed between the previous two calls to
+Pygame.tick().
+*/
+
+Retorna el valor del argumento enviado al anterior llamado de [[#Clock.tick]].
+Este número representa el número de milisegundos transcurridos entre las dos anteriores llamadas a [[#Clock.tick]].
+
+  * [[pythonexample>pygame.time.Clock.get_time|buscar código donde se use esta función.]]
+
+/*
+get_rawtime
+actual time used in the previous tick
+Clock.get_rawtime(): return milliseconds
+*/
+
+==== Clock.get_rawtime ====
+
+<code python>Clock.get_rawtime(): return milliseconds</code>
+
+/*
+Similar to Clock.get_time(), but this does not include any time used while
+Clock.tick() was delaying to limit the framerate.
+*/
+
+Similar a [[#Clock.get_time]], pero este no incluye ningún milisegundo utilizado
+mientras [[#Clock.tick]] estaba esperando para limitar la velocidad de juego.
+
+  * [[pythonexample>pygame.time.Clock.get_rawtime|buscar código donde se use esta función.]]
+
+
+/*
+get_fps
+compute the clock framerate
+Clock.get_fps(): return float
+*/
+
+==== Clock.get_fps ====
+
+<code python>Clock.get_fps(): return float</code>
+
+/*
+Compute your game's framerate (in frames per second). It is computed by
+averaging the last few calls to Clock.tick().
+*/
+
+Calcula el rendimiento de tu juego (medido en cuadros por segundo). Este valor se calcula promediando las ultimas llamadas a [[#Clock.tick]].
+
+  * [[pythonexample>pygame.time.Clock.get_fps|buscar código donde se use esta función.]]

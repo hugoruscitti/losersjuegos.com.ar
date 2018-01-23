@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:movie</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:28+0300" />
+<meta name="keywords" content="traducciones,pygame,movie" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/movie-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="movie.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/movie.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="movie" id="movie">movie</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para reproducir video <em>mpeg</em>.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p>
+<strong>Otras páginas:</strong><ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/movie/movie_class.html" class="wikilink1" title="traducciones:pygame:movie:movie_class">Movie</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Pygame puede reproducir audio y video desde archivos de video
+codificados con MPEG1. La reproducción de video ocurre en segundo plano (en
+un hilo diferente), lo que hace mas sencillo de manejar la reproducción.
+</p>
+
+
+
+<div class="notewarning">
+El módulo <code>pygame.movie</code> actualmente no funciona en sistemas Windows. Y
+como no hay forma de tenerlo funcionado ahí, una alternativa es 
+utilizar la biblioteca <a href="http://www.pymedia.org" class="urlextern" title="http://www.pymedia.org"  rel="nofollow">http://www.pymedia.org</a>.
+
+</div>
+
+
+
+<p>
+El audio para el objeto Movie deberá tener control total sobre el 
+sistema de sonido. Esto significa que el módulo <code>pygame.mixer</code> deberá
+estar deshabilitado si se quiere reproducir el audio del video. La
+solución habitual es llamar a <code>pygame.mixer.quit()</code> antes de
+reproducir el video. El módulo <code>mixer</code> se puede iniciar mas tarde
+cuando el video termine.
+</p>
+
+
+
+<p>
+La imagen del video se imprimirá en pantalla arriba de todo lo que esté en
+la ventana. Para imprimir el contenido del video como gráficos normales
+puede: crear una superficie fuera de la pantalla y definirla como la
+superficie destino del video. Luego, imprimir esta superficie sobre la
+pantalla una vez por cuadro.
+</p>
+
+</div>
+</div>
+</body>
+</html>

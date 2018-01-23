@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame:sprite</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-11T18:06:10+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/dirtysprite?rev=1232211113&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/group?rev=1231630778&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/groupsingle?rev=1229629675&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layereddirty?rev=1232209166&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layeredupdates?rev=1232214128&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/orderedupdates?rev=1232049222&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/renderedupdates?rev=1232049049&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite?rev=1230578099&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite_class?rev=1232214351&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/dirtysprite?rev=1232211113&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T19:51:53+04:00</dc:date>
+        <title>DirtySprite</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/dirtysprite?rev=1232211113&amp;do=diff</link>
+        <description>Una subclase de Sprite con mas características y funcionalidad.
+
+	*  DirtySprite
+
+DirtySprite
+
+
+pygame.sprite.DirtySprite(*groups): return DirtySprite
+
+
+
+
+Esta es una lista de todos los atributos adicionales de
+DirtySprite con sus valores por defecto.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/group?rev=1231630778&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-11T02:39:38+04:00</dc:date>
+        <title>Group</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/group?rev=1231630778&amp;do=diff</link>
+        <description>Clase contenedora para varios Sprites.
+
+	*  Group
+	*  sprites
+	*  copy
+	*  add
+	*  remove
+	*  has
+	*  update
+	*  draw
+	*  clear
+	*  empty
+
+Group
+
+
+pygame.sprite.Group(*sprites): return Group
+
+
+
+
+
+Un contenedor simple para objetos Sprite. Se puede heredar de esta clase
+para crear contenedores que tengan comportamiento mas específico. El
+constructor toma cualquier número de sprites para agregar en el
+grupo. El grupo soporta las siguientes operaciones estándar de python:</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/groupsingle?rev=1229629675&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-18T22:47:55+04:00</dc:date>
+        <title>GroupSingle</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/groupsingle?rev=1229629675&amp;do=diff</link>
+        <description>Grupo contenedor que almacena un solo Sprite.
+
+	*  groupsingle
+
+GroupSingle
+
+
+pygame.sprite.GroupSingle(sprite=None): return GroupSingle
+
+
+
+
+
+El contenedor GroupSingle solo almacena un Sprite. Cuando se agrega
+un nuevo sprite, el anterior se elimina.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layereddirty?rev=1232209166&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T19:19:26+04:00</dc:date>
+        <title>LayeredDirty</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layereddirty?rev=1232209166&amp;do=diff</link>
+        <description>El grupo LayeredDirty está diseñado para objetos DirtySprite, y es
+subclase de LayeredUpdates.
+
+	*  LayeredDirty
+	*  draw
+	*  clear
+	*  repaint_rect
+	*  set_clip
+	*  get_clip
+	*  change_layer
+	*  set_timing_treshold
+
+LayeredDirty
+
+
+pygame.sprite.LayeredDirty(*spites, * *kwargs): return LayeredDirty</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layeredupdates?rev=1232214128&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T20:42:08+04:00</dc:date>
+        <title>LayeredUpdates</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/layeredupdates?rev=1232214128&amp;do=diff</link>
+        <description>El grupo LayeredUpdates maneja capas (layers) que dibujan como grupos
+OrderedUpdates.
+
+	*  LayeredUpdates
+	*  add
+	*  sprites
+	*  draw
+	*  get_sprites_at
+	*  get_sprite
+	*  remove_sprites_of_layer
+	*  layers
+	*  change_layer
+	*  get_layer_of_sprite
+	*  get_top_layer
+	*  get_bottom_layer
+	*  move_to_front
+	*  move_to_back
+	*  get_top_sprite
+	*  get_sprites_from_layer
+	*  switch_layer</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/orderedupdates?rev=1232049222&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-15T22:53:42+04:00</dc:date>
+        <title>OrderedUpdates</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/orderedupdates?rev=1232049222&amp;do=diff</link>
+        <description>Una clase como RenderUpdates que dibuja objetos Sprite
+en el orden en que fueron insertados.
+
+	*  OrderedUpdates
+
+OrderedUpdates
+
+
+pygame.sprite.OrderedUpdates(*spites): return OrderedUpdates
+
+
+
+
+
+Esta clase deriva de pygame.sprite.RenderUpdates(). Mantiene
+el orden en que se agregaron los objetos Sprite al grupo para
+imprimirlos. Esto produce que agregar y eliminar objetos del
+grupo sea un poco mas lento que en los Grupos normales.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/renderedupdates?rev=1232049049&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-15T22:50:49+04:00</dc:date>
+        <title>RenderUpdates</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/renderedupdates?rev=1232049049&amp;do=diff</link>
+        <description>Clase de grupo que utiliza el procedimiento 'dirty rectangles'.
+
+	*  RenderUpdates
+	*  draw
+
+RenderUpdates
+
+
+pygame.sprite.RenderUpdates(*sprites): return RenderUpdates
+
+
+
+
+
+Esta clase deriva desde pygame.sprite.Group(). Tiene un
+método draw() extendido para guardar las áreas modificadas
+de la pantalla.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite?rev=1230578099&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-29T22:14:59+04:00</dc:date>
+        <title>Sprite</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite?rev=1230578099&amp;do=diff</link>
+        <description>Una clase base para objetos del juego visibles.
+
+	*  Sprite
+	*  update
+	*  add
+	*  remove
+	*  kill
+	*  alive
+	*  groups
+
+Sprite
+
+
+pygame.sprite.Sprite(*groups): return Sprite
+
+
+
+
+
+Es la clase base para los objetos visibles del juego. Las clases
+derivadas sobre-escribirán el método Sprite.update() y asignarán
+un valor a los atributos Sprite.image y Sprite.rect. El
+constructor puede aceptar cualquier número de objetos Group a
+donde se insertará el objeto.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite_class?rev=1232214351&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T20:45:51+04:00</dc:date>
+        <title>Sprite</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite/sprite_class?rev=1232214351&amp;do=diff</link>
+        <description>Una clase base para objetos del juego visibles.
+
+	*  Sprite
+	*  update
+	*  add
+	*  remove
+	*  kill
+	*  alive
+	*  groups
+
+Sprite
+
+
+pygame.sprite.Sprite(*groups): return Sprite
+
+
+
+
+
+Es la clase base para los objetos visibles del juego. Las clases
+derivadas sobre-escribirán el método Sprite.update() y asignarán
+un valor a los atributos Sprite.image y Sprite.rect. El
+constructor puede aceptar cualquier número de objetos Group a
+donde se insertará el objeto.</description>
+    </item>
+</rdf:RDF>

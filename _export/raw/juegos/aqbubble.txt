@@ -1,0 +1,29 @@
+====== Aquatic Bubble ======
+
+En Aquatic Bubble debes eliminar a todos los enemigos del nivel. Para hacerlo debes disparar contra ellos hasta atraparlos en burbujas y luego ... "¡ hacerlos reventar !". 
+
+
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:aqbubble:capturas:*}}
+
+
+
+
+
+===== Descargas =====
+
+{{filelist>juegos:aqbubble:descargas:*}}
+
+
+===== Licencia =====
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+
+
+{{tag>juegos SDL C}}

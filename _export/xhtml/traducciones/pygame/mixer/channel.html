@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mixer:channel</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-26T20:36:22+0300" />
+<meta name="keywords" content="traducciones,pygame,mixer,channel" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/mixer/channel-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-mixer.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="channel.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/mixer/channel.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#channel" class="toc">Channel</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#channel1" class="toc">Channel</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#play" class="toc">play</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#stop" class="toc">stop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#pause" class="toc">pause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#unpause" class="toc">unpause</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#fadeout" class="toc">fadeout</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_volume" class="toc">set_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_volume" class="toc">get_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_busy" class="toc">get_busy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_sound" class="toc">get_sound</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#queue" class="toc">queue</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_queue" class="toc">get_queue</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_endevent" class="toc">set_endevent</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_endevent" class="toc">get_endevent</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="channel" id="channel">Channel</a></h1>
+<div class="level1">
+
+
+
+<p>
+Genera un objeto <code>Channel</code> (canal de audio) para controlar
+la reproducción de audio.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#channel" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">Channel</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#play" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">play</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#stop" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">stop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#pause" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">pause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#unpause" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">unpause</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#fadeout" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">fadeout</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_volume" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">set_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_volume" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">get_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_busy" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">get_busy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_sound" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">get_sound</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#queue" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">queue</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_queue" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">get_queue</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_endevent" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">set_endevent</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_endevent" title="traducciones:pygame:mixer:channel &crarr;" class="wikilink1">get_endevent</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Channel" [1-436] -->
+<h2><a name="channel1" id="channel1">Channel</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">Channel</span><span class="br0">&#40;</span><span class="kw2">id</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Channel</pre>
+
+
+<p>
+Retorna un objeto <code>Channel</code> para uno de los canales actuales. El
+argumento <code>id</code> debe ser un valor entre 0 y el valor que devuelve
+<code>pygame.mixer.get_num_channels()</code>.
+</p>
+
+
+
+<p>
+El objeto <code>Channel</code> se puede usar para obtener un control preciso
+sobre la reproducción de sonidos. Un canal solo puede reproducir un
+objeto <code>Sound</code> a la vez. Como pygame por defecto maneja por su
+cuenta estos objetos, utilizarlos es completamente opcional.
+</p>
+
+</div>
+<!-- SECTION "Channel" [437-1316] -->
+<h2><a name="play" id="play">play</a></h2>
+<div class="level2">
+
+
+
+<p>
+Reproduce un sonido en un canal específico.
+</p>
+<pre class="code python">Channel.<span class="me1">play</span><span class="br0">&#40;</span>Sound, loops=0, maxtime=0, fade_ms=0<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Comenzará a reproducir un sonido en un canal específico. Se interrumpirá
+cualquier sonido que esté sonando en este canal.
+</p>
+
+
+
+<p>
+El argumento <code>loops</code> tiene el mismo significado que en <code>Sound.play()</code>: es
+el número de veces que se repetirá el sonido luego de sonar la primera
+vez. Si vale 3, entonces el sonido se reproducirá 4 veces (la primera y
+luego 3 veces mas). Si <code>loops</code> vale -1, entonces el sonido se repetirá
+indefinidamente.
+</p>
+
+
+
+<p>
+Como en <code>Sound.play()</code>, el argumento <code>maxtime</code> se puede usar
+para detener la reproducción de sonido luego de un tiempo determinado
+(indicado en milisegundos).
+</p>
+
+
+
+<p>
+Al igual que <code>Sound.play()</code>, el argumento <code>fade_ms</code> se puede
+usar para alterar progresivamente el volumen de un sonido.
+</p>
+
+</div>
+<!-- SECTION "play" [1317-2863] -->
+<h2><a name="stop" id="stop">stop</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción de sonido en el canal de audio.
+</p>
+<pre class="code python">Channel.<span class="me1">stop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detiene la reproducción de sonido en el canal. Luego de interrumpir la
+reproducción el canal quedará disponible para que nuevos sonidos
+puedan sonar en él.
+</p>
+
+</div>
+<!-- SECTION "stop" [2864-3312] -->
+<h2><a name="pause" id="pause">pause</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene temporalmente la reproducción de un canal.
+</p>
+<pre class="code python">Channel.<span class="me1">pause</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detiene de forma temporal la reproducción de sonido en un canal. Este
+sonido se puede reanudar nuevamente mediante la función <code>Channel.unpause()</code>.
+</p>
+
+</div>
+<!-- SECTION "pause" [3313-3753] -->
+<h2><a name="unpause" id="unpause">unpause</a></h2>
+<div class="level2">
+
+
+
+<p>
+Reanuda la reproducción en un canal.
+</p>
+<pre class="code python">Channel.<span class="me1">unpause</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Continúa la reproducción en un canal que está en pausa.
+</p>
+
+</div>
+<!-- SECTION "unpause" [3754-4017] -->
+<h2><a name="fadeout" id="fadeout">fadeout</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción luego de reducir el volumen.
+</p>
+<pre class="code python">Channel.<span class="me1">fadeout</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detiene la reproducción de un canal luego de reducir progresivamente el
+volumen de un sonido en el tiempo indicado por el argumento <code>time</code>
+(en milisegundos).
+</p>
+
+</div>
+<!-- SECTION "fadeout" [4018-4467] -->
+<h2><a name="set_volume" id="set_volume">set_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el volumen de un canal de reproducción.
+</p>
+<pre class="code python">Channel.<span class="me1">set_volume</span><span class="br0">&#40;</span>value<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+Channel.<span class="me1">set_volume</span><span class="br0">&#40;</span>left, right<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Define el volumen, o latencia, de un sonido. El nivel de volumen
+se reinicia cuando un canal comienza a reproducir nuevamente. Esta
+función solo afecta al sonido actual. El argument <code>value</code> debe
+ser un número entre 0.0 y 1.0
+</p>
+
+
+
+<p>
+Si se pasa un solo argumento, este se interpretará como el volumen
+de ambos parlantes. Si se pasan dos argumento y el módulo <code>mixer</code>
+usa el modo estéreo, entonces el primer argumento será el volumen
+del parlante izquierdo y el segundo argumento será el
+volumen del parlante derecho. (Si el segundo argumento es None, entonces
+el primer argumento se interpretará como el volumen de ambos
+parlantes.)
+</p>
+
+
+
+<p>
+Si el canal está reproduciendo un sonido en donde se ha llamado
+a la función <code>set_volume()</code>, se tendrán en cuenta las dos
+llamadas. Por ejemplo:
+</p>
+<pre class="code python">sound = pygame.<span class="me1">mixer</span>.<span class="me1">Sound</span><span class="br0">&#40;</span><span class="st0">&quot;s.wav&quot;</span><span class="br0">&#41;</span>
+channel = s.<span class="me1">play</span><span class="br0">&#40;</span><span class="br0">&#41;</span>      <span class="co1"># El sonido suena al máximo de volúmen.</span>
+sound.<span class="me1">set_volume</span><span class="br0">&#40;</span><span class="nu0">0.9</span><span class="br0">&#41;</span>   <span class="co1"># Ahora al 90% de si volumen.</span>
+sound.<span class="me1">set_volume</span><span class="br0">&#40;</span><span class="nu0">0.6</span><span class="br0">&#41;</span>   <span class="co1"># Ahora al 60% (el anterior valor de descarta).</span>
+channel.<span class="me1">set_volume</span><span class="br0">&#40;</span><span class="nu0">0.5</span><span class="br0">&#41;</span> <span class="co1"># Ahora al 30% (porque 0.6 * 0.5 = 0.3).</span></pre>
+</div>
+<!-- SECTION "set_volume" [4468-6461] -->
+<h2><a name="get_volume" id="get_volume">get_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el volumen del canal de reproducción.
+</p>
+<pre class="code python">Channel.<span class="me1">get_volume</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> value</pre>
+
+
+<p>
+Retorna el volumen del canal para el sonido que es está reproduciendo. 
+Esta función no tiene en cuenta la separación estéreo que se
+ha utilizado en <code>Channel.set_volume</code>. El objeto <code>Sound</code> también
+tiene su propio volumen que se mezcla con el del canal.
+</p>
+
+</div>
+<!-- SECTION "get_volume" [6462-7124] -->
+<h2><a name="get_busy" id="get_busy">get_busy</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el canal está activo.
+</p>
+<pre class="code python">Channel.<span class="me1">get_busy</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el canal está reproduciendo audio, y retornará <code>False</code>
+si el canal está inactivo.
+</p>
+
+</div>
+<!-- SECTION "get_busy" [7125-7487] -->
+<h2><a name="get_sound" id="get_sound">get_sound</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el sonido que se está reproduciendo actualmente.
+</p>
+<pre class="code python">Channel.<span class="me1">get_sound</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sound</pre>
+
+
+<p>
+Retorna el objeto <code>Sound</code> que se está reproduciendo en este canal. Retornará
+<code>None</code> si el canal está inactivo.
+</p>
+
+</div>
+<!-- SECTION "get_sound" [7488-7898] -->
+<h2><a name="queue" id="queue">queue</a></h2>
+<div class="level2">
+
+
+
+<p>
+Coloca un objeto <code>Sound</code> en la cola para seguir al actual.
+</p>
+<pre class="code python">Channel.<span class="me1">queue</span><span class="br0">&#40;</span>Sound<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Un objeto <code>Sound</code> comienza a reproducirse inmediatamente después de
+otro si se coloca en la cola de reproducción del canal. Cada canal
+solo puede tener un sonido en cola al mismo tiempo. El sonido en cola
+solo se reproducirá si el sonido actual finaliza normalmente. En otro caso, si
+se llama a <code>Channel.stop()</code> o <code>Channel.play()</code>, el sonido en cola
+se cancelará.
+</p>
+
+
+
+<p>
+El sonido comenzará a reproducirse inmediatamente si no hay otro
+sonido en curso.
+</p>
+
+</div>
+<!-- SECTION "queue" [7899-8977] -->
+<h2><a name="get_queue" id="get_queue">get_queue</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna cualquier objeto <code>Sound</code> que esté en cola.
+</p>
+<pre class="code python">Channel.<span class="me1">get_queue</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sound</pre>
+
+
+<p>
+Se retornará el sonido que esté en cola para este canal. Una vez
+que el sonido comienza a reproducirse ya no estará en la cola de
+reproducción.
+</p>
+
+</div>
+<!-- SECTION "get_queue" [8978-9446] -->
+<h2><a name="set_endevent" id="set_endevent">set_endevent</a></h2>
+<div class="level2">
+
+
+
+<p>
+Hace que el canal envíe un evento cuando la reproducción finalice.
+</p>
+<pre class="code python">Channel.<span class="me1">set_endevent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+Channel.<span class="me1">set_endevent</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cuando se define un evento de terminación para el canal, se enviará un
+evento a la cola de eventos cada vez que un sonido termine de reproducirse
+en este canal (no solo la primera vez). Use la función <code>pygame.event.get()</code>
+para recibir el evento de terminación una vez que halla sido enviado.
+</p>
+
+
+
+<p>
+Note que si ha llamado a <code>Sound.play(n)</code> o <code>Channel.play(sound, n)</code>, el
+evento de terminación se enviará una sola vez, luego de reproducirse “n+1” veces (vea
+la documentación de <code>Sound.play</code>).
+</p>
+
+
+
+<p>
+Se enviará el evento de terminación inmediatamente si se llama a <code>Channel.stop()</code>
+o <code>Channel.play()</code> mientras el sonido está en reproducción.
+</p>
+
+
+
+<p>
+El argumento <code>type</code> indica el identificador de evento para enviar
+a la cola de eventos. Puede ser válido usar cualquier tipo de evento, aunque
+una buena elección debería ser optar por un valor entre <code>pygame.locals.USEREVENT</code>
+y <code>pygame.locals.NUMEVENTS</code>. 
+</p>
+
+<p>
+El canal dejará de enviar eventos si se llama a esta función sin argumentos.
+</p>
+
+</div>
+<!-- SECTION "set_endevent" [9447-11511] -->
+<h2><a name="get_endevent" id="get_endevent">get_endevent</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el evento que un canal emite cuando finaliza la reproducción.
+</p>
+<pre class="code python">Channel.<span class="me1">get_endevent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">type</span></pre>
+
+
+<p>
+Retorna el tipo de evento que se enviará cada vez que el canal termina
+de reproducir un objeto <code>Sound</code>. Esta función retornará <code>pygame.NOEVENT</code>
+si el canal no tiene asignado un evento para emitir.
+</p>
+
+</div>
+<!-- SECTION "get_endevent" [11512-] --></div>
+</body>
+</html>

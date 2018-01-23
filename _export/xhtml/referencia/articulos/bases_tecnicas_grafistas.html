@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:bases_tecnicas_grafistas</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2010-04-14T07:40:38+0400" />
+<meta name="keywords" content="referencia,articulos,bases_tecnicas_grafistas" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/bases_tecnicas_grafistas-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="bases_tecnicas_grafistas.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/bases_tecnicas_grafistas.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#bases_tecnicas_para_grafistas" class="toc">Bases Técnicas Para Grafistas</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#caracteristicas_de_las_imagenes" class="toc">Características de las imágenes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#dibujado_en_pantalla" class="toc">Dibujado en pantalla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#transformaciones_basicas" class="toc">Transformaciones básicas</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#otras_tecnicas" class="toc">Otras técnicas</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#licencia" class="toc">Licencia</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="bases_tecnicas_para_grafistas" id="bases_tecnicas_para_grafistas">Bases Técnicas Para Grafistas</a></h1>
+<div class="level1">
+
+<div class="noteclassic">Quizás haya una versión más reciente en <a href="http://vgafib.upc.es/wiki/index.php/Bases_T%C3%A9cnicas_Para_Grafistas" class="urlextern" title="http://vgafib.upc.es/wiki/index.php/Bases_Técnicas_Para_Grafistas"  rel="nofollow">http://vgafib.upc.es/wiki/index.php/Bases_Técnicas_Para_Grafistas</a>
+</div>
+
+</div>
+<!-- SECTION "Bases Técnicas Para Grafistas" [1-174] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong></div>
+<ul>
+<li class="level2"><div class="li"> David Ramírez Reina</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Contribuciones:</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>Imágenes:</strong></div>
+<ul>
+<li class="level2"><div class="li"> blit_clip_composicion, terreno_isometrico: David Ramírez Reina</div>
+</li>
+<li class="level2"><div class="li"> mapa_tiles, spritesheet: Walter Velázquez. Modificadas por Hugo Ruscitti (extraídas de Losersjuegos).</div>
+</li>
+<li class="level2"><div class="li"> anim_caminar, apartado Transformaciones básicas: Walter Velázquez (extraídas de Losersjuegos). Modificadas por David Ramírez Reina.</div>
+</li>
+<li class="level2"><div class="li"> parallax1, parallax2: Parallax scrolling en Wikipedia(en)</div>
+</li>
+<li class="level2"><div class="li"> estrellas: Hugo Ruscitti</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Agradecimientos:</strong></div>
+<ul>
+<li class="level2"><div class="li"> Losersjuegos (<a href="http://www.losersjuegos.com.ar" class="urlextern" title="http://www.losersjuegos.com.ar"  rel="nofollow">www.losersjuegos.com.ar</a>) por su filosofía de libertad y compartir su material.</div>
+</li>
+<li class="level2"><div class="li"> Los colaboradores de Wikipedia.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [175-861] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+Este tutorial va dirigido a todos aquellos artistas (en especial, los dibujantes) que quieran formar parte en el desarrollo de un videojuego, pero que, sin embargo, no sepan como trabaja un juego internamente. Por lo tanto, se intentará dar una base de la parte más técnica (de la que se encargan los programadores) para así dar más soltura a los artistas tanto a la hora de dibujar como a la hora de hacer el diseño gráfico y mejorar el entendimiento con el resto del equipo y de su propio trabajo. Igualmente, no se profundizará demasiado en los aspectos técnicos ya que no es el área en el que se especializa el grafista y, por lo tanto, algunos conceptos pueden estar simplificados para un mejor entendimiento.
+Esta artículo se centra únicamente en aspectos 2D ya que se trabaja de manera muy distinta al 3D.
+</p>
+
+</div>
+<!-- SECTION "Introducción" [862-1711] -->
+<h2><a name="caracteristicas_de_las_imagenes" id="caracteristicas_de_las_imagenes">Características de las imágenes</a></h2>
+<div class="level2">
+
+<p>
+Los formatos son la manera de guardar la información de una imagen (<acronym title="Portable Network Graphics">PNG</acronym>, BMP, <acronym title="Graphics Interchange Format">GIF</acronym>…). Cada uno lo hace de una manera distinta. Pero, sin embargo, tampoco se puede afirmar que uno sea mejor que otro, sino que cada uno se suele usar para diferentes tipos de imagen (el <acronym title="Joint Photographics Experts Group">JPEG</acronym> se suele usar para fotos, el <acronym title="Graphics Interchange Format">GIF</acronym> para páginas webs…). Para videojuegos, básicamente se usan 2:
+</p>
+<ul>
+<li class="level1"><div class="li"> <acronym title="Portable Network Graphics">PNG</acronym>: Es un formato sin pérdida de calidad con una excelente compresión y que admite canal alfa. Esto significa que la imagen no se ve borrosa pero que sin embargo no ocupa mucho. Además, a cada píxel se le puede añadir un valor de transparencia (de 0% a 100%).</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> BMP: Se suele utilizar cuando no se quiere ninguna pérdida en la calidad en la imagen. Esto hace que ocupe bastante. Un inconveniente de este formato es que no tiene canal alfa. Por lo tanto, a la hora de marcar la zona transparente, se hace con la técnica colorkey. Esta técnica consiste en pintar dicha zona de un color chillón y que no se utilice en el dibujo. Por ejemplo, si el personaje es un muñeco de nieve, es mejor no coger el color blanco como colorkey ya que seguramente ya se use en el dibujo y aparecerán transparencias indeseadas. Por lo tanto, se suelen usar colores poco usados como el magenta ({0, 255, 255} en RGB). Es más cómodo para los programadores si este color es el mismo para todas las imágenes y que además sea fácil de recordar. Por lo que se suelen usar los colores con valores RGB máximo y mínimo (negro, blanco, rojo, verde, azul, magenta, amarillo o cian). Comparado con el canal alfa, esta técnica tiene el inconveniente que un píxel solo puede ser completamente  transparente o completamente opaco, mientras que, de la otra manera, se pueden poner diferentes valores de transparencia por cada píxel. Por estas razones, hoy en día, el uso del BMP ha descendido y lo sigue haciendo.</div>
+</li>
+</ul>
+
+<p>
+
+Otra característica importante de una imagen es la resolución. La resolución se expresa como el ancho por el alto de la imagen medida en píxeles. Se puede referir tanto a una imagen suelta como a la ventana del juego. Si se utiliza una resolución de ventana muy baja y se juega en modo ventana, se verá muy pequeña, y si se reescala (a pantalla completa, por ejemplo), se verá una imagen de poca calidad. Sin embargo, una resolución demasiado grande, llevará mucho trabajo para hacer los dibujos, ocupará más espacio en disco, se necesitara un procesador/tarjeta gráfica más potente y, al tenerse que reescalar a pantalla completa, apenas se notará diferencia con una inferior. Por lo tanto, hay que elegir algo intermedio.
+</p>
+
+<p>
+A la hora de elegir la resolución de la ventana, hay que tener en cuenta el aspect ratio. El aspect ratio es la relación entre el ancho y la altura. Por ejemplo, una resolución de 800&times;600 sabemos que es 4:3 ya que 800/600 = 4/3. Antiguamente se solía utilizar una relación de 4:3, pero con las pantallas actuales, se está pasando a relaciones más panorámicas como 16:9.
+</p>
+
+<p>
+Hay unos tipos de formato, el vectorial, que no está atado a ninguna resolución en concreto. Sin embargo, hay que tener en cuenta el aspect ratio. Estos formatos pueden ser útiles para, por ejemplo, tener las imágenes en diferentes resoluciones, pero primero hay que exportarlos a un formato rasterizado (no vectorial).
+</p>
+
+</div>
+<!-- SECTION "Características de las imágenes" [1712-5083] -->
+<h2><a name="dibujado_en_pantalla" id="dibujado_en_pantalla">Dibujado en pantalla</a></h2>
+<div class="level2">
+
+<p>
+Antes de comenzar a dibujar cosas en la pantalla, un juego necesita cargar las imágenes en memoria (el típico “loading…”) ya sea de un disco duro, un CD, un cartucho… Podemos imaginar que saca de un almacén las imágenes que vaya a utilizar y las pone sobre la mesa de trabajo para poder acceder a ellas de manera rápida.
+</p>
+
+<p>
+Una vez cargadas, además de leerlas, también se puede dibujar sobre ellas. En especial, hay una imagen que es la que se irá dibujando por la pantalla. Una de las opciones para dibujar, es simplemente copiar encima (en cualquier posición) otra imagen (entera o solo un rectángulo de esta). Esta acción se le llama blit y es elemental. Si al copiar una imagen esta sobresale, se puede recortar automáticamente (a esto se le conoce como clip).
+</p>
+
+<p>
+Con esta técnica tan simple, ya se pueden formar escenas más elaboradas partiendo de imágenes simples. Como, por ejemplo, hacer el dibujo de un paisaje a partir de la imagen de un árbol y una montaña.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_blit_clip_composicion.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_blit_clip_composicion.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_blit_clip_composicion.png" class="mediacenter" title="Composición usando el blit y el clip" alt="Composición usando el blit y el clip" /></a>
+</p>
+
+<p>
+En muchos casos, es importante crear imágenes simples para así tener más holgura a la hora de componer imágenes con el blit y de esta manera ahorrar mucho tiempo a los grafistas. Esto se puede apreciar muy bien en los juegos antiguos como Zelda. En la mayoría se ve claramente que el mapa está compuesto por muchas imágenes pequeñas y simples (Tiles).
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_mapa_tiles.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_mapa_tiles.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_mapa_tiles.png" class="mediacenter" title="Mapa hecho con tiles" alt="Mapa hecho con tiles" /></a>
+</p>
+
+<p>
+Para lograr la sensación de movimiento por la pantalla, es necesario pintar la pantalla muchas veces por segundo (normalmente 50-60) de manera que de un fotograma (imagen) a otro haya muy poca diferencia. Por ejemplo, si queremos mover un objeto por la pantalla, si a cada fotograma lo pintamos unos pocos píxeles más a la derecha (sobre el fondo), se engaña al ojo de manera que nos dará la sensación que se está moviendo a la derecha. Cabe destacar que, como se ha explicado anteriormente, no hace falta que el grafista dibuje todos los fotograma por completo, sino que solamente dibujaría el objeto y luego se iría dibujando en diferentes posiciones con blit.
+De forma parecida, se puede dar el efecto de, por ejemplo, un personaje andando. Esto se consigue con un secuencia de imágenes con las distintas posturas del personaje cada cierto tiempo constante. En la siguiente imagen de ejemplo, se han tomado cuatro instancias del movimiento de andar. Cabe destacar que es un ejemplo real y que, aunque solo hayan cuatro instancias, el cerebro reconstruye el movimiento completo.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_anim_caminar.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_anim_caminar.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_anim_caminar.png" class="mediacenter" title="Animación de caminar" alt="Animación de caminar" /></a>
+</p>
+
+<p>
+Como con el blit se puede copiar una sola parte de la imagen, se pueden agrupar varias imágenes en una sola. Esto se suele hacer en las animaciones de personajes para tener todos los fotogramas juntos y así tener todas las imágenes mejor ordenadas (y alguna que otra mejora). Es lo que se conoce como spritesheet. También se suele hacer con los tiles y, en definitiva, con los grupos de imágenes pequeñas que guardan relación.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_spritesheet.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_spritesheet.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_spritesheet.png" class="mediacenter" title="Blit usando un spritesheet" alt="Blit usando un spritesheet" /></a>
+</p>
+
+</div>
+<!-- SECTION "Dibujado en pantalla" [5084-8399] -->
+<h2><a name="transformaciones_basicas" id="transformaciones_basicas">Transformaciones básicas</a></h2>
+<div class="level2">
+
+<p>
+Existen 4 transformaciones básicas que pueden aplicar los programadores para ahorrar trabajo al grafista. Hoy en día, estas técnicas se pueden usar con normalidad. Sin embargo, si se trabaja con  tecnología anticuada, pueden requerir demasiado procesador. Así que lo mejor será que se hable con los encargados de aspectos técnicos.
+
+</p>
+
+</div>
+
+<h4><a name="flip" id="flip">Flip</a></h4>
+<div class="level4">
+
+<p>
+Es una técnica que consiste en que la imagen sea bliteada del revés. El flip puede usarse vertical y/o horizontalmente. Esta técnica es útil para que el grafista dibuje un personaje una vez y no dos (mirando hacia la izquierda y hacia la derecha). Aunque esto a veces puede crear un efecto no deseado y es que si, por ejemplo, el personaje tiene una herida en el brazo derecho al mirar hacia la derecha, cuando mire hacia la izquierda, la herida pasará a estar en el brazo izquierdo.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_vhflip.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_vhflip.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_vhflip.png" class="mediacenter" title="Flip vertical y horizontal" alt="Flip vertical y horizontal" /></a>
+</p>
+
+</div>
+
+<h4><a name="rotate" id="rotate">Rotate</a></h4>
+<div class="level4">
+
+<p>
+Es una técnica que consiste en que la imagen sea bliteada girada un cierto ángulo. Esto es útil para cuando hay, por ejemplo, un coche visto desde arriba. Así solamente hace falta que el grafista dibuje una vez el coche y no en cada uno de los ángulos. Este efecto hace que la imagen pierda calidad dependiendo del ángulo y del algoritmo que se use (como se puede apreciar en el ejemplo).
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_rotate.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_rotate.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_rotate.png" class="mediacenter" title="Rotate" alt="Rotate" /></a>
+</p>
+
+</div>
+
+<h4><a name="scale" id="scale">Scale</a></h4>
+<div class="level4">
+
+<p>
+Es una técnica que consiste en que la imagen sea bliteada más grande o más pequeña. Esto es útil para cuando se quiere dar la sensación de profundidad. Por ejemplo, en el Monkey Island. Hay que tener cuidado con esta técnica ya que, si se agranda mucho una imagen, esta pierde calidad (aunque se le pueden aplicar varios filtros para suavizar un poco ese efecto).
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_scale.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_scale.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_scale.png" class="mediacenter" title="Scale" alt="Scale" /></a>
+</p>
+
+</div>
+
+<h4><a name="alpha_blending" id="alpha_blending">Alpha Blending</a></h4>
+<div class="level4">
+
+<p>
+Es una técnica que consiste en que la imagen sea bliteada con un cierto grado de transparencia. Esto es útil, por ejemplo, para hacer que un fantasma aparezca y desaparezca de manera suave. Esto se consigue cambiando, poco a poco, el grado de transparencia a cada fotograma.
+</p>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_alpha_blending.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_alpha_blending.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_alpha_blending.png" class="mediacenter" title="Alpha Blending" alt="Alpha Blending" /></a>
+</p>
+
+</div>
+<!-- SECTION "Transformaciones básicas" [8400-10703] -->
+<h2><a name="otras_tecnicas" id="otras_tecnicas">Otras técnicas</a></h2>
+<div class="level2">
+
+<p>
+A continuación se exponen algunas técnicas aunque se puede llegar a hacer gran cantidad de cosas. Algunas de ellas llevarán poco trabajo a los programadores y, sin embargo, otras llevarán mucho. Lo mejor será tener una buena comunicación entre programadores y grafistas para saber qué cosas serían factibles llevar a cabo y la faena que tendrían los programadores y los grafistas.
+
+</p>
+
+</div>
+
+<h4><a name="parallax" id="parallax">Parallax</a></h4>
+<div class="level4">
+
+<p>
+El Parallax Scrolling es una técnica que se utiliza para dar sensación de profundidad al fondo cuando se hace un scroll horizontal (el scroll horizontal es cuando la cámara se desplaza a medida que lo hace el protagonista horizontalmente, como en el Super Mario Bros). La idea consiste en tener el fondo separado por capas según la profundidad y que, al mover la cámara, las capas de más atrás se desplacen más lentas.
+</p>
+
+<p>
+En el siguiente ejemplo se utilizan unas capas donde la parte de la izquierda y de la derecha concuerdan de tal manera que el movimiento es infinito.
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_parallax2.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_parallax2.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_parallax2.png" class="mediacenter" title="Capas de un ejemplo de parallax" alt="Capas de un ejemplo de parallax" /></a>
+</p>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_parallax1.gif-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_parallax1.gif"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_parallax1.gif" class="mediacenter" title="Ejemplo de parallax" alt="Ejemplo de parallax" /></a>
+</p>
+
+</div>
+
+<h4><a name="isometrico" id="isometrico">Isométrico</a></h4>
+<div class="level4">
+
+<p>
+Mucho antes de los videojuegos de hoy en día (incluso en los 80&#039;s), ya se intentaba representar las 3 dimensiones. Para ello, se utilizaba una perspectiva isométrica. Esto no se considera 3D ya que los dibujos siguen siendo planos, pero se logra una sensación muy potente. Aunque sea una técnica bastante anticuada, gracias a que no se necesitan máquinas potentes y que crea un efecto bonito, seguía siendo muy usado en consolas portátiles. Además, es mucho más sencillo de implementar que un sistema en 3D y por eso se usa mucha en videojuegos poco profesionales. También se usa actualmente en algunos juegos de navegador como por ejemplo el Farmville.
+</p>
+
+<p>
+Usando esta técnica, también seguimos la idea comentada anteriormente de tener imágenes simples y pequeñas para poder crear composiciones complejas fácilmente. En el siguiente ejemplo, se ha creado un terreno montañoso usando solamente una imagen de un cubo.
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_terreno_isometrico.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_terreno_isometrico.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_terreno_isometrico.png" class="mediacenter" title="Terreno isométrico" alt="Terreno isométrico" /></a>
+</p>
+
+</div>
+
+<h4><a name="efectos_por_codigo" id="efectos_por_codigo">Efectos por código</a></h4>
+<div class="level4">
+
+<p>
+De algunos efectos visuales, se pueden encargar directamente los programadores. Esto se consigue dibujando por pantalla primitivas como circunferencias (que si son pequeñas se ven como puntos), lineas… Aunque los elementos sean simples, se pueden lograr efectos como lluvia, nieve, cielo estrellado…
+<a href="../../../../_detail/referencia/articulos/bases_tecnicas_grafistas/btg_estrellas.png-id=referencia-articulos-bases_tecnicas_grafistas.html" class="media" title="referencia:articulos:bases_tecnicas_grafistas:btg_estrellas.png"><img src="../../../../_media/referencia/articulos/bases_tecnicas_grafistas/btg_estrellas.png" class="mediacenter" title="Estrellas" alt="Estrellas" /></a>
+</p>
+
+</div>
+<!-- SECTION "Otras técnicas" [10704-13368] -->
+<h2><a name="licencia" id="licencia">Licencia</a></h2>
+<div class="level2">
+
+<p>
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la <strong>GNU Free Documentation License</strong>.
+</p>
+
+</div>
+<!-- SECTION "Licencia" [13369-] --></div>
+</body>
+</html>

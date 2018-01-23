@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:sprite:renderedupdates</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:51+0300" />
+<meta name="keywords" content="traducciones,pygame,sprite,renderedupdates" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/sprite/renderedupdates-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-sprite.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="renderedupdates.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/sprite/renderedupdates.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#renderupdates" class="toc">RenderUpdates</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#renderupdates1" class="toc">RenderUpdates</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#draw" class="toc">draw</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="renderupdates" id="renderupdates">RenderUpdates</a></h1>
+<div class="level1">
+
+
+
+<p>
+Clase de grupo que utiliza el procedimiento &#039;dirty rectangles&#039;.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#renderupdates" class="wikilink1" title="traducciones:pygame:sprite">RenderUpdates</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="../../../../../traducciones/pygame/sprite.html#draw" class="wikilink1" title="traducciones:pygame:sprite">draw</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "RenderUpdates" [1-248] -->
+<h2><a name="renderupdates1" id="renderupdates1">RenderUpdates</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">sprite</span>.<span class="me1">RenderUpdates</span><span class="br0">&#40;</span><span class="sy0">*</span>sprites<span class="br0">&#41;</span>: <span class="kw1">return</span> RenderUpdates</pre>
+
+
+<p>
+Esta clase deriva desde <code>pygame.sprite.Group()</code>. Tiene un
+método <code>draw()</code> extendido para guardar las áreas modificadas
+de la pantalla.
+</p>
+
+</div>
+<!-- SECTION "RenderUpdates" [249-639] -->
+<h2><a name="draw" id="draw">draw</a></h2>
+<div class="level2">
+
+
+
+<p>
+Dibuja las imágenes de objetos Sprite y guarda información de
+las áreas modificadas.
+</p>
+<pre class="code python">RenderUpdates.<span class="me1">draw</span><span class="br0">&#40;</span>surface<span class="br0">&#41;</span>: <span class="kw1">return</span> Rect_list</pre>
+
+
+<p>
+Dibuja todos los objetos Sprite en la superficie, al igual que 
+<code>Group.draw()</code>. Aunque este método retorna una lista de áreas rectangulares
+de la pantalla que han sido modificadas. Los cambios devueltos incluyen
+áreas de la pantalla que han sido afectadas por llamadas previas a
+<code>Group.clear</code>
+</p>
+
+
+
+<p>
+La lista de objetos Rect devuelta se podría utilizar para llamar
+a <code>pygame.display.update</code>. Esto ayudará a mejorar el rendimiento del
+programa en modos de video gestionados por software. Este tipo
+de actualización solamente es útil en pantallas sin fondos animados.
+</p>
+
+</div>
+<!-- SECTION "draw" [640-] --></div>
+</body>
+</html>

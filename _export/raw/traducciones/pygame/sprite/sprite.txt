@@ -1,0 +1,198 @@
+====== Sprite ======
+
+/*
+simple base class for visible game objects
+*/
+
+Una clase base para objetos del juego visibles.
+
+<box 90%>
+  * [[:traducciones:pygame:sprite:#Sprite]]
+  * [[:traducciones:pygame:sprite:#update]]
+  * [[:traducciones:pygame:sprite:#add]]
+  * [[:traducciones:pygame:sprite:#remove]]
+  * [[:traducciones:pygame:sprite:#kill]]
+  * [[:traducciones:pygame:sprite:#alive]]
+  * [[:traducciones:pygame:sprite:#groups]]
+</box>
+
+
+===== Sprite =====
+
+
+<code python>
+pygame.sprite.Sprite(*groups): return Sprite
+</code>
+
+
+/*
+The base class for visible game objects. Derived classes will want to 
+override the Sprite.update() and assign a Sprite.image and 
+Sprite.rect attributes.  The initializer can accept any number of 
+Group instances to be added to.
+*/
+
+Es la clase base para los objetos visibles del juego. Las clases
+derivadas sobre-escribirán el método ''Sprite.update()'' y asignarán
+un valor a los atributos ''Sprite.image'' y ''Sprite.rect''. El
+constructor puede aceptar cualquier número de objetos ''Group'' a
+donde se insertará el objeto.
+
+/*
+When subclassing the Sprite, be sure to call the base initializer before
+adding the Sprite to Groups.
+*/
+
+Cuando genera una subclase de Sprite, asegúrese de llamar al constructor
+de la clase base antes de agregar el //Sprite// a los grupos.
+
+
+===== update =====
+
+/*
+method to control sprite behavior
+*/
+
+Método para control el comportamiento del sprite.
+
+<code>
+Sprite.update(*args):
+</code>
+
+
+/*
+The default implementation of this method does nothing; it's just a
+convenient "hook" that you can override. This method is called by
+Group.update() with whatever arguments you give it.
+*/
+
+La implementación por defecto de este método no hace nada; es 
+solo un //hueco// conveniente que puede sobreescribir. Este método
+se llama desde ''Group.update()'' con cualquier argumento que
+se le envíe.
+
+/*
+There is no need to use this method if not using the convenience 
+method by the same name in the Group class.
+*/
+
+No hay necesidad de usar este método si no está utilizando el
+método del mismo nombre en la clase ''Group''.
+
+
+
+===== add =====
+
+/*
+add the sprite to groups
+*/
+
+Inserta el sprite a los grupos.
+
+<code>
+Sprite.add(*groups): return None
+</code>
+
+
+/*
+Any number of Group instances can be passed as arguments. The Sprite will
+be added to the Groups it is not already a member of.
+*/
+
+Se puede pasar cualquier número de grupos como argumentos. El //Sprite//
+se insertará en los grupos, a menos que ya forme parte de ellos.
+
+
+
+===== remove =====
+
+/*
+remove the sprite from groups
+*/
+
+Elimina un sprite de los grupos.
+
+<code>
+Sprite.remove(*groups): return None
+</code>
+
+
+/*
+Any number of Group instances can be passed as arguments. The Sprite will
+be removed from the Groups it is currently a member of.
+*/
+
+Se puede pasar cualquier número de grupos como argumentos. El //Sprite//
+será eliminado de los grupos a los que pertenezca.
+
+
+
+===== kill =====
+
+/*
+remove the Sprite from all Groups
+*/
+
+Elimina el //Sprite// de todos los grupos.
+
+<code>
+Sprite.kill(): return None
+</code>
+
+
+/*
+The Sprite is removed from all the Groups that contain it. This won't
+change anything about the state of the Sprite. It is possible to continue
+to use the Sprite after this method has been called, including adding it
+to Groups.
+*/
+
+
+El //Sprite// será eliminado de todos los grupos a los que pertenezca. No
+se cambiará nada acerca del estado del //Sprite//. Es posible continuar
+usando el //Sprite// luego de haber llamado a este método, incluyendo
+agregarlo a otros grupos.
+
+
+===== alive =====
+
+/*
+does the sprite belong to any groups
+*/
+
+Consulta si el sprite pertenece a algún grupo.
+
+<code>
+Sprite.alive(): return bool
+</code>
+
+
+/*
+Returns True when the Sprite belongs to one or more Groups.
+*/
+
+Retorna ''True'' cuando el //Sprite// pertenece a uno o
+mas grupos.
+
+
+
+===== groups =====
+
+/*
+list of Groups that contain this Sprite
+*/
+
+Lista los grupos que contienen este sprite.
+
+<code>
+Sprite.groups(): return group_list
+</code>
+
+
+/*
+Return a list of all the Groups that contain this Sprite
+*/
+
+Retorna una lista de todos los grupos que contienen a este
+sprite.
+

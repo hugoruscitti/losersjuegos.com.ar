@@ -1,0 +1,15 @@
+====== Subimos nuestro nuevo site ======
+
+Hoy publicamos nuestro nuevo sitio web con formato wiki. El
+sistema web está basado en dokuwiki, un motor de sitios web
+muy fácil de utilizar.
+
+Junto a la actualización del sitio web hemos publicado la
+[[:traducciones:pygame|traducción completa de la documentación
+de pygame 1.8 al español]].
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

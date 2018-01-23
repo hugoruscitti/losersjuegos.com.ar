@@ -1,0 +1,22 @@
+====== ¡Bienvenido! ======
+
+
+{{ :logotipos:ceferino.png|Don Ceferino Hazaña}}
+
+LosersJuegos es un grupo de programadores y artistas que se dedican a realizar videojuegos libres, bajo los términos de la licencia GPL.
+
+El mayor objetivo del grupo es promover una comunidad de desarrolladores donde la libertad, el aprendizaje y la solidaridad sean primordiales ante todo.
+
+
+En LosersJuegos se desarrolla una serie de actividades de las cuales podemos destacar el desarrollo de videojuegos libres, la redacción de Artículos / ejemplos y la participación dentro del foro de mensajes.
+
+Si quiere participar del grupo, aquí siempre será bienvenido. No es necesario tener experiencia en el desarrollo de videojuegos. Le recomendamos visitar la sección [[comunidad]], 
+ahí encontrará varios consejos para unirse al grupo. Luego puede visitar nuestro [[http://www.losersjuegos.com.ar/foro|foro de mensajes]] y comenzar a participar
+en alguna tarea.
+
+
+====== Ultimas noticias ======
+
+{{blog>:principal:noticias?4}}
+
+[[:principal:noticias|Mas noticias...]]

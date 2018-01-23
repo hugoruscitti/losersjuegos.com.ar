@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:moveit</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-06T03:22:49+0300" />
+<meta name="keywords" content="python,pygame" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/moveit-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="moveit.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/moveit.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#pygameayuda_como_muevo_una_imagen" class="toc">Pygame: ¡Ayuda!, ¿Como muevo una imagen?</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#solo_pixels_en_la_pantalla" class="toc">Solo pixels en la pantalla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#retrocedemos_un_paso" class="toc">Retrocedemos un paso</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#haciendo_el_movimiento_del_heroe" class="toc">Haciendo el movimiento del héroe</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#creando_un_mapa" class="toc">Creando un mapa</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#haciendo_el_movimiento_del_heroe_toma_2" class="toc">Haciendo el movimiento del héroe (toma 2)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#definicionblit" class="toc">Definición: &quot;Blit&quot;</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#vamos_de_la_lista_a_la_pantalla" class="toc">Vamos de la lista a la pantalla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#coordenadas_de_pantalla" class="toc">Coordenadas de pantalla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#cambiando_el_fondo" class="toc">Cambiando el fondo</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#suavizando_el_movimiento" class="toc">Suavizando el movimiento</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#y_ahora_que" class="toc">¿Y ahora que?</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#primero_la_funcion_misteriosa" class="toc">Primero, la función misteriosa</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#manejando_la_entrada_de_datos" class="toc">Manejando la entrada de datos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#como_mover_multiples_imagenes" class="toc">Como mover múltiples imágenes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#uniendo_todo" class="toc">Uniendo todo</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#desde_aqui_corre_por_tu_cuenta" class="toc">Desde aquí corre por tu cuenta</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/moveit/moveit.pdf" class="media mediafile mf_pdf" title="referencia:articulos:moveit:moveit.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="pygameayuda_como_muevo_una_imagen" id="pygameayuda_como_muevo_una_imagen">Pygame: ¡Ayuda!, ¿Como muevo una imagen?</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Pygame: ¡Ayuda!, ¿Como muevo una imagen?" [53-110] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Pete Shinners</div>
+</li>
+<li class="level1"><div class="li"> <strong>Traducido por:</strong> Dora Zárate</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fecha:</strong> Domingo 17 de Junio del 2007</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [111-245] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+A mucha gente que es nueva en la programación y gráficos les cuesta trabajo entender como hacer que una imagen se mueva alrededor de la pantalla.
+</p>
+
+<p>
+Sin entender todos los conceptos, esto puede resultar muy confuso. Usted no es la primera persona que se estanca aquí, haré mi mejor esfuerzo para llevar las cosas paso a paso. Incluso trataremos de terminar con métodos para mantener eficientes tus animaciones.
+</p>
+
+<p>
+No le enseñaré a programar con Python en este artículo, solo voy a dar una introducción a lo básico con pygame.
+</p>
+
+</div>
+<!-- SECTION "Introducción" [246-810] -->
+<h2><a name="solo_pixels_en_la_pantalla" id="solo_pixels_en_la_pantalla">Solo pixels en la pantalla</a></h2>
+<div class="level2">
+
+<p>
+Pygame tiene una superficie de visualización. Esta es básicamente una imagen que es visible en la pantalla y está compuesta de pixels. La principal forma de cambiar estos pixels es llamando a la función “Blit()”. Ésta copia los pixels de una imagen a otra.
+</p>
+
+<p>
+Esto es lo primero por entender. Cuando usted copia (Blit) una imagen dentro de la pantalla, está simplemente cambiando el color de los pixels en la pantalla. Los pixels no se agregan o mueven, solo cambiamos el color de los pixels que ya están en la pantalla. Estas imágenes que usted copia a la pantalla también son “Surfaces” en pygame, pero de ningún modo están conectadas a la superficie de visualización (display surface).
+</p>
+
+<p>
+Con esta breve descripción, tal vez usted pueda ya entender que es lo necesario para mover una imagen. En realidad no movemos nada. Solo copiamos la imagen en una nueva posición. Pero antes de dibujar la imagen en una nueva posición necesitamos borrar la anterior. De otra forma la imagen será visible en dos lugares de la pantalla. Pero borrando rápidamente la imagen y redibujandola en un nuevo lugar, lograremos la ilusión de movimiento.
+</p>
+
+<p>
+Mediante el resto de esta guía dividiremos el proceso en pasos mas simples. Intruso explicando los mejores modos de tener imágenes múltiples moviéndose por la pantalla. Usted probablemente ya tenga preguntas. Tales como: ¿Como borramos la imagen antes de dibujarla en una nueva posición?, ¿tal vez se encuentre totalmente perdido?. Esperamos que el resto de esta guía le aclare las cosas. 
+</p>
+
+</div>
+<!-- SECTION "Solo pixels en la pantalla" [811-2401] -->
+<h2><a name="retrocedemos_un_paso" id="retrocedemos_un_paso">Retrocedemos un paso</a></h2>
+<div class="level2">
+
+<p>
+¿Tal vez el concepto de pixels e imágenes es todavía extraño para usted?. Buenas noticias, en las próximas secciones usaremos código que hace todo lo que queremos, solo que no usa pixels. Vamos a crear una pequeña lista en Python de 6 números, e imagine que representa algún gráfico fantástico que podríamos ver en la pantalla. Será sorprendente cuan cercano representa este ejemplo lo que mas tarde haremos con los gráficos.
+</p>
+
+<p>
+Entonces, comencemos creando nuestra lista de pantalla y pintándola con un hermoso paisaje de 1s y 2s. 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen = <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+ <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+ Ahora hemos creado nuestro fondo. No va a ser muy excitante a menos que también dibujemos un jugador en la pantalla. Crearemos un posible héroe que sea parezca al número 8. Peguemoslo cerca del medio del mapa y veamos como se vé.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+ <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+Esto podría ir tan lejos como quieras si haces algunos programas gráficos con pygame. Solo tienes algo que luce lindo en la pantalla pero que no puede moverse para ningún lado. Tal vez ahora que nuestra pantalla es solo una lista de números, sea mas fácil de ver como movemos al héroe.
+</p>
+
+</div>
+<!-- SECTION "Retrocedemos un paso" [2402-3687] -->
+<h2><a name="haciendo_el_movimiento_del_heroe" id="haciendo_el_movimiento_del_heroe">Haciendo el movimiento del héroe</a></h2>
+<div class="level2">
+
+<p>
+Antes de empezar a mover al protagonista. Necesitamos mantener la información de alguna forma sobre la posición de él. En la última sesión cuando lo dibujamos solo, elegimos una posición arbitraria. Hagámoslo un poco mas oficialmente esta vez: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> playerpos = <span class="nu0">3</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+ <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+Ahora es bastante fácil moverlo a una nueva posición. Simplemente cambiamos el valor de “playerpos”, y lo dibujamos en la pantalla de nuevo.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> playerpos = playerpos - <span class="nu0">1</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+ <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">8</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+ ¡Epa!, ahora podemos ver dos héroes. Uno en la posición vieja, y otro en la nueva. Esta es exactamente la razón por la que necesitamos borrar al héroe en su vieja posición antes de dibujarlo en la nueva. Para borrarlo, necesitamos recuperar el valor que tenía la lista antes de que el héroe estuviese allí. Esto significa que necesitamos tener toda la información de los valores en la pantalla antes de que el héroe los reemplazara. Hay varias formas de hacer esto, pero la mas fácil es mantener una copia separada del fondo de la pantalla. Para ello necesitamos hacer alguno cambios a nuestro pequeño juego.
+</p>
+
+</div>
+<!-- SECTION "Haciendo el movimiento del héroe" [3688-4981] -->
+<h2><a name="creando_un_mapa" id="creando_un_mapa">Creando un mapa</a></h2>
+<div class="level2">
+
+<p>
+Lo que queremos hacer es crear una lista separada que podemos llamar nuestro fondo. Crearemos nuestro fondo para que se parezca a la pantalla original que hicimos, con 1s y 2s. Luego copiaremos cada punto desde el fondo a la pantalla. Después de eso finalmente podremos dibujar nuestro héroe nuevamente dentro de la pantalla. 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> background = <span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen = <span class="br0">&#91;</span>0<span class="br0">&#93;</span><span class="sy0">*</span><span class="nu0">6</span>                     <span class="co1"># una nueva pantalla vacía</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span>:
+...    <span class="me1">screen</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span> = background<span class="br0">&#91;</span>i<span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+<span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span>
+&nbsp;
+<span class="sy0">&gt;&gt;&gt;</span> playerpos = <span class="nu0">3</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+<span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+Parece un montón de trabajo extra. No estamos mucho mas lejos de lo que estábamos antes de hacerlo mover. Pero esta vez tenemos información extra que necesitamos para moverlo apropiadamente.
+</p>
+
+</div>
+<!-- SECTION "Creando un mapa" [4982-5838] -->
+<h2><a name="haciendo_el_movimiento_del_heroe_toma_2" id="haciendo_el_movimiento_del_heroe_toma_2">Haciendo el movimiento del héroe (toma 2)</a></h2>
+<div class="level2">
+
+<p>
+Esta vez será fácil mover al héroe en la pantalla. Primero borraremos al héroe de su vieja posición. Haremos esto copiando el valor correcto desde el fondo hacia la pantalla. Luego dibujamos al personaje en su nueva posición sobre la pantalla. 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+<span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span>
+&nbsp;
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = background<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> playerpos = playerpos - <span class="nu0">1</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+<span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+
+Allí está. El héroe se ha movido un espacio a la izquierda. Podemos usar este mismo código para moverlo a la izquierda nuevamente.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = background<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> playerpos = playerpos - <span class="nu0">1</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span> = <span class="nu0">8</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">print</span> screen
+<span class="br0">&#91;</span><span class="nu0">1</span>, <span class="nu0">8</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">2</span>, <span class="nu0">1</span><span class="br0">&#93;</span></pre>
+<p>
+¡Excelente!. Esto no es exactamente lo que llamarías una animación suave. Pero con un par de pequeños cambios, haremos este trabajo directamente con gráficos en la pantalla.
+</p>
+
+</div>
+<!-- SECTION "Haciendo el movimiento del héroe (toma 2)" [5839-6827] -->
+<h2><a name="definicionblit" id="definicionblit">Definición: &quot;Blit&quot;</a></h2>
+<div class="level2">
+
+<p>
+
+ En las próximas sesiones transformaremos nuestro programa desde usar listas hasta usar gráficos reales en la pantalla. Cuando mostremos los gráficos usaremos frecuentemente el término “blit”. Si eres nuevo haciendo trabajos gráficos probablemente no te sea familiar este término.
+</p>
+
+<p>
+“Blit” basicamente significa copiar gráficos de una imagen a otra. Una definición mas formal es copiar una matriz compuesta de bits sobre otra matriz. Puedes pensar en “blit” como solamente “asignar” pixels. Es muy parecido asignar valores en nuestra lista de arriba, solo que blit asigna el color de pixels a nuestra imagen.
+</p>
+
+<p>
+Otras bibliotecas gráficas usarán la palabra bitblt, o solo blt, aunque están hablando sobre lo mismo. Es básicamente copiar memoria de un lugar a otro. En realidad es un poco mas avanzado que copiar directamente de memoria, dado que necesita manejar cosas como el formato de pixels, recortes y desplazamientos entre lineas. Los Blits avanzados también pueden manejar cosas como transparencias y otros efectos especiales. 
+</p>
+
+</div>
+<!-- SECTION "Definición: Blit" [6828-7907] -->
+<h2><a name="vamos_de_la_lista_a_la_pantalla" id="vamos_de_la_lista_a_la_pantalla">Vamos de la lista a la pantalla</a></h2>
+<div class="level2">
+
+<p>
+Tomar el código que vimos en la pantalla de arriba y hacerlo trabajar con pygame es sencillo. Pretenderemos haber cargado algunos gráficos a los que llamaremos “terrain1”, “terrain2” y “hero”. Donde antes teníamos números asignados a una lista, ahora imprimiremos gráficos en la pantalla. Otro gran cambio, en vez de usar posiciones como un simple índice (del 0 al 5), ahora necesitamos dos coordenadas dimensionales. Asumiremos que cada uno de los gráficos en nuestro juego es de 10 pixels de ancho. 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> background = <span class="br0">&#91;</span>terrain1, terrain1, terrain2, terrain2, terrain2, terrain1<span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen = create_graphics_screen<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span>:
+    ...    <span class="me1">screen</span>.<span class="me1">blit</span><span class="br0">&#40;</span>background<span class="br0">&#91;</span>i<span class="br0">&#93;</span>, <span class="br0">&#40;</span>i<span class="sy0">*</span><span class="nu0">10</span>, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> playerpos = <span class="nu0">3</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>playerimage, <span class="br0">&#40;</span>playerpos<span class="sy0">*</span><span class="nu0">10</span>, 0<span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+<p>
+
+ Hmm, ese código parece muy familiar, y afortunadamente mas importante; el código de arriba podría tener un poco de sentido. Espero que mi ilustración de poner simples valores en una lista muestre las similitudes de poner pixels en la pantalla con “blit”. La única parte que realmente tiene trabajo extra es convertir la posición del jugador a coordenadas en la pantalla. Por ahora solo usaremos un crudo ”(playerpos*10, 0)”, pero ciertamente podemos hacerlo mejor que eso. Ahora movamos la imagen del jugador sobre un espacio.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>background<span class="br0">&#91;</span>playerpos<span class="br0">&#93;</span>, <span class="br0">&#40;</span>playerpos<span class="sy0">*</span><span class="nu0">10</span>, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> playerpos = playerpos - <span class="nu0">1</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>playerimage, <span class="br0">&#40;</span>playerpos<span class="sy0">*</span><span class="nu0">10</span>, 0<span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+<p>
+
+Allí lo tienes, con este código demostramos como visualizar un simple fondo con una imagen de héroe sobre él. Luego hemos mostrado apropiadamente a ese héroe un espacio a la izquierda. Entonces, ¿A donde vamos desde aquí?. Bien, para uno el código es todavía un poquito difícil. La primera cosa que queremos hacer es encontrar un camino mas limpio para representar el fondo y la posición del jugador. Luego, tal vez, un poco de animación real, mas difícil. 
+</p>
+
+</div>
+<!-- SECTION "Vamos de la lista a la pantalla" [7908-9912] -->
+<h2><a name="coordenadas_de_pantalla" id="coordenadas_de_pantalla">Coordenadas de pantalla</a></h2>
+<div class="level2">
+
+<p>
+Para posicionar un objeto sobre la pantalla, necesitamos decirle a la función Blit donde poner la imagen. En pygame siempre pasamos las coordenadas como pares (x, y). Esto representa el número de pixels a la derecha, y el número de pixels hacia abajo, desde un punto situado en la esquina superior izquierda de la pantalla. 
+</p>
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/moveit/coordenadas.png-id=referencia-articulos-moveit.html" class="media" title="referencia:articulos:moveit:coordenadas.png"><img src="../../../../_media/referencia/articulos/moveit/coordenadas.png" class="media" alt="" /></a>
+</p>
+
+<p>
+
+ La esquina de arriba a la izquierda de una superficie es la coordenada (0, 0). Moviéndola un poquito a la derecha sería (10, 0) y luego moviendo hacia abajo sería (10, 10). Cuando copias (con Blit) el argumento de la posición representa donde debería ser colocado el esquinero de arriba a la izquierda de la superficie fuente en su destino.
+</p>
+
+<p>
+Pygame viene con un contendedor conveniente para estas coordenadas. Es un Rect (rectángulo). Rect básicamente representa un área rectangular en esas coordenadas. Tiene un esquinero izquierdo superior y un tamaño. Rect viene con un montón de métodos convenientes que te ayudarán a mover y posicionar. En los próximos ejemplos representaremos la posición de nuestros objetos con Rect.
+</p>
+
+<p>
+También debes saber que muchas funciones en Pygame esperan argumentos Rect. Todas estas funciones también pueden aceptar una simple tupla de cuatro elementos (izquierda, arriba, ancho, alto). No siempre es requisito utilizar los objetos Rect, pero generalmente los querrás. La función blit también puede aceptar un argumento opcional de su posición:
+</p>
+<pre class="code python">Surface.<span class="me1">blit</span><span class="br0">&#40;</span>source, destpos, <span class="br0">&#91;</span>sourcerect<span class="br0">&#93;</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> Rect</pre>
+</div>
+<!-- SECTION "Coordenadas de pantalla" [9913-11507] -->
+<h2><a name="cambiando_el_fondo" id="cambiando_el_fondo">Cambiando el fondo</a></h2>
+<div class="level2">
+
+<p>
+En todas las secciones previas, hemos estado almacenando el fondo como una lista de diferentes tipos de base. Este es un buen modo de crear un juego basado en Tiles, aunque nosotros queremos suavizar el desplazamiento. Para hacerlo un poco mas fácil, vamos a cambiar el fondo por una simple imagen que cubra la pantalla entera. De este modo cuando queramos “borrar” nuestros objetos previamente dibujados solo tenemos que restaurar una sección del fondo en la pantalla.
+</p>
+
+<p>
+Pasando un tercer argumento Rect a la función Blit, le decimos a Blit que use a ese rectángulo como una subsección de la imagen fuente. Lo verás en uso mas abajo, cuando borramos la imagen del jugador.
+</p>
+
+<p>
+También note, que ahora cuando terminamos de dibujar en la pantalla llamamos a la función “pygame.display.update()”, lo cual mostrará todo lo que hemos dibujado en la pantalla. 
+</p>
+
+</div>
+<!-- SECTION "Cambiando el fondo" [11508-12404] -->
+<h2><a name="suavizando_el_movimiento" id="suavizando_el_movimiento">Suavizando el movimiento</a></h2>
+<div class="level2">
+
+<p>
+Para hacer que algo se mueva suavemente, solo debemos moverlo unos pocos pixels a la vez. Aquí está el código para hacer que un objeto se mueva suavemente a través de la pantalla. Ahora, basado en lo que ya sabemos estos se verá bastante simple: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen = create_screen<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> player = load_player_image<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> background = load_background_image<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>background, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>       <span class="co1"># copiamos el fondo en pantalla</span>
+<span class="sy0">&gt;&gt;&gt;</span> position = player.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>player, position<span class="br0">&#41;</span>         <span class="co1"># copiamos el jugador</span>
+<span class="sy0">&gt;&gt;&gt;</span> pygame.<span class="me1">display</span>.<span class="me1">update</span><span class="br0">&#40;</span><span class="br0">&#41;</span>               <span class="co1"># y lo mostramos en pantalla</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="nu0">100</span><span class="br0">&#41;</span>:                  <span class="co1"># animamos 100 cuadros</span>
+...    <span class="me1">screen</span>.<span class="me1">blit</span><span class="br0">&#40;</span>background, position, position<span class="br0">&#41;</span>        <span class="co1"># borramos</span>
+...    <span class="me1">position</span> = position.<span class="me1">move</span><span class="br0">&#40;</span><span class="nu0">2</span>, 0<span class="br0">&#41;</span>                     <span class="co1"># movemos al jugador,</span>
+...    <span class="me1">screen</span>.<span class="me1">blit</span><span class="br0">&#40;</span>player, position<span class="br0">&#41;</span>                      <span class="co1"># lo copiamos</span>
+...    <span class="me1">pygame</span>.<span class="me1">display</span>.<span class="me1">update</span><span class="br0">&#40;</span><span class="br0">&#41;</span>                            <span class="co1"># y los mostramos</span>
+...    <span class="me1">pygame</span>.<span class="kw3">time</span>.<span class="me1">delay</span><span class="br0">&#40;</span><span class="nu0">100</span><span class="br0">&#41;</span>             <span class="co1"># detenemos el programa 1/10 segundos</span></pre>
+<p>
+
+Y ahí lo tienes. Este es todo el código que se necesita para animar suavemente un objeto a través de la pantalla. Hasta podemos usar un bonito paisaje de fondo. Otro beneficio al hacer el fondo de esta manera, es que la imagen para el jugador puede tener transparencias o secciones recortadas, y aún así se dibujará correctamente sobre el fondo (y gratis).
+</p>
+
+<p>
+También agregamos una llamada a “pygame.time.delay()” al final de nuestro bucle for de arriba. Esto reduce un poco la velocidad de nuestro programa. De otra forma correría tan rápido que no podrías verlo.
+</p>
+
+</div>
+<!-- SECTION "Suavizando el movimiento" [12405-14084] -->
+<h2><a name="y_ahora_que" id="y_ahora_que">¿Y ahora que?</a></h2>
+<div class="level2">
+
+<p>
+ Espero que este artículo halla hecho todo lo que prometió. Pero en este punto el código no está realmente listo para el próximo juego mas exitoso. ¿Como podremos tener múltiples objetos moviéndose fácilmente?. ¿Que son exactamente esas funciones misteriosas como “load_player_image()”?. Necesitamos un modo simple de gestionar el ingreso de datos por parte del usuario, y un bucle de mas de 100 cuadros. Tomaremos el ejemplo que tenemos aquí y lo haremos tan orientado a objetos que enorgullecerá a mamá.
+</p>
+
+</div>
+<!-- SECTION "¿Y ahora que?" [14085-14634] -->
+<h2><a name="primero_la_funcion_misteriosa" id="primero_la_funcion_misteriosa">Primero, la función misteriosa</a></h2>
+<div class="level2">
+
+<p>
+La información completa de estos tipos de funciones se puede encontrar en otras guías y el manual de referencia. El módulo &#039;pygame.image&#039; tiene una función “load()” que hará lo que queremos.
+</p>
+
+<p>
+Las lineas para cargar las imágenes serían así: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> player = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">'player.bmp'</span><span class="br0">&#41;</span>.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> background = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">'liquid.bmp'</span><span class="br0">&#41;</span>.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+ Podemos ver que es bastante simple. La función “load” solo toma un nombre de archivo y retorna una nueva superficie con la imagen cargada. Inmediatamente después llamamos al método “convert()”. Este método nos devuelve una nueva superficie de la imagen, pero ahora convertida al mismo formato de pixels que nuestra pantalla. Como las imágenes serán del mismo formato en la pantalla, ellas se imprimirán de forma muy rápida. Si nosotros no invocamos al método “convert()”, llamar a la función “blit()” será una tarea muy lenta, dado que tiene que convertir un tipo de pixel a otro cada vez que sea invocada.
+</p>
+
+<p>
+También habrás notado que ambos métodos, “load()” y “convert()”, retornan nuevas superficies. Esto significa que estamos creando dos objetos “Surface” en cada una de estas lineas. En otros lenguajes de programación, esto ocasiona una pérdida de memoria (no es algo bueno…). Afortunadamente Python es lo suficientemente inteligente para manejar esto, y pygame liberará correctamente la superficie que no utilizamos.
+</p>
+
+<p>
+La otra función misteriosa que vimos en el ejemplo de arriba fue: “create_screen()”. En pygame es simple crear una nueva ventana para gráficos. El código para crear una superficie de 640&times;480 pixels de tamaño está debajo. Sin añadir mas argumentos, pygame elegirá la mejor configuración de profundidad de colores y formato para nosotros. 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">640</span>, <span class="nu0">480</span><span class="br0">&#41;</span><span class="br0">&#41;</span></pre>
+</div>
+<!-- SECTION "Primero, la función misteriosa" [14635-16534] -->
+<h2><a name="manejando_la_entrada_de_datos" id="manejando_la_entrada_de_datos">Manejando la entrada de datos</a></h2>
+<div class="level2">
+
+<p>
+Necesitamos deseperadamente cambiar el bucle principal del programa para gestionar cualquier ingreso de datos (como cuando el usuario cierra la ventana). Necesitamos una rutina para manejar los eventos en nuestro programa. Todos los programas gráficos usan este diseño basado en eventos. Este programa recibe eventos como “Tecla pulsada” o “Movimiento de mouse” desde la computadora. Luego el programa responde a los diferentes eventos.
+</p>
+
+<p>
+Así debe verse el código. En vez de repetir algo 100 veces, repetimos constantemente hasta que el usuario nos pida que paremos.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">while</span> <span class="nu0">1</span>:
+...    <span class="kw1">for</span> event <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...        <span class="kw1">if</span> event.<span class="kw2">type</span> <span class="kw1">in</span> <span class="br0">&#40;</span>QUIT, KEYDOWN<span class="br0">&#41;</span>:
+...            <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+...    <span class="me1">move_and_draw_all_game_objects</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre>
+<p>
+
+ Este código simplemente hace lo siguiente: primero ingresa en un bucle infinito (que repite por siempre), luego verifica si hay algún evento del usuario. Salimos del programa si el usuario presiona el teclado o el botón para cerrar la ventana. Después de haber verificado todos los eventos, nos movemos y dibujamos nuestros objetos del juego (también los borramos antes de que se muevan).
+</p>
+
+</div>
+<!-- SECTION "Manejando la entrada de datos" [16535-17735] -->
+<h2><a name="como_mover_multiples_imagenes" id="como_mover_multiples_imagenes">Como mover múltiples imágenes</a></h2>
+<div class="level2">
+
+<p>
+Esta es la parte donde realmente vamos a cambiar las cosas. Digamos que queremos 10 imágenes diferentes moviéndose alrededor de la pantalla. Una buena forma de lograr esto es usar Clases de python. Creamos una clase que representa nuestro objeto en el juego. Esta clase tendrá un método para moverse a sí mismo, y luego podremos crear tantos como queramos. Los métodos para mover y dibujar el objeto deben trabajar de modo tal que solo se mueva un cuadro (o un paso) a la vez. Aquí está el código de Python para crear nuestra clase: 
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">class</span> GameObject:
+...    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">&#40;</span><span class="kw2">self</span>, image, height, speed<span class="br0">&#41;</span>:
+...        <span class="kw2">self</span>.<span class="me1">speed</span> = speed
+...        <span class="kw2">self</span>.<span class="me1">image</span> = image
+...        <span class="kw2">self</span>.<span class="me1">pos</span> = image.<span class="me1">get_rect</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">move</span><span class="br0">&#40;</span>0, height<span class="br0">&#41;</span>
+...    <span class="kw1">def</span> move<span class="br0">&#40;</span><span class="kw2">self</span><span class="br0">&#41;</span>:
+...        <span class="kw2">self</span>.<span class="me1">pos</span> = <span class="kw2">self</span>.<span class="me1">pos</span>.<span class="me1">move</span><span class="br0">&#40;</span>0, <span class="kw2">self</span>.<span class="me1">speed</span><span class="br0">&#41;</span>
+...        <span class="kw1">if</span> <span class="kw2">self</span>.<span class="me1">pos</span>.<span class="me1">right</span> <span class="sy0">&gt;</span> <span class="nu0">600</span>:
+...            <span class="kw2">self</span>.<span class="me1">pos</span>.<span class="me1">left</span> = 0</pre>
+<p>
+
+ Ahora tenemos dos métodos en nuestra clase. La función “init” construye nuestro objeto. Posiciona el objeto y establece su velocidad. El método “move” mueve el objeto un paso. Si ha ido demasiado lejos hacia la derecha, el método regresa el objeto a la izquierda de la pantalla.
+</p>
+
+</div>
+<!-- SECTION "Como mover múltiples imágenes" [17736-18965] -->
+<h2><a name="uniendo_todo" id="uniendo_todo">Uniendo todo</a></h2>
+<div class="level2">
+
+<p>
+Ahora con nuestra clase objeto, podemos unir todos los componentes del juego. Así es como se verá la función principal de nuestro programa.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> screen = pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">640</span>, <span class="nu0">480</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> player = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">'player.bmp'</span><span class="br0">&#41;</span>.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> background = pygame.<span class="me1">image</span>.<span class="me1">load</span><span class="br0">&#40;</span><span class="st0">'background.bmp'</span><span class="br0">&#41;</span>.<span class="me1">convert</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> screen.<span class="me1">blit</span><span class="br0">&#40;</span>background, <span class="br0">&#40;</span>0, 0<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="sy0">&gt;&gt;&gt;</span> objects = <span class="br0">&#91;</span><span class="br0">&#93;</span>
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span>:         <span class="co1"># creamos 10 objetos</span>
+...    <span class="me1">o</span> = GameObject<span class="br0">&#40;</span>player, x<span class="sy0">*</span><span class="nu0">40</span>, x<span class="br0">&#41;</span>
+...    <span class="me1">objects</span>.<span class="me1">append</span><span class="br0">&#40;</span>o<span class="br0">&#41;</span>
+...
+<span class="sy0">&gt;&gt;&gt;</span> <span class="kw1">while</span> <span class="nu0">1</span>:
+...    <span class="kw1">for</span> event <span class="kw1">in</span> pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>:
+...        <span class="kw1">if</span> event.<span class="kw2">type</span> <span class="kw1">in</span> <span class="br0">&#40;</span>QUIT, KEYDOWN<span class="br0">&#41;</span>:
+...            <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+...    <span class="kw1">for</span> o <span class="kw1">in</span> objects:
+...        <span class="me1">screen</span>.<span class="me1">blit</span><span class="br0">&#40;</span>background, o.<span class="me1">pos</span>, o.<span class="me1">pos</span><span class="br0">&#41;</span>
+...    <span class="kw1">for</span> o <span class="kw1">in</span> objects:
+...        <span class="me1">o</span>.<span class="me1">move</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+...        <span class="me1">screen</span>.<span class="me1">draw</span><span class="br0">&#40;</span>o.<span class="me1">image</span>, o.<span class="me1">pos</span><span class="br0">&#41;</span>
+...    <span class="me1">pygame</span>.<span class="me1">display</span>.<span class="me1">update</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+...    <span class="me1">pygame</span>.<span class="kw3">time</span>.<span class="me1">delay</span><span class="br0">&#40;</span><span class="nu0">100</span><span class="br0">&#41;</span></pre>
+<p>
+
+Y como se verá en pantalla:
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/moveit/moveit.jpg-id=referencia-articulos-moveit.html" class="media" title="referencia:articulos:moveit:moveit.jpg"><img src="../../../../_media/referencia/articulos/moveit/ee0fb4e4544b942a7f1796411a019846.media.200x157-w=200.jpg" class="media" title="El ejemplo &quot;moveit&quot; de pygame con diferentes imagenes" alt="El ejemplo &quot;moveit&quot; de pygame con diferentes imagenes" width="200" /></a>
+</p>
+
+<p>
+
+Y ahí está. Este es el código que necesitamos para animar 10 objetos en la pantalla. El único punto que necesitamos explicar son los dos bloques que usamos para limpiar y dibujar todos los objetos. Para hacer las cosas bien, necesitamos borrar todos los objetos antes de dibujar cualquiera de ellos. Aquí en nuestro ejemplo podría no importar, pero cuando los objetos están montados unos sobre otros, usar dos bucles como aquí será importante.
+</p>
+
+</div>
+<!-- SECTION "Uniendo todo" [18966-20437] -->
+<h2><a name="desde_aqui_corre_por_tu_cuenta" id="desde_aqui_corre_por_tu_cuenta">Desde aquí corre por tu cuenta</a></h2>
+<div class="level2">
+
+<p>
+¿Que sería lo próximo para aprender?. Primero juega un poquito moviéndote alrededor de este ejemplo. La versión actualizada de este ejemplo está disponible dentro del directorio “examples”. El ejemplo se llama “moveit.py”. Mira el código y juega con él, trabajalo y aprendelo.
+</p>
+
+<p>
+<a href="../../../../_media/referencia/articulos/moveit/moveit.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:moveit:moveit.tar.gz">moveit.tar.gz</a>
+</p>
+
+<p>
+
+Las cosas que tal vez quieras desarrollar tengan mas de un tipo de objeto. Podrías buscar una forma mas limpia de borrar objetos cuando no los quieras mostrar mas. También se podría actualizar la pantalla mediante “pygame.display.update()” enviando una lista de áreas rectangulares de la pantalla que se modificaron.
+</p>
+
+<p>
+Hay otras guías y ejemplos en pygame que tratan sobre estos asuntos. Así que cuando estés listo para seguir aprendiendo, sigue leyendo. <img src="../../../../lib/images/smileys/icon_smile.gif" class="middle" alt=":-)" />
+</p>
+
+<p>
+Por último, sentite libre de participar en la lista de correo de pygame o el la sala de chat con cualquier pregunta acerca de pygame. Siempre hay amigos cerca que te pueden ayudar.
+</p>
+
+<p>
+Finalmente, divertite, ¡que para eso son los juegos!. 
+</p>
+<div class="tags"><span>
+	<a href="../../../../tags/python.html" class="wikilink1" title="tags:python" rel="tag">Python</a>,
+	<a href="../../../../tags/pygame.html" class="wikilink1" title="tags:pygame" rel="tag">pygame</a>
+</span></div>
+
+</div>
+<!-- SECTION "Desde aquí corre por tu cuenta" [20438-] --></div>
+</body>
+</html>

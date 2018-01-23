@@ -1,0 +1,104 @@
+====== Bases Técnicas Para Grafistas ======
+
+<note>Quizás haya una versión más reciente en [[http://vgafib.upc.es/wiki/index.php/Bases_Técnicas_Para_Grafistas]]</note>
+
+=====Créditos=====
+  * **Autor:**
+    * David Ramírez Reina
+  * **Contribuciones:**
+  * **Imágenes:**
+    * blit_clip_composicion, terreno_isometrico: David Ramírez Reina
+    * mapa_tiles, spritesheet: Walter Velázquez. Modificadas por Hugo Ruscitti (extraídas de Losersjuegos).
+    * anim_caminar, apartado Transformaciones básicas: Walter Velázquez (extraídas de Losersjuegos). Modificadas por David Ramírez Reina.
+    * parallax1, parallax2: Parallax scrolling en Wikipedia(en)
+    * estrellas: Hugo Ruscitti
+
+  * **Agradecimientos:**
+    * Losersjuegos (www.losersjuegos.com.ar) por su filosofía de libertad y compartir su material.
+    * Los colaboradores de Wikipedia.
+
+=====Introducción=====
+Este tutorial va dirigido a todos aquellos artistas (en especial, los dibujantes) que quieran formar parte en el desarrollo de un videojuego, pero que, sin embargo, no sepan como trabaja un juego internamente. Por lo tanto, se intentará dar una base de la parte más técnica (de la que se encargan los programadores) para así dar más soltura a los artistas tanto a la hora de dibujar como a la hora de hacer el diseño gráfico y mejorar el entendimiento con el resto del equipo y de su propio trabajo. Igualmente, no se profundizará demasiado en los aspectos técnicos ya que no es el área en el que se especializa el grafista y, por lo tanto, algunos conceptos pueden estar simplificados para un mejor entendimiento.
+Esta artículo se centra únicamente en aspectos 2D ya que se trabaja de manera muy distinta al 3D.
+
+=====Características de las imágenes=====
+Los formatos son la manera de guardar la información de una imagen (PNG, BMP, GIF...). Cada uno lo hace de una manera distinta. Pero, sin embargo, tampoco se puede afirmar que uno sea mejor que otro, sino que cada uno se suele usar para diferentes tipos de imagen (el JPEG se suele usar para fotos, el GIF para páginas webs...). Para videojuegos, básicamente se usan 2:
+   * PNG: Es un formato sin pérdida de calidad con una excelente compresión y que admite canal alfa. Esto significa que la imagen no se ve borrosa pero que sin embargo no ocupa mucho. Además, a cada píxel se le puede añadir un valor de transparencia (de 0% a 100%).
+
+   * BMP: Se suele utilizar cuando no se quiere ninguna pérdida en la calidad en la imagen. Esto hace que ocupe bastante. Un inconveniente de este formato es que no tiene canal alfa. Por lo tanto, a la hora de marcar la zona transparente, se hace con la técnica colorkey. Esta técnica consiste en pintar dicha zona de un color chillón y que no se utilice en el dibujo. Por ejemplo, si el personaje es un muñeco de nieve, es mejor no coger el color blanco como colorkey ya que seguramente ya se use en el dibujo y aparecerán transparencias indeseadas. Por lo tanto, se suelen usar colores poco usados como el magenta ({0, 255, 255} en RGB). Es más cómodo para los programadores si este color es el mismo para todas las imágenes y que además sea fácil de recordar. Por lo que se suelen usar los colores con valores RGB máximo y mínimo (negro, blanco, rojo, verde, azul, magenta, amarillo o cian). Comparado con el canal alfa, esta técnica tiene el inconveniente que un píxel solo puede ser completamente  transparente o completamente opaco, mientras que, de la otra manera, se pueden poner diferentes valores de transparencia por cada píxel. Por estas razones, hoy en día, el uso del BMP ha descendido y lo sigue haciendo.
+
+Otra característica importante de una imagen es la resolución. La resolución se expresa como el ancho por el alto de la imagen medida en píxeles. Se puede referir tanto a una imagen suelta como a la ventana del juego. Si se utiliza una resolución de ventana muy baja y se juega en modo ventana, se verá muy pequeña, y si se reescala (a pantalla completa, por ejemplo), se verá una imagen de poca calidad. Sin embargo, una resolución demasiado grande, llevará mucho trabajo para hacer los dibujos, ocupará más espacio en disco, se necesitara un procesador/tarjeta gráfica más potente y, al tenerse que reescalar a pantalla completa, apenas se notará diferencia con una inferior. Por lo tanto, hay que elegir algo intermedio.
+
+A la hora de elegir la resolución de la ventana, hay que tener en cuenta el aspect ratio. El aspect ratio es la relación entre el ancho y la altura. Por ejemplo, una resolución de 800x600 sabemos que es 4:3 ya que 800/600 = 4/3. Antiguamente se solía utilizar una relación de 4:3, pero con las pantallas actuales, se está pasando a relaciones más panorámicas como 16:9.
+
+Hay unos tipos de formato, el vectorial, que no está atado a ninguna resolución en concreto. Sin embargo, hay que tener en cuenta el aspect ratio. Estos formatos pueden ser útiles para, por ejemplo, tener las imágenes en diferentes resoluciones, pero primero hay que exportarlos a un formato rasterizado (no vectorial).
+
+=====Dibujado en pantalla=====
+Antes de comenzar a dibujar cosas en la pantalla, un juego necesita cargar las imágenes en memoria (el típico "loading...") ya sea de un disco duro, un CD, un cartucho... Podemos imaginar que saca de un almacén las imágenes que vaya a utilizar y las pone sobre la mesa de trabajo para poder acceder a ellas de manera rápida.
+
+Una vez cargadas, además de leerlas, también se puede dibujar sobre ellas. En especial, hay una imagen que es la que se irá dibujando por la pantalla. Una de las opciones para dibujar, es simplemente copiar encima (en cualquier posición) otra imagen (entera o solo un rectángulo de esta). Esta acción se le llama blit y es elemental. Si al copiar una imagen esta sobresale, se puede recortar automáticamente (a esto se le conoce como clip).
+
+Con esta técnica tan simple, ya se pueden formar escenas más elaboradas partiendo de imágenes simples. Como, por ejemplo, hacer el dibujo de un paisaje a partir de la imagen de un árbol y una montaña.
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_blit_clip_composicion.png |Composición usando el blit y el clip}}
+
+En muchos casos, es importante crear imágenes simples para así tener más holgura a la hora de componer imágenes con el blit y de esta manera ahorrar mucho tiempo a los grafistas. Esto se puede apreciar muy bien en los juegos antiguos como Zelda. En la mayoría se ve claramente que el mapa está compuesto por muchas imágenes pequeñas y simples (Tiles).
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_mapa_tiles.png |Mapa hecho con tiles}}
+
+Para lograr la sensación de movimiento por la pantalla, es necesario pintar la pantalla muchas veces por segundo (normalmente 50-60) de manera que de un fotograma (imagen) a otro haya muy poca diferencia. Por ejemplo, si queremos mover un objeto por la pantalla, si a cada fotograma lo pintamos unos pocos píxeles más a la derecha (sobre el fondo), se engaña al ojo de manera que nos dará la sensación que se está moviendo a la derecha. Cabe destacar que, como se ha explicado anteriormente, no hace falta que el grafista dibuje todos los fotograma por completo, sino que solamente dibujaría el objeto y luego se iría dibujando en diferentes posiciones con blit.
+De forma parecida, se puede dar el efecto de, por ejemplo, un personaje andando. Esto se consigue con un secuencia de imágenes con las distintas posturas del personaje cada cierto tiempo constante. En la siguiente imagen de ejemplo, se han tomado cuatro instancias del movimiento de andar. Cabe destacar que es un ejemplo real y que, aunque solo hayan cuatro instancias, el cerebro reconstruye el movimiento completo.
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_anim_caminar.png |Animación de caminar}}
+
+Como con el blit se puede copiar una sola parte de la imagen, se pueden agrupar varias imágenes en una sola. Esto se suele hacer en las animaciones de personajes para tener todos los fotogramas juntos y así tener todas las imágenes mejor ordenadas (y alguna que otra mejora). Es lo que se conoce como spritesheet. También se suele hacer con los tiles y, en definitiva, con los grupos de imágenes pequeñas que guardan relación.
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_spritesheet.png |Blit usando un spritesheet}}
+
+=====Transformaciones básicas=====
+Existen 4 transformaciones básicas que pueden aplicar los programadores para ahorrar trabajo al grafista. Hoy en día, estas técnicas se pueden usar con normalidad. Sin embargo, si se trabaja con  tecnología anticuada, pueden requerir demasiado procesador. Así que lo mejor será que se hable con los encargados de aspectos técnicos.
+===Flip===
+Es una técnica que consiste en que la imagen sea bliteada del revés. El flip puede usarse vertical y/o horizontalmente. Esta técnica es útil para que el grafista dibuje un personaje una vez y no dos (mirando hacia la izquierda y hacia la derecha). Aunque esto a veces puede crear un efecto no deseado y es que si, por ejemplo, el personaje tiene una herida en el brazo derecho al mirar hacia la derecha, cuando mire hacia la izquierda, la herida pasará a estar en el brazo izquierdo.
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_vhflip.png |Flip vertical y horizontal}}
+
+===Rotate===
+Es una técnica que consiste en que la imagen sea bliteada girada un cierto ángulo. Esto es útil para cuando hay, por ejemplo, un coche visto desde arriba. Así solamente hace falta que el grafista dibuje una vez el coche y no en cada uno de los ángulos. Este efecto hace que la imagen pierda calidad dependiendo del ángulo y del algoritmo que se use (como se puede apreciar en el ejemplo).
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_rotate.png |Rotate}}
+
+===Scale===
+Es una técnica que consiste en que la imagen sea bliteada más grande o más pequeña. Esto es útil para cuando se quiere dar la sensación de profundidad. Por ejemplo, en el Monkey Island. Hay que tener cuidado con esta técnica ya que, si se agranda mucho una imagen, esta pierde calidad (aunque se le pueden aplicar varios filtros para suavizar un poco ese efecto).
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_scale.png |Scale}}
+
+===Alpha Blending=== 
+Es una técnica que consiste en que la imagen sea bliteada con un cierto grado de transparencia. Esto es útil, por ejemplo, para hacer que un fantasma aparezca y desaparezca de manera suave. Esto se consigue cambiando, poco a poco, el grado de transparencia a cada fotograma.
+
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_alpha_blending.png |Alpha Blending}}
+
+=====Otras técnicas=====
+A continuación se exponen algunas técnicas aunque se puede llegar a hacer gran cantidad de cosas. Algunas de ellas llevarán poco trabajo a los programadores y, sin embargo, otras llevarán mucho. Lo mejor será tener una buena comunicación entre programadores y grafistas para saber qué cosas serían factibles llevar a cabo y la faena que tendrían los programadores y los grafistas.
+===Parallax===
+El Parallax Scrolling es una técnica que se utiliza para dar sensación de profundidad al fondo cuando se hace un scroll horizontal (el scroll horizontal es cuando la cámara se desplaza a medida que lo hace el protagonista horizontalmente, como en el Super Mario Bros). La idea consiste en tener el fondo separado por capas según la profundidad y que, al mover la cámara, las capas de más atrás se desplacen más lentas.
+
+En el siguiente ejemplo se utilizan unas capas donde la parte de la izquierda y de la derecha concuerdan de tal manera que el movimiento es infinito.
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_parallax2.png |Capas de un ejemplo de parallax}}
+
+
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_parallax1.gif |Ejemplo de parallax}}
+
+===Isométrico===
+Mucho antes de los videojuegos de hoy en día (incluso en los 80's), ya se intentaba representar las 3 dimensiones. Para ello, se utilizaba una perspectiva isométrica. Esto no se considera 3D ya que los dibujos siguen siendo planos, pero se logra una sensación muy potente. Aunque sea una técnica bastante anticuada, gracias a que no se necesitan máquinas potentes y que crea un efecto bonito, seguía siendo muy usado en consolas portátiles. Además, es mucho más sencillo de implementar que un sistema en 3D y por eso se usa mucha en videojuegos poco profesionales. También se usa actualmente en algunos juegos de navegador como por ejemplo el Farmville.
+
+Usando esta técnica, también seguimos la idea comentada anteriormente de tener imágenes simples y pequeñas para poder crear composiciones complejas fácilmente. En el siguiente ejemplo, se ha creado un terreno montañoso usando solamente una imagen de un cubo.
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_terreno_isometrico.png |Terreno isométrico}}
+
+===Efectos por código===
+De algunos efectos visuales, se pueden encargar directamente los programadores. Esto se consigue dibujando por pantalla primitivas como circunferencias (que si son pequeñas se ven como puntos), lineas... Aunque los elementos sean simples, se pueden lograr efectos como lluvia, nieve, cielo estrellado...
+{{ referencia:articulos:bases_tecnicas_grafistas:BTG_estrellas.png |Estrellas}}
+
+===== Licencia =====
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la **GNU Free Documentation License**.

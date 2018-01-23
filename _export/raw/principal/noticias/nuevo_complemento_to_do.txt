@@ -1,0 +1,18 @@
+====== Nuevo complemento To do ======
+
+Se ha incorporado un nuevo complemento que permite crear listas
+de tareas de manera sencilla. Algo que utilizaremos en la sección 
+[[comunidad:todo]].
+
+Aquí tiene un ejemplo:
+
+[ ] Pendiente.
+[ ] Por hacer.
+[X] Ya realizado.
+[X] Terminado.
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

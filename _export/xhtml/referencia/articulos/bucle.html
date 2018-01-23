@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:bucle</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-08T21:17:03+0300" />
+<meta name="keywords" content="referencia,articulos,bucle" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/bucle-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="bucle.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/bucle.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#bucle_principal_y_velocidad_constante" class="toc">Bucle principal y velocidad constante</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#diseno_basico_de_un_bucle_principal" class="toc">Diseño básico de un bucle principal</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#velocidad_constante" class="toc">Velocidad constante</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#conclusion" class="toc">Conclusión</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#creditos1" class="toc">Créditos</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/bucle/bucle.pdf" class="media mediafile mf_pdf" title="referencia:articulos:bucle:bucle.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="bucle_principal_y_velocidad_constante" id="bucle_principal_y_velocidad_constante">Bucle principal y velocidad constante</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Bucle principal y velocidad constante" [50-99] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level2"><div class="li"> <strong>Fecha:</strong> 9 de Marzo del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [100-189] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+
+Habitualmente un videojuego realiza varias tareas invisibles al jugador: captura el estado de los controles, verifica colisiones, procesa eventos, altera estructuras, etc.
+</p>
+
+<p>
+El bucle principal de un juego combina todas estas tareas y, generalmente, imprime en pantalla todos los cambios al mismo tiempo.
+</p>
+
+<p>
+Esta idea permite que todos los objetos del juego parezcan <em>moverse</em> al mismo tiempo.
+
+</p>
+
+</div>
+<!-- SECTION "Introducción" [190-606] -->
+<h2><a name="diseno_basico_de_un_bucle_principal" id="diseno_basico_de_un_bucle_principal">Diseño básico de un bucle principal</a></h2>
+<div class="level2">
+
+<p>
+
+<a href="../../../../_detail/referencia/articulos/bucle/bucle_simple.png-id=referencia-articulos-bucle.html" class="media" title="referencia:articulos:bucle:bucle_simple.png"><img src="../../../../_media/referencia/articulos/bucle/bucle_simple.png" class="mediacenter" title="diagrama del bucle simple" alt="diagrama del bucle simple" /></a>
+</p>
+
+<p>
+La <em>Figura 1</em> muestra un diseño de bucle principal muy simple, donde las tareas realizadas son:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> actualizar: alterar la posición del objeto &#039;pelota&#039;</div>
+</li>
+<li class="level2"><div class="li"> imprimir: mostrar el objeto en pantalla</div>
+</li>
+<li class="level2"><div class="li"> procesar eventos: verifica si el usuario quiere cerrar el programa</div>
+</li>
+</ul>
+
+<p>
+
+Para ilustrar este diseño muestro su implementación en lenguaje C utilizando las bibliotecas SDL.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/bucle/bucle.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:bucle:bucle.tar.gz">Descargar ejemplos 1 y 2</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/bucle/bucle_basico.c" class="media mediafile mf_" title="referencia:articulos:bucle:bucle_basico.c">Ver el código fuente del primer ejemplo</a></div>
+</li>
+</ul>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bucle/bucle1.png-id=referencia-articulos-bucle.html" class="media" title="referencia:articulos:bucle:bucle1.png"><img src="../../../../_media/referencia/articulos/bucle/bucle1.png" class="mediacenter" title="captura del ejemplo 1" alt="captura del ejemplo 1" /></a>
+</p>
+
+<p>
+El ejemplo 1 muestra una pequeña esfera rebotando por la pantalla.
+
+</p>
+
+</div>
+<!-- SECTION "Diseño básico de un bucle principal" [607-1417] -->
+<h2><a name="velocidad_constante" id="velocidad_constante">Velocidad constante</a></h2>
+<div class="level2">
+
+<p>
+
+Otra tarea importante que debe cumplir un bucle principal es garantizar una velocidad constante en diferentes tipos de equipos. El ejemplo anterior no cumplía este requisito, y debemos modificarlo.
+</p>
+
+<p>
+Dado que cada equipo tiene diferentes velocidades, debemos basar nuestro diseño en un factor independiente a la arquitectura del equipo, el tiempo.
+</p>
+
+<p>
+La biblioteca SDL tiene una función muy útil para el manejo de tiempo llamada <em>SDL_GetTicks</em>, que nos informa la cantidad de milisegundos transcurridos desde que iniciamos la biblioteca.
+</p>
+
+<p>
+En el siguiente diseño debemos lograr que la función <em>actualizar</em> sea llamada la misma cantidad de veces por segundo en todos los equipos.
+</p>
+
+<p>
+Para este ejemplo, la función <em>actualizar</em>, será llamada 100 veces por segundo. Mientras que la cantidad de llamadas a <em>imprimir</em> será variable en cada equipo, dependiendo de la velocidad del mismo.
+</p>
+
+<p>
+En el mejor de los casos, la función imprimir podría ser llamada <em>100</em> veces por segundo (como máximo). La cantidad real de llamadas a <em>imprimir</em> nos permite medir el <em>rendimiento</em> del juego en cada equipo, y se lo suele denominar <strong>FPS</strong> (frames per second - cuadros por segundo).
+</p>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bucle/bucle_completo.png-id=referencia-articulos-bucle.html" class="media" title="referencia:articulos:bucle:bucle_completo.png"><img src="../../../../_media/referencia/articulos/bucle/bucle_completo.png" class="mediacenter" title="diagrama del bucle completo" alt="diagrama del bucle completo" /></a>
+</p>
+
+<p>
+La <em>Figura 2</em> muestra una forma de aplicar este criterio, y su implementación se encuentra en el segundo ejemplo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../_media/referencia/articulos/bucle/bucle.tar.gz" class="media mediafile mf_gz" title="referencia:articulos:bucle:bucle.tar.gz">Descargar ejemplos 1 y 2</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="../../../../_media/referencia/articulos/bucle/bucle_completo.c" class="media mediafile mf_" title="referencia:articulos:bucle:bucle_completo.c">Ver el código fuente del segundo ejemplo</a></div>
+</li>
+</ul>
+
+<p>
+<a href="../../../../_detail/referencia/articulos/bucle/bucle2.png-id=referencia-articulos-bucle.html" class="media" title="referencia:articulos:bucle:bucle2.png"><img src="../../../../_media/referencia/articulos/bucle/bucle2.png" class="mediacenter" title="captura del ejemplo 2" alt="captura del ejemplo 2" /></a>
+</p>
+
+<p>
+Tenga en cuenta que este ejemplo, y el anterior, utilizan una técnica de impresión en pantalla muy sencilla y lenta, denominada <em>Double Buffer</em>. Si quiere mejorar este aspecto debe modificar la función <em>imprimir</em> utilizando otra técnica más eficiente como <em>Dirty Rectangles</em>, que se discute en otro articulo.
+
+</p>
+
+</div>
+<!-- SECTION "Velocidad constante" [1418-3392] -->
+<h2><a name="conclusion" id="conclusion">Conclusión</a></h2>
+<div class="level2">
+
+<p>
+
+Construir un bucle principal es indispensable para comenzar un nuevo juego, y constituye el <em>esqueleto</em> principal del programa.
+</p>
+
+<p>
+Es importante analizar su funcionamiento, cada bucle principal necesita estar adaptado a requisitos diferentes, y puede que este enfoque deba ser modificado por usted para su juego.
+</p>
+
+<p>
+Muchas gracias.
+
+</p>
+
+</div>
+<!-- SECTION "Conclusión" [3393-3745] -->
+<h2><a name="creditos1" id="creditos1">Créditos</a></h2>
+<div class="level2">
+
+<p>
+
+Se permite la copia, modificación y distribución de este artículo sólo bajo los términos de la <strong>GNU Free Documentation License</strong> 
+
+</p>
+
+</div>
+<!-- SECTION "Créditos" [3746-] --></div>
+</body>
+</html>

@@ -1,0 +1,479 @@
+====== mixer ======
+
+/*
+pygame module for loading and playing sounds
+*/
+
+Módulo de pygame para cargar y reproducir sonidos.
+
+<box 90%>
+  * [[#init]]
+  * [[#pre_init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#stop]]
+  * [[#pause]]
+  * [[#unpause]]
+  * [[#fadeout]]
+  * [[#set_num_channels]]
+  * [[#get_num_channels]]
+  * [[#set_reserved]]
+  * [[#find_channel]]
+  * [[#get_busy]]
+
+**Otras páginas**:
+
+  * [[:traducciones:pygame:mixer:Channel]]
+  * [[:traducciones:pygame:mixer:Sound]]
+  * [[:traducciones:pygame:mixer:music]]
+</box>
+
+/*
+This module contains classes for loading Sound objects and controlling
+playback. The mixer module is optional and depends on SDL_mixer. Your
+program should test that pygame.mixer is available and intialized before
+using it.
+*/
+
+Este módulo contiene clases para crear objetos ''Sound'' y controlar
+la reproducción de audio. El módulo ''mixer'' es opcional y depende
+de ''SDL_mixer''. Antes de usar este módulo su programa debería
+verificar si el módulo ''pygame.mixer'' está disponible.
+
+/*
+The mixer module has a limited number of channels for playback of sounds.
+Usually programs tell pygame to start playing audio and it selects an
+available channel automatically. The default is 8 simultaneous channels,
+but complex programs can get more precise control over the number of
+channels and their use.
+*/
+
+El módulo ''mixer'' tiene un número limitado de canales para reproducir
+sonidos. Generalmente los programas le piden a ''pygame'' que comience
+a reproducir un sonido y ''pygame'' selecciona un canal de audio
+disponible de forma automática. Por defecto hay 8 canales simultáneos, aunque
+los programas complejos pueden obtener un control mas preciso de
+la cantidad de canales y utilizarlos.
+
+/*
+All sound playback is mixed in background threads. When you begin
+to play a Sound object, it will return immediately while the sound
+continues to play. A single Sound object can also be actively played
+back multiple times.
+*/
+
+Toda la reproducción de sonido se realiza en segundo plano (en
+hilos diferentes). Cuando comienza a reproducir un objeto ''Sound'', esta
+llamada retornará inmediatamente mientras el sonido continúa
+sonando. Un objeto ''Sound'' también se puede reproducir varias veces.
+
+/*
+The mixer also has a special streaming channel. This is for music
+playback and is accessed through the pygame.mixer.music module.
+*/
+
+El módulo ''mixer'' también tiene un canal de //streaming// que se
+utiliza para reproducir música y se accede a él a través del módulo
+''pygame.mixer.music''.
+
+
+/*
+The mixer module must be initialized like other pygame modules, but it has
+some extra conditions. The pygame.mixer.init() function takes several
+optional arguments to control the playback rate and sample size. Pygame
+will default to reasonable values, but pygame cannot perform Sound
+resampling, so the mixer should be initialized to match the values of
+your audio resources.
+*/
+
+El módulo ''mixer'' se debe inicializar como los otros módulos de pygame, aunque
+tiene algunas condiciones adicionales. La función ''pygame.mixer.init()'' toma
+varios argumentos opcionales para controlar la frecuencia de reproducción. ''pygame''
+colocará por defecto valores razonables, aunque no realizará conversión
+de frecuencias, por lo tanto ''mixer'' debería iniciarse para coincidir
+con la frecuencia y calidad de los recursos de audio.
+
+/*
+NOTE: Not to get less laggy sound, use a smaller buffer size.  The default
+is set to reduce the chance of scratchy sounds on some computers.  You can 
+change the default buffer by calling pygame.mixer.pre_init before 
+pygame.mixer.init or pygame.init is called.  For example:
+pygame.mixer.pre_init(44100,-16,2, 1024)
+The default size was changed from 1024 to 3072 in pygame 1.8.
+*/
+
+Nota: Para no tener sonidos con pequeñas demoras, utilice un tamaño de
+buffer mas pequeño. El valor por defecto se ha seleccionado para reducir
+la posibilidad de sonidos a rasguños (como en los discos antiguos) en
+algunos equipos. Puede cambiar el valor por defecto del tamaño de buffer 
+llamando a la función ''pygame.mixer.pre_init'' antes de llamar
+a ''pygame.mixer.init'' o ''pygame.init''. Por ejemplo:
+
+<code>
+pygame.mixer.pre_init(44100,-16,2, 1024)
+</code>
+
+Note que el valor por defecto cambió de 1024 a 3072 en pygame 1.8.
+
+
+===== init =====
+
+/*
+initialize the mixer module
+*/
+
+Inicializa el módulo mixer.
+
+<code python>
+pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=3072): return None
+</code>
+
+/*
+Initialize the mixer module for Sound loading and playback. The default
+arguments can be overridden to provide specific audio mixing. The size
+argument represents how many bits are used for each audio sample. If the
+value is negative then signed sample values will be used. Positive values
+mean unsigned audio samples will be used. 
+*/
+
+Inicializar el módulo mixer para cargar y reproducir sonido. Los valores
+por defecto de los argumentos se pueden reemplazar utilizando atributos
+de audio específicos. El argumento ''size'' representa cuantos bits
+se usarán para cada muestra de audio. Se usarán valores de muestra con
+signo si se especifica un valor negativo, en otro caso se usarán muestras
+de audio sin signo.
+
+/*
+The channels argument is used to specify whether to use mono or stereo.  1 for 
+mono and 2 for stereo. No other values are supported.
+*/
+
+El argumento ''channels'' se usa para especificar cuando usar el modo
+//estéreo// y cuando el modo //mono//. 1 indica //mono// y 2 //estéreo//. No
+se permiten otros valores.
+
+/*
+The buffer argument controls the number of internal samples used in the
+sound mixer. The default value should work for most cases. It can be
+lowered to reduce latency, but sound dropout may occur. It can be raised
+to larger values to ensure playback never skips, but it will impose latency
+on sound playback. The buffer size must be a power of two. 
+*/
+
+El argumento ''buffer'' controla el número de muestras internas que se
+usarán en el mezclador de sonido. El valor por defecto debería funcionar
+en la mayoría de los casos. Este valor se puede reducir para disminuir
+la latencia, aunque podría ocurrir una pérdida de calidad en el sonido. También
+se puede aumentar para asegurarse que la reproducción nunca se detenga, aunque
+esto impone latencia. El valor de ''buffer'' debe ser potencia de dos.
+
+/*
+Some platforms require the pygame.mixer module
+to be initialized after the display modules have initialized. The top level
+pygame.init() takes care of this automatically, but cannot pass any
+arguments to the mixer init. To solve this, mixer has a function
+pygame.mixer.pre_init() to set the proper defaults before the toplevel
+init is used.
+*/
+
+Algunos equipos necesitan que el módulo ''pygame.mixer'' se inicialice
+después de los módulos de video. El módulo de orden superior tiene
+precaución de esto automáticamente, pero no envía ningún argumento
+especial la iniciar ''mixer''. Para resolver esto, el módulo ''mixer''
+tiene una función llamada ''pygame.mixer.pre_init()'' para definir
+los valores por defecto antes de llamar a ''pygame.init''
+
+/*
+It is safe to call this more than once, but after the mixer is
+initialized you cannot change the playback arguments without first
+calling pygame.mixer.quit().
+*/
+
+Es seguro llamar a esta función mas de una vez, pero después de
+haber inicializado el módulo ''mixer'' no puede cambiar los
+argumentos de reproducción sin antes llamar a ''pygame.mixer.init()''
+
+  * [[pythonexample>pygame.mixer.init|buscar código donde se use esta función.]]
+
+===== pre_init =====
+
+/*
+preset the mixer init arguments
+*/
+
+Define con anterioridad los argumentos de ''mixer.init''.
+
+<code python>
+pygame.mixer.pre_init(frequency=0, size=0, channels=0, buffersize=0): return None
+</code>
+
+/*
+Any nonzero arguments change the default values used when the real
+pygame.mixer.init() is called. The best way to set custom mixer playback
+values is to call pygame.mixer.pre_init() before calling the top level
+pygame.init().
+*/
+
+Cualquier argumento cambia los valores por defecto que se utilizan
+cuando se llama a ''pygame.mixer.init()''. La mejor forma de personalizar
+el módulo es llamar a esta función antes de llamar a ''pygame.init''.
+
+  * [[pythonexample>pygame.mixer.pre_init|buscar código donde se use esta función.]]
+
+===== quit =====
+
+/*
+uninitialize the mixer
+*/
+
+Deshabilita el módulo ''mixer''.
+
+<code python>
+pygame.mixer.quit(): return None
+</code>
+
+/*
+This will uninitialize pygame.mixer. All playback will stop and any loaded
+Sound objects may not be compatable with the mixer if it is reinitialized later.
+*/
+
+Deshabilita el módulo ''pygame.mixer''. Se detendrá toda la reproducción
+de audio y los objetos //Sound// cargados podrían ser incompatibles
+con el mezclador si éste se modifica luego.
+
+===== get_init =====
+
+/*
+test if the mixer is initialized
+*/
+
+Consulta si se ha inicializado el módulo ''mixer''.
+
+<code python>
+pygame.mixer.get_init(): return (frequency, format, channels)
+</code>
+
+/*
+If the mixer is initialized, this returns the playback arguments it 
+is using. If the mixer has not been initialized this returns None
+*/
+
+Esta función retorna los argumentos de reproducción si el módulo
+está iniciado. Se retornará ''None'' si el módulo no se
+ha iniciado.
+
+===== stop =====
+
+/*
+stop playback of all sound channels
+*/
+
+Detiene la reproducción de todos los canales de sonido.
+
+<code python>
+pygame.mixer.stop(): return None
+</code>
+
+/*
+This will stop all playback of all active mixer channels.
+*/
+
+Detiene la reproducción de todos los canales del mezclador
+activos.
+
+  * [[pythonexample>pygame.mixer.stop|buscar código donde se use esta función.]]
+
+===== pause =====
+
+/*
+temporarily stop playback of all sound channels
+*/
+
+Detiene la reproducción de forma temporal en todos los canales de sonido.
+
+<code python>
+pygame.mixer.pause(): return None
+</code>
+
+/*
+This will temporarily stop all playback on the active mixer channels.
+The playback can later be resumed with pygame.mixer.unpause()
+*/
+
+Detendrá de forma temporal todas las reproducciones en los
+canales del mezclador activos. La reproducción de sonido
+se puede reanudar mas tarde llamando a la función
+''pygame.mixer.unpause()''.
+
+  * [[pythonexample>pygame.mixer.pause|buscar código donde se use esta función.]]
+
+===== unpause =====
+
+/*
+resume paused playback of sound channels
+*/
+
+Reanuda la reproducción de audio en pausa.
+
+<code python>
+pygame.mixer.unpause(): return None
+</code>
+
+/*
+This will resume all active sound channels after they have been paused.
+*/
+
+Reanudará todos los canales de sonido activos luego de que estos
+se han puesto en pausa.
+
+  * [[pythonexample>pygame.mixer.unpause|buscar código donde se use esta función.]]
+
+===== fadeout =====
+
+/*
+fade out the volume on all sounds before stopping
+*/
+
+Reduce el sonido gradualmente de todos los sonidos antes
+de detenerlos.
+
+<code python>
+pygame.mixer.fadeout(time): return None
+</code>
+
+
+/*
+This will fade out the volume on all active channels over the time 
+argument in milliseconds. After the sound is muted the playback will stop.
+*/
+
+Deducirá el volumen de todos los canales de sonidos en el tiempo
+indicado por por el argumento ''milliseconds''. El sonido se
+detendrá una vez que el volumen llegue a su menor valor.
+
+  * [[pythonexample>pygame.mixer.fadeout|buscar código donde se use esta función.]]
+
+===== set_num_channels =====
+
+/*
+set the total number of playback channels
+*/
+
+Define el número total de canales para reproducir.
+
+<code python>
+pygame.mixer.set_num_channels(count): return None
+</code>
+
+/*
+Sets the number of available channels for the mixer. The default value is
+8. The value can be increased or decreased. If the value is decreased,
+sounds playing on the truncated channels are stopped.
+*/
+
+Define el número de canales disponibles para el mezclador. El valor
+por defecto es 8. Puede aumentar o disminuir este valor. Se reduce este
+valor todos los sonidos que estén sonando en los canales a eliminar
+se detendrán.
+
+===== get_num_channels =====
+
+/*
+get the total number of playback channels
+*/
+
+Obtiene el número total de canales.
+
+<code python>
+pygame.mixer.get_num_channels(): return count
+</code>
+
+/*
+Returns the number of currently active playback channels.
+*/
+
+Retorna el número de canales para reproducir activos.
+
+===== set_reserved =====
+
+/*
+reserve channels from being automatically used
+*/
+
+Reserva canales para que no comiencen a ser utilizados automáticamente.
+
+<code python>
+pygame.mixer.set_reserved(count): return None
+</code>
+
+/*
+The mixer can reserve any number of channels that will not be automatically
+selected for playback by Sounds. If sounds are currently playing on the
+reserved channels they will not be stopped.
+*/
+
+El módulo ''mixer'' puede preservar cualquier número de canales para
+que no se seleccionen automáticamente al reproducir Sonidos. No se detendrán
+los sonidos que actualmente estén sonando en los canales reservados.
+
+/*
+This allows the application to reserve a specific number of channels for
+important sounds that must not be dropped or have a guaranteed channel to
+play on.
+*/
+
+Esto permite a la aplicación reservar un número específico de canales
+para sonidos importantes que no deberían interrumpirse y tener garantizado
+un canal para reproducirse.
+
+===== find_channel =====
+
+/*
+find an unused channel
+*/
+
+Encuentra un canal libre.
+
+<code python>
+pygame.mixer.find_channel(force=False): return Channel
+</code>
+
+/*
+This will find and return an inactive Channel object. If there are no
+inactive Channels this function will return None. If there are no inactive
+channels and the force argument is True, this will find the Channel with
+the longest running Sound and return it.
+*/
+
+Encuentra y retorna un objeto ''Channel'' inactivo. Si no hay canales
+inactivos retornará ''None''. Si no hay canales inactivos y el argumento
+''foce'' vale ''True'' entonces encontrará el canal que tiene el
+sonido que mas tiempo se a reproducido y lo retornará.
+
+/*
+If the mixer has reserved channels from pygame.mixer.set_reserved() then
+those channels will not be returned here.
+*/
+
+Si el módulo tiene canales reservados de la función ''pygame.mixer.set_reserved()''
+entonces esos canales no se retornarán aquí.
+
+===== get_busy =====
+
+/*
+test if any sound is being mixed
+*/
+
+Consulta si algún sonido a comenzado a reproducirse.
+
+<code python>
+pygame.mixer.get_busy(): return bool
+</code>
+
+/*
+Returns True if the mixer is busy mixing any channels. If the mixer is
+idle then this return False*/
+
+Retorna ''True'' si el módulo está reproduciendo en alguno de los
+canales. Retornará ''False'' si el mezclador está libre.
+

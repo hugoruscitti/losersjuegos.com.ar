@@ -1,0 +1,10 @@
+====== Biblioteca Simple Network Library disponible para usarse en juegos libres ======
+La biblioteca Simple Network Library alcanza la versión 0.0.0 por lo que ya esta disponible para usarse en aquellos juegos libres que necesiten comunicarse a través de la red. Soporta los nombres de direcciones IPv4 e IPv6 y los protocolos TCP y UDP. Soporta el manejo de grupos de conexiones para evitar el bloqueo al comproba el estado de los sockets.
+
+Tanto la biblioteca como la documentación de la misma estan en español por completo. La biblioteca esta bajo la licencia GPL y puede ser descargada desde la web de la biblioteca [[http://snl.ya.st/|snl.ya.st]] y desde [[http://code.google.com/p/simplenetworklibrary/|Google code]].
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

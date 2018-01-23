@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:color</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:37+0300" />
+<meta name="keywords" content="traducciones,pygame,color" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/color-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="color.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/color.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#color" class="toc">Color</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#color1" class="toc">Color</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#r" class="toc">r</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#g" class="toc">g</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#b" class="toc">b</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#a" class="toc">a</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#cmy" class="toc">cmy</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#hsva" class="toc">hsva</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#hsla" class="toc">hsla</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#i1i2i3" class="toc">i1i2i3</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#normalize" class="toc">normalize</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#correct_gamma" class="toc">correct_gamma</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="color" id="color">Color</a></h1>
+<div class="level1">
+
+
+
+<p>
+Objeto de pygame para representaciones de color.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#color" title="traducciones:pygame:color &crarr;" class="wikilink1">Color</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#r" title="traducciones:pygame:color &crarr;" class="wikilink1">r</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#g" title="traducciones:pygame:color &crarr;" class="wikilink1">g</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#b" title="traducciones:pygame:color &crarr;" class="wikilink1">b</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#a" title="traducciones:pygame:color &crarr;" class="wikilink1">a</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#cmy" title="traducciones:pygame:color &crarr;" class="wikilink1">cmy</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#hsva" title="traducciones:pygame:color &crarr;" class="wikilink1">hsva</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#hsla" title="traducciones:pygame:color &crarr;" class="wikilink1">hsla</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#i1i2i3" title="traducciones:pygame:color &crarr;" class="wikilink1">i1i2i3</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#normalize" title="traducciones:pygame:color &crarr;" class="wikilink1">normalize</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#correct_gamma" title="traducciones:pygame:color &crarr;" class="wikilink1">correct_gamma</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Color" [1-295] -->
+<h2><a name="color1" id="color1">Color</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">Color</span><span class="br0">&#40;</span>name<span class="br0">&#41;</span>: Return Color
+pygame.<span class="me1">Color</span><span class="br0">&#40;</span>r, g, b, a<span class="br0">&#41;</span>: Return Color
+pygame.<span class="me1">Color</span><span class="br0">&#40;</span>rgbvalue<span class="br0">&#41;</span>: Return Color</pre>
+
+
+<p>
+La clase Color representa valores de color RGBA usando un rango de
+valores de 0 a 255. Permite operaciones aritméticas básica para 
+crear colores nuevos, soporta conversiones a otros formato de
+color como HSV o HLS y le permite ajuntar canales de color de
+manera individual.
+</p>
+
+
+
+<p>
+Esta clase es nueva en pygame 1.8
+</p>
+
+</div>
+<!-- SECTION "Color" [296-1035] -->
+<h2><a name="r" id="r">r</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define el componente rojo del Color.
+</p>
+<pre class="code">
+Color.r: Return int
+</pre>
+
+
+
+<p>
+El valor rojo de un Color.
+</p>
+
+</div>
+<!-- SECTION "r" [1036-1245] -->
+<h2><a name="g" id="g">g</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define el componente green del Color.
+</p>
+<pre class="code">
+Color.g: Return int
+</pre>
+
+
+
+<p>
+El valor verde del Color.
+</p>
+
+</div>
+<!-- SECTION "g" [1246-1459] -->
+<h2><a name="b" id="b">b</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define el componente azul del Color.
+</p>
+<pre class="code">
+Color.b: Return int
+</pre>
+
+
+
+<p>
+El valor azul del Color.
+</p>
+
+</div>
+<!-- SECTION "b" [1460-1669] -->
+<h2><a name="a" id="a">a</a></h2>
+<div class="level2">
+
+
+
+<p>
+
+Obtiene o define el componente alpha (transparencia) del Color.
+</p>
+<pre class="code">
+Color.a: Return int
+</pre>
+
+
+
+<p>
+El valor alpha (transparencia) del Color.
+</p>
+
+</div>
+<!-- SECTION "a" [1670-1916] -->
+<h2><a name="cmy" id="cmy">cmy</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define la representación CMY del Color.
+</p>
+<pre class="code">
+Color.cmy: Return tuple
+</pre>
+
+
+
+<p>
+Es la representación CMY del Color. Los componentes CMY están en
+el rango C = [0, 1], M = [0, 1], Y = [0, 1]. Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación CMY (de 0 a 1) pueden
+causar que los valores CMY difieran ligeramente de los que usted
+espera.
+</p>
+
+</div>
+<!-- SECTION "cmy" [1917-2864] -->
+<h2><a name="hsva" id="hsva">hsva</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define la representación HSVA del Color.
+</p>
+<pre class="code">
+Color.hsva: Return tuple
+</pre>
+
+
+
+<p>
+Es la representación HSVA del Color. Los componentes HSVA están
+en el rango H = [0, 320], S = [0, 100], V = [0, 100], A = [0, 100].
+Note que no se devolverá la representación absolutamente exacta para 
+los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación HSVA (de 0 a 100 y
+0 a 360) pueden
+causar que los valores HSV difieran ligeramente de los que usted
+espera.
+</p>
+
+</div>
+<!-- SECTION "hsva" [2865-3888] -->
+<h2><a name="hsla" id="hsla">hsla</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define la representación HSLA del Color.
+</p>
+<pre class="code">
+Color.hsla: Return tuple
+</pre>
+
+
+
+<p>
+Es la representación HSLA del Color. Los componentes HSLA están en
+los rangos H = [0, 360], S = [0, 100], V = [0, 100], A = [0, 100].
+Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación HSLA (de 0 a 100 y
+0 a 360) pueden
+causar que los valores HSL difieran ligeramente de los que usted
+espera.
+</p>
+
+</div>
+<!-- SECTION "hsla" [3889-4911] -->
+<h2><a name="i1i2i3" id="i1i2i3">i1i2i3</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene o define la representación <code>I1I2I3</code> del Color.
+</p>
+<pre class="code">
+Color.i1i2i3: Return tuple
+</pre>
+
+
+
+<p>
+Es la representación I1I2I3 del color. Los componentes I1I2I3 están
+en el rango I1 = [0, 1], I2 = [-0.5, 0.5], I3 = [-0.5, 0.5]. 
+Note que no se devolverá
+la representación absolutamente exacta para los valores RGB en
+todos los casos. Dado que los errores de aproximación de la 
+representación RGB (de 0 a 255) y la representación I1I2I3 (de 0 a 1)
+pueden
+causar que los valores I1I2I3 difieran ligeramente de los que usted
+espera.
+</p>
+
+</div>
+<!-- SECTION "i1i2i3" [4912-5929] -->
+<h2><a name="normalize" id="normalize">normalize</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna los valores RGBA normalizados de un Color.
+</p>
+<pre class="code">
+Color.normalize(): Return tuple
+</pre>
+
+
+
+<p>
+Retorna los valores RGBA normalizados de un Color como valores de
+números reales.
+</p>
+
+</div>
+<!-- SECTION "normalize" [5930-6273] -->
+<h2><a name="correct_gamma" id="correct_gamma">correct_gamma</a></h2>
+<div class="level2">
+
+
+
+<p>
+Aplica un cierto valor gamma a el Color.
+</p>
+<pre class="code">
+Color.correct_gamma (gamma): Return Color
+</pre>
+
+
+
+<p>
+Aplica un cierto valor gamma  a el Color y retorna un nuevo color
+con los valores RGBA ajustados.
+</p>
+
+</div>
+<!-- SECTION "correct_gamma" [6274-] --></div>
+</body>
+</html>

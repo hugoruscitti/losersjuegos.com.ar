@@ -1,0 +1,12 @@
+====== Liberamos AsadetrisMobile, para celulares ======
+
+Hoy liberamos nuestro primer juego para celulares utilizando
+la tecnologia J2ME.
+
+  * [[http://www.losersjuegos.com.ar/juegos/asadetrismobile]]
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

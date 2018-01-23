@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos referencia</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:01:55+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/apuntes?rev=1257117117&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/apuntes?rev=1257117117&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-11-02T02:11:57+04:00</dc:date>
+        <title>Apuntes y guias breves</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/apuntes?rev=1257117117&amp;do=diff</link>
+        <description>Esta sección contiene documentos que consideramos útiles para tener cerca de nuestros escritorios a la hora de programar. Los siguientes documentos pueden ayudarle a recordar conceptos básicos cuando quiera retomar su tareas de programación.
+
+Si usted utiliza guías breves como las que encuentra en esta sección, por favor envienos una copia de las mismas para ampliar esta sección.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-09T01:51:25+04:00</dc:date>
+        <title>Artículos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/articulos?rev=1281304285&amp;do=diff</link>
+        <description>Aquí encontrará una serie de tutoriales breves acerca de las técnicas, 
+herramientas y bibliotecas que puede utilizar a la hora de crear
+videojuegos.
+
+
+
+	*  Autor: Hugo Ruscitti
+	*  Fecha: Agosto 2010
+
+
+
+
+
+	*  Autor: Adrián Guerra Marrero
+	*  Fecha: 26/07/2010</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-14T04:53:44+04:00</dc:date>
+        <title>sf.Blend Class Reference</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/blend?rev=1284425624&amp;do=diff</link>
+        <description>Enumerate the blending modes for drawable objects.
+
+Alpha Pixel = Src * a + Dest * (1 - a).
+
+Add Pixel = Src + Dest.
+
+Multiply Pixel = Src * Dest.
+
+None No blending.
+ 
+
+Attributes
+ 
+
+Add
+ 
+
+Alpha
+ 
+
+Multiply
+ 
+
+None</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-14T07:58:05+04:00</dc:date>
+        <title>Ejemplos</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/ejemplos?rev=1281758285&amp;do=diff</link>
+        <description>En esta sección encontrará ejemplos muy sencillos para analizar y modificar.
+
+
+
+	*  Autor: Hugo Ruscitti
+		*  Fecha: Agosto 2010
+		*  Lenguaje de programación: Python
+		*  Biblioteca: panda3d
+
+
+Descripción:
+
+
+
+
+
+	*  Autor: Juan Guerrero
+		*  Fecha: Marzo 2009
+		*  Lenguaje de programación: Python
+		*  Biblioteca: pygame</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-08-22T02:23:56+04:00</dc:date>
+        <title>Libros y manuales</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/libros?rev=1282429436&amp;do=diff</link>
+        <description>En esta sección encontrará diversos manuales, artículos y otros documentos de referencia.
+
+Si quiere puede sugerir mas documentos para esta sección, solo comuniquese con nosotros o envienos el documento. Recuerde que solo añadiremos recursos de libre difusión.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-14T04:50:32+04:00</dc:date>
+        <title>PySFML Referencia</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/pysfml_referencia?rev=1284425432&amp;do=diff</link>
+        <description>PySFML es un binding de SFML para python, SFML significa “Simple Fast Media Library” o “Libreria Simple y Rapida para Media” en español.
+SFML promete ser el remplazo a SDL, según los autores del engine.
+
+Estas paginas no pretender ser ningún tutorial sobre el uso de PySFML.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-11T05:16:42+04:00</dc:date>
+        <title>Videos, tutoriales y conferencias</title>
+        <link>http://www.loosersjuegos.com.ar/referencia/videos?rev=1320974202&amp;do=diff</link>
+        <description>Esta sección contiene videos de tutoriales y conferencias relacionadas con el desarrollo de juegos. 
+
+
+
+
+
+
+
+
+“”
+
+
+
+
+
+
+
+
+“”“”“”“”</description>
+    </item>
+</rdf:RDF>

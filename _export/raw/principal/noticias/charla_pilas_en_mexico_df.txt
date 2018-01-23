@@ -1,0 +1,9 @@
+====== Charla pilas en Mexico DF ======
+
+En este video se muestran algunos conceptos basicos sobre pilas-engine, una biblioteca
+para hacer juegos con python.
+
+El video se grabó en la reunion del grupo python-mexico, en las instalaciones
+de ikibox, en el DF (mexico).
+
+[[http://vimeo.com/39027425|Mirar esté fantástico video]]

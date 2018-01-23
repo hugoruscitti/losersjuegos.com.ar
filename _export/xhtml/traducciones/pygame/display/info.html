@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:display:info</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:58+0300" />
+<meta name="keywords" content="traducciones,pygame,display,info" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/display/info-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-display.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="info.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/display/info.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+
+
+
+<h1><a name="info" id="info">Info</a></h1>
+<div class="level1">
+
+
+
+<p>
+Genera un objeto de información sobre el dispositivo de video.
+</p>
+<pre class="code">
+pygame.display.Info(): return VideoInfo
+</pre>
+
+
+
+<p>
+Genera un objeto simple que contiene varios atributos para describir
+el entorno gráfico actual. Si es generado antes de llamar a
+<code>pygame.displat.set_mode()</code> algunas plataformas pueden otorgar información
+acerca del modo de video por defecto. También se puede llamar después
+de definir el modo de video para verificar que opciones de video
+específicas se han cumplido. El objeto VideoInfo tiene varios atributos.
+</p>
+
+
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Atributo </th><th class="col1"> Significado </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> hw </td><td class="col1"> True si el modo de video soporta aceleración por hardware. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> wm </td><td class="col1"> True se se puede utilizar un modo de video en ventana. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> video_mem </td><td class="col1"> Los megabytes de la memoria de video en pantalla. 0 será el valor si se desconoce. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> bitsize </td><td class="col1"> Número de bits utilizados para almacenar cada pixel. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> bytesize </td><td class="col1"> Número de bytes utilizados para almacenar cada pixel. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> masks </td><td class="col1"> Cuatro valores que se usan para agrupar componentes RGB en <em>pixeles</em>. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> shifts </td><td class="col1"> Cuatro valores que se usan para agrupar componentes RGB en <em>pixeles</em>. </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> losses </td><td class="col1"> Cuatro valores que se usan para agrupar componentes RGB en <em>pixeles</em>. </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> blit_hw </td><td class="col1"> Vale True si la impresión de superficies de hardware soporta aceleración. </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> blit_hw_CC </td><td class="col1"> Vale True si la impresión mediante color clave (<em>colorkey</em>) soporta aceleración. </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> blit_hw_A </td><td class="col1"> Vale True si la impresión de superficies con <em>/pixeles</em> transparentes soporta aceleración. </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> blit_sw </td><td class="col1"> Vale True si la impresión de superficies soporta aceleración. </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> blit_sw_CC </td><td class="col1"> Vale True si la impresión mediante color clave (<em>colorkey</em>) en superficies de software soporta aceleración. </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> blit_sw_A </td><td class="col1"> Vale True si la impresión de superficies de software con <em>pixeles</em> alpha soporta aceleración. </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> current_h, current_h </td><td class="col1"> Ancho y alto del modo de video actual, o el tamaño del escritorio si es llamado antes de ejecutar <code>pygame.display.set_mode</code>. (current_h, current_w están disponibles desde la versión 1.2.10 de SDL, y pygame 1.8.0). Valdrá -1 en caso de error o si se ha utilizado una versión antigua de SDL. </td>
+	</tr>
+</table>
+
+</div>
+</div>
+</body>
+</html>

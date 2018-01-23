@@ -1,0 +1,24 @@
+====== Hugo Ruscitti ======
+
+
+{{:comunidad:integrantes:hugoruscitti.jpg|}}
+
+{{:comunidad:integrantes:mail.png|}}
+
+/* La imagen de correo electrónico ha sido
+   generada gracias al siguiente sitio:
+
+        http://services.nexodyne.com/email/
+*/
+
+
+
+===== Perfil =====
+
+
+
+  * Nick dentro del foro: [[http://www.losersjuegos.com.ar/foro/profile.php?mode=viewprofile&u=3|hugoruscitti]]
+  * Nacido el: 7 Octubre de 1983
+  * Locación: Capital Federal Buenos Aires, Argentina
+  * Intereses: Programación en C, C++ y Python (principalmente)
+  * Gustos musicales: [[http://www.lastfm.es/user/hugoruscitti|Ver perfil en Last.fm]]

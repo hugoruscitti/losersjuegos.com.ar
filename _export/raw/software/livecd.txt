@@ -1,0 +1,44 @@
+====== Ubuntu personalizado para hacer videojuegos ======
+
+
+<note>
+Tenga en cuenta que esta distribución ha quedado anticuada, porque
+está basada en una versión muy vieja de ubuntu. Solo utilice
+la información de esta página para fines didácticos...
+</note>
+
+===== Introducción =====
+
+Este sistema es una versión no oficial de la distribución [[http://www.ubuntu.com|Ubuntu]], el motivo de su creación es facilitar la tarea de futuros programadores brindando un sistema con diversas herramientas de desarrollo, documentación y programas de ejemplo.
+
+Es posible correr este sistema directamente desde la unidad de DVD, de forma que usted pueda evaluar el sistema en funcionamiento antes de instalarlo. De todas formas, tenga en cuenta que el sistema funcionará mucho mas rápido si lo instala en su disco duro. 
+
+Todos los componentes del sistema son Software Libre, y se distribuyen gratuitamente.
+
+
+
+===== Capturas de pantalla =====
+
+
+{{gallery>software:livecd:capturas:*}}
+
+
+===== Descargas =====
+
+
+Para obtener la versión mas reciente del sistema puede descargar una imagen de DVD desde 
+
+  * http://www.chattagena.com/losersjuegos/ubuntu_8.04_personalizado.iso
+
+
+El tamaño de la imagen es de aproximadamente 986 MB, y la cadena de
+verificación de integridad es:
+
+<code>
+md5sum: 3e35d1347ba4a5dd0444bdccaea61801
+</code>
+
+===== Otras páginas =====
+
+  * [[software:livecd:contenido]]
+  * [[software:livecd:faq]]

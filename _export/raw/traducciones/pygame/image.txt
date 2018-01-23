@@ -1,0 +1,385 @@
+====== pygame.image ======
+
+
+
+/*
+pygame module for image transfer
+*/
+
+Módulo de pygame para la transferencia de imagen.
+
+
+
+<box 90%>
+  * [[:traducciones:pygame:image#load]]
+  * [[:traducciones:pygame:image#save]]
+  * [[:traducciones:pygame:image#get_extended]]
+  * [[:traducciones:pygame:image#tostring]]
+  * [[:traducciones:pygame:image#fromstring]]
+  * [[:traducciones:pygame:image#frombuffer]]
+</box>
+
+/*
+The image module contains functions for loading and saving pictures, as
+well as transferring Surfaces to formats usable by other packages.
+*/
+
+El módulo ''image'' contiene funciones para leer y grabar imágenes, como
+así también para transferir superficies a formatos accesibles para
+otros paquetes.
+
+/*
+Note that there is no Image class; an image is loaded as a
+Surface object. The Surface class allows manipulation (drawing lines,
+setting pixels, capturing regions, etc.).
+*/
+
+Note que no hay una clase Image, una imagen se carga como un objeto
+''Surface''. La clase ''Surface'' permite operaciones como dibujar
+lineas, pintar //pixeles//, capturar regiones, etc.
+
+/*
+The image module is a required
+dependency of Pygame, but it only optionally supports any extended file formats.
+By default it can only load uncompressed BMP images. When built with full image
+support, the pygame.image.load() function can support the following formats.
+*/
+
+El módulo ''image'' es una dependencia importante de pygame, aunque el
+soporte extendido a formatos es opcional. Por defecto solo puede cargar
+imágenes BMP sin compresión; pero con pygame se provee un soporte de
+imágenes completo, la función ''pygame.image.load()'' puede interpretar los
+siguientes formatos:
+
+
+/*
+  * JPG
+  * PNG
+  * GIF (non animated)
+  * BMP
+  * PCX
+  * TGA (uncompressed)
+  * TIF
+  * LBM (and PBM)
+  * PBM (and PGM, PPM)
+  * XPM
+*/
+
+  * JPG
+  * PNG
+  * GIF (sin animación)
+  * BMP
+  * PCX
+  * TGA (sin compresión)
+  * TIF
+  * LBM (y PBM)
+  * PBM (y PGM, PPM)
+  * XPM
+
+
+
+/*
+Saving images only supports a limited set of formats. You can save
+to the following formats.
+*/
+
+La funcionalidad de guardar imágenes solo soporta un conjunto reducido de
+formatos. Puede grabar en los siguientes formatos:
+
+/*
+  * BMP
+  * TGA
+  * PNG
+  * JPEG
+*/
+
+  * BMP
+  * TGA
+  * PNG
+  * JPEG
+
+/*
+PNG, JPEG saving new in pygame 1.8.
+*/
+
+La grabación en formatos PNG y JPEG es una funcionalidad nueva
+de pygame 1.8.
+
+
+===== load =====
+
+/*
+load new image from a file
+*/
+
+Carga una nueva imagen desde un archivo.
+
+<code>
+pygame.image.load(filename): return Surface
+pygame.image.load(fileobj, namehint=""): return Surface
+</code>
+
+/*
+Load an image from a file source. You can pass either a filename or a Python
+file-like object.
+*/
+
+Carga una imagen desde un archivo. Puede utilizar tanto un nombre
+de archivo como un objeto ''file'' de python.
+
+/*
+Pygame will automatically determine the image type (e.g., GIF or bitmap)
+and create a new Surface object from the data. In some cases it will need to
+know the file extension (e.g., GIF images should end in ".gif").
+If you pass a raw file-like object, you may also want to pass the original
+filename as the namehint argument.
+*/
+
+Pygame determinará de forma automática el tipo de archivo (por ejemplo, 
+gif o bmp) y generará un nuevo objeto ''Surface'' con esa información. En algunos casos necesitará conocer la extensión del archivo (por ejemplo las 
+imagenes GIF deberían terminar en ".gif"). Si utiliza un objeto archivo en
+formato crudo, seguramente necesitará enviar el nombre original del archivo
+como el argumento ''namehint''.
+
+/*
+The returned Surface will contain the same color format, colorkey and alpha
+transparency as the file it came from. You will often want to call
+Surface.convert() with no arguments, to create a copy that will draw more
+quickly on the screen.
+*/
+
+La superficie retornada contendrá el mismo formato de color, colores
+clave o transparencia alpha que el fichero del que proviene. Generalmente
+querrá llamar a ''Surface.convert()'' sin argumentos para crear una
+copia que se pueda imprimir mas rápido en pantalla.
+
+/*
+For alpha transparency, like in .png images use the convert_alpha() method 
+after loading so that the image has per pixel transparency.
+*/
+
+Para imágenes con transparencia alpha, como en las imágenes .png, use
+el método ''convert_alpha()'' luego de cargar la imágen, así la
+superficie resultante también tendrá transparencia.
+
+/*
+Pygame may not always be built to support all image formats. At minimum it will
+support uncompressed BMP. If pygame.image.get_extended() returns 'True', you
+should be able to load most images( including png, jpg and gif ).
+*/
+
+Pygame no siempre tendrá soporte para todos los formatos. Como mínimo
+soportará el formato BMP sin compresión. Si ''pygame.image.get_extended()''
+retorna ''True'', usted podría ser capaz de cargar la mayoría
+de las imágenes, incluyendo png, jpg y gif.
+
+/*
+You should use os.path.join() for compatibility.  
+*/
+
+Debería usar ''os.path.join()'' para otorgar mas compatibilidad.
+
+<code>
+surface = pygame.image.load(os.path.join('data', 'bla.png'))
+</code>
+
+
+  * [[pythonexample>pygame.image.load|buscar código donde se use esta función.]]
+
+===== save =====
+
+/*
+save an image to disk
+*/
+
+Guarda una imagen en el disco.
+
+<code>
+pygame.image.save(Surface, filename): return None
+</code>
+
+
+/*
+This will save your Surface as either a BMP, TGA, PNG, or JPEG image. If the 
+filename extension is unrecognized it will default to TGA. Both TGA, and BMP 
+file formats create uncompressed files.  
+*/
+
+Guardará la superficie como una imagen BMP, TGA, PNG o JPEG. Si la
+extensión del nombre de archivo no se reconoce, se utilizará por
+defecto .TGA. Tanto los formatos  TGA como BMP generan archivos
+sin compresión.
+
+/*
+PNG, JPEG saving new in pygame 1.8.
+*/
+
+Guardar archivos PNG y JPEG es una funcionalidad nueva de pygame 1.8.
+
+
+
+  * [[pythonexample>pygame.image.save|buscar código donde se use esta función.]]
+
+===== get_extended =====
+
+/*
+test if extended image formats can be loaded
+*/
+
+Consulta si los formatos de imagen extendidos se pueden cargar.
+
+<code>
+pygame.image.get_extended(): return bool
+</code>
+
+
+/*
+If pygame is built with extended image formats this function will return True.
+It is still not possible to determine which formats will be available, but
+generally you will be able to load them all.
+*/
+
+
+Si pygame fue construida con los formatos de imagen extendido esta
+función retornará ''True''. Aún así no es posible determinar que formatos
+estarán disponibles, pero generalmente podrá leerlos todos.
+
+
+  * [[pythonexample>pygame.image.get_extended|buscar código donde se use esta función.]]
+
+===== tostring =====
+
+/*
+transfer image to string buffer
+*/
+
+Transfiere una imagen a una cadena de texto //string//.
+
+<code>
+pygame.image.tostring(Surface, format, flipped=False): return string
+</code>
+
+
+/*
+Creates a string that can be transferred with the 'fromstring' method in
+other Python imaging packages. Some Python image packages prefer their images
+in bottom-to-top format (PyOpenGL for example). If you pass True for the
+flipped argument, the string buffer will be vertically flipped.
+*/
+
+Genera una cadena que pude transferirse con el método ''fromstring'' en
+otros paquetes de imágenes de python. Algunos paquetes de imagen
+de python prefieren sus imágenes en el formato "de abajo hacia 
+arriba", por ejemplo el paquete PyOpenGL). Se invertirá verticalmente
+la cadena retorno si envía ''True'' como valor para el argumento
+''flipped''.
+
+/*
+The format argument is a string of one of the following values. Note that only
+8bit Surfaces can use the "P" format. The other formats will work for any
+Surface. Also note that other Python image packages support more formats than
+Pygame.
+*/
+
+El argumento ''format'' es una cadena con uno de los siguiente valores. Note
+que solo las superficies de 8 bits pueden usar el formato "P". Los
+otros formatos funcionarán con cualquier superficie. Ademas note que
+otros paquetes de imágenes de python suportan mas formatos que pygame.
+
+/*
+  * P, 8bit palettized Surfaces
+  * RGB, 24bit image 
+  * RGBX, 32bit image with unused space
+  * RGBA, 32bit image with an alpha channel
+  * ARGB, 32bit image with alpha channel first
+  * RGBA_PREMULT, 32bit image with colors scaled by alpha channel
+  * ARGB_PREMULT, 32bit image with colors scaled by alpha channel, alpha channel first
+*/
+
+
+^ Cadena format ^ Superficie ^
+| P | superficies de 8 bits con paleta. |
+| RGB | imagen de 24 bits. |
+| RGBX | imagen de 32 bits con un espacio sin utilizar. |
+| RGBA | imagen de 32 bits con un canal alpha (transparencia). |
+| ARGB | imagen de 32 bits con canal alpha en primer lugar. |
+| RGBA_PREMULT | imagen de 32 bits bajo la escala del canal alpha. |
+| ARGB_PREMULT | imagen de 32 bits bajo la escala del canal alpha en primer lugar.|
+
+
+
+  * [[pythonexample>pygame.image.tostring|buscar código donde se use esta función.]]
+
+===== fromstring =====
+
+/*
+create new Surface from a string buffer
+*/
+
+Genera una nueva superficie desde una cadena.
+
+<code>
+pygame.image.fromstring(string, size, format, flipped=False): return Surface
+</code>
+
+
+/*
+This function takes arguments similar to pygame.image.tostring(). The size
+argument is a pair of numbers representing the width and height. Once the
+new Surface is created you can destroy the string buffer.
+*/
+
+Esta función toma argumentos similares a [[#tostring|pygame.image.tostring()]].
+El argumento ''size'' es una tupla con números que representan el ancho
+y alto. Puede destruir la cadena original una vez que la nueva superficie
+se ha creado.
+
+/*
+The size and format image must compute the exact same size as the passed
+string buffer. Otherwise an exception will be raised. 
+*/
+
+El formato y tamaño de la imagen debe coincidir exactamente con el mismo
+tamaño de la cadena. Se lanzará una excepción en otro caso.
+
+/*
+See the pygame.image.frombuffer() method for a potentially faster way to
+transfer images into Pygame.
+*/
+
+Consulte el método [[#frombuffer|pygame.image.frombuffer()]] para ver
+una forma posiblemente mas rápida de transferir imágenes en pygame.
+
+  * [[pythonexample>pygame.image.fromstring|buscar código donde se use esta función.]]
+
+===== frombuffer =====
+
+/*
+create a new Surface that shares data inside a string buffer
+*/
+
+Genera una nueva superficie que comparte los datos dentro de una cadena.
+
+<code>
+pygame.image.frombuffer(string, size, format): return Surface
+</code>
+
+/*
+Create a new Surface that shares pixel data directly from the string buffer.
+This method takes the same arguments as pygame.image.fromstring(), but is
+unable to vertically flip the source data.
+*/
+
+Genera una nueva superficie que comparte los datos de los //pixeles// directamente
+desde la cadena. Esta función toma los mismos argumentos que [[#fromstring|pygame.image.fromstring()]], pero no puede invertir verticalmente los datos de origen.
+
+/*
+This will run much faster than pygame.image.fromstring, since no pixel data
+must be allocated and copied.
+*/
+
+Funcionará mucho mas rápido que [[#fromstring|pygame.image.fromstring]] dado
+que no se alojan o copian datos de //pixeles//.
+
+
+  * [[pythonexample>pygame.image.frombuffer|buscar código donde se use esta función.]]

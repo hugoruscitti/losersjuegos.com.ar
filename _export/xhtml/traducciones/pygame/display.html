@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:display</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T21:11:27+0300" />
+<meta name="keywords" content="traducciones,pygame,display" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/display-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="display.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/display.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#display" class="toc">display</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#quit" class="toc">quit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_init" class="toc">get_init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_mode" class="toc">set_mode</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_surface" class="toc">get_surface</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#flip" class="toc">flip</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#update" class="toc">update</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_driver" class="toc">get_driver</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_wm_info" class="toc">get_wm_info</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#list_modes" class="toc">list_modes</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#mode_ok" class="toc">mode_ok</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#gl_get_attribute" class="toc">gl_get_attribute</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#gl_set_attribute" class="toc">gl_set_attribute</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_active" class="toc">get_active</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#iconify" class="toc">iconify</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#toggle_fullscreen" class="toc">toggle_fullscreen</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_gamma" class="toc">set_gamma</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_gamma_ramp" class="toc">set_gamma_ramp</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_icon" class="toc">set_icon</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_caption" class="toc">set_caption</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_caption" class="toc">get_caption</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_palette" class="toc">set_palette</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="display" id="display">display</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para controlar la ventana y pantalla de visualización.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p>
+<ul>
+<li class="level1"><div class="li"> <a href="#init" title="traducciones:pygame:display &crarr;" class="wikilink1">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#quit" title="traducciones:pygame:display &crarr;" class="wikilink1">quit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_init" title="traducciones:pygame:display &crarr;" class="wikilink1">get_init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">set_mode</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_surface" title="traducciones:pygame:display &crarr;" class="wikilink1">get_surface</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#flip" title="traducciones:pygame:display &crarr;" class="wikilink1">flip</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#update" title="traducciones:pygame:display &crarr;" class="wikilink1">update</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_driver" title="traducciones:pygame:display &crarr;" class="wikilink1">get_driver</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_wm_info" title="traducciones:pygame:display &crarr;" class="wikilink1">get_wm_info</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#list_modes" title="traducciones:pygame:display &crarr;" class="wikilink1">list_modes</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#mode_ok" title="traducciones:pygame:display &crarr;" class="wikilink1">mode_ok</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#gl_get_attribute" title="traducciones:pygame:display &crarr;" class="wikilink1">gl_get_attribute</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#gl_set_attribute" title="traducciones:pygame:display &crarr;" class="wikilink1">gl_set_attribute</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_active" title="traducciones:pygame:display &crarr;" class="wikilink1">get_active</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#iconify" title="traducciones:pygame:display &crarr;" class="wikilink1">iconify</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#toggle_fullscreen" title="traducciones:pygame:display &crarr;" class="wikilink1">toggle_fullscreen</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_gamma" title="traducciones:pygame:display &crarr;" class="wikilink1">set_gamma</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_gamma_ramp" title="traducciones:pygame:display &crarr;" class="wikilink1">set_gamma_ramp</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_icon" title="traducciones:pygame:display &crarr;" class="wikilink1">set_icon</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_caption" title="traducciones:pygame:display &crarr;" class="wikilink1">set_caption</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_caption" title="traducciones:pygame:display &crarr;" class="wikilink1">get_caption</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_palette" title="traducciones:pygame:display &crarr;" class="wikilink1">set_palette</a></div>
+</li>
+</ul>
+
+<p>
+
+<strong> Otras páginas: </strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/display/info.html" class="wikilink1" title="traducciones:pygame:display:info">Info</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+
+Este módulo ofrece control sobre la visualización de pygame. Pygame
+contiene una sola superficie de visualización que puede estar contenida
+en una ventana o bien correr en pantalla completa. Una vez que cree la
+pantalla de visualización podrá tratarla como una superficie normal. Los
+cambios no se verán inmediatamente en pantalla, deberá elegir una
+de las dos funciones para actualizar la pantalla.
+</p>
+
+
+
+<p>
+El punto de origen de la pantalla es <code>x=0</code> e <code>y=0</code>, este punto representa
+la esquina superior izquierda de la pantalla. Ambos ejes aumentan en
+dirección a la esquina inferior derecha de la pantalla.
+</p>
+
+
+
+<p>
+La pantalla de pygame se puede inicializar en uno de varios modos
+de video. Por defecto la pantalla es una porción de memoria gestionada
+por software. Puede solicitar modos especiales como aceleración de
+video y soporte OpenGL enviando opciones a la función
+<a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.set_mode()</a>.
+</p>
+
+
+
+<p>
+Pygame solo puede tener una pantalla activa a la vez. Crear una nueva usando
+<code>pygame.display.set_mode()</code> cerrará la anterior pantalla. Si se necesita
+tener control preciso sobre el formato de <em>pixels</em> o las resoluciones
+de video, utilice las funciones <a href="#mode_ok" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.mode_ok()</a>, 
+<a href="#list_modes" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.list_modes()</a> y <a href="#info" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.Info()</a>
+para consultar información acerca de la pantalla.
+</p>
+
+
+
+<p>
+Una vez creada la superficie de visualización, las funciones de este
+módulo afectan a la pantalla existente. Si el módulo se deshabilita
+la superficie se convierte en inválida. Si se define un nuevo modo de
+video, la superficie existente automáticamente se cambiará para
+operar en la nueva pantalla.
+</p>
+
+
+
+<p>
+Cuando se define el nuevo modo de video, se habilitan varios eventos
+de pygame para gestionar el manejo de la ventana. El evento <code>pygame.QUIT</code> se
+genera cuando el usuario
+solicita cerrar el programa. La ventana recibirá los eventos 
+<code>pygame.ACTIVEEVENT</code> cuando obtenga o pierda el foco del sistema
+de ventanas. Si la ventana se construye con las opciones <code>pygame.RESIZABLE</code>, 
+se generarán los eventos <code>pygame.VIDEORESIZE</code> cuando
+el usuario ajuste las dimensiones de la ventana. Las superficies de video
+en Hardware que imprimen directamente en la pantalla obtendrán eventos
+<code>pygame.VIDEOEXPOSE</code> cuando se deba redibujar porciones de la ventana.
+</p>
+
+</div>
+<!-- SECTION "display" [1-4950] -->
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa el módulo display.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Inicializa el módulo display de pygame. El módulo display no puede hacer
+nada a menos que sea inicializado. Esto generalmente se hace por usted de
+forma automática cuando llama a la función de mayor nivel <code>pygame.init()</code>.
+</p>
+
+
+
+<p>
+Pygame seleccionará una de varias extensiones internas de visualización cuando
+se inicialice. La extensión interna se escogerá dependiendo de la plataforma
+y los permisos de usuario. Antes de inicializar el módulo de video se
+puede alterar la variable de entorno <code>SDL_VIDEODRIVER</code> para controlar
+la extensión interna de visualización. Los sistemas que tienen varias de estas
+extensiones se muestran aquí:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> Windows: windib, directx</div>
+</li>
+<li class="level1"><div class="li"> Unix, GNU/Linux: x11, dga, fbcon, directfb, ggi, vgl, svgalib, aalib</div>
+</li>
+</ul>
+
+
+
+<p>
+En algunas plataformas es posible incrustar la pantalla de pygame en una
+ventana existente. Para hacer esto, se debe definir la variable de entorno
+<code>SDL_WINDOWID</code> con una cadena que contenga el identificador o manejador
+de la ventana. La variable de entorno será verificada cuando se inicie
+el modo de video. Tenga en cuenta que pueden ocurrir varios efectos secundarios
+cuando utilice este modo de video incrustado.
+</p>
+
+
+
+<p>
+Es inofensivo llamar a esta función mas de una vez, las sucesivas llamadas
+no tendrán efecto.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "init" [4951-7576] -->
+<h2><a name="quit" id="quit">quit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Deshabilita el módulo de video.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Apagará el módulo display entero. Esto significa que cualquier pantalla activa
+se cerrará. Esto también se puede manejar de forma automática cuando el
+programa se cierra.
+</p>
+
+
+
+<p>
+Es inofensivo llamar a esta función mas de una vez, las sucesivas llamadas
+no tendrán efecto.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.quit" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.quit">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "quit" [7577-8332] -->
+<h2><a name="get_init" id="get_init">get_init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Devuelve <code>True</code> si el módulo display se ha inicializado.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el módulo <code>pygame.display</code> está inicializado
+actualmente.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_init" [8333-8774] -->
+<h2><a name="set_mode" id="set_mode">set_mode</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa una ventana o la pantalla para visualizar.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_mode</span><span class="br0">&#40;</span>resolution=<span class="br0">&#40;</span>0,0<span class="br0">&#41;</span>, flags=0, depth=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Surface</pre>
+
+
+<p>
+Esta función construirá una superficie de pantalla. Los argumentos que
+se le envían solicitan el tipo de pantalla deseado. Si no especifica
+ningún argumento, la pantalla generada será tan grande como el
+mejor modo de video soportado por el sistema.
+</p>
+
+
+
+<p>
+El argumento <code>resolution</code> es una tupla de números que representan
+el ancho y alto. El argumento <code>flags</code> es una colección de
+opciones adicionales. El argumento <code>depth</code> representa el número de
+bits utilizados por color.
+</p>
+
+
+
+<p>
+El objeto Surface retornado se puede manipular como un objeto Surface
+normal, solo que los cambios eventualmente se podrán observar en
+el monitor.
+</p>
+
+
+
+<p>
+Si no se especifica una resolución, o esta se define en (0, 0) y pygame
+utiliza la versión 1.2.10 de SDL o superior, la superficie creada tendrá
+el mismo tamaño que la resolución de pantalla actual. Si solo se define
+el ancho o alto a 0, la superficie tendrá el mismo alto o ancho de la
+resolución de pantalla. Se lanzará una excepción si está utilizando una
+versión menor a 1.2.10 de SDL.
+</p>
+
+
+
+<p>
+Generalmente es mejor no especificar el argumento <code>depth</code>. Por defecto
+este coincidirá con la mejor y mas rápida profundidad de color para
+el sistema. Si su juego requiere un formato de color específico, el
+argumento <code>depth</code> puede definirlo. Pygame puede emular una profundidad de
+color no disponible aunque esto puede ser muy lento.
+</p>
+
+
+
+<p>
+Cuando solicita modos de video en pantalla completa, a veces no se puede
+definir un modo de video exactamente igual al solicitado. En esas situaciones
+pygame seleccionará el modo de video mas cercano. Aún así, la superficie
+que se retorna siempre coincidirá exactamente con la resolución solicitada.
+</p>
+
+
+
+<p>
+El argumento <em>flags</em> define que tipo de pantalla desea. Hay varias opciones
+para elegir, e incluso usted puede combinar varias opciones usando operaciones
+de bits, usando el operador “|” <em>pipe</em>.
+</p>
+
+
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Opción </th><th class="col1"> Significado </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> pygame.FULLSCREEN </td><td class="col1"> Genera una visualización de pantalla completa </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> pygame.DOUBLEBUF </td><td class="col1"> Recomendado para combinar con HWSURFACE u OPENGL </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> pygame.HWSURFACE </td><td class="col1"> Aceleración por hardware, solo funciona conjuntamente con FULLSCREEN </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> pygame.OPENGL </td><td class="col1"> Genera una pantalla que se puede dibujar con opengl </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> pygame.RESIZABLE </td><td class="col1"> La ventana se debe poder cambiar de tamaño </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> pygame.NOFRAME </td><td class="col1"> La ventana no deberá tener bordes, titulo o controles </td>
+	</tr>
+</table>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_mode" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_mode">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_mode" [8775-13597] -->
+<h2><a name="get_surface" id="get_surface">get_surface</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene una referencia a la superficie de pantalla actual.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_surface</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Surface</pre>
+
+
+<p>
+Retorna una referencia a la superficie de pantalla actual. Si no se
+ha definido un modo de video esta función retornará <code>None</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_surface" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_surface">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_surface" [13598-14155] -->
+<h2><a name="flip" id="flip">flip</a></h2>
+<div class="level2">
+
+
+
+<p>
+Actualizar la superficie de visualización por completo sobre la pantalla.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">flip</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Actualizará el contenido de la pantalla entera. Si su modo de video usa
+las opciones <code>pygame.HWSURFACE</code> y <code>pygame.DOUBLEBUF</code>, esta operación
+esperará el retraso vertical e intercambiará las superficies. Si está
+usando un modo de video de diferente tipo, esta función simplemente actualizará
+el contenido completo de la superficie.
+</p>
+
+
+
+<p>
+Cuando se usa un modo de video de tipo <code>pygame.OPENGL</code> esta función
+realizará un intercambio de buffer de OpenGL.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.flip" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.flip">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "flip" [14156-15302] -->
+<h2><a name="update" id="update">update</a></h2>
+<div class="level2">
+
+
+
+<p>
+Actualiza porciones de la pantalla para modos de video de software.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">update</span><span class="br0">&#40;</span>rectangle=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">display</span>.<span class="me1">update</span><span class="br0">&#40;</span>rectangle_list<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Esta función es como una versión optimizada de <a href="#flip" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.flip</a>
+para pantallas de software. Permite que solo una porción de la pantalla
+se actualice, en lugar de toda el área de pantalla. Si no se pasan argumentos, se
+actualizará la superficie completa como en <a href="#flip" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.flip</a>.
+</p>
+
+
+
+<p>
+Puede pasar a la función un rectángulo, o una secuencia de rectángulos. Es
+mas eficiente pasar varios rectángulos de una sola vez en lugar de 
+llamar muchas veces a <code>update</code> con un solo rectángulo o una lista
+parcial de rectángulos. Es seguro pasar una secuencia de rectángulos
+con elementos <code>None</code> en ella, estos elementos serán ignorados.
+</p>
+
+
+
+<p>
+Esta función no se debe usar en pantallas <code>pygame.OPENGL</code>, dado que
+generarán una excepción.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.update" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.update">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "update" [15303-17103] -->
+<h2><a name="get_driver" id="get_driver">get_driver</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el nombre del controlador interno de visualización.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_driver</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> name</pre>
+
+
+<p>
+Pygame elige uno de varios controladores de video internos cuando se
+inicializa. Esta función retorna el nombre interno del controlador
+utilizado. Esto puede utilizarse para proveer información limitada acerca
+de qué capacidades de video se pueden acelerar. Vea la opción <code>SDL_VIDEODRIVER</code>
+in la función <a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.set_mode()</a> para ver algunas
+opciones adicionales.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_driver" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_driver">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_driver" [17104-18129] -->
+<h2><a name="get_wm_info" id="get_wm_info">get_wm_info</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene información acerca sistema de ventana actual.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_wm_info</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">dict</span></pre>
+
+
+<p>
+Genera un diccionario lleno de claves. Las cadenas y los valores son
+creados arbitrariamente por el sistema. Algunos sistemas podrían no brindar
+información, en cuyo caso se retorna un diccionario vacío. La mayoría de
+las plataformas retornan una clave <em>window</em> con el identificador de la
+ventana asignado por el sistema.
+</p>
+
+
+
+<p>
+Esta función es nueva en pygame 1.7.1
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_wm_info" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_wm_info">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_wm_info" [18130-19122] -->
+<h2><a name="list_modes" id="list_modes">list_modes</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene una lista de los modos de pantalla completa disponibles
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">list_modes</span><span class="br0">&#40;</span>depth=0, flags=pygame.<span class="me1">FULLSCREEN</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">list</span></pre>
+
+
+<p>
+Esta función retorna una lista de las posibles resoluciones para una profundidad
+de color definida. El valor de retorno será una lista vacía si no hay
+modos de video disponibles para los argumentos dados. Un valor de retorno
+-1 significa que cualquier resolución debería funcionar (este es generalmente
+el caso de los modos en ventana). Los modos de video se ordenan de mayor (primeros)
+a menor (últimos).
+</p>
+
+
+
+<p>
+Si el argumento <code>depth</code> es 0, SDL seleccionará la actual/mejor profundidad
+de color para la pantalla. El argumento <code>flags</code> está por defecto en
+el valor <code>pygame.FULLSCREEN</code>, pero usted puede agregar mas opciones
+para modos de video en pantalla completa específicos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.list_modes" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.list_modes">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "list_modes" [19123-20683] -->
+<h2><a name="mode_ok" id="mode_ok">mode_ok</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elige la mejor profundidad de color para el modo de video.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">mode_ok</span><span class="br0">&#40;</span>size, flags=0, depth=0<span class="br0">&#41;</span>: <span class="kw1">return</span> depth</pre>
+
+
+<p>
+Esta función utiliza los mismos argumentos que la función
+<a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.set_mode</a>. Se usa para determinar si
+está disponible el modo de video solicitado. En caso de no estar disponible
+retorna la profundidad de color que mejor coincida con la pantalla
+solicitada.
+</p>
+
+
+
+<p>
+Generalmente no se especifica el argumento <code>depth</code>, dado que algunas
+plataformas suportan varios modos de video. Si especifica este argumento
+dará a entender cual es el mejor modo de video.
+</p>
+
+
+
+<p>
+Las opciones <code>flags</code> mas útiles son <code>pygame.HWSURFACE</code>, <code>pygame.DOUBLEBUF</code>
+y tal vez <code>pygame.FULLSCREEN</code>. La función retornará 0 si no se puede
+definir este tipo de pantalla.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.mode_ok" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.mode_ok">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "mode_ok" [20684-22264] -->
+<h2><a name="gl_get_attribute" id="gl_get_attribute">gl_get_attribute</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el valor de los atributos de opengl para la pantalla actual.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">gl_get_attribute</span><span class="br0">&#40;</span>flag<span class="br0">&#41;</span>: <span class="kw1">return</span> value</pre>
+
+
+<p>
+Después de llamar a <code>pygame.display.set_mode()</code> con la opción
+<code>pygame.OPENGL</code>, es una buena idea consultar el valor de cualquier
+atributo de opengl solicitado. Vea las función
+<a href="#gl_set_atribute" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.gl_set_attribute()</a> para obtener
+una lista de opciones válida.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.gl_get_attribute" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.gl_get_attribute">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "gl_get_attribute" [22265-23099] -->
+<h2><a name="gl_set_attribute" id="gl_set_attribute">gl_set_attribute</a></h2>
+<div class="level2">
+
+
+
+<p>
+Solicita un atributo de OpenGL para el modo de video.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">gl_set_attribute</span><span class="br0">&#40;</span>flag, value<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cuando llama a <a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.set_mode()</a> con la opción
+<code>pygame.OPENGL</code>, pygame automáticamente maneja la configuración
+de los atributos de OpenGL como el color y el <em>double buffer</em>. OpenGL
+ofrece muchos otros atributos que tal vez quiera controlar por su
+cuenta. Indique uno de estos atributos como el parámetro <code>flag</code> y
+su valor apropiado como <code>value</code>. Esto debe llamarse antes de
+ejecutar <a href="#set_mode" title="traducciones:pygame:display &crarr;" class="wikilink1">pygame.display.set_mode()</a>.
+ 
+
+</p>
+
+<p>
+Las opciones de OpenGL, para el argumento <code>flag</code> son:
+</p>
+
+
+<ul>
+<li class="level1"><div class="li"> GL_ALPHA_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_DEPTH_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_STENCIL_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_ACCUM_RED_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_ACCUM_GREEN_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_ACCUM_BLUE_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_ACCUM_ALPHA_SIZE</div>
+</li>
+<li class="level1"><div class="li"> GL_MULTISAMPLEBUFFERS</div>
+</li>
+<li class="level1"><div class="li"> GL_MULTISAMPLESAMPLES</div>
+</li>
+<li class="level1"><div class="li"> GL_STEREO</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.gl_set_attribute" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.gl_set_attribute">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "gl_set_attribute" [23100-24765] -->
+<h2><a name="get_active" id="get_active">get_active</a></h2>
+<div class="level2">
+
+
+
+<p>
+Devuelve True cuando la ventana se está mostrando en la pantalla.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_active</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Luego de llamar a <code>pygame.display.set_mode</code> la superficie de visualización
+se hará visible en la pantalla. La mayoría de los sistemas de ventanas
+permiten que el usuario pueda ocultar las ventanas. Esta función retornará
+False si la pantalla de visualización está oculta o minimizada.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_active" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_active">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_active" [24766-25582] -->
+<h2><a name="iconify" id="iconify">iconify</a></h2>
+<div class="level2">
+
+
+
+<p>
+Minimiza la aplicación.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">iconify</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Solicita al sistema de ventanas que oculte o minimice la pantalla. No
+todos los sistemas y pantallas soportan esta opción. La función retornará
+True en caso de éxito.
+</p>
+
+
+
+<p>
+Cuando la pantalla está minimizada la función <code>pygame.display.get_active()</code>
+retornará False. La cola de eventos debería recibir el evento <code>ACTIVEEVENT</code>
+cuando la ventana se minimiza.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.iconify" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.iconify">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "iconify" [25583-26528] -->
+<h2><a name="toggle_fullscreen" id="toggle_fullscreen">toggle_fullscreen</a></h2>
+<div class="level2">
+
+
+
+<p>
+Alterna entre la visualización de ventana o pantalla completa.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">toggle_fullscreen</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Alterna entre los modos de video pantalla completa y ventana. Esta operación
+solo funciona bajo el controlador x11 de unix. Para la mayoría de
+las situaciones es mejor llamar a <code>pygame.display.set_mode()</code> con
+las nuevas opciones de pantalla.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.toggle_fullscreen" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.toggle_fullscreen">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "toggle_fullscreen" [26529-27321] -->
+<h2><a name="set_gamma" id="set_gamma">set_gamma</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia los niveles de color del hardware.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_gamma</span><span class="br0">&#40;</span>red, green=<span class="kw2">None</span>, blue=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Define los niveles de rojo, verde y azul en el hardware de video. Si no
+se especifican los valores verde y azul, ambos se evaluarán como si
+tuvieran el mismo valor que el componente rojo. No todos los sistemas
+y hardware soportan paletas gama, si la función retorna True si
+opera correctamente.
+</p>
+
+
+
+<p>
+Un valor gamma de 1.0 genera una tabla de color lineal. Los valores
+inferiores harán mas oscura la pantalla y los valores superiores
+aumentarán el brillo.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_gamma" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_gamma">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_gamma" [27322-28446] -->
+<h2><a name="set_gamma_ramp" id="set_gamma_ramp">set_gamma_ramp</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia la paleta de colores de hardware con una búsqueda personalizada.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_gamma_ramp</span><span class="br0">&#40;</span>red, green, blue<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+
+Define los niveles de rojo, verde y azul con una tabla de búsqueda explícita.
+Cada argumento debería ser una secuencia de 256 números enteros. Los enteros
+deberían estar entre <code>0</code> y <code>0xffff</code>. No todos los sistemas
+y hardware soportan paletas gama, si la función retorna True si
+opera correctamente.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_gamma_ramp" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_gamma_ramp">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_gamma_ramp" [28447-29377] -->
+<h2><a name="set_icon" id="set_icon">set_icon</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cambia la imagen de sistema para la ventana.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_icon</span><span class="br0">&#40;</span>Surface<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Define el icono de ejecución que el sistema usará para representar
+la ventana. Por defecto todas las ventanas muestran el logo de
+pygame como icono de la ventana.
+</p>
+
+
+
+<p>
+Puede especificar cualquier superficie, aunque la mayoría de los 
+sistemas esperan una imagen pequeña estilo 32&times;32. La imagen puede
+tener una transparencia por color clave que será enviada al sistema.
+</p>
+
+
+
+<p>
+Algunos sistemas no permite que se cambie el icono luego de que
+la ventana se ha mostrado. Esta función se puede llamar antes de
+<code>pygame.display.set_mode()</code> para crear el icono antes de especificar
+el modo de video.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_icon" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_icon">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_icon" [29378-30755] -->
+<h2><a name="set_caption" id="set_caption">set_caption</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el título de la ventana.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_caption</span><span class="br0">&#40;</span>title, icontitle=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Si la pantalla tiene un título de ventana, esta función cambiará ese título. Algunos sistemas soportan un titulo alternativo mas corto para utilizarse
+en ventanas minimizadas.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_caption" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_caption">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_caption" [30756-31388] -->
+<h2><a name="get_caption" id="get_caption">get_caption</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el título de la ventana.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">get_caption</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="br0">&#40;</span>title, icontitle<span class="br0">&#41;</span></pre>
+
+
+<p>
+Retorna el título principal y el titulo alternativo (para ventanas
+minimizadas) de la ventana principal. Estos generalmente tienen
+el mismo valor.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_caption" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.get_caption">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_caption" [31389-31907] -->
+<h2><a name="set_palette" id="set_palette">set_palette</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define la paleta de colores para modos de video indexado.
+</p>
+<pre class="code python">pygame.<span class="me1">display</span>.<span class="me1">set_palette</span><span class="br0">&#40;</span>palette=<span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cambiará la paleta de colores para pantallas de 8bit. No cambia la paleta
+de la superficie de visualización, solo cambia la palera que se usa para
+mostrar la superficie. Si no se especifica un argumento, se restaurará la
+paleta por defecto. La palera es una secuencia de ternas RGB.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_palette" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.display.set_palette">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_palette" [31908-] --></div>
+</body>
+</html>

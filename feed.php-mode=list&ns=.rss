@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T10:23:19+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/comunidad?rev=1227803591&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/galeria?rev=1199057657&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/indice?rev=1232458660&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/juegos?rev=1261274300&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/last_sidebar?rev=1232458659&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/links?rev=1320847694&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/principal?rev=1393245860&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/referencia?rev=1229539433&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/software?rev=1303825707&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones?rev=1231016187&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/comunidad?rev=1227803591&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-11-27T19:33:11+04:00</dc:date>
+        <title>Comunidad</title>
+        <link>http://www.losersjuegos.com.ar/comunidad?rev=1227803591&amp;do=diff</link>
+        <description>En losersjuegos nuestro mayor objetivo consiste en promover una comunidad de
+personas interesadas en el desarrollo de videojuegos libres.
+
+Por ese motivo hemos llamado a esta sección comunidad, simbolizando nuestro
+deseo de integración y crecimiento continuo.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/galeria?rev=1199057657&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2007-12-31T02:34:17+04:00</dc:date>
+        <title>Galería</title>
+        <link>http://www.losersjuegos.com.ar/galeria?rev=1199057657&amp;do=diff</link>
+        <description>Aquí encontrará varios trabajos artísticos realizados por el grupo de personas que participan de Losersjuegos.
+
+Tenga en cuenta que los gráficos han sido desarrollados para el proyecto, si desea utilizarlos para otro fín deberá contactar al autor de cada obra y solicitar permiso.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/indice?rev=1232458660&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:37:40+04:00</dc:date>
+        <title>Indice</title>
+        <link>http://www.losersjuegos.com.ar/indice?rev=1232458660&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/juegos?rev=1261274300&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-12-20T04:58:20+04:00</dc:date>
+        <title>Juegos</title>
+        <link>http://www.losersjuegos.com.ar/juegos?rev=1261274300&amp;do=diff</link>
+        <description>Mediante esta sección podrá conocer los videojuegos en los que estamos trabajando, seleccione alguno de ellos para obtener mas detalles.
+
+Completos para PC
+
+
+
+
+
+
+
+
+
+
+Completos para móviles
+
+
+
+
+
+
+
+
+
+
+En desarrollo para PC
+
+
+
+
+
+
+Desatendidos
+
+
+Los siguientes juegos están sin terminar, y por el momento
+no hay proyectos de desarrollo trabajando en ellos.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/last_sidebar?rev=1232458659&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T16:37:39+04:00</dc:date>
+        <title>last_sidebar</title>
+        <link>http://www.losersjuegos.com.ar/last_sidebar?rev=1232458659&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/links?rev=1320847694&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-11-09T18:08:14+04:00</dc:date>
+        <title>Links</title>
+        <link>http://www.losersjuegos.com.ar/links?rev=1320847694&amp;do=diff</link>
+        <description>Aquí encontrará varios sitios y proyectos que le recomendamos visitar.
+
+Comunidades y blogs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bibliotecas para desarrollar juegos
+
+
+
+
+
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recursos para tus proyectos Libres</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/principal?rev=1393245860&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-24T16:44:20+04:00</dc:date>
+        <title>¡Bienvenido!</title>
+        <link>http://www.losersjuegos.com.ar/principal?rev=1393245860&amp;do=diff</link>
+        <description>[Don Ceferino Hazaña]
+
+LosersJuegos es un grupo de programadores y artistas que se dedican a realizar videojuegos libres, bajo los términos de la licencia GPL.
+
+El mayor objetivo del grupo es promover una comunidad de desarrolladores donde la libertad, el aprendizaje y la solidaridad sean primordiales ante todo.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/referencia?rev=1229539433&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-17T21:43:53+04:00</dc:date>
+        <title>Referencia</title>
+        <link>http://www.losersjuegos.com.ar/referencia?rev=1229539433&amp;do=diff</link>
+        <description>Esta sección incluye una serie de artículos, libros y ejemplos con el motivo de promover el aprendizaje relacionado con el desarrollo de programas.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-02-24T16:45:15+04:00</dc:date>
+        <title>sidebar</title>
+        <link>http://www.losersjuegos.com.ar/sidebar?rev=1393245915&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/software?rev=1303825707&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T17:48:27+04:00</dc:date>
+        <title>Software</title>
+        <link>http://www.losersjuegos.com.ar/software?rev=1303825707&amp;do=diff</link>
+        <description>Para desarrollar videojuegos puede utilizar una gran cantidad de programas
+interesantes como los que mostramos a continuación.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones?rev=1231016187&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-03T23:56:27+04:00</dc:date>
+        <title>Traducciones</title>
+        <link>http://www.losersjuegos.com.ar/traducciones?rev=1231016187&amp;do=diff</link>
+        <description>Esta sección contiene proyectos de traducción de las bibliotecas que
+recomendamos para hacer videojuegos.</description>
+    </item>
+</rdf:RDF>

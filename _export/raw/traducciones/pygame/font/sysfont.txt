@@ -1,0 +1,28 @@
+====== SysFont ======
+
+/*
+create a Font object from the system fonts
+*/
+
+Genera un objeto Font a partir de las fuentes del sistema.
+
+===== SysFont =====
+
+<code python>
+pygame.font.SysFont(name, size, bold=False, italic=False): return Font
+</code>
+
+/*
+Return a new Font object that is loaded from the system fonts. The font will
+match the requested bold and italic flags. If a suitable system font is not
+found this will fallback on loading the default pygame font. The font name
+can be a comma separated list of font names to look for.
+*/
+
+Retorna un nuevo objeto Font que se carga a partir de las fuentes del sistema. La
+fuente deberá coincidir con las opciones ''bold'' e ''italic'' solicitadas. Si
+no se encuentra una fuente de sistema adecuada esta función retornará la
+fuente por defecto de pygame. El parámetro ''name'' puede ser una lista de
+nombres para explorar.
+
+  * [[pythonexample>pygame.font.SysFont|buscar código donde se use esta función.]]

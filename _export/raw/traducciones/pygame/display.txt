@@ -1,0 +1,991 @@
+====== display ======
+
+
+
+/*
+pygame module to control the display window and screen
+*/
+
+Módulo de pygame para controlar la ventana y pantalla de visualización.
+
+
+<box 90%>
+
+  * [[#init]]
+  * [[#quit]]
+  * [[#get_init]]
+  * [[#set_mode]]
+  * [[#get_surface]]
+  * [[#flip]]
+  * [[#update]]
+  * [[#get_driver]]
+  * [[#get_wm_info]]
+  * [[#list_modes]]
+  * [[#mode_ok]]
+  * [[#gl_get_attribute]]
+  * [[#gl_set_attribute]]
+  * [[#get_active]]
+  * [[#iconify]]
+  * [[#toggle_fullscreen]]
+  * [[#set_gamma]]
+  * [[#set_gamma_ramp]]
+  * [[#set_icon]]
+  * [[#set_caption]]
+  * [[#get_caption]]
+  * [[#set_palette]]
+
+** Otras páginas: **:
+  * [[:traducciones:pygame:display:Info]]
+</box>
+
+
+
+/*
+This module offers control over the pygame display. Pygame has a single display
+Surface that is either contained in a window or runs full screen. Once you
+create the display you treat it as a regular Surface. Changes are not
+immediately visible onscreen, you must choose one of the two flipping functions
+to update the actual display.
+*/
+
+
+Este módulo ofrece control sobre la visualización de pygame. Pygame
+contiene una sola superficie de visualización que puede estar contenida
+en una ventana o bien correr en pantalla completa. Una vez que cree la
+pantalla de visualización podrá tratarla como una superficie normal. Los
+cambios no se verán inmediatamente en pantalla, deberá elegir una
+de las dos funciones para actualizar la pantalla.
+
+/*
+The origin of the display, where x = 0, and y = 0 is the top left of the 
+screen.  Both axis increase positively towards the botom right of the screen.
+*/
+
+El punto de origen de la pantalla es ''x=0'' e ''y=0'', este punto representa
+la esquina superior izquierda de la pantalla. Ambos ejes aumentan en
+dirección a la esquina inferior derecha de la pantalla.
+
+
+/*
+The pygame display can actually be initialized in one of several modes. By
+default the display is a basic software driven framebuffer. You can request
+special modules like hardware acceleration and OpenGL support. These are
+controlled by flags passed to pygame.display.set_mode().
+*/
+
+La pantalla de pygame se puede inicializar en uno de varios modos
+de video. Por defecto la pantalla es una porción de memoria gestionada
+por software. Puede solicitar modos especiales como aceleración de
+video y soporte OpenGL enviando opciones a la función
+[[#set_mode|pygame.display.set_mode()]].
+
+/*
+Pygame can only have a single display active at any time. Creating a new one
+with pygame.display.set_mode() will close the previous display. If precise
+control is needed over the pixel format or display resolutions, use the
+functions pygame.display.mode_ok(), pygame.display.list_modes(), and
+pygame.display.Info() to query information about the display.
+*/
+
+Pygame solo puede tener una pantalla activa a la vez. Crear una nueva usando
+''pygame.display.set_mode()'' cerrará la anterior pantalla. Si se necesita
+tener control preciso sobre el formato de //pixels// o las resoluciones
+de video, utilice las funciones [[#mode_ok|pygame.display.mode_ok()]], 
+[[#list_modes|pygame.display.list_modes()]] y [[#Info:|pygame.display.Info()]]
+para consultar información acerca de la pantalla.
+
+/*
+Once the display Surface is created, the functions from this module
+effect the single existing display. The Surface becomes invalid if the module
+is uninitialized. If a new display mode is set, the existing Surface will
+automatically switch to operate on the new display.
+*/
+
+Una vez creada la superficie de visualización, las funciones de este
+módulo afectan a la pantalla existente. Si el módulo se deshabilita
+la superficie se convierte en inválida. Si se define un nuevo modo de
+video, la superficie existente automáticamente se cambiará para
+operar en la nueva pantalla.
+
+/*
+Then the display mode is set, several events are placed on the pygame
+event queue. pygame.QUIT is sent when the user has requested the program
+to shutdown. The window will receive pygame.ACTIVEEVENT events as the
+display gains and loses input focus. If the display is set with the
+pygame.RESIZABLE flag, pygame.VIDEORESIZE events will be sent when the
+user adjusts the window dimensions. Hardware displays that draw direct
+to the screen will get pygame.VIDEOEXPOSE events when portions of the
+window must be redrawn.
+*/
+
+Cuando se define el nuevo modo de video, se habilitan varios eventos
+de pygame para gestionar el manejo de la ventana. El evento ''pygame.QUIT'' se
+genera cuando el usuario
+solicita cerrar el programa. La ventana recibirá los eventos 
+''pygame.ACTIVEEVENT'' cuando obtenga o pierda el foco del sistema
+de ventanas. Si la ventana se construye con las opciones ''pygame.RESIZABLE'', 
+se generarán los eventos ''pygame.VIDEORESIZE'' cuando
+el usuario ajuste las dimensiones de la ventana. Las superficies de video
+en Hardware que imprimen directamente en la pantalla obtendrán eventos
+''pygame.VIDEOEXPOSE'' cuando se deba redibujar porciones de la ventana.
+
+
+===== init =====
+
+/*
+initialize the display module
+*/
+
+Inicializa el módulo display.
+
+<code python>
+pygame.display.init(): return None
+</code>
+
+/*
+Initializes the pygame display module. The display module cannot do anything
+until it is initialized. This is usually handled for you automatically when you
+call the higher level pygame.init().
+*/
+
+Inicializa el módulo display de pygame. El módulo display no puede hacer
+nada a menos que sea inicializado. Esto generalmente se hace por usted de
+forma automática cuando llama a la función de mayor nivel ''pygame.init()''.
+
+/*
+Pygame will select from one of several internal display backends when it
+is initialized. The display mode will be chosen depending on the platform
+and permissions of current user. Before the display module is initialized
+the environment variable SDL_VIDEODRIVER can be set to control which backend
+is used. The systems with multiple choices are listed here.
+*/
+
+Pygame seleccionará una de varias extensiones internas de visualización cuando
+se inicialice. La extensión interna se escogerá dependiendo de la plataforma
+y los permisos de usuario. Antes de inicializar el módulo de video se
+puede alterar la variable de entorno ''SDL_VIDEODRIVER'' para controlar
+la extensión interna de visualización. Los sistemas que tienen varias de estas
+extensiones se muestran aquí:
+
+/*
+  * Windows : windib, directx
+  * Unix    : x11, dga, fbcon, directfb, ggi, vgl, svgalib, aalib
+*/
+
+  * Windows: windib, directx
+  * Unix, GNU/Linux: x11, dga, fbcon, directfb, ggi, vgl, svgalib, aalib
+
+
+/*
+On some platforms it is possible to embed the pygame display into an already
+existing window. To do this, the environment variable SDL_WINDOWID must be
+set to a string containing the window id or handle. The environment variable
+is checked when the pygame display is initialized. Be aware that there can
+be many strange side effects when running in an embedded display.
+*/
+
+En algunas plataformas es posible incrustar la pantalla de pygame en una
+ventana existente. Para hacer esto, se debe definir la variable de entorno
+''SDL_WINDOWID'' con una cadena que contenga el identificador o manejador
+de la ventana. La variable de entorno será verificada cuando se inicie
+el modo de video. Tenga en cuenta que pueden ocurrir varios efectos secundarios
+cuando utilice este modo de video incrustado.
+
+/*
+It is harmless to call this more than once, repeated calls have no effect.
+*/
+
+Es inofensivo llamar a esta función mas de una vez, las sucesivas llamadas
+no tendrán efecto.
+
+  * [[pythonexample>pygame.display.init|buscar código donde se use esta función.]]
+
+===== quit =====
+
+/*
+uninitialize the display module
+*/
+
+Deshabilita el módulo de video.
+
+<code python>
+pygame.display.quit(): return None
+</code>
+
+/*
+This will shut down the entire display module. This means any active displays
+will be closed. This will also be handled automatically when the program exits.
+*/
+
+Apagará el módulo display entero. Esto significa que cualquier pantalla activa
+se cerrará. Esto también se puede manejar de forma automática cuando el
+programa se cierra.
+
+/*
+It is harmless to call this more than once, repeated calls have no effect.
+*/
+
+Es inofensivo llamar a esta función mas de una vez, las sucesivas llamadas
+no tendrán efecto.
+
+  * [[pythonexample>pygame.display.quit|buscar código donde se use esta función.]]
+
+===== get_init =====
+
+/*
+true if the display module is initialized
+*/
+
+Devuelve ''True'' si el módulo display se ha inicializado.
+
+<code python>
+pygame.display.get_init(): return bool
+</code>
+
+/*
+Returns True if the pygame.display module is currently initialized.
+*/
+
+Retorna ''True'' si el módulo ''pygame.display'' está inicializado
+actualmente.
+
+  * [[pythonexample>pygame.display.get_init|buscar código donde se use esta función.]]
+
+===== set_mode =====
+
+/*
+initialize a window or screen for display
+*/
+
+Inicializa una ventana o la pantalla para visualizar.
+
+<code python>
+pygame.display.set_mode(resolution=(0,0), flags=0, depth=0): return Surface
+</code>
+
+/*
+This function will create a display Surface. The arguments passed in are
+requests for a display type. The actual created display will be the best
+possible match supported by the system.
+*/
+
+Esta función construirá una superficie de pantalla. Los argumentos que
+se le envían solicitan el tipo de pantalla deseado. Si no especifica
+ningún argumento, la pantalla generada será tan grande como el
+mejor modo de video soportado por el sistema.
+
+/*
+The resolution argument is a pair of numbers representing the width and
+height. The flags argument is a collection of additional options.  The
+depth argument represents the number of bits to use for color.
+*/
+
+El argumento ''resolution'' es una tupla de números que representan
+el ancho y alto. El argumento ''flags'' es una colección de
+opciones adicionales. El argumento ''depth'' representa el número de
+bits utilizados por color.
+
+/*
+The Surface that gets returned can be drawn to like a regular Surface but
+changes will eventually be seen on the monitor.
+*/
+
+El objeto Surface retornado se puede manipular como un objeto Surface
+normal, solo que los cambios eventualmente se podrán observar en
+el monitor.
+
+/*
+If no resolution is passed or is set to (0, 0) and pygame uses SDL
+version 1.2.10 or above, the created Surface will have the same size as
+the current screen resolution. If only the width or height are set to 0,
+the Surface will have the same width or height as the screen resolution.
+Using a SDL version prior to 1.2.10 will raise an exception.
+*/
+
+Si no se especifica una resolución, o esta se define en (0, 0) y pygame
+utiliza la versión 1.2.10 de SDL o superior, la superficie creada tendrá
+el mismo tamaño que la resolución de pantalla actual. Si solo se define
+el ancho o alto a 0, la superficie tendrá el mismo alto o ancho de la
+resolución de pantalla. Se lanzará una excepción si está utilizando una
+versión menor a 1.2.10 de SDL.
+
+
+/*
+It is usually best to not pass the depth argument. It will default to the best
+and fastest color depth for the system. If your game requires a specific color
+format you can control the depth with this argument. Pygame will emulate an
+unavailable color depth which can be slow.
+*/
+
+Generalmente es mejor no especificar el argumento ''depth''. Por defecto
+este coincidirá con la mejor y mas rápida profundidad de color para
+el sistema. Si su juego requiere un formato de color específico, el
+argumento ''depth'' puede definirlo. Pygame puede emular una profundidad de
+color no disponible aunque esto puede ser muy lento.
+
+
+/*
+When requesting fullscreen display modes, sometimes an exact match for the
+requested resolution cannot be made. In these situations pygame will select
+the closest compatable match. The returned surface will still always match
+the requested resolution.
+*/
+
+Cuando solicita modos de video en pantalla completa, a veces no se puede
+definir un modo de video exactamente igual al solicitado. En esas situaciones
+pygame seleccionará el modo de video mas cercano. Aún así, la superficie
+que se retorna siempre coincidirá exactamente con la resolución solicitada.
+
+/*
+The flags argument controls which type of display you want. There are several to
+choose from, and you can even combine multiple types using the bitwise or
+operator, (the pipe "|" character). If you pass 0 or no flags argument it will
+default to a software driven window. Here are the display flags you will want to
+choose from:
+*/
+
+El argumento //flags// define que tipo de pantalla desea. Hay varias opciones
+para elegir, e incluso usted puede combinar varias opciones usando operaciones
+de bits, usando el operador "|" //pipe//.
+
+/*
+  * pygame.FULLSCREEN    create a fullscreen display
+  * pygame.DOUBLEBUF     recommended for HWSURFACE or OPENGL
+  * pygame.HWSURFACE     hardware accelerated, only in FULLSCREEN
+  * pygame.OPENGL        create an opengl renderable display
+  * pygame.RESIZABLE     display window should be sizeable
+  * pygame.NOFRAME       display window will have no border or controls
+*/
+
+^ Opción ^ Significado ^
+| pygame.FULLSCREEN | Genera una visualización de pantalla completa |
+| pygame.DOUBLEBUF | Recomendado para combinar con HWSURFACE u OPENGL |
+| pygame.HWSURFACE | Aceleración por hardware, solo funciona conjuntamente con FULLSCREEN |
+| pygame.OPENGL | Genera una pantalla que se puede dibujar con opengl |
+| pygame.RESIZABLE | La ventana se debe poder cambiar de tamaño |
+| pygame.NOFRAME | La ventana no deberá tener bordes, titulo o controles |
+
+
+  * [[pythonexample>pygame.display.set_mode|buscar código donde se use esta función.]]
+
+===== get_surface =====
+
+/*
+get a reference to the currently set display surface
+*/
+
+Obtiene una referencia a la superficie de pantalla actual.
+
+<code python>
+pygame.display.get_surface(): return Surface
+</code>
+
+/*
+Return a reference to the currently set display Surface. If no display mode
+has been set this will return None.
+*/
+
+Retorna una referencia a la superficie de pantalla actual. Si no se
+ha definido un modo de video esta función retornará ''None''.
+
+  * [[pythonexample>pygame.display.get_surface|buscar código donde se use esta función.]]
+
+===== flip =====
+
+/*
+update the full display Surface to the screen
+*/
+
+Actualizar la superficie de visualización por completo sobre la pantalla.
+
+<code python>
+pygame.display.flip(): return None
+</code>
+
+/*
+This will update the contents of the entire display. If your display mode is
+using the flags pygame.HWSURFACE and pygame.DOUBLEBUF, this will wait for a
+vertical retrace and swap the surfaces. If you are using a different type
+of display mode, it will simply update the entire contents of the surface.
+*/
+
+Actualizará el contenido de la pantalla entera. Si su modo de video usa
+las opciones ''pygame.HWSURFACE'' y ''pygame.DOUBLEBUF'', esta operación
+esperará el retraso vertical e intercambiará las superficies. Si está
+usando un modo de video de diferente tipo, esta función simplemente actualizará
+el contenido completo de la superficie.
+
+/*
+When using an pygame.OPENGL display mode this will perform a gl buffer swap.
+*/
+
+Cuando se usa un modo de video de tipo ''pygame.OPENGL'' esta función
+realizará un intercambio de buffer de OpenGL.
+
+
+  * [[pythonexample>pygame.display.flip|buscar código donde se use esta función.]]
+
+===== update =====
+
+/*
+update portions of the screen for software displays
+*/
+
+Actualiza porciones de la pantalla para modos de video de software.
+
+<code python>
+pygame.display.update(rectangle=None): return None
+pygame.display.update(rectangle_list): return None
+</code>
+
+/*
+This function is like an optimized version of pygame.display.flip() for
+software displays. It allows only a portion of the screen to updated, instead
+of the entire area. If no argument is passed it updates the entire Surface
+area like pygame.display.flip().
+*/
+
+Esta función es como una versión optimizada de [[#flip|pygame.display.flip]]
+para pantallas de software. Permite que solo una porción de la pantalla
+se actualice, en lugar de toda el área de pantalla. Si no se pasan argumentos, se
+actualizará la superficie completa como en [[#flip|pygame.display.flip]].
+
+/*
+You can pass the function a single rectangle, or a sequence of rectangles.
+It is more efficient to pass many rectangles at once than to call update
+multiple times with single or a partial list of rectangles. If passing
+a sequence of rectangles it is safe to include None values in the list,
+which will be skipped.
+*/
+
+Puede pasar a la función un rectángulo, o una secuencia de rectángulos. Es
+mas eficiente pasar varios rectángulos de una sola vez en lugar de 
+llamar muchas veces a ''update'' con un solo rectángulo o una lista
+parcial de rectángulos. Es seguro pasar una secuencia de rectángulos
+con elementos ''None'' en ella, estos elementos serán ignorados.
+
+/*
+This call cannot be used on pygame.OPENGL displays and will generate an
+exception.
+*/
+
+Esta función no se debe usar en pantallas ''pygame.OPENGL'', dado que
+generarán una excepción.
+
+  * [[pythonexample>pygame.display.update|buscar código donde se use esta función.]]
+
+===== get_driver =====
+
+/*
+get the name of the pygame display backend
+*/
+
+Obtiene el nombre del controlador interno de visualización.
+
+<code python>
+pygame.display.get_driver(): return name
+</code>
+
+/*
+Pygame chooses one of many available display backends when it is initialized.
+This returns the internal name used for the display backend. This can be
+used to provide limited information about what display capabilities might
+be accelerated. See the SDL_VIDEODRIVER flags in pygame.display.set_mode() to
+see some of the common options.
+*/
+
+Pygame elige uno de varios controladores de video internos cuando se
+inicializa. Esta función retorna el nombre interno del controlador
+utilizado. Esto puede utilizarse para proveer información limitada acerca
+de qué capacidades de video se pueden acelerar. Vea la opción ''SDL_VIDEODRIVER''
+in la función [[#set_mode|pygame.display.set_mode()]] para ver algunas
+opciones adicionales.
+
+
+  * [[pythonexample>pygame.display.get_driver|buscar código donde se use esta función.]]
+
+===== get_wm_info =====
+
+/*
+Get information about the current windowing system
+*/
+
+Obtiene información acerca sistema de ventana actual.
+
+<code python>
+pygame.display.get_wm_info(): return dict
+</code>
+
+/*
+Creates a dictionary filled with string keys. The strings and values are
+arbitrarily created by the system. Some systems may have no information and
+an empty dictionary will be returned. Most platforms will return a "window"
+key with the value set to the system id for the current display.
+*/
+
+Genera un diccionario lleno de claves. Las cadenas y los valores son
+creados arbitrariamente por el sistema. Algunos sistemas podrían no brindar
+información, en cuyo caso se retorna un diccionario vacío. La mayoría de
+las plataformas retornan una clave //window// con el identificador de la
+ventana asignado por el sistema.
+
+/*
+New with pygame 1.7.1
+*/
+
+Esta función es nueva en pygame 1.7.1
+
+
+  * [[pythonexample>pygame.display.get_wm_info|buscar código donde se use esta función.]]
+
+===== list_modes =====
+
+/*
+get list of available fullscreen modes
+*/
+
+Obtiene una lista de los modos de pantalla completa disponibles
+
+
+
+<code python>
+pygame.display.list_modes(depth=0, flags=pygame.FULLSCREEN): return list
+</code>
+
+/*
+This function returns a list of possible dimensions for a specified color
+depth. The return value will be an empty list if no display modes are available
+with the given arguments. A return value of -1 means that any requested
+resolution should work (this is likely the case for windowed modes). Mode
+sizes are sorted from biggest to smallest.
+*/
+
+Esta función retorna una lista de las posibles resoluciones para una profundidad
+de color definida. El valor de retorno será una lista vacía si no hay
+modos de video disponibles para los argumentos dados. Un valor de retorno
+-1 significa que cualquier resolución debería funcionar (este es generalmente
+el caso de los modos en ventana). Los modos de video se ordenan de mayor (primeros)
+a menor (últimos).
+
+/*
+If depth is 0, SDL will choose the current/best color depth for the display.
+The flags defaults to pygame.FULLSCREEN, but you may need to add additional
+flags for specific fullscreen modes.
+*/
+
+Si el argumento ''depth'' es 0, SDL seleccionará la actual/mejor profundidad
+de color para la pantalla. El argumento ''flags'' está por defecto en
+el valor ''pygame.FULLSCREEN'', pero usted puede agregar mas opciones
+para modos de video en pantalla completa específicos.
+
+
+  * [[pythonexample>pygame.display.list_modes|buscar código donde se use esta función.]]
+
+===== mode_ok =====
+
+/*
+pick the best color depth for a display mode
+*/
+
+Elige la mejor profundidad de color para el modo de video.
+
+
+<code python>
+pygame.display.mode_ok(size, flags=0, depth=0): return depth
+</code>
+
+/*
+This function uses the same arguments as pygame.display.set_mode(). It is
+used to depermine if a requested display mode is available. It will return 0
+if the display mode cannot be set. Otherwise it will return a pixel depth
+that best matches the display asked for.
+*/
+
+Esta función utiliza los mismos argumentos que la función
+[[#set_mode|pygame.display.set_mode]]. Se usa para determinar si
+está disponible el modo de video solicitado. En caso de no estar disponible
+retorna la profundidad de color que mejor coincida con la pantalla
+solicitada.
+
+/*
+Usually the depth argument is not passed, but some platforms can support
+multiple display depths. If passed it will hint to which depth is a better
+match.
+*/
+
+Generalmente no se especifica el argumento ''depth'', dado que algunas
+plataformas suportan varios modos de video. Si especifica este argumento
+dará a entender cual es el mejor modo de video.
+
+/*
+The most useful flags to pass will be pygame.HWSURFACE, pygame.DOUBLEBUF, 
+and maybe pygame.FULLSCREEN. The function will return 0 if these display
+flags cannot be set.
+*/
+
+Las opciones ''flags'' mas útiles son ''pygame.HWSURFACE'', ''pygame.DOUBLEBUF''
+y tal vez ''pygame.FULLSCREEN''. La función retornará 0 si no se puede
+definir este tipo de pantalla.
+
+  * [[pythonexample>pygame.display.mode_ok|buscar código donde se use esta función.]]
+
+===== gl_get_attribute =====
+
+/*
+get the value for an opengl flag for the current display
+*/
+
+Obtiene el valor de los atributos de opengl para la pantalla actual.
+
+<code python>
+pygame.display.gl_get_attribute(flag): return value
+</code>
+
+/*
+After calling pygame.display.set_mode() with the pygame.OPENGL flag, it is
+a good idea to check the value of any requested OpenGL attributes. See
+pygame.display.gl_set_attribute() for a list of valid flags.
+*/
+
+Después de llamar a ''pygame.display.set_mode()'' con la opción
+''pygame.OPENGL'', es una buena idea consultar el valor de cualquier
+atributo de opengl solicitado. Vea las función
+[[#gl_set_atribute|pygame.display.gl_set_attribute()]] para obtener
+una lista de opciones válida.
+
+
+  * [[pythonexample>pygame.display.gl_get_attribute|buscar código donde se use esta función.]]
+
+===== gl_set_attribute =====
+
+/*
+request an opengl display attribute for the display mode
+*/
+
+Solicita un atributo de OpenGL para el modo de video.
+
+<code python>
+pygame.display.gl_set_attribute(flag, value): return None
+</code>
+
+/*
+When calling pygame.display.set_mode() with the pygame.OPENGL flag, Pygame
+automatically handles setting the OpenGL attributes like color and
+doublebuffering. OpenGL offers several other attributes you may want
+control over. Pass one of these attributes as the flag, and its appropriate
+value. This must be called before pygame.display.set_mode()
+*/
+
+Cuando llama a [[#set_mode|pygame.display.set_mode()]] con la opción
+''pygame.OPENGL'', pygame automáticamente maneja la configuración
+de los atributos de OpenGL como el color y el //double buffer//. OpenGL
+ofrece muchos otros atributos que tal vez quiera controlar por su
+cuenta. Indique uno de estos atributos como el parámetro ''flag'' y
+su valor apropiado como ''value''. Esto debe llamarse antes de
+ejecutar [[#set_mode|pygame.display.set_mode()]].
+ 
+/*
+The OPENGL flags are;
+*/
+
+Las opciones de OpenGL, para el argumento ''flag'' son:
+
+/*
+  * GL_ALPHA_SIZE
+  * GL_DEPTH_SIZE
+  * GL_STENCIL_SIZE
+  * GL_ACCUM_RED_SIZE
+  * GL_ACCUM_GREEN_SIZE
+  * GL_ACCUM_BLUE_SIZE
+  * GL_ACCUM_ALPHA_SIZE
+  * GL_MULTISAMPLEBUFFERS
+  * GL_MULTISAMPLESAMPLES
+  * GL_STEREO
+*/
+
+  * GL_ALPHA_SIZE
+  * GL_DEPTH_SIZE
+  * GL_STENCIL_SIZE
+  * GL_ACCUM_RED_SIZE
+  * GL_ACCUM_GREEN_SIZE
+  * GL_ACCUM_BLUE_SIZE
+  * GL_ACCUM_ALPHA_SIZE
+  * GL_MULTISAMPLEBUFFERS
+  * GL_MULTISAMPLESAMPLES
+  * GL_STEREO
+
+  * [[pythonexample>pygame.display.gl_set_attribute|buscar código donde se use esta función.]]
+
+===== get_active =====
+
+/*
+true when the display is active on the display
+*/
+
+Devuelve True cuando la ventana se está mostrando en la pantalla.
+
+<code python>
+pygame.display.get_active(): return bool
+</code>
+
+/*
+After pygame.display.set_mode() is called the display Surface will be visible
+on the screen. Most windowed displays can be hidden by the user. If the
+display Surface is hidden or iconified this will return False.
+*/
+
+Luego de llamar a ''pygame.display.set_mode'' la superficie de visualización
+se hará visible en la pantalla. La mayoría de los sistemas de ventanas
+permiten que el usuario pueda ocultar las ventanas. Esta función retornará
+False si la pantalla de visualización está oculta o minimizada.
+
+  * [[pythonexample>pygame.display.get_active|buscar código donde se use esta función.]]
+
+===== iconify =====
+
+/*
+iconify the display surface
+*/
+
+Minimiza la aplicación.
+
+<code python>
+pygame.display.iconify(): return bool
+</code>
+
+/*
+Request the window for the display surface be iconified or hidden. Not all
+systems and displays support an iconified display. The function will return
+True if successfull.
+*/
+
+Solicita al sistema de ventanas que oculte o minimice la pantalla. No
+todos los sistemas y pantallas soportan esta opción. La función retornará
+True en caso de éxito.
+
+/*
+When the display is iconified pygame.display.get_active() will return
+False. The event queue should receive a ACTIVEEVENT event when the
+window has been iconified.
+*/
+
+Cuando la pantalla está minimizada la función ''pygame.display.get_active()''
+retornará False. La cola de eventos debería recibir el evento ''ACTIVEEVENT''
+cuando la ventana se minimiza.
+
+  * [[pythonexample>pygame.display.iconify|buscar código donde se use esta función.]]
+
+===== toggle_fullscreen =====
+
+/*
+switch between fullscreen and windowed displays
+*/
+
+Alterna entre la visualización de ventana o pantalla completa.
+
+<code python>
+pygame.display.toggle_fullscreen(): return bool
+</code>
+
+/*
+Switches the display window between windowed and fullscreen modes. This
+function only works under the unix x11 video driver. For most situations
+it is better to call pygame.display.set_mode() with new display flags.
+*/
+
+Alterna entre los modos de video pantalla completa y ventana. Esta operación
+solo funciona bajo el controlador x11 de unix. Para la mayoría de
+las situaciones es mejor llamar a ''pygame.display.set_mode()'' con
+las nuevas opciones de pantalla.
+
+
+  * [[pythonexample>pygame.display.toggle_fullscreen|buscar código donde se use esta función.]]
+
+
+===== set_gamma =====
+
+/*
+change the hardware gamma ramps
+*/
+
+Cambia los niveles de color del hardware.
+
+
+<code python>
+pygame.display.set_gamma(red, green=None, blue=None): return bool
+</code>
+
+/*
+Set the red, green, and blue gamma values on the display hardware. If the
+green and blue arguments are not passed, they will both be the same as red.
+Not all systems and hardware support gamma ramps, if the function succeeds
+it will return True.
+*/
+
+Define los niveles de rojo, verde y azul en el hardware de video. Si no
+se especifican los valores verde y azul, ambos se evaluarán como si
+tuvieran el mismo valor que el componente rojo. No todos los sistemas
+y hardware soportan paletas gama, si la función retorna True si
+opera correctamente.
+
+
+
+/*
+A gamma value of 1.0 creates a linear color table. Lower values will darken
+the display and higher values will brighten.
+*/
+
+Un valor gamma de 1.0 genera una tabla de color lineal. Los valores
+inferiores harán mas oscura la pantalla y los valores superiores
+aumentarán el brillo.
+
+  * [[pythonexample>pygame.display.set_gamma|buscar código donde se use esta función.]]
+
+===== set_gamma_ramp =====
+
+/*
+change the hardware gamma ramps with a custom lookup
+*/
+
+Cambia la paleta de colores de hardware con una búsqueda personalizada.
+
+<code python>
+pygame.display.set_gamma_ramp(red, green, blue): return bool
+</code>
+
+
+
+/*
+Set the red, green, and blue gamma ramps with an explicit lookup table.
+Each argument should be sequence of 256 integers. The integers should range
+between 0 and 0xffff. Not all systems and hardware support gamma ramps, if the
+function succeeds it will return True.
+*/
+
+
+Define los niveles de rojo, verde y azul con una tabla de búsqueda explícita.
+Cada argumento debería ser una secuencia de 256 números enteros. Los enteros
+deberían estar entre ''0'' y ''0xffff''. No todos los sistemas
+y hardware soportan paletas gama, si la función retorna True si
+opera correctamente.
+
+
+
+
+  * [[pythonexample>pygame.display.set_gamma_ramp|buscar código donde se use esta función.]]
+
+===== set_icon =====
+
+/*
+change the system image for the display window
+*/
+
+Cambia la imagen de sistema para la ventana.
+
+<code python>
+pygame.display.set_icon(Surface): return None
+</code>
+
+/*
+Sets the runtime icon the system will use to represent the display window.
+All windows default to a simple pygame logo for the window icon.
+*/
+
+Define el icono de ejecución que el sistema usará para representar
+la ventana. Por defecto todas las ventanas muestran el logo de
+pygame como icono de la ventana.
+
+/*
+You can pass any surface, but most systems want a smaller image around 32x32.
+The image can have colorkey transparency which will be passed to the system.
+*/
+
+Puede especificar cualquier superficie, aunque la mayoría de los 
+sistemas esperan una imagen pequeña estilo 32x32. La imagen puede
+tener una transparencia por color clave que será enviada al sistema.
+
+/*
+Some systems do not allow the window icon to change after it has been
+shown. This function can be called before pygame.display.set_mode() to create
+the icon before the display mode is set.
+*/
+
+Algunos sistemas no permite que se cambie el icono luego de que
+la ventana se ha mostrado. Esta función se puede llamar antes de
+''pygame.display.set_mode()'' para crear el icono antes de especificar
+el modo de video.
+
+
+  * [[pythonexample>pygame.display.set_icon|buscar código donde se use esta función.]]
+
+===== set_caption =====
+
+/*
+set the current window caption
+*/
+
+Define el título de la ventana.
+
+<code python>
+pygame.display.set_caption(title, icontitle=None): return None
+</code>
+
+/*
+If the display has a window title, this function will change the name on the
+window. Some systems support an alternate shorter title to be used for
+minimized displays.
+*/
+
+Si la pantalla tiene un título de ventana, esta función cambiará ese título. Algunos sistemas soportan un titulo alternativo mas corto para utilizarse
+en ventanas minimizadas.
+
+
+  * [[pythonexample>pygame.display.set_caption|buscar código donde se use esta función.]]
+
+===== get_caption =====
+
+/*
+get the current window caption
+*/
+
+Obtiene el título de la ventana.
+
+<code python>
+pygame.display.get_caption(): return (title, icontitle)
+</code>
+
+/*
+Returns the title and icontitle for the display Surface. These will often
+be the same value.
+*/
+
+Retorna el título principal y el titulo alternativo (para ventanas
+minimizadas) de la ventana principal. Estos generalmente tienen
+el mismo valor.
+
+  * [[pythonexample>pygame.display.get_caption|buscar código donde se use esta función.]]
+
+===== set_palette =====
+
+/*
+set the display color palette for indexed displays
+*/
+
+Define la paleta de colores para modos de video indexado.
+
+<code python>
+pygame.display.set_palette(palette=None): return None
+</code>
+
+/*
+This will change the video display color palette for 8bit displays. This does
+not change the palette for the actual display Surface, only the palette that
+is used to display the Surface. If no palette argument is passed, the system
+default palette will be restored. The palette is a sequence of RGB triplets*/
+
+Cambiará la paleta de colores para pantallas de 8bit. No cambia la paleta
+de la superficie de visualización, solo cambia la palera que se usa para
+mostrar la superficie. Si no se especifica un argumento, se restaurará la
+paleta por defecto. La palera es una secuencia de ternas RGB.
+
+  * [[pythonexample>pygame.display.set_palette|buscar código donde se use esta función.]]

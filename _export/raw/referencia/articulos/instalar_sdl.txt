@@ -1,0 +1,232 @@
+{{:referencia:articulos:instalar_sdl:instalar_sdl.pdf|Ver PDF}}
+====== Guia de instalación de las bibliotecas SDL en GNU/Linux ======
+
+===== Créditos =====
+
+  * **Autor:** Hugo Ruscitti
+  * **Fecha:** 6 de Febrero del 2005
+
+
+
+===== Introducción =====
+
+
+
+
+Algunas distribuciones de GNU/Linux incluyen las bibliotecas SDL y todo lo necesario entre sus archivos de instalación. Con lo cual la instalación en esos sistemas es demasiado sencilla para crear un documento de instalación.
+
+Lo primero que debe hacer es buscar los archivos que muestro a continuación en su distribución, ya sea en formato RPM, deb... desde CDROMs oficiales o Internet. Si no encuentra esos archivos o quiere seguir leyendo, adelante.
+
+En esta guia explico otro procedimiento de instalación, que funciona con cualquier distribución: Instalaremos las bibliotecas compilando sus archivos fuente.
+
+
+===== Requisitos =====
+
+
+==== Compilador de C ====
+
+
+Lo primero que necesita tener es el compilador de lenguaje C (gcc) y sus bibliotecas, generalmente estos requisitos están cubiertos por todas las distribuciones de GNU/Linux.
+
+Puede verificar si tiene instalado el compilador gcc ejecutando: 
+
+<code>
+gcc -version
+</code>
+
+Se obtiene un mensaje como el siguiente:
+
+<code>
+gcc (GCC) 3.3.4 (Debian 1:3.3.4-13) Copyright (C) 2003 
+Free Software Foundation, Inc.Esto es software libre;
+vea el código para las condiciones de copia. NO hay garantía;
+ni siquiera para MERCANTIBILIDAD o IDONEIDAD PARA UN
+PROPÓSITO EN PARTICULAR.
+</code>
+
+También es recomendable instalar un compilador de lenguaje C++, la mayoría de nuestros trabajos se desarrollan en este lenguaje.
+
+Para verificar si tiene este compilador ejecute:
+
+<code>
+g++ -version
+</code>
+
+La salida es similar a la anterior:
+
+<code>
+g++ (GCC) 3.3.4 (Debian 1:3.3.4-13)Copyright (C) 2003 Free Software Foundation, Inc.Esto es software libre;
+vea el código para las condiciones de copia. NO hay garantía;
+ni siquiera para MERCANTIBILIDAD o IDONEIDAD PARA UN PROPÓSITO EN PARTICULAR
+</code>
+
+
+==== Requerimientos ====
+
+
+Por último debe tener los archivos de código fuente de las bibliotecas:
+
+  * libSDL
+  * libSDL_image
+  * libSDL_mixer
+  * libpng
+  * libjpeg
+  * zlib
+
+<note>zlib, libpng y libjpeg son necesarias para libSDL_image, antes de descargarlas busquelas en su sistema, seguramente las tendrá y podrá evitar instalarlas nuevamente.</note>
+
+
+===== Obtener las Bibliotecas: =====
+
+
+Si bien solo es realmente necesaria la biblioteca libSDL, el resto de las bibliotecas brindan mayores funcionalidades que utilizamos con frecuencia. Por ejemplo libSDL, solo tiene soporte para imágenes de tipo BMP, mientras que libSDL_image añade la posibilidad de cargar imágenes png, jpeg, pcx, etc.
+
+Puede obtener las bibliotecas desde sus sitios oficiales o desde nuestro sitio. Si tiene tiempo para buscar, le recomiendo que visite los sitios oficiales para obtener las versiones mas recientes.
+
+^ Biblioteca   ^ Bajar desde   ^ Visitar       ^
+| libSDL       | [[http://www.libsdl.org/release/SDL-1.2.8.tar.gz|Sitio oficial]] | [[http://www.libsdl.org/|Sitio oficial]] |
+| libSDL_image | [[http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4.tar.gz|Sitio oficial]] | [[http://www.libsdl.org/|Sitio oficial]] |
+| libSDL_mixer | [[http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6.tar.gz|Sitio oficial]] | [[http://www.libsdl.org/|Sitio oficial]] |
+| libpng       | [[http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/libpng-1.2.8-config.tar.gz|Este sitio]]    | [[http://www.libpng.org/|Sitio oficial]] |
+| libjpeg      | [[http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/jpegsrc.v6b.tar.gz|Este sitio]]    | [[http://www.ijg.org/|Sitio oficial]] |
+| zlib         | [[http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/zlib-1.2.1.tar.gz|Este sitio]]    | [[http://www.gzip.org/zlib|Sitio oficial]] |
+
+
+==== Descompresión ====
+
+
+Vamos a suponer que guardó todos estos archivos en un directorio llamado 'descargas' y pide un listado de archivos:
+
+<code>
+lsjpegsrc.v6b.tar.gz
+SDL-1.2.8.tar.gz
+SDL_mixer-1.2.6.tar.gz
+libpng-1.2.8-config.tar.gz
+SDL_image-1.2.4.tar.gzzlib-1.2.1.tar.gz
+</code>
+
+Todos los archivos están comprimidos con gzip. Si tiene alguna duda de ello recuerde que el comando 'file' le informa acerca del contenido de un archivo sin verificar la extensión del mismo:
+
+<code>
+file SDL-1.2.3.tar.gzSDL-1.2.8.tar.gz: gzip compressed data, from Unix
+</code>
+
+Para terminar este paso solo resta descomprimir cada una de los archivos:
+
+<code>
+tar xzvf jpegsrc.v6b.tar.gz
+tar xzvf SDL-1.2.8.tar.gz
+tar xzvf SDL_mixer-1.2.6.tar.gz
+tar xzvf libpng-1.2.8-config.tar.gz
+tar xzvf SDL_image-1.2.4.tar.gz
+tar xzvf zlib-1.2.1.tar.gz
+</code>
+
+<note tip>
+Consejo: con la tecla de tabulación <key>TAB</key> el interprete de comandos habitual de GNU/Linux (bash) auto-completa los nombres de ficheros y comandos, pruebe 'tar xzvf zl'.
+</note>
+
+
+==== Configurar e instalar: ====
+
+
+Luego de la descompresión se genera un directorio por cada archivo tar.gz, con ficheros de desarrollo y documentación como README o INSTALL, léalos si tiene la posibilidad:
+
+<code>
+lsSDL-1.2.8SDL_mixer-1.2.6zlib-1.2.1jpeg-6blibpng-1.2.8-configSDL_image-1.2.4
+</code>
+
+Tiene que entrar en cada uno de estos directorios (cd 'directorio') respetando el orden de la lista anterior y ejecutar en cada uno de estos comandos:
+
+<code>
+./configuremakesu (solo si no es el usuario administrador = root)
+make installexit (si ejecutó 'su' anteriormente)
+</code>
+
+Si todo salió bien tendrá algunos comandos nuevos como 'sdl-config'.
+
+
+==== ¿Donde están los nuevos archivos? ====
+
+
+Los mas importantes están en:
+
+  * /usr/local/include/SDL      //- ficheros de cabecera//
+  * /usr/local/bin              //- sdl-config//
+  * /usr/local/lib              //- bibliotecas//
+  * /usr/local/man              //- paginas de manuales//
+
+
+==== Verificando si funciona ====
+
+
+Hasta aquí todo debería funcionar correctamente, puede compilar uno de nuestros juegos o intentar con un ejemplo como el siguiente:
+
+Genere un archivo llamado main.c con el siguiente código:
+
+<code c>
+#include <SDL/SDL.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char * argv [])
+{
+        SDL_Surface *screen;
+        SDL_Event event;
+
+        if (SDL_Init(SDL_INIT_VIDEO) == -1)
+        {
+                printf("Error en SDL_Init: %s\n", SDL_GetError());
+                return 1;
+        }
+
+        atexit(SDL_Quit);
+
+        screen = SDL_SetVideoMode(320, 200, 16, SDL_ANYFORMAT);
+
+        if (screen == NULL)
+        {
+                printf("Error en SDL_SetVideoMode: %s\n", SDL_GetError());
+                return 1;
+        }
+
+        SDL_WM_SetCaption("Ejemplo base", NULL)
+
+        while (1)
+        {
+                while (SDL_PollEvent(& event))
+                {
+                        if (event.type == SDL_QUIT)
+                                return 0;
+                }
+        }
+
+        return 0;
+}
+</code>
+
+Una vez generado el archivo tiene que compilarlo, le proponemos dos formas:
+
+<code>
+gcc -o test main.c -lSDL -lpthread
+</code>
+
+o bien
+
+<code>
+gcc -o test main.c `sdl-config --libs`
+</code>
+
+y para ejecutar la demostración:
+
+<code>
+./test
+</code>
+
+con este ejemplo solo vemos que la biblioteca SDL funciona, pero nos falta SDL_image y SDL_mixer, compilemos nuevamente:
+
+<code>
+gcc -o test main.c -lSDL -lpthread -lSDL_mixer -lSDL_image
+</code>
+
+Si bien no modificamos los fuentes para agregar la funcionalidad extra que nos proveen estas bibliotecas, compilando nuevamente sabremos si al menos la instalación fue correcta.

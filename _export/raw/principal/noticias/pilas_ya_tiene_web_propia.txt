@@ -1,0 +1,23 @@
+====== Pilas ya tiene web propia ======
+
+Como muchos ya saben, comenzamos a realizar
+un motor de videojuegos llamado Pilas. 
+
+{{:logotipos:pilas-logo.png|logotipo de pilas}}
+
+Y la nueva noticias es que ahora tenemos web:
+
+http://www.pilas-engine.com.ar
+
+
+
+Para conocer mas del proyecto te invitamos a que
+veas la web y consultes en el foro.
+
+Saludos.
+
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

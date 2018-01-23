@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.loosersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.loosersjuegos.com.ar/feed.php">
+        <title>Losersjuegos software</title>
+        <description></description>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.loosersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T16:01:02+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/livecd?rev=1275878067&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.loosersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.loosersjuegos.com.ar/</link>
+        <url>http://www.loosersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-09-02T05:34:10+04:00</dc:date>
+        <title>Cargadores de juegos</title>
+        <link>http://www.loosersjuegos.com.ar/software/cargadores?rev=1283391250&amp;do=diff</link>
+        <description>Los cargadores de juegos sirven para simplificar la ejecución de
+juegos en Windows.
+
+Aquí encontrarás una lista de los cargadores que armamos para
+distintas bibliotecas. Escoje el que te resulte mas útil, y si
+quieres saber cómo se han realizado lee el artículo de esta web.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2014-03-09T07:02:13+04:00</dc:date>
+        <title>Gimp Plugins</title>
+        <link>http://www.loosersjuegos.com.ar/software/gimp?rev=1394334133&amp;do=diff</link>
+        <description>Gimp es uno de los editores de imagenes libre mas importantes, y como
+desarrolladores de juegos lo usamos con frecuencia.
+
+Esta pagina reune complementos para que desarrollar graficos para juegos
+te resulte mas sencillo.
+
+SpriteSheet Tool
+
+
+El complemento SpriteSheet Tool ha sido desarrollado por
+Hugo Ruscitti para que puedas manejar
+grillas de sprites muy facilmente.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/livecd?rev=1275878067&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-06-07T06:34:27+04:00</dc:date>
+        <title>Ubuntu personalizado para hacer videojuegos</title>
+        <link>http://www.loosersjuegos.com.ar/software/livecd?rev=1275878067&amp;do=diff</link>
+        <description>...
+
+
+Introducción
+
+
+Este sistema es una versión no oficial de la distribución Ubuntu, el motivo de su creación es facilitar la tarea de futuros programadores brindando un sistema con diversas herramientas de desarrollo, documentación y programas de ejemplo.</description>
+    </item>
+    <item rdf:about="http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2011-04-26T17:59:15+04:00</dc:date>
+        <title>Pilas engine</title>
+        <link>http://www.loosersjuegos.com.ar/software/pilas?rev=1303826355&amp;do=diff</link>
+        <description>Pilas es un motor para hacer videojuegos de manera sencilla.
+
+Está dirigido a personas que comienzan a programar videojuegos y quieren lograr resultados interesantes y divertidos en poco tiempo.
+
+Visita el sitio oficial del proyecto para obtener mas información.</description>
+    </item>
+</rdf:RDF>

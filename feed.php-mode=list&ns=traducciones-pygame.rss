@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2-ppt DokuWiki" -->
+<?xml-stylesheet href="http://www.losersjuegos.com.ar/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://www.losersjuegos.com.ar/feed.php">
+        <title>Losersjuegos traducciones:pygame</title>
+        <description></description>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <image rdf:resource="http://www.losersjuegos.com.ar/lib/images/favicon.ico" />
+       <dc:date>2014-03-10T21:49:06+04:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/cdrom?rev=1229457178&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/color?rev=1231351952&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/cursors?rev=1232474633&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/display?rev=1232475087&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/draw?rev=1229628425&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/event?rev=1232475361&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/font?rev=1231623671&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/image?rev=1273532951&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/joystick?rev=1232217006&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/key?rev=1232475720&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/mask?rev=1232475565&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/mixer?rev=1232475873&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/mouse?rev=1232565728&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/movie?rev=1232218055&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/overlay?rev=1233079776&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/pixelarray?rev=1233151966&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/pygametop?rev=1232474237&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/rect?rev=1230259291&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/scrap?rev=1233251230&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sndarray?rev=1232048605&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/sprite?rev=1233448133&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/surface?rev=1232919394&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/surfarray?rev=1233417556&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/time?rev=1228506046&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/transform?rev=1230574804&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.losersjuegos.com.ar/traducciones/pygame/version?rev=1229455199&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://www.losersjuegos.com.ar/lib/images/favicon.ico">
+        <title>Losersjuegos</title>
+        <link>http://www.losersjuegos.com.ar/</link>
+        <url>http://www.losersjuegos.com.ar/lib/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/cdrom?rev=1229457178&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-16T22:52:58+04:00</dc:date>
+        <title>cdrom</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/cdrom?rev=1229457178&amp;do=diff</link>
+        <description>Módulo de pygame para controlar CDROM de audio.
+
+	*  
+	*  
+	*  
+	*  
+
+
+ Otras páginas: 
+
+	*  CD
+
+
+
+
+El módulo cdrom gestiona dispositivos de CD y DVD en una computadora. Puede
+incluso controlar la reproducción de CDs de audio. Antes de hacer algo tiene que
+iniciar el módulo. Cada objeto CD que usted genera representa un dispositivo
+de CD que además necesita inicializarse individualmente antes de hacer la mayoría
+de las cosas.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/color?rev=1231351952&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-07T21:12:32+04:00</dc:date>
+        <title>Color</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/color?rev=1231351952&amp;do=diff</link>
+        <description>Objeto de pygame para representaciones de color.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Color
+
+
+pygame.Color(name): Return Color
+pygame.Color(r, g, b, a): Return Color
+pygame.Color(rgbvalue): Return Color
+
+
+
+
+La clase Color representa valores de color RGBA usando un rango de
+valores de 0 a 255. Permite operaciones aritméticas básica para 
+crear colores nuevos, soporta conversiones a otros formato de
+color como HSV o HLS y le permite ajuntar canales de color de
+manera individu…</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/cursors?rev=1232474633&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:03:53+04:00</dc:date>
+        <title>cursors</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/cursors?rev=1232474633&amp;do=diff</link>
+        <description>Módulo de pygame para cursores de mouse.
+
+	*  
+	*  
+
+
+
+Pygame ofrece control sobre el cursor de hardware del sistema. Pygame solo
+soporta cursores blancos y negros para el sistema. Usted controla
+el cursor del mouse con funciones del módulo pygame.mouse.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/display?rev=1232475087&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:11:27+04:00</dc:date>
+        <title>display</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/display?rev=1232475087&amp;do=diff</link>
+        <description>Módulo de pygame para controlar la ventana y pantalla de visualización.
+
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+ Otras páginas: 
+
+	*  Info
+
+
+
+
+Este módulo ofrece control sobre la visualización de pygame. Pygame
+contiene una sola superficie de visualización que puede estar contenida
+en una ventana o bien correr en pantalla completa. Una vez que cree la
+pantalla de visualización podrá tratarla como una superficie nor…</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/draw?rev=1229628425&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-18T22:27:05+04:00</dc:date>
+        <title>draw</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/draw?rev=1229628425&amp;do=diff</link>
+        <description>Módulo de pygame para dibujar figuras.
+
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+
+Dibuja varias figuras simples a una superficie. Estas funciones servirán
+para pintar en cualquier formato de superficie. Aunque dibujar en superficies
+almacenadas en Hardware será mas lento que en superficies de Software.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/event?rev=1232475361&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:16:01+04:00</dc:date>
+        <title>event</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/event?rev=1232475361&amp;do=diff</link>
+        <description>Módulo de pygame para interactuar con eventos y pedidos.
+
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+ Otras páginas: 
+
+	*  Event
+
+
+
+Pygame maneja todos sus mensajes de eventos a través de una cola
+de eventos. Las rutinas de este módulo le ayudarán a manejar esta
+cola de eventos. Los eventos de entrada son extremadamente dependientes
+del módulo display de pygame. La cola de eventos no funcionará a menos
+que se halla inicializado el módulo display y el modo de vide…</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/font?rev=1231623671&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-11T00:41:11+04:00</dc:date>
+        <title>font</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/font?rev=1231623671&amp;do=diff</link>
+        <description>Módulo de pygame para cargar y dibujar fuentes.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+Otras páginas:
+
+
+	*  Font
+	*  SysFont
+
+
+
+
+El módulo font permite dibujar fuentes TrueType sobre objetos Surface
+nuevos. Este módulo es opcional y requiere SDL_ttf como una
+dependencia. Usted debería verificar si pygame.font está disponible
+e inicializado antes de intentar utilizarlo.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/image?rev=1273532951&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2010-05-11T03:09:11+04:00</dc:date>
+        <title>pygame.image</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/image?rev=1273532951&amp;do=diff</link>
+        <description>Módulo de pygame para la transferencia de imagen.
+
+	*  load
+	*  save
+	*  get_extended
+	*  tostring
+	*  fromstring
+	*  frombuffer
+
+
+
+El módulo image contiene funciones para leer y grabar imágenes, como
+así también para transferir superficies a formatos accesibles para
+otros paquetes.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/joystick?rev=1232217006&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T21:30:06+04:00</dc:date>
+        <title>joystick</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/joystick?rev=1232217006&amp;do=diff</link>
+        <description>Módulo de pygame para interactuar con dispositivos de joystick.
+
+	*  
+	*  
+	*  
+	*  
+
+
+En otra pagina:
+
+
+	*  Joystick
+
+
+
+
+El módulo joystick gestiona los dispositivos de joystick en
+una computadora (podría haber mas de uno). Los dispositivos de
+joystick incluye controles analógicos y tradicionales, y este
+módulo incluso permite usar múltiples botones y palancas.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/key?rev=1232475720&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:22:00+04:00</dc:date>
+        <title>key</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/key?rev=1232475720&amp;do=diff</link>
+        <description>Este modulo contiene funciones para gestionar el dispositivo de teclado.
+
+	*   
+	*   
+	*   
+	*   
+	*   
+	*   
+	*  
+
+
+
+
+
+
+La cola de eventos obtiene eventos como pygame.KEYDOWN y pygame.KEYUP cuando se pulsan o
+sueltan las teclas del teclado respectivamente. Cada evento tiene una atributo llamado key que es un identificador en entero que representa cada tecla del teclado.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/mask?rev=1232475565&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:19:25+04:00</dc:date>
+        <title>mask</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/mask?rev=1232475565&amp;do=diff</link>
+        <description>Módulo de pygame para gestionar máscaras de imágenes.
+
+	*  
+
+ Otras páginas: 
+
+	*  Mask
+
+
+
+Útiles para detectar colisiones entre píxeles perfecta. Una máscara
+utiliza 1 bit por píxel para almacenar qué partes de una imagen
+pueden colisionar.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/mixer?rev=1232475873&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T21:24:33+04:00</dc:date>
+        <title>mixer</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/mixer?rev=1232475873&amp;do=diff</link>
+        <description>Módulo de pygame para cargar y reproducir sonidos.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+Otras páginas
+
+
+	*  Channel
+	*  Sound
+	*  music
+
+
+
+Este módulo contiene clases para crear objetos Sound y controlar
+la reproducción de audio. El módulo mixer es opcional y depende
+de SDL_mixer. Antes de usar este módulo su programa debería
+verificar si el módulo pygame.mixer está disponible.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/mouse?rev=1232565728&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-21T22:22:08+04:00</dc:date>
+        <title>mouse</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/mouse?rev=1232565728&amp;do=diff</link>
+        <description>Módulo de pygame para utilizar el mouse.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+
+Las funciones de este módulo se pueden usar para obtener el estado
+actual del dispositivo de mouse. Estas funciones también pueden
+alterar el cursor del sistema.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/movie?rev=1232218055&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-17T21:47:35+04:00</dc:date>
+        <title>movie</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/movie?rev=1232218055&amp;do=diff</link>
+        <description>Módulo de pygame para reproducir video mpeg.
+
+Otras páginas:
+	*  Movie
+
+
+
+
+Pygame puede reproducir audio y video desde archivos de video
+codificados con MPEG1. La reproducción de video ocurre en segundo plano (en
+un hilo diferente), lo que hace mas sencillo de manejar la reproducción.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/overlay?rev=1233079776&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-27T21:09:36+04:00</dc:date>
+        <title>Overlay</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/overlay?rev=1233079776&amp;do=diff</link>
+        <description>Objeto de pygame para gráficos de video 
+overlay
+
+	*  
+	*  
+	*  
+	*  
+
+
+pygame.Overlay(format, (width, height)): return Overlay
+
+
+
+
+
+El objeto Overlay provee soporte para acceder a superficies
+overlay de hardware. Los overlay de video no usan el formato
+estándar RGB y pueden usar diferentes resoluciones de datos para
+crear un sola imagen.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/pixelarray?rev=1233151966&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-28T17:12:46+04:00</dc:date>
+        <title>PixelArray</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/pixelarray?rev=1233151966&amp;do=diff</link>
+        <description>Objeto de pygame para obtener acceso directo a los pixels de las
+superficies.
+
+	*  PixelArray
+	*  surface
+	*  make_surface
+	*  replace
+	*  extract
+	*  compare
+
+PixelArray
+
+
+pygame.PixelArray(Surface): return PixelArray
+
+
+
+
+La clase PixelArray envuelve una superficie y provee acceso
+directo a sus pixels, usando una matriz de dos dimensiones. Soporta
+operaciones como slicing (tajadas o rebanadas), manipulación
+de pixel o fila y asignaciones aunque no se permiten las operaciones
+de suma, resta, mu…</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/pygametop?rev=1232474237&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-20T20:57:17+04:00</dc:date>
+        <title>pygametop</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/pygametop?rev=1232474237&amp;do=diff</link>
+        <description>El paquete pygame de nivel superior.
+
+	*  init
+	*  quit
+	*  error
+	*  get_error
+	*  get_sdl_version
+	*  get_sdl_byteorder
+	*  register_quit
+
+
+
+
+El paquete pygame representa el paquete de nivel superior para los demás.
+Pygame en sí está dividida en varios submódulos, aunque esto no afecta a
+los programas que utilizan la biblioteca.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/rect?rev=1230259291&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-26T05:41:31+04:00</dc:date>
+        <title>Rect</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/rect?rev=1230259291&amp;do=diff</link>
+        <description>Objeto de pygame que se utiliza para almacenar coordenadas rectangulares.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+Rect
+
+
+pygame.Rect(left, top, width, height): return Rect
+pygame.Rect((left, top), (width, height)): return Rect
+pygame.Rect(object): return Rect</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/scrap?rev=1233251230&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-29T20:47:10+04:00</dc:date>
+        <title>scrap</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/scrap?rev=1233251230&amp;do=diff</link>
+        <description>Módulo de pygame que ofrece soporte para el portapapeles (clipboard).
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+
+El módulo scrap se utiliza para obtener o colocar cosas en el
+portapapeles. De forma que pueda copiar y pegar datos entre pygame
+y otro tipo de aplicaciones. Este módulo define algunos tipos
+de datos básicos:</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sndarray?rev=1232048605&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-15T22:43:25+04:00</dc:date>
+        <title>sndarray</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sndarray?rev=1232048605&amp;do=diff</link>
+        <description>Módulo de pygame para acceder a muestras de sonido.
+
+	*  array
+	*  make_sound
+	*  use_arraytype
+	*  get_arraytype
+	*  get_arraytypes
+
+
+
+Contiene funciones para convertir desde objetos de sonido a vectores
+de Numeric o numpy. Este módulo estará disponible solo cuando
+pygame pueda utilizar los paquetes Numeric o numpy.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/sprite?rev=1233448133&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-02-01T03:28:53+04:00</dc:date>
+        <title>sprite</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/sprite?rev=1233448133&amp;do=diff</link>
+        <description>Módulo de pygame con clases básicas de objetos para juegos.
+
+	*  spritecollide
+	*  collide_rect
+	*  collide_rect_ratio
+	*  collide_circle
+	*  collide_circle_ratio
+	*  collide_mask
+	*  groupcollide
+	*  spritecollideany
+
+
+Otras paginas:
+
+	*  Sprite
+	*  Group
+	*  GroupSingle
+	*  LayeredDirty
+	*  DirtySprite
+	*  LayeredUpdates
+	*  OrderedUpdates
+	*  RenderUpdates</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/surface?rev=1232919394&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-26T00:36:34+04:00</dc:date>
+        <title>Surface</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/surface?rev=1232919394&amp;do=diff</link>
+        <description>Objeto de pygame para representar imágenes.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/surfarray?rev=1233417556&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2009-01-31T18:59:16+04:00</dc:date>
+        <title>surfarray</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/surfarray?rev=1233417556&amp;do=diff</link>
+        <description>Módulo de pygame para acceder a los pixels de una superficie
+usando una matriz como interfaz.
+
+	*  array2d
+	*  pixels2d
+	*  array3d
+	*  pixels3d
+	*  array_alpha
+	*  pixels_alpha
+	*  array_colorkey
+	*  make_surface
+	*  blit_array
+	*  map_array
+	*  use_arraytype
+	*  get_arraytype
+	*  get_arraytypes</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/time?rev=1228506046&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-05T22:40:46+04:00</dc:date>
+        <title>time</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/time?rev=1228506046&amp;do=diff</link>
+        <description>Módulo de pygame para gestionar tiempo.
+
+	*  
+	*  
+	*  
+	*  
+
+
+ En otra pagina: 
+
+
+	*  Clock
+
+
+
+El tiempo se representa en milisegundos, lo cual es equivalente a
+Segundos*1000. (Por lo que 2500 milisegundos son 2.5 segundos).
+
+La mayoría de las plataformas tienen una resolución de tiempo limitada a 10
+milisegundos (aproximadamente.)</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/transform?rev=1230574804&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-29T21:20:04+04:00</dc:date>
+        <title>transform</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/transform?rev=1230574804&amp;do=diff</link>
+        <description>Módulo de pygame para transformar superficies.
+
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+	*  
+
+
+
+Una transformación de superficie es una operación que mueve dimensiona los
+píxeles. Todos estas funciones toman una superficie sobre la que operan
+y devuelven una nueva superficie con los resultados.</description>
+    </item>
+    <item rdf:about="http://www.losersjuegos.com.ar/traducciones/pygame/version?rev=1229455199&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2008-12-16T22:19:59+04:00</dc:date>
+        <title>version</title>
+        <link>http://www.losersjuegos.com.ar/traducciones/pygame/version?rev=1229455199&amp;do=diff</link>
+        <description>Módulo que contiene información de la versión.
+
+	*  
+	*  
+
+
+
+
+Este módulo se incorpora automáticamente dentro del paquete pygame y ofrece
+unas variables para verificar qué versión de pygame tiene el sistema.
+
+ver
+
+
+
+
+Número de versión como una cadena.</description>
+    </item>
+</rdf:RDF>

@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>referencia:articulos:instalar_sdl</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-02-07T22:10:20+0300" />
+<meta name="keywords" content="referencia,articulos,instalar_sdl" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../referencia/articulos/instalar_sdl-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=referencia-articulos.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="instalar_sdl.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/referencia/articulos/instalar_sdl.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#guia_de_instalacion_de_las_bibliotecas_sdl_en_gnulinux" class="toc">Guia de instalación de las bibliotecas SDL en GNU/Linux</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#creditos" class="toc">Créditos</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#introduccion" class="toc">Introducción</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#requisitos" class="toc">Requisitos</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#compilador_de_c" class="toc">Compilador de C</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#requerimientos" class="toc">Requerimientos</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#obtener_las_bibliotecas" class="toc">Obtener las Bibliotecas:</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#descompresion" class="toc">Descompresión</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#configurar_e_instalar" class="toc">Configurar e instalar:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#donde_estan_los_nuevos_archivos" class="toc">¿Donde están los nuevos archivos?</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#verificando_si_funciona" class="toc">Verificando si funciona</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<p>
+<a href="../../../../_media/referencia/articulos/instalar_sdl/instalar_sdl.pdf" class="media mediafile mf_pdf" title="referencia:articulos:instalar_sdl:instalar_sdl.pdf">Ver PDF</a>
+
+</p>
+
+<h1><a name="guia_de_instalacion_de_las_bibliotecas_sdl_en_gnulinux" id="guia_de_instalacion_de_las_bibliotecas_sdl_en_gnulinux">Guia de instalación de las bibliotecas SDL en GNU/Linux</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Guia de instalación de las bibliotecas SDL en GNU/Linux" [65-136] -->
+<h2><a name="creditos" id="creditos">Créditos</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Autor:</strong> Hugo Ruscitti</div>
+</li>
+<li class="level1"><div class="li"> <strong>Fecha:</strong> 6 de Febrero del 2005</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Créditos" [137-228] -->
+<h2><a name="introduccion" id="introduccion">Introducción</a></h2>
+<div class="level2">
+
+<p>
+Algunas distribuciones de GNU/Linux incluyen las bibliotecas SDL y todo lo necesario entre sus archivos de instalación. Con lo cual la instalación en esos sistemas es demasiado sencilla para crear un documento de instalación.
+</p>
+
+<p>
+Lo primero que debe hacer es buscar los archivos que muestro a continuación en su distribución, ya sea en formato RPM, deb… desde CDROMs oficiales o Internet. Si no encuentra esos archivos o quiere seguir leyendo, adelante.
+</p>
+
+<p>
+En esta guia explico otro procedimiento de instalación, que funciona con cualquier distribución: Instalaremos las bibliotecas compilando sus archivos fuente.
+</p>
+
+</div>
+<!-- SECTION "Introducción" [229-879] -->
+<h2><a name="requisitos" id="requisitos">Requisitos</a></h2>
+<div class="level2">
+
+</div>
+<!-- SECTION "Requisitos" [880-904] -->
+<h3><a name="compilador_de_c" id="compilador_de_c">Compilador de C</a></h3>
+<div class="level3">
+
+<p>
+Lo primero que necesita tener es el compilador de lenguaje C (gcc) y sus bibliotecas, generalmente estos requisitos están cubiertos por todas las distribuciones de GNU/Linux.
+</p>
+
+<p>
+Puede verificar si tiene instalado el compilador gcc ejecutando: 
+</p>
+<pre class="code">
+gcc -version
+</pre>
+
+<p>
+Se obtiene un mensaje como el siguiente:
+</p>
+<pre class="code">
+gcc (GCC) 3.3.4 (Debian 1:3.3.4-13) Copyright (C) 2003 
+Free Software Foundation, Inc.Esto es software libre;
+vea el código para las condiciones de copia. NO hay garantía;
+ni siquiera para MERCANTIBILIDAD o IDONEIDAD PARA UN
+PROPÓSITO EN PARTICULAR.
+</pre>
+
+<p>
+También es recomendable instalar un compilador de lenguaje C++, la mayoría de nuestros trabajos se desarrollan en este lenguaje.
+</p>
+
+<p>
+Para verificar si tiene este compilador ejecute:
+</p>
+<pre class="code">
+g++ -version
+</pre>
+
+<p>
+La salida es similar a la anterior:
+</p>
+<pre class="code">
+g++ (GCC) 3.3.4 (Debian 1:3.3.4-13)Copyright (C) 2003 Free Software Foundation, Inc.Esto es software libre;
+vea el código para las condiciones de copia. NO hay garantía;
+ni siquiera para MERCANTIBILIDAD o IDONEIDAD PARA UN PROPÓSITO EN PARTICULAR
+</pre>
+
+</div>
+<!-- SECTION "Compilador de C" [905-2031] -->
+<h3><a name="requerimientos" id="requerimientos">Requerimientos</a></h3>
+<div class="level3">
+
+<p>
+Por último debe tener los archivos de código fuente de las bibliotecas:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> libSDL</div>
+</li>
+<li class="level1"><div class="li"> libSDL_image</div>
+</li>
+<li class="level1"><div class="li"> libSDL_mixer</div>
+</li>
+<li class="level1"><div class="li"> libpng</div>
+</li>
+<li class="level1"><div class="li"> libjpeg</div>
+</li>
+<li class="level1"><div class="li"> zlib</div>
+</li>
+</ul>
+
+<div class="noteclassic">zlib, libpng y libjpeg son necesarias para libSDL_image, antes de descargarlas busquelas en su sistema, seguramente las tendrá y podrá evitar instalarlas nuevamente.
+</div>
+
+</div>
+<!-- SECTION "Requerimientos" [2032-2394] -->
+<h2><a name="obtener_las_bibliotecas" id="obtener_las_bibliotecas">Obtener las Bibliotecas:</a></h2>
+<div class="level2">
+
+<p>
+Si bien solo es realmente necesaria la biblioteca libSDL, el resto de las bibliotecas brindan mayores funcionalidades que utilizamos con frecuencia. Por ejemplo libSDL, solo tiene soporte para imágenes de tipo BMP, mientras que libSDL_image añade la posibilidad de cargar imágenes png, jpeg, pcx, etc.
+</p>
+
+<p>
+Puede obtener las bibliotecas desde sus sitios oficiales o desde nuestro sitio. Si tiene tiempo para buscar, le recomiendo que visite los sitios oficiales para obtener las versiones mas recientes.
+
+</p>
+<table class="inline">
+	<tr class="row0">
+		<th class="col0 leftalign"> Biblioteca   </th><th class="col1 leftalign"> Bajar desde   </th><th class="col2 leftalign"> Visitar       </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> libSDL       </td><td class="col1"> <a href="http://www.libsdl.org/release/SDL-1.2.8.tar.gz" class="urlextern" title="http://www.libsdl.org/release/SDL-1.2.8.tar.gz"  rel="nofollow">Sitio oficial</a> </td><td class="col2"> <a href="http://www.libsdl.org/" class="urlextern" title="http://www.libsdl.org/"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> libSDL_image </td><td class="col1"> <a href="http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4.tar.gz" class="urlextern" title="http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.4.tar.gz"  rel="nofollow">Sitio oficial</a> </td><td class="col2"> <a href="http://www.libsdl.org/" class="urlextern" title="http://www.libsdl.org/"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> libSDL_mixer </td><td class="col1"> <a href="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6.tar.gz" class="urlextern" title="http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.6.tar.gz"  rel="nofollow">Sitio oficial</a> </td><td class="col2"> <a href="http://www.libsdl.org/" class="urlextern" title="http://www.libsdl.org/"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> libpng       </td><td class="col1 leftalign"> <a href="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/libpng-1.2.8-config.tar.gz" class="urlextern" title="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/libpng-1.2.8-config.tar.gz"  rel="nofollow">Este sitio</a>    </td><td class="col2"> <a href="http://www.libpng.org/" class="urlextern" title="http://www.libpng.org/"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> libjpeg      </td><td class="col1 leftalign"> <a href="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/jpegsrc.v6b.tar.gz" class="urlextern" title="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/jpegsrc.v6b.tar.gz"  rel="nofollow">Este sitio</a>    </td><td class="col2"> <a href="http://www.ijg.org/" class="urlextern" title="http://www.ijg.org/"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> zlib         </td><td class="col1 leftalign"> <a href="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/zlib-1.2.1.tar.gz" class="urlextern" title="http://www.losersjuegos.com.ar/referencia/articulos/instalar_sdl/descargas/zlib-1.2.1.tar.gz"  rel="nofollow">Este sitio</a>    </td><td class="col2"> <a href="http://www.gzip.org/zlib" class="urlextern" title="http://www.gzip.org/zlib"  rel="nofollow">Sitio oficial</a> </td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "Obtener las Bibliotecas:" [2395-3947] -->
+<h3><a name="descompresion" id="descompresion">Descompresión</a></h3>
+<div class="level3">
+
+<p>
+Vamos a suponer que guardó todos estos archivos en un directorio llamado &#039;descargas&#039; y pide un listado de archivos:
+</p>
+<pre class="code">
+lsjpegsrc.v6b.tar.gz
+SDL-1.2.8.tar.gz
+SDL_mixer-1.2.6.tar.gz
+libpng-1.2.8-config.tar.gz
+SDL_image-1.2.4.tar.gzzlib-1.2.1.tar.gz
+</pre>
+
+<p>
+Todos los archivos están comprimidos con gzip. Si tiene alguna duda de ello recuerde que el comando &#039;file&#039; le informa acerca del contenido de un archivo sin verificar la extensión del mismo:
+</p>
+<pre class="code">
+file SDL-1.2.3.tar.gzSDL-1.2.8.tar.gz: gzip compressed data, from Unix
+</pre>
+
+<p>
+Para terminar este paso solo resta descomprimir cada una de los archivos:
+</p>
+<pre class="code">
+tar xzvf jpegsrc.v6b.tar.gz
+tar xzvf SDL-1.2.8.tar.gz
+tar xzvf SDL_mixer-1.2.6.tar.gz
+tar xzvf libpng-1.2.8-config.tar.gz
+tar xzvf SDL_image-1.2.4.tar.gz
+tar xzvf zlib-1.2.1.tar.gz
+</pre>
+
+<div class="notetip">
+Consejo: con la tecla de tabulación <kbd>TAB</kbd> el interprete de comandos habitual de GNU/Linux (bash) auto-completa los nombres de ficheros y comandos, pruebe &#039;tar xzvf zl&#039;.
+
+</div>
+
+</div>
+<!-- SECTION "Descompresión" [3948-4989] -->
+<h3><a name="configurar_e_instalar" id="configurar_e_instalar">Configurar e instalar:</a></h3>
+<div class="level3">
+
+<p>
+Luego de la descompresión se genera un directorio por cada archivo tar.gz, con ficheros de desarrollo y documentación como README o INSTALL, léalos si tiene la posibilidad:
+</p>
+<pre class="code">
+lsSDL-1.2.8SDL_mixer-1.2.6zlib-1.2.1jpeg-6blibpng-1.2.8-configSDL_image-1.2.4
+</pre>
+
+<p>
+Tiene que entrar en cada uno de estos directorios (cd &#039;directorio&#039;) respetando el orden de la lista anterior y ejecutar en cada uno de estos comandos:
+</p>
+<pre class="code">
+./configuremakesu (solo si no es el usuario administrador = root)
+make installexit (si ejecutó &#039;su&#039; anteriormente)
+</pre>
+
+<p>
+Si todo salió bien tendrá algunos comandos nuevos como &#039;sdl-config&#039;.
+</p>
+
+</div>
+<!-- SECTION "Configurar e instalar:" [4990-5652] -->
+<h3><a name="donde_estan_los_nuevos_archivos" id="donde_estan_los_nuevos_archivos">¿Donde están los nuevos archivos?</a></h3>
+<div class="level3">
+
+<p>
+Los mas importantes están en:
+
+</p>
+<ul>
+<li class="level1"><div class="li"> /usr/local/include/SDL      <em>- ficheros de cabecera</em></div>
+</li>
+<li class="level1"><div class="li"> /usr/local/bin              <em>- sdl-config</em></div>
+</li>
+<li class="level1"><div class="li"> /usr/local/lib              <em>- bibliotecas</em></div>
+</li>
+<li class="level1"><div class="li"> /usr/local/man              <em>- paginas de manuales</em></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "¿Donde están los nuevos archivos?" [5653-5950] -->
+<h3><a name="verificando_si_funciona" id="verificando_si_funciona">Verificando si funciona</a></h3>
+<div class="level3">
+
+<p>
+Hasta aquí todo debería funcionar correctamente, puede compilar uno de nuestros juegos o intentar con un ejemplo como el siguiente:
+</p>
+
+<p>
+Genere un archivo llamado main.c con el siguiente código:
+</p>
+<pre class="code c"><span class="co2">#include &lt;SDL/SDL.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+&nbsp;
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span> argv <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+        SDL_Surface <span class="sy0">*</span>screen;
+        SDL_Event event;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>SDL_Init<span class="br0">&#40;</span>SDL_INIT_VIDEO<span class="br0">&#41;</span> <span class="sy0">==</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en SDL_Init: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        atexit<span class="br0">&#40;</span>SDL_Quit<span class="br0">&#41;</span>;
+&nbsp;
+        screen <span class="sy0">=</span> SDL_SetVideoMode<span class="br0">&#40;</span><span class="nu0">320</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">16</span><span class="sy0">,</span> SDL_ANYFORMAT<span class="br0">&#41;</span>;
+&nbsp;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>screen <span class="sy0">==</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span class="kw3">printf</span></a><span class="br0">&#40;</span><span class="st0">&quot;Error en SDL_SetVideoMode: %s<span class="es0">\n</span>&quot;</span><span class="sy0">,</span> SDL_GetError<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+                <span class="kw1">return</span> <span class="nu0">1</span>;
+        <span class="br0">&#125;</span>
+&nbsp;
+        SDL_WM_SetCaption<span class="br0">&#40;</span><span class="st0">&quot;Ejemplo base&quot;</span><span class="sy0">,</span> <span class="kw2">NULL</span><span class="br0">&#41;</span>
+&nbsp;
+        <span class="kw1">while</span> <span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+                <span class="kw1">while</span> <span class="br0">&#40;</span>SDL_PollEvent<span class="br0">&#40;</span><span class="sy0">&amp;</span> event<span class="br0">&#41;</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                        <span class="kw1">if</span> <span class="br0">&#40;</span>event.<span class="me1">type</span> <span class="sy0">==</span> SDL_QUIT<span class="br0">&#41;</span>
+                                <span class="kw1">return</span> <span class="nu19">0</span>;
+                <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+&nbsp;
+        <span class="kw1">return</span> <span class="nu19">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+Una vez generado el archivo tiene que compilarlo, le proponemos dos formas:
+</p>
+<pre class="code">
+gcc -o test main.c -lSDL -lpthread
+</pre>
+
+<p>
+o bien
+</p>
+<pre class="code">
+gcc -o test main.c `sdl-config --libs`
+</pre>
+
+<p>
+y para ejecutar la demostración:
+</p>
+<pre class="code">
+./test
+</pre>
+
+<p>
+con este ejemplo solo vemos que la biblioteca SDL funciona, pero nos falta SDL_image y SDL_mixer, compilemos nuevamente:
+</p>
+<pre class="code">
+gcc -o test main.c -lSDL -lpthread -lSDL_mixer -lSDL_image
+</pre>
+
+<p>
+Si bien no modificamos los fuentes para agregar la funcionalidad extra que nos proveen estas bibliotecas, compilando nuevamente sabremos si al menos la instalación fue correcta.
+
+</p>
+
+</div>
+<!-- SECTION "Verificando si funciona" [5951-] --></div>
+</body>
+</html>

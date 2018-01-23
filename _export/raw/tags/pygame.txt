@@ -1,0 +1,20 @@
+====== pygame ======
+
+{{:logotipos:pygame.png|}}
+
+Pygame es una biblioteca que facilitan la creación de videojuegos y
+aplicaciones multimedia en dos dimensiones.
+
+Pygame está disponible para el lenguaje de programación [[:tags:python]], y funciona sobre
+la biblioteca [[:tags:SDL]].
+
+===== Referencias dentro de este sitio =====
+
+  * [[:traducciones:pygame|Observa la traducción al español de la documentación oficial.]]
+
+
+===== Referencias externas =====
+
+  * [[http://www.pygame.org/|Sitio oficial]]
+  * [[http://es.wikipedia.org/wiki/Pygame|Definición de pygame en castellano desde wikipedia]]
+

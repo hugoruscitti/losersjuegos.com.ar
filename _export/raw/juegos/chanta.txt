@@ -1,0 +1,32 @@
+====== Chanta claus ======
+
+
+En el juego Chanta Claus, nuestro protagonista debe recolectar varios billetes de dólares dispersos en cada nivel. Cuando llegamos a recolectar todos, podremos acceder al próximo nivel. 
+
+
+Existen 2 versiones de este juego, la versión reciente (desarrollada con SDL y C++) y una versión antigua sólo para sistemas D.O.S. Hemos incluido la descarga de ambas mas abajo, aunque solo continuaremos desarrollando la versión reciente. Ambas versiones están disponibles bajo la licencia GPL. 
+
+
+
+===== Capturas de pantalla =====
+
+{{gallery>juegos:chanta:capturas:*}}
+
+
+
+
+
+===== Descargas =====
+
+{{filelist>juegos:chanta:descargas:*}}
+
+
+===== Licencia =====
+
+Este programa se distribuye bajo los términos de la licencia pública general de GNU, (vea nuestra
+página sobre la [[otros:es:gpl2]]).
+
+
+
+
+{{tag>juegos SDL C}}

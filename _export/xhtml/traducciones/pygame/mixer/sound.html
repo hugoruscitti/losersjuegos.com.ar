@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:mixer:sound</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:40:49+0300" />
+<meta name="keywords" content="traducciones,pygame,mixer,sound" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../../index.html" />
+<link rel="contents" href="../../../../../traducciones/pygame/mixer/sound-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../../feed.php-mode=list&amp;ns=traducciones-pygame-mixer.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="sound.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../../raw/traducciones/pygame/mixer/sound.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#sound" class="toc">Sound</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#sound1" class="toc">Sound</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#play" class="toc">play</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#stop" class="toc">stop</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#fadeout" class="toc">fadeout</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_volume" class="toc">set_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_volume" class="toc">get_volume</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_num_channels" class="toc">get_num_channels</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_length" class="toc">get_length</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_buffer" class="toc">get_buffer</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="sound" id="sound">Sound</a></h1>
+<div class="level1">
+
+
+
+<p>
+Genera un nuevo objeto Sound a partir de un archivo.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#sound" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">Sound</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#play" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">play</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#stop" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">stop</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#fadeout" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">fadeout</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_volume" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">set_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_volume" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">get_volume</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_num_channels" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">get_num_channels</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_length" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">get_length</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_buffer" title="traducciones:pygame:mixer:sound &crarr;" class="wikilink1">get_buffer</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+</div>
+<!-- SECTION "Sound" [1-305] -->
+<h2><a name="sound1" id="sound1">Sound</a></h2>
+<div class="level2">
+<pre class="code python">pygame.<span class="me1">mixer</span>.<span class="me1">Sound</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span>: <span class="kw1">return</span> Sound
+pygame.<span class="me1">mixer</span>.<span class="me1">Sound</span><span class="br0">&#40;</span>buffer<span class="br0">&#41;</span>: <span class="kw1">return</span> Sound
+pygame.<span class="me1">mixer</span>.<span class="me1">Sound</span><span class="br0">&#40;</span><span class="kw2">object</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Sound</pre>
+
+
+<p>
+Carga un nuevo sonido a partir de un nombre de archivo, un archivo
+de python o un objeto de almacenamiento que se pueda leer. Se realizará
+un ajuste limitado de frecuencia para que coincida con los argumentos
+de inicialización del módulo <code>mixer</code>.
+</p>
+
+
+
+<p>
+El objeto Sound representa los datos de sonido actual. Los métodos que
+cambian el estado del objeto de sonido lo harán en todas las instancias
+de ese objeto.
+</p>
+
+
+
+<p>
+El sonido puede cargarse desde un archivo de audio OGG o desde un
+archivo WAV sin compresión.
+</p>
+
+
+
+<p>
+Nota: La memoria asignada para los datos se copiará internamente, dada
+de información será compartida entre el archivo y el objeto de sonido.
+</p>
+
+<p>
+
+El constructor <code>pygame.mixer.Sound(buffer)</code> es nuevo en
+pygame 1.8.
+</p>
+
+</div>
+<!-- SECTION "Sound" [306-1752] -->
+<h2><a name="play" id="play">play</a></h2>
+<div class="level2">
+
+
+
+<p>
+Comienza a reproducir el sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">play</span><span class="br0">&#40;</span>loops=0, maxtime=0, fade_ms=0<span class="br0">&#41;</span>: <span class="kw1">return</span> Channel</pre>
+
+
+<p>
+Comienza a reproducir el sonido en un canal disponible (por ejemplo, en los 
+parlantes de la computadora). Se elegirá de forma forzada el canal, por
+lo tanto la reproducción se podría detener el sonido en curso si es
+necesario.
+</p>
+
+
+
+<p>
+El argumento <code>loops</code> controla cuantas veces de deberá repetir el sonido
+luego de haber sonado por primera vez. Un valor como 5 significa que el
+sonido será reproducido una vez, y luego se repetirá cinco veces
+mas, por lo tanto sonará seis veces en total. El valor por defecto (cero)
+significa que el sonido no se repetirá, y solo sonará una vez. Si <code>loops</code>
+se define a -1 el sonido se repetirá constantemente (aunque podrá llamar
+a <code>stop()</code> para detenerlo).
+</p>
+
+
+
+<p>
+El argumento <code>maxtime</code> se puede usar para detener la reproducción luego
+del numero de milisegundos indicado.
+</p>
+
+
+
+<p>
+El argumento <code>fade_ms</code> hará que el sonido comience a reproducirse desde
+el valor de volumen 0 y aumente de volumen hasta el máximo valor en el
+tiempo indicado. Note que el sonido podría termina antes de que el
+aumento de volumen se complete.
+ 
+
+</p>
+
+<p>
+Este método retornará un objeto Channel con el canal que ha sido
+seleccionado.
+</p>
+
+</div>
+<!-- SECTION "play" [1753-4023] -->
+<h2><a name="stop" id="stop">stop</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene la reproducción de sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">stop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detendrá la reproducción de este sonido en cualquiera de los canales
+activos.
+</p>
+
+</div>
+<!-- SECTION "stop" [4024-4308] -->
+<h2><a name="fadeout" id="fadeout">fadeout</a></h2>
+<div class="level2">
+
+
+
+<p>
+Detiene el sonido luego de reducir el volumen.
+</p>
+<pre class="code python">Sound.<span class="me1">fadeout</span><span class="br0">&#40;</span><span class="kw3">time</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Detendrá la reproducción del sonido luego de reducir el volumen en
+los milisegundos indicados en el argumento <code>time</code>. El sonido se
+desvanecerá y detendrá en todos los canales de reproducción activos.
+</p>
+
+</div>
+<!-- SECTION "fadeout" [4309-4853] -->
+<h2><a name="set_volume" id="set_volume">set_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Define el volumen de reproducción para el sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">set_volume</span><span class="br0">&#40;</span>value<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Este método definirá el volumen de reproducción para este sonido. Esto 
+afectará inmediatamente al sonido si este se está reproduciendo. También
+afectará al sonido en sus futuras reproducciones. El argumento <code>value</code> es
+un valor comprendido ente 0.0 y 1.0.
+</p>
+
+</div>
+<!-- SECTION "set_volume" [4854-5522] -->
+<h2><a name="get_volume" id="get_volume">get_volume</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el volumen de reproducción.
+</p>
+<pre class="code python">Sound.<span class="me1">get_volume</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> value</pre>
+
+
+<p>
+Retorna un valor de 0.0 a 1.0 representando el volumen para este
+sonido.
+</p>
+
+</div>
+<!-- SECTION "get_volume" [5523-5823] -->
+<h2><a name="get_num_channels" id="get_num_channels">get_num_channels</a></h2>
+<div class="level2">
+
+
+
+<p>
+Retorna cuantas veces se está reproduciendo este sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">get_num_channels</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> count</pre>
+
+
+<p>
+Retorna el numero de canales activos donde se está reproduciendo
+este sonido.
+</p>
+
+</div>
+<!-- SECTION "get_num_channels" [5824-6174] -->
+<h2><a name="get_length" id="get_length">get_length</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene la longitud del sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">get_length</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> seconds</pre>
+
+
+<p>
+Retorna la longitud del sonido en segundos.
+</p>
+
+</div>
+<!-- SECTION "get_length" [6175-6420] -->
+<h2><a name="get_buffer" id="get_buffer">get_buffer</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene un objeto de almacenamiento para modificar el sonido.
+</p>
+<pre class="code python">Sound.<span class="me1">get_buffer</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> BufferProxy</pre>
+
+
+<p>
+Retorna un objeto de almacenamiento para modificar el sonido. Este
+objeto se puede usar para acceso directo y manipulación.
+</p>
+
+
+
+<p>
+Esta funcionalidad es nueva en pygame 1.8
+</p>
+
+</div>
+<!-- SECTION "get_buffer" [6421-] --></div>
+</body>
+</html>

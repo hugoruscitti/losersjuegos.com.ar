@@ -1,0 +1,3 @@
+====== Noticias ======
+
+{{blog>:principal:noticias?10}}

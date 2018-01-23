@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:event</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T21:16:01+0300" />
+<meta name="keywords" content="traducciones,pygame,event" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/event-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="event.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/event.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#event" class="toc">event</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#pump" class="toc">pump</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get" class="toc">get</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#poll" class="toc">poll</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#wait" class="toc">wait</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#peek" class="toc">peek</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#clear" class="toc">clear</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#event_name" class="toc">event_name</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_blocked" class="toc">set_blocked</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_allowed" class="toc">set_allowed</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_blocked" class="toc">get_blocked</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#set_grab" class="toc">set_grab</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_grab" class="toc">get_grab</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#post" class="toc">post</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="event" id="event">event</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para interactuar con eventos y pedidos.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p>
+<ul>
+<li class="level1"><div class="li"> <a href="#pump" title="traducciones:pygame:event &crarr;" class="wikilink1">pump</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get" title="traducciones:pygame:event &crarr;" class="wikilink1">get</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#poll" title="traducciones:pygame:event &crarr;" class="wikilink1">poll</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#wait" title="traducciones:pygame:event &crarr;" class="wikilink1">wait</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#peek" title="traducciones:pygame:event &crarr;" class="wikilink1">peek</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#clear" title="traducciones:pygame:event &crarr;" class="wikilink1">clear</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#event_name" title="traducciones:pygame:event &crarr;" class="wikilink1">event_name</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_blocked" title="traducciones:pygame:event &crarr;" class="wikilink1">set_blocked</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_allowed" title="traducciones:pygame:event &crarr;" class="wikilink1">set_allowed</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_blocked" title="traducciones:pygame:event &crarr;" class="wikilink1">get_blocked</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#set_grab" title="traducciones:pygame:event &crarr;" class="wikilink1">set_grab</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_grab" title="traducciones:pygame:event &crarr;" class="wikilink1">get_grab</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#post" title="traducciones:pygame:event &crarr;" class="wikilink1">post</a></div>
+</li>
+</ul>
+
+<p>
+
+<strong> Otras páginas: </strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/event/event_class.html" class="wikilink1" title="traducciones:pygame:event:event_class">Event</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+Pygame maneja todos sus mensajes de eventos a través de una cola
+de eventos. Las rutinas de este módulo le ayudarán a manejar esta
+cola de eventos. Los eventos de entrada son extremadamente dependientes
+del módulo <code>display</code> de pygame. La cola de eventos no funcionará a menos
+que se halla inicializado el módulo display y el modo de video.
+</p>
+
+
+
+<p>
+La cola de eventos es una lista de objetos Event, hay diversas maneras
+de acceder a los eventos que esta contiene. Desde consultar por la existencia
+de eventos, a extraerlos directamente de la pila.
+</p>
+
+
+
+<p>
+Todos los eventos tienen un identificador <code>type</code>. Este identificador
+está entre los valores NOEVENT y NUMEVENTS. Todos los eventos definidos
+por el usuario pueden tener el valor de USEREVENT o superior. Se recomienda
+asegurarse de que sus identificadores de evento sigan este sistema.
+</p>
+
+
+
+<p>
+Para obtener el estado de varios dispositivos de entrada puede olvidar
+la cola de eventos y acceder a los dispositivos directamente desde sus
+módulos asignados: <code>mouse</code>, <code>key</code> y <code>joystick</code>. Si usa este método, 
+recuerde que pygame requiere alguna forma de comunicación con el sistema
+de ventanas y otras partes del sistema. Para mantener a pygame en
+coherencia con el sistema necesita llamar a <code>pygame.event.pump</code> periodicamente, usualmente una vez por ciclo del bucle de juego.
+</p>
+
+
+
+<p>
+La cola de eventos ofrece una forma de filtro simple. Esto puede ayudar
+a mejorar el rendimiento bloqueando ciertos tipos de eventos de la
+cola, use las funciones <code>pygame.event.set_allowed()</code> y 
+<code>pygame.event.set_blocked()</code> para trabajar con este filtrado. Por
+defecto todos los eventos están permitidos.
+</p>
+
+
+
+<p>
+Los controles de Joystick no emitirán ningún evento a menos que se
+inicialice el dispositivo.
+</p>
+
+
+
+<p>
+Un objeto Evento contiene un tipo de evento y un conjunto de miembros, o
+atributos, de solo lectura. El objeto Evento no contiene métodos, solo
+información. Estos objetos se obtienen desde la cola de eventos. E incluso
+puede crear sus propios eventos con una llamada a <code>pygame.event.Event()</code>.
+</p>
+
+
+
+<p>
+Su programa debe seguir ciertos pasos para evitar que la cola de eventos
+se sobrepase del límite. Si el programa no limpia o elimina los eventos
+de la cola de eventos en intervalos regulares, esta podría desbordarse. Se
+lanzará una excepción si la cola desborda.
+</p>
+
+
+
+<p>
+Todos los objetos <code>Event</code> contienen un identificador de tipo en el
+atributo <code>Event.type</code>. Usted puede obtener acceso a todos los atributos
+del evento a través el método <code>Event.dict</code>. Todas las otras búsquedas
+de atributos pasarán a través de los valores de diccionario del evento.
+</p>
+
+
+
+<p>
+Puede imprimir los objetos Event para ver rápidamente su tipo y atributos
+mientras depura o experimenta. Los eventos que vienen desde el sistema
+tendrán un grupo asegurado de atributos basados en cada tipo. Esta es una
+lista de los atributos de evento que se definen para cada tipo:
+</p>
+
+
+<table class="inline">
+	<tr class="row0">
+		<th class="col0"> Tipo (atributo <code>type</code>) </th><th class="col1"> Atributos </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> QUIT </td><td class="col1"> none </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> ACTIVEEVENT </td><td class="col1"> gain, state </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> KEYDOWN </td><td class="col1"> unicode, key, mod </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> KEYUP </td><td class="col1"> key, mod </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> MOUSEMOTION </td><td class="col1"> pos, rel, buttons </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> MOUSEBUTTONUP </td><td class="col1"> pos, button </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> MOUSEBUTTONDOWN </td><td class="col1"> pos, button </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> JOYAXISMOTION </td><td class="col1"> joy, axis, value </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> JOYBALLMOTION </td><td class="col1"> joy, ball, rel </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> JOYHATMOTION </td><td class="col1"> joy, hat, value </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> JOYBUTTONUP </td><td class="col1"> joy, button </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> JOYBUTTONDOWN </td><td class="col1"> joy, button </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> VIDEORESIZE </td><td class="col1"> size, w, h </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> VIDEOEXPOSE </td><td class="col1"> none </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> USEREVENT </td><td class="col1"> code </td>
+	</tr>
+</table>
+
+</div>
+<!-- SECTION "event" [1-6935] -->
+<h2><a name="pump" id="pump">pump</a></h2>
+<div class="level2">
+
+
+
+<p>
+Procesa internamente los manejadores de evento de pygame.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">pump</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Para cada cuadro de visualización de su juego necesitará hacer alguna
+clase de llamada a la cola de eventos. Esta función se asegura de que
+su programa puede interactuar internamente con el resto del sistema
+operativo. Debería utilizar esta función si no está usando otras funciones
+de eventos en su juego, esto permitirá que pygame pueda manejar acciones
+internas.
+</p>
+
+
+
+<p>
+Esta función no se necesita si su programa procesa eventos de manera
+consistente a través de otras funciones de <code>pygame.event</code>.
+</p>
+
+
+
+<p>
+Hay varias tareas importantes que se deben realizar internamente en
+la cola de eventos. La ventana principal podría necesitar responderle
+al sistema o ser redibujada. Si usted no consulta la cola de eventos
+por mucho tiempo, el sistema podría interpretar que su programa está
+inactivo o con un error.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.pump" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.pump">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "pump" [6936-8745] -->
+<h2><a name="get" id="get">get</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene eventos de la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Eventlist
+pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Eventlist
+pygame.<span class="me1">event</span>.<span class="me1">get</span><span class="br0">&#40;</span>typelist<span class="br0">&#41;</span>: <span class="kw1">return</span> Eventlist</pre>
+
+
+<p>
+Obtendrá todos los mensajes de eventos y los eliminará de la cola. Si se
+le especifica un tipo o secuencia de tipos de evento solo esos mensajes
+se eliminarán de la cola.
+</p>
+
+
+
+<p>
+Si solo está interesado en eventos específicos de la cola, tenga cuidado
+que la cola podría llenarse eventualmente con eventos en los que
+no esté interesado.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get" [8746-9706] -->
+<h2><a name="poll" id="poll">poll</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene un solo evento de la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">poll</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Event</pre>
+
+
+<p>
+Retorna un evento individual de la cola. Si la cola de eventos está vacía
+se retornará un evento de tipo <code>pygame.NOEVENT</code> inmediatamente. El evento
+que se retorna se eliminará de la cola.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.poll" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.poll">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "poll" [9707-10322] -->
+<h2><a name="wait" id="wait">wait</a></h2>
+<div class="level2">
+
+
+
+<p>
+Espera por la llegada de un evento en la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">wait</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> Event</pre>
+
+
+<p>
+Retorna un evento individual de la cola. Esta función espera hasta que
+un evento llegue si es que la cola está vacía. El evento se elimina de
+la cola una vez que ha sido retornado. Mientras el programa está esperando
+el proceso dormirá en un estado de espera. Esto es importante para programas
+que quieres compartir los recursos de sistema con otras aplicaciones.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.wait" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.wait">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "wait" [10323-11273] -->
+<h2><a name="peek" id="peek">peek</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si un tipo de evento está esperando en la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">peek</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span>
+pygame.<span class="me1">event</span>.<span class="me1">peek</span><span class="br0">&#40;</span>typelist<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si existe algunos de los eventos solicitados esperando
+en la cola de eventos. Si se pasa una secuencia de tipos de eventos, se
+retornará <code>True</code> si alguno de esos eventos está en la cola.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.peek" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.peek">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "peek" [11274-11985] -->
+<h2><a name="clear" id="clear">clear</a></h2>
+<div class="level2">
+
+
+
+<p>
+Elimina todos los eventos de la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">clear</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">clear</span><span class="br0">&#40;</span>typelist<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Elimina todos los eventos (o de un tipo específico) de la cola. Esta función
+tiene el mismo efecto que <code>pygame.event.get()</code> excepto que no retorna
+nada. Puede ser ligeramente mas eficiente cuando limpia toda la cola
+de eventos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.clear" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.clear">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "clear" [11986-12754] -->
+<h2><a name="event_name" id="event_name">event_name</a></h2>
+<div class="level2">
+
+
+
+<p>
+Obtiene el nombre de un identificador de evento.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">event_name</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw3">string</span></pre>
+
+
+<p>
+Pygame utiliza identificadores en números enteros para representar
+tipos de eventos. Si quiere reportar estos valores al usuario debería
+convertirlos a cadenas de texto. Esta función retornará el nombre
+para un tipo de evento. La cadena sigue el estilo PalabrasComoTitulo.
+</p>
+<pre class="code python"><span class="sy0">&gt;&gt;&gt;</span> pygame.<span class="me1">event</span>.<span class="me1">event_name</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+<span class="st0">'ActiveEvent'</span></pre><ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.event_name" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.event_name">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "event_name" [12755-13613] -->
+<h2><a name="set_blocked" id="set_blocked">set_blocked</a></h2>
+<div class="level2">
+
+
+
+<p>
+Controla que eventos se permiten en la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">set_blocked</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">set_blocked</span><span class="br0">&#40;</span>typelist<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">set_blocked</span><span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El tipo de evento especificado será excluido de poder aparecer en la
+cola de eventos. Por defecto todos los eventos podrá colocarse en la
+cola. Es seguro deshabilitar un tipo de evento muchas veces.
+</p>
+
+
+
+<p>
+
+Si se pasa None como argumento, esto producirá el efecto contrario y
+se permitirán todos los tipos de eventos en la cola.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_blocked" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_blocked">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_blocked" [13614-14630] -->
+<h2><a name="set_allowed" id="set_allowed">set_allowed</a></h2>
+<div class="level2">
+
+
+
+<p>
+Controla que eventos se permitirán en la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">set_allowed</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">set_allowed</span><span class="br0">&#40;</span>typelist<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span>
+pygame.<span class="me1">event</span>.<span class="me1">set_allowed</span><span class="br0">&#40;</span><span class="kw2">None</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+El tipo indicado será incluido para aparecer en la cola de eventos. Por
+defecto todos los eventos pueden colocarse en la cola de eventos. Es
+seguro habilitar un tipo de evento varias veces.
+</p>
+
+
+
+<p>
+Si se pasa <code>None</code> como argumento, ninguno de los tipos de eventos
+podrá estar en la cola de eventos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_allowed" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_allowed">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_allowed" [14631-15584] -->
+<h2><a name="get_blocked" id="get_blocked">get_blocked</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si está bloqueado de la cola un tipo de evento.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">get_blocked</span><span class="br0">&#40;</span><span class="kw2">type</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> si el tipo de evento dado ha sido bloqueado
+de la cola de eventos.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get_blocked" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get_blocked">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_blocked" [15585-16042] -->
+<h2><a name="set_grab" id="set_grab">set_grab</a></h2>
+<div class="level2">
+
+
+
+<p>
+Controla la posibilidad de compartir los dispositivos de entrada
+con otras aplicaciones.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">set_grab</span><span class="br0">&#40;</span><span class="kw2">bool</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Cuando su programa corre en un entorno de ventana, este compartirá los
+dispositivos de mouse y teclado con otras aplicaciones que estén
+seleccionadas (con foco). Si su programa llama a <code>set_grab(True)</code>, se
+bloquearán todas las entras de dispositivos a su programa.
+</p>
+
+
+
+<p>
+Es mejor no usar esta función siempre, dado que imposibilita al usuario
+de hacer otras cosas en su sistema.
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_grab" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.set_grab">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "set_grab" [16043-17106] -->
+<h2><a name="get_grab" id="get_grab">get_grab</a></h2>
+<div class="level2">
+
+
+
+<p>
+Consulta si el programa está compartiendo los dispositivos en entrada.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">get_grab</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Retorna <code>True</code> cuando los eventos de entrada son exclusivos de esta
+aplicación. Use <code>pygame.event.set_grab()</code> para controlar este estado.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get_grab" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.get_grab">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_grab" [17107-17674] -->
+<h2><a name="post" id="post">post</a></h2>
+<div class="level2">
+
+
+
+<p>
+Coloca un nuevo evento en la cola.
+</p>
+<pre class="code python">pygame.<span class="me1">event</span>.<span class="me1">post</span><span class="br0">&#40;</span>Event<span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Esta función coloca un nuevo evento al final de la cola de eventos. Estos
+eventos se recibirán mas tarde que los otros eventos ya en la cola.
+</p>
+
+
+
+<p>
+Se usa frecuentemente para colocar eventos pygame.USEREVENT en la cola.
+Aunque se puede colocar cualquier tipo de evento, si utiliza tipos de
+eventos de sistema se asegurará de crear los atributos por defecto con
+los valores adecuados.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.post" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.event.post">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "post" [17675-] --></div>
+</body>
+</html>

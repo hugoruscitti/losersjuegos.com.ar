@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+ lang="es" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>traducciones:pygame:joystick</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14b" />
+<meta name="robots" content="index,follow" />
+<meta name="date" content="2009-01-20T17:24:34+0300" />
+<meta name="keywords" content="traducciones,pygame,joystick" />
+<link rel="search" type="application/opensearchdescription+xml" href="../../../../lib/exe/opensearch.php" title="Losersjuegos" />
+<link rel="start" href="../../../../index.html" />
+<link rel="contents" href="../../../../traducciones/pygame/joystick-do=index.html" title="Indice" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="../../../../feed.php.rss" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="../../../../feed.php-mode=list&amp;ns=traducciones-pygame.rss" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="joystick.html" />
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="../../../raw/traducciones/pygame/joystick.txt" />
+<link rel="stylesheet" media="all" type="text/css" href="../../../../lib/exe/css.php-s=all&amp;t=sidebar.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="../../../../lib/exe/css.php-t=sidebar.css" />
+<link rel="stylesheet" media="print" type="text/css" href="../../../../lib/exe/css.php-s=print&amp;t=sidebar.css" />
+<script type="text/javascript" charset="utf-8" src="../../../../lib/exe/js.php-edit=0&amp;write=0.js" ></script>
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Tabla de Contenidos</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#joystick" class="toc">joystick</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#init" class="toc">init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#quit" class="toc">quit</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_init" class="toc">get_init</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#get_count" class="toc">get_count</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="joystick" id="joystick">joystick</a></h1>
+<div class="level1">
+
+
+
+<p>
+Módulo de pygame para interactuar con dispositivos de joystick.
+</p>
+<div class='box' style='width: 90%;'>
+  <b class='xtop'><b class='xb1'></b><b class='xb2'></b><b class='xb3'></b><b class='xb4'></b></b>
+  <div class='xbox'>
+<div class='box_content'><p><ul>
+<li class="level1"><div class="li"> <a href="#init" title="traducciones:pygame:joystick &crarr;" class="wikilink1">init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#quit" title="traducciones:pygame:joystick &crarr;" class="wikilink1">quit</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_init" title="traducciones:pygame:joystick &crarr;" class="wikilink1">get_init</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="#get_count" title="traducciones:pygame:joystick &crarr;" class="wikilink1">get_count</a></div>
+</li>
+</ul>
+
+<p>
+
+<strong>En otra pagina:</strong>
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="../../../../traducciones/pygame/joystick/joystick_class.html" class="wikilink1" title="traducciones:pygame:joystick:joystick_class">Joystick</a></div>
+</li>
+</ul>
+</div>
+  </div>
+  <b class='xbottom'><b class='xb4'></b><b class='xb3'></b><b class='xb2'></b><b class='xb1'></b></b>
+</div>
+
+
+
+<p>
+El módulo joystick gestiona los dispositivos de joystick en
+una computadora (podría haber mas de uno). Los dispositivos de
+joystick incluye controles analógicos y tradicionales, y este
+módulo incluso permite usar múltiples botones y palancas.
+</p>
+
+</div>
+<!-- SECTION "joystick" [1-786] -->
+<h2><a name="init" id="init">init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Inicializa el módulo de joystick.
+</p>
+<pre class="code python">pygame.<span class="me1">joystick</span>.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Esta función se llama automáticamente desde <code>pygame.init()</code>.
+</p>
+
+
+
+<p>
+Explora el sistema para buscar todos los dispositivos de joystick. El módulo
+se debe inicializar antes de usar cualquier otra función.
+</p>
+
+
+
+<p>
+Es seguro llamar a esta función mas de una vez.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "init" [787-1563] -->
+<h2><a name="quit" id="quit">quit</a></h2>
+<div class="level2">
+
+
+
+<p>
+Deshabilita el módulo de joystick.
+</p>
+<pre class="code python">pygame.<span class="me1">joystick</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">None</span></pre>
+
+
+<p>
+Deshabilita el módulo de joystick. Después de llamar a esta función cualquier
+objeto de joystick dejará de funcionar.
+</p>
+
+
+
+<p>
+Es seguro llamar a esta función mas de una vez.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.quit" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.quit">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "quit" [1564-2146] -->
+<h2><a name="get_init" id="get_init">get_init</a></h2>
+<div class="level2">
+
+
+
+<p>
+Devuelve <code>True</code> si el módulo de joystick está inicializado.
+</p>
+<pre class="code python">pygame.<span class="me1">joystick</span>.<span class="me1">get_init</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> <span class="kw2">bool</span></pre>
+
+
+<p>
+Consulta si se ha llamado a la función <code>pygame.joystick.init()</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.init" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.init">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_init" [2147-2571] -->
+<h2><a name="get_count" id="get_count">get_count</a></h2>
+<div class="level2">
+
+
+
+<p>
+Cuenta la cantidad de joysticks en el sistema.
+</p>
+<pre class="code python">pygame.<span class="me1">joystick</span>.<span class="me1">get_count</span><span class="br0">&#40;</span><span class="br0">&#41;</span>: <span class="kw1">return</span> count</pre>
+
+
+<p>
+Retorna el número de dispositivos de joysticks en el sistema. La
+función retornará 0 si no hay joysticks en el sistema.
+</p>
+
+
+
+<p>
+Debe usar un número inferior a este cuando genere objetos de joystick usando
+<code>Joystick(id)</code>.
+
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.get_count" class="interwiki iw_pythonexample" title="http://www.google.com/codesearch?as_lang=python&amp;as_q=pygame.joystick.get_count">buscar código donde se use esta función.</a></div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "get_count" [2572-] --></div>
+</body>
+</html>

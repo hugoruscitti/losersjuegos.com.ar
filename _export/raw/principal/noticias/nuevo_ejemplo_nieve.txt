@@ -1,0 +1,13 @@
+====== nuevo ejemplo "nieve" ======
+
+
+{{:referencia:ejemplos:nieve:mini.png |}}
+Se ha publicado un nuevo ejemplo que muestra como implementar
+colisiones a nivel de pixel usando el objeto Mask de pygame.
+
+[[:referencia:ejemplos|Ver la sección ejemplos]]
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

@@ -1,0 +1,129 @@
+====== To Do, cosas para hacer ======
+
+Aquí encontrará una lista de todas las tareas que tenemos planificado realizar. El objetivo
+de la lista es poner por escrito todas las actividades que no debemos olvidar, y
+que pronto se realizarán.
+
+===== Desarrollo =====
+
+[x] crear un complemento para mostrar tareas con casillas.
+[x] reparar defectos del estilo observados en Internet Explorer. ((¿imposible?, intenté todo pero aún queda un pequeño borde blanco a la izquierda del navegador. Se deja así por ahora.))
+[x] quitar los bordes negros de la sección contacto. ((cancelado))
+[x] reparar la barra de secciones, no recuerda correctamente en que sección está el usuario. ((realizado por Geo))
+
+===== Foro de mensajes =====
+
+[x] definir un estilo visual para: [[http://www.testlosersjuegos.com.ar/foro]].
+[x] actualizar el motor del foro desde phpbb2 a phpbb3.
+[x] migrar todo el contenido del foro anterior.
+
+
+===== Paginas por completar =====
+
+Hay una serie de secciones que aún debemos completar, cada elemento
+representa una pequeña tarea; y las más complejas tienen el nombre
+de quien las está realizado a la derecha.
+
+
+==== Principal ====
+
+[x] crear un tutorial sobre cómo editar el wiki (cancelado).
+[x] colocar una referencia sobre sintaxis en formato de página.
+[x] crear apunte de sintaxis en formato pdf (ver apuntes)
+[x] crear una página de recomendaciones, como gmail, alertas, firefox, vim...
+
+
+==== Juegos ====
+
+[x] crear pagina para el juego irobot.
+[x] subir los juegos restantes.
+[x] colocar miniaturas de los juegos que faltan.
+
+
+==== Software ====
+
+[x] subir la imagen de Ubuntu personalizado. ((se cancela por falta de espacio en el servidor, ¿ideas?))
+
+==== Referencia ====
+
+=== Ejemplos y rutinas ===
+
+[x] adaptar contenido a la nueva sintaxis.
+[x] subir código fuente de cada ejemplo.
+[x] colocar miniaturas.
+
+
+=== Videos ===
+
+[x] colocar el vinculo a googlevideo.
+[x] probar los complementos para insertar video.
+[x] crear la página del video.
+
+=== Libros ===
+
+[x] subir archivos de libros.
+[x] verificar que todos los archivos descargan correctamente.
+[x] colocar miniaturas.
+[x] crear contenido de estructura y textos.
+[x] subir los tutoriales de python y C
+
+=== Apuntes ===
+
+[x] Subir los archivos .pdf de cada guia.
+[x] Mostrar miniaturas.
+[x] Crear el texto y estructura principal.
+[x] deshabilitar el link de la imagen y el titulo.
+
+
+=== Artículos ===
+
+[x] Embracing Fun: Why Extreme Programming ...
+[x] Compilar e instalar un juego desde su código fuente.
+[x] Instalar las bibliotecas SDL en GNU/Linux
+[x] Grilla de gráficos y animaciones (I)
+[x] Bucle principal y velocidad constante
+[x] Colisión de plataformas
+[x] Desarrollo de juegos sobre GNU/Linux
+[x] Como instalar Devcpp y SDL en Windows
+[x] Autómatas y animaciones (II)
+[x] Rectángulo con esquinas redondeadas
+[x] ¿Por que SDL?
+[x] Desarrollando un videojuego paso a paso con SDL
+[x] Fuentes gráficas
+[x] Usando seno y coseno
+[x] Como crear un personaje para Pocket Volleyball
+[x] Hackers, Slackers, and Shackles: El Futuro del Software Libre
+[x] Compilación cruzada: Creando programas para Windows desde GNU/Linux
+[x] ¿Cómo hacer juegos?. Un camino al desarrollo de videojuegos
+[x] ¿Como empezar en el Desarrollo de Videojuegos?
+[x] Pygame: Importar e inicializar
+[x] Conceptos Básicos para el Desarrollo de Videojuegos 2D
+[x] Pygame: Introducción a Pygame de Python (substituir enlaces por enlaces internos)
+[x] Propuesta sobre partículas.
+[x] Pygame: ¡Ayuda!, ¿Como muevo una imagen?
+[x] Como crear un menú para tu juego
+[x] Como crear un contador sencillo para nuestros juegos
+
+
+=== Traducciones ===
+
+[x] pygame
+..[x] crear formato de plantilla para todas las paginas.
+..[x] pasar el texto del ejemplo rect...
+..[x] crear ejemplos gráficos de algunas funciones de draw.
+..[x] crear ejemplos gráficos de algunas funciones de rect. ((cancelado))
+..[x] traducir los módulos restantes.
+..[x] colocar imagenes del logo de python en lugar de ceferino en los ejemplos.
+
+[-] panda3d
+//(se oculta temporalmente, hasta terminar las secciones actuales.))//
+
+=== Galeria ===
+
+[x] subir archivos de imágenes.
+[x] completar contenido.
+
+=== Links ===
+
+[x] colocar los vínculos del sitio anterior.
+[x] colocar miniaturas.

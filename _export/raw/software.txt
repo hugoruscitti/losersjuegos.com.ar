@@ -1,0 +1,19 @@
+====== Software ======
+
+Para desarrollar videojuegos puede utilizar una gran cantidad de programas
+interesantes como los que mostramos a continuación.
+
+<subpage pilas|Pilas Engine>
+Es un motor para hacer videojuegos de manera sencilla
+desarrollado por nosotros, el equipo de losersjuegos.
+</subpage>
+
+<subpage gimp|Gimp Plugins>
+Complementos para el editor de imagenes Gimp que
+te facilitan el desarrollo de juegos.
+</subpage>
+
+<subpage livecd|Ubuntu personalizado para hacer videojuegos>
+Es un sistema operativo completo donde
+se incluye todo lo necesario para crear videojuegos completamente libres.
+</subpage>

@@ -1,0 +1,16 @@
+====== Don ceferino en HTML5 !!! ======
+
+Gracias al proyecto **emscripten**, podemos disfrutar del videojuego
+Don Ceferino Hazaña directamente en el navegador:
+
+http://marco-c.github.io/ceferinoweb/
+
+
+Mas sobre **emscripten**:
+
+https://github.com/kripken/emscripten/wiki
+
+{{tag>}}
+
+~~LINKBACK~~
+~~DISCUSSION~~

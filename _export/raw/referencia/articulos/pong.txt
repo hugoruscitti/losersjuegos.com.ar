@@ -1,0 +1,1344 @@
+====== Tutorial de iniciacion ======
+
+En este tutoria aprenderemos a usar los aspectos basicos de Pygame. Lo haremos elebarando un clasico de los juegos, el Pong, en el aprenderemos nociones basicas para luego ampliar.
+
+===== Preparandonos =====
+
+==== Requesitos previos ====
+
+  * Conocimientos de **Python**. Se da por hecho que se manejan con soltura la creacion de clases, funciones y demas.
+  * Algo de **matematicas** y **fisica** basica. Para empezar con conceptos basicos de lo que es un punto matematico y algunas formulas basicas de fisica tenemos de sobra.
+
+==== Que necesitamos ====
+
+  * Tener Python y Pygame instalados.
+  * Un IDE o editor de texto a eleccion.
+  * Un directorio base donde trabajar. Yo he creado una carpeta llamada **pygame** con dos carpetas en el interior llamadas **images** y **sounds**.
+
+==== Directorio base e imagenes ====
+
+Lo primero que necesitamos es un lugar de trabajo donde tengamos todos nuestros archivos y recursos necesarios organizados. Yo tengo un directorio llamado pygame donde voy metiendo una carpeta para cada proyecto que hago.
+
+Os dejo la carpeta inicial del juego que vamos a realizar en este tutorial. Contiene un fichero base(explicado mas abajo) y una carpeta images que contiene las imagenes y una fuente tipografica que usaremos para realixar nuestro juego.
+
+  * {{:referencia:articulos:pong.zip|}}
+
+==== El documento base ====
+
+Mi metodo de trabajo es tener todo organizado para que el codigo sea facil de leer, es por eso que antes de empezar voy a compartir mi plantilla base que podeis guardar como **plantilla.py**. A partir de ella escribo mis programas y es desde donde comenzare estos tutoriales.
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+
+  # Constantes
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      return 0
+
+  if __name__ == '__main__':
+      main()
+</code>
+
+===== 1. Importar e inicializar =====
+
+Lo primero que hay que hacer para trabajar con Pygame es importarlo e inicializarlo. Para importarlo basta con las lineas:
+
+<code python>
+  import pygame
+  from pygame.locals import *
+</code>
+
+La primera linea importa pygame y la segunda carga las constantes para poder utilizar, por ejemplo, K_ESCAPE, en lugar de estar de tener que llamarla a traves del modulo Pygame. Una vez importado pasamos a inicializar. Se puede inicializar cualquiera de los modulos de Python por separado, pero para no complicarnos por ahora inicializaremos todo pygame con la linea:
+
+<code python>
+  pygame.init()
+</code>
+
+Esta se debe ejecutar antes de empezar a usar Pygame, un buen lugar es antes de llamar a la funcion main(), justo aqui:
+
+<code python>
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Con esto ya tenemos importado e inicializado Pygame y estamos listos para trabajar, dejo como se debe tener el archivo hasta ahora:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import pygame
+  from pygame.locals import *
+
+  # Constantes
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+===== 2. Creando una ventana =====
+
+Lo primero que necesitamos es definir las constantes del ancho y alto de la ventana, yo estas las defino como constantes porque de momento no vas a hacer cosas complicadas con cambios de resolucion ni nada por el estilo y tenerlas como constantes ayuda a trabajar con ellas desde cualquier clase o funcion.
+
+<code python>
+  WIDTH = 640
+  HEIGHT = 480
+</code>
+
+Ahora pasamos a crear la ventana, se debe crear dentro de la funcion main(), es tan facil como lo siguiente:
+
+<code python>
+  screen = pygame.display.set_mode((WIDTH, HEIGHT))
+  pygame.display.set_caption("Pruebas Pygame")
+</code>
+
+La primera linea crea una ventana, date cuenta que la pasamos la tupla (WIDTH, HEIGHT) para definir las dimensiones de la ventana. La segunda linea sirve para definir el titulo de la ventana. El programa nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Si lo ejecutas te daras cuenta que se crea una ventana, pero esta desaparece al instante. Esto es debido a que necesitamos crear un bucle infinito, que sera el bucle del juego. Lo creamos justo despues de la creacion de la ventana.
+
+<code python>
+  while True:
+      pass
+</code>
+
+Como vemos es un bucle infinito vacio que se ejecuta eternamente y hace que la ventana no se cierra, pero ¡sorpresa!, ahora no hay forma de cerrar la ventana si no es matando el proceso. La solucion consiste en que el bucle infinito compruebe si queremos cerrar la ventana y en ese caso que deje de ejecutarse. Sustituimos las dos lineas anteriores por:
+
+<code python>
+  while True:
+      for eventos in pygame.event.get():
+          if eventos.type == QUIT:
+              sys.exit(0)
+</code>
+
+La primera linea del bucle recorre con un for //pygame.event.get() //que es una lista interna de Pygame con los eventos que se estan ejecutando. En la siguiente linea comprobamos que si el tipo de evento es igual a QUIT, es decir, que si le estamos dando a la crucesita de cerrar ventana. En caso de que si, invoca a //sys.exit(0)//, para el que necesitamos haber importado el **modulo sys**, y cierra el programa. Ya tenemos la manera de crear una ventana y controlar cuando cerrarla.
+
+El codigo nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+      while True:
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+===== 3. Cargar imagenes =====
+
+Para cargar una imagen en Pygame vamos a usar una funcion que esta muy bien y facilita mucho el cargar imagenes al vuelo, pongo la funcion y la explicamos linea por linea:
+
+<code python>
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+</code>
+
+La **linea 1** define la funcion, recibe dos parametros el nombre/ruta del archivo y la segunda si tiene parte transparente (por defecto definida como falso).
+
+La** linea 2** asigna a la variable imagen la imagen a traves de la funcion de Pygame //pygame.image.load()// si se puede sino, en la **lineas 3 y 4** manejan el error y salen del programa.
+
+La **linea 5 **convierte la imagen al tipo interno de Pygame que hace que sea mucho mas eficiente.
+
+Las **linea 6** es un condicional que controla si el parametro transparent es verdadero y en caso afirmativo ejecuta las **lineas 7 y 8**, la primera obtiene el color del pixel (0, 0) de la imagen (esquina superior izquierda) y la la **linea 8** lo define como color transparente de la imagen. Es decir que si quieres una imagen con transparencia, el color que actua como transparente se toma del pixel superior izquierdo, asi que asegurate que este color no esta en la imagen.
+
+Por ultimo la **linea 9** retorna la imagen despues de todo el proceso.
+
+El programa nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+      while True:
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+==== Poniendo un fondo ====
+
+Vamos a poner un fondo a nuestra ventana usando nuestra funcion **load_image**. Para cargar la imagen usaremos la siguiente linea, la ponemos justo antes de entrar en el bucle del juego:
+
+<code python>
+  background_image = load_image('images/fondo.png')
+</code>
+
+Como ves no definimos color transparente, porque para el fondo no es necesario.
+
+Ahora necesitamos "ponerla en la ventana" para ello dentro del bucle principal debemos definir que imagen poner y en que posicion:
+
+<code python>
+  screen.blit(background_image, (0, 0))
+</code>
+
+Esto es lo que hace es poner la imagen la pantalla sobre las que habia, recibe dos parametros (en realidad algunos mas), la imagen a poner y en que lugar situar la esquina superior izquierda de la imagen, en este caso (0, 0), es decir, queremos que la esquina superior izquierda de la imagen este en la posicion (0, 0), con esto conseguimos que el fondo ocupe toda la ventana (si la imagen es mayor o superior a la ventana, claro esta).
+
+por ultimo, como ultima linea del bucle debemos incluir la siguiente linea:
+
+<code python>
+  pygame.display.flip()
+</code>
+
+Esto lo que hace es actualizar toda la ventana para que se muestren los cambios que han sucedido.
+
+El programa nos queda de la siguiente manera:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo.png')
+
+      while True:
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          screen.blit(background_image, (0, 0))
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Bien con esto hemos conseguido poner una imagen de fondo y tener una forma facil de cargar imagenes en Pygame. Aconsejo guardar esto como plantilla base de Pygame, pues en casi todos los juegos necesitaremos cargar imagenes y establecer un fondo por defecto.
+
+===== 4. Creando Sprites =====
+
+Ahora empieza lo interesante y la escencia de los videojuegos en 2D, la creacion de Sprites.
+
+==== La clase Bola ====
+
+Para crear la pelota de nuestro Pong lo primero que necesitamos es la imagen de la pelota, [[http://razonartificial.com/wp-content/uploads/2010/02/ball.png|descargar esta]] y guardarla como siempre en el directorio images.
+
+Ahora vamos a crear una clase para la pelota, que sera el Sprite de nuestra pelota, un Sprite es mas que una imagen, es una superficie que puede interactuar, moverse y demas.
+
+<code python>
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+</code>
+
+La **linea 1** crea la clase Bola que hereda los metodos de la clase pygame.sprite.Sprite, esto es muy importante debido a que contiene metodos necesarios para el manejo de Sprites.
+
+La **linea 2** crea el metodo __init__ que inicializa la clase.
+
+La **linea 3** invoca al metodo init de la clase heredada, muy importante tambien y dificil de explicar para comenzar.
+
+La **linea 4** ya nos suena mas y lo que hace es cargar con nuestra funcion load_image() la imagen de la pelota, como vemos tenemos puesto True porque la pelota si tiene zonas transparentes.
+
+La **linea 5 **es de las cosas mas utiles de pygame la funcion self.image.get_rect() obtiene un rectangulo con las dimensiones y posicion de la imagen (en este caso self.image) y se lo asignamos a self.rect
+
+Aqui hago un inciso para comentar que get_rect() tiene unos parametros muy utiles que podemos modificar para posicionar y redimensionar nuestra imagen, son los siguientes:
+
+  * top, left, bottom, right
+  * topleft, bottomleft, topright, bottomright
+  * midtop, midleft, midbottom, midright
+  * center, centerx, centery
+  * size, width, height
+  * w, h
+
+Asi que podemos acceder a los diferentes valores como self.rect.centerx que nos devuelve la posicion central de la pelota respecto al ancho de la pantalla, y asi con todos es cuestion de probarlos, pero mas o menos se entiende lo que devuelve cada uno. Lo mejor de todos ellos es que si cambias el valor de alguno el resto se actualiza. Aqui lo teneis mejor expliado.
+
+En la **linea 6 y 7** usamos las propiedades de rect y con centerx y centery definimos el centro de la pelota en el centro de la pantalla. (aqui vemos porque pusimos WIDTH y HEIGHT como constantes globales).
+
+La **linea 8 **define la velocidad que queremos para la pelota, separamos la velocidad en dos, la velocidad en el eje x y la velocidad en el eje y, luego veremos porque.
+
+==== Poniendo una Bola en nuestro juego ====
+
+Bien una vez creada la clase Bola vamos a crear una bola, para ello como cuando cargamos el fondo, debemos cargarla antes del bucle del juego, con la siguiente linea:
+
+<code python>
+  bola = Bola()
+</code>
+
+Ahora solo debemos "ponerla" en nuestra ventana, ejecutando la siguiente sentencia, despues de la sentencia identica a la del fondo.
+
+<code python>
+  screen.blit(bola.image, bola.rect)
+</code>
+
+Como puedes ver ahora no le pasamos la imagen y en vez de unas coordenadas como en el fondo (entonces le pasamos (0, 0)) le pasamos el rect de la bola, con esto conseguiremos mas tarde que cada vez que movamos el rect, moveremos la pelota de sitio.
+
+Es muy importante "ponerla en pantalla despues y no antes que el fondo porque si pones la pelota y luego pones el fondo encima esta no se vera, como es logico.
+
+El programa nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+
+      while True:
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Ahora tenemos una pelota en el centro de nuestra pantalla lo siguiente es conseguir que se mueva e interactue con los bordes.
+
+===== 5. Moviendo Sprites =====
+
+==== El metodo actualizar ====
+
+A continuacion aprenderemos a mover nuestra bola por la superficie y a calcular los rebotes, para ello emplearemos matematicas y fisica basica.
+
+<code python>
+  def actualizar(self, time):
+      self.rect.centerx += self.speed[0] * time
+      self.rect.centery += self.speed[1] * time
+      if self.rect.left <= 0 or self.rect.right >= WIDTH:
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+      if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+          self.speed[1] = -self.speed[1]
+          self.rect.centery += self.speed[1] * time
+</code>
+
+La **linea 1 **define el metodo, recibe el parametro self (como siempre) y el parametro time que es el tiempo transcurrido, mas adelante lo explicamos.
+
+La **linea 2 y 3 **usa la fisica basica de espacio es igual a la velocidad por el tiempo (e = v*t), por tanto establecemos que el centro de nuestro rectangulo en x es el valor que tenia (self.rect.centerx) mas (+=) la valocidad a la que se mueve en el eje x (self.speed[0]) por (*) el tiempo transcurrido (time). Lo mismo se aplica al eje y en la linea 3.
+
+La **linea 4, 5 y 6** establece que si la parte izquierda del rectangulo de la bola es menor o igual a 0 o mayor o igual a el ancho de la pantalla (WIDTH), es decir, que este en el extremo izquierdo o derecho, la velocidad de x (self.speed[0]) cambie de signo (-self.speed[0]) con esto conseguiremos que vaya hacia el otro lado.
+
+Las **lineas 7, 8 y 9** es lo mismo pero en el eje y como se puede ver.
+
+==== Creando un reloj ====
+
+Ahora vamos a crear un reloj que controle el tiempo del juego, esto es importante para el movimiento, pues sabemos cuanto tiempo a pasado desde la ultima actualizacion de la pelota y con ello poder situarla en el espacio.
+
+<code python>
+  clock = pygame.time.Clock()
+</code>
+
+Esta linea va justo antes de entrar en el bucle del juego y sirve para crear el reloj con el que gestionar el tiempo.
+
+Ahora necesitamos saber cuanto tiempo pasa cada vez que se ejecuta una intereccion del bucle, para ello dentro del bucle ponemos como primera linea:
+
+<code python>
+  time = clock.tick(60)
+</code>
+
+El 60 que se le pasa como parametro es el framerate, con el nos aseguramos de que el juego no va a mas de la velocidad estipulada. Con ello conseguimos que el juego corra igual en todos los ordenadores. [[http://www.losersjuegos.com.ar/traducciones/pygame/time/clock|Aqui mas inftomacion]].
+
+Por ultimo debemos actualizar la posicion de la bola antes de actualizarla en la ventana, es decir antes de los screen.blit.
+
+<code python>
+  bola.actualizar(time)
+</code>
+
+Como ves le pasamos el parametro time que es el tiempo que ha pasado desde la ultima vez que se ejecuto.
+
+El juego queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+      def actualizar(self, time):
+          self.rect.centerx += self.speed[0] * time
+          self.rect.centery += self.speed[1] * time
+          if self.rect.left <= 0 or self.rect.right >= WIDTH:
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+          if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+              self.speed[1] = -self.speed[1]
+              self.rect.centery += self.speed[1] * time
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+
+      clock = pygame.time.Clock()
+
+      while True:
+          time = clock.tick(60)
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          bola.actualizar(time)
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Ya nuestra pelota se mueve y rebota contra las paredes. No es la panace del movimiento, pero esta bien.
+
+===== 6. Control del teclado =====
+
+Bien ya tenemos nuestra pelota que se mueve como loca por toda la pantalla. El siguiente paso es crear un nuevo Sprite para las palas, este a diferencia de la bola no se movera solo sino que lo controlaremos nosotros por el teclado.
+
+==== Creando el Sprite Pala ====
+
+La clase Pala es casi identica a la clase Bola, salvo por unos pequeños cambios:
+
+<code python>
+  class Pala(pygame.sprite.Sprite):
+      def __init__(self, x):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/pala.png")
+          self.rect = self.image.get_rect()
+          self.rect.centerx = x
+          self.rect.centery = HEIGHT / 2
+          self.speed = 0.5
+</code>
+
+Como vemos es identica salvo que ahora le pasamos el parametro **x** para usarlo en //self.rect.centerx//, esto es debido a que necesitamos dos palas una en la parte izquierda y otra en la derecha, con el parametro x definimos a que altura del **eje x** queremos colocar el Sprite.
+
+Otro cambio es la velocidad, como la pala del Pong solo se mueve en el eje y no definimos velocidad para el eje x.
+
+para crear la pala del jugador ya sabeis, debajo de donde habeis creado la bola poneis la siguiente linea:
+
+<code python>
+  pala_jug = Pala(30)
+</code>
+
+La llamo **pala_jug** porque habra otra que sera la **pala_cpu** que sera la que maneje el ordenador. Como ves le paso como valor de **x = 30**, esto quiere decir que **centerx** estara a 30 px del borde derecho de la ventana.
+
+Por ultimo dentro del bucle lo de siempre, despues de actualizar el fondo y la bola actualizamos la pala:
+
+<code python>
+  screen.blit(pala_jug.image, pala_jug.rect)
+</code>
+
+==== Moviendo la pala ====
+
+Para mover la pala definimos el metodo **mover** dentro de la clase Pala:
+
+<code python>
+  def mover(self, time, keys):
+      if self.rect.top >= 0:
+          if keys[K_UP]:
+              self.rect.centery -= self.speed * time
+      if self.rect.bottom <= HEIGHT:
+          if keys[K_DOWN]:
+              self.rect.centery += self.speed * time
+</code>
+
+Recibe los parametros self y time como el **metodo** actualizar de la bola y ademas recibe el parametro keys que luego definiremos y que es una lista con el valor booleano de las teclas pulsadas.
+
+La **linea 2 y 5** comprueban que la parte superior (en el caso de la linea 2) de la pala sea mayor o igual a 0 y que la parte inferior de la pala (linea 5) sea menor o igual que que la altura de la ventana.
+
+Resumiendo comprueban que la pala no se sale de la ventana.
+
+La **linea 3** comprueba si la constante **K_UP** de **keys** es 1, lo que querria decir que tenemos presionada la tecla de la flecha hacia arriba del teclado.
+
+La **linea 5** en caso de tener la tecla presionada **disminuye** el valor de **centery** haciendo que la pala se mueva hacia arriba.
+
+La **linea 6 y 7** hacen lo mismo, pero para abajo y **aumentando** el valor de **centery**.
+
+Ahora solo debemos saber que teclas se estan pulsando creando la variable keys, esto se consigue añadiendo la siguiente linea en el bucle principal, justo despues de comprobar el tiempo transcurrido con time.
+
+<code python>
+  keys = pygame.key.get_pressed()
+</code>
+
+Esto nos devuelve las teclas pulsadas en una lista como explicamos arriba.
+
+Por ultimo debemos llamar al metodo mover en el bucle justo despues de actualizar la bola, con la linea:
+
+<code python>
+  pala_jug.mover(time, keys)
+</code>
+
+El codigo nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+      def actualizar(self, time):
+          self.rect.centerx += self.speed[0] * time
+          self.rect.centery += self.speed[1] * time
+          if self.rect.left <= 0 or self.rect.right >= WIDTH:
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+          if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+              self.speed[1] = -self.speed[1]
+              self.rect.centery += self.speed[1] * time
+
+  class Pala(pygame.sprite.Sprite):
+      def __init__(self, x):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/pala.png")
+          self.rect = self.image.get_rect()
+          self.rect.centerx = x
+          self.rect.centery = HEIGHT / 2
+          self.speed = 0.5
+
+      def mover(self, time, keys):
+          if self.rect.top >= 0:
+              if keys[K_UP]:
+                  self.rect.centery -= self.speed * time
+          if self.rect.bottom <= HEIGHT:
+              if keys[K_DOWN]:
+                  self.rect.centery += self.speed * time
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+      pala_jug = Pala(30)
+
+      clock = pygame.time.Clock()
+
+      while True:
+          time = clock.tick(60)
+          keys = pygame.key.get_pressed()
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          bola.actualizar(time)
+          pala_jug.mover(time, keys)
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          screen.blit(pala_jug.image, pala_jug.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Ya tenemos nuestra pala que podemos controlar con el teclado, pero la bola como vemos para olimpicamente de ella y la atraviesa. A continuacion aprenderemos a crear colisiones entre Sprites
+
+===== 7. Colisiones =====
+
+Tenemos una pelota que se mueve como loca y una pala que va para arriba y para abajo a nuestra voluntad, es hora de que se den cuenta que estan en el mismo mundo. Vamos a crear colisiones entre los dos sprites.
+
+==== Actualizando el metodo actualizar de la clase Bola ====
+
+Saber si un Sprite colisiona con otro es muy facil en Python, basta con ejecutar el siguiente metodo:
+
+<code python>
+  pygame.sprite.collide_rect(objeto1, objeto2)
+</code>
+
+Esto comprueba si el rectangulo del Sprite objeto1 esta en contacto con el rectangulo de objeto2, por lo que es tan facil como mejorar el metodo actualizar de la clase Bola para que lo tenga en cuenta:
+
+<code python>
+  def actualizar(self, time, pala_jug):
+      self.rect.centerx += self.speed[0] * time
+      self.rect.centery += self.speed[1] * time
+      if self.rect.left <= 0 or self.rect.right >= WIDTH:
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+      if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+          self.speed[1] = -self.speed[1]
+          self.rect.centery += self.speed[1] * time
+
+      if pygame.sprite.collide_rect(self, pala_jug):
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+</code>
+
+Como vemos todo igual, salvo que ahora recibe un parametro mas que es **pala_jug** por el que pasaremos el Sprite con el que queremos comprobar si colisiona, en este caso **pala_jug**.
+
+Luego al final añadimos 3 lineas con un nuevo condicional con el que comprobamos si la pelota choca contra la pala, en caso afirmativo cambiamos la direccion de la bola como cuando choca con el borde izquierdo de la ventana.
+
+Por ultimo solo actualizamos la llamada a la funcion **actualizar** que hacemos desde el bucle para pasarle la **pala_jug**.
+
+<code python>
+  bola.actualizar(time, pala_jug)
+</code>
+
+Y con esto ya hemos logrado que nuestra bola detecte si ha chocado contra la pala del jugador en caso afirmativo "rebota".
+
+Asi nos queda el codigo:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+      def actualizar(self, time, pala_jug):
+          self.rect.centerx += self.speed[0] * time
+          self.rect.centery += self.speed[1] * time
+          if self.rect.left <= 0 or self.rect.right >= WIDTH:
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+          if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+              self.speed[1] = -self.speed[1]
+              self.rect.centery += self.speed[1] * time
+
+          if pygame.sprite.collide_rect(self, pala_jug):
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+
+  class Pala(pygame.sprite.Sprite):
+      def __init__(self, x):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/pala.png")
+          self.rect = self.image.get_rect()
+          self.rect.centerx = x
+          self.rect.centery = HEIGHT / 2
+          self.speed = 0.5
+
+      def mover(self, time, keys):
+          if self.rect.top >= 0:
+              if keys[K_UP]:
+                  self.rect.centery -= self.speed * time
+          if self.rect.bottom <= HEIGHT:
+              if keys[K_DOWN]:
+                  self.rect.centery += self.speed * time
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+      pala_jug = Pala(30)
+
+      clock = pygame.time.Clock()
+
+      while True:
+          time = clock.tick(60)
+          keys = pygame.key.get_pressed()
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          bola.actualizar(time, pala_jug)
+          pala_jug.mover(time, keys)
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          screen.blit(pala_jug.image, pala_jug.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+En el siguiente paso crearemos la pala del jugador de la CPU y la dotaremos de Inteligencia Artificial para que golpee la pelota.
+
+===== 8. Inteligencia Artificial =====
+
+En el siguiente tema no introduciremos ningun concepto nuevo de Pygame, pero si usaremos un poco de todo lo usado en los anteriores tutoriales para crear la pala que controlara el ordenador, se podria decir que es una Inteligencia Artificial muy basica.
+
+==== Creando la pala de la CPU ====
+
+Esto se hace igual que como creamos la **pala_jug** o la **bola**, ponemos la siguiente linea en la funcion principal debajo de **pala_jug**.
+
+<code python>
+  pala_cpu = Pala(WIDTH - 30)
+</code>
+
+En su momento pala_jug le pasamos como parametro el valor 30 que queria decir que el centerx estaba a 30 pixeles de el borde izquierdo, ahora le pasamos WIDTH - 30, es decir a 30 pixeles del borde derecho.
+
+Tambien debemos añadir la linea:
+
+<code python>
+  screen.blit(pala_cpu.image, pala_cpu.rect)
+</code>
+
+En el bucle principal, debajo de los demas blit, como siempre. Con esto ya tenemos nuestro Sprite puesto en pantalla.
+
+Ahora vamos a hacer que detecte tambien las colisiones, para ello volvemos a actualizar el metodo actualizar de la clase Bola:
+
+<code python>
+  def actualizar(self, time, pala_jug, pala_cpu):
+      self.rect.centerx += self.speed[0] * time
+      self.rect.centery += self.speed[1] * time
+      if self.rect.left <= 0 or self.rect.right >= WIDTH:
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+      if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+          self.speed[1] = -self.speed[1]
+          self.rect.centery += self.speed[1] * time
+
+      if pygame.sprite.collide_rect(self, pala_jug):
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+
+      if pygame.sprite.collide_rect(self, pala_cpu):
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+</code>
+
+Como podemos ver añadimos otro parametro al metodo **pala_cpu** que servira para añadirle el Sprite **pala_cpu** como hicimos con **pala_jug** y añadimos las tres ultimas lineas que son identicas a las anteriores salvo que ahora para **pala_cpu**.
+
+Recordad pasarle el parametro nuevo a la linea que llama a la funcion actualizar de la bola en el bucle del juego. Asi:
+
+<code python>
+  ball.update(time, pala_jug, pala_cpu)
+</code>
+
+==== Dotando de Inteligencia Artificial a la Pala ====
+
+Bueno ahora viene lo interesante, lograr que la pala se mueva para golpear la bola, esto se hace definiendo otro metodo en la clase **Pala** al metodo lo llamare **ia**.
+
+<code python>
+  def ia(self, time, ball):
+      if ball.speed[0] >= 0 and ball.rect.centerx >= WIDTH/2:
+          if self.rect.centery < ball.rect.centery:
+              self.rect.centery += self.speed * time
+          if self.rect.centery > ball.rect.centery:
+              self.rect.centery -= self.speed * time
+</code>
+
+En la **linea 1** vemos que recibe como siempre self y time y aparte recibe ball que es la bola, es necesario pues el metodo necesita conocer donde esta la bola.
+
+En la **linea 2** comprobamos que //ball.speed[0] >= 0//, es decir, que la velocidad en el eje x de la pelota sea positiva, es decir, que la pelota se este moviendo hacia la derecha (hacia la pala de la cpu) y tambien comprueba que //ball.rect.centerx >= WIDTH/2// es decir que el centro x de la pelota sea mayor o igual que el centro del tablero, es decir, que la pelota este en el campo de la cpu.
+
+Por tanto la **linea 2** es un condicional que comprueba que la pelota vaya hacia donde esta la pala de la cpu y que este en su campo, sino, que no se mueva. Esto se hace para que la CPU no sea invencible y no llegue a todas las pelotas.
+
+La **linea 3** comprueba si el centery de la pelota es menor que el centery de la bola, es decir si la pala esta mas arriba que que la pelota en cullo caso, ejecuta la **linea 4** que mueve la pala de la cpu hacia abajo.
+
+Las **lineas 5 y 6** hacen lo mismo, pero a la inversa como se ve a simple vista.
+
+Ahora solo nos queda llamar a la ia junto con las llamadas **actualizar** de la **bola** y **mover** de la **pala_cpu**.
+
+<code python>
+  pala_cpu.ia(time, bola)
+</code>
+
+El codigo nos queda de la siguiente manera:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+      def actualizar(self, time, pala_jug, pala_cpu):
+          self.rect.centerx += self.speed[0] * time
+          self.rect.centery += self.speed[1] * time
+          if self.rect.left <= 0 or self.rect.right >= WIDTH:
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+          if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+              self.speed[1] = -self.speed[1]
+              self.rect.centery += self.speed[1] * time
+
+          if pygame.sprite.collide_rect(self, pala_jug):
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+
+          if pygame.sprite.collide_rect(self, pala_cpu):
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+
+  class Pala(pygame.sprite.Sprite):
+      def __init__(self, x):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/pala.png")
+          self.rect = self.image.get_rect()
+          self.rect.centerx = x
+          self.rect.centery = HEIGHT / 2
+          self.speed = 0.5
+
+      def mover(self, time, keys):
+          if self.rect.top >= 0:
+              if keys[K_UP]:
+                  self.rect.centery -= self.speed * time
+          if self.rect.bottom <= HEIGHT:
+              if keys[K_DOWN]:
+                  self.rect.centery += self.speed * time
+
+      def ia(self, time, ball):
+          if ball.speed[0] >= 0 and ball.rect.centerx >= WIDTH/2:
+              if self.rect.centery < ball.rect.centery:
+                  self.rect.centery += self.speed * time
+              if self.rect.centery > ball.rect.centery:
+                  self.rect.centery -= self.speed * time
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+      pala_jug = Pala(30)
+      pala_cpu = Pala(WIDTH - 30)
+
+      clock = pygame.time.Clock()
+
+      while True:
+          time = clock.tick(60)
+          keys = pygame.key.get_pressed()
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          bola.actualizar(time, pala_jug, pala_cpu)
+          pala_jug.mover(time, keys)
+          pala_cpu.ia(time, bola)
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          screen.blit(pala_jug.image, pala_jug.rect)
+          screen.blit(pala_cpu.image, pala_cpu.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Ahora el juego es jugable, pero no tiene ni sistema de puntuacion, ni sonidos ni nada de nada. Pronto lo solucionaremos.
+
+===== 9. Sistema de puntuacion =====
+
+En los dos siguientes temas vamos a aprender a manejar fuentes tipograficas en Pygame. Crearemos un sistema de puntuacion para nuestro Pong, consistira en dos marcadores para cada jugador que si consigues meter un punto al rival aumenta en uno. ¿Sencillo no? Vamos alla.
+
+==== Creando un sistema de puntuacion ====
+
+Lo primero es crear un sistema que controle los puntos, es decir, comprobar si la bola traspasa las palas y toca el borde de la ventana que tiene detras. Esto lo controlara como siempre la bola y su metodo **actualizar**.
+
+<code python>
+  def update(self, time, pala_jug, pala_cpu, puntos):
+      self.rect.centerx += self.speed[0] * time
+      self.rect.centery += self.speed[1] * time
+
+      if self.rect.left <= 0:
+          puntos[1] += 1
+      if self.rect.right >= WIDTH:
+          puntos[0] += 1
+
+      if self.rect.left <= 0 or self.rect.right >= WIDTH:
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+      if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+          self.speed[1] = -self.speed[1]
+          self.rect.centery += self.speed[1] * time
+
+      if pygame.sprite.collide_rect(self, pala_jug):
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+
+      if pygame.sprite.collide_rect(self, pala_cpu):
+          self.speed[0] = -self.speed[0]
+          self.rect.centerx += self.speed[0] * time
+
+      return puntos
+</code>
+
+Como vemos le añadimos un nuevo parametro llamado puntos, puntos es una lista que contiene los puntos de los dos jugadores en el el puntos[0] los puntos del jugador y en el puntos[1] los puntos de la cpu.
+
+Luego añadimos las **lineas de la 5 a la 8** que controlan si la parte izquierda de la pelota (**linea 5**) toca el el borde izquierdo de la ventana en cuyo caso aumenta puntos[1] (el marcador de la cpu) en 1 (**linea 6**). La **lineas 7 y 8** hacen lo mismo, pero a la inversa.
+
+Por ultimo al final del metodo se **retorna puntos**, necesario para almacenarla en una variable.
+
+Ahora debemos crear la lista puntos en nuestra funcion principal, yo la he creado justo antes de entrar en el bucle del juego:
+
+<code python>
+  puntos = [0, 0]
+</code>
+
+Ahora tenemos que modificar la llamada a **bola.actualizar** dentro del bucle del juego para pasarle nuestra lista puntos y recuperarla de nuevo con los posibles nuevos valores.
+
+<code python>
+  puntos = bola.actualizar(time, pala_jug, pala_cpu, puntos)
+</code>
+
+Por lo que el codigo nos queda asi:
+
+<code python>
+  #!/usr/bin/env python
+  # -*- coding: utf-8 -*-
+
+  # Modulos
+  import sys, pygame
+  from pygame.locals import *
+
+  # Constantes
+  WIDTH = 640
+  HEIGHT = 480
+
+  # Clases
+  # ---------------------------------------------------------------------
+
+  class Bola(pygame.sprite.Sprite):
+      def __init__(self):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/ball.png", True)
+          self.rect = self.image.get_rect()
+          self.rect.centerx = WIDTH / 2
+          self.rect.centery = HEIGHT / 2
+          self.speed = [0.5, -0.5]
+
+      def actualizar(self, time, pala_jug, pala_cpu, puntos):
+          self.rect.centerx += self.speed[0] * time
+          self.rect.centery += self.speed[1] * time
+
+          if self.rect.left <= 0:
+              puntos[1] += 1
+          if self.rect.right >= WIDTH:
+              puntos[0] += 1
+
+          if self.rect.left <= 0 or self.rect.right >= WIDTH:
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+          if self.rect.top <= 0 or self.rect.bottom >= HEIGHT:
+              self.speed[1] = -self.speed[1]
+              self.rect.centery += self.speed[1] * time
+
+          if pygame.sprite.collide_rect(self, pala_jug):
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+
+          if pygame.sprite.collide_rect(self, pala_cpu):
+              self.speed[0] = -self.speed[0]
+              self.rect.centerx += self.speed[0] * time
+
+          return puntos
+
+  class Pala(pygame.sprite.Sprite):
+      def __init__(self, x):
+          pygame.sprite.Sprite.__init__(self)
+          self.image = load_image("images/pala.png")
+          self.rect = self.image.get_rect()
+          self.rect.centerx = x
+          self.rect.centery = HEIGHT / 2
+          self.speed = 0.5
+
+      def mover(self, time, keys):
+          if self.rect.top >= 0:
+              if keys[K_UP]:
+                  self.rect.centery -= self.speed * time
+          if self.rect.bottom <= HEIGHT:
+              if keys[K_DOWN]:
+                  self.rect.centery += self.speed * time
+
+      def ia(self, time, ball):
+          if ball.speed[0] >= 0 and ball.rect.centerx >= WIDTH/2:
+              if self.rect.centery < ball.rect.centery:
+                  self.rect.centery += self.speed * time
+              if self.rect.centery > ball.rect.centery:
+                  self.rect.centery -= self.speed * time
+
+  # ---------------------------------------------------------------------
+
+  # Funciones
+  # ---------------------------------------------------------------------
+
+  def load_image(filename, transparent=False):
+          try: image = pygame.image.load(filename)
+          except pygame.error, message:
+                  raise SystemExit, message
+          image = image.convert()
+          if transparent:
+                  color = image.get_at((0,0))
+                  image.set_colorkey(color, RLEACCEL)
+          return image
+
+  # ---------------------------------------------------------------------
+
+  def main():
+      screen = pygame.display.set_mode((WIDTH, HEIGHT))
+      pygame.display.set_caption("Pruebas Pygame")
+
+      background_image = load_image('images/fondo_pong.png')
+      bola = Bola()
+      pala_jug = Pala(30)
+      pala_cpu = Pala(WIDTH - 30)
+
+      clock = pygame.time.Clock()
+
+      puntos = [0, 0]
+
+      while True:
+          time = clock.tick(60)
+          keys = pygame.key.get_pressed()
+          for eventos in pygame.event.get():
+              if eventos.type == QUIT:
+                  sys.exit(0)
+
+          puntos = bola.actualizar(time, pala_jug, pala_cpu, puntos)
+          pala_jug.mover(time, keys)
+          pala_cpu.ia(time, bola)
+          screen.blit(background_image, (0, 0))
+          screen.blit(bola.image, bola.rect)
+          screen.blit(pala_jug.image, pala_jug.rect)
+          screen.blit(pala_cpu.image, pala_cpu.rect)
+          pygame.display.flip()
+      return 0
+
+  if __name__ == '__main__':
+      pygame.init()
+      main()
+</code>
+
+Esto como vemos no hace "nada" en el juego, ahora tenemos que buscar la manera de mostrar los puntos en nuestro juego. En el proximo tema trataremos con Fuentes tipograficas.

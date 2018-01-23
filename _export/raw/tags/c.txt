@@ -1,0 +1,11 @@
+====== C ======
+
+C es un lenguaje de programación desarrollado cerca de los años 70. Es
+uno de los lenguajes mas populares y reconocidos, su principal ventaja
+frente a otros lenguajes es su velocidad.
+
+En losersjuegos utilizamos este lenguaje porque es muy popular dentro del
+desarrollo de videojuegos (por su velocidad) y además porque suele ser el
+lenguaje favorito para enseñar programación en las universidades.
+
+[[http://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n_C|Vea una descripción detallada sobre C en Wikipedia]]
